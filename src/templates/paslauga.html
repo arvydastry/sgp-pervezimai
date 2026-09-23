@@ -1,0 +1,45 @@
+---
+title: {{svc:title}}
+description: {{svc:meta}}
+out: pervezimo-paslaugos/tarptautiniai-pervezimai/{{svc:slug}}/index.html
+body_class: page-paslauga page-paslauga--{{svc:slug}}
+nav: paslauga
+og_image: {{svc:hero_id}}
+hero_media: {{svc:hero_id}}
+css: pages/paslauga.css
+js: pages/paslauga.js
+salient: WPBakery template „SGP – paslauga“ (Salient Templates, §6.5) · T1 Route header · T1b Page Submenu · T2 Faktai · T3 Apie paslaugą · T4 Privalumai · T5 special · T6 Kliento atsakomybės · T7 Draudžiami daiktai · T8 GS-Board · T9 Uždarymas · T10 Kita stotelė · T11 GS-Arrival · content = src/data/paslaugos.json ({{svc:slug}})
+---
+<section class="sgp-phero on-dark sv-hero" data-hero data-theme="dark" data-svc="{{svc:name}}" data-salient="T1 Route header (§4.17) · Row Full Width · BG photo {{svc:hero_id}} + Parallax Subtle + Slight Zoom Out Reveal (M80) · overlay · Text Color Light · H1 Animated Text Word Reveal · breadcrumb 4 levels (M81)">
+  <div class="sgp-bgmedia" data-parallax="0.12" aria-hidden="true">{{img:{{svc:hero_id}}|w=1920|sizes=100vw|eager|decorative|pos={{svc:hero_crop}}}}</div>
+  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
+    <div class="sgp-phero__copy">
+      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="{{url:pradzia}}">Pradžia</a></li><li><a href="{{url:paslaugos}}">Pervežimo paslaugos</a></li><li><a href="{{url:tarptautiniai}}">Tarptautiniai pervežimai</a></li><li aria-current="page">{{svc:name}}</li></ol></nav>
+      <p class="sgp-phero__eyebrow sgp-mono"><span class="sgp-ring"></span>{{svc:no}} / {{svc:total}} · Tarptautiniai pervežimai</p>
+      <h1 class="sgp-phero__h1" data-split>{{svc:h1}}</h1>
+      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">{{svc:lead}}</p>
+      <ul class="sgp-chips" data-reveal style="--dl:.4s">{{svc:chips_html}}</ul>
+      {{grafikas:next}}
+    </div>
+    {{partial:phero-calls}}
+  </div>
+</section>
+
+{{svc:submenu_html}}
+
+{{svc:facts_html}}
+
+{{svc:body_html}}
+
+{{partial:board}}
+
+{{svc:closing_html}}
+
+<a class="sgp-nextstop" href="{{svc:next_url}}" data-salient="T10 „Kita stotelė“ (§4.19) · Column Link · Column BG image hover opacity 0 → .35 · lane draws on hover (M82)">
+  <span class="sgp-nextstop__bg" aria-hidden="true">{{img:{{svc:next_media}}|w=1600|sizes=100vw|decorative}}</span>
+  <span class="sgp-wrap sgp-wrap--zone sgp-nextstop__in">
+    <span><span class="sgp-nextstop__k sgp-mono">Kita stotelė · {{svc:next_no}}</span><span class="sgp-nextstop__t">{{svc:next_name}}</span></span>
+    <span class="sgp-nextstop__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
+  </span>
+  <span class="sgp-nextstop__lane" aria-hidden="true"></span>
+</a>

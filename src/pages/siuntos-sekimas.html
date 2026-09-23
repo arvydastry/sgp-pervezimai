@@ -1,0 +1,154 @@
+---
+title: Siuntos sekimas | sgp-pervezimai.lt
+description: Įveskite siuntos kodą ir sužinokite, kur yra Jūsų siunta. Neradote kodo? Paskambinkite – pasakysime.
+out: siuntos-sekimas/index.html
+body_class: page-sekimas
+nav: sekimas
+og_image: 35497082
+hero_media: 35497082
+css: pages/sekimas.css
+js: pages/sekimas.js
+salient: Page „Siuntos sekimas“ (§6.7) · compact header · 01 Paieška (tracking field) · 02 Rezultatas (production = iframe siuntos.sgp-pervezimai.lt/sekimas.php?embed=1&kodas=…; demo = static states, no network) · 03 Pagalba · GS-Arrival · 301 /pervezimo-paslaugos/siuntos-sekimas → /siuntos-sekimas/
+---
+<!-- ============ HEADER · compact route header ============ -->
+<section class="sgp-phero sgp-phero--compact on-dark sk-hero" data-hero data-theme="dark" data-salient="Row Full Width · Compact route header (44svh) · BG image 35497082 + Parallax BG: Subtle + BG Layer Animation: Slight Zoom Out Reveal · Color Overlay Advanced (§2.8) · Text Color Light">
+  <div class="sgp-bgmedia" data-parallax="0.12" aria-hidden="true">{{img:35497082|w=1920|sizes=100vw|eager|decorative|pos=50% 60%}}</div>
+  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
+    <div class="sgp-phero__copy">
+      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="{{url:pradzia}}">Pradžia</a></li><li aria-current="page">Siuntos sekimas</li></ol></nav>
+      <p class="sgp-phero__eyebrow sgp-mono"><span class="sgp-ring"></span>Pagal siuntos kodą</p>
+      <h1 class="sgp-phero__h1" data-split>Siuntos sekimas</h1>
+      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">Įveskite siuntos kodą ir sužinokite, kur yra Jūsų siunta.</p>
+      {{grafikas:next}}
+    </div>
+    {{partial:phero-calls}}
+  </div>
+</section>
+
+<!-- ============ 01 · PAIEŠKA — large tracking field ============ -->
+<section class="sgp-sec on-light paper sgp-has-rail sk-search" id="paieska" data-theme="light" data-salient="Row paper + graticule · Extra Class sgp-light sgp-graticule sgp-has-rail · Column 5/12: H2 + Text Block · Column 7/12: Raw HTML form .sgp-track (GET ?kodas=) — production JS (≈0.3 KB) sets the result iframe src; empty submit → „Neįvestas siuntos kodas!“">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">01</span><span class="sgp-mono">Paieška</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Pagal siuntos kodą</span></div>
+    <div class="sk-search__grid">
+      <div class="sk-search__copy">
+        <h2 class="sgp-d2" data-split>Kur keliauja Jūsų siunta?</h2>
+        <p class="sgp-lead sgp-fg2" data-reveal>Siuntos vietą galite pasitikrinti pagal siuntos kodą.</p>
+      </div>
+      <div class="sk-search__form">
+        <form class="sgp-track sk-track" action="{{url:sekimas}}" method="get" novalidate data-track data-reveal data-salient="Raw HTML form · .sgp-track + .sgp-field (label inside) + Button (Signal) „Siuntos lokacija“">
+          <label class="sgp-field"><span class="sgp-field__l">Siuntos kodas</span><input id="sk-kodas" name="kodas" required autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search" placeholder="Siuntos kodas..."><em class="sgp-field__err">Neįvestas siuntos kodas!</em></label>
+          <button class="sgp-btn sgp-btn--signal" type="submit"><span class="sgp-btn__l"><svg class="sgp-i" aria-hidden="true"><use href="#i-search"/></svg>Siuntos lokacija</span></button>
+        </form>
+        <p class="sk-demo" data-reveal style="--dl:.1s" data-salient="Demo only (remove in production)"><span class="sk-badge sgp-mono">Demo</span><span class="sk-demo__txt">Demonstracinė versija – paieška veikia tik tikroje svetainėje.<button class="sk-demo__try" type="button" data-sk-try="SGP-DEMO"><span>Išbandykite:</span> <b>SGP-DEMO</b> <svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></button></span></p>
+        <p class="sk-help" data-reveal style="--dl:.15s">Neradote siuntos kodo? Paskambinkite – pasakysime, kur Jūsų siunta. <button class="sgp-a" type="button" popovertarget="sgp-call">Skambinti</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · REZULTATAS — framed map-paper screen (demo states) ============ -->
+<section class="sgp-sec on-dark sgp-has-rail sk-result" id="rezultatas" data-theme="dark" data-salient="Row dark · Extra Class sgp-dark sgp-has-rail · Raw HTML: iframe src=&quot;https://siuntos.sgp-pervezimai.lt/sekimas.php?embed=1&amp;kodas=…&quot; title=&quot;Siuntos sekimo rezultatas&quot; min-height 520 px inside the .sk-screen map-paper frame · tool messages verbatim · DEMO: static states below, nothing is requested">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">02</span><span class="sgp-mono">Rezultatas</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Demonstracinė versija</span></div>
+    <div class="sk-screen on-light paper" data-sk-screen data-state="idle" data-reveal data-salient="Raw HTML frame .sk-screen (map paper, 1 px hairline, crop marks) → production: &lt;iframe&gt;">
+      <div class="sk-screen__bar sgp-mono">
+        <span class="sk-screen__t"><span class="sgp-ring sgp-ring--sm"></span>Siuntos lokacija</span>
+        <span class="sk-screen__code">Siuntos kodas: <b data-sk-code>—</b></span>
+      </div>
+      <p class="sgp-sr" role="status" aria-live="polite" data-sk-live></p>
+
+      <!-- idle: how it works -->
+      <div class="sk-state sk-state--idle" data-sk-state="idle">
+        <ol class="sk-steps">
+          <li class="sk-steps__lane" aria-hidden="true"></li>
+          <li class="sk-step" style="--i:0"><span class="sgp-ring"></span><p class="sgp-mono sk-step__no">01</p><p class="sk-step__t">Įveskite siuntos kodą</p></li>
+          <li class="sk-step" style="--i:1"><span class="sgp-ring"></span><p class="sgp-mono sk-step__no">02</p><p class="sk-step__t">Spauskite „Siuntos lokacija“</p></li>
+          <li class="sk-step" style="--i:2"><span class="sgp-ring"></span><p class="sgp-mono sk-step__no">03</p><p class="sk-step__t">Matysite, kur yra Jūsų siunta</p></li>
+        </ol>
+      </div>
+
+      <!-- loading -->
+      <div class="sk-state sk-state--load" data-sk-state="load" hidden>
+        <div class="sk-scan" aria-hidden="true"><span class="sk-scan__lane"></span><span class="sk-scan__dot"></span></div>
+        <p class="sk-state__k sgp-mono">Ieškoma…</p>
+      </div>
+
+      <!-- not found (verbatim tool message, shown as a demo example + the approved demo note, §6.7 / §8.1 p. 25) -->
+      <div class="sk-state sk-state--none" data-sk-state="none" hidden>
+        <div class="sk-lost" aria-hidden="true"><i class="sk-lost__lane"></i><i class="sk-lost__dash"></i><i class="sk-lost__ring"></i></div>
+        <p class="sk-msg">Toks siuntos kodas neegzistuoja!</p>
+        <p class="sk-none__demo"><span class="sk-badge sk-badge--red sgp-mono">Demo</span><span>Demonstracinė versija – paieška veikia tik tikroje svetainėje.</span></p>
+        <p class="sk-state__p">Neradote siuntos kodo? Paskambinkite – pasakysime, kur Jūsų siunta.</p>
+        <div class="sk-calls">
+          <a class="sgp-callbtn sgp-callbtn--sm" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Airiją</span><span class="sgp-callbtn__n">+370 650 53161</span></span></a>
+          <a class="sgp-callbtn sgp-callbtn--sm" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Ispaniją</span><span class="sgp-callbtn__n">+370 638 28919</span></span></a>
+        </div>
+      </div>
+
+      <!-- found: demo sample SGP-DEMO -->
+      <div class="sk-state sk-state--found" data-sk-state="found" hidden>
+        <div class="sk-found__head">
+          <p class="sk-badge sk-badge--red sgp-mono">Demonstracinis pavyzdys · ne tikra siunta</p>
+          <p class="sk-found__route">Lietuva → Ispanija</p>
+          <p class="sk-found__st sgp-mono"><span class="sgp-dot"></span>Kelyje</p>
+        </div>
+        <ol class="sk-trip" style="--n:6;--at:4" aria-label="Maršrutas: Lietuva, Lenkija, Vokietija, Belgija, Prancūzija, Ispanija. Demonstracinė siunta – Prancūzijoje.">
+          <li class="sk-trip__lane" aria-hidden="true"><i></i></li>
+          <li class="sk-trip__stop is-done"><span class="sk-trip__ring"></span><span class="sk-trip__n">Lietuva</span><span class="sk-trip__s">išvykimas</span></li>
+          <li class="sk-trip__stop is-done"><span class="sk-trip__ring"></span><span class="sk-trip__n">Lenkija</span></li>
+          <li class="sk-trip__stop is-done"><span class="sk-trip__ring"></span><span class="sk-trip__n">Vokietija</span></li>
+          <li class="sk-trip__stop is-done"><span class="sk-trip__ring"></span><span class="sk-trip__n">Belgija</span></li>
+          <li class="sk-trip__stop is-here" aria-current="step"><span class="sk-trip__ring"></span><span class="sk-trip__n">Prancūzija</span><span class="sk-trip__s">siunta čia</span></li>
+          <li class="sk-trip__stop is-term"><span class="sk-trip__ring"></span><span class="sk-trip__n">Ispanija</span><span class="sk-trip__s">atvykimas</span></li>
+        </ol>
+        <div class="sk-found__grid">
+          <ol class="sk-log">
+            <li class="is-done"><span class="sgp-mono">01</span><p><b>Paimta iš siuntėjo</b>Siunta paimta iš siuntėjo nurodytos vietos.</p></li>
+            <li class="is-here"><span class="sgp-mono">02</span><p><b>Kelyje</b>Siunta keliauja Ispanijos link.</p></li>
+            <li><span class="sgp-mono">03</span><p><b>Pristatymas</b>Pristatome gavėjui tiesiai į rankas.</p></li>
+          </ol>
+          <dl class="sgp-kv sk-found__kv">
+            <dt>Siuntos kodas</dt><dd>SGP-DEMO</dd>
+            <dt>Kryptis</dt><dd>Lietuva → Ispanija</dd>
+            <dt>Kelyje</dt><dd>apie 3–4 paros nuo paėmimo dienos</dd>
+            <dt>Įsipareigojimas siuntoms</dt><dd>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (<a class="sgp-a" href="{{url:taisykles}}#vezejo-atsakomybe">Taisyklių 3.4 p.</a>)</dd>
+          </dl>
+        </div>
+        <p class="sk-found__note">Tikroje svetainėje čia bus rodoma siuntos vieta žemėlapyje iš siuntų sistemos.</p>
+      </div>
+
+      <p class="sk-screen__foot sgp-mono">Demonstracinė versija – paieška veikia tik tikroje svetainėje.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · PAGALBA — call first, then three link cards ============ -->
+<section class="sgp-sec on-light alt sgp-has-rail sk-helpsec" id="pagalba" data-theme="light" data-salient="Row paper-100 · Extra Class sgp-light alt sgp-has-rail · Inner Row: H2 + Text Block | 2 × Button .sgp-callbtn · Inner Row: 3 × Column Link cards (image 16:11 Zoom In Crop, Fade In From Bottom 0/120/240)">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">03</span><span class="sgp-mono">Pagalba</span><span class="sgp-wp__rule"></span></div>
+    <div class="sk-help__head">
+      <div>
+        <h2 class="sgp-d2" data-split>Neradote siuntos kodo?</h2>
+        <p class="sgp-lead sgp-fg2" data-reveal>Paskambinkite – pasakysime, kur Jūsų siunta.</p>
+      </div>
+      <div class="sk-help__calls" data-reveal style="--dl:.1s">
+        <a class="sgp-callbtn" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Airiją</span><span class="sgp-callbtn__n">+370 650 53161</span></span></a>
+        <a class="sgp-callbtn" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Ispaniją</span><span class="sgp-callbtn__n">+370 638 28919</span></span></a>
+      </div>
+    </div>
+    <div class="sgp-cols sk-cards" style="--cols:3" data-stagger="120">
+      <a class="sgp-card" href="{{url:siuntu-pristatymas}}" data-reveal>
+        <figure class="sgp-card__img sgp-grade" data-mask>{{img:13456097|w=760|sizes=(min-width:1000px) 30vw, (min-width:691px) 46vw, 100vw}}<i class="sgp-ov"></i></figure>
+        <div class="sgp-card__body"><p class="sgp-card__no sgp-mono">Paslauga</p><h3 class="sgp-card__t">Siuntų pristatymas</h3><p class="sgp-card__s">Siuntiniai paimami iš siuntėjų ir atiduodami gavėjams į rankas.</p><span class="sgp-card__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+      </a>
+      <a class="sgp-card" href="{{url:grafikas}}" data-reveal>
+        <figure class="sgp-card__img sgp-grade" data-mask>{{img:36383706|w=760|sizes=(min-width:1000px) 30vw, (min-width:691px) 46vw, 100vw}}<i class="sgp-ov"></i></figure>
+        <div class="sgp-card__body"><p class="sgp-card__no sgp-mono">Grafikas</p><h3 class="sgp-card__t">Pervežimų grafikas</h3><p class="sgp-card__s">Artimiausios išvykimo datos abiem kryptimis.</p><span class="sgp-card__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+      </a>
+      <a class="sgp-card" href="{{url:taisykles}}" data-reveal>
+        <figure class="sgp-card__img sgp-grade" data-mask>{{img:6169133|w=760|sizes=(min-width:1000px) 30vw, (min-width:691px) 46vw, 100vw}}<i class="sgp-ov"></i></figure>
+        <div class="sgp-card__body"><p class="sgp-card__no sgp-mono">Taisyklės</p><h3 class="sgp-card__t">Siuntų siuntimo taisyklės</h3><p class="sgp-card__s">Tikrinimas, siuntėjo garantija, vežėjo atsakomybė, draudžiami daiktai, baudos ir pretenzijos.</p><span class="sgp-card__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
+      </a>
+    </div>
+  </div>
+</section>

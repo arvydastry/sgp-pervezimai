@@ -1,0 +1,1733 @@
+{
+  "_doc": "11 service pages (dizaino-sistema.md §6.5). Order = live tile order. Foundation filled: slug, no, name, h1, title (live, 'Gyvunų' fixed), meta (live; automobiliu/keleiviu NEW per §6.12), card + chips (home road §6.1 S3), card_media/card_crop/hover_video (home road), hero, why_media, next, lead (Santrauka verbatim), submenu. Services team (pages-service-template) filled the content fields: kv, routes, intro (HTML allowed: <b>, <a href=\"{{url:key}}\">), steps [{t,d,img,link?}] (3 stations „Paėmimas → Kelyje → Pristatymas“; steps_title overrides the label), why [{b = bold first sentence, t = rest, m = why_media index | img = extra media id, flag = note for the WP developer}], specials [{type, place: apie|why|row|aside|atsak-end, …}], resp_lead, responsibilities [{title, text[]}], prohibited ({lead[], items[] | \"P\", tail, note[]} | \"P\" | null; \"P\" = shared.prohibited_p), statement, closing (+ closing_more, closing_marks = phrases underlined), related [3 slugs]. src/templates/paslauga.py renders them. Groups = /pervezimo-paslaugos/ stacked groups + header mega menu (§6.3).",
+  "groups": [
+    {
+      "key": "kroviniai",
+      "name": "Kroviniai",
+      "media": "34585120",
+      "services": [
+        "kroviniu-pervezimas",
+        "negabaritiniu-kroviniu-pervezimas",
+        "daliniu-kroviniu-gabenimas"
+      ]
+    },
+    {
+      "key": "daiktai",
+      "name": "Daiktai ir perkraustymas",
+      "media": "7464731",
+      "lead": "Jei į kitą šalį norite gabenti didesnį ar mažesnį daiktą, siūlome susisiekti su mumis – pasiūlysime optimaliausią variantą.",
+      "services": [
+        "daiktu-pervezimas",
+        "perkraustymo-paslaugos"
+      ]
+    },
+    {
+      "key": "automobiliai",
+      "name": "Automobiliai ir motociklai",
+      "media": "29566910",
+      "services": [
+        "automobiliu-pervezimas",
+        "motociklu-pervezimas"
+      ]
+    },
+    {
+      "key": "keleiviai",
+      "name": "Keleiviai",
+      "media": "36377055",
+      "lead": "Saugumas, operatyvumas, profesionalumas, komfortas ir patogumas – tai esminiai kriterijai, kuriais grindžiama mūsų įmonės veikla ir profesionalios keleivių vežimo paslaugos.",
+      "services": [
+        "keleiviu-pervezimas"
+      ]
+    },
+    {
+      "key": "gyvunai",
+      "name": "Gyvūnai",
+      "media": "3868901",
+      "lead": "Mikroautobusu pervežame visus naminius gyvūnus: katinus, šunis, žiurkėnus, jūrų kiaulytes, triušiukus, papūgas ar kitus paukščius ir kt.",
+      "services": [
+        "gyvunu-pervezimas"
+      ]
+    },
+    {
+      "key": "siuntos",
+      "name": "Siuntos",
+      "media": "4487517",
+      "lead": "Skubus siuntų pristatymas į namus – paslauga, garantuojanti didžiausią patogumą ir siuntėjui, ir gavėjui.",
+      "services": [
+        "siuntu-pervezimas",
+        "siuntu-pristatymas"
+      ]
+    }
+  ],
+  "services": [
+    {
+      "slug": "kroviniu-pervezimas",
+      "no": "01",
+      "name": "Krovinių pervežimas",
+      "h1": "Krovinių pervežimas",
+      "title": "Krovinių pervežimas, gabenimas Europoje | sgp-pervezimai.lt",
+      "meta": "Saugus krovinių pervežimas, gabenimas mikroautobusais. Domina baldų, daiktų pervežimo paslaugos Europoje? Susisiekite jau dabar!",
+      "card": "Į Airiją, Ispaniją, Vokietiją bei Prancūziją ir atgal – saugiai, greitai, patikimai.",
+      "chips": [
+        "Nuo durų iki durų",
+        "Kroviniai apdrausti"
+      ],
+      "card_media": "38927007",
+      "card_crop": "50% 60%",
+      "hover_video": null,
+      "hero": {
+        "type": "photo",
+        "id": "38927007",
+        "crop": "50% 60%"
+      },
+      "why_media": [
+        "17720190",
+        "31570314",
+        "2449454"
+      ],
+      "next": "negabaritiniu-kroviniu-pervezimas",
+      "lead": "Krovinių pervežimas į Airiją, Ispaniją, Vokietiją bei Prancūziją ir atgal – saugiai, greitai, patikimai.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Kliento atsakomybės",
+        "Draudžiami daiktai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Airija, Ispanija, Vokietija, Prancūzija – ir atgal"
+        },
+        {
+          "k": "Kelyje",
+          "v": "apie 3–4 paros nuo paėmimo dienos"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "nuo durų iki durų"
+        },
+        {
+          "k": "Įsipareigojimas siuntoms",
+          "v": "per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)"
+        },
+        {
+          "k": "Svarbu",
+          "v": "Krovinius iškrauname, jei tam nereikalinga speciali technika."
+        }
+      ],
+      "routes": [
+        "Krovinių pervežimas į Airiją",
+        "Krovinių pervežimas iš Airijos",
+        "Krovinių pervežimas iš Ispanijos",
+        "Krovinių pervežimas į Ispaniją",
+        "Krovinių pervežimas į Vokietiją",
+        "Krovinių pervežimas iš Vokietijos"
+      ],
+      "intro": [
+        "Jei norite į kitą šalį Europoje išsiųsti krovinį, siūlome pasitikėti mumis. Krovinių pervežimas į Airiją, Ispaniją, Vokietiją bei Prancūziją ir atgal – saugiai, greitai, patikimai. „SGP pervežimai“ – įmonė, orientuota į atsakingą veiklą, sąžiningumą, klientų poreikių patenkinimą bei saugumą ir patikimumą kelyje. Vertiname Jūsų pasitikėjimą, todėl nenustojame augti ir tobulinti savo paslaugų.",
+        "Mūsų įmonės įkainiai rinkoje labai patrauklūs. Rūpinamės savo klientais ir esame suinteresuoti plėsti jų ratą, todėl visada siūlome geriausią kokybės ir kainos santykį."
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Iš Jūsų nurodytos vietos – nuo durų iki durų.",
+          "img": "2449454"
+        },
+        {
+          "t": "Kelyje apie 3–4 paras",
+          "d": "Skaičiuojama nuo paėmimo dienos. Kroviniai apdrausti.",
+          "img": "1696742"
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Iškrauname, jei tam nereikalinga speciali technika.",
+          "img": "38927007"
+        }
+      ],
+      "why": [
+        {
+          "b": "Užtikriname, kad krovinių pervežimas Europoje bus sklandus, saugus, krovinys greitai ir patrauklia kaina pasieks gavėją kitoje šalyje.",
+          "t": "Automobilių, baldų ir kitų daiktų gabenimas Europoje – tik techniškai tvarkingomis, naujomis transporto priemonėmis.",
+          "m": 0
+        },
+        {
+          "b": "Tikriausiai nė nereikia sakyti, kad transporto priemonė yra reikšmingas kriterijus kelionės kontekste, juo labiau ilgos kelionės.",
+          "t": "Gabenimas nauju mikroautobusu leidžia klientams garantuoti jų daiktų saugumą. Kelionei renkamės geriausius maršrutus, tvarkingus kelius, kuriais važiuojant nelieka rizikos, kad kroviniai bus apgadinti. Krovinių pervežimas tvarkingu mikroautobusu, vairuojant atsakingiems ir solidžią patirtį turintiems vairuotojams, važiavimas geriausiu parinktu maršrutu – tai aspektai, garantuojantys transportavimo sėkmę ir augantį lojalių klientų ratą.",
+          "m": 1
+        },
+        {
+          "b": "Svarbu žinoti, kad krovinių pervežimas vyksta nuo durų iki durų – taip taupome Jūsų laiką, garantuojame patogumą, užtikriname mažiausią siuntų pasimetimo riziką.",
+          "t": "",
+          "m": 2
+        }
+      ],
+      "specials": [
+        {
+          "type": "pack",
+          "place": "row",
+          "id": "pakavimas",
+          "label": "Pakavimas",
+          "h2": "Esminės krovinių pakavimo taisyklės",
+          "lead": "Krovinių pervežimas – procesas, kurio sklandumas priklauso ne tik nuo mūsų pastangų, bet ir nuo klientų indėlio. Siekdami sklandžios savo krovinio kelionės klientai turi pasirūpinti tinkamu transportuojamų daiktų įpakavimu.",
+          "items": [
+            {
+              "t": "Nauja, standi pakuotė",
+              "d": "Pakuotei naudokite tik naujas, standžias, nepažeistas dėžes ar kitas pakuotes."
+            },
+            {
+              "t": "Užpildas ertmėms",
+              "d": "Negailėkite specialios medžiagos tuščioms ertmėms užpildyti, kad siunčiami daiktai dėžėje ar kitoje pakuotėje būtų supakuoti standžiai, neslankiotų, nesiliestų prie pakuotės šonų."
+            },
+            {
+              "t": "Lipni juosta per perimetrą",
+              "d": "Negailėkite ir lipnios juostos dėžei ar kitai pakuotei užklijuoti – ja keliose vietose apvyniokite dėžę ar kitą pakuotę per visą jos perimetrą."
+            },
+            {
+              "t": "Adresas matomoje vietoje",
+              "d": "Pasirūpinkite, kad adresas būtų užrašytas matomoje vietoje, ten, kur nekyla rizika nusitrinti, nuplyšti."
+            }
+          ]
+        }
+      ],
+      "responsibilities": [
+        {
+          "title": "Atsakomybė už pakuotę",
+          "text": [
+            "Jei dėl netinkamos krovinio pakuotės jos turinys yra apgadinamas arba apgadinami kiti kroviniai, atsakomybė už tai tenka klientui."
+          ]
+        },
+        {
+          "title": "Iškrovimas",
+          "text": [
+            "Krovinius iškrauname, jei tam nereikalinga speciali technika. Jei tokia reikalinga, tuo turi pasirūpinti klientas."
+          ]
+        },
+        {
+          "title": "Tranzito šalių teisės aktai",
+          "text": [
+            "Labai svarbu atsižvelgti ir į šalyse, per kurias keliaus krovinys, galiojančius teisės aktus bei draudžiamus į jas įvežti daiktus. Jei kyla abejonių, nes nežinote tų šalių teisės aktų, susisiekite su mumis – pakonsultuosime."
+          ]
+        }
+      ],
+      "prohibited": {
+        "lead": [
+          "Jūs, mūsų klientai, esate atsakingi už savo krovinio, kurį perduodate mums transportuoti, turinį. <b>Būtinai paskaitykite draudžiamų siųsti daiktų sąrašą. Į jį įeina:</b>"
+        ],
+        "items": [
+          "vertingi daiktai, pavyzdžiui, pinigai, čekiai, juvelyriniai dirbiniai, brangakmeniai, taurieji metalai, loterijos bilietai, diplomai ir pan.",
+          "sprogiosios, degiosios, radioaktyviosios bei kitos pavojingos medžiagos, aerozoliai",
+          "ginklai, amunicija",
+          "greitai gendantys maisto produktai, pavyzdžiui, žalia mėsa"
+        ],
+        "tail": "",
+        "note": [
+          "Šis sąrašas nėra baigtinis. Jei nežinote, ar planuojami siųsti daiktai nėra įtraukti į draudžiamų pervežti daiktų sąrašą, visada galite pasikonsultuoti su mumis – patarsime ir atsakysime į iškilusius klausimus. Mums svarbus klientų informuotumas, nes taip galime užtikrinti, kad krovinių pervežimas bus sklandus ir saugus."
+        ]
+      },
+      "closing": "Visi mūsų gabenami kroviniai kelionės metu yra apdrausti.",
+      "closing_marks": [
+        "gabenami kroviniai",
+        "yra apdrausti"
+      ],
+      "related": [
+        "daliniu-kroviniu-gabenimas",
+        "daiktu-pervezimas",
+        "perkraustymo-paslaugos"
+      ]
+    },
+    {
+      "slug": "negabaritiniu-kroviniu-pervezimas",
+      "no": "02",
+      "name": "Negabaritinių krovinių pervežimas",
+      "h1": "Negabaritinių krovinių pervežimas",
+      "title": "Negabaritinių krovinių pervežimas, gabenimas mikroautobusais | sgp-pervezimai.lt",
+      "meta": "Negabaritinių krovinių pervežimas, gabenimas mikroautobusais Europoje. Maršrutai: Lietuva, Prancūzija, Ispanija, Airija ir kitos šalys.",
+      "card": "Kroviniai, kurių matmenys didesni, nei leidžiama šalyse, per kurias jie keliauja.",
+      "chips": [
+        "Išankstinis planavimas",
+        "Nuo durų iki durų"
+      ],
+      "card_media": "35332902",
+      "card_crop": "50% 50%",
+      "hover_video": "19552565",
+      "hero": {
+        "type": "photo",
+        "id": "35332902",
+        "crop": "50% 50%"
+      },
+      "why_media": [
+        "38095094",
+        "31570314",
+        "12418936"
+      ],
+      "next": "daliniu-kroviniu-gabenimas",
+      "lead": "Negabaritinių krovinių pervežimas – išskirtinė krovinių pervežimo paslauga, reikalaujanti specialių žinių, atitinkamos technikos, išankstinio planavimo, tam tikrų leidimų.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Kliento atsakomybės",
+        "Draudžiami daiktai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Lietuva, Prancūzija, Ispanija, Airija"
+        },
+        {
+          "k": "Kelyje",
+          "v": "reikia išankstinio planavimo"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "nuo durų iki durų"
+        },
+        {
+          "k": "Svarbu",
+          "v": "Iškrovimo technika – kliento atsakomybė"
+        }
+      ],
+      "routes": [
+        "Pavojingų krovinių pervežimas",
+        "Didelių krovinių pervežimas"
+      ],
+      "intro": [
+        "Negabaritinių krovinių pervežimas – išskirtinė krovinių pervežimo paslauga, reikalaujanti specialių žinių, atitinkamos technikos, išankstinio planavimo, tam tikrų leidimų. Jei Jums aktualus tokių krovinių gabenimas Europoje, siūlome pasitikėti mūsų komanda – užtikriname, kad negabaritinių krovinių pervežimas bus sklandus ir be rūpesčių."
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Iš Jūsų nurodytos vietos – nuo durų iki durų.",
+          "img": "38095094"
+        },
+        {
+          "t": "Išankstinis planavimas",
+          "d": "Specialūs leidimai ir atitinkama technika.",
+          "img": "1696742"
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Gavėjas sutartu laiku laukia atsiėmimo vietoje.",
+          "img": "35332902"
+        }
+      ],
+      "why": [
+        {
+          "b": "Ilgametė patirtis, sukauptos žinios leidžia siūlyti tokią atsakingą paslaugą ir užtikrinti, kad suteiksime ją aukščiausios kokybės.",
+          "t": "Negabaritinių <a href=\"{{url:kroviniu-pervezimas}}\">krovinių pervežimas Europoje</a>, kaip ir pavojingų krovinių vežimas, reikalauja techniškai tvarkingų transporto priemonių, atsakingų ir patyrusių vairuotojų, specialių leidimų bei išankstinio planavimo. Žinome visus niuansus, todėl drąsiai priimame šiuos iššūkius ir sėkmingai juos įgyvendiname.",
+          "m": 0
+        },
+        {
+          "b": "Negabaritinius krovinius transportuojame į Lietuvą, į Prancūziją, į Ispaniją, į Airiją.",
+          "t": "Dar vienas privalumas – patraukli kaina. Ne paslaptis, negabaritinių krovinių gabenimas yra brangi paslauga. Siekdami ją padaryti prieinamą klientams siūlome puikų kainos ir kokybės santykį.",
+          "m": 1
+        },
+        {
+          "b": "Negabaritinių krovinių pervežimas vykdomas tik naujais mikroautobusais.",
+          "t": "Itin preciziškai rūpinamės savo transporto priemonių technine būkle, patikimumu.",
+          "m": 2,
+          "flag": "§8.3 #8 – transporto teiginys laukia kliento patvirtinimo"
+        },
+        {
+          "b": "Negabaritiniai kroviniai pristatomi vadovaujantis principu nuo durų iki durų.",
+          "t": "Tai leidžia klientui garantuoti patogumą, taupyti jo laiką ir užtikrinti krovinio saugumą.",
+          "img": "35332902"
+        }
+      ],
+      "specials": [
+        {
+          "type": "define",
+          "place": "apie",
+          "k": "Apibrėžimas",
+          "text": "Negabaritiniai kroviniai yra tokie kroviniai, kurių matmenys yra didesni negu didžiausi leidžiami tose šalyse, per kurias tie kroviniai keliauja.",
+          "video": "19552565"
+        }
+      ],
+      "responsibilities": [
+        {
+          "title": "Gavėjas sutartu laiku",
+          "text": [
+            "Tiesa, labai svarbu, kad krovinio gavėjas sutartu laiku būtų atsiėmimo vietoje – kitu atveju pakartotinis krovinio pristatymas bus apmokestinamas papildomai."
+          ]
+        },
+        {
+          "title": "Iškrovimas",
+          "text": [
+            "Paprastai negabaritinių krovinių pervežimas, taip pat ir pavojingų krovinių vežimas reikalauja specialios technikos kroviniui iškrauti. Tai – kliento atsakomybė."
+          ]
+        }
+      ],
+      "prohibited": "P",
+      "closing": "Negabaritinių krovinių pervežimas Europoje su „SGP pervežimai“ – tik techniškai tvarkingais mikroautobusais, su vairuotojais, puikiai išmanančiais, kas yra negabaritinių krovinių gabenimas, itin gera kaina, visada patikimai ir saugiai.",
+      "closing_marks": [
+        "tik techniškai tvarkingais mikroautobusais",
+        "visada patikimai ir saugiai"
+      ],
+      "related": [
+        "kroviniu-pervezimas",
+        "automobiliu-pervezimas",
+        "perkraustymo-paslaugos"
+      ]
+    },
+    {
+      "slug": "daliniu-kroviniu-gabenimas",
+      "no": "03",
+      "name": "Dalinių krovinių gabenimas",
+      "h1": "Dalinių krovinių gabenimas",
+      "title": "Dalinių krovinių gabenimas | sgp-pervezimai.lt",
+      "meta": "Profesionalus dalinių krovinių gabenimas Europoje. Iš/į Vokietiją, Prancūziją, Ispaniją ir kitas šalis. Rinkitės saugias paslaugas – sgp-pervezimai.lt. Susisiekime!",
+      "card": "Dalinių krovinių gabenimas yra puikus būdas klientams sutaupyti.",
+      "chips": [
+        "Mokate mažiau",
+        "Nuo durų iki durų"
+      ],
+      "card_media": "29786116",
+      "card_crop": "50% 50%",
+      "hover_video": null,
+      "hero": {
+        "type": "photo",
+        "id": "29786116",
+        "crop": "50% 50%"
+      },
+      "why_media": [
+        "34585120",
+        "12418936",
+        "6169133"
+      ],
+      "next": "daiktu-pervezimas",
+      "lead": "Dalinių krovinių gabenimas yra puikus būdas klientams sutaupyti.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Kliento atsakomybės",
+        "Draudžiami daiktai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Vokietija, Prancūzija, Ispanija, Airija – į ir iš"
+        },
+        {
+          "k": "Kelyje",
+          "v": "apie 3–4 paros nuo paėmimo dienos"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "nuo durų iki durų"
+        },
+        {
+          "k": "Įsipareigojimas siuntoms",
+          "v": "per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)"
+        },
+        {
+          "k": "Svarbu",
+          "v": "Papildomas krovinio atvežimas bus apmokestinamas."
+        }
+      ],
+      "routes": [
+        "Smulkių krovinių pervežimas"
+      ],
+      "intro": [
+        "Dalinių krovinių gabenimas yra puikus būdas klientams sutaupyti. Kaip? Dalinis krovinys yra toks krovinys, kuris neužima visos transporto priemonėje kroviniams skirtos erdvės. Taip susidaro galimybė viena transporto priemone gabenti kelių klientų krovinius, o patiems klientams už vežimo paslaugą mokėti mažiau.",
+        "Kai vykdomas dalinių krovinių gabenimas, tai klientas neužsako visos erdvės transporto priemonėje, o dalijasi ja su kitu klientu ar net keliais klientais. Jūsų krovinys patenka į dalinių krovinių kategoriją? Tuomet siūlome savo paslaugas ir užtikriname, kad krovinys bus patikimose rankose bei sėkmingai pasieks kelionės tikslą!"
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Iš Jūsų nurodytos vietos – nuo durų iki durų.",
+          "img": "34585120"
+        },
+        {
+          "t": "Kelyje apie 3–4 paras",
+          "d": "Viena transporto priemonė – kelių klientų kroviniai.",
+          "img": "1696742"
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Gavėjas sutartu laiku laukia atsiėmimo vietoje.",
+          "img": "12418936"
+        }
+      ],
+      "why": [
+        {
+          "b": "Dalinių krovinių gabenimas Europoje vykdomas tose šalyse, į kurias orientuota mūsų veikla.",
+          "t": "Toks pasirinkimas leidžia dirbti tikslingiau ir krovinius pristatyti sparčiau. Mūsų įmonė vykdo dalinių krovinių gabenimą į Vokietiją ir iš Vokietijos, į Prancūziją ir iš Prancūzijos, į Ispaniją ir iš Ispanijos bei į Airiją ir iš Airijos.",
+          "m": 0
+        },
+        {
+          "b": "Dalinių krovinių gabenimas vykdomas tik naujais, techniškai tvarkingais mikroautobusais.",
+          "t": "Transporto priemones prižiūrime itin preciziškai. Taip pat dalinių krovinių gabenimas patikimas profesionaliems, atsakingiems vairuotojams, kurie sudaro mūsų komandą. Patirtis kelionėse tarptautiniais maršrutais, žinios ir atsidavimas darbui leidžia pasiekti geriausius rezultatus ir užtikrinti aukštos kokybės paslaugas.",
+          "m": 1
+        },
+        {
+          "b": "Dalinių krovinių pervežimas Europoje – nuo durų iki durų.",
+          "t": "Toks principas sudaro galimybę taupyti klientų laiką, optimizuoti gabenimo procesą ir užtikrinti, kad siuntinys nepasimes.",
+          "m": 2
+        }
+      ],
+      "specials": [
+        {
+          "type": "bays",
+          "place": "apie",
+          "title": "Kaip veikia dalinis krovinys",
+          "caption": "Dalinis krovinys yra toks krovinys, kuris neužima visos transporto priemonėje kroviniams skirtos erdvės.",
+          "legend": [
+            "Jūsų krovinys",
+            "Kitų klientų kroviniai"
+          ]
+        }
+      ],
+      "responsibilities": [
+        {
+          "title": "Pakavimas ir adresai",
+          "text": [
+            "Dalinių krovinių gabenimas bus sklandus, jei prie šio proceso prisidės ir klientas. Pirmiausia, Jūsų atsakomybė – tinkamai ir vadovaujantis taisyklėmis supakuoti savo krovinį. Kitas aspektas – būtina labai tiksliai užrašyti siuntėjo ir gavėjo adresą."
+          ]
+        },
+        {
+          "title": "Gavėjas sutartu laiku",
+          "text": [
+            "Atsiėmimo vietoje sutartu laiku turi būti gavėjas. Papildomas krovinio atvežimas bus apmokestinamas."
+          ]
+        }
+      ],
+      "prohibited": {
+        "lead": [
+          "Įsitikinkite, kad nesiunčiate draudžiamų siųsti daiktų. Į šį sąrašą patenka:"
+        ],
+        "items": [
+          "vertingi daiktai",
+          "ginklai",
+          "sprogiosios, degiosios ir kitos pavojingos medžiagos",
+          "alkoholis",
+          "tabakas ir jo gaminiai",
+          "narkotinės medžiagos",
+          "itin sparčiai gendantys maisto produktai"
+        ],
+        "tail": "ir kt.",
+        "note": [
+          "Jei abejojate, visada galite susisiekti su mumis – atsakysime į rūpimus klausimus."
+        ]
+      },
+      "closing": "Dalinių krovinių pervežimas Europoje su „SGP pervežimai“ – profesionalios gabenimo paslaugos naujais, techniškai tvarkingais mikroautobusais, su atsakingu vairuotoju, geriausia kaina, patikimai ir saugiai.",
+      "closing_marks": [
+        "techniškai tvarkingais mikroautobusais",
+        "geriausia kaina"
+      ],
+      "related": [
+        "kroviniu-pervezimas",
+        "siuntu-pervezimas",
+        "negabaritiniu-kroviniu-pervezimas"
+      ]
+    },
+    {
+      "slug": "daiktu-pervezimas",
+      "no": "04",
+      "name": "Daiktų pervežimas",
+      "h1": "Daiktų pervežimas",
+      "title": "Daiktų pervežimas, perkraustymas | sgp-pervezimai.lt",
+      "meta": "Daiktų pervežimas, perkraustymas kelių transportu į užsienį. Paslaugos vykdomos iš/į Vokietiją, Prancūziją, Ispaniją ir kitas šalis. Susisiekime!",
+      "card": "Langai, žoliapjovės, buitinė įranga ir kiti didesni ar mažesni daiktai.",
+      "chips": [
+        "Apie 3–4 paros",
+        "Nuo durų iki durų"
+      ],
+      "card_media": "36933446",
+      "card_crop": "50% 50%",
+      "hover_video": null,
+      "hero": {
+        "type": "photo",
+        "id": "36933446",
+        "crop": "50% 50%"
+      },
+      "why_media": [
+        "9185835",
+        "6407553",
+        "7464731"
+      ],
+      "next": "automobiliu-pervezimas",
+      "lead": "Jei į kitą šalį norite gabenti didesnį ar mažesnį daiktą, siūlome susisiekti su mumis – pasiūlysime optimaliausią variantą.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Kliento atsakomybės",
+        "Draudžiami daiktai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Vokietija, Prancūzija, Ispanija, Airija – į ir iš"
+        },
+        {
+          "k": "Kelyje",
+          "v": "apie 3–4 paros (skaičiuojama nuo siuntos paėmimo dienos)"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "nuo durų iki durų, be perdavimo keliems vežėjams"
+        },
+        {
+          "k": "Įsipareigojimas siuntoms",
+          "v": "per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)"
+        },
+        {
+          "k": "Svarbu",
+          "v": "Daiktų supakavimas yra kliento atsakomybė."
+        }
+      ],
+      "routes": [
+        "Daiktų pervežimas į Airiją"
+      ],
+      "intro": [
+        "Įvairiausi daiktai siuntose keliauja kiekvieną dieną įvairiomis transporto priemonėmis galybe maršrutų po visą pasaulį. Jei į kitą šalį norite gabenti didesnį ar mažesnį daiktą, siūlome susisiekti su mumis – pasiūlysime optimaliausią variantą. Mūsų paslaugos orientuotos į kelias šalis Europoje, todėl galime dirbti operatyviai ir tikslingai. Daiktų gabenimas kelių transportu vykdomas į Vokietiją ir iš Vokietijos, į Prancūziją ir iš Prancūzijos, į Ispaniją ir iš Ispanijos bei į Airiją ir iš Airijos. Jei Jums aktualus perkraustymas, įvairių daiktų pervežimas, pasiūlysime geriausią sprendimą."
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Iš Jūsų nurodytos vietos – nuo durų iki durų.",
+          "img": "9185835"
+        },
+        {
+          "t": "Kelyje apie 3–4 paras",
+          "d": "Be perdavimo keliems vežėjams.",
+          "img": "1696742"
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Gavėjui kitoje šalyje.",
+          "img": "7464731"
+        }
+      ],
+      "why": [
+        {
+          "b": "Daiktų pervežimo paslaugos apima itin platų spektrą, pavyzdžiui, langų, žoliapjovių, buitinės įrangos ir kitų daiktų gabenimą.",
+          "t": "Visai mažų, nedidelių, vidutinio dydžio bei didesnių daiktų pervežimas leidžia paprastai ir gera kaina keistis daiktais tarp skirtingose šalyse įsikūrusių fizinių asmenų ir verslo subjektų.",
+          "m": 0
+        },
+        {
+          "b": "Buitinės įrangos pervežimas, perkraustymas ir smulkios siuntos yra vienos paklausiausių paslaugų, kalbant apie daiktų gabenimą Europoje.",
+          "t": "Patirtis <a href=\"{{url:tarptautiniai}}\">tarptautinių pervežimų</a> rinkoje, sukauptos žinios, puikus įstatymų žinojimas, atsakingi ir skrupulingi vairuotojai yra mūsų veiklos stipriosios pusės, leidžiančios klientams garantuoti aukščiausios kokybės paslaugas.",
+          "m": 1
+        },
+        {
+          "b": "Daiktų pervežimas vykdomas tik techniškai tvarkingais, naujais mikroautobusais.",
+          "t": "Mums svarbu, kad transportavimo proceso nesutrikdytų netikėtos kliūtys ar dėl gedimų iškilusios problemos, todėl to išvengiame užbėgdami įvykiams už akių.",
+          "img": "36933446"
+        },
+        {
+          "b": "Daiktų pervežimas į užsienį kelių transportu trunka apie 3–4 paras (skaičiuojama nuo siuntos paėmimo dienos).",
+          "t": "Krovinius pristatome nuo durų iki durų – tai leidžia taupyti klientų laiką ir užtikrinti siuntinių saugumą, pašalinti jų pasimetimo riziką, ko neretai neišvengiama, jei siunta keliauja per kelis vežėjus.",
+          "m": 2
+        }
+      ],
+      "specials": [
+        {
+          "type": "tags",
+          "place": "apie",
+          "k": "Pavyzdžiui",
+          "items": [
+            "Langai",
+            "Žoliapjovės",
+            "Buitinė įranga",
+            "Smulkios siuntos"
+          ]
+        }
+      ],
+      "responsibilities": [
+        {
+          "title": "Pakavimas",
+          "text": [
+            "Daiktų pervežimas – procesas, kurio sėkmė priklauso ir nuo paties kliento. Pavyzdžiui, daiktų supakavimas yra kliento atsakomybė. Siūlome atsižvelgti į tokius reikalavimus kaip naujų ir tvirtų pakuočių naudojimas, siunčiamų daiktų pakavimas tik į jiems tinkamas pakuotes, taip pat svarbu negailėti tuščiai dėžės ertmei užpildyti skirtos medžiagos."
+          ]
+        }
+      ],
+      "prohibited": {
+        "lead": [
+          "Kitas aspektas – draudžiami siųsti daiktai. Daiktų pervežimas neapima tų daiktų, kurių gabenimas draudžiamas įstatymais (pavyzdžiui, ginklų, alkoholio, didelės vertės daiktų, pavojingų medžiagų ir pan.). Jei nežinote, ar Jūsų planuojami siųsti daiktai neįtraukti į draudžiamų siųsti daiktų sąrašą, galite susisiekti su mumis – visada patarsime ir atsakysime į iškilusius klausimus."
+        ],
+        "items": "P"
+      },
+      "closing": "Daiktų pervežimas į užsienį kelių transportu su „SGP pervežimai“ – tvarkingais ir patikimais mikroautobusais, geriausia kaina, operatyviai ir saugiai.",
+      "closing_marks": [
+        "tvarkingais ir patikimais mikroautobusais",
+        "operatyviai ir saugiai"
+      ],
+      "related": [
+        "perkraustymo-paslaugos",
+        "siuntu-pervezimas",
+        "daliniu-kroviniu-gabenimas"
+      ]
+    },
+    {
+      "slug": "automobiliu-pervezimas",
+      "no": "05",
+      "name": "Automobilių pervežimas",
+      "h1": "Automobilių pervežimas",
+      "title": "Automobilių pervežimas, gabenimas | sgp-pervezimai.lt",
+      "meta": "Automobilių pervežimas traliuku tarp Lietuvos, Vokietijos, Airijos ir Ispanijos. Kelionė – apie 3–4 paros, pristatymas sutartu laiku.",
+      "card": "Automobilius gabename traliuku – iš Airijos, Ispanijos, Vokietijos ir į jas.",
+      "chips": [
+        "Traliuku",
+        "Apie 3–4 paros"
+      ],
+      "card_media": "29566910",
+      "card_crop": "50% 50%",
+      "hover_video": "34371915",
+      "hero": {
+        "type": "photo",
+        "id": "29566910",
+        "crop": "50% 50%"
+      },
+      "why_media": [
+        "29566910",
+        "1606957",
+        "1696742"
+      ],
+      "next": "motociklu-pervezimas",
+      "lead": "Jei įsigijote automobilį svečioje šalyje ir norite jį atsigabenti namo arba patys pardavėte automobilį ir turite jį pristatyti pirkėjui į kitą šalį, siūlome savo paslaugas ir garantuojame saugų bei kokybišką automobilio pervežimą.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Kliento atsakomybės",
+        "Draudžiami daiktai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Vokietija, Airija, Ispanija, Lietuva – į ir iš"
+        },
+        {
+          "k": "Kelyje",
+          "v": "traliuku apie 3–4 paros"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "sutartu laiku į nurodytą vietą"
+        },
+        {
+          "k": "Svarbu",
+          "v": "Jei gavėjo nerandame, pakartotinis atvažiavimas apmokestinamas papildomai."
+        }
+      ],
+      "routes": [
+        "Automobilių pervežimas iš Airijos",
+        "Automobilių pervežimas iš Ispanijos",
+        "Automobilių pervežimas iš Vokietijos"
+      ],
+      "intro": [
+        "<b>Automobilių pervežimas</b> Europoje – labai populiari paslauga logistikos sektoriuje. Jei įsigijote automobilį svečioje šalyje ir norite jį atsigabenti namo arba patys pardavėte automobilį ir turite jį pristatyti pirkėjui į kitą šalį, siūlome savo paslaugas ir garantuojame saugų bei kokybišką automobilio pervežimą. Savo veiklą orientuojame į kelias šalis, todėl dirbame tikslingai ir žinome visus su automobilių gabenimu iš šių šalių bei į jas susijusius aspektus. Automobilių gabenimas – paprastai ir greitai.",
+        "Vežame automobilius iš Vokietijos ir į Vokietiją, iš Lietuvos bei į Lietuvą, taip pat mūsų paslaugų spektre yra: automobilių pervežimas iš Airijos ir į Airiją, automobilių pervežimas iš Ispanijos ir į Ispaniją. Tikriausiai nenustebinsime pasakę, kad daugiausia populiarumo sulaukia automobilių pervežimas iš Vokietijos ir į Vokietiją, kadangi vokiški automobiliai pelnę daugelio vairuotojų simpatijas."
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Iš nurodytos vietos.",
+          "img": "29566910"
+        },
+        {
+          "t": "Kelyje apie 3–4 paras",
+          "d": "Traliuku – specialiu transportu.",
+          "img": "1606957"
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Sutartu laiku į nurodytą vietą.",
+          "img": "1696742"
+        }
+      ],
+      "why": [
+        {
+          "b": "Automobilių pervežimas Europoje – gabename traliuku, patikimomis, naujomis ir techniškai tvarkingomis transporto priemonėmis.",
+          "t": "Jų priežiūra rūpinamės itin dėmesingai, nes saugumas kelyje – labai reikšminga vertybė, kurią deklaruojame.",
+          "m": 0
+        },
+        {
+          "b": "Operatyvumas – vienas esminių mūsų veiklos kriterijų.",
+          "t": "Automobilių pervežimas Europoje traliuku trunka apie 3–4 paras.",
+          "m": 1
+        },
+        {
+          "b": "Automobilių gabenimas – viena iš mūsų veiklos sričių, todėl žinome visus niuansus, susijusius su automobilių transportavimu.",
+          "t": "Tai nėra įprastinis krovinys – automobiliams pervežti reikalingas specialus transportas (dažniausiai naudojamės traliuku), teisės aktų bei kelių eismo taisyklių šalyse, kuriomis automobilis gabenamas, išmanymas. Užtikriname visus šiuos aspektus ir garantuojame, kad paslaugos yra aukščiausios kokybės.",
+          "m": 2
+        }
+      ],
+      "specials": [
+        {
+          "type": "video",
+          "place": "apie",
+          "k": "Traliuku",
+          "video": "34371915",
+          "bw": true,
+          "quote": "Tai nėra įprastinis krovinys – automobiliams pervežti reikalingas specialus transportas (dažniausiai naudojamės traliuku), teisės aktų bei kelių eismo taisyklių šalyse, kuriomis automobilis gabenamas, išmanymas."
+        }
+      ],
+      "responsibilities": [
+        {
+          "title": "Pristatymas sutartu laiku",
+          "text": [
+            "Automobilis pristatomas sutartu laiku į nurodytą paėmimo vietą. Jei gavėjo nerandame, pakartotinis atvažiavimas apmokestinamas papildomai."
+          ]
+        }
+      ],
+      "prohibited": "P",
+      "closing": "Automobilių pervežimas su „SGP pervežimai“ – tik techniškai tvarkingu, specialiu transportu, su atsakingais ir važiavimo tarptautiniais maršrutais ypatumus žinančiais vairuotojais, geriausia kaina, operatyviai ir saugiai.",
+      "closing_marks": [
+        "specialiu transportu",
+        "operatyviai ir saugiai"
+      ],
+      "related": [
+        "negabaritiniu-kroviniu-pervezimas",
+        "kroviniu-pervezimas",
+        "keleiviu-pervezimas"
+      ]
+    },
+    {
+      "slug": "motociklu-pervezimas",
+      "no": "06",
+      "name": "Motociklų pervežimas",
+      "h1": "Motociklų pervežimas",
+      "title": "Motociklų pervežimas, gabenimas | sgp-pervezimai.lt",
+      "meta": "Motociklų pervežimas, gabenimas Europoje. Motociklo transportavimas yra vykdomas iš/į Lenkiją, Vokietiją, Ispaniją, Lietuvą ir kitas šalis. Susisiekite.",
+      "card": "Iš Ispanijos, Prancūzijos, Vokietijos, Lenkijos bei Airijos – nuo durų iki durų.",
+      "chips": [
+        "3–4 paros",
+        "Nuo durų iki durų"
+      ],
+      "card_media": "4858429",
+      "card_crop": "40% 60%",
+      "hover_video": "34308329",
+      "hero": {
+        "type": "photo",
+        "id": "4858429",
+        "crop": "40% 60%"
+      },
+      "why_media": [
+        "2177200",
+        "5713164",
+        "4858429"
+      ],
+      "next": "keleiviu-pervezimas",
+      "lead": "Jei užsienyje įsigijote motociklą ir svarstote, kaip operatyviai ir gera kaina jį pargabenti į kitą norimą šalį, siūlome savo pagalbą – pasirūpinsime, kad Jūsų motociklas reikiamą vietą pasiektų operatyviai, saugiai ir patrauklia kaina.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Kliento atsakomybės",
+        "Draudžiami daiktai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "iš Ispanijos, Prancūzijos, Vokietijos, Lenkijos ir Airijos"
+        },
+        {
+          "k": "Kelyje",
+          "v": "3–4 paros nuo krovinio paėmimo dienos"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "nuo durų iki durų"
+        }
+      ],
+      "routes": [],
+      "intro": [
+        "Šiandieninės galimybės leidžia iš vienos šalies į kitą, net didžiausius atstumus, gabenti kokius tik norite daiktus: baldus, buitinę techniką, smulkias siuntas, net transporto priemones! <b>Motociklų pervežimas</b> Europoje – populiari paslauga. Jei užsienyje įsigijote motociklą ir svarstote, kaip operatyviai ir gera kaina jį pargabenti į kitą norimą šalį, siūlome savo pagalbą – pasirūpinsime, kad Jūsų motociklas reikiamą vietą pasiektų operatyviai, saugiai ir patrauklia kaina. Garantuojame, kad motociklo transportavimas nuo pradžios iki pat pabaigos bus sklandus ir be rūpesčių.",
+        "Orientuojamės į veiklą keliose Europos šalyse, tad dirbame tikslingai ir puikiai išmanome tų šalių rinką, kelių eismo taisykles, galiojančius teisės aktus. Motociklų gabenimas vykdomas iš Ispanijos, iš Prancūzijos, iš Vokietijos, iš Lenkijos bei iš Airijos."
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Iš Ispanijos, Prancūzijos, Vokietijos, Lenkijos ar Airijos.",
+          "img": "5713164"
+        },
+        {
+          "t": "Kelyje 3–4 paras",
+          "d": "Skaičiuojama nuo krovinio paėmimo dienos.",
+          "img": "2177200"
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Nuo durų iki durų.",
+          "img": "4858429"
+        }
+      ],
+      "why": [
+        {
+          "b": "Mūsų komandos teikiamos profesionalios paslaugos grindžiamos patikimumo, kokybės ir saugumo principais.",
+          "t": "Itin daug dėmesio skiriame savo transporto priemonėms – siekiame, kad į kelią jos visada išriedėtų tik nepriekaištingos techninės būklės. Motociklų pervežimas vykdomas tik geriausiais keliais, siekiant išvengti prastuose keliuose tykančių pavojų, galinčių sukliudyti sklandžiai kelionei.",
+          "m": 0
+        },
+        {
+          "b": "Nuo durų iki durų – tai principas, kuriuo vadovaujantis vykdomas motociklų gabenimas Europoje.",
+          "t": "Toks pervežimas leidžia maksimaliai taupyti klientų laiką ir suteikti daugiausia patogumo.",
+          "m": 1
+        },
+        {
+          "b": "Motociklo transportavimas trunka 3–4 paras, pradedant skaičiuoti nuo krovinio paėmimo dienos.",
+          "t": "Puikiai gebame derinti operatyvumą ir saugumą.",
+          "m": 2
+        }
+      ],
+      "specials": [
+        {
+          "type": "video",
+          "place": "apie",
+          "k": "Vežame iš",
+          "video": "34308329",
+          "chips": [
+            "Ispanija",
+            "Prancūzija",
+            "Vokietija",
+            "Lenkija",
+            "Airija"
+          ]
+        }
+      ],
+      "responsibilities": [
+        {
+          "title": "Adresai ir gavėjas",
+          "text": [
+            "Labai svarbu nurodyti tikslius siuntinio paėmimo ir pristatymo adresus Europoje. Jei sutartu laiku gavėjas arba siuntos adresatas negali atiduoti / paimti siuntos, pakartotinis mūsų atvykimas apmokestinamas."
+          ]
+        }
+      ],
+      "prohibited": "P",
+      "closing": "Motociklų pervežimas kelių transportu su „SGP pervežimai“ – tik techniškai tvarkingomis transporto priemonėmis, vairuojant atsakingiems ir ilgametę patirtį turintiems vairuotojams, itin gera kaina, operatyviai, patikimai ir saugiai.",
+      "closing_marks": [
+        "ilgametę patirtį turintiems vairuotojams",
+        "itin gera kaina"
+      ],
+      "related": [
+        "automobiliu-pervezimas",
+        "kroviniu-pervezimas",
+        "daiktu-pervezimas"
+      ]
+    },
+    {
+      "slug": "keleiviu-pervezimas",
+      "no": "07",
+      "name": "Keleivių pervežimas",
+      "h1": "Keleivių pervežimas",
+      "title": "Keleivių pervežimas | sgp-pervezimai.lt",
+      "meta": "Keleivių pervežimas mikroautobusais iš Airijos, Ispanijos, Vokietijos ir Prancūzijos. Nuo durų iki durų, keleiviai apdrausti.",
+      "card": "Atlenkiamos ir šildomos sėdynės, kondicionierius. Kelionės metu visi keleiviai apdrausti.",
+      "chips": [
+        "Keleiviai apdrausti",
+        "3–4 paros"
+      ],
+      "card_media": "36377055",
+      "card_crop": "50% 50%",
+      "hover_video": null,
+      "hero": {
+        "type": "photo",
+        "id": "27383867",
+        "crop": "50% 65%"
+      },
+      "why_media": [
+        "6720534",
+        "36383706",
+        "7541981"
+      ],
+      "next": "gyvunu-pervezimas",
+      "lead": "Jei Jums aktualus keleivių pervežimas iš Ispanijos, iš Vokietijos, iš Prancūzijos ir iš Airijos, taip pat jei prioritetą teikiate komfortui ir saugumui, siūlome savo paslaugas.",
+      "submenu": [
+        "Apie paslaugą",
+        "Principai",
+        "Patogumai",
+        "Privalumai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Ispanija, Vokietija, Prancūzija, Airija – į ir iš"
+        },
+        {
+          "k": "Kelyje",
+          "v": "3–4 paros"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "nuo durų iki durų: keleiviai paimami iš jiems patogios vietos"
+        },
+        {
+          "k": "Svarbu",
+          "v": "Kelionės metu visi keleiviai yra apdrausti."
+        }
+      ],
+      "routes": [
+        "Keleivių vežimas į Airiją",
+        "Keleivių vežimas į Ispaniją",
+        "Keleivių vežimas į Vokietiją",
+        "Keleivių vežimas į Prancūziją"
+      ],
+      "intro": [
+        "Kalbant apie pervežimo paslaugas Europoje, tai keleivių pervežimą neabejotinai reikėtų priskirti prie paklausiausių paslaugų. Didžiuliai keleivių srautai kiekvieną dieną keliauja iš įvairių šalių kelių transportu. Jei Jums aktualus keleivių pervežimas iš Ispanijos, iš Vokietijos, iš Prancūzijos ir iš Airijos, taip pat jei prioritetą teikiate komfortui ir saugumui, siūlome savo paslaugas. Orientuojamės į minėtas Europos šalis – tai leidžia dirbti kryptingai, tikslingai ir puikiai išmanyti savo darbą. Užtikriname, kad keleivių pervežimas bus aukščiausios kokybės, nes turime geriausią komandą ir labai atsakingai vertiname tokius aspektus kaip keleivių saugumas bei jų keliavimo poreikių patenkinimas."
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Iš Jums patogios vietos.",
+          "img": "27383867"
+        },
+        {
+          "t": "Kelyje 3–4 paras",
+          "d": "Atlenkiamos ir šildomos sėdynės, kondicionierius.",
+          "img": "17455631"
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Į Jūsų kelionės tikslą.",
+          "img": "160483"
+        }
+      ],
+      "why": [],
+      "specials": [
+        {
+          "type": "principles",
+          "place": "why",
+          "id": "principai",
+          "label": "Principai",
+          "h2": "Kodėl mūsų pervežimo paslaugos – geriausias sprendimas Jums?",
+          "lead": "Saugumas, operatyvumas, profesionalumas, komfortas ir patogumas – tai esminiai kriterijai, kuriais grindžiama mūsų įmonės veikla ir profesionalios keleivių vežimo paslaugos.",
+          "cards": [
+            {
+              "t": "Saugumas",
+              "img": "6720534",
+              "text": "Keleivių pervežimas bus saugus, kadangi itin preciziškai rūpinamės savo mikroautobusais. Jų techninė būklė visuomet yra ideali ir į kelią leidžiasi tik nepriekaištingai tvarkingi automobiliai."
+            },
+            {
+              "t": "Operatyvumas",
+              "img": "36383706",
+              "text": "Keleivių pervežimas Europoje trunka 3–4 paras. Garantuojame, nė nepajusite, kaip greitai prabėgs kelionės laikas. Maršrutui renkamės tik geriausius kelius – tai ne tik komfortiškas važiavimas, bet ir galimybė išvengti prastuose keliuose tykančių pavojų, kliūčių, galinčių pakenkti transporto priemonei."
+            },
+            {
+              "t": "Profesionalumas",
+              "img": "7541981",
+              "text": "Mūsų komandoje – tik patyrę ir atsakingi vairuotojai, galintys pasigirti solidžia patirtimi keliaujant tarptautiniais maršrutais. Keleivių pervežimas patikimas vairuotojams, kurie puikiai žino keleivių vežimo taisykles, kelių eismo taisykles ir visus aktualius teisės aktus atitinkamose šalyse, per kurias važiuojama."
+            },
+            {
+              "t": "Komfortas",
+              "img": "17455631",
+              "text": "Keleivius vežame tik naujais, komfortiškais mikroautobusais, kuriais važiuojant kelionė tikrai neprailgs. Patogiai jausitės keliaudami bet kuriuo metų laiku. Visi keleiviams vežti skirti mikroautobusai turi atlenkiamas sėdynes, todėl komfortiškai keliausite ir dieną, ir naktį. Galimybė reguliuoti sėdynės atlenkimo kampą bus naudinga ne tik tada, kai norėsite patogiai pamiegoti, bet ir padės išvengti nugaros skausmų, nes nesunkiai rasite Jums tinkamiausią poziciją. Šildomos sėdynės garantuos aukščiausio lygio komfortą šaltuoju metų laiku, todėl net ir esant itin šaltam orui lauke Jūs važiuosite šiltai ir jaukiai. Oro kondicionierius yra nepamainomas kelionėms vasarą, kuomet už lango lepina saulė, o termometro stulpeliai nesikuklina pakilti net labai aukštai. Mikroautobuse bus maloniai vėsu."
+            },
+            {
+              "t": "Patogumas",
+              "img": "160483",
+              "text": "Keleivių pervežimas vykdomas nuo durų iki durų, o tai reiškia, kad keleiviai paimami iš jiems patogios vietos ir pristatomi į jų kelionės tikslą. Toks pervežimas leidžia efektyviai taupyti klientų laiką ir suteikti jiems daug patogumo, kadangi nereikia patiems planuotis, kaip atvykti iki išvykimo vietos, o nuvykus – kaip pasiekti savo galutinį tikslą."
+            }
+          ]
+        },
+        {
+          "type": "hotspots",
+          "place": "row",
+          "id": "patogumai",
+          "label": "Patogumai",
+          "h2": "Patogumai",
+          "img": "36377055",
+          "caption": "Iliustracinė nuotrauka",
+          "spots": [
+            {
+              "x": 30,
+              "y": 58,
+              "i": "seat",
+              "t": "Atlenkiamos sėdynės",
+              "d": "patogiai Jūsų kelionei tiek dieną, tiek naktį"
+            },
+            {
+              "x": 62,
+              "y": 64,
+              "i": "heat",
+              "t": "Šildomos sėdynės",
+              "d": "komfortui net žvarbiausiomis žiemos dienomis"
+            },
+            {
+              "x": 84,
+              "y": 12,
+              "i": "air",
+              "t": "Kondicionierius",
+              "d": "kad oras autobuse visada būtų šviežias"
+            },
+            {
+              "x": 46,
+              "y": 40,
+              "i": "shield",
+              "t": "Keleiviai apdrausti",
+              "d": "kelionės metu visi keleiviai yra apdrausti"
+            }
+          ]
+        },
+        {
+          "type": "kvrow",
+          "place": "row",
+          "id": "privalumai",
+          "label": "Privalumai",
+          "h2": "Kokie dar privalumai?",
+          "kv": [
+            {
+              "k": "Kaina",
+              "v": "Patraukli kaina – tai dar vienas aspektas, kurį galime paminėti prie mūsų paslaugos privalumų. Siekiame, kad visi keleiviai, norintys keliauti, turėtų tam galimybę."
+            },
+            {
+              "k": "Pažintys",
+              "v": "Būtina paminėti ir tai, kad kelionė mikroautobusu dažnai tampa naujų pažinčių ir draugysčių pradžios tašku. Ilgą laiką keliaudami bendrakeleiviai susipažįsta, o tos pažintys dažnu atveju tęsiasi ir kelionei pasibaigus."
+            },
+            {
+              "k": "Draudimas",
+              "v": "Kelionės metu visi keleiviai yra apdrausti."
+            },
+            {
+              "k": "Poilsio režimas",
+              "v": "Vairuotojai visada laikosi privalomo darbo ir poilsio režimo."
+            }
+          ]
+        }
+      ],
+      "responsibilities": [],
+      "prohibited": null,
+      "closing": "Keleivių pervežimas su „SGP pervežimai“ – tik techniškai tvarkingais, naujais mikroautobusais, su atsakingais ir patyrusiais vairuotojais, labai gera kaina, visada patikimai ir operatyviai.",
+      "closing_marks": [
+        "naujais mikroautobusais",
+        "labai gera kaina"
+      ],
+      "related": [
+        "siuntu-pervezimas",
+        "automobiliu-pervezimas",
+        "perkraustymo-paslaugos"
+      ]
+    },
+    {
+      "slug": "gyvunu-pervezimas",
+      "no": "08",
+      "name": "Gyvūnų pervežimas",
+      "h1": "Gyvūnų pervežimas",
+      "title": "Gyvūnų pervežimas, gabenimas | sgp-pervezimai.lt",
+      "meta": "SGP pervežimai siūlo saugų ir patikimą gyvūnų pervežimą. Mums yra svarbus Jūsų gyvūnų saugumas, taigi juo rūpinsimės visos kelionės metu. Susisiekite!",
+      "card": "Saugiai ir patogiai perkraustysime Jūsų augintinį į kitą šalį Europoje.",
+      "chips": [
+        "Narvus turime mes",
+        "Nuo durų iki durų"
+      ],
+      "card_media": "32872983",
+      "card_crop": "50% 50%",
+      "hover_video": null,
+      "hero": {
+        "type": "photo",
+        "id": "32872983",
+        "crop": "50% 45%"
+      },
+      "why_media": [
+        "3868901",
+        "21767483",
+        "1696742"
+      ],
+      "next": "siuntu-pervezimas",
+      "lead": "Saugiai ir patogiai perkraustysime Jūsų augintinį į kitą šalį Europoje.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Prieš kelionę",
+        "Kaina",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Ispanija, Prancūzija, Vokietija, Airija"
+        },
+        {
+          "k": "Kelyje",
+          "v": "apie 3–4 paros"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "Paimame krovinį iš sutartos vietos ir pristatome gavėjui į rankas."
+        },
+        {
+          "k": "Svarbu",
+          "v": "Narvus gyvūnams pervežti turime mes."
+        }
+      ],
+      "routes": [
+        "Gyvūnų pervežimas į Airiją",
+        "Gyvūnų pervežimas į Ispaniją",
+        "Gyvūnų pervežimas į Vokietiją",
+        "Gyvūnų pervežimas į Prancūziją",
+        "Šunų pervežimas"
+      ],
+      "intro": [
+        "Planuojate išvykti pasisvečiuoti į kitą šalį? O gal persikraustote ir išvykstate visam laikui? O ką daryti, jei namuose turite augintinių, kurie irgi turi keliauti drauge? Gyvūnų pervežimas – paslauga, kurios būtinai reikia esant analogiškai situacijai. Tiesa, gyvūnų pervežimo paslaugą teikia toli gražu ne kiekviena transportavimo įmonė. Tad jei reikalingas <b>gyvūnų gabenimas</b>, užsukote būtent ten, kur reikia. Saugiai ir patogiai perkraustysime Jūsų augintinį į kitą šalį Europoje.",
+        "Paslaugą teikiame keliose Europos šalyse. Tai yra: Ispanija, Prancūzija, Vokietija ir Airija. Veiklos orientavimas į kelias šalis leidžia užtikrinti aukščiausią paslaugų kokybę ir veikti kryptingai.",
+        "Mikroautobusu pervežame visus naminius gyvūnus: katinus, šunis, žiurkėnus, jūrų kiaulytes, triušiukus, papūgas ar kitus paukščius ir kt."
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Iš sutartos vietos.",
+          "img": "3868901"
+        },
+        {
+          "t": "Kelyje apie 3–4 paras",
+          "d": "Narvus gyvūnams pervežti turime mes.",
+          "img": "21767483"
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Gavėjui į rankas.",
+          "img": "32872983"
+        }
+      ],
+      "why": [
+        {
+          "b": "Gyvūnų pervežimas nėra kiekvieno vežėjo paslaugų sąraše, todėl tai laikome savo pranašumu.",
+          "t": "Paslauga išskirtinė tuo, jog yra nemažas pluoštas veterinarinių reikalavimų, taikomų gyvūnų pervežimui, negana to, kiekvienoje šalyje tie reikalavimai nėra vienodi, todėl žinių bagažas turi būti didelis. Užtikriname, jog pasirinkę savo veiklai kelias Europos šalis (konkrečiai – Vokietiją, Ispaniją, Airiją ir Prancūziją), įsigilinome į jose taikomus reikalavimus gyvūnų gabenimui, todėl garantuojame, kad kelionėje nekils netikėtų nesklandumų ar neplanuotų išlaidų.",
+          "m": 1
+        },
+        {
+          "b": "Mūsų komandoje – tik solidžią patirtį ir daug žinių sukaupę vairuotojai, užtikrinsiantys sklandžią kelionę Jūsų augintiniui.",
+          "t": "Praktika ir nuolatinis tobulėjimas lėmė, jog puikiai žinome visas su gyvūnų gabenimu susijusias taisykles skirtingose šalyse, per kurias keliaujama, taip pat tai, jog galime klientams pasiūlyti geriausius sprendimus. Maršrutui renkamės tik geriausius kelius ir taip išvengiame nemokamuose, prastos būklės keliuose tykančių pavojų, pavyzdžiui, didelių duobių.",
+          "img": "7541981"
+        },
+        {
+          "b": "Gyvūnų pervežimas vykdomas tik tvarkingu, nauju mikroautobusu.",
+          "t": "Transporto priemonė – itin reikšmingas elementas visos kelionės koncepcijoje, tad skiriame labai daug dėmesio mikroautobusų techninei pusei, kad į kelią išriedėtų idealios būklės. Jūsų augintinis keliaus patogiai ir saugiai.",
+          "m": 2
+        },
+        {
+          "b": "Gyvūnų gabenimas vykdomas vadovaujantis principu nuo durų iki durų.",
+          "t": "Tai reiškia, kad klientams suteikiamas maksimalus patogumas ir efektyviai taupomas jų laikas. Paimame krovinį iš sutartos vietos ir pristatome gavėjui į rankas. Tad Jūsų augintinis visos kelionės metu bus tik patikimose mūsų rankose.",
+          "m": 0
+        }
+      ],
+      "specials": [
+        {
+          "type": "checklist",
+          "place": "row",
+          "id": "pries-kelione",
+          "label": "Prieš kelionę",
+          "h2": "Prieš kelionę",
+          "lead": "<b>Gyvūnų pervežimas</b> bus sklandus, jei gyvūnų šeimininkai prisidės prie transportavimo proceso. Kaip?",
+          "items": [
+            {
+              "t": "Skiepai nuo pasiutligės",
+              "text": "Itin svarbus aspektas – gabenti perduoti gyvūnai turi būti sveiki, paskiepyti nuo pasiutligės. Tai būtina atlikti likus maždaug mėnesiui iki kelionės, kadangi praėjus mėnesiui po vakcinos reikia padaryti kraujo tyrimą."
+            },
+            {
+              "t": "Veterinaro dokumentas",
+              "text": "Gyvūno šeimininkai privalo pateikti veterinaro išduotą dokumentą, jog gyvūnas yra sveikas ir gali keliauti iki numatytos vietos."
+            },
+            {
+              "t": "Dokumentai ir identifikacija",
+              "text": "Negana to, visi gabenti perduoti gyvūnai privalo turėti dokumentus ir turi būti identifikuoti."
+            },
+            {
+              "t": "Vaistai nuo helmintų",
+              "text": "<b>Svarbu:</b> prieš kelionę veterinaras turi duoti Jūsų gyvūnui vaistų nuo helmintų ir tai pažymėti augintinio pase."
+            },
+            {
+              "t": "Maistas ir vedžiojimo priemonės",
+              "text": "Užtikrindami visa, ko reikia jų augintiniui, kelionės metu, pavyzdžiui, maistą, gėrimus. Narvus gyvūnams pervežti turime mes. Taip pat pridėkite ir priemones, reikalingas Jūsų gyvūnų vedžiojimui."
+            }
+          ],
+          "callout": {
+            "k": "Gavėjas sutartu laiku",
+            "text": "Sutartu laiku atvykus į gyvūno atidavimo vietą gavėjas turėtų mūsų laukti. Kitu atveju pakartotinis atvykimas apmokestinamas papildomai."
+          }
+        },
+        {
+          "type": "price",
+          "place": "row",
+          "id": "kaina",
+          "label": "Kaina",
+          "h2": "Kaina",
+          "lead": "Ne paslaptis, kad daugelis esame jautrūs kainai, todėl mūsų paslaugos – itin gera kaina, kad kiekvienas, kuriam aktualus gyvūnų pervežimas, galėtų šia paslauga pasinaudoti.",
+          "text": "Gyvūnų gabenimo kaina yra individuali kiekvienu atveju ir ji paprastai priklauso nuo narvo dydžio, t. y. kiek gyvūnas užima vietos transporte, taip pat įtakos kainai turi gyvūno priežiūros sudėtingumas kelionės metu ir žinoma, atstumas, kurį nuvažiuojame.",
+          "tiles": [
+            {
+              "t": "Narvo dydis",
+              "d": "kiek gyvūnas užima vietos transporte"
+            },
+            {
+              "t": "Priežiūros sudėtingumas",
+              "d": "gyvūno priežiūros sudėtingumas kelionės metu"
+            },
+            {
+              "t": "Atstumas",
+              "d": "atstumas, kurį nuvažiuojame"
+            }
+          ]
+        }
+      ],
+      "responsibilities": [],
+      "prohibited": null,
+      "statement": "Mūsų patirtis rodo, jog šeimininkams kyla daug klausimų ir nerimo, planuojant augintinio pervežimą. Jei dėl ko nors nerimaujate, nežinote, kaip vyksta pervežimas, kaip jam pasiruošti ar turite kitų klausimų, kreipkitės į mūsų komandą – mielai padėsime ir atsakysime į visus iškilusius klausimus, kad gyvūnų pervežimas būtų ramus ir streso nekeliantis procesas nei gyvūnams, nei jų šeimininkams.",
+      "closing": "Gyvūnų pervežimas su „SGP pervežimai“ – tik techniškai tvarkingais, naujais ir prižiūrimais mikroautobusais, vairuojant profesionaliems vairuotojams, visada patikimai ir operatyviai.",
+      "closing_more": "Airija, Ispanija, Vokietija, Prancūzija – šalys, į kurias Jūsų gyvūnus nuvešime geriausia kaina ir saugiai.",
+      "closing_marks": [
+        "naujais ir prižiūrimais mikroautobusais",
+        "visada patikimai ir operatyviai"
+      ],
+      "related": [
+        "keleiviu-pervezimas",
+        "perkraustymo-paslaugos",
+        "daiktu-pervezimas"
+      ]
+    },
+    {
+      "slug": "siuntu-pervezimas",
+      "no": "09",
+      "name": "Siuntų pervežimas",
+      "h1": "Siuntų pervežimas",
+      "title": "Siuntų pervežimas, skubių siuntų siuntimas | sgp-pervezimai.lt",
+      "meta": "sgp-pervezimai.lt vykdo siuntų pervežimo, siuntimo paslaugas į užsienį. Siuntų pristatymas į Vokietiją, Ispaniją, Lietuvą ir kitas šalis (mikroautobusais).",
+      "card": "Skubios siuntos pasieks gavėją labai operatyviai.",
+      "chips": [
+        "Skubios siuntos",
+        "Nuo durų iki durų"
+      ],
+      "card_media": "6170458",
+      "card_crop": "50% 50%",
+      "hover_video": null,
+      "hero": {
+        "type": "photo",
+        "id": "6170458",
+        "crop": "50% 50%"
+      },
+      "why_media": [
+        "4487517",
+        "6407553",
+        "4440774"
+      ],
+      "next": "siuntu-pristatymas",
+      "lead": "Jei ir Jums aktualus siuntų pervežimas į Vokietiją, Ispaniją, Airiją ar Prancūziją, taip pat ir iš šių šalių, siūlome savo transportavimo paslaugas.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Kliento atsakomybės",
+        "Draudžiami daiktai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Vokietija, Ispanija, Airija, Prancūzija – į ir iš"
+        },
+        {
+          "k": "Kelyje",
+          "v": "apie 3–4 paros nuo paėmimo dienos"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "nuo durų iki durų"
+        },
+        {
+          "k": "Įsipareigojimas siuntoms",
+          "v": "per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)"
+        },
+        {
+          "k": "Svarbu",
+          "v": "Siuntos turinys neturi liestis prie pakuotės sienelių – rekomenduojamas tarpas yra 5 centimetrai."
+        }
+      ],
+      "routes": [
+        "Siuntos į Airiją",
+        "Siuntos į Ispaniją",
+        "Siuntos į Vokietiją"
+      ],
+      "intro": [
+        "Milžiniški siuntų srautai kiekvieną dieną keliauja iš vienų šalių į kitas įvairiomis transporto priemonėmis. Puiku, kad šiandien nevaržomai galime siųsti didesnes ar mažesnes siuntas į užsienį ir nesijaudinti, kad tai kaip reikiant paplonins piniginę. Jei ir Jums aktualus siuntų pervežimas į Vokietiją, Ispaniją, Airiją ar Prancūziją, taip pat ir iš šių šalių, siūlome savo transportavimo paslaugas. Veiklą orientuojame į minėtas šalis – toks sprendimas leidžia teikti aukščiausios kokybės paslaugas, veikti kryptingai ir iki smulkmenų išmanyti įvairių siuntų gabenimo tose šalyse taisykles bei niuansus."
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Iš siuntėjo – nuo durų iki durų.",
+          "img": "4440774"
+        },
+        {
+          "t": "Kelyje apie 3–4 paras",
+          "d": "Siuntos vietą galite pasitikrinti pagal siuntos kodą.",
+          "img": "1696742",
+          "link": {
+            "url": "sekimas",
+            "label": "Siuntos sekimas"
+          }
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Gavėjui į rankas.",
+          "img": "13456097"
+        }
+      ],
+      "why": [
+        {
+          "b": "Profesionali komanda yra esminis įrankis konkurencinėje kovoje.",
+          "t": "Atsakingi ir ilgametę tarptautinių pervežimų patirtį turintys vairuotojai užtikrins sklandžią siuntinio kelionę.",
+          "m": 0
+        },
+        {
+          "b": "Reikalingas skubios siuntos gabenimas?",
+          "t": "Ne problema – užtikriname ir operatyvumą, ir saugumą. Skubios siuntos pasieks gavėją labai operatyviai. Siuntų siuntimas vyksta vadovaujantis principu nuo durų iki durų – toks pristatymas leidžia užtikrinti didžiausią patogumą klientui ir jo brangaus laiko taupymą. Negana to, tai suteikia progą trumpinti siuntinio gabenimo laiką, kas ypač svarbu, jei aktualus greitos siuntos gabenimas.",
+          "m": 1
+        },
+        {
+          "b": "Siuntų pervežimas į užsienį vykdomas tik naujais, tvarkingais mikroautobusais.",
+          "t": "Labai dėmesingai rūpinamės transporto priemonėmis, kuriomis vežame siuntinius. Kelionei renkamės tik geriausius kelius, siekdami išvengti kliūčių, galinčių pasitaikyti nemokamuose, bet prastos kokybės keliuose Europoje.",
+          "m": 2
+        },
+        {
+          "b": "Transportavimo kainos iš užsienio ir kaina į užsienį maloniai nustebins – siūlome labai patrauklų kainoraštį, todėl nedvejokite, jei ieškote geriausio kainos ir kokybės santykio siuntiniui gabenti.",
+          "t": "",
+          "img": "6169133"
+        }
+      ],
+      "specials": [
+        {
+          "type": "box",
+          "place": "aside",
+          "title": "Pakavimo gidas",
+          "dim": "5 cm",
+          "labels": [
+            "Pakuotė",
+            "Turinys",
+            "Užpildas"
+          ],
+          "caption": [
+            "Svarbu, kad siuntos turinys prie pakuotės sienelių nesiliestų – rekomenduojamas tarpas yra 5 centimetrai.",
+            "Siuntai pakuoti netinka paprasta plėvelė, popierius, laikraščiai, medžiaginės pakuotės."
+          ]
+        }
+      ],
+      "responsibilities": [
+        {
+          "title": "Turinys",
+          "text": [
+            "Siuntų siuntimas bus sėkmingas, jei pasitikėsite mūsų komanda ir atsižvelgsite į reikalavimus siuntinio turiniui bei pakuotei. Paslaugos sėkmė priklauso ir nuo kliento."
+          ]
+        },
+        {
+          "title": "Pakuotė",
+          "text": [
+            "Kitas aspektas – siuntos pakuotė. Ji turi būti nauja, patvari, atspari gniuždymui. Negailėkite ir specialios pakavimui skirtos medžiagos, kuria užpildysite tuščias ertmes pakuotėje. Labai tiksliai ir matomoje vietoje užrašykite siuntėjo ir gavėjo adresus ant pakuotės. Svarbu, kad siuntos turinys prie pakuotės sienelių nesiliestų – rekomenduojamas tarpas yra 5 centimetrai. Siunčiami daiktai dėžėje ar kitoje pakuotėje turi būti „įkurdinti“ stabiliai ir nejudėti. Siuntai pakuoti netinka paprasta plėvelė, popierius, laikraščiai, medžiaginės pakuotės."
+          ]
+        }
+      ],
+      "prohibited": {
+        "lead": [
+          "Pirmiausia – siuntos turinys. Turite žinoti, kokių daiktų pristatymas negalimas. Į draudžiamų siųsti daiktų sąrašą yra įtraukti:"
+        ],
+        "items": [
+          "vertingi daiktai (juvelyriniai dirbiniai, meno kūriniai, taurieji metalai, monetos, banknotai ir čekiai, vertybiniai popieriai ir pan.)",
+          "alkoholis, tabakas ir jo gaminiai",
+          "narkotinės medžiagos",
+          "pavojingos medžiagos (sprogiosios, degiosios ir pan.)",
+          "ginklai",
+          "itin greitai gendantys maisto produktai (žalia mėsa ir pan.)"
+        ],
+        "tail": "ir kt.",
+        "note": [
+          "Šis sąrašas yra nebaigtinis, o jei abejojate, ar galite siųsti planuojamus gabenti daiktus, susisiekite su mūsų komanda – patarsime, atsakysime į iškilusius klausimus."
+        ]
+      },
+      "closing": "Siuntų pervežimas su „SGP pervežimai“ – tvarkingais, naujais mikroautobusais, su patikimais vairuotojais, geriausia kaina, operatyviai ir saugiai.",
+      "closing_marks": [
+        "su patikimais vairuotojais",
+        "operatyviai ir saugiai"
+      ],
+      "related": [
+        "daiktu-pervezimas",
+        "daliniu-kroviniu-gabenimas",
+        "kroviniu-pervezimas"
+      ]
+    },
+    {
+      "slug": "siuntu-pristatymas",
+      "no": "10",
+      "name": "Siuntų pristatymas",
+      "h1": "Siuntų pristatymas",
+      "title": "Siuntų pristatymas mikroautobusu | sgp-pervezimai.lt",
+      "meta": "Patikimas ir greitas siuntų pristatymas mikroautobusu. Daugiau informacijos dėl siuntų pristatymo į namus – sgp-pervezimai.lt",
+      "card": "Siuntiniai paimami iš siuntėjų ir atiduodami gavėjams į rankas.",
+      "chips": [
+        "Į rankas gavėjui",
+        "Apie 3–4 paros"
+      ],
+      "card_media": "13456097",
+      "card_crop": "55% 45%",
+      "hover_video": null,
+      "hero": {
+        "type": "photo",
+        "id": "13456097",
+        "crop": "55% 45%"
+      },
+      "why_media": [
+        "4440774",
+        "6407553",
+        "7464731"
+      ],
+      "next": "perkraustymo-paslaugos",
+      "lead": "Skubus siuntų pristatymas į namus – paslauga, garantuojanti didžiausią patogumą ir siuntėjui, ir gavėjui.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Kliento atsakomybės",
+        "Draudžiami daiktai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Vokietija, Prancūzija, Ispanija, Airija – į ir iš"
+        },
+        {
+          "k": "Kelyje",
+          "v": "apie 3–4 paros nuo siuntos paėmimo dienos"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "Siuntiniai paimami iš siuntėjų ir atiduodami gavėjams į rankas."
+        },
+        {
+          "k": "Įsipareigojimas siuntoms",
+          "v": "per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)"
+        }
+      ],
+      "routes": [
+        "Nuo durų iki durų"
+      ],
+      "intro": [
+        "Skubus siuntų pristatymas į namus – paslauga, garantuojanti didžiausią patogumą ir siuntėjui, ir gavėjui. Jei atsirado poreikis gabenti siuntinį Europoje, o prioritetu yra saugumas bei geri pervežimo terminai, siūlome savo paslaugas. Siuntas vežame į Vokietiją ir iš Vokietijos, į Prancūziją ir iš Prancūzijos, į Ispaniją ir iš Ispanijos, į Airiją ir iš Airijos. Veiklą orientuojame į šias šalis Europoje – tai leidžia teikti aukščiausios kokybės paslaugas.",
+        "Veiklą, kaip minėjome, orientuojame į kelias Europos šalis, tad siuntinių pristatymas užsienyje vykdomas į Vokietiją ir iš Vokietijos, į Prancūziją ir iš Prancūzijos, į Ispaniją ir iš Ispanijos bei į Airiją ir iš Airijos. Puikiai išmanome šiose šalyse galiojančius teisės aktus, reglamentuojančius siuntinių pristatymą."
+      ],
+      "steps_title": "Nuo durų iki durų",
+      "steps": [
+        {
+          "t": "Paimame iš siuntėjo",
+          "d": "Iš siuntėjo nurodytos vietos.",
+          "img": "4440774"
+        },
+        {
+          "t": "Kelyje apie 3–4 paras",
+          "d": "Siuntų pristatymas užsienyje trunka apie 3–4 paras, skaičiuojant nuo siuntos paėmimo dienos.",
+          "img": "1696742"
+        },
+        {
+          "t": "Į rankas gavėjui",
+          "d": "Gavėjui – tiesiai į rankas.",
+          "img": "13456097"
+        }
+      ],
+      "why": [
+        {
+          "b": "Siuntų pristatymas užsienyje visada vykdomas techniškai tvarkingu ir idealios būklės mikroautobusu.",
+          "t": "Transporto priemonė yra vienas esminių veiksnių, suponuojančių sklandžią kelionę, todėl mikroautobusais rūpinamės labai atsakingai.",
+          "m": 1
+        },
+        {
+          "b": "Komanda – kitas aspektas, kuris didele dalimi prisideda prie siuntos transportavimo sėkmės.",
+          "t": "Mūsų vairuotojai yra atsakingi, sąžiningi ir turintys daug patirties tarptautinių kelionių srityje. Siuntų pristatymas vykdomas tik geriausiais keliais, siekiant užtikrinti siuntinių saugumą ir patrauklų transportavimo laiką. Vairuotojai griežtai laikosi poilsio ir darbo režimo, tad visos kelionės metu būtų pailsėję, kad galėtų savo darbą atlikti nepriekaištingai.",
+          "img": "7541981"
+        },
+        {
+          "b": "Nuo durų iki durų – tai principas, kuriuo grindžiamas siuntų pristatymas į namus.",
+          "t": "Siuntiniai paimami iš siuntėjų ir atiduodami gavėjams į rankas. Taip taupomas abiejų šalių laikas.",
+          "m": 0
+        },
+        {
+          "b": "Patrauklios paslaugų kainos yra vienas tų aspektų, kuris masina daugelį klientų.",
+          "t": "",
+          "m": 2
+        }
+      ],
+      "specials": [],
+      "responsibilities": [
+        {
+          "title": "Turinys ir pakuotė",
+          "text": [
+            "Siuntų pristatymas į namus bus sklandus, jei mūsų ir klientų bendradarbiavimas bus abipusis. Klientas atsakingas už siuntos turinį ir tinkamą siunčiamų daiktų supakavimą. Svarbu pasidomėti, kokie daiktai yra įtraukti į draudžiamų siųsti daiktų sąrašą (pavyzdžiui, vertingi daiktai, pavojingos medžiagos, ginklai, itin greitai gendantys maisto produktai ir kt.). Taip pat svarbu mums įteikti tik tinkamai supakuotą siuntą."
+          ]
+        }
+      ],
+      "prohibited": "P",
+      "closing": "Skubus siuntų pristatymas su „SGP pervežimai“ – naujais, tvarkingais mikroautobusais, geriausia kaina, visada patikimai ir saugiai.",
+      "closing_marks": [
+        "naujais, tvarkingais mikroautobusais",
+        "visada patikimai ir saugiai"
+      ],
+      "related": [
+        "siuntu-pervezimas",
+        "daiktu-pervezimas",
+        "keleiviu-pervezimas"
+      ]
+    },
+    {
+      "slug": "perkraustymo-paslaugos",
+      "no": "11",
+      "name": "Perkraustymo paslaugos",
+      "h1": "Perkraustymo paslaugos",
+      "title": "Perkraustymo paslaugos | sgp-pervezimai.lt",
+      "meta": "Perkraustymo paslaugos į / iš Vokietijos, Prancūzijos, Ispanijos, Lietuvos ir kitų Europos šalių. Informaciją kiek kainuoja daiktų pervežimas, sužinokite susisiekdami.",
+      "card": "Persikeliate gyventi į kitą šalį Europoje? Daiktus pervešime nuo durų iki durų.",
+      "chips": [
+        "Apie 3–4 paros",
+        "Nuo durų iki durų"
+      ],
+      "card_media": "4246238",
+      "card_crop": "50% 50%",
+      "hover_video": null,
+      "hero": {
+        "type": "photo",
+        "id": "4246238",
+        "crop": "50% 50%"
+      },
+      "why_media": [
+        "7464731",
+        "9185835",
+        "6407553"
+      ],
+      "next": "kroviniu-pervezimas",
+      "lead": "Todėl jei nusprendėte persikelti gyventi į kitą šalį Europoje, mūsų nebrangios perkraustymo paslaugos bus būtent tai, ko Jums reikia.",
+      "submenu": [
+        "Apie paslaugą",
+        "Privalumai",
+        "Kliento atsakomybės",
+        "Draudžiami daiktai",
+        "Užklausa"
+      ],
+      "kv": [
+        {
+          "k": "Kryptys",
+          "v": "Vokietija, Ispanija, Prancūzija, Airija – į ir iš"
+        },
+        {
+          "k": "Kelyje",
+          "v": "apie 3–4 paros"
+        },
+        {
+          "k": "Pristatymas",
+          "v": "nuo durų iki durų"
+        },
+        {
+          "k": "Įsipareigojimas siuntoms",
+          "v": "per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)"
+        },
+        {
+          "k": "Svarbu",
+          "v": "Pakrovimas ir iškrovimas į paslaugą neįeina"
+        }
+      ],
+      "routes": [
+        "Perkraustymo paslaugos kaina"
+      ],
+      "intro": [
+        "Šiandien galime džiaugtis keliavimo, siuntinių pervežimo galimybėmis į daugelį šalių. Tiesa, augant emigracijos mastams auga ir perkraustymo paslaugų poreikis. Nusprendus gyvenimą kurti kitoje šalyje, ne vienam daugiausia nerimo kelia klausimas, o ką daryti su daiktais? Kaip juos saugiai ir už prieinamą kainą pervežti į kitą šalį? Kiek kainuoja pervežimo paslauga? Juk išsikraustyti palikus užgyventą turtą ir širdžiai artimus baldus bei kitus daiktus yra sunku. Todėl jei nusprendėte persikelti gyventi į kitą šalį Europoje, mūsų nebrangios perkraustymo paslaugos bus būtent tai, ko Jums reikia. Saugiai ir patikimai – tai esminiai mūsų veiklos principai. Pervežimo paslaugas teikiame į Vokietiją ir iš Vokietijos, į Ispaniją ir iš Ispanijos, į Prancūziją ir iš Prancūzijos ir į Airiją ir iš Airijos. Šios šalys, galima sakyti, yra favoritės, į kurias ir iš kurių dažniausiai prireikia pervežimo paslaugų.",
+        "Orientuojamės į kelias Europos šalis ir teikiame perkraustymo paslaugas į Vokietiją ir iš Vokietijos, į Prancūziją ir iš Prancūzijos, į Ispaniją ir iš Ispanijos bei į Airiją ir iš Airijos. Toks perkraustymas, orientuojantis į kelias šalis, leidžia nuodugniai išanalizuoti visus su krovinių pervežimu šiose šalyse susijusius niuansus ir išvengti nesklandumų."
+      ],
+      "steps": [
+        {
+          "t": "Paėmimas",
+          "d": "Daiktus į mikroautobusą pakrauna klientas.",
+          "img": "4246238"
+        },
+        {
+          "t": "Kelyje apie 3–4 paras",
+          "d": "Nuo krovinio paėmimo iki pristatymo gavėjui.",
+          "img": "1696742"
+        },
+        {
+          "t": "Pristatymas",
+          "d": "Pavyzdžiui, į namus. Iškrovimu pasirūpina klientas.",
+          "img": "7464731"
+        }
+      ],
+      "why": [
+        {
+          "b": "Perkraustymo paslaugos patrauklia kaina vykdomos tik naujais mikroautobusais.",
+          "t": "Itin skrupulingai rūpinamės savo transporto priemonių technine puse, todėl į kelią jos išrieda visuomet nepriekaištingos būklės. Juk būtent transporto priemonė didele dalimi lemia paslaugų sėkmę. Negana to, pervežimo paslaugoms visuomet renkamės tik geriausius kelius, siekdami išvengti prastos būklės, nemokamuose keliuose tykančių pavojų, rizikos transporto priemonei (pavyzdžiui, pakabai, ratams ir pan.).",
+          "m": 0
+        },
+        {
+          "b": "Mūsų komanda yra tai, ką laikome esminiu įrankiu didelėje konkurencinėje kovoje.",
+          "t": "Profesionalūs vairuotojai, atsakingas požiūris į darbą, patirtis tarptautinių pervežimų sektoriuje, griežtas darbo ir poilsio režimo laikymasis, taisyklių bei teisės aktų, reglamentuojančių krovinių gabenimą užsienio šalyse, išmanymas leidžia teikti aukščiausios kokybės paslaugas ir garantuoti sklandžią kelionę.",
+          "m": 1
+        },
+        {
+          "b": "Nuo durų iki durų – tai principas, kuriuo remiantis teikiamos <b>perkraustymo paslaugos į užsienį</b>.",
+          "t": "Krovinys paimamas iš siuntėjo nurodytos, jam patogiausios, vietos ir pristatomas gavėjui tiesiai į rankas, t. y. ten, kur jam yra patogiausia, pavyzdžiui, į namus. Perkraustymas nuo krovinio paėmimo iš siuntėjo iki jo pristatymo gavėjui trunka apie 3–4 paras.",
+          "m": 2
+        }
+      ],
+      "specials": [
+        {
+          "type": "callout",
+          "place": "aside",
+          "k": "Svarbu",
+          "text": "Pirmiausia – mes teikiame pervežimo paslaugas, į kurias neįeina pakrovimo ir iškrovimo darbai. Klientas turi pasirūpinti, kad baldai ir kiti daiktai, kuriuos reikia pervežti, bus pakrauti į mūsų transporto priemones, taip pat užtikrinti, kad pristatymo vietoje jie bus iškrauti."
+        },
+        {
+          "type": "note",
+          "place": "atsak-end",
+          "k": "Augintiniai",
+          "text": "Svarbu ir tai, kad jei turite augintinį, jį saugiai pervešime ne su baldais ir kitais namų apyvokos daiktais, o specialiu transportu, narvuose, sklandžiai ir patikimai.",
+          "link": {
+            "url": "gyvunu-pervezimas",
+            "label": "Gyvūnų pervežimas"
+          }
+        }
+      ],
+      "resp_lead": [
+        "Mes užtikriname saugų, operatyvų ir sklandų perkraustymą į kitą šalį, bet klientas taip pat turi žinoti kelis aspektus, kurie yra jo atsakomybė."
+      ],
+      "responsibilities": [
+        {
+          "title": "Pakavimas",
+          "text": [
+            "Kitas aspektas – tinkamas daiktų pakavimas. Baldams, paveikslams, knygoms, indams ir daugeliui kitų daiktų pakuoti geriausiai tiks dėžės. Pasirūpinkite, kad jos būtų nepažeistos (geriausia – naujos), kokybiškos, tvirtos ir atlaikytų gniuždymą, nes transporto priemonėse dėžės kraunamos vienos ant kitų. Pakuodami daiktus į dėžes atsižvelkite į rekomendaciją, jog tarp pakuotės turinio ir jos sienelės turėtų būti maždaug 5 cm tarpas. Tuščioms dėžių ertmėms užpildyti naudokite specialią pakavimui skirtą medžiagą. Dėžes iš išorės per visą perimetrą keliose vietose apvyniokite lipnia juosta. Itin atsakingai pakuokite trapius, dužius daiktus. Juos į dėžes dėkite po vieną. Apvyniokite tokius daiktus burbuline plėvele, kuri suteiks papildomos apsaugos."
+          ]
+        },
+        {
+          "title": "Gavėjas sutartu laiku",
+          "text": [
+            "Svarbu, kad gavėjas nurodytoje vietoje sutartu laiku lauktų mūsų, nes pakartotinis atvykimas bus apmokestinamas papildomai."
+          ]
+        }
+      ],
+      "prohibited": {
+        "lead": [
+          "Į pakuotes nedėkite draudžiamų siųsti daiktų. Persikraustant neretai pasitaiko, kad norima pakuoti ir vertingus daiktus, pavyzdžiui, meno kūrinius, dokumentus, juvelyrinius dirbinius ir pan. Bet tokių daiktų siųsti paprasta siunta negalima. Jei nežinote, ar norimi siųsti daiktai nėra įtraukti į draudžiamų siųsti daiktų sąrašą – pasikonsultuokite su mūsų komanda. Visada atsakome į klientams iškilusius klausimus."
+        ],
+        "items": "P"
+      },
+      "closing": "<b>Perkraustymo paslaugos</b> į užsienį su „SGP pervežimai“ – naujais, puikios būklės mikroautobusais, geriausia kaina, visada sklandžiai, operatyviai ir saugiai.",
+      "closing_marks": [
+        "puikios būklės mikroautobusais",
+        "sklandžiai, operatyviai ir saugiai"
+      ],
+      "related": [
+        "daiktu-pervezimas",
+        "gyvunu-pervezimas",
+        "siuntu-pervezimas"
+      ]
+    }
+  ],
+  "shared": {
+    "prohibited_p": {
+      "lead": "Siekiame didžiausio savo klientų informuotumo, todėl pateikiame draudžiamų siųsti daiktų sąrašą:",
+      "items": [
+        "vertingi daiktai (šiai kategorijai priklauso pinigai, čekiai, brangakmeniai, juvelyriniai dirbiniai, neapdirbti taurieji metalai, vertybiniai popieriai ir kiti brangūs daiktai, reikalaujantys papildomo draudimo)",
+        "alkoholis, tabakas ir tabako gaminiai, visos narkotinės bei psichotropinės medžiagos",
+        "sprogiosios, degiosios, radioaktyviosios ir kitos pavojingos medžiagos",
+        "ginklai, amunicija, karo technika",
+        "daiktai, turintys nepadorių ar įžeidžiančio turinio užrašų ar paveikslų",
+        "greitai gendantys maisto produktai, pavyzdžiui, žalia mėsa ir pan.",
+        "visi daiktai, kuriuos draudžiama siųsti pagal mūsų šalies teisės aktus",
+        "visi daiktai, kuriuos pagal įstatymus draudžiama įvežti į šalį, į kurią keliauja siunta, bei į tranzitines šalis"
+      ],
+      "note": "Už siuntinio turinį atsakingas siuntėjas."
+    }
+  }
+}

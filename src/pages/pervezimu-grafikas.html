@@ -1,0 +1,103 @@
+---
+title: Pervežimų grafikas | sgp-pervezimai.lt
+description: Artimiausi išvykimai: Lietuva – Airija, Lietuva – Ispanija ir atgal. Tikslų laiką ir paėmimo vietą suderinsime telefonu.
+out: pervezimu-grafikas/index.html
+body_class: page-grafikas
+nav: grafikas
+og_image: 9807331
+css: pages/grafikas.css
+js: pages/grafikas.js
+salient: Page „Pervežimų grafikas“ (§6.6) · compact header · 01 Lenta = Tabs Minimal + [sgp_grafikas variant="table"] · 02 Laiko juosta = optional [sgp_grafikas variant="lane"] · 03 Ką verta žinoti · GS-Arrival
+---
+<!-- ============ HEADER · compact route header (texture) ============ -->
+<section class="sgp-phero sgp-phero--compact sgp-phero--texture on-dark gr-hero" data-hero data-theme="dark" data-salient="Row Full Width · Compact route header (44svh) · BG image 9807331 at 18 % + Parallax BG: Subtle + BG Layer Animation: Slight Zoom Out Reveal · Text Color Light · no photo hero — the table is the hero">
+  <div class="sgp-bgmedia" data-parallax="0.12" aria-hidden="true">{{img:9807331|w=1920|sizes=100vw|eager|decorative|pos=50% 50%}}</div>
+  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
+    <div class="sgp-phero__copy">
+      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="{{url:pradzia}}">Pradžia</a></li><li aria-current="page">Pervežimų grafikas</li></ol></nav>
+      <p class="sgp-phero__eyebrow sgp-mono"><span class="sgp-ring"></span>LT ⇄ IE · LT ⇄ ES</p>
+      <h1 class="sgp-phero__h1" data-split>Pervežimų grafikas</h1>
+      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">Artimiausios išvykimo datos abiem kryptimis.</p>
+      <p class="sgp-stamp sgp-mono gr-hero__stamp" data-reveal style="--dl:.4s" data-salient="Text Block · [sgp_grafikas variant=&quot;updated&quot;] (ACF field „updated“, set on save)">{{grafikas:updated}}</p>
+      {{grafikas:next}}
+    </div>
+    {{partial:phero-calls}}
+  </div>
+</section>
+
+<!-- ============ 01 · LENTA — tabs + full schedule table ============ -->
+<section class="sgp-sec on-dark deep sgp-has-rail gr-board" id="lenta" data-theme="dark" data-salient="Row: bg #0B0E10 · Extra Class sgp-dark deep sgp-has-rail · Text Color Light · Tabs → Minimal (3 tabs · deep links #visi / #airija / #ispanija · content animation Fade) · each tab = [sgp_grafikas variant=&quot;table&quot; routes=&quot;…&quot;] · route codes = .sgp-flap (desktop, once)">
+  <div class="sgp-wrap sgp-wrap--zone" data-tabs>
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">01</span><span class="sgp-mono">Lenta</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">4 kryptys</span></div>
+    <div class="gr-board__head">
+      <h2 class="sgp-d2" data-split>Artimiausi pervežimai</h2>
+      <div class="gr-board__ctl" data-reveal>
+        <div class="sgp-tabs gr-tabs" role="tablist" aria-label="Kryptis" data-salient="Tabs → Minimal · tab labels „Visi · Airija · Ispanija“">
+          <button type="button" role="tab" id="gr-tab-all" aria-selected="true" aria-controls="gr-p-all" data-hash="visi">Visi</button>
+          <button type="button" role="tab" id="gr-tab-ie" aria-selected="false" aria-controls="gr-p-ie" data-hash="airija" tabindex="-1">Airija <span class="sgp-mono">IE</span></button>
+          <button type="button" role="tab" id="gr-tab-es" aria-selected="false" aria-controls="gr-p-es" data-hash="ispanija" tabindex="-1">Ispanija <span class="sgp-mono">ES</span></button>
+        </div>
+      </div>
+    </div>
+    <div class="gr-screen" data-reveal style="--dl:.1s" data-salient="Inner Row (Extra Class gr-screen) · Tab content = Text Block with the shortcode · every row = full-width tel: link (M45)">
+      <div class="gr-cols sgp-mono" aria-hidden="true"><span>Maršrutas</span><span>Išvykimo datos</span><span>Būsena</span><span>Skambinti</span></div>
+      <div class="gr-panel" id="gr-p-all" role="tabpanel" aria-labelledby="gr-tab-all" tabindex="0">
+        {{grafikas:table}}
+      </div>
+      <div class="gr-panel" id="gr-p-ie" role="tabpanel" aria-labelledby="gr-tab-ie" tabindex="0" hidden>
+        {{grafikas:table kryptis=ie}}
+      </div>
+      <div class="gr-panel" id="gr-p-es" role="tabpanel" aria-labelledby="gr-tab-es" tabindex="0" hidden>
+        {{grafikas:table kryptis=es}}
+      </div>
+    </div>
+    <div class="gr-board__foot" data-reveal style="--dl:.15s" data-salient="Inner Row: Text Block (stamp + board note) · Button (Regular, Line) href=#sgp-call">
+      <p class="sgp-stamp sgp-mono">{{grafikas:updated}}</p>
+      <p class="gr-board__note">{{grafikas:note}}</p>
+      <button class="sgp-btn sgp-btn--line sgp-btn--sm gr-board__call" type="button" popovertarget="sgp-call"><span class="sgp-btn__l"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>Skambinti</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · LAIKO JUOSTA — the same data on one time lane (client-rendered) ============ -->
+<section class="sgp-sec on-light paper sgp-has-rail gr-lane-sec" id="laiko-juosta" data-theme="light" data-salient="Row paper + graticule · Extra Class sgp-light sgp-graticule sgp-has-rail · Raw HTML lane chart = [sgp_grafikas variant=&quot;lane&quot;] (optional NEW variant, ≈40 lines PHP + CSS) · without it disable this row — the table above holds the same data">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">02</span><span class="sgp-mono">Laiko juosta</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Nuo šiandien</span></div>
+    <div class="sgp-head">
+      <h2 class="sgp-d2" data-split>Visi išvykimai vienoje juostoje</h2>
+      <p class="sgp-lead" data-reveal>Kiekviena stotelė – išvykimo diena. Juosta prasideda šiandien ir baigiasi paskutine grafike paskelbta data.</p>
+    </div>
+    {{grafikas:lane}}
+    <p class="gr-lane__legend sgp-mono" aria-hidden="true"><span><i class="gr-lg gr-lg--soon"></i>Artimiausias</span><span><i class="gr-lg gr-lg--next"></i>Kitas išvykimas kryptimi</span><span><i class="gr-lg"></i>Vėliau</span><span><i class="gr-lg gr-lg--today"></i>Šiandien</span></p>
+  </div>
+</section>
+
+<!-- ============ 03 · KĄ VERTA ŽINOTI — facts + both routes ============ -->
+<section class="sgp-sec on-light alt sgp-has-rail gr-facts" id="ka-verta-zinoti" data-theme="light" data-salient="Row paper-100 · Extra Class sgp-light alt sgp-has-rail · Column 5/12 (Sticky Content, CSS, Top 120): H2 + Text Block .sgp-kv + 2 × Button Underline · Column 7/12: Raw HTML SVG map (both routes, static)">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">03</span><span class="sgp-mono">Ką verta žinoti</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Apie 3–4 paros</span></div>
+    <div class="gr-facts__grid">
+      <div class="gr-facts__copy">
+        <div class="sgp-sticky">
+          <h2 class="sgp-d2 gr-facts__h" data-split>Laiką ir vietą suderinsime telefonu</h2>
+          <dl class="sgp-kv gr-facts__kv" data-reveal data-salient="Text Block + Extra Class .sgp-kv · delivery facts pair (§4.12)">
+            <dt>Išvykimo laikas ir vieta</dt><dd>Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.</dd>
+            <dt>Principas</dt><dd>Nuo durų iki durų</dd>
+            <dt>Kelyje</dt><dd>apie 3–4 paros nuo paėmimo dienos</dd>
+            <dt>Įsipareigojimas siuntoms</dt><dd>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (<a class="sgp-a" href="{{url:taisykles}}#vezejo-atsakomybe">Taisyklių 3.4 p.</a>)</dd>
+          </dl>
+          <div class="gr-facts__links" data-reveal style="--dl:.1s">
+            <a class="sgp-lnk" href="{{url:sekimas}}">Siuntos sekimas<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="sgp-lnk" href="{{url:taisykles}}">Siuntų siuntimo taisyklės<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="sgp-lnk" href="{{url:tarptautiniai}}">Tarptautiniai pervežimai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="sgp-lnk" href="{{url:paslaugos}}">Pervežimo paslaugos<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="sgp-lnk" href="{{url:kontaktai}}">Kontaktai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="gr-facts__map" data-reveal style="--dl:.12s">
+        {{partial:map-both}}
+      </div>
+    </div>
+  </div>
+</section>

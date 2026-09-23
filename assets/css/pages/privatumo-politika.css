@@ -1,0 +1,88 @@
+/* =========================================================
+   SGP v2 · PRIVATUMO POLITIKA (page-owned: pages-about-contact) — §6.10 · classes prefixed pp-
+   ========================================================= */
+
+/* ---------- document: mini-TOC 3 | text 8 (offset 1) ---------- */
+.pp-doc__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:var(--col-gap);align-items:start}
+.pp-doc__side{grid-column:1 / span 3;align-self:stretch}
+.pp-doc__main{grid-column:4 / span 9;min-width:0}
+
+.pp-toc__k{color:var(--fg-2);margin-bottom:12px}
+.pp-toc__list{position:relative;border-top:1px solid var(--fg);padding-top:6px}
+.pp-toc__list li:not(.pp-toc__lane){position:relative;padding-left:30px}
+.pp-toc__list li>.sgp-ring{position:absolute;left:0;top:50%;margin-top:-7px;--s:14px;z-index:1}
+.pp-toc__list li.is-active>.sgp-ring{background:var(--c-signal);border-color:var(--c-signal)}
+.pp-toc__list a{display:flex;align-items:center;gap:12px;min-height:52px;font:600 1.25rem/1.1 var(--f-display);color:var(--fg-2);transition:color .3s,transform .4s var(--e-arrive)}
+.pp-toc__list a .sgp-mono{color:var(--red-text)}
+.pp-toc__list a:hover,.pp-toc__list a[aria-current]{color:var(--fg)}
+.pp-toc__list a:hover{transform:translateX(4px)}
+/* lane between the two stops: dashed ghost + red fill = reading progress (--pp-p from page JS) */
+.pp-toc__lane{position:absolute;left:1px;top:32px;bottom:26px;width:12px;list-style:none;pointer-events:none;
+  background:repeating-linear-gradient(to bottom,var(--ghost) 0 4px,transparent 4px 10px) 5.5px 0/1px 100% no-repeat}
+.pp-toc__lane::after{content:"";position:absolute;inset:0;border-left:1px solid var(--c-signal-rail);border-right:1px solid var(--c-signal-rail);
+  background:linear-gradient(var(--c-signal),var(--c-signal)) 4px 0/2px 100% no-repeat;transform:scaleY(var(--pp-p,0));transform-origin:top}
+.pp-toc__mail{margin-top:34px;padding-top:14px;border-top:1px solid var(--hair)}
+.pp-toc__mail .sgp-mono{color:var(--fg-2);margin-bottom:2px}
+.pp-toc__mail a{display:inline-flex;align-items:center;min-height:44px;font:500 .875rem/1.35 var(--f-mono);overflow-wrap:anywhere;transition:color .3s}
+.pp-toc__mail a:hover{color:var(--red-text)}
+
+.pp-part + .pp-part{margin-top:clamp(72px,9vw,128px);padding-top:clamp(40px,5vw,64px);border-top:1px solid var(--hair)}
+.pp-part__no{color:var(--red-text);margin-bottom:10px}
+.pp-part__h{margin-bottom:clamp(20px,2.4vw,32px)}
+/* live placeholder line — lead paragraph (not a second heading under the H2) */
+.pp-lead{font:400 var(--fs-lead)/1.5 var(--f-text);color:var(--fg-2);max-width:60ch;margin-bottom:24px}
+.pp-notice{max-width:640px;margin-bottom:28px}
+.pp-notice p{color:var(--fg)}
+
+/* clearly-marked placeholder for the policy text the client must supply */
+.pp-slots{border:1px dashed var(--hair-2);padding:clamp(20px,2.6vw,32px);max-width:720px;background:repeating-linear-gradient(135deg,transparent 0 14px,rgba(28,29,29,.025) 14px 15px)}
+.pp-slots__k{display:flex;align-items:center;gap:10px;color:var(--fg-2);margin-bottom:12px}
+.pp-slots__dot{width:8px;height:8px;border-radius:50%;background:var(--c-signal)}
+.pp-slots__list li{display:flex;align-items:baseline;gap:14px;padding:12px 0;border-bottom:1px dashed var(--hair-2);color:var(--fg-2);font-size:var(--fs-small)}
+.pp-slots__list li:last-child{border-bottom:0}
+.pp-slots__list .sgp-mono{color:var(--fg-2);opacity:.8}
+
+/* ---------- cookie table = timetable rows with mono keys ---------- */
+.pp-table__t{margin-bottom:18px;max-width:44ch}
+.pp-table__wrap{margin-bottom:24px}
+.pp-table{width:100%;border-top:1px solid var(--fg);font-size:var(--fs-small);line-height:1.5;text-align:left}
+.pp-table thead th{font:500 var(--fs-label)/1.35 var(--f-mono);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--fg-2);padding:12px 14px 12px 0;border-bottom:1px solid var(--hair-2);vertical-align:bottom}
+.pp-table tbody tr{border-bottom:1px solid var(--hair);transition:background-color .35s}
+.pp-table tbody tr:hover{background:color-mix(in srgb,var(--fg) 3.5%,transparent)}
+.pp-table tbody th,.pp-table td{padding:16px 14px 16px 0;vertical-align:top;font-weight:400}
+.pp-table tbody th{width:24%;padding-left:10px;position:relative}
+.pp-table td:nth-child(4){width:15%}
+.pp-table td:nth-child(5){width:17%}
+.pp-table tbody th::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--c-signal);transform:scaleY(0);transform-origin:top;transition:transform .4s var(--e-arrive)}
+.pp-table tbody tr:hover th::before{transform:scaleY(1)}
+.pp-table code{font:500 .8125rem/1.5 var(--f-mono);color:var(--fg);letter-spacing:.02em;overflow-wrap:anywhere}
+.pp-codes{display:inline}
+.pp-name-txt{color:var(--fg)}
+.pp-table td:nth-child(2){color:var(--fg-2);white-space:nowrap}
+.pp-table td:nth-child(3){color:var(--fg);min-width:18ch}
+.pp-table td:nth-child(4),.pp-table td:nth-child(5){color:var(--fg-2)}
+.pp-exp{color:var(--fg)}
+.pp-note{max-width:640px;margin-bottom:26px;font-size:var(--fs-small)}
+.pp-note p{color:var(--fg)}
+.pp-actions{gap:10px 26px}
+
+/* ---------- responsive ---------- */
+@media (max-width:999px){
+  .pp-doc__grid{display:block}
+  .pp-toc{margin-bottom:48px;max-width:420px}
+  .pp-toc__mail{display:none}
+  /* table → one card per cookie */
+  .pp-table,.pp-table tbody,.pp-table tr,.pp-table tbody th{display:block;width:auto}
+  .pp-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+  .pp-table tbody tr{padding:16px 0 10px}
+  .pp-table tbody th{width:auto;padding:0 0 10px 12px;font-size:var(--fs-body)}
+  .pp-table tbody th::before{transform:none}
+  .pp-table td:nth-child(n){display:grid;width:auto;grid-template-columns:minmax(110px,9.5rem) minmax(0,1fr);gap:4px 14px;padding:8px 0 8px 12px;border-top:1px solid var(--hair);white-space:normal}
+  .pp-table td::before{content:attr(data-th);font:500 var(--fs-label)/1.5 var(--f-mono);letter-spacing:var(--ls-label);text-transform:uppercase;color:var(--fg-2)}
+}
+@media (max-width:480px){
+  .pp-table td:nth-child(n){grid-template-columns:1fr;gap:2px}
+}
+@media (prefers-reduced-motion:reduce){
+  .pp-table tbody th::before{transition:none}
+}

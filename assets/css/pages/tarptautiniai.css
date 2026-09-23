@@ -1,0 +1,234 @@
+/* =========================================================
+   SGP v2 · /pervezimo-paslaugos/tarptautiniai-pervezimai/ (page-owned, prefix tp-) — dizaino-sistema.md §6.4
+   Route header (video) → 01 routes + Image With Hotspots (M41, M69) → 02/03 overlapping chapters (M65, M24, M16)
+   → 04 stops lane → 05 GS-Trust → 06 ✕ list → 07 notice cards → 08 GS-ServiceList → GS-Arrival
+   Tokens / surface variables only. Reduced-motion states at the end of the file.
+   ========================================================= */
+
+/* ---------- route header: lighter overlay (left 80 %) ---------- */
+.tp-hero::before{background:linear-gradient(90deg,rgba(15,20,23,.8) 0%,rgba(15,20,23,.52) 45%,rgba(15,20,23,.12) 85%),linear-gradient(180deg,rgba(15,20,23,.55) 0%,rgba(15,20,23,0) 26%,rgba(15,20,23,.16) 60%,rgba(15,20,23,.9) 100%)}
+
+/* ---------- 01 routes ---------- */
+.tp-routes__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px var(--col-gap);align-items:start}
+.tp-routes__side{grid-column:1 / span 4;display:flex;flex-direction:column;gap:28px}
+.tp-hot{grid-column:5 / span 8;position:relative}
+.tp-rlist{border-top:1px solid var(--fg)}
+.tp-rl{position:relative;display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:6px 14px;align-items:center;padding:18px 0 20px;border-bottom:1px solid var(--hair);
+  transition:background-color .4s var(--e-arrive),padding .45s var(--e-arrive)}
+.tp-rl__code{grid-column:1;color:var(--red-text)}
+.tp-rl__t{grid-column:1;font:600 clamp(1.5rem,1.2rem + .9vw,2rem)/1.05 var(--f-display);letter-spacing:.004em}
+.tp-rl__go{grid-column:2;grid-row:1 / span 2;display:grid;place-items:center;width:44px;height:44px;border:1px solid var(--hair-2);transition:background-color .35s,border-color .35s,color .35s}
+.tp-rl__go .sgp-i{width:18px;height:18px;transform:rotate(90deg);transition:transform .45s var(--e-arrive)}
+.tp-rl__lane{position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--c-signal);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--e-route)}
+.tp-rl:hover,.tp-rl:focus-visible{background:color-mix(in srgb,var(--fg) 4%,transparent);padding-left:10px;padding-right:8px}
+.tp-rl:hover .tp-rl__lane,.tp-rl:focus-visible .tp-rl__lane{transform:scaleX(1)}
+.tp-rl:hover .tp-rl__go,.tp-rl:focus-visible .tp-rl__go{background:var(--c-signal);border-color:var(--c-signal);color:var(--c-asphalt-900)}
+.tp-rl:hover .tp-rl__go .sgp-i{transform:rotate(90deg) translateX(3px)}
+.tp-routes__hint{display:none;align-items:center;gap:10px;color:var(--fg-2)}
+.tp-routes__dot{display:grid;place-items:center;width:24px;height:24px;border-radius:50%;background:var(--c-signal);color:var(--c-asphalt-900);font-weight:600}
+.tp-routes__grid.has-hot .tp-routes__hint{display:flex}
+
+/* Image With Hotspots — markers sit on the schematic (layer is sized to the SVG box by page JS) */
+.tp-hot__layer{position:absolute;inset:0;z-index:4;pointer-events:none}   /* lives inside .sgp-map__stage (= the SVG box): markers use % only */
+.tp-hs{position:absolute;left:var(--x);top:var(--y);width:0;height:0;pointer-events:auto}
+.tp-hs__btn{position:absolute;left:-17px;top:-17px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--c-signal);color:var(--c-asphalt-900);
+  font:600 .8125rem/1 var(--f-mono);letter-spacing:.02em;box-shadow:0 0 0 3px var(--c-paper-50);transition:transform .35s var(--e-arrive),background-color .3s}
+.tp-hs__btn::after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px solid var(--c-signal);opacity:0;pointer-events:none}
+.tp-hot.in .tp-hs__btn::after{animation:tp-pulse 2s var(--e-arrive) 2;animation-delay:calc(.8s + var(--i,0) * .18s)}
+@keyframes tp-pulse{0%{opacity:.9;transform:scale(.7)}100%{opacity:0;transform:scale(1.9)}}
+.tp-hs--term .tp-hs__btn{background:var(--c-asphalt-900);color:var(--c-snow);box-shadow:0 0 0 3px var(--c-signal)}
+.tp-hs:hover .tp-hs__btn,.tp-hs.is-open .tp-hs__btn,.tp-hs__btn:focus-visible{transform:scale(1.12)}
+.tp-hs:hover,.tp-hs.is-open{z-index:3}
+.tp-hs__tip{position:absolute;left:0;bottom:26px;width:240px;transform:translate(-50%,6px);padding:12px 14px 14px;background:var(--c-asphalt-950);color:var(--c-snow);
+  border:1px solid var(--c-hair-d-2);border-top:2px solid var(--c-signal);box-shadow:var(--sh-panel);font-size:.9375rem;line-height:1.45;
+  opacity:0;visibility:hidden;transition:opacity .3s var(--e-arrive),transform .35s var(--e-arrive),visibility 0s .35s}
+.tp-hs--start .tp-hs__tip{transform:translate(-22px,6px)}
+.tp-hs--up .tp-hs__tip{bottom:26px}
+.tp-hs:not(.tp-hs--up).tp-hs--term .tp-hs__tip{bottom:auto;top:26px}
+.tp-hs.is-open .tp-hs__tip,.tp-hs:hover .tp-hs__tip{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .3s var(--e-arrive),transform .35s var(--e-arrive),visibility 0s}
+.tp-hs--start.is-open .tp-hs__tip,.tp-hs--start:hover .tp-hs__tip{transform:translate(-22px,0)}
+.tp-hs__k{color:var(--c-signal-lit);margin-bottom:6px}
+.tp-hs__tbd{color:var(--c-fog)}
+.tp-hs__tel{display:inline-flex;align-items:center;gap:10px;min-height:44px;margin-top:4px;font:600 1.25rem/1 var(--f-display);color:var(--c-snow);transition:color .25s}
+.tp-hs__tel .sgp-i{color:var(--c-signal);width:18px;height:18px}
+.tp-hs__tel:hover{color:var(--c-signal-lit)}
+.tp-hot .sgp-mapsvg .term.on{fill:var(--c-signal)}
+/* 1000–1279: the schematic needs the full width (SVG labels stay ≥12 px), the list + facts sit above it in two columns */
+@media (max-width:1279px) and (min-width:1000px){
+  .tp-routes__grid{display:block}
+  .tp-routes__side{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px var(--col-gap);align-items:start;margin-bottom:40px}
+  .tp-routes__hint{grid-column:2}
+}
+@media (max-width:999px){
+  .tp-routes__grid{display:block}
+  .tp-routes__side{margin-bottom:36px;max-width:640px}
+}
+@media (max-width:699px){.tp-hot__layer,.tp-routes__hint{display:none!important}}
+
+/* ---------- 02 / 03 overlapping chapters (M65) ---------- */
+.tp-over{position:relative}
+.tp-ch{position:relative;padding:clamp(88px,9vw,136px) 0 clamp(72px,7vw,112px);min-height:100vh;display:flex;flex-direction:column;justify-content:center}
+.tp-ch::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:linear-gradient(90deg,rgba(15,20,23,.9) 0%,rgba(15,20,23,.74) 46%,rgba(15,20,23,.42) 100%),linear-gradient(180deg,rgba(15,20,23,.5) 0%,rgba(15,20,23,.2) 40%,rgba(15,20,23,.8) 100%)}
+.tp-ch__media{--bleed:10%}
+.tp-ch__ph{display:block}
+.tp-ch--ie .sgp-bgvideo__poster,.tp-ch--ie .sgp-bgvideo__v{display:none}
+@media (min-width:1000px){
+  .tp-ch__ph{display:none}
+  .tp-ch--ie .sgp-bgvideo__poster,.tp-ch--ie .sgp-bgvideo__v{display:block}
+}
+.tp-ch__dim{position:absolute;inset:0;z-index:5;background:var(--c-asphalt-950);opacity:var(--tp-dim,0);pointer-events:none}
+.tp-ch__in{width:min(100% - 2 * var(--gutter),var(--container))}
+.tp-ch__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:40px var(--col-gap);align-items:center}
+.tp-ch__info{grid-column:1 / span 6;min-width:0}
+.tp-ch__insets{grid-column:8 / span 5;position:relative;padding-bottom:18%}
+.tp-ch__h{margin-bottom:28px;max-width:16ch}
+.tp-ch .sgp-tt{margin:26px 0 22px}
+.tp-ch__kv{margin-bottom:28px}
+.tp-ch__calls{display:flex;flex-wrap:wrap;align-items:center;gap:12px 28px}
+.tp-ch__calls .sgp-callbtn{flex:0 1 auto}
+.tp-ch__phl{display:flex;flex-wrap:wrap;gap:0 22px}
+.tp-ch__foot{display:flex;justify-content:flex-end;margin-top:18px}
+/* cascade insets (M24 mask reveal + parallax on the front one) */
+.tp-inset--a{width:82%;margin-left:auto}
+.tp-inset--a .sgp-grade{aspect-ratio:4/5}
+.tp-inset--b{position:absolute;left:0;bottom:0;width:56%;z-index:2}
+.tp-inset--b .sgp-grade{aspect-ratio:4/3;box-shadow:var(--sh-lift);outline:1px solid var(--c-hair-d)}
+/* when JS pins the chapters (≥1000 px, motion allowed): each chapter except the last sticks once its bottom meets the viewport bottom */
+.tp-over.is-pin>.tp-ch:not(:last-child){position:sticky;top:min(0px,calc(100vh - var(--tp-h,100vh)))}
+.tp-over.is-pin>.tp-ch + .tp-ch{box-shadow:0 -24px 60px -24px rgba(0,0,0,.7)}
+@media (max-width:1279px) and (min-width:1000px){.tp-ch__info{grid-column:1 / span 7}.tp-ch__insets{grid-column:9 / span 4}}
+@media (max-width:999px){
+  .tp-ch{min-height:0;padding:clamp(72px,10vw,104px) 0}
+  .tp-ch::after{background:linear-gradient(180deg,rgba(15,20,23,.72) 0%,rgba(15,20,23,.82) 50%,rgba(15,20,23,.94) 100%)}
+  .tp-ch__grid{display:block}
+  .tp-ch__insets{margin-top:44px;max-width:560px;padding-bottom:22%}
+  .tp-ch__dim{display:none}
+  /* phones + tablets: no full-height cover (a landscape photo stretched over a ~1300 px stacked chapter is upscaled
+     to mush); the photo is a top band behind the heading / lane / timetable that fades into solid asphalt-900 */
+  .tp-ch{background:var(--c-asphalt-900)}
+  .tp-ch__media{top:0;bottom:auto;height:min(82svh,760px);transform:none!important;
+    -webkit-mask-image:linear-gradient(180deg,#000 45%,transparent 100%);mask-image:linear-gradient(180deg,#000 45%,transparent 100%)}
+  .tp-ch--es .tp-ch__media img{filter:saturate(.8) contrast(1.08) brightness(.7)} /* bright dusk city: tone it to the Airija chapter */
+}
+
+/* route lane inside a chapter (codes on phones, names ≥691 px) */
+.tp-strip{--n:5;position:relative;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));margin:0 0 6px;padding-top:34px;max-width:560px}
+.tp-strip li{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;min-width:0}
+.tp-strip li::before{content:"";position:absolute;top:-19px;right:50%;width:100%;height:12px;border-top:1px solid var(--c-signal-rail);border-bottom:1px solid var(--c-signal-rail);
+  background:linear-gradient(var(--c-signal),var(--c-signal)) 0 4px/100% 2px no-repeat;transform:scaleX(0);transform-origin:left;transition:transform .5s var(--e-route);transition-delay:calc(var(--i,0) * .16s)}
+.tp-strip li:first-child::before{display:none}
+.tp-strip li.is-tbd::before,.tp-strip li.is-after-tbd::before{border:0;background:repeating-linear-gradient(90deg,var(--c-fog) 0 6px,transparent 6px 13px) 0 5px/100% 1.5px no-repeat}
+.tp-strip li::after{content:"";position:absolute;top:-25px;left:50%;width:14px;height:14px;margin-left:-7px;border-radius:50%;border:2px solid var(--c-fog);background:var(--c-asphalt-900);transition:background-color .4s,border-color .4s;transition-delay:calc(.2s + var(--i,0) * .16s)}
+.tp-strip li.is-o::after,.tp-strip li.is-t::after{width:18px;height:18px;margin-left:-9px;top:-27px;border-color:var(--c-signal)}
+.tp-strip li.is-tbd::after{display:none}
+.tp-strip.in li::before{transform:scaleX(1)}
+.tp-strip.in li::after{border-color:var(--c-signal)}
+.tp-strip.in li.is-o::after,.tp-strip.in li.is-t::after{background:var(--c-signal)}
+html:not(.js) .tp-strip li::before{transform:none}
+.tp-strip__c{color:var(--c-snow)}
+.tp-strip__n{font:500 .8125rem/1.25 var(--f-text);color:var(--c-fog)}
+.tp-strip--tbd{padding-top:58px}
+.tp-strip li.is-tbd .tp-strip__n{position:absolute;top:-52px;left:50%;transform:translateX(-50%);white-space:nowrap;font:500 .75rem/1 var(--f-mono);letter-spacing:.04em;color:var(--c-fog)}
+.tp-strip li.is-tbd{justify-content:flex-start}
+@media (max-width:690px){
+  .tp-strip{max-width:none}
+  .tp-strip li:not(.is-tbd) .tp-strip__n{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .tp-strip li.is-tbd .tp-strip__n{font-size:.75rem;letter-spacing:0}
+}
+
+/* ---------- 04 Pakeliui — four stop tiles on a lane (Horizontal List Item, Border Animation) ---------- */
+.tp-stops{--n:4;position:relative;display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:var(--col-gap);padding-top:40px}
+.tp-stops::before{content:"";position:absolute;left:0;right:0;top:7px;height:1px;background:repeating-linear-gradient(90deg,var(--ghost) 0 4px,transparent 4px 10px)}
+.tp-stops__lane{position:absolute;left:0;right:0;top:1px;height:12px;border-top:1px solid var(--c-signal-rail);border-bottom:1px solid var(--c-signal-rail);
+  background:linear-gradient(var(--c-signal),var(--c-signal)) 0 4px/100% 2px no-repeat;transform:scaleX(0);transform-origin:left;list-style:none}
+.tp-stops.in .tp-stops__lane{transform:scaleX(1);transition:transform 1.4s var(--e-route) .2s}
+html:not(.js) .tp-stops__lane{transform:none}
+.tp-stop{position:relative;display:flex;flex-direction:column;gap:8px;padding:22px 20px 24px;border:1px solid var(--hair);background:color-mix(in srgb,var(--bg) 80%,transparent);
+  transition:background-color .4s var(--e-arrive),border-color .4s}
+.tp-stop::after{content:"";position:absolute;left:-1px;right:-1px;top:-1px;height:2px;background:var(--c-signal);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--e-route)}
+.tp-stop>.sgp-ring{position:absolute;left:19px;top:-41px;--bg:var(--c-paper-50)}
+.tp-stop::before{content:"";position:absolute;left:26px;top:-25px;width:1px;height:24px;background:var(--hair-2);transition:background-color .4s;transition-delay:calc(.4s + var(--i,0) * .3s)}
+.tp-stops.in .tp-stop>.sgp-ring{border-color:var(--c-signal);background:var(--c-signal);transition-delay:calc(.4s + var(--i,0) * .3s)}
+.tp-stops.in .tp-stop::before{background:var(--c-signal)}
+html:not(.js) .tp-stop>.sgp-ring{border-color:var(--c-signal);background:var(--c-signal)}
+.tp-stop__no{color:var(--red-text)}
+.tp-stop__t{font:500 clamp(1.25rem,1.05rem + .6vw,1.625rem)/1.1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;overflow-wrap:anywhere}
+.tp-stop__k{color:var(--fg-2)}
+.tp-stop__s{color:var(--fg-2);font-size:var(--fs-small);line-height:1.45}
+.tp-stop:hover{background:var(--c-white);border-color:var(--hair-2)}
+.tp-stop:hover::after{transform:scaleX(1)}
+@media (max-width:999px){
+  .tp-stops{grid-template-columns:1fr 1fr;padding:0 0 0 38px;gap:14px}
+  .tp-stops::before{left:7px;right:auto;top:0;bottom:0;width:1px;height:auto;background:repeating-linear-gradient(to bottom,var(--ghost) 0 4px,transparent 4px 10px)}
+  .tp-stops__lane{left:1px;right:auto;top:0;bottom:0;width:12px;height:auto;border:0;border-left:1px solid var(--c-signal-rail);border-right:1px solid var(--c-signal-rail);
+    background:linear-gradient(var(--c-signal),var(--c-signal)) 4px 0/2px 100% no-repeat;transform:scaleY(0);transform-origin:top}
+  .tp-stops.in .tp-stops__lane{transform:scaleY(1)}
+  .tp-stop>.sgp-ring{left:-38px;top:24px}
+  .tp-stop::before{left:-22px;top:31px;width:22px;height:1px}
+  .tp-stop:nth-child(odd) > .sgp-ring,.tp-stop:nth-child(odd)::before{display:none}
+}
+@media (max-width:690px){
+  .tp-stops{grid-template-columns:1fr}
+  .tp-stop:nth-child(odd) > .sgp-ring,.tp-stop:nth-child(odd)::before{display:block}
+}
+
+/* ---------- 05 GS-Trust — nine numbered rows (Horizontal List Item, Border Animation) ---------- */
+.tp-trust__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:32px var(--col-gap);align-items:start}
+.tp-trust__side{grid-column:1 / span 4;align-self:stretch}
+.tp-trust__side .sgp-d2{margin-bottom:18px}
+.tp-trust__list{grid-column:6 / span 7;border-top:1px solid var(--fg)}
+.tp-trust__list li{position:relative;display:grid;grid-template-columns:48px minmax(0,1fr);gap:12px;padding:20px 8px 20px 0;border-bottom:1px solid var(--hair);transition:background-color .4s var(--e-arrive),padding .45s var(--e-arrive)}
+.tp-trust__list li::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--c-signal);transform:scaleX(0);transform-origin:left;transition:transform .6s var(--e-route)}
+.tp-trust__no{color:var(--fg-2);padding-top:5px;transition:color .3s}
+.tp-trust__list p{color:var(--fg-2);font-size:var(--fs-body);line-height:1.6;max-width:62ch}
+.tp-trust__list b{color:var(--fg);font-weight:600}
+.tp-trust__list li:hover{background:color-mix(in srgb,var(--fg) 3.5%,transparent);padding-left:10px}
+.tp-trust__list li:hover::after{transform:scaleX(1)}
+.tp-trust__list li:hover .tp-trust__no{color:var(--red-text)}
+@media (max-width:1279px) and (min-width:1000px){.tp-trust__side{grid-column:1 / span 5}.tp-trust__list{grid-column:6 / span 7}}
+@media (max-width:999px){.tp-trust__grid{display:block}.tp-trust__side{margin-bottom:28px}}
+@media (max-width:690px){.tp-trust__list li{grid-template-columns:36px minmax(0,1fr);gap:8px}}
+
+/* ---------- 06 ✕ list + callout (dark, texture) ---------- */
+.tp-ban{isolation:isolate}
+.tp-ban::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(15,20,23,.9);pointer-events:none}
+.tp-ban__tex img{opacity:.5;filter:grayscale(.4) contrast(1.05)}
+.tp-ban .sgp-lead b{color:var(--fg);font-weight:600}
+.tp-ban__grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:40px var(--col-gap);align-items:start}
+.tp-ban__list{grid-column:1 / span 7;border-top:1px solid var(--hair-2);gap:0}
+.tp-ban__list li{padding:16px 0 16px 30px;border-bottom:1px solid var(--hair);font-size:var(--fs-body)}
+.tp-ban__list li::before{top:calc(16px + .28em)}
+.tp-ban__side{grid-column:9 / span 4;align-self:stretch}
+.tp-ban__callout p{color:rgba(242,244,243,.88);font-size:var(--fs-small);line-height:1.6}
+.tp-ban__fine{margin-top:16px;font-size:var(--fs-body)}
+.tp-ban__fine strong{font:600 1.5rem/1 var(--f-display);color:var(--c-signal-lit)}
+.tp-ban__btns{margin-top:22px;gap:10px 22px}
+@media (max-width:1279px) and (min-width:1000px){.tp-ban__list{grid-column:1 / span 7}.tp-ban__side{grid-column:8 / span 5}}
+@media (max-width:999px){.tp-ban__grid{display:block}.tp-ban__side{margin-top:36px;max-width:640px}}
+
+/* ---------- 07 four notice cards ---------- */
+.tp-know__h{max-width:26ch;margin-bottom:clamp(36px,4.5vw,64px)}
+.tp-know__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(28px,3vw,44px) var(--col-gap)}
+.tp-note{position:relative;padding-top:18px;border-top:1px solid var(--fg)}
+.tp-note::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:var(--c-signal);transform:scaleX(0);transform-origin:left;transition:transform .7s var(--e-route)}
+.tp-note:hover::before{transform:scaleX(1)}
+.tp-note__k{display:flex;align-items:center;gap:12px;margin-bottom:16px;color:var(--fg)}
+.tp-note__k span{color:var(--red-text)}
+.tp-note p{color:var(--fg-2);font-size:var(--fs-body);line-height:1.62;max-width:62ch}
+.tp-note__kv{grid-template-columns:1fr;border-top:0}
+.tp-note__kv dt{border-bottom:0;padding-bottom:0}
+.tp-note__kv dd{font-size:var(--fs-body)}
+@media (max-width:690px){.tp-know__grid{grid-template-columns:1fr}}
+
+/* ---------- 08 GS-ServiceList ---------- */
+.tp-svc__all{margin-top:18px;display:flex;flex-wrap:wrap;gap:6px 28px}
+
+/* ---------- reduced motion (§5.5) ---------- */
+@media (prefers-reduced-motion:reduce){
+  .tp-strip li::before,.tp-stops__lane{transform:none!important}
+  .tp-strip li::after{border-color:var(--c-signal)}
+  .tp-stop>.sgp-ring{border-color:var(--c-signal);background:var(--c-signal)}
+  .tp-hs__btn::after{animation:none!important;opacity:0}
+  .tp-ch__dim{opacity:0!important}
+}

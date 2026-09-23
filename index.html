@@ -1,394 +1,666 @@
 <!DOCTYPE html>
-<html lang="lt">
+<html lang="lt" data-today="2026-09-23">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SGP Pervežimai — saugiai, greitai, patikimai</title>
-<meta name="description" content="Keleivių, siuntų ir automobilių pervežimas Lietuva – Airija – Ispanija ir kitos Europos šalys.">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<title>Visos pervežimo paslaugos | sgp-pervezimai.lt</title>
+<meta name="description" content="Keleivių, siuntų, automobilių ir krovinių pervežimai Lietuva – Airija ir Lietuva – Ispanija. Nuo durų iki durų, kelionė apie 3–4 paros.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#0F1417">
+<link rel="canonical" href="https://arvydastry.github.io/sgp-pervezimai/">
+<meta property="og:url" content="https://arvydastry.github.io/sgp-pervezimai/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="lt_LT">
+<meta property="og:site_name" content="SGP pervežimai">
+<meta property="og:title" content="Visos pervežimo paslaugos">
+<meta property="og:description" content="Keleivių, siuntų, automobilių ir krovinių pervežimai Lietuva – Airija ir Lietuva – Ispanija. Nuo durų iki durų, kelionė apie 3–4 paros.">
+<meta property="og:image" content="https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1200">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#EFEDE8;--ink:#111110;--accent:#FFC21A;--muted:#6d6a63;--line:rgba(17,17,16,.16);--r:22px;--pad:clamp(18px,3.2vw,48px)}
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:"Inter Tight",system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-img,video{display:block;width:100%;height:100%;object-fit:cover}
-a{color:inherit;text-decoration:none}
-.label{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
-.wrap{padding-inline:var(--pad)}
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" imagesrcset="https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w, https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w, https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" imagesizes="100vw" fetchpriority="high">
 
-/* Header */
-.hdr{position:fixed;inset:0 0 auto 0;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:22px var(--pad);transition:color .35s}
-.hdr.on-dark{color:#fff}
-.logo{font-weight:800;font-size:20px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
-.logo i{width:10px;height:10px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 2px currentColor;display:inline-block}
-.hdr-r{display:flex;align-items:center;gap:18px}
-.pill{display:inline-flex;align-items:center;gap:10px;border:1.5px solid currentColor;border-radius:99px;padding:10px 20px;font-size:14px;font-weight:600;position:relative;overflow:hidden;transition:color .35s;isolation:isolate;cursor:pointer;background:none;font-family:inherit;color:inherit}
-.pill::before{content:"";position:absolute;inset:0;background:var(--ink);border-radius:99px;transform:translateY(101%);transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:-1}
-.pill:hover{color:var(--bg)}.pill:hover::before{transform:none}
-.on-dark .pill::before{background:#fff}.on-dark .pill:hover{color:var(--ink)}
-.burger{width:34px;height:34px;display:grid;place-content:center;gap:6px;background:none;border:0;cursor:pointer;color:inherit}
-.burger span{display:block;width:30px;height:2px;background:currentColor;transition:transform .4s,width .3s}
-.burger:hover span:last-child{width:18px}
-.menu-open .burger span:first-child{transform:translateY(4px) rotate(45deg)}
-.menu-open .burger span:last-child{transform:translateY(-4px) rotate(-45deg);width:30px}
+<link rel="stylesheet" href="./assets/css/tokens.css?v=7496bde7">
+<link rel="stylesheet" href="./assets/css/base.css?v=f2091231">
+<link rel="stylesheet" href="./assets/css/components.css?v=e7580f78">
+<link rel="stylesheet" href="./assets/css/motion.css?v=ae6bd3f0">
+<link rel="stylesheet" href="./assets/css/pages/home.css?v=289bdea7">
+<script>(function(h){h.classList.add('js');setTimeout(function(){if(!window.SGP)h.classList.remove('js')},4000)})(document.documentElement)</script>
 
-/* Overlay menu */
-.menu{position:fixed;inset:0;z-index:40;background:var(--ink);color:#fff;display:grid;grid-template-columns:1.4fr 1fr;align-items:end;padding:120px var(--pad) 48px;clip-path:inset(0 0 100% 0);transition:clip-path .8s cubic-bezier(.7,0,.2,1);visibility:hidden}
-.menu-open .menu{clip-path:inset(0);visibility:visible}
-.menu-open .hdr{color:#fff}
-.menu nav a{display:block;font-size:clamp(34px,6.4vw,92px);font-weight:800;letter-spacing:-.04em;line-height:1.02;text-transform:uppercase;transition:color .3s,transform .4s}
-.menu nav a:hover{color:var(--accent);transform:translateX(18px)}
-.menu aside{display:grid;gap:22px;font-size:16px;color:#bdbab2}
-.menu aside b{color:#fff;display:block;margin-bottom:4px}
-
-/* Hero */
-.hero{--p:0;min-height:100svh;display:flex;flex-direction:column;justify-content:center;position:relative;background:color-mix(in srgb,var(--accent) calc(var(--p)*100%),var(--bg));padding:120px var(--pad) 90px}
-.hero h1{font-size:clamp(3rem,14.2vw,16rem);line-height:.88;letter-spacing:-.05em;font-weight:800;text-transform:uppercase;text-align:center}
-.hero h1 span{display:block;overflow:hidden;padding-bottom:.06em}
-.hero h1 em{display:block;font-style:normal;transform:translateY(105%);animation:up 1.1s cubic-bezier(.2,.8,.2,1) forwards}
-.hero h1 span:nth-child(2) em{animation-delay:.12s}.hero h1 span:nth-child(3) em{animation-delay:.24s}
-@keyframes up{to{transform:none}}
-.hero-meta{position:absolute;left:var(--pad);right:var(--pad);bottom:28px;display:flex;justify-content:space-between;align-items:end;gap:20px}
-.hero-meta p:nth-child(2){font-size:15px;text-transform:none;letter-spacing:0;font-weight:500;text-align:center;max-width:420px}
-
-/* Expanding video */
-.reel{background:var(--accent);padding-bottom:var(--pad);position:relative}
-.reel-in{--s:.72;height:min(92svh,56vw);min-height:340px;border-radius:calc(var(--r)*1.4);overflow:hidden;transform:scale(var(--s));transform-origin:50% 0;position:relative;margin-inline:var(--pad);background:#222}
-.reel-in::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(0,0,0,.55))}
-.reel-cap{position:absolute;z-index:2;left:clamp(20px,4vw,56px);bottom:clamp(20px,4vw,48px);color:#fff;font-size:clamp(22px,3.4vw,52px);font-weight:600;letter-spacing:-.03em;line-height:1.05;max-width:16ch}
-.badge{position:absolute;z-index:3;right:clamp(24px,7vw,120px);top:36px;width:150px;height:150px;border-radius:50%;background:var(--ink);color:var(--accent);display:grid;place-items:center}
-.badge svg{position:absolute;inset:8px;animation:spin 14s linear infinite}
-.badge b{font-size:34px}
-@keyframes spin{to{transform:rotate(360deg)}}
-
-/* Section heads */
-.sec{padding:clamp(90px,12vw,190px) 0}
-.sec-head{display:grid;grid-template-columns:1fr 2.2fr;gap:30px;margin-bottom:clamp(40px,6vw,90px);align-items:start}
-.sec-head h2{font-size:clamp(34px,5.6vw,88px);font-weight:800;letter-spacing:-.045em;line-height:.95;text-transform:uppercase}
-.dot::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:currentColor;margin-right:10px;vertical-align:1px}
-
-/* Services */
-.svc{border-top:1.5px solid var(--ink)}
-.svc-row{display:grid;grid-template-columns:70px 1.3fr 1.5fr 60px;gap:20px;align-items:center;padding:clamp(22px,3vw,40px) 0;border-bottom:1px solid var(--line);position:relative;cursor:pointer;transition:padding .45s cubic-bezier(.2,.8,.2,1)}
-.svc-row::before{content:"";position:absolute;inset:0 calc(var(--pad)*-1);background:var(--ink);transform:scaleY(0);transform-origin:bottom;transition:transform .45s cubic-bezier(.2,.8,.2,1);z-index:-1}
-.svc-row:hover{color:var(--bg);padding-left:22px}.svc-row:hover::before{transform:none}
-.svc-row h3{font-size:clamp(28px,4.6vw,72px);font-weight:800;letter-spacing:-.045em;text-transform:uppercase;line-height:1}
-.svc-row ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.svc-row li{border:1px solid currentColor;border-radius:99px;padding:7px 14px;font-size:13.5px;font-weight:500}
-.arrow{width:54px;height:54px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;font-size:20px;transition:transform .45s,background .3s,color .3s}
-.svc-row:hover .arrow{transform:rotate(-45deg);background:var(--accent);color:var(--ink);border-color:var(--accent)}
-.float{position:fixed;left:0;top:0;width:300px;height:380px;border-radius:var(--r);overflow:hidden;pointer-events:none;z-index:30;opacity:0;transform:translate(-50%,-50%) scale(.6) rotate(-6deg);transition:opacity .35s,scale .35s}
-.float.show{opacity:1}
-.float img{position:absolute;inset:0;opacity:0;transition:opacity .4s}.float img.on{opacity:1}
-
-/* Statement */
-.state{background:var(--ink);color:var(--bg)}
-.state p.big{font-size:clamp(30px,5.4vw,92px);font-weight:600;letter-spacing:-.04em;line-height:1.04}
-.state .w{opacity:.16;transition:opacity .3s}.state .w.lit{opacity:1}
-.chip-img{display:inline-block;width:1.7em;height:.82em;border-radius:99px;overflow:hidden;vertical-align:-.06em;margin:0 .1em}
-.state-foot{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:clamp(50px,7vw,110px);border-top:1px solid rgba(255,255,255,.2);padding-top:28px;color:#bdbab2;font-size:16px;line-height:1.5}
-.state-foot b{display:block;color:var(--accent);font-size:13px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px}
-
-/* Routes */
-.routes{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px)}
-.route{position:relative;border-radius:calc(var(--r)*1.3);overflow:hidden;height:clamp(460px,52vw,760px);color:#fff;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(22px,2.6vw,40px);isolation:isolate}
-.route:nth-child(2){margin-top:clamp(0px,7vw,110px)}
-.route .ph{position:absolute;inset:-12% 0;z-index:-2;will-change:transform}
-.route .ph img{transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
-.route:hover .ph img{transform:scale(1.07)}
-.route::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,.05) 40%,rgba(0,0,0,.72))}
-.route h3{font-size:clamp(34px,5vw,80px);font-weight:800;letter-spacing:-.045em;line-height:.92;text-transform:uppercase}
-.route-top{display:flex;justify-content:space-between;align-items:start}
-.dates{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 14px}
-.dates span{background:rgba(255,255,255,.16);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.3);border-radius:99px;padding:8px 14px;font-size:13.5px;font-weight:600}
-.route .tel{font-size:15px;opacity:.9;line-height:1.6}
-.go{width:96px;height:96px;border-radius:50%;background:var(--accent);color:var(--ink);display:grid;place-items:center;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;transform:scale(0) rotate(-30deg);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
-.route:hover .go{transform:none}
-
-/* Marquee */
-.mq{overflow:hidden;white-space:nowrap;padding:clamp(30px,4vw,60px) 0;border-block:1.5px solid var(--ink)}
-.mq div{display:inline-block;will-change:transform;font-size:clamp(60px,11vw,180px);font-weight:800;letter-spacing:-.05em;text-transform:uppercase;line-height:1}
-.mq i{display:inline-block;width:.5em;height:.5em;border-radius:50%;background:var(--accent);border:3px solid var(--ink);margin:0 .25em;vertical-align:.08em}
-.mq .out{-webkit-text-stroke:2px var(--ink);color:transparent}
-
-/* Steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.step{background:#fff;border-radius:var(--r);padding:26px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .5s cubic-bezier(.2,.8,.2,1),background .35s}
-.step:hover{transform:translateY(-10px) rotate(-1.2deg);background:var(--accent)}
-.step .n{font-size:64px;font-weight:800;letter-spacing:-.05em;line-height:1}
-.step h4{font-size:22px;letter-spacing:-.02em;margin-bottom:8px}
-.step p{font-size:15px;line-height:1.5;color:#3c3a35}
-
-/* CTA */
-.cta{background:var(--accent);border-radius:calc(var(--r)*1.6) calc(var(--r)*1.6) 0 0}
-.cta h2{font-size:clamp(44px,9.4vw,160px);font-weight:800;letter-spacing:-.05em;line-height:.9;text-transform:uppercase;text-align:center;margin-bottom:clamp(40px,6vw,80px)}
-.form{max-width:860px;margin:auto;display:grid;grid-template-columns:1fr 1fr;gap:26px 22px}
-.form label{display:grid;gap:6px}
-.form input,.form textarea{background:none;border:0;border-bottom:1.5px solid var(--ink);padding:12px 0;font:500 18px "Inter Tight",sans-serif;color:var(--ink);outline:0;border-radius:0}
-.form input::placeholder,.form textarea::placeholder{color:rgba(17,17,16,.45)}
-.form .full{grid-column:1/-1}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chips input{display:none}
-.chips span{display:block;border:1.5px solid var(--ink);border-radius:99px;padding:9px 16px;font-size:14px;font-weight:600;cursor:pointer;transition:.25s}
-.chips span:hover{transform:translateY(-2px)}
-.chips input:checked+span{background:var(--ink);color:var(--accent)}
-.form .pill{justify-self:start;padding:16px 30px;font-size:16px;background:var(--ink);color:var(--accent)}
-.form .pill::before{background:#fff}.form .pill:hover{color:var(--ink)}
-.ok{display:none;font-weight:600}
-
-/* Footer */
-footer{background:var(--ink);color:var(--bg);padding:clamp(60px,7vw,100px) 0 0;overflow:hidden}
-.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:30px;font-size:15.5px;line-height:1.8;color:#bdbab2}
-.f-grid b{display:block;color:#fff;margin-bottom:10px}
-.f-grid a:hover{color:var(--accent)}
-.f-grid p.lead{font-size:clamp(20px,2.2vw,30px);color:#fff;letter-spacing:-.02em;line-height:1.2;font-weight:500;max-width:18ch}
-.f-big{font-size:34vw;font-weight:800;letter-spacing:-.07em;line-height:.74;text-align:center;color:var(--accent);margin-top:60px;transform:translateY(8%)}
-.f-bot{display:flex;justify-content:space-between;padding:20px var(--pad);border-top:1px solid rgba(255,255,255,.15);color:#8d8a83;font-size:13px}
-
-/* Reveal */
-.rv{opacity:0;transform:translateY(46px);transition:opacity .9s,transform .9s cubic-bezier(.2,.8,.2,1)}
-.rv.in{opacity:1;transform:none}
-
-@media(max-width:900px){
- .menu{grid-template-columns:1fr;align-content:end;gap:40px}
- .sec-head{grid-template-columns:1fr}
- .svc-row{grid-template-columns:36px 1fr 46px}.svc-row ul{grid-column:2/-1;grid-row:2}.arrow{width:44px;height:44px}
- .routes,.form{grid-template-columns:1fr}.route:nth-child(2){margin-top:0}
- .steps{grid-template-columns:1fr 1fr}.state-foot{grid-template-columns:1fr}
- .f-grid{grid-template-columns:1fr 1fr}
- .hero-meta p:nth-child(2){display:none}
- .badge{width:110px;height:110px;top:20px}.badge b{font-size:24px}
- .float{display:none}.go{transform:none;width:72px;height:72px;font-size:10px}
- .hdr .pill{display:none}
-}
-@media(max-width:520px){.steps{grid-template-columns:1fr}.step{min-height:220px}}
-@media(prefers-reduced-motion:reduce){
- *,*::before,*::after{animation:none!important;transition:none!important}
- .hero h1 em{transform:none}.rv{opacity:1;transform:none}.state .w{opacity:1}.reel-in{--s:1!important}
- html{scroll-behavior:auto}
-}
-</style>
 </head>
-<body>
+<body class="page-home">
+<svg class="sgp-sprite" width="0" height="0" aria-hidden="true" focusable="false">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 3.5h3l1.6 4.2-2.1 1.5a11.5 11.5 0 0 0 6.8 6.8l1.5-2.1 4.2 1.6v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3.5 5.5a2 2 0 0 1 2-2z"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15.5M13.5 6l6 6-6 6"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 8h17M3.5 16h17"/></symbol>
+  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5.5v13M15 5.5v13"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5l11 6.5-11 6.5z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3.5 6h17v12h-17zM3.5 7l8.5 6 8.5-6"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8.5 8.5h11v11h-11zM15.5 8.5v-4h-11v11h4"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10.5h16M8.5 3.5v5M15.5 3.5v5"/></symbol>
+  <symbol id="i-seat" viewBox="0 0 24 24"><path d="M6.5 3.5l3 11h8.5M16 14.5l1.5 6M9.5 14.5l-1.5 6M4 20.5h16M9 9.5h3.5"/></symbol>
+  <symbol id="i-heat" viewBox="0 0 24 24"><path d="M8 3.5c-1.2 1.3 1.2 2.4 0 3.8M12 3.5c-1.2 1.3 1.2 2.4 0 3.8M16 3.5c-1.2 1.3 1.2 2.4 0 3.8M4.5 11h15v3a5.5 5.5 0 0 1-5.5 5.5h-4A5.5 5.5 0 0 1 4.5 14z"/></symbol>
+  <symbol id="i-air" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9M9.3 4.3 12 6.8l2.7-2.5M9.3 19.7 12 17.2l2.7 2.5"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2c0 4.8-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5-7.5-9.8V6zM8.8 12.2l2.2 2.2 4.3-4.4"/></symbol>
+  <symbol id="i-rest" viewBox="0 0 24 24"><path d="M12 7.5V12l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4zM3.5 7.5 12 11.5l8.5-4M12 11.5v9"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><path d="M6 20.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM18 8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8.5 18h6a3.5 3.5 0 0 0 0-7h-5a3.5 3.5 0 0 1 0-7h6"/></symbol>
+  <symbol id="i-paw" viewBox="0 0 24 24"><path d="M12 20.5c-3.5 0-5.5-1.7-5.5-3.7 0-2.3 2.6-5.3 5.5-5.3s5.5 3 5.5 5.3c0 2-2 3.7-5.5 3.7zM6 10.5a1.8 2.3 0 1 0 0-.1M18 10.5a1.8 2.3 0 1 0 0-.1M9.3 6.5a1.8 2.3 0 1 0 0-.1M14.7 6.5a1.8 2.3 0 1 0 0-.1"/></symbol>
+  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 3.5v12M7 10.5l5 5 5-5M4.5 20h15"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><path d="M10.5 17.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM15.5 15.5l5 5"/></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 3.5h8l9 9-8 8-9-9zM8.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M8 8l8 8M16 8l-8 8"/></symbol>
+</svg>
 
-<header class="hdr" id="hdr">
-  <a href="#top" class="logo"><i></i>SGP</a>
-  <div class="hdr-r">
-    <a href="#kontaktai" class="pill">Užsakyti pervežimą</a>
-    <button class="burger" id="burger" aria-label="Meniu" aria-expanded="false"><span></span><span></span></button>
+<a class="sgp-skip" href="#main">Pereiti prie turinio</a>
+
+<header class="sgp-hdr" id="sgp-hdr" data-on="dark" data-salient="Header: Centered Menu · Permanent Transparent · Hide Until Needed · Resize On Scroll 84→64 · BG blur · Link hover: Animated Underline">
+  <div class="sgp-tk" data-salient="Global Section GS-Ticker → In Navigation Top (Before Scrolling) · [sgp_grafikas variant=&quot;ticker&quot; limit=&quot;3&quot;] · desktop only (≥1000)">
+    <div class="sgp-wrap">
+      <span class="sgp-mono sgp-tk__live">Artimiausi išvykimai</span>
+      <ul class="sgp-tk__list" data-sched="ticker" data-routes="lt-ie,lt-es,ie-lt,es-lt" data-limit="3" aria-label="Artimiausi išvykimai"><li class="is-soon"><b>Ispanija → Lietuva</b> rugsėjo 27 d. · po 4 d.</li><li><b>Airija → Lietuva</b> rugsėjo 28 d. · po 5 d.</li><li><b>Lietuva → Airija</b> spalio 9 d. · po 16 d.</li></ul>
+      <a class="sgp-mono sgp-tk__more" href="./pervezimu-grafikas/">Visas grafikas →</a>
+    </div>
+  </div>
+  <div class="sgp-bar">
+    <div class="sgp-wrap">
+      <a class="sgp-logo" href="./" aria-label="SGP pervežimai – pradžia">
+        <img class="sgp-logo__lt" src="./assets/img/logo_light.svg" alt="" width="112" height="46">
+        <img class="sgp-logo__dk" src="./assets/img/logo.svg" alt="" width="112" height="46">
+      </a>
+      <nav class="sgp-nav" aria-label="Pagrindinis meniu">
+        <a href="./apie-imone/">Apie mus</a>
+        <div class="sgp-nav__mm">
+          <a href="./pervezimo-paslaugos/">Pervežimo paslaugos</a>
+          <div class="sgp-mega" data-salient="Mega Menu „Pervežimo paslaugos“ · 3 columns · bg asphalt-950 · 2px red top · 6 groups (§6.3)">
+            <div class="sgp-wrap sgp-mega__in">
+              <div class="sgp-mega__grid"><div class="sgp-mega__grp"><p class="sgp-mono">Kroviniai</p><ul><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/">Krovinių pervežimas</a></li><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/negabaritiniu-kroviniu-pervezimas/">Negabaritinių krovinių pervežimas</a></li><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/daliniu-kroviniu-gabenimas/">Dalinių krovinių gabenimas</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Daiktai ir perkraustymas</p><ul><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/daiktu-pervezimas/">Daiktų pervežimas</a></li><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/">Perkraustymo paslaugos</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Automobiliai ir motociklai</p><ul><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/automobiliu-pervezimas/">Automobilių pervežimas</a></li><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/motociklu-pervezimas/">Motociklų pervežimas</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Keleiviai</p><ul><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/">Keleivių pervežimas</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Gyvūnai</p><ul><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/">Gyvūnų pervežimas</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Siuntos</p><ul><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pervezimas/">Siuntų pervežimas</a></li><li><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pristatymas/">Siuntų pristatymas</a></li></ul></div></div>
+              <div class="sgp-mega__foot">
+                <a class="sgp-lnk" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/">Tarptautiniai pervežimai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+                <a class="sgp-lnk" href="./pervezimo-paslaugos/">Visos paslaugos<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="./pervezimu-grafikas/">Pervežimų grafikas</a>
+        <a href="./siuntos-sekimas/">Siuntos sekimas</a>
+        <a href="./taisykles/">Taisyklės</a>
+        <a href="./kontaktai/">Kontaktai</a>
+      </nav>
+      <div class="sgp-hdr__r">
+        <button class="sgp-btn sgp-btn--signal sgp-btn--sm sgp-hdr__call" type="button" popovertarget="sgp-call" data-salient="Menu item (Button style) href=#sgp-call → opens the switchboard popover">
+          <span class="sgp-btn__l"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>Skambinti</span>
+        </button>
+        <button class="sgp-ico sgp-ico--red sgp-hdr__phone" type="button" popovertarget="sgp-call" aria-label="Skambinti – telefono numeriai"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></button>
+        <button class="sgp-ico sgp-burger" type="button" aria-expanded="false" aria-controls="sgp-menu" aria-label="Meniu" data-menu-toggle><svg class="sgp-i" aria-hidden="true"><use href="#i-menu"/></svg></button>
+      </div>
+    </div>
   </div>
 </header>
 
-<div class="menu" id="menu">
-  <nav>
-    <a href="#top">Pradžia</a>
-    <a href="#apie">Apie mus</a>
-    <a href="#paslaugos">Paslaugos</a>
-    <a href="#marsrutai">Tarptautiniai pervežimai</a>
-    <a href="#eiga">Siuntų sekimas</a>
-    <a href="#kontaktai">Kontaktai</a>
+<div class="sgp-callpanel" id="sgp-call" popover role="dialog" aria-label="Telefono numeriai" data-salient="GS-CallBar Raw HTML: div[popover]#sgp-call · desktop dropdown / phone bottom sheet · 5-line JS hook for the menu link #sgp-call">
+  <button class="sgp-ico sgp-callpanel__close" type="button" popovertarget="sgp-call" popovertargetaction="hide" aria-label="Uždaryti"><svg class="sgp-i" aria-hidden="true"><use href="#i-close"/></svg></button>
+  <p class="sgp-mono">Pervežimai į Airiją</p>
+  <a class="sgp-cp-row" href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris +370 650 53161"><span class="sgp-cc">LT</span>+370 650 53161<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  <a class="sgp-cp-row" href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span class="sgp-cc">IE</span>+353 86 450 3104<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  <a class="sgp-cp-row" href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span class="sgp-cc">UK</span>+44 7566 878681<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  <p class="sgp-mono">Pervežimai į Ispaniją</p>
+  <a class="sgp-cp-row" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris +370 638 28919"><span class="sgp-cc">LT</span>+370 638 28919<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  <a class="sgp-cp-row" href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span class="sgp-cc">ES</span>+34 602 547 929<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+  <p class="sgp-cp-mail"><svg class="sgp-i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a></p>
+</div>
+
+<div class="sgp-menu" id="sgp-menu" aria-hidden="true" data-lenis-prevent data-salient="Off Canvas Menu: Fullscreen Split · left = menu as a line diagram (custom CSS lane) · right = Global Section GS-Menu (phones + e-mail)">
+  <nav class="sgp-menu__nav" aria-label="Meniu">
+    <ol>
+      <li style="--i:0"><span class="sgp-ring"></span><a href="./" aria-current="page"><span class="sgp-mono">00</span>Pradžia</a></li>
+      <li style="--i:1"><span class="sgp-ring"></span><a href="./apie-imone/"><span class="sgp-mono">01</span>Apie mus</a></li>
+      <li style="--i:2"><span class="sgp-ring"></span><a href="./pervezimo-paslaugos/"><span class="sgp-mono">02</span>Pervežimo paslaugos</a></li>
+      <li style="--i:3"><span class="sgp-ring"></span><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/"><span class="sgp-mono">03</span>Tarptautiniai pervežimai</a></li>
+      <li style="--i:4"><span class="sgp-ring"></span><a href="./pervezimu-grafikas/"><span class="sgp-mono">04</span>Pervežimų grafikas</a></li>
+      <li style="--i:5"><span class="sgp-ring"></span><a href="./siuntos-sekimas/"><span class="sgp-mono">05</span>Siuntos sekimas</a></li>
+      <li style="--i:6"><span class="sgp-ring"></span><a href="./taisykles/"><span class="sgp-mono">06</span>Taisyklės</a></li>
+      <li style="--i:7"><span class="sgp-ring sgp-ring--fill"></span><a href="./kontaktai/"><span class="sgp-mono">07</span>Kontaktai</a></li>
+    </ol>
   </nav>
-  <aside>
-    <div><b>Airijos kryptis</b>+370 650 53161<br>+353 864 503104</div>
-    <div><b>Ispanijos kryptis</b>+370 638 28919<br>+34 60 25 47929</div>
+  <aside class="sgp-menu__side on-dark" aria-label="Telefonai">
+    <div><p class="sgp-menu__h">Pervežimai į Airiją</p>
+      <div class="sgp-phl"><a href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris +370 650 53161"><span class="sgp-cc">LT</span>+370 650 53161</a><a href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span class="sgp-cc">IE</span>+353 86 450 3104</a><a href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span class="sgp-cc">UK</span>+44 7566 878681</a></div></div>
+    <div><p class="sgp-menu__h">Pervežimai į Ispaniją</p>
+      <div class="sgp-phl"><a href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris +370 638 28919"><span class="sgp-cc">LT</span>+370 638 28919</a><a href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span class="sgp-cc">ES</span>+34 602 547 929</a></div></div>
+    <p class="sgp-cp-mail"><svg class="sgp-i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a></p>
   </aside>
 </div>
 
-<main id="top">
-<section class="hero" id="hero">
-  <h1><span><em>Saugiai</em></span><span><em>Greitai</em></span><span><em>Patikimai</em></span></h1>
-  <div class="hero-meta label">
-    <p>Įsikūrę Lietuvoje</p>
-    <p>Keleivių, siuntų ir automobilių pervežimas tarp Lietuvos, Airijos, Ispanijos ir kitų Europos šalių</p>
-    <p>LT — IE — ES</p>
+<main id="main" tabindex="-1">
+<!-- Salient: Page „Pradžia“ (§6.1) · rows S1–S9 + GS-Arrival (Before Footer) + GS-Footer + GS-CallBar -->
+<!-- ============ S1 · IŠVYKIMAS — hero + docked board ============ -->
+<section class="h-hero on-dark sgp-has-media" id="pradzia" data-hero data-theme="dark" data-salient="Row: Full Height (Responsive svh, content Bottom) · Video BG 29374299 (MP4 + preview image; phones poster only) · Parallax BG: Subtle · Color Overlay: Advanced gradient (§2.8) · Text Color Light">
+  <div class="sgp-bgmedia h-hero__media" data-parallax="0.18" aria-hidden="true"><img class="sgp-bgvideo__poster" src="https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" srcset="https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w, https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w, https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" width="1280" height="720" alt="" fetchpriority="high" decoding="async" style="object-position:58% 55%"><video class="sgp-bgvideo__v" id="heroVideo" data-bgvideo muted playsinline loop preload="none" data-hd="https://videos.pexels.com/video-files/29374299/12654526_960_540_30fps.mp4" data-sd="https://videos.pexels.com/video-files/29374299/12654526_960_540_30fps.mp4" aria-hidden="true" tabindex="-1" style="object-position:58% 55%"></video></div>
+  <div class="h-hero__main">
+    <div class="sgp-wrap sgp-wrap--zone">
+      <div class="h-hero__grid">
+        <div class="h-hero__copy">
+          <p class="h-hero__eyebrow sgp-mono"><span class="sgp-ring"></span>Tarptautiniai pervežimai mikroautobusais</p>
+          <h1 class="h-h1 sgp-d1" data-salient="Raw HTML H1 (.sgp-h1-route): sr-only keyword sentence + aria-hidden visual rows · fallback: Animated Text → Word Reveal">
+            <span class="sgp-sr">Tarptautiniai pervežimai: Lietuva – Airija, Lietuva – Ispanija ir atgal</span>
+            <span class="h-h1__row" aria-hidden="true"><span class="h-h1__w"><span style="--i:0">Lietuva</span></span><span class="h-dash" style="--i:1"><i></i></span><span class="h-h1__w"><span style="--i:2">Airija.</span></span></span>
+            <span class="h-h1__row" aria-hidden="true"><span class="h-h1__w"><span style="--i:3">Lietuva</span></span><span class="h-dash" style="--i:4"><i></i></span><span class="h-h1__w"><span style="--i:5">Ispanija.</span></span></span>
+            <span class="h-h1__row h-h1__row--back" aria-hidden="true"><span class="h-h1__w"><span style="--i:6">Ir</span></span><span class="h-h1__w"><span style="--i:7">atgal.</span></span></span>
+          </h1>
+          <a class="sgp-next" href="./pervezimu-grafikas/" data-sched="next" data-routes="lt-ie,lt-es,ie-lt,es-lt" data-salient="[sgp_grafikas variant=&quot;next&quot;] · visible &lt;1000px only"><span class="sgp-next__k sgp-mono"><span class="sgp-dot"></span>Artimiausias išvykimas</span><span class="sgp-next__v"><b>Ispanija → Lietuva</b> rugsėjo 27 d. <span class="sgp-next__rel">· po 4 d.</span></span></a>
+          <p class="h-hero__lead sgp-lead" data-reveal style="--dl:.7s">Visos pervežimo paslaugos – saugiai, greitai, patikimai. Keleiviai, siuntos, automobiliai, motociklai, gyvūnai ir perkraustymas nuo durų iki durų.</p>
+        </div>
+        <div class="h-hero__calls" data-reveal style="--dl:.85s" data-salient="2 × Button (Basic) + Extra Class .sgp-callbtn · Button Underline → /pervezimu-grafikas/">
+          <a class="sgp-callbtn" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161">
+            <span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Airiją</span><span class="sgp-callbtn__n">+370 650 53161</span></span>
+          </a>
+          <a class="sgp-callbtn" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919">
+            <span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span>
+            <span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Ispaniją</span><span class="sgp-callbtn__n">+370 638 28919</span></span>
+          </a>
+          <a class="sgp-lnk" href="./pervezimu-grafikas/">Visas pervežimų grafikas<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="h-hero__board">
+    <button class="sgp-vctl sgp-mono h-hero__vctl" type="button" data-video-toggle="heroVideo" aria-pressed="false" data-salient="Raw HTML video pause button (WCAG 2.2.2)"><svg class="sgp-i" aria-hidden="true"><use href="#i-pause"/></svg><span>Pauzė</span></button>
+    <div class="sgp-board" data-salient="Inner Row (Backdrop filter blur 16px, bg rgba(11,14,16,.74)) · Global Section GS-Board · [sgp_grafikas variant=&quot;board&quot;] · flap = .sgp-flap (desktop, once)">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-board__head">
+      <span class="sgp-board__origin" aria-hidden="true"><span class="sgp-ring sgp-ring--fill"></span></span>
+      <h2 class="sgp-board__title">Artimiausi pervežimai</h2>
+      <p class="sgp-board__note">Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.</p>
+      <a class="sgp-lnk" href="./pervezimu-grafikas/">Visas grafikas<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+    </div>
+    <div class="sgp-board__grid" data-sched="board" data-routes="lt-ie,lt-es,ie-lt,es-lt">
+  <a class="sgp-bcell" href="tel:+37065053161" aria-label="Lietuva – Airija: spalio 9 ir 23 d. Skambinti +370 650 53161">
+    <p class="sgp-bcell__dir sgp-mono" aria-hidden="true">Iš Lietuvos</p>
+    <p class="sgp-bcell__name" aria-hidden="true">Lietuva → Airija <svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></p>
+    <p class="sgp-bnext" aria-hidden="true"><span class="sgp-flap" data-flap>09 SPAL.</span></p>
+    <p class="sgp-bdate" aria-hidden="true"><time datetime="2026-10-09">Spalio 9 d.</time> <span>· po 16 d.</span></p>
+    <p class="sgp-blater" aria-hidden="true">Vėliau: spalio 23 d.</p>
+  </a>
+  <a class="sgp-bcell" href="tel:+37063828919" aria-label="Lietuva – Ispanija: spalio 9 ir 23 d. Skambinti +370 638 28919">
+    <p class="sgp-bcell__dir sgp-mono" aria-hidden="true">Iš Lietuvos</p>
+    <p class="sgp-bcell__name" aria-hidden="true">Lietuva → Ispanija <svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></p>
+    <p class="sgp-bnext" aria-hidden="true"><span class="sgp-flap" data-flap>09 SPAL.</span></p>
+    <p class="sgp-bdate" aria-hidden="true"><time datetime="2026-10-09">Spalio 9 d.</time> <span>· po 16 d.</span></p>
+    <p class="sgp-blater" aria-hidden="true">Vėliau: spalio 23 d.</p>
+  </a>
+  <a class="sgp-bcell" href="tel:+353864503104" aria-label="Airija – Lietuva: rugsėjo 28 d., spalio 15 ir 28 d. Skambinti +353 86 450 3104">
+    <p class="sgp-bcell__dir sgp-mono" aria-hidden="true">Į Lietuvą</p>
+    <p class="sgp-bcell__name" aria-hidden="true">Airija → Lietuva <svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></p>
+    <p class="sgp-bnext" aria-hidden="true"><span class="sgp-flap" data-flap>28 RUGS.</span></p>
+    <p class="sgp-bdate" aria-hidden="true"><time datetime="2026-09-28">Rugsėjo 28 d.</time> <span>· po 5 d.</span></p>
+    <p class="sgp-blater" aria-hidden="true">Vėliau: spalio 15 ir 28 d.</p>
+  </a>
+  <a class="sgp-bcell is-soonest" href="tel:+34602547929" aria-label="Ispanija – Lietuva: rugsėjo 27 d., spalio 14 ir 28 d. Skambinti +34 602 547 929">
+    <p class="sgp-bcell__dir sgp-mono" aria-hidden="true"><span class="sgp-dot"></span>Artimiausias</p>
+    <p class="sgp-bcell__name" aria-hidden="true">Ispanija → Lietuva <svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></p>
+    <p class="sgp-bnext" aria-hidden="true"><span class="sgp-flap" data-flap>27 RUGS.</span></p>
+    <p class="sgp-bdate" aria-hidden="true"><time datetime="2026-09-27">Rugsėjo 27 d.</time> <span>· po 4 d.</span></p>
+    <p class="sgp-blater" aria-hidden="true">Vėliau: spalio 14 ir 28 d.</p>
+  </a>
+</div>
+  </div>
+</div>
+
   </div>
 </section>
 
-<section class="reel" data-accent>
-  <div class="badge" aria-hidden="true">
-    <svg viewBox="0 0 100 100"><defs><path id="c" d="M50,50 m-40,0 a40,40 0 1,1 80,0 a40,40 0 1,1 -80,0"/></defs>
-      <text font-size="9.4" font-weight="700" letter-spacing="1.6" fill="currentColor"><textPath href="#c">SAUGIAI • GREITAI • PATIKIMAI • SGP •</textPath></text></svg>
-    <b>↓</b>
-  </div>
-  <div class="reel-in" id="reel">
-    <video autoplay muted loop playsinline preload="metadata"
-      poster="https://images.pexels.com/photos/12261472/pexels-photo-12261472.jpeg?auto=compress&cs=tinysrgb&w=1600">
-      <source src="https://videos.pexels.com/video-files/7183495/7183495-hd_1366_720_24fps.mp4" type="video/mp4">
-    </video>
-    <p class="reel-cap">Kiekvieną mėnesį — reguliarūs reisai per visą Europą.</p>
-  </div>
-</section>
-
-<section class="sec wrap" id="paslaugos">
-  <div class="sec-head rv">
-    <p class="label dot">Paslaugos</p>
-    <h2>Visos pervežimo paslaugos — vienoje vietoje</h2>
-  </div>
-  <div class="svc" id="svc">
-    <a class="svc-row rv" href="#kontaktai" data-img="12261472/pexels-photo-12261472.jpeg">
-      <span class="label">01</span><h3>Kroviniai</h3>
-      <ul><li>Krovinių pervežimas</li><li>Negabaritiniai kroviniai</li><li>Daliniai kroviniai</li></ul><span class="arrow">→</span></a>
-    <a class="svc-row rv" href="#kontaktai" data-img="5025635/pexels-photo-5025635.jpeg">
-      <span class="label">02</span><h3>Siuntos</h3>
-      <ul><li>Siuntų pristatymas</li><li>Asmeniniai daiktai</li><li>Siuntų sekimas</li></ul><span class="arrow">→</span></a>
-    <a class="svc-row rv" href="#kontaktai" data-img="34539243/pexels-photo-34539243/free-photo-of-car-transport-truck-on-road-in-heathwood.jpeg">
-      <span class="label">03</span><h3>Automobiliai</h3>
-      <ul><li>Automobilių pervežimas</li><li>Motociklų pervežimas</li></ul><span class="arrow">→</span></a>
-    <a class="svc-row rv" href="#kontaktai" data-img="33384858/pexels-photo-33384858/free-photo-of-white-minibus-parked-at-a-bus-station.jpeg">
-      <span class="label">04</span><h3>Keleiviai</h3>
-      <ul><li>Keleivių pervežimas</li><li>Nuo durų iki durų</li></ul><span class="arrow">→</span></a>
-    <a class="svc-row rv" href="#kontaktai" data-img="39572426/pexels-photo-39572426/free-photo-of-dogs-enjoying-a-car-ride-with-red-backpacks.jpeg">
-      <span class="label">05</span><h3>Gyvūnai</h3>
-      <ul><li>Gyvūnų pervežimas</li><li>Priežiūra kelionėje</li></ul><span class="arrow">→</span></a>
-    <a class="svc-row rv" href="#kontaktai" data-img="5025663/pexels-photo-5025663.jpeg">
-      <span class="label">06</span><h3>Perkraustymas</h3>
-      <ul><li>Perkraustymo paslaugos</li><li>Baldai ir buitinė technika</li></ul><span class="arrow">→</span></a>
-  </div>
-</section>
-<div class="float" id="float" aria-hidden="true"></div>
-
-<section class="sec state" id="apie" data-dark>
-  <div class="wrap">
-    <p class="label dot" style="margin-bottom:44px;color:var(--accent)">Apie mus</p>
-    <p class="big" id="big">Esame Lietuvoje įsikūrusi įmonė, <span class="chip-img"><img src="https://images.pexels.com/photos/12615250/pexels-photo-12615250.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></span> kuri veža keleivius, siuntas ir automobilius maršrutais Lietuva – Airija – Lietuva, <span class="chip-img"><img src="https://images.pexels.com/photos/34369733/pexels-photo-34369733/free-photo-of-stunning-curved-mountain-road-in-arid-landscape.jpeg?auto=compress&cs=tinysrgb&w=400" alt=""></span> Lietuva – Ispanija – Lietuva ir į kitas Europos šalis.</p>
-    <div class="state-foot">
-      <div class="rv"><b>Saugiai</b>Jūsų krovinys, automobilis ar augintinis keliauja prižiūrimas patyrusių vairuotojų.</div>
-      <div class="rv"><b>Greitai</b>Reguliarūs reisai kelis kartus per mėnesį — be ilgo laukimo ir tarpinių sandėlių.</div>
-      <div class="rv"><b>Patikimai</b>Siuntų sekimas ir tiesioginis ryšys su vežėju nuo paėmimo iki pristatymo.</div>
+<!-- ============ S2 · 01 APIE MUS ============ -->
+<section class="sgp-sec h-about on-light paper sgp-has-rail" id="apie" data-theme="light" data-salient="Row: Full Width Background · bg #F5F7F6 · Extra Class sgp-light sgp-graticule sgp-has-rail · Text Color Dark">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">01</span><span class="sgp-mono">Apie mus</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">LT ⇄ IE · LT ⇄ ES</span></div>
+    <div class="h-about__grid">
+      <div class="h-about__copy">
+        <p class="sgp-statement h-about__st" data-reveal data-salient="Highlighted Text: Regular Underline · #EF4539 · 3 px (draws on enter)">„SGP“ – esame įmonė įsikūrusi Lietuvoje, kuri užsiima keleivių, siuntų ir automobilių pervežimu <mark class="sgp-mark">Lietuva – Ispanija – Lietuva</mark>, <mark class="sgp-mark">Lietuva – Airija – Lietuva</mark> ir kitas Europos šalis (Vokietiją, Prancūziją).</p>
+        <p class="sgp-body h-about__body" data-reveal style="--dl:.1s">Nuo pirmos darbo dienos savo klientams užtikriname ne tik saugų, greitą bei patikimą pervežimą, bet ir malonų bendravimą su kvalifikuota bei patyrusia komanda.</p>
+        <dl class="sgp-kv h-about__kv" data-reveal style="--dl:.15s" data-salient="Text Block + Extra Class .sgp-kv (dl / dt / dd)">
+          <dt>Veikla</dt><dd>Keleivių, siuntų ir automobilių pervežimas</dd>
+          <dt>Kryptys</dt><dd>Lietuva – Airija – Lietuva · Lietuva – Ispanija – Lietuva</dd>
+          <dt>Taip pat</dt><dd>Vokietija, Prancūzija</dd>
+          <dt>Principas</dt><dd>Nuo durų iki durų</dd>
+          <dt>Draudimas</dt><dd>Kroviniai ir keleiviai kelionės metu apdrausti</dd>
+          <dt>Vairuotojai</dt><dd>Laikosi privalomo darbo ir poilsio režimo</dd>
+        </dl>
+        <a class="sgp-lnk" data-reveal style="--dl:.2s" href="./apie-imone/">Skaityti daugiau<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      </div>
+      <div class="h-about__media" data-salient="Cascading Images: 2 layers · parallax between layers · layer 1 Grow In Reveal, layer 2 Fade In From Bottom · crop marks on the back image">
+        <div class="sgp-crop h-casc__back"><figure class="sgp-grade" data-mask><img src="https://images.pexels.com/photos/7541981/pexels-photo-7541981.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900" srcset="https://images.pexels.com/photos/7541981/pexels-photo-7541981.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/7541981/pexels-photo-7541981.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/7541981/pexels-photo-7541981.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=900 900w, https://images.pexels.com/photos/7541981/pexels-photo-7541981.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w, https://images.pexels.com/photos/7541981/pexels-photo-7541981.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w" sizes="(min-width:1000px) 28vw, 84vw" width="900" height="600" alt="Vairuotojas sunkvežimio kabinoje naktį žvelgia pro langą" loading="lazy" decoding="async" style="object-position:60% 40%"><i class="sgp-ov"></i></figure></div>
+        <div class="h-casc__front" data-parallax="-0.09"><figure class="sgp-grade" data-mask style="--dl:.25s"><img src="https://images.pexels.com/photos/6169133/pexels-photo-6169133.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" srcset="https://images.pexels.com/photos/6169133/pexels-photo-6169133.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/6169133/pexels-photo-6169133.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700 700w, https://images.pexels.com/photos/6169133/pexels-photo-6169133.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/6169133/pexels-photo-6169133.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 19vw, 56vw" width="700" height="467" alt="Planšetė su važtaraščiais ant dėžės su lipduku &#x27;Handle with care&#x27;" loading="lazy" decoding="async"><i class="sgp-ov"></i></figure></div>
+      </div>
+    </div>
+    <div class="h-stats" data-stagger="150" data-salient="Milestone ×4 · Animation Effect: Motion Blur Slide In · delays 0/150/300/450 ms · „3–4“ = Milestone None + Animated Text">
+      <div class="h-stat" data-reveal><p class="h-stat__lbl sgp-mono">Kryptys</p><p class="h-stat__num"><span data-reel="2">2</span></p><p class="h-stat__cap">Airija ir Ispanija – iš Lietuvos ir atgal</p></div>
+      <div class="h-stat" data-reveal><p class="h-stat__lbl sgp-mono">Paslaugos</p><p class="h-stat__num"><span data-reel="11">11</span></p><p class="h-stat__cap">tarptautinių pervežimo paslaugų</p></div>
+      <div class="h-stat" data-reveal><p class="h-stat__lbl sgp-mono">Kelyje</p><p class="h-stat__num"><span data-reel="3–4">3–4</span></p><p class="h-stat__cap">paros nuo paėmimo dienos</p></div>
+      <div class="h-stat" data-reveal><p class="h-stat__lbl sgp-mono">Pakeliui</p><p class="h-stat__num"><span data-reel="4">4</span></p><p class="h-stat__cap">šalys: Lenkija, Vokietija, Belgija, Prancūzija</p></div>
     </div>
   </div>
 </section>
 
-<section class="sec wrap" id="marsrutai">
-  <div class="sec-head rv">
-    <p class="label dot">Tarptautiniai pervežimai</p>
-    <h2>Artimiausi reisai</h2>
-  </div>
-  <div class="routes">
-    <a class="route rv" href="#kontaktai">
-      <div class="ph" data-par=".12"><img loading="lazy" src="https://images.pexels.com/photos/12615250/pexels-photo-12615250.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Pakrantės kelias Airijoje"></div>
-      <div class="route-top"><span class="label">Maršrutas 01</span><span class="go">Rezervuoti</span></div>
-      <div>
-        <h3>Lietuva —<br>Airija</h3>
-        <div class="dates"><span>Rugsėjo 28 d.</span><span>Spalio 15 d.</span><span>Spalio 28 d.</span></div>
-        <p class="tel">+370 650 53161 · +353 864 503104 · +44 7566 878681</p>
+<!-- ============ S3 · 02 PASLAUGOS — horizontal road ============ -->
+<section class="sgp-sec h-svc on-dark" id="paslaugos" data-theme="dark" data-stops data-salient="Sticky Content Sections → Horizontal Scrolling (section width 26vw, effect None, Subtract Navigation Height ON, desktop only) · children = Column Link cards + Extra Class .sgp-stop · stops IO ≈0.5 KB (§3.4)">
+  <a class="h-svc__skip" href="#marsrutai">Praleisti paslaugų juostą</a>
+  <div class="h-svc__pin" id="svcPin">
+    <div class="h-svc__sticky">
+      <div class="sgp-wrap sgp-wrap--zone">
+        <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">02</span><span class="sgp-mono">Paslaugos</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">11 paslaugų</span></div>
+        <div class="h-svc__head">
+          <div>
+            <h2 class="sgp-d2" data-split>Visos pervežimo paslaugos</h2>
+            <p class="sgp-body h-svc__lead" data-reveal>Platus paslaugų spektras suteikia universalumo, nes savo klientams galime pasiūlyti kur kas daugiau sprendimų.</p>
+          </div>
+          <div class="h-svc__count sgp-mono" data-salient="Text Block · counter [data-sgp-count] („01 / 11“)"><b aria-hidden="true"><span data-stop-count>01</span><span> / 11</span></b><a class="sgp-lnk" href="./pervezimo-paslaugos/">Visos paslaugos sąrašu<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+        </div>
       </div>
-    </a>
-    <a class="route rv" href="#kontaktai">
-      <div class="ph" data-par=".12"><img loading="lazy" src="https://images.pexels.com/photos/34369733/pexels-photo-34369733/free-photo-of-stunning-curved-mountain-road-in-arid-landscape.jpeg?auto=compress&cs=tinysrgb&w=1400" alt="Kalnų kelias Ispanijoje"></div>
-      <div class="route-top"><span class="label">Maršrutas 02</span><span class="go">Rezervuoti</span></div>
-      <div>
-        <h3>Lietuva —<br>Ispanija</h3>
-        <div class="dates"><span>Rugsėjo 22 d.</span><span>Spalio 9 d.</span><span>Spalio 23 d.</span></div>
-        <p class="tel">+370 638 28919 · +34 60 25 47929</p>
+      <div class="h-svc__clip"><div class="h-svc__track" id="svcTrack">
+<article class="sgp-svc" data-stop><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="507" alt="Vilkikai greitkelyje tarp miško saulėlydžio metu" loading="lazy" decoding="async" style="object-position:50% 60%"><i class="sgp-ov"></i></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">01 <span>/ 11</span></p><h3 class="sgp-svc__t">Krovinių pervežimas</h3><p class="sgp-svc__s">Į Airiją, Ispaniją, Vokietiją bei Prancūziją ir atgal – saugiai, greitai, patikimai.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Nuo durų iki durų</li><li>Kroviniai apdrausti</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop data-hover-video="https://videos.pexels.com/video-files/19552565/19552565-sd_960_540_30fps.mp4"><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/negabaritiniu-kroviniu-pervezimas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/35332902/pexels-photo-35332902.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/35332902/pexels-photo-35332902.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/35332902/pexels-photo-35332902.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/35332902/pexels-photo-35332902.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="507" alt="Negabaritinį krovinį vežantis sunkvežimis lietingame greitkelyje, matomas pro automobilio langą" loading="lazy" decoding="async" style="object-position:50% 50%"><i class="sgp-ov"></i><video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">02 <span>/ 11</span></p><h3 class="sgp-svc__t">Negabaritinių krovinių pervežimas</h3><p class="sgp-svc__s">Kroviniai, kurių matmenys didesni, nei leidžiama šalyse, per kurias jie keliauja.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Išankstinis planavimas</li><li>Nuo durų iki durų</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/daliniu-kroviniu-gabenimas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/29786116/pexels-photo-29786116.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/29786116/pexels-photo-29786116.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/29786116/pexels-photo-29786116.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/29786116/pexels-photo-29786116.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="507" alt="Sunkvežimis išvažiuoja iš prieblandoje skendinčios sandėlio rampos tarp padėklų" loading="lazy" decoding="async" style="object-position:50% 50%"><i class="sgp-ov"></i></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">03 <span>/ 11</span></p><h3 class="sgp-svc__t">Dalinių krovinių gabenimas</h3><p class="sgp-svc__s">Dalinių krovinių gabenimas yra puikus būdas klientams sutaupyti.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Mokate mažiau</li><li>Nuo durų iki durų</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/daiktu-pervezimas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/36933446/pexels-photo-36933446.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/36933446/pexels-photo-36933446.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/36933446/pexels-photo-36933446.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/36933446/pexels-photo-36933446.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="506" alt="Sukrauti juodi lagaminai su rudais odiniais dirželiais" loading="lazy" decoding="async" style="object-position:50% 50%"><i class="sgp-ov"></i></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">04 <span>/ 11</span></p><h3 class="sgp-svc__t">Daiktų pervežimas</h3><p class="sgp-svc__s">Langai, žoliapjovės, buitinė įranga ir kiti didesni ar mažesni daiktai.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Apie 3–4 paros</li><li>Nuo durų iki durų</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop data-hover-video="https://videos.pexels.com/video-files/34371915/14561107_960_540_30fps.mp4"><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/automobiliu-pervezimas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/29566910/pexels-photo-29566910.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/29566910/pexels-photo-29566910.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/29566910/pexels-photo-29566910.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/29566910/pexels-photo-29566910.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="507" alt="Darbuotojas krauna baltą automobilį ant autovežio" loading="lazy" decoding="async" style="object-position:50% 50%"><i class="sgp-ov"></i><video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">05 <span>/ 11</span></p><h3 class="sgp-svc__t">Automobilių pervežimas</h3><p class="sgp-svc__s">Automobilius gabename traliuku – iš Airijos, Ispanijos, Vokietijos ir į jas.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Traliuku</li><li>Apie 3–4 paros</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop data-hover-video="https://videos.pexels.com/video-files/34308329/14534281_960_540_60fps.mp4"><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/motociklu-pervezimas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/4858429/pexels-photo-4858429.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/4858429/pexels-photo-4858429.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/4858429/pexels-photo-4858429.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/4858429/pexels-photo-4858429.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="507" alt="Vyras saulėlydžio metu iškrauna motociklą iš pikapo" loading="lazy" decoding="async" style="object-position:40% 60%"><i class="sgp-ov"></i><video muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">06 <span>/ 11</span></p><h3 class="sgp-svc__t">Motociklų pervežimas</h3><p class="sgp-svc__s">Iš Ispanijos, Prancūzijos, Vokietijos, Lenkijos bei Airijos – nuo durų iki durų.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>3–4 paros</li><li>Nuo durų iki durų</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/36377055/pexels-photo-36377055.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/36377055/pexels-photo-36377055.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/36377055/pexels-photo-36377055.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/36377055/pexels-photo-36377055.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="603" alt="Mikroautobuso salonas su juodomis odinėmis sėdynėmis" loading="lazy" decoding="async" style="object-position:50% 50%"><i class="sgp-ov"></i></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">07 <span>/ 11</span></p><h3 class="sgp-svc__t">Keleivių pervežimas</h3><p class="sgp-svc__s">Atlenkiamos ir šildomos sėdynės, kondicionierius. Kelionės metu visi keleiviai apdrausti.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Keleiviai apdrausti</li><li>3–4 paros</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/32872983/pexels-photo-32872983.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/32872983/pexels-photo-32872983.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/32872983/pexels-photo-32872983.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/32872983/pexels-photo-32872983.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="507" alt="Šuo ramiai sėdi furgono keleivio sėdynėje" loading="lazy" decoding="async" style="object-position:50% 50%"><i class="sgp-ov"></i></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">08 <span>/ 11</span></p><h3 class="sgp-svc__t">Gyvūnų pervežimas</h3><p class="sgp-svc__s">Saugiai ir patogiai perkraustysime Jūsų augintinį į kitą šalį Europoje.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Narvus turime mes</li><li>Nuo durų iki durų</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pervezimas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/6170458/pexels-photo-6170458.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/6170458/pexels-photo-6170458.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/6170458/pexels-photo-6170458.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/6170458/pexels-photo-6170458.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="507" alt="Tvarkingai sukrautos siuntų dėžės furgono krovinių skyriuje" loading="lazy" decoding="async" style="object-position:50% 50%"><i class="sgp-ov"></i></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">09 <span>/ 11</span></p><h3 class="sgp-svc__t">Siuntų pervežimas</h3><p class="sgp-svc__s">Skubios siuntos pasieks gavėją labai operatyviai.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Skubios siuntos</li><li>Nuo durų iki durų</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pristatymas/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/13456097/pexels-photo-13456097.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/13456097/pexels-photo-13456097.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/13456097/pexels-photo-13456097.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/13456097/pexels-photo-13456097.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="507" alt="Kurjeris prie durų įteikia siuntą moteriai" loading="lazy" decoding="async" style="object-position:55% 45%"><i class="sgp-ov"></i></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">10 <span>/ 11</span></p><h3 class="sgp-svc__t">Siuntų pristatymas</h3><p class="sgp-svc__s">Siuntiniai paimami iš siuntėjų ir atiduodami gavėjams į rankas.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Į rankas gavėjui</li><li>Apie 3–4 paros</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+<article class="sgp-svc" data-stop><span class="sgp-ring"></span><span class="sgp-svc__stem"></span>
+  <a class="sgp-svc__a" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/"><figure class="sgp-svc__img sgp-grade"><img src="https://images.pexels.com/photos/4246238/pexels-photo-4246238.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/4246238/pexels-photo-4246238.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/4246238/pexels-photo-4246238.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/4246238/pexels-photo-4246238.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="(min-width:1000px) 360px, 96px" width="760" height="507" alt="Supakuotos kartoninės dėžės saulėtame kambaryje prieš persikraustymą" loading="lazy" decoding="async" style="object-position:50% 50%"><i class="sgp-ov"></i></figure>
+  <div class="sgp-svc__body"><p class="sgp-svc__no sgp-mono">11 <span>/ 11</span></p><h3 class="sgp-svc__t">Perkraustymo paslaugos</h3><p class="sgp-svc__s">Persikeliate gyventi į kitą šalį Europoje? Daiktus pervešime nuo durų iki durų.</p>
+  <div class="sgp-svc__f"><ul class="sgp-chips"><li>Apie 3–4 paros</li><li>Nuo durų iki durų</li></ul><span class="sgp-svc__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div></div></a></article>
+        <div class="h-svc__end">
+          <p class="h-svc__end-t">Nežinote, kurią paslaugą rinktis? Paskambinkite – patarsime.</p>
+          <a class="sgp-callbtn sgp-callbtn--sm" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Į Airiją</span><span class="sgp-callbtn__n">+370 650 53161</span></span></a>
+          <a class="sgp-callbtn sgp-callbtn--sm" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Į Ispaniją</span><span class="sgp-callbtn__n">+370 638 28919</span></span></a>
+        </div>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S4 · 03 MARŠRUTAI — tabs (map + info per tab) ============ -->
+<section class="sgp-sec h-routes on-light paper sgp-has-rail" id="marsrutai" data-theme="light" data-salient="Row paper + Extra Class sgp-light sgp-graticule sgp-has-rail · Tabs → Toggle Button (2 tabs, deep links #airija / #ispanija) · each tab = Inner Row: Raw HTML SVG map 7/12 + info 5/12">
+  <div class="sgp-wrap sgp-wrap--zone" data-tabs>
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">03</span><span class="sgp-mono">Maršrutai</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">2 kryptys</span></div>
+    <div class="h-routes__head">
+      <h2 class="sgp-d2" data-split>Dvi kryptys. Keturios šalys pakeliui.</h2>
+      <div class="h-routes__r">
+        <p class="sgp-body" data-reveal>Tarptautiniai pervežimai minėtais maršrutais apima ir tokias Europos šalis kaip Lenkija, Vokietija, Belgija, Prancūzija – nedvejokite, jei norite perduoti siuntą jose gyvenantiems artimiesiems.</p>
+        <div class="sgp-seg" role="tablist" aria-label="Kryptis" data-reveal style="--dl:.1s">
+          <button type="button" role="tab" id="tab-ie" aria-selected="true" aria-controls="rt-ie" data-hash="airija">Airija <span class="sgp-mono">IE</span></button>
+          <button type="button" role="tab" id="tab-es" aria-selected="false" aria-controls="rt-es" data-hash="ispanija" tabindex="-1">Ispanija <span class="sgp-mono">ES</span></button>
+        </div>
       </div>
-    </a>
+    </div>
+
+    <div class="h-rtab" id="rt-ie" role="tabpanel" aria-labelledby="tab-ie" tabindex="0">
+      <figure class="sgp-map" data-salient="Raw HTML SVG map (CSS-only draw: trunk scroll-scrubbed, branch replays on tab switch) · &lt;700px ordered list · static fallback: Image With Hotspots">
+  <figcaption class="sgp-map__cap sgp-mono">Maršrutų schema · ne mastelis</figcaption>
+  <svg class="sgp-mapsvg" viewBox="0 0 700 500" role="img" aria-labelledby="mie-t mie-d">
+    <title id="mie-t">Maršrutas į Airiją</title>
+    <desc id="mie-d">Iš Lietuvos per Lenkiją ir Vokietiją; tolesnė maršruto dalis iki Airijos tikslinama.</desc>
+    <g class="grat" aria-hidden="true"><line x1="92" y1="0" x2="92" y2="480"/><line x1="184" y1="0" x2="184" y2="480"/><line x1="276" y1="0" x2="276" y2="480"/><line x1="368" y1="0" x2="368" y2="480"/><line x1="461" y1="0" x2="461" y2="480"/><line x1="553" y1="0" x2="553" y2="480"/><line x1="645" y1="0" x2="645" y2="480"/><line x1="0" y1="71" x2="700" y2="71"/><line x1="0" y1="189" x2="700" y2="189"/><line x1="0" y1="307" x2="700" y2="307"/><line x1="0" y1="426" x2="700" y2="426"/></g>
+    <g class="base" aria-hidden="true"><path d="M376 161 L267 175 L227 270 L116 416"/></g>
+    <g class="live trunk" aria-hidden="true"><path class="c1" pathLength="1" d="M624 64 L542 140 L376 161"/><path class="c2" pathLength="1" d="M624 64 L542 140 L376 161"/><path class="c3" pathLength="1" d="M624 64 L542 140 L376 161"/></g>
+    <path class="tbd" d="M376 161 L37 111" aria-hidden="true"/>
+    <g aria-hidden="true">
+      <text class="lbl-s" x="118" y="112" transform="rotate(8.4 118 112)">maršrutas tikslinamas</text>
+      <circle class="pulse" cx="624" cy="64" r="14"/><circle class="origin" cx="624" cy="64" r="9"/><text class="lbl" x="604" y="40" text-anchor="end">LIETUVA</text><text class="lbl-s" x="604" y="58" text-anchor="end">išvykimas</text><circle class="stop" cx="542" cy="140" r="5.5"/><text class="lbl" x="542" y="168" text-anchor="middle">LENKIJA</text><circle class="stop" cx="376" cy="161" r="5.5"/><text class="lbl" x="390" y="190">VOKIETIJA</text>
+      <g class="dim"><circle class="stop" cx="267" cy="175" r="5.5"/><text class="lbl" x="280" y="204">BELGIJA</text><circle class="stop" cx="227" cy="270" r="5.5"/><text class="lbl" x="243" y="275">PRANCŪZIJA</text><circle class="term" cx="116" cy="416" r="8.5"/><text class="lbl" x="134" y="421">ISPANIJA</text></g>
+      <circle class="term on" cx="37" cy="111" r="8.5"/><text class="lbl" x="24" y="144">AIRIJA</text><text class="lbl-s" x="24" y="162">atvykimas</text>
+    </g>
+  </svg>
+  <ol class="sgp-map__list" aria-label="Maršrutas į Airiją">
+    <li class="o">Lietuva<small>išvykimas</small></li><li>Lenkija</li><li>Vokietija</li><li class="tbd">Maršrutas tikslinamas</li><li class="t">Airija<small>atvykimas</small></li>
+  </ol>
+  <div class="sgp-map__legend sgp-mono" aria-hidden="true"><span><i class="lg-line"></i>Maršrutas</span><span><i class="lg-tbd"></i>Tikslinama</span><span><i class="lg-stop"></i>Šalis pakeliui</span></div>
+</figure>
+
+      <div class="h-rinfo">
+        <div class="sgp-crop h-rinfo__img"><figure class="sgp-grade"><img src="https://images.pexels.com/photos/2881400/pexels-photo-2881400.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" srcset="https://images.pexels.com/photos/2881400/pexels-photo-2881400.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/2881400/pexels-photo-2881400.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/2881400/pexels-photo-2881400.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w, https://images.pexels.com/photos/2881400/pexels-photo-2881400.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/2881400/pexels-photo-2881400.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="(min-width:1280px) 34vw, (min-width:1000px) 44vw, 92vw" width="1100" height="733" alt="Apšviestas Samuel Beckett tiltas Dubline naktį" loading="lazy" decoding="async" style="object-position:50% 60%" data-parallax="0.06"><i class="sgp-ov"></i></figure></div>
+        <div class="h-rinfo__tt">
+          <h3 class="sgp-h3">Lietuva – Airija – Lietuva</h3>
+          <ul class="sgp-tt" data-sched="timetable" data-routes="lt-ie,ie-lt">
+  <li><a class="sgp-tt__row" href="tel:+37065053161" aria-label="Lietuva – Airija: spalio 9 ir 23 d. Skambinti +370 650 53161"><span class="sgp-tt__k sgp-mono" aria-hidden="true">Iš Lietuvos</span><span class="sgp-tt__v" aria-hidden="true"><time datetime="2026-10-09" class="is-next">Spalio 9 d.</time><time datetime="2026-10-23">Spalio 23 d.</time></span><span class="sgp-tt__call" aria-hidden="true"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a></li>
+  <li><a class="sgp-tt__row" href="tel:+353864503104" aria-label="Airija – Lietuva: rugsėjo 28 d., spalio 15 ir 28 d. Skambinti +353 86 450 3104"><span class="sgp-tt__k sgp-mono" aria-hidden="true">Iš Airijos</span><span class="sgp-tt__v" aria-hidden="true"><time datetime="2026-09-28" class="is-next">Rugsėjo 28 d.</time><time datetime="2026-10-15">Spalio 15 d.</time><time datetime="2026-10-28">Spalio 28 d.</time></span><span class="sgp-tt__call" aria-hidden="true"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a></li>
+</ul>
+          <dl class="sgp-kv"><dt>Kelyje</dt><dd>apie 3–4 paros nuo paėmimo dienos</dd></dl>
+        </div>
+        <div class="sgp-phl h-rinfo__ph"><p class="sgp-mono">Pervežimai į Airiją</p><a href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris +370 650 53161"><span class="sgp-cc">LT</span>+370 650 53161</a><a href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span class="sgp-cc">IE</span>+353 86 450 3104</a><a href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span class="sgp-cc">UK</span>+44 7566 878681</a></div>
+      </div>
+    </div>
+
+    <div class="h-rtab" id="rt-es" role="tabpanel" aria-labelledby="tab-es" tabindex="0" hidden>
+      <figure class="sgp-map" data-salient="Raw HTML SVG map (CSS-only draw: trunk scroll-scrubbed, branch replays on tab switch) · &lt;700px ordered list · static fallback: Image With Hotspots">
+  <figcaption class="sgp-map__cap sgp-mono">Maršrutų schema · ne mastelis</figcaption>
+  <svg class="sgp-mapsvg" viewBox="0 0 700 500" role="img" aria-labelledby="mes-t mes-d">
+    <title id="mes-t">Maršrutas į Ispaniją</title>
+    <desc id="mes-d">Iš Lietuvos per Lenkiją, Vokietiją, Belgiją ir Prancūziją į Ispaniją.</desc>
+    <g class="grat" aria-hidden="true"><line x1="92" y1="0" x2="92" y2="480"/><line x1="184" y1="0" x2="184" y2="480"/><line x1="276" y1="0" x2="276" y2="480"/><line x1="368" y1="0" x2="368" y2="480"/><line x1="461" y1="0" x2="461" y2="480"/><line x1="553" y1="0" x2="553" y2="480"/><line x1="645" y1="0" x2="645" y2="480"/><line x1="0" y1="71" x2="700" y2="71"/><line x1="0" y1="189" x2="700" y2="189"/><line x1="0" y1="307" x2="700" y2="307"/><line x1="0" y1="426" x2="700" y2="426"/></g>
+    <path class="tbd dim" d="M376 161 L37 111" aria-hidden="true"/>
+    <g class="live trunk" aria-hidden="true"><path class="c1" pathLength="1" d="M624 64 L542 140 L376 161"/><path class="c2" pathLength="1" d="M624 64 L542 140 L376 161"/><path class="c3" pathLength="1" d="M624 64 L542 140 L376 161"/></g>
+    <g class="live branch" aria-hidden="true"><path class="c1" pathLength="1" d="M376 161 L267 175 L227 270 L116 416"/><path class="c2" pathLength="1" d="M376 161 L267 175 L227 270 L116 416"/><path class="c3" pathLength="1" d="M376 161 L267 175 L227 270 L116 416"/></g>
+    <g aria-hidden="true">
+      <circle class="pulse" cx="624" cy="64" r="14"/><circle class="origin" cx="624" cy="64" r="9"/><text class="lbl" x="604" y="40" text-anchor="end">LIETUVA</text><text class="lbl-s" x="604" y="58" text-anchor="end">išvykimas</text><circle class="stop" cx="542" cy="140" r="5.5"/><text class="lbl" x="542" y="168" text-anchor="middle">LENKIJA</text><circle class="stop" cx="376" cy="161" r="5.5"/><text class="lbl" x="390" y="190">VOKIETIJA</text>
+      <circle class="stop" cx="267" cy="175" r="5.5"/><text class="lbl" x="280" y="204">BELGIJA</text>
+      <circle class="stop" cx="227" cy="270" r="5.5"/><text class="lbl" x="243" y="275">PRANCŪZIJA</text>
+      <circle class="term on" cx="116" cy="416" r="8.5"/><text class="lbl" x="134" y="421">ISPANIJA</text><text class="lbl-s" x="134" y="439">atvykimas</text>
+      <g class="dim"><circle class="term" cx="37" cy="111" r="8.5"/><text class="lbl" x="24" y="144">AIRIJA</text></g>
+    </g>
+  </svg>
+  <ol class="sgp-map__list" aria-label="Maršrutas į Ispaniją">
+    <li class="o">Lietuva<small>išvykimas</small></li><li>Lenkija</li><li>Vokietija</li><li>Belgija</li><li>Prancūzija</li><li class="t">Ispanija<small>atvykimas</small></li>
+  </ol>
+  <div class="sgp-map__legend sgp-mono" aria-hidden="true"><span><i class="lg-line"></i>Maršrutas</span><span><i class="lg-tbd"></i>Tikslinama</span><span><i class="lg-stop"></i>Šalis pakeliui</span></div>
+</figure>
+
+      <div class="h-rinfo">
+        <div class="sgp-crop h-rinfo__img"><figure class="sgp-grade"><img src="https://images.pexels.com/photos/27868340/pexels-photo-27868340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100" srcset="https://images.pexels.com/photos/27868340/pexels-photo-27868340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/27868340/pexels-photo-27868340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/27868340/pexels-photo-27868340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w, https://images.pexels.com/photos/27868340/pexels-photo-27868340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/27868340/pexels-photo-27868340.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="(min-width:1280px) 34vw, (min-width:1000px) 44vw, 92vw" width="1100" height="629" alt="Madrido dangoraižiai ir greitkelis su šviesų pėdsakais prieblandoje" loading="lazy" decoding="async" data-parallax="0.06"><i class="sgp-ov"></i></figure></div>
+        <div class="h-rinfo__tt">
+          <h3 class="sgp-h3">Lietuva – Ispanija – Lietuva</h3>
+          <ul class="sgp-tt" data-sched="timetable" data-routes="lt-es,es-lt">
+  <li><a class="sgp-tt__row" href="tel:+37063828919" aria-label="Lietuva – Ispanija: spalio 9 ir 23 d. Skambinti +370 638 28919"><span class="sgp-tt__k sgp-mono" aria-hidden="true">Iš Lietuvos</span><span class="sgp-tt__v" aria-hidden="true"><time datetime="2026-10-09" class="is-next">Spalio 9 d.</time><time datetime="2026-10-23">Spalio 23 d.</time></span><span class="sgp-tt__call" aria-hidden="true"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a></li>
+  <li><a class="sgp-tt__row" href="tel:+34602547929" aria-label="Ispanija – Lietuva: rugsėjo 27 d., spalio 14 ir 28 d. Skambinti +34 602 547 929"><span class="sgp-tt__k sgp-mono" aria-hidden="true">Iš Ispanijos</span><span class="sgp-tt__v" aria-hidden="true"><time datetime="2026-09-27" class="is-next">Rugsėjo 27 d.</time><time datetime="2026-10-14">Spalio 14 d.</time><time datetime="2026-10-28">Spalio 28 d.</time></span><span class="sgp-tt__call" aria-hidden="true"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a></li>
+</ul>
+          <dl class="sgp-kv"><dt>Kelyje</dt><dd>apie 3–4 paros nuo paėmimo dienos</dd></dl>
+        </div>
+        <div class="sgp-phl h-rinfo__ph"><p class="sgp-mono">Pervežimai į Ispaniją</p><a href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris +370 638 28919"><span class="sgp-cc">LT</span>+370 638 28919</a><a href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span class="sgp-cc">ES</span>+34 602 547 929</a></div>
+      </div>
+    </div>
   </div>
 </section>
 
-<div class="mq" aria-hidden="true"><div id="mq">Saugiai<i></i><span class="out">Greitai</span><i></i>Patikimai<i></i><span class="out">Saugiai</span><i></i>Greitai<i></i><span class="out">Patikimai</span><i></i></div></div>
-
-<section class="sec wrap" id="eiga">
-  <div class="sec-head rv">
-    <p class="label dot">Kaip tai veikia</p>
-    <h2>Nuo užklausos iki durų</h2>
+<!-- ============ S5 · 04 KELIONĖJE — cinematic ============ -->
+<section class="h-cine on-dark sgp-has-rail sgp-has-media" id="kelioneje" data-theme="dark" data-draw data-salient="Row: Video BG 4685871 (desktop; phones poster) · Parallax BG: Medium · BG Layer Animation: Zoom Out Slowly · overlay gradient · Text Color Light · H2 Animated Text → Word Blur · comfort list = Icon List + .sgp-stops (CSS scroll-driven)">
+  <div class="sgp-bgmedia h-cine__media" data-parallax="0.22" aria-hidden="true"><img class="sgp-bgvideo__poster" src="https://images.pexels.com/videos/4685871/pexels-photo-4685871.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" srcset="https://images.pexels.com/videos/4685871/pexels-photo-4685871.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/videos/4685871/pexels-photo-4685871.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w, https://images.pexels.com/videos/4685871/pexels-photo-4685871.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w, https://images.pexels.com/videos/4685871/pexels-photo-4685871.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" width="1920" height="1080" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"><video class="sgp-bgvideo__v" id="cineVideo" data-bgvideo muted playsinline loop preload="none" data-hd="https://videos.pexels.com/video-files/4685871/4685871-hd_1920_1080_24fps.mp4" data-sd="https://videos.pexels.com/video-files/4685871/4685871-sd_960_540_24fps.mp4" aria-hidden="true" tabindex="-1" style="object-position:50% 50%"></video></div>
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">04</span><span class="sgp-mono">Kelionėje</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Apie 3–4 paros</span></div>
+    <h2 class="sgp-d2 h-cine__h" data-split="blur">Du namai, vienas kelias tarp jų.</h2>
+    <p class="h-cine__lead sgp-lead" data-reveal>Kelionė trunka apie 3–4 paras – pasirūpinsime, kad laikas neprailgtų.</p>
+    <ol class="h-comfort">
+      <li class="h-comfort__fill" aria-hidden="true"></li>
+      <li class="h-cf" style="--i:0"><span class="sgp-ring"></span><span class="h-cf__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-seat"/></svg></span><h3>Atlenkiamos sėdynės</h3><p>Patogiai Jūsų kelionei tiek dieną, tiek naktį.</p></li>
+      <li class="h-cf" style="--i:1"><span class="sgp-ring"></span><span class="h-cf__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-heat"/></svg></span><h3>Šildomos sėdynės</h3><p>Komfortui net žvarbiausiomis žiemos dienomis.</p></li>
+      <li class="h-cf" style="--i:2"><span class="sgp-ring"></span><span class="h-cf__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-air"/></svg></span><h3>Kondicionierius</h3><p>Kad oras autobuse visada būtų šviežias.</p></li>
+      <li class="h-cf" style="--i:3"><span class="sgp-ring"></span><span class="h-cf__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-shield"/></svg></span><h3>Keleiviai apdrausti</h3><p>Kelionės metu visi keleiviai yra apdrausti.</p></li>
+      <li class="h-cf" style="--i:4"><span class="sgp-ring"></span><span class="h-cf__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-rest"/></svg></span><h3>Poilsio režimas</h3><p>Vairuotojai visada laikosi privalomo darbo ir poilsio režimo.</p></li>
+    </ol>
+    <div class="h-cine__foot">
+      <a class="sgp-lnk" href="./pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/">Keleivių pervežimas<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+      <button class="sgp-vctl sgp-mono" type="button" data-video-toggle="cineVideo" aria-pressed="false"><svg class="sgp-i" aria-hidden="true"><use href="#i-pause"/></svg><span>Pauzė</span></button>
+    </div>
   </div>
-  <div class="steps">
-    <div class="step rv"><span class="n">01</span><div><h4>Užklausa</h4><p>Parašykite arba paskambinkite — pasakykite, ką ir kur reikia nuvežti.</p></div></div>
-    <div class="step rv" style="transition-delay:.08s"><span class="n">02</span><div><h4>Pasiūlymas</h4><p>Suderiname kainą, artimiausio reiso datą ir paėmimo vietą.</p></div></div>
-    <div class="step rv" style="transition-delay:.16s"><span class="n">03</span><div><h4>Kelionė</h4><p>Paimame siuntą ar keleivį ir sekate kelionę siuntų sekimo sistemoje.</p></div></div>
-    <div class="step rv" style="transition-delay:.24s"><span class="n">04</span><div><h4>Pristatymas</h4><p>Pristatome sutartu adresu — saugiai, greitai ir patikimai.</p></div></div>
+</section>
+
+<!-- ============ S6 · 05 KELIONĖS EIGA — 3 stations ============ -->
+<section class="sgp-sec h-proc on-light sgp-has-rail" id="eiga" data-theme="light" data-salient="Row paper · Divider (2 px accent, line animation) as lane · 3 Columns (Fade In From Bottom 0/120/240) · Image Mask Circle + Column Mask Reveal (circle) · Text Block .sgp-kv">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">05</span><span class="sgp-mono">Kelionės eiga</span><span class="sgp-wp__rule"></span></div>
+    <h2 class="sgp-d2 h-proc__h" data-split>Nuo durų iki durų</h2>
+    <ol class="sgp-stations" style="--n:3">
+      <li class="sgp-stations__lane" aria-hidden="true"></li>
+      <li class="sgp-station" style="--i:0"><span class="sgp-ring"></span><figure class="sgp-station__img"><img src="https://images.pexels.com/photos/6407553/pexels-photo-6407553.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=240" srcset="https://images.pexels.com/photos/6407553/pexels-photo-6407553.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=240 240w, https://images.pexels.com/photos/6407553/pexels-photo-6407553.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w" sizes="80px" width="240" height="160" alt="Atviras baltas furgonas, pilnas siuntinių dėžių" loading="lazy" decoding="async"></figure><p class="sgp-mono sgp-station__no">01</p><h3>Paėmimas</h3><p>Krovinys paimamas iš siuntėjo nurodytos, jam patogiausios, vietos.</p></li>
+      <li class="sgp-station" style="--i:1"><span class="sgp-ring"></span><figure class="sgp-station__img"><img src="https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=240" srcset="https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=240 240w, https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w" sizes="80px" width="240" height="180" alt="Tiesus greitkelis per pušyną Lietuvoje" loading="lazy" decoding="async"></figure><p class="sgp-mono sgp-station__no">02</p><h3>Kelyje apie 3–4 paras</h3><p>Siuntos vietą galite pasitikrinti pagal siuntos kodą.</p><a class="sgp-lnk" href="./siuntos-sekimas/">Siuntos sekimas<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      <li class="sgp-station" style="--i:2"><span class="sgp-ring"></span><figure class="sgp-station__img"><img src="https://images.pexels.com/photos/4440774/pexels-photo-4440774.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=240" srcset="https://images.pexels.com/photos/4440774/pexels-photo-4440774.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=240 240w, https://images.pexels.com/photos/4440774/pexels-photo-4440774.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w" sizes="80px" width="240" height="160" alt="Rankos perduoda kartonines siuntų dėžes" loading="lazy" decoding="async"></figure><p class="sgp-mono sgp-station__no">03</p><h3>Pristatymas</h3><p>Pristatome gavėjui tiesiai į rankas. Jei sutartu laiku gavėjas negali paimti siuntos, pakartotinis mūsų atvykimas apmokestinamas.</p></li>
+    </ol>
+    <div class="h-proc__facts">
+      <dl class="sgp-kv" data-reveal data-salient="Text Block .sgp-kv — two labelled delivery facts (§4.12)">
+        <dt>Kelyje</dt><dd>apie 3–4 paros nuo paėmimo dienos</dd>
+        <dt>Įsipareigojimas siuntoms</dt><dd>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)</dd>
+      </dl>
+    </div>
   </div>
 </section>
 
-<section class="sec cta" id="kontaktai" data-accent>
-  <div class="wrap">
-    <h2 class="rv">Vežam?</h2>
-    <form class="form rv" id="form">
-      <label><span class="label">Vardas</span><input required placeholder="Jūsų vardas"></label>
-      <label><span class="label">Telefonas arba el. paštas</span><input required placeholder="+370 ..."></label>
-      <div class="full"><p class="label" style="margin-bottom:12px">Ką vežame?</p>
-        <div class="chips">
-          <label><input type="checkbox"><span>Krovinį</span></label><label><input type="checkbox"><span>Siuntą</span></label>
-          <label><input type="checkbox"><span>Automobilį</span></label><label><input type="checkbox"><span>Motociklą</span></label>
-          <label><input type="checkbox"><span>Keleivius</span></label><label><input type="checkbox"><span>Gyvūną</span></label>
-          <label><input type="checkbox"><span>Perkraustymas</span></label>
-        </div></div>
-      <label class="full"><span class="label">Žinutė</span><textarea rows="2" placeholder="Iš kur, į kur ir kada?"></textarea></label>
-      <button class="pill" type="submit">Siųsti užklausą →</button>
-      <p class="ok" id="ok">Ačiū! Užklausa gauta (demo versija — forma nesiunčiama).</p>
-    </form>
+<!-- ============ S7 · 06 PRIEŠ SIUNČIANT — rules digest ============ -->
+<section class="sgp-sec h-rules on-dark sgp-has-rail sgp-has-media" id="pries-siunciant" data-theme="dark" data-salient="Row: bg image 4040619 + overlay #0F1417 90 % + Parallax BG: Subtle · Extra Class sgp-dark sgp-has-rail · Column 5/12 Sticky Content (CSS, Top 120) · Column 7/12 Toggle Panels → Minimal Shadow (accordion, deep linking) + Extra Class .sgp-toggle">
+  <div class="sgp-bgmedia h-rules__tex" data-parallax="0.14" aria-hidden="true"><img src="https://images.pexels.com/photos/4040619/pexels-photo-4040619.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/4040619/pexels-photo-4040619.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/4040619/pexels-photo-4040619.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/4040619/pexels-photo-4040619.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w, https://images.pexels.com/photos/4040619/pexels-photo-4040619.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/4040619/pexels-photo-4040619.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" width="1600" height="1067" alt="" loading="lazy" decoding="async"></div>
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">06</span><span class="sgp-mono">Prieš siunčiant</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Taisyklių 4.2 · 4.5 p.</span></div>
+    <div class="h-rules__grid">
+      <div class="h-rules__side">
+        <div class="sgp-sticky">
+          <h2 class="sgp-d2 h-rules__h" data-split>Krovinių pervežimas tarptautiniais maršrutais: ko negalima siųsti?</h2>
+          <p class="sgp-callout h-rules__callout" data-reveal><span class="sgp-callout__k sgp-mono">Svarbu</span>Už siuntinio turinį atsakingas siuntėjas.</p>
+          <div class="h-rules__btns" data-reveal style="--dl:.1s">
+            <a class="sgp-btn sgp-btn--line" href="./taisykles/"><span class="sgp-btn__l">Visos taisyklės</span><span class="sgp-btn__a"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+            <a class="sgp-lnk sgp-lnk--plain" href="https://www.sgp-pervezimai.lt/siuntu-siuntimo-taisykles/download/sgp-sutartis-su-siunteju-pdf-3" rel="noopener">Atsisiųsti sutartį su siuntėju (PDF, 72 KB)<svg class="sgp-i" aria-hidden="true"><use href="#i-dl"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="sgp-acc h-rules__acc" data-acc data-reveal style="--dl:.1s">
+        <div class="sgp-acc__item is-open" id="draudziama-siusti">
+          <h3><button class="sgp-acc__btn" type="button" aria-expanded="true" aria-controls="acc-draudziama"><span class="sgp-acc__no sgp-mono">01</span><span class="sgp-acc__t">Draudžiama siųsti <small>(12)</small></span><span class="sgp-ring"></span></button></h3>
+          <div class="sgp-acc__panel" id="acc-draudziama"><div><div class="sgp-acc__body">
+            <p class="sgp-mono sgp-fg2">Taisyklių 4.2 p.</p>
+            <ul class="sgp-xlist">
+              <li>bet kokie tabako gaminiai</li>
+              <li>bet kokie alkoholiniai gėrimai</li>
+              <li>pinigai ir vertybiniai popieriai</li>
+              <li>taurieji metalai</li>
+              <li>juvelyriniai gaminiai</li>
+              <li>vaistai ir maisto papildai</li>
+              <li>šaunamieji ir kiti ginklai</li>
+              <li>meno kūriniai ir antikvariniai daiktai</li>
+              <li>cheminiai kroviniai ir degios prekės</li>
+              <li>greitai gendantys maisto produktai</li>
+              <li>daiktai, kurių pervežimui reikalingos specialios temperatūros, oro, drėgmės ir kitos papildomos sąlygos</li>
+              <li>visos kitos prekės, kurias vežti draudžiama įstatymais, bet kurios Vyriausybės ar valstybės bet kurioje šalyje kur prekės yra gabenamos</li>
+            </ul>
+          </div></div></div>
+        </div>
+        <div class="sgp-acc__item" id="pakavimas">
+          <h3><button class="sgp-acc__btn" type="button" aria-expanded="false" aria-controls="acc-pakavimas"><span class="sgp-acc__no sgp-mono">02</span><span class="sgp-acc__t">Pakavimas <small>(4)</small></span><span class="sgp-ring"></span></button></h3>
+          <div class="sgp-acc__panel" id="acc-pakavimas"><div><div class="sgp-acc__body">
+            <ul class="sgp-list">
+              <li>pakuotei naudokite tik naujas, standžias, nepažeistas dėžes ar kitas pakuotes;</li>
+              <li>negailėkite specialios medžiagos tuščioms ertmėms užpildyti, kad siunčiami daiktai dėžėje ar kitoje pakuotėje būtų supakuoti standžiai, neslankiotų, nesiliestų prie pakuotės šonų;</li>
+              <li>negailėkite ir lipnios juostos dėžei ar kitai pakuotei užklijuoti – ja keliose vietose apvyniokite dėžę ar kitą pakuotę per visą jos perimetrą;</li>
+              <li>pasirūpinkite, kad adresas būtų užrašytas matomoje vietoje, ten, kur nekyla rizika nusitrinti, nuplyšti.</li>
+            </ul>
+            <p>Svarbu, kad siuntos turinys prie pakuotės sienelių nesiliestų – rekomenduojamas tarpas yra 5 centimetrai.</p>
+          </div></div></div>
+        </div>
+        <div class="sgp-acc__item" id="gavejas">
+          <h3><button class="sgp-acc__btn" type="button" aria-expanded="false" aria-controls="acc-gavejas"><span class="sgp-acc__no sgp-mono">03</span><span class="sgp-acc__t">Gavėjas ir pristatymas</span><span class="sgp-ring"></span></button></h3>
+          <div class="sgp-acc__panel" id="acc-gavejas"><div><div class="sgp-acc__body">
+            <p>Labai svarbu nurodyti tikslius siuntinio paėmimo ir pristatymo adresus Europoje. Jei sutartu laiku gavėjas arba siuntos adresatas negali atiduoti / paimti siuntos, pakartotinis mūsų atvykimas apmokestinamas.</p>
+            <p>Neretai siunčiami didesni, sunkesni daiktai, kurių iškrovimui reikalinga speciali technika. Tokiu atveju iškrovimu turi pasirūpinti siuntos gavėjas.</p>
+          </div></div></div>
+        </div>
+        <div class="sgp-acc__item" id="baudos">
+          <h3><button class="sgp-acc__btn" type="button" aria-expanded="false" aria-controls="acc-baudos"><span class="sgp-acc__no sgp-mono">04</span><span class="sgp-acc__t">Baudos</span><span class="sgp-ring"></span></button></h3>
+          <div class="sgp-acc__panel" id="acc-baudos"><div><div class="sgp-acc__body">
+            <dl class="sgp-kv sgp-kv--fines" data-salient="Text Block .sgp-kv — Taisyklių 4.5 p. as a table (text unchanged)">
+              <dt class="sgp-kv__hd">Radus siuntoje ar krovinyje</dt><dd class="sgp-kv__hd sgp-mono">Bauda</dd>
+              <dt>Alkoholinių gėrimų</dt><dd><strong>1200 EUR</strong>už kiekvieną alkoholinio gėrimo vienetą</dd>
+              <dt>Vaistų</dt><dd><strong>po 1200 EUR</strong>už kiekvieną siuntoje rastą vienetą (ampulę, tabletę)</dd>
+              <dt>Cigarečių</dt><dd><strong>po 1200 EUR</strong>už kiekvieną rastą bloką (200 vnt.); ta pati bauda taikoma ir už mažesnį kiekį</dd>
+              <dt>Tabako ar jo gaminių</dt><dd><strong>po 1200 EUR</strong>už kiekvienus rastus 200 g; ta pati bauda taikoma ir už mažesnį kiekį</dd>
+              <dt>Kitų 4.2 punkte nurodytų draudžiamų daiktų</dt><dd><strong>1200 EUR</strong></dd>
+            </dl>
+            <a class="sgp-lnk" href="./taisykles/">Plačiau taisyklėse<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+          </div></div></div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
+
+<!-- ============ S8 · 07 SIUNTOS SEKIMAS — strip ============ -->
+<section class="sgp-sec h-track on-light alt sgp-has-rail" id="siuntos-sekimas" data-theme="light" data-salient="Row paper-100 · Extra Class sgp-light sgp-has-rail · Raw HTML form (nectar-inline-subscribe-form styling + .sgp-field) → GET /siuntos-sekimas/?kodas=">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">07</span><span class="sgp-mono">Siuntos sekimas</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Pagal siuntos kodą</span></div>
+    <div class="h-track__grid">
+      <h2 class="sgp-d2" data-split>Siuntos sekimas</h2>
+      <div class="h-track__form">
+        <form class="sgp-track" action="./siuntos-sekimas/" method="get" novalidate data-track data-reveal>
+          <label class="sgp-field"><span class="sgp-field__l">Siuntos kodas</span><input name="kodas" required autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Siuntos kodas..."><em class="sgp-field__err">Neįvestas siuntos kodas!</em></label>
+          <button class="sgp-btn sgp-btn--signal" type="submit"><span class="sgp-btn__l"><svg class="sgp-i" aria-hidden="true"><use href="#i-search"/></svg>Siuntos lokacija</span></button>
+        </form>
+        <p class="h-track__help" data-reveal style="--dl:.1s">Neradote siuntos kodo? Paskambinkite – pasakysime, kur Jūsų siunta. <button class="sgp-a h-track__call" type="button" popovertarget="sgp-call">Skambinti</button></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ S9 · ATSILIEPIMAI — placeholder (production: row disabled) ============ -->
+<section class="sgp-sec sgp-sec--tight h-reviews on-light sgp-has-rail" data-theme="light" data-salient="Row DISABLED in production until real reviews exist · then Testimonial Slider → Minimal (no invented names, stars or quotes) · demo: chapter waypoint + full-width dashed placeholder (Extra Class sgp-has-rail)">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">Atsiliepimai</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Vieta rezervuota</span></div>
+    <div class="sgp-reserved h-reviews__box" data-reveal>
+      <p class="sgp-reserved__t">Čia bus tikri klientų atsiliepimai</p>
+      <p class="sgp-reserved__s">Vieta rezervuota – išgalvotų atsiliepimų nenaudojame.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sgp-sec sgp-arrive on-dark sgp-has-rail sgp-rail-end" id="uzklausa" data-theme="dark" data-salient="Global Section GS-Arrival „Atvykimas“ (Before Footer) · bg texture 7024783 at 12 % + Parallax Subtle · tickets = Inner Row, 2 Columns, Extra Class .sgp-ticket · Fluent Forms + .sgp-field">
+  <div class="sgp-bgmedia sgp-arrive__tex" data-parallax="0.12" aria-hidden="true"><img src="https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w, https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" width="1600" height="1065" alt="" loading="lazy" decoding="async"></div>
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp sgp-wp--end" data-rail-end><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">Atvykimas</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">LT ⇄ IE · LT ⇄ ES</span></div>
+    <h2 class="sgp-d2 sgp-arrive__h" data-split>Susisiekite su mumis ir mes pasiūlysime Jums geriausią kainą!</h2>
+    <div class="sgp-arrive__grid">
+      <div class="sgp-arrive__tickets">
+        <article class="sgp-ticket" data-reveal>
+  <div class="sgp-ticket__main">
+    <p class="sgp-mono sgp-ticket__k"><span class="sgp-ticket__code">LT ⇄ IE</span>Pervežimai į Airiją</p>
+    <a class="sgp-ticket__big" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>+370 650 53161</a>
+    <div class="sgp-ticket__more"><a href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span>IE</span>+353 86 450 3104</a><a href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span>UK</span>+44 7566 878681</a></div>
+  </div>
+  <div class="sgp-ticket__stub" data-sched="stub" data-route="lt-ie"><p class="sgp-mono">Kitas išvykimas</p><p class="sgp-ticket__date"><time datetime="2026-10-09">Spalio 9 d.</time></p><p class="sgp-ticket__rel sgp-mono">iš LT · po 16 d.</p><a class="sgp-lnk" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161">Skambinti<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+</article>
+<article class="sgp-ticket" data-reveal style="--dl:.12s">
+  <div class="sgp-ticket__main">
+    <p class="sgp-mono sgp-ticket__k"><span class="sgp-ticket__code">LT ⇄ ES</span>Pervežimai į Ispaniją</p>
+    <a class="sgp-ticket__big" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>+370 638 28919</a>
+    <div class="sgp-ticket__more"><a href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span>ES</span>+34 602 547 929</a></div>
+  </div>
+  <div class="sgp-ticket__stub" data-sched="stub" data-route="lt-es"><p class="sgp-mono">Kitas išvykimas</p><p class="sgp-ticket__date"><time datetime="2026-10-09">Spalio 9 d.</time></p><p class="sgp-ticket__rel sgp-mono">iš LT · po 16 d.</p><a class="sgp-lnk" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919">Skambinti<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+</article>
+        <div class="sgp-mailrow" data-reveal style="--dl:.2s">
+          <span class="sgp-mono">El. paštas</span>
+          <a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a>
+          <button class="sgp-copy" type="button" data-copy="saugiai.greitai.patikimai@gmail.com"><svg class="sgp-i" aria-hidden="true"><use href="#i-copy"/></svg><span>Kopijuoti</span></button>
+          <span class="sgp-sr" role="status" data-copy-status></span>
+        </div>
+      </div>
+      <form class="sgp-form" action="#" method="post" novalidate data-demo-form data-reveal style="--dl:.15s" data-salient="Fluent Forms · „Kas Jus domina?“ default {get.domina} · Theme Options → Form Styling + .sgp-field · Turnstile (invisible)">
+        <p class="sgp-form__t">Gauti pasiūlymą</p>
+        <label class="sgp-field"><span class="sgp-field__l">Jūsų vardas</span><input name="vardas" required autocomplete="name" placeholder="Vardas"><em class="sgp-field__err">Įrašykite vardą</em></label>
+        <label class="sgp-field"><span class="sgp-field__l">Telefono numeris</span><input name="telefonas" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+370 …"><em class="sgp-field__err">Įrašykite telefono numerį</em></label>
+        <label class="sgp-field"><span class="sgp-field__l">El. pašto adresas</span><input name="el_pastas" type="email" required autocomplete="email" placeholder="vardas@pastas.lt"><em class="sgp-field__err">Patikrinkite el. pašto adresą</em></label>
+        <label class="sgp-field"><span class="sgp-field__l">Kas Jus domina?</span>
+          <select name="domina" required data-domina><option value="">Pasirinkite paslaugą</option><option>Krovinių pervežimas</option><option>Negabaritinių krovinių pervežimas</option><option>Dalinių krovinių gabenimas</option><option>Daiktų pervežimas</option><option>Automobilių pervežimas</option><option>Motociklų pervežimas</option><option>Keleivių pervežimas</option><option>Gyvūnų pervežimas</option><option>Siuntų pervežimas</option><option>Siuntų pristatymas</option><option>Perkraustymo paslaugos</option><option>Kita</option></select><em class="sgp-field__err">Pasirinkite paslaugą</em></label>
+        <label class="sgp-field"><span class="sgp-field__l">Žinutė</span><textarea name="zinute" rows="3" required minlength="20" placeholder="Iš kur, į kur ir kada?"></textarea><em class="sgp-field__err">Žinutė – bent 20 simbolių</em></label>
+        <p class="sgp-form__note">Formoje pateikti duomenys naudojami susisiekimui su klientu.</p>
+        <button class="sgp-btn sgp-btn--signal" type="submit"><span class="sgp-btn__l">Gauti pasiūlymą</span><span class="sgp-btn__a"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        <p class="sgp-form__ok" role="status" aria-live="polite" tabindex="-1">Jūsų žinutė sėkmingai išsiųsta<small>Demonstracinė versija – duomenys niekur nesiunčiami.</small></p>
+      </form>
+    </div>
+  </div>
+</section>
+
 </main>
-
-<footer data-dark>
-  <div class="wrap f-grid">
-    <div><p class="lead">Visos pervežimo paslaugos tarp Lietuvos ir Europos.</p></div>
-    <div><b>Airijos kryptis</b><a href="tel:+37065053161">+370 650 53161</a><br><a href="tel:+353864503104">+353 864 503104</a><br><a href="tel:+447566878681">+44 7566 878681</a></div>
-    <div><b>Ispanijos kryptis</b><a href="tel:+37063828919">+370 638 28919</a><br><a href="tel:+34602547929">+34 60 25 47929</a></div>
-    <div><b>Navigacija</b><a href="#paslaugos">Paslaugos</a><br><a href="#marsrutai">Reisai</a><br><a href="#eiga">Siuntų sekimas</a><br><a href="#">Taisyklės</a></div>
+<footer class="sgp-ftr on-dark" data-theme="dark" data-salient="Global Section → Footer · 5 columns (1.3/1/1/1.2/1) · services = .sgp-line-list · no wordmark, no social links">
+  <div class="sgp-wrap">
+    <div class="sgp-ftr__grid">
+      <div class="sgp-ftr__brand">
+        <a class="sgp-ftr__logo" href="./" aria-label="SGP pervežimai – pradžia"><img src="./assets/img/logo_light.svg" alt="" width="128" height="52" loading="lazy"></a>
+        <p>Visos pervežimo paslaugos: Lietuva – Airija – Lietuva, Lietuva – Ispanija – Lietuva. Saugiai, greitai, patikimai.</p>
+        <div class="sgp-ftr__mail"><p class="sgp-ftr__h">El. paštas</p><a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a></div>
+      </div>
+      <div class="sgp-phl">
+        <p class="sgp-ftr__h">Pervežimai į Airiją</p>
+        <a href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris +370 650 53161"><span class="sgp-cc">LT</span>+370 650 53161</a><a href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span class="sgp-cc">IE</span>+353 86 450 3104</a><a href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span class="sgp-cc">UK</span>+44 7566 878681</a>
+      </div>
+      <div class="sgp-phl">
+        <p class="sgp-ftr__h">Pervežimai į Ispaniją</p>
+        <a href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris +370 638 28919"><span class="sgp-cc">LT</span>+370 638 28919</a><a href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span class="sgp-cc">ES</span>+34 602 547 929</a>
+      </div>
+      <div>
+        <p class="sgp-ftr__h"><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/">Tarptautiniai pervežimai</a></p>
+        <nav class="sgp-line-list" aria-label="Tarptautinės pervežimo paslaugos"><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/">Krovinių pervežimas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/negabaritiniu-kroviniu-pervezimas/">Negabaritinių krovinių pervežimas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/daliniu-kroviniu-gabenimas/">Dalinių krovinių gabenimas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/daiktu-pervezimas/">Daiktų pervežimas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/automobiliu-pervezimas/">Automobilių pervežimas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/motociklu-pervezimas/">Motociklų pervežimas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/">Keleivių pervežimas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/">Gyvūnų pervežimas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pervezimas/">Siuntų pervežimas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pristatymas/">Siuntų pristatymas</a><a href="./pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/">Perkraustymo paslaugos</a></nav>
+      </div>
+      <div>
+        <p class="sgp-ftr__h">Informacija</p>
+        <nav class="sgp-line-list" aria-label="Informacija">
+          <a href="./apie-imone/">Apie mus</a><a href="./pervezimo-paslaugos/">Pervežimo paslaugos</a><a href="./pervezimu-grafikas/">Pervežimų grafikas</a><a href="./siuntos-sekimas/">Siuntos sekimas</a><a href="./taisykles/">Taisyklės</a><a href="./kontaktai/">Kontaktai</a><a href="./privatumo-politika/">Privatumo politika</a>
+        </nav>
+      </div>
+    </div>
+    <div class="sgp-ftr__bot">
+      <span>© 2026 SGP pervežimai. Visos teisės saugomos.</span>
+      <span class="sgp-ftr__demo"><a href="./v1/">Ankstesnė demo versija (v1)</a><span aria-hidden="true">·</span><span>Demo · nuotraukos ir video — <a href="https://www.pexels.com/" rel="noopener">Pexels</a></span></span>
+      <a class="sgp-ftr__top" href="#main">↑ Į pradžią</a>
+    </div>
   </div>
-  <div class="f-big" data-par="-.06" aria-hidden="true">SGP</div>
-  <div class="f-bot"><span>© 2026 SGP pervežimai</span><span>Demo dizainas · nuotraukos — Pexels</span></div>
 </footer>
 
-<script>
-const $=(s,c=document)=>c.querySelector(s),$$=(s,c=document)=>[...c.querySelectorAll(s)];
-const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const PX='https://images.pexels.com/photos/',Q='?auto=compress&cs=tinysrgb&w=700';
+<nav class="sgp-callbar" aria-label="Greitas skambutis" data-salient="GS-CallBar · Row → Sticky Row: Bottom of Window · visible tablet + phone (&lt;1000px) · both directions equal weight">
+  <a href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg><span><small>Į Airiją</small>+370 650 53161</span></a>
+  <a href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg><span><small>Į Ispaniją</small>+370 638 28919</span></a>
+  <a href="./pervezimu-grafikas/" aria-label="Pervežimų grafikas"><svg class="sgp-i" aria-hidden="true"><use href="#i-cal"/></svg></a>
+</nav>
 
-// Menu
-const burger=$('#burger');
-const toggle=f=>{const o=document.body.classList.toggle('menu-open',f);burger.setAttribute('aria-expanded',o)};
-burger.onclick=()=>toggle();
-$$('#menu a').forEach(a=>a.onclick=()=>toggle(false));
-addEventListener('keydown',e=>e.key==='Escape'&&toggle(false));
+<div class="sgp-cookie" id="sgp-cookie" role="region" aria-label="Slapukai" hidden data-salient="Consent plugin (Complianz / CookieYes) restyled · bottom-left card · demo: remembered in localStorage">
+  <p class="sgp-cookie__t">Informuojame, kad šioje svetainėje naudojami slapukai (angl. cookies)</p>
+  <p class="sgp-cookie__x">Būtini slapukai reikalingi svetainei veikti. Analitikos slapukus naudosime tik gavę Jūsų sutikimą.</p>
+  <div class="sgp-cookie__b">
+    <button class="sgp-btn sgp-btn--signal sgp-btn--sm" type="button" data-cookie="yes"><span class="sgp-btn__l">Sutinku</span></button>
+    <button class="sgp-btn sgp-btn--line sgp-btn--sm" type="button" data-cookie="no"><span class="sgp-btn__l">Atmesti</span></button>
+    <a class="sgp-lnk" href="./privatumo-politika/">Plačiau</a>
+  </div>
+</div>
 
-// Reveal on scroll
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-$$('.rv').forEach(el=>io.observe(el));
+<button class="sgp-tagbtn" id="sgp-tagbtn" type="button" aria-pressed="false" title="Rodyti Salient elementų pavadinimus (kūrėjui)"><svg class="sgp-i" aria-hidden="true"><use href="#i-tag"/></svg><span class="sgp-tagbtn__l">Salient žymės</span></button>
 
-// Statement: split into words
-const big=$('#big');
-[...big.childNodes].forEach(n=>{if(n.nodeType!==3)return;const f=document.createDocumentFragment();
-  n.textContent.split(/(\s+)/).forEach(t=>{if(!t.trim()){f.append(t);return}const s=document.createElement('span');s.className='w';s.textContent=t;f.append(s)});n.replaceWith(f)});
-const words=$$('.w',big);
+<script>window.SGP_SCHEDULE={"render_today":"2026-09-23","updated":"2026-09-23","note":"Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.","routes":[{"key":"lt-ie","from":"Lietuva","to":"Airija","from_gen":"Lietuvos","to_acc":"Airiją","code":"LT → IE","dir":"out","tel":"+37065053161","tel_label":"+370 650 53161","dates":["2026-10-09","2026-10-23"]},{"key":"lt-es","from":"Lietuva","to":"Ispanija","from_gen":"Lietuvos","to_acc":"Ispaniją","code":"LT → ES","dir":"out","tel":"+37063828919","tel_label":"+370 638 28919","dates":["2026-10-09","2026-10-23"]},{"key":"ie-lt","from":"Airija","to":"Lietuva","from_gen":"Airijos","to_acc":"Airiją","code":"IE → LT","dir":"in","tel":"+353864503104","tel_label":"+353 86 450 3104","dates":["2026-09-28","2026-10-15","2026-10-28"]},{"key":"es-lt","from":"Ispanija","to":"Lietuva","from_gen":"Ispanijos","to_acc":"Ispaniją","code":"ES → LT","dir":"in","tel":"+34602547929","tel_label":"+34 602 547 929","dates":["2026-09-27","2026-10-14","2026-10-28"]}]};</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
 
-// Scroll-driven effects
-const hero=$('#hero'),reel=$('#reel'),hdr=$('#hdr'),mq=$('#mq'),pars=$$('[data-par]'),darks=$$('[data-dark]');
-const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v));
-let tick=false;
-function frame(){tick=false;const vh=innerHeight,y=scrollY;
-  hero.style.setProperty('--p',clamp(y/(vh*.55)));
-  if(!reduce){
-    const r=reel.getBoundingClientRect();reel.style.setProperty('--s',.72+.28*clamp((vh-r.top)/(vh*.9)));
-    pars.forEach(el=>{const b=el.parentElement.getBoundingClientRect();if(b.bottom<-200||b.top>vh+200)return;
-      el.style.transform=`translate3d(0,${((b.top+b.height/2)-vh/2)*-el.dataset.par}px,0)`});
-    mq.style.transform=`translate3d(${-(y*.35)%(mq.offsetWidth/2)}px,0,0)`;
-    const bb=big.getBoundingClientRect(),p=clamp((vh*.85-bb.top)/(bb.height+vh*.35));
-    words.forEach((w,i)=>w.classList.toggle('lit',i/words.length<p));
-  }
-  hdr.classList.toggle('on-dark',darks.some(d=>{const b=d.getBoundingClientRect();return b.top<40&&b.bottom>40}));
-}
-addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(frame)}},{passive:true});
-addEventListener('resize',frame);frame();
+<script src="./assets/js/sgp.js?v=702889e0" defer></script>
+<script src="./assets/js/pages/home.js?v=844b609c" defer></script>
 
-// Services: floating image follows cursor
-const fl=$('#float'),rows=$$('.svc-row');
-rows.forEach((r,i)=>{const im=new Image();im.src=PX+r.dataset.img+Q;im.alt='';im.loading='lazy';fl.append(im);
-  r.addEventListener('mouseenter',()=>{$$('img',fl).forEach((g,j)=>g.classList.toggle('on',i===j));fl.classList.add('show')});
-  r.addEventListener('mouseleave',()=>fl.classList.remove('show'))});
-let fx=0,fy=0,tx=0,ty=0;
-addEventListener('mousemove',e=>{tx=e.clientX+190;ty=e.clientY});
-(function loop(){fx+=(tx-fx)*.12;fy+=(ty-fy)*.12;const rot=clamp((tx-fx)*.06,-10,10);
-  fl.style.transform=`translate(${fx}px,${fy}px) translate(-50%,-50%) rotate(${rot}deg) scale(${fl.classList.contains('show')?1:.6})`;
-  if(!reduce)requestAnimationFrame(loop)})();
-
-// Demo form
-$('#form').onsubmit=e=>{e.preventDefault();$('#ok').style.display='block'};
-</script>
 </body>
 </html>

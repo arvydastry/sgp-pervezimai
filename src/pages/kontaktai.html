@@ -1,0 +1,172 @@
+---
+title: Kontaktai | sgp-pervezimai.lt
+description: Pervežimai į Airiją: +370 650 53161. Pervežimai į Ispaniją: +370 638 28919. El. paštas saugiai.greitai.patikimai@gmail.com.
+out: kontaktai/index.html
+body_class: page-kontaktai
+nav: kontaktai
+arrival: no
+css: pages/kontaktai.css
+js: pages/kontaktai.js
+salient: Page „Kontaktai“ (§6.9) · Header (plain, rail terminus) → 01 Skambinkite (switchboard tickets + e-mail) → 02 Grafikas ([sgp_grafikas variant="timetable"]) → 03 Parašykite (Fluent Forms) → 04 Kur važiuojame (map, both routes) · GS-Arrival hidden · no address / map pin / hours / company code (none exist)
+---
+<!-- ============ HEADER (plain) — the route arrives here ============ -->
+<section class="sgp-phero sgp-phero--plain paper on-dark kt-hero" data-hero data-theme="dark" data-salient="Row · Header (plain) · bg asphalt-900 + graticule 4 % · min-height 40svh · content bottom · Text Color Light · terminus ring on the rail (custom CSS: lane draws down, ring fills) · H1 Animated Text → Word Reveal · right: Page Submenu as a stop list (jump links)">
+  <span class="kt-hero__lane" aria-hidden="true"></span>
+  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
+    <div class="sgp-phero__copy">
+      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="{{url:pradzia}}">Pradžia</a></li><li aria-current="page">Kontaktai</li></ol></nav>
+      <p class="sgp-phero__eyebrow sgp-mono kt-hero__eyebrow"><span class="sgp-ring kt-term" aria-hidden="true"></span>Atvykimas</p>
+      <h1 class="sgp-phero__h1" data-split>Kontaktai</h1>
+      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">Susisiekite su mumis ir mes pasiūlysime Jums geriausią kainą!</p>
+      {{grafikas:next}}
+    </div>
+    <nav class="kt-index" aria-label="Puslapio skyriai" data-reveal style="--dl:.45s" data-salient="Page Submenu (static in the header) · 4 jump links styled as stops">
+      <ol>
+        <li><a href="#skambinkite"><span class="sgp-ring"></span><span class="sgp-mono">01</span><span>Skambinkite</span><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#grafikas"><span class="sgp-ring"></span><span class="sgp-mono">02</span><span>Grafikas</span><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#parasykite"><span class="sgp-ring"></span><span class="sgp-mono">03</span><span>Parašykite</span><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+        <li><a href="#kur-vaziuojame"><span class="sgp-ring"></span><span class="sgp-mono">04</span><span>Kur važiuojame</span><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></li>
+      </ol>
+    </nav>
+  </div>
+</section>
+
+<!-- ============ 01 · SKAMBINKITE — the full switchboard (5 numbers) ============ -->
+<section class="sgp-sec kt-call on-dark deep sgp-has-rail" id="skambinkite" data-theme="dark" data-salient="Row · bg #0B0E10 · Extra Class sgp-dark sgp-has-rail · 2 × Inner Row, Extra Class .sgp-ticket .kt-tk (stub at the bottom = [sgp_grafikas variant=&quot;stub&quot;]) · every number = Button (Basic) ≥ 64 px · e-mail = Text Block + Raw HTML copy button">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">01</span><span class="sgp-mono">Skambinkite</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">5 numeriai</span></div>
+    <div class="sgp-head kt-call__head">
+      <h2 class="sgp-d2" data-split>Pervežimai į Airiją ir Ispaniją</h2>
+      <div class="kt-mail" data-reveal data-salient="Text Block „El. paštas“ + mailto link + Raw HTML copy button (M73)">
+        <p class="sgp-mono kt-mail__k"><svg class="sgp-i" aria-hidden="true"><use href="#i-mail"/></svg>El. paštas</p>
+        <a class="kt-mail__a" href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a>
+        <button class="sgp-copy" type="button" data-copy="saugiai.greitai.patikimai@gmail.com"><svg class="sgp-i" aria-hidden="true"><use href="#i-copy"/></svg><span>Kopijuoti</span></button>
+        <span class="sgp-sr" role="status" data-copy-status></span>
+      </div>
+    </div>
+    <div class="kt-tickets" data-stagger="120" data-salient="Inner Row, 2 Columns · each Column = .sgp-ticket .kt-tk: Text Block (code + H3) + Button Basic (LT number, 92 px) + 1–2 Buttons (≥ 64 px) + stub [sgp_grafikas variant=&quot;stub&quot;]">
+      <article class="sgp-ticket kt-tk" data-reveal aria-labelledby="kt-ie-h">
+        <div class="sgp-ticket__main">
+          <p class="sgp-mono sgp-ticket__k"><span class="sgp-ticket__code">LT ⇄ IE</span>Lietuva – Airija – Lietuva</p>
+          <h3 class="kt-tk__h" id="kt-ie-h">Pervežimai į Airiją</h3>
+          <a class="kt-tk__big" href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris – skambinti +370 650 53161"><span class="kt-tk__ico"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="kt-tk__t"><span class="kt-tk__num">+370 650 53161</span><span class="kt-tk__cc sgp-mono">LT · Lietuva</span></span></a>
+          <ul class="kt-tk__more">
+            <li><a href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris – skambinti +353 86 450 3104"><span class="sgp-cc">IE</span><span class="kt-tk__n">+353 86 450 3104</span><span class="kt-tk__c">Airija</span><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></a></li>
+            <li><a href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris – skambinti +44 7566 878681"><span class="sgp-cc">UK</span><span class="kt-tk__n">+44 7566 878681</span><span class="kt-tk__c">Jungtinė Karalystė</span><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></a></li>
+          </ul>
+        </div>
+        {{grafikas:stub route=lt-ie}}
+      </article>
+      <article class="sgp-ticket kt-tk" data-reveal aria-labelledby="kt-es-h">
+        <div class="sgp-ticket__main">
+          <p class="sgp-mono sgp-ticket__k"><span class="sgp-ticket__code">LT ⇄ ES</span>Lietuva – Ispanija – Lietuva</p>
+          <h3 class="kt-tk__h" id="kt-es-h">Pervežimai į Ispaniją</h3>
+          <a class="kt-tk__big" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris – skambinti +370 638 28919"><span class="kt-tk__ico"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="kt-tk__t"><span class="kt-tk__num">+370 638 28919</span><span class="kt-tk__cc sgp-mono">LT · Lietuva</span></span></a>
+          <ul class="kt-tk__more">
+            <li><a href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris – skambinti +34 602 547 929"><span class="sgp-cc">ES</span><span class="kt-tk__n">+34 602 547 929</span><span class="kt-tk__c">Ispanija</span><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></a></li>
+          </ul>
+        </div>
+        {{grafikas:stub route=lt-es}}
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · GRAFIKAS — tap-to-call timetable (all 4 routes) ============ -->
+<section class="sgp-sec kt-sched on-light alt sgp-has-rail" id="grafikas" data-theme="light" data-salient="Row · bg #EAEEED (no graticule: dense list) · Extra Class sgp-light sgp-has-rail · Column 5/12 Sticky (H2 + note + Button Line) · Column 7/12: [sgp_grafikas variant=&quot;timetable&quot;] (4 routes, every row dials its direction)">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">02</span><span class="sgp-mono">Grafikas</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">{{grafikas:updated}}</span></div>
+    <div class="kt-sched__grid">
+      <div class="kt-sched__side">
+        <div class="sgp-sticky">
+          <h2 class="sgp-d2" data-split>Artimiausi pervežimai</h2>
+          <p class="sgp-body kt-sched__note" data-reveal>{{grafikas:note}}</p>
+          <a class="sgp-btn sgp-btn--line" data-reveal style="--dl:.1s" href="{{url:grafikas}}"><span class="sgp-btn__l">Visas pervežimų grafikas</span><span class="sgp-btn__a"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
+        </div>
+      </div>
+      <div class="kt-sched__tt" data-reveal style="--dl:.1s" data-salient="[sgp_grafikas variant=&quot;timetable&quot;] (routes: all 4) + Text Block tip">
+        {{grafikas:timetable}}
+        <p class="kt-sched__tip sgp-small"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>Paspauskite eilutę – skambinsite tos krypties numeriu.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · PARAŠYKITE — contact form (demo: nothing is sent) ============ -->
+<section class="sgp-sec kt-write on-light sgp-has-rail" id="parasykite" data-theme="light" data-salient="Row · bg #F5F7F6 (no graticule on forms) · Extra Class sgp-light sgp-has-rail · Column 5/12 Sticky (H2 + quick-call list: the matching direction lights up) · Column 7/12: Fluent Forms contact form">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">03</span><span class="sgp-mono">Parašykite</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">El. paštu</span></div>
+    <div class="kt-write__grid">
+      <div class="kt-write__side">
+        <div class="sgp-sticky">
+          <h2 class="sgp-d2" data-split>Susisiekite su mumis</h2>
+          <div class="kt-quick" data-reveal data-salient="Text Block · phone list per direction (.sgp-phl) · custom JS highlights the row that matches the chosen route">
+            <p class="sgp-mono kt-quick__k">Greičiau – telefonu</p>
+            <div class="sgp-phl kt-quick__list">
+              <a href="tel:+37065053161" data-kt-tel="lt-ie" aria-label="Lietuva – Airija, skambinti +370 650 53161"><span class="sgp-cc">LT</span><span class="kt-quick__n">+370 650 53161</span><small>Lietuva → Airija</small></a>
+              <a href="tel:+353864503104" data-kt-tel="ie-lt" aria-label="Airija – Lietuva, skambinti +353 86 450 3104"><span class="sgp-cc">IE</span><span class="kt-quick__n">+353 86 450 3104</span><small>Airija → Lietuva</small></a>
+              <a href="tel:+37063828919" data-kt-tel="lt-es" aria-label="Lietuva – Ispanija, skambinti +370 638 28919"><span class="sgp-cc">LT</span><span class="kt-quick__n">+370 638 28919</span><small>Lietuva → Ispanija</small></a>
+              <a href="tel:+34602547929" data-kt-tel="es-lt" aria-label="Ispanija – Lietuva, skambinti +34 602 547 929"><span class="sgp-cc">ES</span><span class="kt-quick__n">+34 602 547 929</span><small>Ispanija → Lietuva</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <form class="sgp-form kt-form" action="#" method="post" novalidate data-demo-form data-kt-form data-reveal style="--dl:.1s" data-salient="Fluent Forms · contact form: Jūsų vardas · El. pašto adresas · Kryptis (Radio, optional) · Ką vežame? (Checkbox, optional) · Žinutės tema · Žinutė (min 20) · button „Siųsti“ · Theme Options → Form Styling (fancy radio/checkbox) + .sgp-field · Turnstile (invisible) · demo: nothing is sent">
+        <p class="sgp-form__t">Parašykite</p>
+        <div class="kt-form__row">
+          <label class="sgp-field"><span class="sgp-field__l">Jūsų vardas</span><input name="vardas" required autocomplete="name" placeholder="Vardas"><em class="sgp-field__err">Įrašykite vardą</em></label>
+          <label class="sgp-field"><span class="sgp-field__l">El. pašto adresas</span><input name="el_pastas" type="email" required autocomplete="email" placeholder="vardas@pastas.lt"><em class="sgp-field__err">Patikrinkite el. pašto adresą</em></label>
+        </div>
+        <p class="kt-form__hint">El. pašto adresas naudojamas išsiųsti pasiūlymui parengti pagal kliento poreikius. Saugomas mūsų sistemoje iki vartotojo pareikalavimo panaikinti duomenis.</p>
+        <fieldset class="kt-choice">
+          <legend class="sgp-mono">Kryptis <small>nebūtina</small></legend>
+          <div class="kt-opts">
+            <label class="kt-opt"><input type="radio" name="kryptis" value="Lietuva → Airija" data-route="lt-ie"><span>Lietuva → Airija</span></label>
+            <label class="kt-opt"><input type="radio" name="kryptis" value="Airija → Lietuva" data-route="ie-lt"><span>Airija → Lietuva</span></label>
+            <label class="kt-opt"><input type="radio" name="kryptis" value="Lietuva → Ispanija" data-route="lt-es"><span>Lietuva → Ispanija</span></label>
+            <label class="kt-opt"><input type="radio" name="kryptis" value="Ispanija → Lietuva" data-route="es-lt"><span>Ispanija → Lietuva</span></label>
+            <label class="kt-opt"><input type="radio" name="kryptis" value="Kita"><span>Kita</span></label>
+          </div>
+        </fieldset>
+        <fieldset class="kt-choice">
+          <legend class="sgp-mono">Ką vežame? <small>nebūtina</small></legend>
+          <div class="kt-opts">
+            <label class="kt-opt kt-opt--box"><input type="checkbox" name="vezame" value="Keleiviai"><span>Keleiviai</span></label>
+            <label class="kt-opt kt-opt--box"><input type="checkbox" name="vezame" value="Siuntos"><span>Siuntos</span></label>
+            <label class="kt-opt kt-opt--box"><input type="checkbox" name="vezame" value="Kroviniai"><span>Kroviniai</span></label>
+            <label class="kt-opt kt-opt--box"><input type="checkbox" name="vezame" value="Daiktai ir perkraustymas"><span>Daiktai ir perkraustymas</span></label>
+            <label class="kt-opt kt-opt--box"><input type="checkbox" name="vezame" value="Automobiliai ir motociklai"><span>Automobiliai ir motociklai</span></label>
+            <label class="kt-opt kt-opt--box"><input type="checkbox" name="vezame" value="Gyvūnai"><span>Gyvūnai</span></label>
+            <label class="kt-opt kt-opt--box"><input type="checkbox" name="vezame" value="Kita"><span>Kita</span></label>
+          </div>
+        </fieldset>
+        <label class="sgp-field"><span class="sgp-field__l">Žinutės tema</span><input name="tema" required autocomplete="off" placeholder="Pvz., Lietuva → Airija · Siuntos"><em class="sgp-field__err">Įrašykite žinutės temą</em></label>
+        <label class="sgp-field"><span class="sgp-field__l">Žinutė</span><textarea name="zinute" rows="4" required minlength="20" placeholder="Iš kur, į kur ir kada?"></textarea><em class="sgp-field__err">Žinutė – bent 20 simbolių</em></label>
+        <p class="sgp-form__note">Formoje pateikti duomenys naudojami susisiekimui su klientu.</p>
+        <button class="sgp-btn sgp-btn--signal kt-form__go" type="submit"><span class="sgp-btn__l">Siųsti</span><span class="sgp-btn__a"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
+        <p class="sgp-form__ok" role="status" aria-live="polite" tabindex="-1">Jūsų žinutė sėkmingai išsiųsta<small>Demonstracinė versija – duomenys niekur nesiunčiami.</small></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · KUR VAŽIUOJAME — both routes (static schematic) ============ -->
+<section class="sgp-sec kt-map on-dark sgp-has-rail" id="kur-vaziuojame" data-theme="dark" data-salient="Row dark · Extra Class sgp-dark sgp-has-rail · Column 5/12: H2 + Text Block + Text Block .sgp-kv (delivery facts pair) + Button Underline · Column 7/12: Raw HTML SVG map (both routes, static, IE leg dashed „maršrutas tikslinamas“) on a paper card · &lt;700px ordered list">
+  <div class="sgp-wrap sgp-wrap--zone">
+    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">04</span><span class="sgp-mono">Kur važiuojame</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">2 kryptys</span></div>
+    <div class="kt-map__grid">
+      <div class="kt-map__txt">
+        <h2 class="sgp-d2" data-split>Dvi kryptys. Keturios šalys pakeliui.</h2>
+        <p class="sgp-body kt-map__p" data-reveal>Tarptautiniai pervežimai minėtais maršrutais apima ir tokias Europos šalis kaip Lenkija, Vokietija, Belgija, Prancūzija – nedvejokite, jei norite perduoti siuntą jose gyvenantiems artimiesiems.</p>
+        <dl class="sgp-kv kt-map__kv" data-reveal style="--dl:.1s" data-salient="Text Block .sgp-kv — two labelled delivery facts (§4.12)">
+          <dt>Kelyje</dt><dd>apie 3–4 paros nuo paėmimo dienos</dd>
+          <dt>Įsipareigojimas siuntoms</dt><dd>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)</dd>
+        </dl>
+        <div class="kt-map__links" data-reveal style="--dl:.15s"><a class="sgp-lnk" href="{{url:tarptautiniai}}">Tarptautiniai pervežimai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="sgp-lnk" href="{{url:paslaugos}}">Pervežimo paslaugos<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a><a class="sgp-lnk" href="{{url:grafikas}}">Pervežimų grafikas<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
+      </div>
+      <div class="kt-map__fig" data-reveal style="--dl:.1s">
+        {{partial:map-both}}
+      </div>
+    </div>
+  </div>
+</section>

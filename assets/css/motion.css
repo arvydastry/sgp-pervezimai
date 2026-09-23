@@ -1,0 +1,118 @@
+/* =========================================================
+   SGP v2 · MOTION (Foundation-owned) — data-attribute driven effects (§5)
+   Hidden start states apply only when JS runs (html.js) and motion is allowed.
+   Phones (≤690): entrance fades are off (Salient default); H1 word reveal + lanes stay.
+   ========================================================= */
+
+@media (prefers-reduced-motion:no-preference){
+  /* M13 / M27 — fade up: data-reveal (+ style="--dl:.12s" or parent data-stagger="120") */
+  .js [data-reveal]:not(.in){opacity:0;transform:translateY(26px)}
+  .js [data-reveal].in:not(.is-done){transition:opacity var(--d-reveal) var(--e-arrive),transform 1.1s var(--e-arrive);transition-delay:var(--dl,0s)}
+  .js [data-reveal="fade"]:not(.in){transform:none}
+  .js [data-reveal="left"]:not(.in){transform:translateX(-26px)}
+
+  /* M24 — mask reveal: data-mask (bottom→top) | data-mask="circle" · observed through the parent */
+  .js [data-mask]:not(.in){clip-path:inset(100% 0 0 0)}
+  .js [data-mask="circle"]:not(.in){clip-path:circle(0 at 50% 50%)}
+  .js [data-mask="left"]:not(.in){clip-path:inset(0 100% 0 0)}
+  .js [data-mask].in{clip-path:inset(0 0 0 0);transition:clip-path var(--d-section) var(--e-arrive) var(--dl,0s)}
+  .js [data-mask="circle"].in{clip-path:circle(75% at 50% 50%);transition:clip-path .9s cubic-bezier(.2,.8,.2,1) var(--dl,0s)}
+
+  /* M22 — word reveal: data-split (JS wraps words) · M52 — data-split="blur" */
+  .js [data-split]:not([data-split=blur]) .sgp-w>span{transform:translateY(105%)}
+  [data-split].in:not([data-split=blur]) .sgp-w>span{transform:none;transition:transform 1s var(--e-arrive);transition-delay:calc(var(--i) * var(--st-word) + var(--dl,0s))}
+  .js [data-split=blur] .sgp-bw{opacity:0;filter:blur(10px);transform:translateY(10px)}
+  [data-split=blur].in .sgp-bw{opacity:1;filter:blur(0);transform:none;transition:opacity 1s var(--e-arrive),filter 1.1s var(--e-arrive),transform 1.1s var(--e-arrive);transition-delay:calc(var(--i) * 70ms + var(--dl,0s))}
+
+  /* M26 — odometer: data-reel="11" (JS builds digit reels) */
+  .js [data-reel]:not(.in) .sgp-reel>span{filter:blur(3px)}
+}
+.sgp-w{display:inline-block;overflow:hidden;vertical-align:top;padding-bottom:.08em;margin-bottom:-.08em}
+.sgp-w>span,.sgp-bw{display:inline-block}
+/* tabular figures: every reel column is one digit wide, so a narrow „1“ leaves no gap („1200“, „11“) */
+[data-reel]{font-variant-numeric:tabular-nums}
+.sgp-reel{display:inline-block;height:1em;overflow:hidden;line-height:1;font-variant-numeric:tabular-nums}
+.sgp-reel>span{display:flex;flex-direction:column;align-items:center;transition:transform var(--d-odo) var(--e-arrive),filter 1.2s var(--e-arrive);transition-delay:var(--dl,0s)}
+.sgp-reel>span b{display:block;height:1em;font-weight:inherit}
+[data-reel].in .sgp-reel>span{transform:translateY(calc(var(--d) * -1em))}
+
+/* M23 — underline draw: <mark class="sgp-mark"> inside any element that gets .in (data-reveal / data-split / data-draw) */
+.sgp-mark{background:linear-gradient(var(--c-signal),var(--c-signal)) 0 92%/0 3px no-repeat;color:inherit;padding-bottom:2px;transition:background-size 1.4s var(--e-route)}
+.in .sgp-mark,.sgp-mark.in,html:not(.js) .sgp-mark{background-size:100% 3px}
+.in .sgp-mark + .sgp-mark{transition-delay:.5s}
+
+/* lane draw helper: <span class="sgp-lane" data-reveal="fade"><i></i></span> */
+.sgp-lane{position:relative;display:block;height:12px}
+.sgp-lane::before{content:"";position:absolute;left:0;right:0;top:5.5px;height:1px;background:repeating-linear-gradient(90deg,var(--ghost) 0 4px,transparent 4px 10px)}
+.sgp-lane i{position:absolute;inset:0;border-top:1px solid var(--c-signal-rail);border-bottom:1px solid var(--c-signal-rail);background:linear-gradient(var(--c-signal),var(--c-signal)) 0 4px/100% 2px no-repeat;transform:scaleX(0);transform-origin:left}
+.in>.sgp-lane i,.sgp-lane.in i,html:not(.js) .sgp-lane i{transform:scaleX(1);transition:transform 1.4s var(--e-route) var(--dl,0s)}
+
+/* parallax / scroll-scale: transforms are written by sgp.js (one rAF loop, ≥1000 px only) */
+[data-parallax],[data-scroll-scale]{will-change:transform}
+@media (max-width:999px){[data-parallax],[data-scroll-scale]{will-change:auto;transform:none!important}}
+
+/* M09 — page transition (desktop, motion allowed) */
+@media (min-width:1000px) and (prefers-reduced-motion:no-preference){
+  @view-transition{navigation:auto}
+  ::view-transition-old(root){animation:none}
+  ::view-transition-new(root){animation:sgp-wipe .6s var(--e-route) both}
+  @keyframes sgp-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+}
+
+/* ---------- reduced motion (§5.5) ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+  .sgp-has-rail::before{animation:none!important;--sgp-p:100%}
+  .sgp-wp .sgp-ring{animation:none!important;border-color:var(--c-signal);background:var(--c-signal)}
+  .sgp-wp .sgp-ring::after,.sgp-ring::after{animation:none!important;opacity:0}
+  .sgp-mapsvg .live path{animation:none!important;stroke-dashoffset:0}
+  .sgp-stations__lane,.sgp-lane i{transform:none!important}
+  .sgp-stations .sgp-station>.sgp-ring{border-color:var(--c-signal);background:var(--c-signal)}
+  .js .sgp-station__img{clip-path:none}
+  .sgp-mark{background-size:100% 3px}
+  .sgp-tk__live::before,.sgp-dot,.sgp-mapsvg .pulse{animation:none}
+  [data-parallax],[data-scroll-scale]{transform:none!important}
+  .sgp-phero .sgp-bgmedia img{animation:none}
+  /* §5.5: pinned sections become a plain stack */
+  .sgp-stack__item{position:relative!important;top:auto!important}
+  .sgp-stack__item>*{transform:none!important}
+  .sgp-stack__item>*::after{display:none}
+}
+@media (max-width:690px){
+  .js [data-reveal]:not(.in){opacity:1;transform:none}
+}
+/* parallax targets are moved every frame by JS: never let a transform transition lag behind */
+[data-parallax],[data-scroll-scale]{transition-property:opacity,filter,clip-path,scale!important}
+
+/* ---------- print (§7) — every reveal in its end state, chrome hidden, dark rows on white paper ----------
+   sgp.js also adds .in to every reveal target on `beforeprint` (covers page-owned start states keyed on .in). */
+@media print{
+  @page{margin:16mm 14mm}
+  *,*::before,*::after{animation:none!important;transition:none!important;box-shadow:none!important;text-shadow:none!important}
+  html,body{background:#fff!important}
+  body,body *{color:#1C1D1D!important;background-color:transparent!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+  body{padding-bottom:0!important}
+  /* fixed chrome, overlays, background media and forms */
+  .sgp-skip,.sgp-hdr,.sgp-menu,.sgp-callpanel,.sgp-callbar,.sgp-cookie,.sgp-tagbtn,.sgp-stags,.sgp-submenu,
+  .sgp-bgmedia,.sgp-shade,.sgp-vctl,video,form{display:none!important}
+  .sgp-has-rail::before{display:none!important}
+  /* scroll-reveal start states → end states (the observer never fired for blocks the visitor did not reach) */
+  [data-reveal],[data-mask],[data-split] .sgp-w>span,.sgp-bw,[data-parallax],[data-scroll-scale]{opacity:1!important;transform:none!important;clip-path:none!important;filter:none!important}
+  [data-reel] .sgp-reel>span{transform:translateY(calc(var(--d) * -1em))!important;filter:none!important}
+  .sgp-station__img{clip-path:none!important}
+  .sgp-lane i,.sgp-stations__lane{transform:none!important}
+  .sgp-mapsvg .live path{stroke-dashoffset:0!important}
+  /* collapsed accordion panels print open; pinned stacks print as a plain flow */
+  .sgp-acc__panel{grid-template-rows:1fr!important}
+  .sgp-acc__panel>div{visibility:visible!important}
+  .sgp-stack__item{position:static!important}
+  .sgp-stack__item>*{transform:none!important}
+  .sgp-stack__item>*::after{display:none!important}
+  .sgp-sec{padding:28px 0!important}
+  .sgp-phero{min-height:0!important;padding:24px 0!important}
+  h1,h2,h3,h4{break-after:avoid}
+  .sgp-clause,.sgp-acc__item,.sgp-ticket,.sgp-card{break-inside:avoid}
+  /* tel: links whose text is not the number (board cells, timetable rows, „Skambinti“) print the number */
+  .sgp-bcell::after,.sgp-tt__row::after,a.sgp-lnk[href^="tel:"]::after{content:" (" attr(href) ")";position:static!important;display:inline;height:auto;transform:none!important;background:none!important;opacity:1;font:500 .8125rem/1.3 var(--f-mono)}
+  .sgp-tt__row::after{grid-column:1 / -1}
+}
