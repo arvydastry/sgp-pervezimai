@@ -1,0 +1,176 @@
+/* =====================================================================================
+   emul/grid.css — EMULATION of Salient WPBakery structure (Section · Row · Inner Row ·
+   Column · Inner Column · Global Section). Not shipped.
+   Design Options = CSS variables set inline on the element they belong to:
+   --pt --pr --pb --pl (+ -t tablet / -m phone) --mt --mb --bg --bg-hover --fg --r --max-w
+   --gap --min-h (+ -t / -m) --border (+ -top/-right/-bottom/-left). They are reset on the
+   next structural level so a nested row/column never inherits its parent's options.
+   ===================================================================================== */
+.vc_section > *,.row_col_wrap_12 > *,.row_col_wrap_12_inner > *,.vc_column-inner > *{
+  --pt:initial;--pr:initial;--pb:initial;--pl:initial;--pt-t:initial;--pb-t:initial;--pt-m:initial;--pb-m:initial;
+  --pl-t:initial;--pr-t:initial;--pl-m:initial;--pr-m:initial;--mt:initial;--mb:initial;--bg:initial;--bg-hover:initial;
+  --r:initial;--max-w:initial;--gap:initial;--min-h:initial;--min-h-t:initial;--min-h-m:initial;
+  --border:initial;--border-top:initial;--border-right:initial;--border-bottom:initial;--border-left:initial;
+  --span:initial;--off:initial;--col-gap:initial;--row-gap:initial}
+
+/* ---------------- Section (vc_section) & Row (vc_row) ---------------- */
+.vc_section,.wpb_row{position:relative;display:block;width:100%;
+  padding:var(--pt,0) var(--pr,0) var(--pb,0) var(--pl,0);margin-top:var(--mt,0);margin-bottom:var(--mb,0);
+  background-color:var(--bg,transparent);min-height:var(--min-h,auto);border-radius:var(--r,0);isolation:isolate}
+.wpb_row[data-padding="chapter"]{--pt:8%;--pb:8%;--pt-m:80px;--pb-m:80px}
+.wpb_row[data-full-height]{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:center}
+.wpb_row[data-full-height][data-column-position="bottom"]{justify-content:flex-end}
+.vc_section[data-layout="flex"]{display:flex;flex-direction:column;justify-content:var(--justify,flex-start)}
+.vc_section[data-justify="flex-end"]{--justify:flex-end}
+.vc_section[data-justify="center"]{--justify:center}
+.vc_section[data-layout="flex"] > .wpb_row{flex:0 0 auto}
+@media (max-width:999px){
+  .vc_section,.wpb_row{padding-top:var(--pt-t,var(--pt,0));padding-bottom:var(--pb-t,var(--pb,0));
+    padding-left:var(--pl-t,var(--pl,0));padding-right:var(--pr-t,var(--pr,0));min-height:var(--min-h-t,var(--min-h,auto))}
+}
+@media (max-width:690px){
+  .vc_section,.wpb_row{padding-top:var(--pt-m,var(--pt-t,var(--pt,0)));padding-bottom:var(--pb-m,var(--pb-t,var(--pb,0)));
+    padding-left:var(--pl-m,var(--pl-t,var(--pl,0)));padding-right:var(--pr-m,var(--pr-t,var(--pr,0)));
+    min-height:var(--min-h-m,var(--min-h-t,var(--min-h,auto)))}
+}
+/* Row → Type: In Container / Full Width Background / Full Width Content · 12-column WPBakery grid
+   (flex like WPBakery: width = N/12, Responsive Options offsets are RELATIVE margins like vc_col-sm-offset-N) */
+.row_col_wrap_12,.row_col_wrap_12_inner{--gx:var(--col-gap,var(--column-spacing));position:relative;z-index:1;display:flex;flex-wrap:wrap;
+  column-gap:var(--gx);row-gap:var(--row-gap,48px);align-items:flex-start}
+.wpb_row:not([data-type="full_width_content"]) > .row_col_wrap_12{width:100%;max-width:calc(var(--container) + 2 * var(--container-pad));margin-inline:auto;padding-inline:var(--container-pad)}
+.wpb_row[data-type="in_container"]{max-width:calc(var(--container) + 2 * var(--container-pad));margin-inline:auto;padding-inline:var(--container-pad)}
+.wpb_row[data-type="in_container"] > .row_col_wrap_12{padding-inline:0}
+.wpb_row[data-type="full_width_content"] > .row_col_wrap_12{--col-gap:0px}
+/* Column Margin · Equal Height · Column Content Alignment · Vertically Center Columns */
+[data-column-margin="none"] > .row_col_wrap_12,[data-column-margin="none"] > .row_col_wrap_12_inner{--col-gap:0px;--row-gap:0px}
+[data-column-margin="5px"] > *{--col-gap:5px;--row-gap:5px}
+[data-column-margin="10px"] > *{--col-gap:10px;--row-gap:10px}
+[data-column-margin="20px"] > *{--col-gap:20px;--row-gap:20px}
+[data-column-margin="40px"] > *{--col-gap:40px}
+[data-column-margin="60px"] > *{--col-gap:60px}
+[data-column-margin="90px"] > *{--col-gap:90px}
+[data-equal-height] > .row_col_wrap_12,[data-equal-height] > .row_col_wrap_12_inner{align-items:stretch}
+[data-column-align="middle"] > .row_col_wrap_12,[data-column-align="middle"] > .row_col_wrap_12_inner{align-items:center}
+[data-column-align="bottom"] > .row_col_wrap_12,[data-column-align="bottom"] > .row_col_wrap_12_inner{align-items:flex-end}
+[data-equal-height][data-content-align="middle"] .vc_column-inner{justify-content:center}
+[data-equal-height][data-content-align="bottom"] .vc_column-inner{justify-content:flex-end}
+[data-row-gap="0"] > *{--row-gap:0px}
+
+/* ---------------- Inner Row (vc_row_inner) ---------------- */
+.vc_row.inner_row{position:relative;width:100%;padding:var(--pt,0) var(--pr,0) var(--pb,0) var(--pl,0);margin-top:var(--mt,0);
+  background-color:var(--bg,transparent);border-radius:var(--r,0);border:var(--border,0);max-width:var(--max-w,none)}
+.vc_row.inner_row > .row_col_wrap_12_inner{--row-gap:28px}
+@media (max-width:690px){.vc_row.inner_row{padding:var(--pt-m,var(--pt,0)) var(--pr-m,var(--pr,0)) var(--pb-m,var(--pb,0)) var(--pl-m,var(--pl,0))}}
+
+/* ---------------- Column / Inner Column (vc_column, vc_column_inner) ---------------- */
+.wpb_column{position:relative;min-width:0;flex:0 0 auto;width:calc((100% + var(--gx,0px)) * var(--span,12) / 12 - var(--gx,0px));margin-left:calc((100% + var(--gx,0px)) * var(--off,0) / 12);
+  padding:var(--pt,0) var(--pr,0) var(--pb,0) var(--pl,0);margin-top:var(--mt,0);
+  background-color:var(--bg,transparent);border-radius:var(--r,0);min-height:var(--min-h,0);max-width:var(--max-w,none);
+  border:var(--border,0);transition:background-color var(--d-btn) var(--e-btn),box-shadow var(--d-hover) var(--e-hover)}
+.wpb_column[style*="--border-top"]{border-top:var(--border-top)}
+.wpb_column[style*="--border-bottom"]{border-bottom:var(--border-bottom)}
+.wpb_column[style*="--border-left"]{border-left:var(--border-left)}
+.wpb_column[style*="--border-right"]{border-right:var(--border-right)}
+.wpb_column[style*="--fg"]{color:var(--fg)}
+.wpb_column[style*="--bg-hover"]:hover,.wpb_column[style*="--bg-hover"]:focus-within{background-color:var(--bg-hover)}
+.vc_col-sm-1{--span:1}.vc_col-sm-2{--span:2}.vc_col-sm-3{--span:3}.vc_col-sm-4{--span:4}.vc_col-sm-5{--span:5}.vc_col-sm-6{--span:6}
+.vc_col-sm-7{--span:7}.vc_col-sm-8{--span:8}.vc_col-sm-9{--span:9}.vc_col-sm-10{--span:10}.vc_col-sm-11{--span:11}.vc_col-sm-12{--span:12}
+.vc_col-sm-offset-1{--off:1}.vc_col-sm-offset-2{--off:2}.vc_col-sm-offset-3{--off:3}.vc_col-sm-offset-4{--off:4}
+.vc_column-inner{position:relative;z-index:1;display:flex;flex-direction:column;height:100%;min-width:0}
+.vc_column-inner > *{margin-top:var(--mt,0);margin-bottom:var(--mb,0)}
+.vc_column-inner > * + *{margin-top:var(--mt,var(--el-space,20px))}
+.wpb_column[data-el-space="50px"]{--el-space:50px}.wpb_column[data-el-space="40px"]{--el-space:40px}
+.wpb_column[data-el-space="30px"]{--el-space:30px}.wpb_column[data-el-space="10px"]{--el-space:10px}
+.wpb_column[data-el-space="5px"]{--el-space:5px}.wpb_column[data-el-space="none"]{--el-space:0px}
+/* Content → Layout Type: Flexbox (Column / Inner Column) */
+.wpb_column[data-layout="flex"] > .vc_column-inner{gap:var(--gap,10px)}
+.wpb_column[data-layout="flex"] > .vc_column-inner > *{margin-top:var(--mt,0)}
+.wpb_column[data-flex-dir="row"] > .vc_column-inner{flex-direction:row;flex-wrap:wrap;align-items:center}
+.wpb_column[data-justify="flex-end"] > .vc_column-inner{justify-content:flex-end}
+.wpb_column[data-justify="center"] > .vc_column-inner{justify-content:center}
+.wpb_column[data-justify="space-between"] > .vc_column-inner{justify-content:space-between}
+.wpb_column[data-align="flex-start"] > .vc_column-inner{align-items:flex-start}
+.wpb_column[data-align="center"] > .vc_column-inner{align-items:center}
+.wpb_column[data-align="flex-end"] > .vc_column-inner{align-items:flex-end}
+/* Centered Content · Text Align (per device) */
+[data-text-align="center"]{text-align:center}[data-text-align="right"]{text-align:right}[data-text-align="left"]{text-align:left}
+.wpb_column[data-text-align="center"] > .vc_column-inner{align-items:center}
+/* Box Shadow presets · Backdrop Filter → Blur */
+[data-shadow="small_depth"]{box-shadow:var(--shadow-small)}[data-shadow="medium_depth"]{box-shadow:0 20px 30px rgba(0,0,0,.2),0 8px 16px rgba(0,0,0,.1)}
+[data-shadow="large_depth"]{box-shadow:var(--shadow-large)}[data-shadow="x_large_depth"]{box-shadow:var(--shadow-x-large)}
+[data-backdrop-blur]{-webkit-backdrop-filter:blur(var(--blur,16px));backdrop-filter:blur(var(--blur,16px))}
+[data-backdrop-blur="8"]{--blur:8px}[data-backdrop-blur="12"]{--blur:12px}[data-backdrop-blur="16"]{--blur:16px}[data-backdrop-blur="20"]{--blur:20px}
+/* Sticky Content (CSS Powered) → Top / Middle (desktop + tablet; phones unless data-sticky-mobile) */
+.wpb_column[data-sticky]{align-self:stretch}
+.wpb_column[data-sticky] > .vc_column-inner{height:auto;position:sticky;top:calc(var(--header-h-small) + var(--submenu-h,0px) + 36px)}
+.wpb_column[data-sticky="middle"] > .vc_column-inner{top:max(calc(var(--header-h-small) + var(--submenu-h,0px) + 24px),calc((100vh - var(--sticky-h,0px)) / 2))}
+/* Column Link (whole-column link) */
+.column-link{position:absolute;inset:0;z-index:5;border-radius:inherit}
+.column-link:focus-visible{outline-offset:-4px}
+.wpb_column:has(> .column-link){cursor:pointer}
+/* Column background image layer + Color Overlay (Opacity → Opacity Hover) */
+.column-image-bg-wrap,.column-overlay-layer{position:absolute;inset:0;border-radius:inherit;overflow:hidden;pointer-events:none}
+.column-image-bg-wrap .inner-wrap{position:absolute;inset:0}
+.column-image-bg,.column-image-bg-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background-size:cover;background-position:center}
+.column-overlay-layer{background:var(--overlay,#0B0E10);opacity:var(--o,.5);transition:opacity var(--d-btn) var(--e-btn)}
+.wpb_column:hover > .column-overlay-layer,.wpb_column:focus-within > .column-overlay-layer{opacity:var(--o-h,var(--o,.5))}
+.wpb_column[data-bg-hover="zoom"] .column-image-bg-wrap img{transition:transform var(--d-hover) var(--e-hover)}
+.wpb_column[data-bg-hover="zoom"]:hover .column-image-bg-wrap img{transform:scale(1.06)}
+
+/* ---------------- Row background layers (image / video / overlay) ---------------- */
+.row-bg-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;border-radius:inherit;pointer-events:none}
+.row-bg-wrap .inner-wrap{position:absolute;inset:0;will-change:transform}
+.row-bg,.row-bg-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background-size:cover;background-position:center}
+.row-bg-wrap img[style*="--pos"]{object-position:var(--pos)}
+@media (max-width:690px){.row-bg-wrap img[style*="--pos-m"]{object-position:var(--pos-m)}}   /* per-device <picture> crop */
+.row-bg-overlay{position:absolute;inset:0;background:var(--overlay,rgba(11,14,16,.5))}
+/* Video Background (vc_row.php): .nectar-video-wrap > .nectar-video-inner > video.nectar-video-bg is a SIBLING of .row-bg-wrap,
+   covered by .video-color-overlay (Video Color Overlay). DOM order + z-index 0 keeps the row content above both. */
+.wpb_row > .nectar-video-wrap,.vc_section > .nectar-video-wrap{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none}
+.nectar-video-wrap .nectar-video-inner{position:absolute;inset:0}
+.nectar-video-wrap video.nectar-video-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .6s ease}
+.nectar-video-wrap video.nectar-video-bg.is-playing{opacity:1}
+.wpb_row > .video-color-overlay,.vc_section > .video-color-overlay{position:absolute;inset:0;z-index:0;background:var(--overlay,rgba(11,14,16,.5));pointer-events:none}
+/* Parallax Background Media On Scroll: the layer is oversized in CSS from the first paint (no JS top/bottom writes → no layout shift).
+   ext = speed × (100vh + row height) / 2 — % in top/bottom resolves against the row's own height. emul.js only translates. */
+@media (min-width:1000px){
+  [data-parallax-speed="subtle"],[data-parallax-speed="fast"]{--px-s:.2}
+  [data-parallax-speed="regular"],[data-parallax-speed="medium_fast"]{--px-s:.28}
+  [data-parallax-speed="medium"]{--px-s:.4}
+  [data-parallax-speed="high"],[data-parallax-speed="slow"]{--px-s:.6}
+  [data-parallax-speed="very_subtle"]{--px-s:.12}[data-parallax-speed="minimum"]{--px-s:.09}
+  [data-parallax-speed]:not([data-parallax-speed="fixed"]) > .row-bg-wrap .inner-wrap,
+  [data-parallax-speed]:not([data-parallax-speed="fixed"]) > .column-image-bg-wrap .inner-wrap{top:calc(var(--px-s,.2) * -50vh - var(--px-s,.2) * 50%);bottom:calc(var(--px-s,.2) * -50vh - var(--px-s,.2) * 50%)}
+  .wpb_column[data-bg-parallax="minimum"]{--cpx-s:.09}.wpb_column[data-bg-parallax="very_subtle"]{--cpx-s:.12}
+  .wpb_column[data-bg-parallax="subtle"],.wpb_column[data-bg-parallax="fast"]{--cpx-s:.2}.wpb_column[data-bg-parallax="regular"],.wpb_column[data-bg-parallax="medium_fast"]{--cpx-s:.28}
+  .wpb_column[data-bg-parallax="medium"]{--cpx-s:.4}.wpb_column[data-bg-parallax="high"],.wpb_column[data-bg-parallax="slow"]{--cpx-s:.6}
+  .wpb_column[data-bg-parallax] > .column-image-bg-wrap .inner-wrap{top:calc(var(--cpx-s,.12) * -50vh - var(--cpx-s,.12) * 50%);bottom:calc(var(--cpx-s,.12) * -50vh - var(--cpx-s,.12) * 50%)}
+}
+@media (min-width:1000px) and (prefers-reduced-motion:reduce){
+  [data-parallax-speed] > .row-bg-wrap .inner-wrap,[data-parallax-speed] > .column-image-bg-wrap .inner-wrap,.wpb_column[data-bg-parallax] > .column-image-bg-wrap .inner-wrap{top:0;bottom:0}
+}
+
+/* ---------------- Responsive (tablet 691–999 · phone ≤ 690) ---------------- */
+@media (max-width:999px){
+  .row_col_wrap_12 > .wpb_column,.row_col_wrap_12_inner > .wpb_column{--span:12;--off:0}
+  .wpb_column[data-t-w="3"]{--span:3}.wpb_column[data-t-w="4"]{--span:4}.wpb_column[data-t-w="6"]{--span:6}
+  .wpb_column[data-t-w="8"]{--span:8}.wpb_column[data-t-w="12"]{--span:12}
+  [data-text-align-t="left"]{text-align:left}[data-text-align-t="center"]{text-align:center}
+}
+@media (max-width:690px){
+  .row_col_wrap_12 > .wpb_column,.row_col_wrap_12_inner > .wpb_column{--span:12}
+  .wpb_column[data-m-w="6"]{--span:6}
+  .wpb_column[data-sticky]:not([data-sticky-mobile]) > .vc_column-inner{position:relative;top:auto}
+  .wpb_column{padding:var(--pt-m,var(--pt,0)) var(--pr-m,var(--pr,0)) var(--pb-m,var(--pb,0)) var(--pl-m,var(--pl,0))}
+  [data-text-align-m="left"]{text-align:left}[data-text-align-m="center"]{text-align:center}
+}
+/* Device Visibility (Row / Inner Row / Column) */
+@media (min-width:1000px){[data-hide~="desktop"]{display:none!important}}
+@media (min-width:691px) and (max-width:999px){[data-hide~="tablet"]{display:none!important}}
+@media (max-width:690px){[data-hide~="phone"]{display:none!important}}
+
+/* Sticky Row → Sticky Alignment: Bottom of Window (+ Sticky Row on Mobile) — like 18.2.1 (.nectar-sticky-row-wrap{position:sticky;bottom:0}):
+   it only sticks within its parent, so inside a Global Section it does NOT pin (the call bar is pinned by sgp-custom.css C-4) */
+.wpb_row[data-sticky="bottom"]{position:sticky;bottom:0;z-index:9000}
+/* Global Section wrapper (nectar_global_section) */
+.nectar-global-section{position:relative;display:block}

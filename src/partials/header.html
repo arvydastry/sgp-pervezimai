@@ -1,79 +1,52 @@
-<a class="sgp-skip" href="#main">Pereiti prie turinio</a>
-
-<header class="sgp-hdr" id="sgp-hdr" data-on="dark" data-salient="Header: Centered Menu · Permanent Transparent · Hide Until Needed · Resize On Scroll 84→64 · BG blur · Link hover: Animated Underline">
-  <div class="sgp-tk" data-salient="Global Section GS-Ticker → In Navigation Top (Before Scrolling) · [sgp_grafikas variant=&quot;ticker&quot; limit=&quot;3&quot;] · desktop only (≥1000)">
-    <div class="sgp-wrap">
-      <span class="sgp-mono sgp-tk__live">Artimiausi išvykimai</span>
-      {{grafikas:ticker limit=3}}
-      <a class="sgp-mono sgp-tk__more" href="{{url:grafikas}}">Visas grafikas →</a>
-    </div>
-  </div>
-  <div class="sgp-bar">
-    <div class="sgp-wrap">
-      <a class="sgp-logo" href="{{url:pradzia}}" aria-label="SGP pervežimai – pradžia">
-        <img class="sgp-logo__lt" src="{{root}}assets/img/logo_light.svg" alt="" width="112" height="46">
-        <img class="sgp-logo__dk" src="{{root}}assets/img/logo.svg" alt="" width="112" height="46">
-      </a>
-      <nav class="sgp-nav" aria-label="Pagrindinis meniu">
-        <a href="{{url:apie}}"{{nav:apie}}>Apie mus</a>
-        <div class="sgp-nav__mm">
-          <a href="{{url:paslaugos}}"{{nav:paslaugos}}>Pervežimo paslaugos</a>
-          <div class="sgp-mega" data-salient="Mega Menu „Pervežimo paslaugos“ · 3 columns · bg asphalt-950 · 2px red top · 6 groups (§6.3)">
-            <div class="sgp-wrap sgp-mega__in">
-              <div class="sgp-mega__grid">{{paslaugos:mega}}</div>
-              <div class="sgp-mega__foot">
-                <a class="sgp-lnk" href="{{url:tarptautiniai}}">Tarptautiniai pervežimai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                <a class="sgp-lnk" href="{{url:paslaugos}}">Visos paslaugos<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-              </div>
-            </div>
-          </div>
+<a class="nectar-skip-to-content screen-reader-text" href="#main">Pereiti prie turinio</a>
+<div id="header-outer" class="transparent" data-format="default" data-transparent-header="true" data-lhe="animated_underline" data-header-resize="1" data-hhun="0" data-full-width="true" data-header-blur="default" data-header-button-style="shadow_scale" data-salient="Header Navigation → Header Layout: Default Layout · Full Width Header Content ✓ · Use Transparent Header When Applicable ✓ (Starting Text #FFFFFF, Opacity 1.0) · Header BG Opacity: 90 · Header Blur Background ✓ · Header Resize On Scroll ✓ (Logo Shrink 6) · Header Hide Until Needed ✗ · Header Link Hover/Active Effect: Animated Underline · Header Button Link Style: Button Shadow and Scale on Hover · Color Scheme: Custom (#0F1417 / #F2F4F3)">
+{{partial:gs-isvykimai}}
+  <header id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col span_3">
+          <a id="logo" href="{{url:pradzia}}" aria-label="SGP pervežimai – pradžia"><img class="starting-logo" src="{{root}}assets/img/logo_light.svg" alt="" width="112" height="46"></a>
         </div>
-        <a href="{{url:grafikas}}"{{nav:grafikas}}>Pervežimų grafikas</a>
-        <a href="{{url:sekimas}}"{{nav:sekimas}}>Siuntos sekimas</a>
-        <a href="{{url:taisykles}}"{{nav:taisykles}}>Taisyklės</a>
-        <a href="{{url:kontaktai}}"{{nav:kontaktai}}>Kontaktai</a>
-      </nav>
-      <div class="sgp-hdr__r">
-        <button class="sgp-btn sgp-btn--signal sgp-btn--sm sgp-hdr__call" type="button" popovertarget="sgp-call" data-salient="Menu item (Button style) href=#sgp-call → opens the switchboard popover">
-          <span class="sgp-btn__l"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>Skambinti</span>
-        </button>
-        <button class="sgp-ico sgp-ico--red sgp-hdr__phone" type="button" popovertarget="sgp-call" aria-label="Skambinti – telefono numeriai"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></button>
-        <button class="sgp-ico sgp-burger" type="button" aria-expanded="false" aria-controls="sgp-menu" aria-label="Meniu" data-menu-toggle><svg class="sgp-i" aria-hidden="true"><use href="#i-menu"/></svg></button>
+        <div class="col span_9 col_last">
+          <nav aria-label="Pagrindinis meniu">
+            <ul class="sf-menu">
+              <li class="menu-item"><a href="{{url:apie}}"{{nav:apie}}><span class="menu-title-text">Apie mus</span></a></li>
+              <li class="menu-item megamenu" data-mega-width="100%" data-gs="GS-Paslaugų meniu" data-salient="Menu item „Paslaugos“ → Enable Mega Menu · Mega Menu Width: 100% Header Width · Mega Menu Global Section: GS-Paslaugų meniu · Header Dropdown Animation: Fade In Up"><a href="{{url:paslaugos}}"{{nav:paslaugos}}><span class="menu-title-text">Paslaugos</span>{{icon:arrow-down|class=sf-arrow}}</a><div class="sub-menu nectar-global-section-megamenu">
+{{partial:gs-paslaugu-meniu}}
+              </div></li>
+              <li class="menu-item"><a href="{{url:grafikas}}"{{nav:grafikas}}><span class="menu-title-text">Grafikas</span></a></li>
+              <li class="menu-item"><a href="{{url:sekimas}}"{{nav:sekimas}}><span class="menu-title-text">Siuntos sekimas</span></a></li>
+              <li class="menu-item"><a href="{{url:taisykles}}"{{nav:taisykles}}><span class="menu-title-text">Taisyklės</span></a></li>
+              <li class="menu-item"><a href="{{url:kontaktai}}"{{nav:kontaktai}}><span class="menu-title-text">Kontaktai</span></a></li>
+              <li class="menu-item menu-item-btn-style-button_accent-color megamenu" data-persist-mobile data-mega-width="x2" data-mega-align="right" data-gs="GS-Telefonai" data-salient="Menu item „Skambinti“ → Menu Item Link Button Style: Button Accent Color · Title Color #0F1417 · Icon: fa-phone · Persist In Mobile Navigation Header ✓ · Enable Mega Menu · Mega Menu Width: x2 Regular Dropdown · Alignment: Right · Global Section: GS-Telefonai"><a href="{{url:kontaktai}}#skambinkite" aria-label="Skambinti – visi telefono numeriai">{{icon:phone|class=nectar-menu-icon}}<span class="menu-title-text">Skambinti</span></a><div class="sub-menu nectar-global-section-megamenu">
+{{partial:gs-telefonai}}
+              </div></li>
+            </ul>
+          </nav>
+          <div class="slide-out-widget-area-toggle mobile-icon" data-icon-style="circular" data-salient="Off Canvas Icon Button: Circular (BG #161D21, icon #F2F4F3) · Icon Style: Even Lines"><button type="button" aria-expanded="false" aria-controls="slide-out-widget-area" aria-label="Meniu"><span class="lines-button" aria-hidden="true"></span></button></div>
+        </div>
       </div>
     </div>
-  </div>
-</header>
-
-<div class="sgp-callpanel" id="sgp-call" popover role="dialog" aria-label="Telefono numeriai" data-salient="GS-CallBar Raw HTML: div[popover]#sgp-call · desktop dropdown / phone bottom sheet · 5-line JS hook for the menu link #sgp-call">
-  <button class="sgp-ico sgp-callpanel__close" type="button" popovertarget="sgp-call" popovertargetaction="hide" aria-label="Uždaryti"><svg class="sgp-i" aria-hidden="true"><use href="#i-close"/></svg></button>
-  <p class="sgp-mono">Pervežimai į Airiją</p>
-  <a class="sgp-cp-row" href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris +370 650 53161"><span class="sgp-cc">LT</span>+370 650 53161<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <a class="sgp-cp-row" href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span class="sgp-cc">IE</span>+353 86 450 3104<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <a class="sgp-cp-row" href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span class="sgp-cc">UK</span>+44 7566 878681<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <p class="sgp-mono">Pervežimai į Ispaniją</p>
-  <a class="sgp-cp-row" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris +370 638 28919"><span class="sgp-cc">LT</span>+370 638 28919<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <a class="sgp-cp-row" href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span class="sgp-cc">ES</span>+34 602 547 929<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <p class="sgp-cp-mail"><svg class="sgp-i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a></p>
+  </header>
 </div>
 
-<div class="sgp-menu" id="sgp-menu" aria-hidden="true" data-lenis-prevent data-salient="Off Canvas Menu: Fullscreen Split · left = menu as a line diagram (custom CSS lane) · right = Global Section GS-Menu (phones + e-mail)">
-  <nav class="sgp-menu__nav" aria-label="Meniu">
-    <ol>
-      <li style="--i:0"><span class="sgp-ring"></span><a href="{{url:pradzia}}"{{nav:pradzia}}><span class="sgp-mono">00</span>Pradžia</a></li>
-      <li style="--i:1"><span class="sgp-ring"></span><a href="{{url:apie}}"{{nav:apie}}><span class="sgp-mono">01</span>Apie mus</a></li>
-      <li style="--i:2"><span class="sgp-ring"></span><a href="{{url:paslaugos}}"{{nav:paslaugos}}><span class="sgp-mono">02</span>Pervežimo paslaugos</a></li>
-      <li style="--i:3"><span class="sgp-ring"></span><a href="{{url:tarptautiniai}}"{{nav:tarptautiniai}}><span class="sgp-mono">03</span>Tarptautiniai pervežimai</a></li>
-      <li style="--i:4"><span class="sgp-ring"></span><a href="{{url:grafikas}}"{{nav:grafikas}}><span class="sgp-mono">04</span>Pervežimų grafikas</a></li>
-      <li style="--i:5"><span class="sgp-ring"></span><a href="{{url:sekimas}}"{{nav:sekimas}}><span class="sgp-mono">05</span>Siuntos sekimas</a></li>
-      <li style="--i:6"><span class="sgp-ring"></span><a href="{{url:taisykles}}"{{nav:taisykles}}><span class="sgp-mono">06</span>Taisyklės</a></li>
-      <li style="--i:7"><span class="sgp-ring sgp-ring--fill"></span><a href="{{url:kontaktai}}"{{nav:kontaktai}}><span class="sgp-mono">07</span>Kontaktai</a></li>
-    </ol>
-  </nav>
-  <aside class="sgp-menu__side on-dark" aria-label="Telefonai">
-    <div><p class="sgp-menu__h">Pervežimai į Airiją</p>
-      <div class="sgp-phl"><a href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris +370 650 53161"><span class="sgp-cc">LT</span>+370 650 53161</a><a href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span class="sgp-cc">IE</span>+353 86 450 3104</a><a href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span class="sgp-cc">UK</span>+44 7566 878681</a></div></div>
-    <div><p class="sgp-menu__h">Pervežimai į Ispaniją</p>
-      <div class="sgp-phl"><a href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris +370 638 28919"><span class="sgp-cc">LT</span>+370 638 28919</a><a href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span class="sgp-cc">ES</span>+34 602 547 929</a></div></div>
-    <p class="sgp-cp-mail"><svg class="sgp-i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a></p>
-  </aside>
+<div id="slide-out-widget-area" class="fullscreen-split" aria-hidden="true" data-lenis-prevent data-salient="Off Canvas Menu Style: Fullscreen Cover Split · top-level items only (Paslaugos lists all 11 services) · Overlay Strength: Solid · BG #0B0E10 · Off Canvas Navigation: Barlow Condensed 600 40px (phones 34px) · Off Canvas Menu Meta Area: GS-Telefonai">
+  <div class="inner-wrap">
+    <div class="left-side">
+      <nav aria-label="Meniu">
+        <ul class="off-canvas-menu-container">
+          <li><a href="{{url:pradzia}}"{{nav:pradzia}}>Pradžia</a></li>
+          <li><a href="{{url:apie}}"{{nav:apie}}>Apie mus</a></li>
+          <li><a href="{{url:paslaugos}}"{{nav:paslaugos}}>Paslaugos</a></li>
+          <li><a href="{{url:grafikas}}"{{nav:grafikas}}>Grafikas</a></li>
+          <li><a href="{{url:sekimas}}"{{nav:sekimas}}>Siuntos sekimas</a></li>
+          <li><a href="{{url:taisykles}}"{{nav:taisykles}}>Taisyklės</a></li>
+          <li><a href="{{url:kontaktai}}"{{nav:kontaktai}}>Kontaktai</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="right-side">
+{{partial:gs-telefonai}}
+    </div>
+  </div>
 </div>

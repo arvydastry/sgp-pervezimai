@@ -1,6 +1,6 @@
-# SGP pervežimai — v2 demo („Maršruto linija“)
+# SGP pervežimai — v2 demo („SGP v2 tapatybė, sukurta Salient būdu“)
 
-Demonstracinė naujos **sgp-pervezimai.lt** svetainės versija (Lietuva – Airija – Lietuva, Lietuva – Ispanija – Lietuva). Galutinė svetainė bus perkurta **WordPress + Salient 18.3** tema, todėl demo rodo tik tai, ką galima atkurti Salient elementais ir nedideliu kiekiu papildomo CSS / JS.
+Demonstracinė naujos **sgp-pervezimai.lt** svetainės versija (Lietuva – Airija – Lietuva, Lietuva – Ispanija – Lietuva). Galutinė svetainė bus **WordPress + Salient 18.2.1** (Salient Core 3.1.5, WPBakery 8.7.3), todėl kiekvienas blokas sudėtas iš natyvių Salient elementų ir jų parinkčių; vienintelis papildomas kodas — `assets/css/sgp-custom.css` (≤ 250 eil.) ir `assets/js/sgp-custom.js` (≤ 30 eil.). Rezultatas ir statistika — [`docs/salient-atitikimas-rezultatas.md`](docs/salient-atitikimas-rezultatas.md).
 
 - Gyva demo versija: <https://arvydastry.github.io/sgp-pervezimai/>
 - Ankstesnė demo versija: [`v1/`](v1/index.html) (nekeičiama)
@@ -35,7 +35,7 @@ Demo — statinis HTML / CSS / vanilla JS. Formos niekur nesiunčia duomenų (ro
 | Privatumo politika | [`privatumo-politika/`](privatumo-politika/index.html) |
 | 404 „Maršrutas nerastas“ | [`404.html`](404.html) |
 
-Naudingi demo parametrai: `?siandien=2026-10-15` (grafikas perskaičiuojamas kitai dienai; `?siandien=2026-11-30` — tuščias grafikas), `/siuntos-sekimas/?kodas=SGP-DEMO` (pavyzdinis rezultatas), `…/pervezimu-grafikas/#ispanija` (atidaromas skirtukas).
+Naudingi demo parametrai: `/siuntos-sekimas/?kodas=SGP-DEMO` (pavyzdinis rezultatas), `…/pervezimu-grafikas/?tab=ispanija` (atidaromas skirtukas), `/taisykles/?toggle=1` (atidaromas skydelis), `?domina=Krovinių pervežimas#uzklausa` (užklausos formoje parinkta paslauga).
 
 ## Kaip sugeneruoti
 
@@ -44,12 +44,15 @@ Reikia tik `python3` (standartinė biblioteka, be npm ir be priklausomybių).
 ```bash
 python3 tools/build.py              # sugeneruoja visus 21 puslapį (index.html, 404.html, */index.html)
 python3 tools/build.py apie-imone   # tik puslapiai, kurių kelias prasideda „apie-imone“
-python3 tools/check.py              # patikra: nuorodos, id, alt, 5 tel: numeriai, lang, H1, title/description, {{ }} likučiai
+python3 tools/build.py --kit        # + Salient rinkinio pavyzdys → docs/kit.html (ne svetainės puslapis)
+python3 tools/check.py              # patikra: nuorodos, id, alt, 5 tel: numeriai, lang, H1, title/description, {{ }} likučiai, Salient taisyklės
+python3 tools/textdiff.py           # turinio regresija: matomas tekstas lyginant su git HEAD (--ref <commit>)
+python3 tools/coverage.py           # natyvumo ataskaita: blokai pagal verdiktą, data-salient žymės, custom sluoksnio dydis
 python3 -m http.server 8765         # peržiūra: http://127.0.0.1:8765/
-for f in assets/js/sgp.js assets/js/pages/*.js; do node --check "$f"; done   # JS sintaksė (nebūtina)
+for f in assets/js/*.js; do node --check "$f"; done   # JS sintaksė
 ```
 
-Generavimas deterministinis: „šiandiena“ grafikui imama iš `src/data/grafikas.json` → `render_today`, failai perrašomi tik pasikeitus turiniui. Naršyklėje `sgp.js` grafiką perskaičiuoja pagal lankytojo datą (Europe/Vilnius). **Sugeneruotų `*.html` failų ranka neredaguokite** — keiskite `src/` ir paleiskite `tools/build.py`.
+Generavimas deterministinis: „šiandiena“ grafikui imama iš `src/data/grafikas.json` → `render_today`, failai perrašomi tik pasikeitus turiniui. Grafiko datos įrašomos kaip tekstas (kaip redaktorius jas ranka įrašytų į Global Sections) — naršyklėje niekas neperskaičiuojama. **Sugeneruotų `*.html` failų ranka neredaguokite** — keiskite `src/` ir paleiskite `tools/build.py`.
 
 `404.html` naudoja absoliučias nuorodas `/sgp-pervezimai/…` (GitHub Pages jį rodo bet kuriame gylyje); lokaliai jį peržiūrėti galima tik aptarnaujant repozitoriją po `/sgp-pervezimai/` keliu. `.nojekyll` išjungia GitHub Pages Jekyll apdorojimą (šaltiniai `src/` turi `{{ }}` žymas).
 
@@ -59,17 +62,18 @@ Generavimas deterministinis: „šiandiena“ grafikui imama iš `src/data/grafi
 index.html, 404.html, */index.html   sugeneruoti puslapiai (GitHub Pages rodo repozitorijos šaknį)
 src/pages/*.html                     puslapių šaltiniai: front matter (title, description, out, nav, css, js …) + turinys
 src/templates/paslauga.html (+ .py)  vienas šablonas → 11 paslaugų puslapių
-src/partials/*.html                  bendri blokai: head, header (bėgantis grafikas, meniu, telefonai), footer,
-                                     skambučių juosta, GS-Arrival užklausa, GS-Board lenta, žemėlapiai
+src/partials/*.html                  Salient rinkinio chrome ir Global Section blokai (gs-*.html) — puslapiams su `kit: salient`
 src/data/grafikas.json               pervežimų grafikas: 4 kryptys × datos (ISO), telefonai
 src/data/paslaugos.json              11 paslaugų + 6 grupės (tekstai, nuotraukos, duomenų lapai)
-assets/css/tokens.css, base.css, components.css, motion.css   bendri stiliai (dizaino žetonai, komponentai, judesys)
-assets/css/pages/*.css               puslapių stiliai (priešdėliai ab-, ps-, tp-, sv-, gr-, sk-, tr-, kt-, pp-, e4-, h-)
-assets/js/sgp.js                     bendras JS (Lenis, antraštė, meniu, atsiradimo efektai, bėgėjas, grafikas,
-                                     skirtukai, akordeonai, formos, „Salient žymės“) — window.SGP
-assets/js/pages/*.js                 puslapių JS
-tools/build.py, tools/check.py       generatorius ir patikra
-docs/                                dizaino sistema, turinys, media sąrašas, komandų pastabos (build-notes/)
+assets/css/theme-options.css         Salient Theme Options atitikmuo (spalvos, tipografija, judesio reikšmės)
+assets/css/emul/*.css, assets/js/emul.js   Salient 18.2.1 elementų emuliacija (produkcijoje jos nėra — tai daro Salient)
+assets/css/sgp-custom.css, assets/js/sgp-custom.js   VIENINTELIS tikras papildomas kodas (Theme Options → Custom CSS / JS)
+assets/css/demo.css, assets/js/demo.js     tik demo: „Salient žymės“, demo formos, slapukų atmintis
+assets/img/marsrutai.svg             statinė maršrutų schema (Image With Hotspots paveikslėlis)
+tools/build.py, tools/kitlib.py      generatorius (Salient rinkinio vietos žymės — kitlib.py)
+tools/check.py, tools/textdiff.py, tools/coverage.py   patikra, turinio regresija, natyvumo ataskaita
+docs/                                dizaino sistema, turinys, media sąrašas, komandų pastabos (build-notes/, rinkinio API — build-notes/kit.md)
+docs/kit.html                        gyvas Salient rinkinio pavyzdys (šaltinis src/pages/_kit.html; tik `build.py --kit`, į svetainę nepatenka)
 v1/                                  ankstesnė demo versija
 ```
 
@@ -77,12 +81,11 @@ Leidžiamos išorinės bibliotekos: Lenis 1.1.13, Flickity 2.3.0 (galerija „Ap
 
 ## Kaip tai atitinka Salient
 
-- **Dizaino sistema** [`docs/dizaino-sistema.md`](docs/dizaino-sistema.md): žetonai (§2, įklijuojami į Theme Options → Custom CSS), grafiniai elementai (§3), komponentai su būsenomis (§4), judesys ir kiekvieno efekto Salient atitikmuo (§5), kiekvieno puslapio planas (§6), prieinamumas ir našumas (§7). Salient elementų pavadinimai — [`docs/salient-elementai.md`](docs/salient-elementai.md).
-- **„Salient žymės“** — mygtukas apatiniame kairiajame kampe (ekranuose nuo 700 px pločio). Įjungus prie kiekvienos eilutės ir bloko rodomas jo Salient elementas ir nustatymai (iš `data-salient` atributų), pvz. „Row Full Width · Parallax BG: Subtle“, „Global Section GS-Board“, „Sticky Scroll Pinned Sections → Stacking“.
-- Bendros klasės `sgp-*` — tie patys pavadinimai, kuriuos WordPress kūrėjas perkels į Salient Extra Class / Custom CSS.
-- Grafikas — būsimo `[sgp_grafikas]` trumpojo kodo veidrodis: `{{grafikas:board|timetable|table|ticker|stub|next|lane}}` (dizaino sistema §6.0, A priedas); duomenys — ACF parinkčių puslapis.
-- Pasikartojantys blokai = Salient Global Sections: GS-Ticker, GS-Menu, GS-Board, GS-Arrival, GS-Footer, GS-CallBar, GS-Trust, GS-ServiceList.
-- Techninės kūrimo taisyklės ir integracijos pakeitimai — [`docs/build-notes/foundation.md`](docs/build-notes/foundation.md) (§11 — integracijos suvestinė).
+- **Kryptis ir planas:** [`docs/salient-atitikimo-planas.md`](docs/salient-atitikimo-planas.md) (skyrius po skyriaus), tikrosios 18.2.1 parinktys ir laikai — [`docs/salient-18-2-1-parinktys.md`](docs/salient-18-2-1-parinktys.md), rezultatas — [`docs/salient-atitikimas-rezultatas.md`](docs/salient-atitikimas-rezultatas.md).
+- **Kodo sluoksniai:** `theme-options.css` = Theme Options laukai · `emul/*.css` + `emul.js` = tai, ką Salient daro pats (produkcijoje nėra) · `sgp-custom.css` / `sgp-custom.js` = vienintelis tikras papildomas kodas (Theme Options → Custom CSS / Custom JS (Head)) · `demo.*` = tik demo. Rinkinio API puslapių kūrėjams — [`docs/build-notes/kit.md`](docs/build-notes/kit.md), gyvas pavyzdys — `docs/kit.html` (`python3 tools/build.py --kit`).
+- **„Salient žymės“** — mygtukas apatiniame kairiajame kampe (ekranuose nuo 691 px pločio). Įjungus prie kiekvienos eilutės ir elemento rodomas jo Salient 18.2.1 elementas ir nustatymai tikraisiais administravimo pavadinimais (iš `data-salient` atributų).
+- **Grafikas** — ne trumpasis kodas, o ranka kas mėnesį pildomi Global Sections (GS-Išvykimai, GS-Artimiausi, GS-Grafikas Airija / Ispanija), sudėti iš Scrolling Text ir Horizontal List Item; demo juos sugeneruoja iš `src/data/grafikas.json`.
+- **Pasikartojantys blokai = Global Sections:** GS-Išvykimai, GS-Paslaugų meniu, GS-Telefonai, GS-Artimiausi, GS-Grafikas Airija / Ispanija, GS-Maršrutai, GS-Paslaugos, GS-Pasitikėjimas, GS-Kvietimas, GS-Užklausa, GS-Poraštė, GS-Skambučių juosta, GS-404.
 
 ## Nuotraukos ir vaizdo įrašai
 

@@ -1,5 +1,5 @@
 {
-  "_doc": "11 service pages (dizaino-sistema.md §6.5). Order = live tile order. Foundation filled: slug, no, name, h1, title (live, 'Gyvunų' fixed), meta (live; automobiliu/keleiviu NEW per §6.12), card + chips (home road §6.1 S3), card_media/card_crop/hover_video (home road), hero, why_media, next, lead (Santrauka verbatim), submenu. Services team (pages-service-template) filled the content fields: kv, routes, intro (HTML allowed: <b>, <a href=\"{{url:key}}\">), steps [{t,d,img,link?}] (3 stations „Paėmimas → Kelyje → Pristatymas“; steps_title overrides the label), why [{b = bold first sentence, t = rest, m = why_media index | img = extra media id, flag = note for the WP developer}], specials [{type, place: apie|why|row|aside|atsak-end, …}], resp_lead, responsibilities [{title, text[]}], prohibited ({lead[], items[] | \"P\", tail, note[]} | \"P\" | null; \"P\" = shared.prohibited_p), statement, closing (+ closing_more, closing_marks = phrases underlined), related [3 slugs]. src/templates/paslauga.py renders them. Groups = /pervezimo-paslaugos/ stacked groups + header mega menu (§6.3).",
+  "_doc": "11 service pages (dizaino-sistema.md §6.5; Salient kit rebuild = plan §3.7–3.8). Order = live tile order. Fields: slug, no, name, h1, title, meta (§6.12), card + chips (hero glass chips, home/mega menu), card_media/card_crop, hero {id, crop} (S1 Full Height Row background), why_media (S5 Sticky Media images), apie_media [2] (S4 Cascading Images), form_media (optional GS-Užklausa image; default = first service/template photo not yet on the page — every photo appears once per page, paslauga.py raises otherwise), next (S12 „Kita paslauga“), lead (S1 intro, verbatim), submenu (Page Submenu labels → Row IDs), kv (S3 KV rows), routes (S3 See Through route chips → ?domina=<name>#uzklausa), intro (S4; HTML allowed: <b>, <a href=\"{{url:key}}\">), steps [{t,d,img,link?}] (S4b Icon List stations; the step photos feed the S4 Cascading Images when apie_media is missing; steps_title overrides „Kaip tai vyksta“), why [{b = H4 first sentence, t = rest, m = why_media index | img = extra media id, flag = note for the WP developer}], specials [{type, place: apie | after-apie | why | row | aside | atsak-end, …}] (types = plan §3.8 X1–X13; hotspots spots {x,y in % of the full photo (y ≥ 12 so no marker hides under the sticky Page Submenu), tip = tooltip position; list_only + i = icon: shown only in the Icon List legend, for non-physical features}), resp_lead, responsibilities [{title, text[]}] (S7 Toggle Panels; one item → Callout), prohibited ({lead[], items[] | \"P\", tail, note[]} | \"P\" | null; \"P\" = shared.prohibited_p) (S8 Fancy UL), statement (X7), closing (+ closing_more, closing_marks = phrases that get the Highlighted Text underline) (S10), related [3 slugs] (S11 Fancy Boxes). src/templates/paslauga.py renders them. Groups = /pervezimo-paslaugos/ pinned groups + header mega menu (§6.3). hover_video removed (hover videos dropped, plan §1.3).",
   "groups": [
     {
       "key": "kroviniai",
@@ -74,7 +74,6 @@
       ],
       "card_media": "38927007",
       "card_crop": "50% 60%",
-      "hover_video": null,
       "hero": {
         "type": "photo",
         "id": "38927007",
@@ -85,6 +84,10 @@
         "31570314",
         "2449454"
       ],
+      "apie_media": [
+        "1696742",
+        "11053641"
+      ],
       "next": "negabaritiniu-kroviniu-pervezimas",
       "lead": "Krovinių pervežimas į Airiją, Ispaniją, Vokietiją bei Prancūziją ir atgal – saugiai, greitai, patikimai.",
       "submenu": [
@@ -92,6 +95,7 @@
         "Privalumai",
         "Kliento atsakomybės",
         "Draudžiami daiktai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -250,7 +254,6 @@
       ],
       "card_media": "35332902",
       "card_crop": "50% 50%",
-      "hover_video": "19552565",
       "hero": {
         "type": "photo",
         "id": "35332902",
@@ -261,6 +264,10 @@
         "31570314",
         "12418936"
       ],
+      "apie_media": [
+        "1696742",
+        "8858566"
+      ],
       "next": "daliniu-kroviniu-gabenimas",
       "lead": "Negabaritinių krovinių pervežimas – išskirtinė krovinių pervežimo paslauga, reikalaujanti specialių žinių, atitinkamos technikos, išankstinio planavimo, tam tikrų leidimų.",
       "submenu": [
@@ -268,6 +275,7 @@
         "Privalumai",
         "Kliento atsakomybės",
         "Draudžiami daiktai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -332,7 +340,7 @@
         {
           "b": "Negabaritiniai kroviniai pristatomi vadovaujantis principu nuo durų iki durų.",
           "t": "Tai leidžia klientui garantuoti patogumą, taupyti jo laiką ir užtikrinti krovinio saugumą.",
-          "img": "35332902"
+          "img": "11053641"
         }
       ],
       "specials": [
@@ -384,7 +392,6 @@
       ],
       "card_media": "29786116",
       "card_crop": "50% 50%",
-      "hover_video": null,
       "hero": {
         "type": "photo",
         "id": "29786116",
@@ -395,6 +402,10 @@
         "12418936",
         "6169133"
       ],
+      "apie_media": [
+        "1696742",
+        "2449454"
+      ],
       "next": "daiktu-pervezimas",
       "lead": "Dalinių krovinių gabenimas yra puikus būdas klientams sutaupyti.",
       "submenu": [
@@ -402,6 +413,7 @@
         "Privalumai",
         "Kliento atsakomybės",
         "Draudžiami daiktai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -536,7 +548,6 @@
       ],
       "card_media": "36933446",
       "card_crop": "50% 50%",
-      "hover_video": null,
       "hero": {
         "type": "photo",
         "id": "36933446",
@@ -547,6 +558,10 @@
         "6407553",
         "7464731"
       ],
+      "apie_media": [
+        "1696742",
+        "6169133"
+      ],
       "next": "automobiliu-pervezimas",
       "lead": "Jei į kitą šalį norite gabenti didesnį ar mažesnį daiktą, siūlome susisiekti su mumis – pasiūlysime optimaliausią variantą.",
       "submenu": [
@@ -554,6 +569,7 @@
         "Privalumai",
         "Kliento atsakomybės",
         "Draudžiami daiktai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -615,7 +631,7 @@
         {
           "b": "Daiktų pervežimas vykdomas tik techniškai tvarkingais, naujais mikroautobusais.",
           "t": "Mums svarbu, kad transportavimo proceso nesutrikdytų netikėtos kliūtys ar dėl gedimų iškilusios problemos, todėl to išvengiame užbėgdami įvykiams už akių.",
-          "img": "36933446"
+          "img": "9989463"
         },
         {
           "b": "Daiktų pervežimas į užsienį kelių transportu trunka apie 3–4 paras (skaičiuojama nuo siuntos paėmimo dienos).",
@@ -675,16 +691,19 @@
       ],
       "card_media": "29566910",
       "card_crop": "50% 50%",
-      "hover_video": "34371915",
       "hero": {
         "type": "photo",
         "id": "29566910",
         "crop": "50% 50%"
       },
       "why_media": [
-        "29566910",
+        "32821932",
         "1606957",
         "1696742"
+      ],
+      "apie_media": [
+        "36383706",
+        "7024783"
       ],
       "next": "motociklu-pervezimas",
       "lead": "Jei įsigijote automobilį svečioje šalyje ir norite jį atsigabenti namo arba patys pardavėte automobilį ir turite jį pristatyti pirkėjui į kitą šalį, siūlome savo paslaugas ir garantuojame saugų bei kokybišką automobilio pervežimą.",
@@ -693,6 +712,7 @@
         "Privalumai",
         "Kliento atsakomybės",
         "Draudžiami daiktai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -759,7 +779,7 @@
       "specials": [
         {
           "type": "video",
-          "place": "apie",
+          "place": "after-apie",
           "k": "Traliuku",
           "video": "34371915",
           "bw": true,
@@ -800,7 +820,6 @@
       ],
       "card_media": "4858429",
       "card_crop": "40% 60%",
-      "hover_video": "34308329",
       "hero": {
         "type": "photo",
         "id": "4858429",
@@ -809,7 +828,11 @@
       "why_media": [
         "2177200",
         "5713164",
-        "4858429"
+        "1696742"
+      ],
+      "apie_media": [
+        "9989463",
+        "11053641"
       ],
       "next": "keleiviu-pervezimas",
       "lead": "Jei užsienyje įsigijote motociklą ir svarstote, kaip operatyviai ir gera kaina jį pargabenti į kitą norimą šalį, siūlome savo pagalbą – pasirūpinsime, kad Jūsų motociklas reikiamą vietą pasiektų operatyviai, saugiai ir patrauklia kaina.",
@@ -818,6 +841,7 @@
         "Privalumai",
         "Kliento atsakomybės",
         "Draudžiami daiktai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -876,7 +900,7 @@
       "specials": [
         {
           "type": "video",
-          "place": "apie",
+          "place": "after-apie",
           "k": "Vežame iš",
           "video": "34308329",
           "chips": [
@@ -922,7 +946,6 @@
       ],
       "card_media": "36377055",
       "card_crop": "50% 50%",
-      "hover_video": null,
       "hero": {
         "type": "photo",
         "id": "27383867",
@@ -933,6 +956,10 @@
         "36383706",
         "7541981"
       ],
+      "apie_media": [
+        "9989463",
+        "2881400"
+      ],
       "next": "gyvunu-pervezimas",
       "lead": "Jei Jums aktualus keleivių pervežimas iš Ispanijos, iš Vokietijos, iš Prancūzijos ir iš Airijos, taip pat jei prioritetą teikiate komfortui ir saugumui, siūlome savo paslaugas.",
       "submenu": [
@@ -940,6 +967,7 @@
         "Principai",
         "Patogumai",
         "Privalumai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -1033,29 +1061,31 @@
           "caption": "Iliustracinė nuotrauka",
           "spots": [
             {
-              "x": 30,
-              "y": 58,
+              "x": 14,
+              "y": 30,
               "i": "seat",
               "t": "Atlenkiamos sėdynės",
-              "d": "patogiai Jūsų kelionei tiek dieną, tiek naktį"
+              "d": "patogiai Jūsų kelionei tiek dieną, tiek naktį",
+              "tip": "right"
             },
             {
-              "x": 62,
-              "y": 64,
+              "x": 60,
+              "y": 57,
               "i": "heat",
               "t": "Šildomos sėdynės",
-              "d": "komfortui net žvarbiausiomis žiemos dienomis"
+              "d": "komfortui net žvarbiausiomis žiemos dienomis",
+              "tip": "top"
             },
             {
               "x": 84,
-              "y": 12,
+              "y": 31,
               "i": "air",
               "t": "Kondicionierius",
-              "d": "kad oras autobuse visada būtų šviežias"
+              "d": "kad oras autobuse visada būtų šviežias",
+              "tip": "left"
             },
             {
-              "x": 46,
-              "y": 40,
+              "list_only": true,
               "i": "shield",
               "t": "Keleiviai apdrausti",
               "d": "kelionės metu visi keleiviai yra apdrausti"
@@ -1115,7 +1145,6 @@
       ],
       "card_media": "32872983",
       "card_crop": "50% 50%",
-      "hover_video": null,
       "hero": {
         "type": "photo",
         "id": "32872983",
@@ -1124,7 +1153,11 @@
       "why_media": [
         "3868901",
         "21767483",
-        "1696742"
+        "9989463"
+      ],
+      "apie_media": [
+        "1696742",
+        "18035726"
       ],
       "next": "siuntu-pervezimas",
       "lead": "Saugiai ir patogiai perkraustysime Jūsų augintinį į kitą šalį Europoje.",
@@ -1133,6 +1166,7 @@
         "Privalumai",
         "Prieš kelionę",
         "Kaina",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -1292,7 +1326,6 @@
       ],
       "card_media": "6170458",
       "card_crop": "50% 50%",
-      "hover_video": null,
       "hero": {
         "type": "photo",
         "id": "6170458",
@@ -1303,6 +1336,10 @@
         "6407553",
         "4440774"
       ],
+      "apie_media": [
+        "1696742",
+        "7464731"
+      ],
       "next": "siuntu-pristatymas",
       "lead": "Jei ir Jums aktualus siuntų pervežimas į Vokietiją, Ispaniją, Airiją ar Prancūziją, taip pat ir iš šių šalių, siūlome savo transportavimo paslaugas.",
       "submenu": [
@@ -1310,6 +1347,7 @@
         "Privalumai",
         "Kliento atsakomybės",
         "Draudžiami daiktai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -1458,7 +1496,6 @@
       ],
       "card_media": "13456097",
       "card_crop": "55% 45%",
-      "hover_video": null,
       "hero": {
         "type": "photo",
         "id": "13456097",
@@ -1469,6 +1506,10 @@
         "6407553",
         "7464731"
       ],
+      "apie_media": [
+        "1696742",
+        "4487517"
+      ],
       "next": "perkraustymo-paslaugos",
       "lead": "Skubus siuntų pristatymas į namus – paslauga, garantuojanti didžiausią patogumą ir siuntėjui, ir gavėjui.",
       "submenu": [
@@ -1476,6 +1517,7 @@
         "Privalumai",
         "Kliento atsakomybės",
         "Draudžiami daiktai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [
@@ -1578,7 +1620,6 @@
       ],
       "card_media": "4246238",
       "card_crop": "50% 50%",
-      "hover_video": null,
       "hero": {
         "type": "photo",
         "id": "4246238",
@@ -1589,6 +1630,10 @@
         "9185835",
         "6407553"
       ],
+      "apie_media": [
+        "4440774",
+        "1696742"
+      ],
       "next": "kroviniu-pervezimas",
       "lead": "Todėl jei nusprendėte persikelti gyventi į kitą šalį Europoje, mūsų nebrangios perkraustymo paslaugos bus būtent tai, ko Jums reikia.",
       "submenu": [
@@ -1596,6 +1641,7 @@
         "Privalumai",
         "Kliento atsakomybės",
         "Draudžiami daiktai",
+        "Maršrutai",
         "Užklausa"
       ],
       "kv": [

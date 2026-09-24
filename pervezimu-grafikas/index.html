@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="lt" data-today="2026-09-23">
+<html lang="lt">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -22,379 +22,561 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://images.pexels.com">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600&family=Barlow:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" media="(min-width:691px)" imagesrcset="https://images.pexels.com/videos/3847797/day-to-night-time-lapse-day-to-night-time-lapse-video-motorway-time-lapse-night-time-lapse-3847797.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/videos/3847797/day-to-night-time-lapse-day-to-night-time-lapse-video-motorway-time-lapse-night-time-lapse-3847797.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w, https://images.pexels.com/videos/3847797/day-to-night-time-lapse-day-to-night-time-lapse-video-motorway-time-lapse-night-time-lapse-3847797.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w, https://images.pexels.com/videos/3847797/day-to-night-time-lapse-day-to-night-time-lapse-video-motorway-time-lapse-night-time-lapse-3847797.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" media="(max-width:690px)" imagesrcset="https://images.pexels.com/photos/1225126/pexels-photo-1225126.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/1225126/pexels-photo-1225126.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/1225126/pexels-photo-1225126.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" imagesizes="100vw" fetchpriority="high">
 
-
-<link rel="stylesheet" href="../assets/css/tokens.css?v=7496bde7">
-<link rel="stylesheet" href="../assets/css/base.css?v=f2091231">
-<link rel="stylesheet" href="../assets/css/components.css?v=e7580f78">
-<link rel="stylesheet" href="../assets/css/motion.css?v=ae6bd3f0">
-<link rel="stylesheet" href="../assets/css/pages/grafikas.css?v=e31e2f6c">
-<script>(function(h){h.classList.add('js');setTimeout(function(){if(!window.SGP)h.classList.remove('js')},4000)})(document.documentElement)</script>
+<link rel="stylesheet" href="../assets/css/theme-options.css?v=d5776b70">
+<link rel="stylesheet" href="../assets/css/emul/base.css?v=57e8e066">
+<link rel="stylesheet" href="../assets/css/emul/grid.css?v=7065db3c">
+<link rel="stylesheet" href="../assets/css/emul/header.css?v=fc9a4def">
+<link rel="stylesheet" href="../assets/css/emul/typography.css?v=6c2b2f37">
+<link rel="stylesheet" href="../assets/css/emul/buttons.css?v=d6d19a8c">
+<link rel="stylesheet" href="../assets/css/emul/lists-cards.css?v=61d21b15">
+<link rel="stylesheet" href="../assets/css/emul/interactive.css?v=302219d2">
+<link rel="stylesheet" href="../assets/css/emul/motion.css?v=f6901dcc">
+<link rel="stylesheet" href="../assets/css/emul/plugins.css?v=bf01b2eb">
+<link rel="stylesheet" href="../assets/css/sgp-custom.css?v=d81642a9">
+<link rel="stylesheet" href="../assets/css/demo.css?v=92064fa9">
+<script>(function(h){h.classList.add('js');setTimeout(function(){if(!window.nectarEmul)h.classList.remove('js')},4000)})(document.documentElement)</script>
+<script src="../assets/js/sgp-custom.js?v=0885152e"></script>
 
 </head>
-<body class="page-grafikas">
-<svg class="sgp-sprite" width="0" height="0" aria-hidden="true" focusable="false">
-  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5.5 3.5h3l1.6 4.2-2.1 1.5a11.5 11.5 0 0 0 6.8 6.8l1.5-2.1 4.2 1.6v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3.5 5.5a2 2 0 0 1 2-2z"/></symbol>
-  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M4 12h15.5M13.5 6l6 6-6 6"/></symbol>
-  <symbol id="i-menu" viewBox="0 0 24 24"><path d="M3.5 8h17M3.5 16h17"/></symbol>
-  <symbol id="i-close" viewBox="0 0 24 24"><path d="M5.5 5.5l13 13M18.5 5.5l-13 13"/></symbol>
-  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M9 5.5v13M15 5.5v13"/></symbol>
-  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.5l11 6.5-11 6.5z"/></symbol>
-  <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3.5 6h17v12h-17zM3.5 7l8.5 6 8.5-6"/></symbol>
-  <symbol id="i-copy" viewBox="0 0 24 24"><path d="M8.5 8.5h11v11h-11zM15.5 8.5v-4h-11v11h4"/></symbol>
-  <symbol id="i-cal" viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10.5h16M8.5 3.5v5M15.5 3.5v5"/></symbol>
-  <symbol id="i-seat" viewBox="0 0 24 24"><path d="M6.5 3.5l3 11h8.5M16 14.5l1.5 6M9.5 14.5l-1.5 6M4 20.5h16M9 9.5h3.5"/></symbol>
-  <symbol id="i-heat" viewBox="0 0 24 24"><path d="M8 3.5c-1.2 1.3 1.2 2.4 0 3.8M12 3.5c-1.2 1.3 1.2 2.4 0 3.8M16 3.5c-1.2 1.3 1.2 2.4 0 3.8M4.5 11h15v3a5.5 5.5 0 0 1-5.5 5.5h-4A5.5 5.5 0 0 1 4.5 14z"/></symbol>
-  <symbol id="i-air" viewBox="0 0 24 24"><path d="M12 3v18M4.2 7.5l15.6 9M19.8 7.5l-15.6 9M9.3 4.3 12 6.8l2.7-2.5M9.3 19.7 12 17.2l2.7 2.5"/></symbol>
-  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7.5 3v5.2c0 4.8-3.1 8.4-7.5 9.8-4.4-1.4-7.5-5-7.5-9.8V6zM8.8 12.2l2.2 2.2 4.3-4.4"/></symbol>
-  <symbol id="i-rest" viewBox="0 0 24 24"><path d="M12 7.5V12l3 2M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/></symbol>
-  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5 12 3.5l8.5 4v9L12 20.5l-8.5-4zM3.5 7.5 12 11.5l8.5-4M12 11.5v9"/></symbol>
-  <symbol id="i-route" viewBox="0 0 24 24"><path d="M6 20.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM18 8.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5zM8.5 18h6a3.5 3.5 0 0 0 0-7h-5a3.5 3.5 0 0 1 0-7h6"/></symbol>
-  <symbol id="i-paw" viewBox="0 0 24 24"><path d="M12 20.5c-3.5 0-5.5-1.7-5.5-3.7 0-2.3 2.6-5.3 5.5-5.3s5.5 3 5.5 5.3c0 2-2 3.7-5.5 3.7zM6 10.5a1.8 2.3 0 1 0 0-.1M18 10.5a1.8 2.3 0 1 0 0-.1M9.3 6.5a1.8 2.3 0 1 0 0-.1M14.7 6.5a1.8 2.3 0 1 0 0-.1"/></symbol>
-  <symbol id="i-dl" viewBox="0 0 24 24"><path d="M12 3.5v12M7 10.5l5 5 5-5M4.5 20h15"/></symbol>
-  <symbol id="i-search" viewBox="0 0 24 24"><path d="M10.5 17.5a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM15.5 15.5l5 5"/></symbol>
-  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3.5 3.5h8l9 9-8 8-9-9zM8.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></symbol>
-  <symbol id="i-x" viewBox="0 0 24 24"><path d="M8 8l8 8M16 8l-8 8"/></symbol>
-</svg>
-
-<a class="sgp-skip" href="#main">Pereiti prie turinio</a>
-
-<header class="sgp-hdr" id="sgp-hdr" data-on="dark" data-salient="Header: Centered Menu · Permanent Transparent · Hide Until Needed · Resize On Scroll 84→64 · BG blur · Link hover: Animated Underline">
-  <div class="sgp-tk" data-salient="Global Section GS-Ticker → In Navigation Top (Before Scrolling) · [sgp_grafikas variant=&quot;ticker&quot; limit=&quot;3&quot;] · desktop only (≥1000)">
-    <div class="sgp-wrap">
-      <span class="sgp-mono sgp-tk__live">Artimiausi išvykimai</span>
-      <ul class="sgp-tk__list" data-sched="ticker" data-routes="lt-ie,lt-es,ie-lt,es-lt" data-limit="3" aria-label="Artimiausi išvykimai"><li class="is-soon"><b>Ispanija → Lietuva</b> rugsėjo 27 d. · po 4 d.</li><li><b>Airija → Lietuva</b> rugsėjo 28 d. · po 5 d.</li><li><b>Lietuva → Airija</b> spalio 9 d. · po 16 d.</li></ul>
-      <a class="sgp-mono sgp-tk__more" href="../pervezimu-grafikas/">Visas grafikas →</a>
+<body class="page-grafikas" data-kit="salient" data-button-style="slightly_rounded_shadow" data-form-style="minimal" data-header-format="default">
+<a class="nectar-skip-to-content screen-reader-text" href="#main">Pereiti prie turinio</a>
+<div id="header-outer" class="transparent" data-format="default" data-transparent-header="true" data-lhe="animated_underline" data-header-resize="1" data-hhun="0" data-full-width="true" data-header-blur="default" data-header-button-style="shadow_scale" data-salient="Header Navigation → Header Layout: Default Layout · Full Width Header Content ✓ · Use Transparent Header When Applicable ✓ (Starting Text #FFFFFF, Opacity 1.0) · Header BG Opacity: 90 · Header Blur Background ✓ · Header Resize On Scroll ✓ (Logo Shrink 6) · Header Hide Until Needed ✗ · Header Link Hover/Active Effect: Animated Underline · Header Button Link Style: Button Shadow and Scale on Hover · Color Scheme: Custom (#0F1417 / #F2F4F3)">
+<div class="nectar-global-section" data-gs="GS-Išvykimai" data-location="nav-top-before-scroll" data-salient="Global Section „GS-Išvykimai“ → Location: In Navigation Top Before Scrolling (all pages, phones too) · typed monthly">
+  <div class="wpb_row sgp-ticker" data-type="full_width_content" data-text-color="light" data-salient="Row → Type: Full Width Content · Padding 0 · Text Color: Light · Extra Class sgp-ticker (C-12)">
+    <div class="row_col_wrap_12">
+      <div class="wpb_column vc_col-sm-12" style="--bg:#0B0E10;--border-bottom:1px solid rgba(242,244,243,.12);--pt:9px;--pb:9px" data-salient="Column → Background Color #0B0E10 · Border Type: Advanced (bottom 1px rgba(242,244,243,.12)) · Padding 9px 0 · Column Link: /pervezimu-grafikas/">
+        <div class="vc_column-inner">
+          <div class="nectar-scrolling-text" data-s-dir="ltr" data-s-speed="slowest" data-repeat="3" data-divider="✦" data-divider-size="half" data-mask-edges style="--divider-color:#EF4539;--space:1.6em;--fs:15px;--fs-m:14px" data-salient="Scrolling Text → Scrolling Direction: Standard · Scrolling Speed: Slower (30 s) · Number of Text Repeats: 3 · Text Repeat Divider: Custom Symbol „✦“ · Divider Size: ½ · Divider Color #EF4539 · Text Space Amount: Custom 1.6em · Mask Edges ✓ · Custom Font Size 15px (mobile 14px) · Text: Bold (Barlow 600)">
+            <p><strong>Lietuva → Airija: spalio 9 d. <span style="color:#EF4539">✦</span> Lietuva → Ispanija: spalio 9 d. <span style="color:#EF4539">✦</span> Airija → Lietuva: rugsėjo 28 d. <span style="color:#EF4539">✦</span> Ispanija → Lietuva: rugsėjo 27 d. <span style="color:#EF4539">✦</span> Visas grafikas →</strong></p>
+          </div>
+        </div>
+        <a class="column-link" href="../pervezimu-grafikas/" aria-label="Artimiausi išvykimai – visas pervežimų grafikas"></a>
+      </div>
     </div>
   </div>
-  <div class="sgp-bar">
-    <div class="sgp-wrap">
-      <a class="sgp-logo" href="../" aria-label="SGP pervežimai – pradžia">
-        <img class="sgp-logo__lt" src="../assets/img/logo_light.svg" alt="" width="112" height="46">
-        <img class="sgp-logo__dk" src="../assets/img/logo.svg" alt="" width="112" height="46">
-      </a>
-      <nav class="sgp-nav" aria-label="Pagrindinis meniu">
-        <a href="../apie-imone/">Apie mus</a>
-        <div class="sgp-nav__mm">
-          <a href="../pervezimo-paslaugos/">Pervežimo paslaugos</a>
-          <div class="sgp-mega" data-salient="Mega Menu „Pervežimo paslaugos“ · 3 columns · bg asphalt-950 · 2px red top · 6 groups (§6.3)">
-            <div class="sgp-wrap sgp-mega__in">
-              <div class="sgp-mega__grid"><div class="sgp-mega__grp"><p class="sgp-mono">Kroviniai</p><ul><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/">Krovinių pervežimas</a></li><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/negabaritiniu-kroviniu-pervezimas/">Negabaritinių krovinių pervežimas</a></li><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/daliniu-kroviniu-gabenimas/">Dalinių krovinių gabenimas</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Daiktai ir perkraustymas</p><ul><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/daiktu-pervezimas/">Daiktų pervežimas</a></li><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/">Perkraustymo paslaugos</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Automobiliai ir motociklai</p><ul><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/automobiliu-pervezimas/">Automobilių pervežimas</a></li><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/motociklu-pervezimas/">Motociklų pervežimas</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Keleiviai</p><ul><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/">Keleivių pervežimas</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Gyvūnai</p><ul><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/">Gyvūnų pervežimas</a></li></ul></div><div class="sgp-mega__grp"><p class="sgp-mono">Siuntos</p><ul><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pervezimas/">Siuntų pervežimas</a></li><li><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pristatymas/">Siuntų pristatymas</a></li></ul></div></div>
-              <div class="sgp-mega__foot">
-                <a class="sgp-lnk" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/">Tarptautiniai pervežimai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-                <a class="sgp-lnk" href="../pervezimo-paslaugos/">Visos paslaugos<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+</div>
+
+  <header id="top">
+    <div class="container">
+      <div class="row">
+        <div class="col span_3">
+          <a id="logo" href="../" aria-label="SGP pervežimai – pradžia"><img class="starting-logo" src="../assets/img/logo_light.svg" alt="" width="112" height="46"></a>
+        </div>
+        <div class="col span_9 col_last">
+          <nav aria-label="Pagrindinis meniu">
+            <ul class="sf-menu">
+              <li class="menu-item"><a href="../apie-imone/"><span class="menu-title-text">Apie mus</span></a></li>
+              <li class="menu-item megamenu" data-mega-width="100%" data-gs="GS-Paslaugų meniu" data-salient="Menu item „Paslaugos“ → Enable Mega Menu · Mega Menu Width: 100% Header Width · Mega Menu Global Section: GS-Paslaugų meniu · Header Dropdown Animation: Fade In Up"><a href="../pervezimo-paslaugos/"><span class="menu-title-text">Paslaugos</span><svg class="sf-arrow" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 4v15.5M6 13.5l6 6 6-6"/></svg></a><div class="sub-menu nectar-global-section-megamenu">
+<div class="nectar-global-section" data-gs="GS-Paslaugų meniu" data-location="mega-menu" data-salient="Global Section „GS-Paslaugų meniu“ → Location: Menu (mega menu of „Paslaugos“) · 6 groups → 11 services">
+  <div class="wpb_row" data-type="full_width_content" data-text-color="light" data-equal-height data-salient="Row → Type: Full Width Content · BG #0F1417 · Text Color: Light · Equal Height">
+    <div class="row_col_wrap_12">
+<div class="wpb_column vc_col-sm-3" data-el-space="10px" data-salient="Column → Column Element Spacing: 10px"><div class="vc_column-inner"><span class="nectar-badge" data-badge-style="line" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label">Kroviniai</span><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Krovinių pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/negabaritiniu-kroviniu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Negabaritinių krovinių pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/daliniu-kroviniu-gabenimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Dalinių krovinių gabenimas</span></span></a><span class="nectar-badge" data-badge-style="line" style="--mt:30px" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label">Daiktai ir perkraustymas</span><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/daiktu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Daiktų pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Perkraustymo paslaugos</span></span></a></div></div>
+<div class="wpb_column vc_col-sm-3" data-el-space="10px" data-salient="Column → Column Element Spacing: 10px"><div class="vc_column-inner"><span class="nectar-badge" data-badge-style="line" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label">Automobiliai ir motociklai</span><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/automobiliu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Automobilių pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/motociklu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Motociklų pervežimas</span></span></a><span class="nectar-badge" data-badge-style="line" style="--mt:30px" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label">Keleiviai</span><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Keleivių pervežimas</span></span></a></div></div>
+<div class="wpb_column vc_col-sm-3" data-el-space="10px" data-salient="Column → Column Element Spacing: 10px"><div class="vc_column-inner"><span class="nectar-badge" data-badge-style="line" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label">Gyvūnai</span><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Gyvūnų pervežimas</span></span></a><span class="nectar-badge" data-badge-style="line" style="--mt:30px" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label">Siuntos</span><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Siuntų pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pristatymas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Siuntų pristatymas</span></span></a></div></div>
+      <div class="wpb_column vc_col-sm-3" style="--r:3px;--min-h:240px;--pt:24px;--pb:24px;--pl:24px;--pr:24px" data-layout="flex" data-justify="flex-end" data-salient="Column → Photo card: Background Image 38927007 · Scale Background Image To Column · Color Overlay #0B0E10 Opacity .72 → Opacity Hover .42 · Border Radius 3px · Column Link /pervezimo-paslaugos/">
+        <div class="column-image-bg-wrap" aria-hidden="true"><div class="inner-wrap"><img src="https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760" srcset="https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="320px" width="760" height="507" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"></div></div><div class="column-overlay-layer" style="--overlay:#0B0E10;--o:.72;--o-h:.42"></div>
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" style="--fg:#F2F4F3" data-salient="Badge → Minimal Line · Label">11 paslaugų</span>
+          <p class="nectar-responsive-text" data-inherit="h4" data-salient="Responsive Text → Font Style: H4">Visos paslaugos →</p>
+        </div>
+        <a class="column-link" href="../pervezimo-paslaugos/" aria-label="Visos pervežimo paslaugos"></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+              </div></li>
+              <li class="menu-item"><a href="../pervezimu-grafikas/" aria-current="page"><span class="menu-title-text">Grafikas</span></a></li>
+              <li class="menu-item"><a href="../siuntos-sekimas/"><span class="menu-title-text">Siuntos sekimas</span></a></li>
+              <li class="menu-item"><a href="../taisykles/"><span class="menu-title-text">Taisyklės</span></a></li>
+              <li class="menu-item"><a href="../kontaktai/"><span class="menu-title-text">Kontaktai</span></a></li>
+              <li class="menu-item menu-item-btn-style-button_accent-color megamenu" data-persist-mobile data-mega-width="x2" data-mega-align="right" data-gs="GS-Telefonai" data-salient="Menu item „Skambinti“ → Menu Item Link Button Style: Button Accent Color · Title Color #0F1417 · Icon: fa-phone · Persist In Mobile Navigation Header ✓ · Enable Mega Menu · Mega Menu Width: x2 Regular Dropdown · Alignment: Right · Global Section: GS-Telefonai"><a href="../kontaktai/#skambinkite" aria-label="Skambinti – visi telefono numeriai"><svg class="nectar-menu-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5.5 3.5h3l1.6 4.2-2.1 1.5a11.5 11.5 0 0 0 6.8 6.8l1.5-2.1 4.2 1.6v3a2 2 0 0 1-2 2A16.5 16.5 0 0 1 3.5 5.5a2 2 0 0 1 2-2z"/></svg><span class="menu-title-text">Skambinti</span></a><div class="sub-menu nectar-global-section-megamenu">
+<div class="nectar-global-section" data-gs="GS-Telefonai" data-location="mega-menu" data-salient="Global Section „GS-Telefonai“ → Location: Menu (mega menu of „Skambinti“) + Off Canvas Menu Meta Area · all 5 numbers by direction">
+  <div class="wpb_row" data-type="full_width_content" data-text-color="light" data-salient="Row → Type: Full Width Content · Text Color: Light · BG #0F1417 (dropdown)">
+    <div class="row_col_wrap_12" style="--row-gap:30px">
+      <div class="wpb_column vc_col-sm-6" data-t-w="6" data-el-space="10px" data-salient="Column → ½ · Column Element Spacing 10px">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Inherit Typography From: Label · Color #EF4539">Į Airiją</span>
+          <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="tel:+37065053161" aria-label="+370 650 53161 – pervežimai į Airiją" style="--fs:26px" data-salient="Button → Type: Text Reveal Wave · Custom Font Size 26px · Link tel:"><span class="link_text"><span class="text">+370 650 53161</span></span></a>
+          <a class="nectar-cta" data-style="underline" href="tel:+353864503104" aria-label="Airijoje +353 86 450 3104 – pervežimai į Airiją" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Airijoje +353 86 450 3104</span></span></a>
+          <a class="nectar-cta" data-style="underline" href="tel:+447566878681" aria-label="JK +44 7566 878681 – pervežimai į Airiją" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">JK +44 7566 878681</span></span></a>
+        </div>
+      </div>
+      <div class="wpb_column vc_col-sm-6" data-t-w="6" data-el-space="10px" data-salient="Column → ½ · Column Element Spacing 10px">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Inherit Typography From: Label · Color #EF4539">Į Ispaniją</span>
+          <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="tel:+37063828919" aria-label="+370 638 28919 – pervežimai į Ispaniją" style="--fs:26px" data-salient="Button → Type: Text Reveal Wave · Custom Font Size 26px · Link tel:"><span class="link_text"><span class="text">+370 638 28919</span></span></a>
+          <a class="nectar-cta" data-style="underline" href="tel:+34602547929" aria-label="Ispanijoje +34 602 547 929 – pervežimai į Ispaniją" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Ispanijoje +34 602 547 929</span></span></a>
+        </div>
+      </div>
+      <div class="wpb_column vc_col-sm-12" data-el-space="10px" data-salient="Column → Divider + e-mail Link">
+        <div class="vc_column-inner">
+          <div class="divider-wrap" data-line-type="full-width" style="--h:1px" data-salient="Divider → Line Type: Full Width · 1px"><span class="divider-border"></span></div>
+          <a class="nectar-cta" data-style="underline" href="mailto:saugiai.greitai.patikimai@gmail.com" data-salient="Button → Type: Underline · mailto:"><span class="link_text"><span class="text">saugiai.greitai.patikimai@gmail.com</span></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+              </div></li>
+            </ul>
+          </nav>
+          <div class="slide-out-widget-area-toggle mobile-icon" data-icon-style="circular" data-salient="Off Canvas Icon Button: Circular (BG #161D21, icon #F2F4F3) · Icon Style: Even Lines"><button type="button" aria-expanded="false" aria-controls="slide-out-widget-area" aria-label="Meniu"><span class="lines-button" aria-hidden="true"></span></button></div>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div id="slide-out-widget-area" class="fullscreen-split" aria-hidden="true" data-lenis-prevent data-salient="Off Canvas Menu Style: Fullscreen Cover Split · top-level items only (Paslaugos lists all 11 services) · Overlay Strength: Solid · BG #0B0E10 · Off Canvas Navigation: Barlow Condensed 600 40px (phones 34px) · Off Canvas Menu Meta Area: GS-Telefonai">
+  <div class="inner-wrap">
+    <div class="left-side">
+      <nav aria-label="Meniu">
+        <ul class="off-canvas-menu-container">
+          <li><a href="../">Pradžia</a></li>
+          <li><a href="../apie-imone/">Apie mus</a></li>
+          <li><a href="../pervezimo-paslaugos/">Paslaugos</a></li>
+          <li><a href="../pervezimu-grafikas/" aria-current="page">Grafikas</a></li>
+          <li><a href="../siuntos-sekimas/">Siuntos sekimas</a></li>
+          <li><a href="../taisykles/">Taisyklės</a></li>
+          <li><a href="../kontaktai/">Kontaktai</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="right-side">
+<div class="nectar-global-section" data-gs="GS-Telefonai" data-location="mega-menu" data-salient="Global Section „GS-Telefonai“ → Location: Menu (mega menu of „Skambinti“) + Off Canvas Menu Meta Area · all 5 numbers by direction">
+  <div class="wpb_row" data-type="full_width_content" data-text-color="light" data-salient="Row → Type: Full Width Content · Text Color: Light · BG #0F1417 (dropdown)">
+    <div class="row_col_wrap_12" style="--row-gap:30px">
+      <div class="wpb_column vc_col-sm-6" data-t-w="6" data-el-space="10px" data-salient="Column → ½ · Column Element Spacing 10px">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Inherit Typography From: Label · Color #EF4539">Į Airiją</span>
+          <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="tel:+37065053161" aria-label="+370 650 53161 – pervežimai į Airiją" style="--fs:26px" data-salient="Button → Type: Text Reveal Wave · Custom Font Size 26px · Link tel:"><span class="link_text"><span class="text">+370 650 53161</span></span></a>
+          <a class="nectar-cta" data-style="underline" href="tel:+353864503104" aria-label="Airijoje +353 86 450 3104 – pervežimai į Airiją" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Airijoje +353 86 450 3104</span></span></a>
+          <a class="nectar-cta" data-style="underline" href="tel:+447566878681" aria-label="JK +44 7566 878681 – pervežimai į Airiją" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">JK +44 7566 878681</span></span></a>
+        </div>
+      </div>
+      <div class="wpb_column vc_col-sm-6" data-t-w="6" data-el-space="10px" data-salient="Column → ½ · Column Element Spacing 10px">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Inherit Typography From: Label · Color #EF4539">Į Ispaniją</span>
+          <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="tel:+37063828919" aria-label="+370 638 28919 – pervežimai į Ispaniją" style="--fs:26px" data-salient="Button → Type: Text Reveal Wave · Custom Font Size 26px · Link tel:"><span class="link_text"><span class="text">+370 638 28919</span></span></a>
+          <a class="nectar-cta" data-style="underline" href="tel:+34602547929" aria-label="Ispanijoje +34 602 547 929 – pervežimai į Ispaniją" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Ispanijoje +34 602 547 929</span></span></a>
+        </div>
+      </div>
+      <div class="wpb_column vc_col-sm-12" data-el-space="10px" data-salient="Column → Divider + e-mail Link">
+        <div class="vc_column-inner">
+          <div class="divider-wrap" data-line-type="full-width" style="--h:1px" data-salient="Divider → Line Type: Full Width · 1px"><span class="divider-border"></span></div>
+          <a class="nectar-cta" data-style="underline" href="mailto:saugiai.greitai.patikimai@gmail.com" data-salient="Button → Type: Underline · mailto:"><span class="link_text"><span class="text">saugiai.greitai.patikimai@gmail.com</span></span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<div id="ajax-content-wrap">
+<main id="main" class="container-wrap" tabindex="-1">
+<!-- Salient: Page „Pervežimų grafikas“ (plan §3.9) · R1 inner head (Row video 3847797, Parallax Subtle, Slight Zoom Out Reveal) + glass band (GS-Artimiausi + 2 × Call) → R3 #lenta Chapter A: Tabs Minimal „Visi · Airija · Ispanija“ = Global Sections GS-Grafikas Airija / Ispanija + 2 × Call → photo band (Clip Path Inset on scroll + outline Scrolling Text) → R6 #ka-verta-zinoti Chapter P: sticky KV rows | Image With Hotspots (Scroll Position Advanced) + Link rows → R7 GS-Kvietimas -->
+<!-- ============ R1 · Inner head (plan §3.3) + glass band with the next departures ============ -->
+<div class="wpb_row sgp-dark" data-type="full_width_background" data-text-color="light" data-parallax-speed="fast" data-bg-animation="slight-zoom-out-reveal" data-column-align="bottom" style="--bg:#0F1417;--pt:184px;--pb:48px;--pt-t:168px;--pt-m:128px;--pb-m:32px" data-salient="Row → Inner head (plan §3.3) · Type: Full Width Background · Column Alignment: Bottom · BG #0F1417 · Video Background MP4 3847797 + Video Preview Image (phones: Background Image 1225126) · Parallax Background Media On Scroll → Speed: Subtle (0.20) · Background Layer Animation: Slight Zoom Out Reveal · Color Overlay: Advanced (v2 hero grade) · Text Color: Light · Padding 184px / 48px (tablet 168px, phone 128px / 32px)">
+  <div class="row-bg-wrap" aria-hidden="true"><div class="inner-wrap"><div class="row-bg-layer"><picture><source media="(max-width:690px)" srcset="https://images.pexels.com/photos/1225126/pexels-photo-1225126.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/1225126/pexels-photo-1225126.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/1225126/pexels-photo-1225126.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="100vw"><img class="row-bg" src="https://images.pexels.com/videos/3847797/day-to-night-time-lapse-day-to-night-time-lapse-video-motorway-time-lapse-night-time-lapse-3847797.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" srcset="https://images.pexels.com/videos/3847797/day-to-night-time-lapse-day-to-night-time-lapse-video-motorway-time-lapse-night-time-lapse-3847797.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=640 640w, https://images.pexels.com/videos/3847797/day-to-night-time-lapse-day-to-night-time-lapse-video-motorway-time-lapse-night-time-lapse-3847797.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w, https://images.pexels.com/videos/3847797/day-to-night-time-lapse-day-to-night-time-lapse-video-motorway-time-lapse-night-time-lapse-3847797.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280 1280w, https://images.pexels.com/videos/3847797/day-to-night-time-lapse-day-to-night-time-lapse-video-motorway-time-lapse-night-time-lapse-3847797.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" width="1280" height="720" alt="" fetchpriority="high" decoding="async" style="--pos:50% 50%;--pos-m:50% 50%"></picture></div></div></div><div class="nectar-video-wrap row-bg-layer" aria-hidden="true"><div class="nectar-video-inner"><video class="nectar-video-bg" data-src="https://videos.pexels.com/video-files/3847797/3847797-hd_1280_720_30fps.mp4" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" style="object-position:50% 50%"></video></div></div><div class="video-color-overlay row-bg-layer" style="--overlay:linear-gradient(0deg,rgba(15,20,23,.94) 0%,rgba(15,20,23,.2) 55%),linear-gradient(90deg,rgba(15,20,23,.9) 0%,rgba(15,20,23,.62) 45%,rgba(15,20,23,.2) 85%)" aria-hidden="true"></div>
+  <div class="row_col_wrap_12" style="--row-gap:40px">
+    <div class="wpb_column vc_col-sm-8" data-salient="Column 8/12 → Breadcrumbs + Label + Animated Text (H1) + Road line + Intro">
+      <div class="vc_column-inner">
+        <p class="nectar-inherit-label yoast-breadcrumbs" data-salient="Text Block [wpseo_breadcrumb] · Extra Class nectar-inherit-label (Label typography)"><a href="../">Pradžia</a><span class="sep" aria-hidden="true">/</span><span>Pervežimų grafikas</span></p>
+        <span class="nectar-badge" data-badge-style="line" style="--fg:#F2F4F3;--mt:28px" data-salient="Badge → Badge Style: Minimal Line · Line Width 28px · Inherit Typography From: Label · Text #F2F4F3 (on video)">LT ⇄ IE · LT ⇄ ES</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:6.4vw;--fs-min:44px;--fs-max:104px;--lh:.92" data-salient="Animated Text → Text Element: H1 · Text Effect: Word Animations: Reveal · Stagger Animation ✓ · Font sizing 6.4vw (min 44px, max 104px), line height .92"><h1>Pervežimų grafikas</h1></div>
+        <div class="divider-wrap" data-line-type="small" data-animate data-delay="450" style="--line-w:96px;--thickness:2px;--h:18px" data-salient="Divider → Line Type: Small Line · Custom Line Width 96px · Line Thickness 2px · Accent Color · Animate Line ✓ · Delay 450 (road line)"><span class="divider-border"></span></div>
+        <p class="nectar-responsive-text" data-inherit="h5" style="--fg:#F2F4F3;--max-w:40ch" data-salient="Responsive Text → Font Style: H5 · Max Width 40ch (Intro, snow on video)">Artimiausios išvykimo datos abiem kryptimis.</p>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-3 vc_col-sm-offset-1" data-t-w="12" data-layout="flex" data-justify="flex-end" data-align="flex-start" style="--gap:4px" data-animation="fade-in" data-delay="300" data-salient="Column 3/12 (offset 1) → Layout: Flexbox (column, justify end, gap 4px) · Animation: Fade In · Delay 300 · Badge + 2 × Link to the page's Row IDs">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" style="--fg:#9AA6AB" data-salient="Badge → Minimal Line · Label · #9AA6AB">Turinys</span>
+        <a class="nectar-cta" data-style="underline" href="#lenta" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Underline · Underline Visibility: Default (Visible) · Link: #lenta"><span class="link_text"><span class="text">Artimiausi pervežimai</span></span></a>
+        <a class="nectar-cta" data-style="underline" href="#ka-verta-zinoti" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Underline · Link: #ka-verta-zinoti"><span class="link_text"><span class="text">Ką verta žinoti</span></span></a>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-12" data-animation="slight-fade-in-from-bottom" data-delay="600" data-salient="Column 12/12 → Animation: Slight Fade In From Bottom · Delay 600 · Inner Row = glass band">
+      <div class="vc_column-inner">
+        <div class="vc_row inner_row" data-backdrop-blur="16" style="--bg:rgba(11,14,16,.55);--border:1px solid rgba(242,244,243,.12);--r:3px;--pt:24px;--pb:24px;--pl:32px;--pr:32px;--pl-m:18px;--pr-m:18px;--pt-m:20px;--pb-m:18px" data-salient="Inner Row → Backdrop Filter: Blur 16 · Design Options: BG rgba(11,14,16,.55), border 1px rgba(242,244,243,.12), radius 3px, padding 24px 32px (phone 20px 18px) — the glass band">
+          <div class="row_col_wrap_12_inner" style="--row-gap:18px">
+            <div class="wpb_column vc_col-sm-5" data-el-space="10px" data-salient="Inner Column 5/12 → Label + Global Section element „GS-Artimiausi“">
+              <div class="vc_column-inner">
+                <span class="nectar-badge" data-badge-style="line" style="--fg:#EF4539" data-salient="Badge → Minimal Line · Label · #EF4539 (on asphalt glass)">Artimiausi išvykimai</span>
+<div class="nectar-global-section" data-gs="GS-Artimiausi" data-location="inline" data-salient="Global Section „GS-Artimiausi“ (inserted with the Global Section element into the hero glass band) · next date per direction, typed monthly">
+  <div class="vc_row inner_row" data-salient="Inner Row → 2 × ½">
+    <div class="row_col_wrap_12_inner" style="--row-gap:20px;--col-gap:24px">
+      <div class="wpb_column vc_col-sm-6" data-t-w="6" data-m-w="6" data-el-space="5px" data-salient="Inner Column → Badge + Responsive Text (H4) + Responsive Text (small)">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" style="--fg:#F2F4F3;--line-w:18px" data-salient="Badge → Minimal Line · Label · #F2F4F3">Į Airiją</span>
+          <p class="nectar-responsive-text sgp-num" data-inherit="h4" style="--mt:8px" data-salient="Responsive Text → Font Style: H4">spalio 9 d.</p>
+          <p class="nectar-responsive-text" data-inherit="small" style="--fg:#C3CBCB" data-salient="Responsive Text → small">Atgal iš Airijos – rugsėjo 28 d.</p>
+        </div>
+      </div>
+      <div class="wpb_column vc_col-sm-6" data-t-w="6" data-m-w="6" data-el-space="5px" data-salient="Inner Column → Badge + Responsive Text (H4) + Responsive Text (small)">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" style="--fg:#F2F4F3;--line-w:18px" data-salient="Badge → Minimal Line · Label · #F2F4F3">Į Ispaniją</span>
+          <p class="nectar-responsive-text sgp-num" data-inherit="h4" style="--mt:8px" data-salient="Responsive Text → Font Style: H4">spalio 9 d.</p>
+          <p class="nectar-responsive-text" data-inherit="small" style="--fg:#C3CBCB" data-salient="Responsive Text → small">Atgal iš Ispanijos – rugsėjo 27 d.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-4" data-t-w="6" data-el-space="10px" data-salient="Inner Column 4/12 → 2 × Call (red), Alignment: Stretch">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37065053161" aria-label="Į Airiją · +370 650 53161 – skambinti" data-salient="Button → Type: Arrow Circle Animation · Button Roundness 3 · BG Accent · BG Hover #F4604F · Text #0F1417 · Min Icon Size 36 · Icon Gap 20 · Alignment: Stretch · Aria Label"><span class="link_text"><span class="text">Į Airiją · +370 650 53161</span></span></a>
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37063828919" aria-label="Į Ispaniją · +370 638 28919 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Stretch · Aria Label"><span class="link_text"><span class="text">Į Ispaniją · +370 638 28919</span></span></a>
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-3" data-t-w="6" data-layout="flex" data-justify="space-between" data-align="flex-start" style="--gap:14px" data-salient="Inner Column 3/12 → Layout: Flexbox (column, space-between) · pause Button + Next Section Button">
+              <div class="vc_column-inner">
+                <div class="nectar-cta sgp-motion-toggle" data-style="basic" style="--btn-bg:rgba(242,244,243,.1);--btn-bg-h:rgba(242,244,243,.2);--btn-fg:#F2F4F3" data-salient="Button → Type: Basic · Extra Class sgp-motion-toggle (on the div.nectar-cta wrapper; J-2 sets role/aria-pressed on its a.link_text) (C-14 + J-2, WCAG 2.2.2 — pauses the background video, ticker and loops)"><span class="link_wrap"><a class="link_text" href="#"><span class="text">Sustabdyti judesį</span></a></span></div>
+                <a class="nectar-cta" data-style="next-section" href="#lenta" aria-label="Į kitą skyrių – artimiausi pervežimai" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Next Section Button · Minimal Arrow Alt · Arrow Animation: On Hover Only · Link #lenta"><span class="link_text"></span></a>
               </div>
             </div>
           </div>
         </div>
-        <a href="../pervezimu-grafikas/" aria-current="page">Pervežimų grafikas</a>
-        <a href="../siuntos-sekimas/">Siuntos sekimas</a>
-        <a href="../taisykles/">Taisyklės</a>
-        <a href="../kontaktai/">Kontaktai</a>
-      </nav>
-      <div class="sgp-hdr__r">
-        <button class="sgp-btn sgp-btn--signal sgp-btn--sm sgp-hdr__call" type="button" popovertarget="sgp-call" data-salient="Menu item (Button style) href=#sgp-call → opens the switchboard popover">
-          <span class="sgp-btn__l"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>Skambinti</span>
-        </button>
-        <button class="sgp-ico sgp-ico--red sgp-hdr__phone" type="button" popovertarget="sgp-call" aria-label="Skambinti – telefono numeriai"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></button>
-        <button class="sgp-ico sgp-burger" type="button" aria-expanded="false" aria-controls="sgp-menu" aria-label="Meniu" data-menu-toggle><svg class="sgp-i" aria-hidden="true"><use href="#i-menu"/></svg></button>
       </div>
     </div>
   </div>
-</header>
-
-<div class="sgp-callpanel" id="sgp-call" popover role="dialog" aria-label="Telefono numeriai" data-salient="GS-CallBar Raw HTML: div[popover]#sgp-call · desktop dropdown / phone bottom sheet · 5-line JS hook for the menu link #sgp-call">
-  <button class="sgp-ico sgp-callpanel__close" type="button" popovertarget="sgp-call" popovertargetaction="hide" aria-label="Uždaryti"><svg class="sgp-i" aria-hidden="true"><use href="#i-close"/></svg></button>
-  <p class="sgp-mono">Pervežimai į Airiją</p>
-  <a class="sgp-cp-row" href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris +370 650 53161"><span class="sgp-cc">LT</span>+370 650 53161<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <a class="sgp-cp-row" href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span class="sgp-cc">IE</span>+353 86 450 3104<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <a class="sgp-cp-row" href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span class="sgp-cc">UK</span>+44 7566 878681<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <p class="sgp-mono">Pervežimai į Ispaniją</p>
-  <a class="sgp-cp-row" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris +370 638 28919"><span class="sgp-cc">LT</span>+370 638 28919<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <a class="sgp-cp-row" href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span class="sgp-cc">ES</span>+34 602 547 929<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-  <p class="sgp-cp-mail"><svg class="sgp-i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a></p>
 </div>
 
-<div class="sgp-menu" id="sgp-menu" aria-hidden="true" data-lenis-prevent data-salient="Off Canvas Menu: Fullscreen Split · left = menu as a line diagram (custom CSS lane) · right = Global Section GS-Menu (phones + e-mail)">
-  <nav class="sgp-menu__nav" aria-label="Meniu">
-    <ol>
-      <li style="--i:0"><span class="sgp-ring"></span><a href="../"><span class="sgp-mono">00</span>Pradžia</a></li>
-      <li style="--i:1"><span class="sgp-ring"></span><a href="../apie-imone/"><span class="sgp-mono">01</span>Apie mus</a></li>
-      <li style="--i:2"><span class="sgp-ring"></span><a href="../pervezimo-paslaugos/"><span class="sgp-mono">02</span>Pervežimo paslaugos</a></li>
-      <li style="--i:3"><span class="sgp-ring"></span><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/"><span class="sgp-mono">03</span>Tarptautiniai pervežimai</a></li>
-      <li style="--i:4"><span class="sgp-ring"></span><a href="../pervezimu-grafikas/" aria-current="page"><span class="sgp-mono">04</span>Pervežimų grafikas</a></li>
-      <li style="--i:5"><span class="sgp-ring"></span><a href="../siuntos-sekimas/"><span class="sgp-mono">05</span>Siuntos sekimas</a></li>
-      <li style="--i:6"><span class="sgp-ring"></span><a href="../taisykles/"><span class="sgp-mono">06</span>Taisyklės</a></li>
-      <li style="--i:7"><span class="sgp-ring sgp-ring--fill"></span><a href="../kontaktai/"><span class="sgp-mono">07</span>Kontaktai</a></li>
-    </ol>
-  </nav>
-  <aside class="sgp-menu__side on-dark" aria-label="Telefonai">
-    <div><p class="sgp-menu__h">Pervežimai į Airiją</p>
-      <div class="sgp-phl"><a href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris +370 650 53161"><span class="sgp-cc">LT</span>+370 650 53161</a><a href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span class="sgp-cc">IE</span>+353 86 450 3104</a><a href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span class="sgp-cc">UK</span>+44 7566 878681</a></div></div>
-    <div><p class="sgp-menu__h">Pervežimai į Ispaniją</p>
-      <div class="sgp-phl"><a href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris +370 638 28919"><span class="sgp-cc">LT</span>+370 638 28919</a><a href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span class="sgp-cc">ES</span>+34 602 547 929</a></div></div>
-    <p class="sgp-cp-mail"><svg class="sgp-i" aria-hidden="true"><use href="#i-mail"/></svg><a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a></p>
-  </aside>
-</div>
-
-<main id="main" tabindex="-1">
-<!-- Salient: Page „Pervežimų grafikas“ (§6.6) · compact header · 01 Lenta = Tabs Minimal + [sgp_grafikas variant=&quot;table&quot;] · 02 Laiko juosta = optional [sgp_grafikas variant=&quot;lane&quot;] · 03 Ką verta žinoti · GS-Arrival -->
-<!-- ============ HEADER · compact route header (texture) ============ -->
-<section class="sgp-phero sgp-phero--compact sgp-phero--texture on-dark gr-hero" data-hero data-theme="dark" data-salient="Row Full Width · Compact route header (44svh) · BG image 9807331 at 18 % + Parallax BG: Subtle + BG Layer Animation: Slight Zoom Out Reveal · Text Color Light · no photo hero — the table is the hero">
-  <div class="sgp-bgmedia" data-parallax="0.12" aria-hidden="true"><img src="https://images.pexels.com/photos/9807331/pexels-photo-9807331.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" srcset="https://images.pexels.com/photos/9807331/pexels-photo-9807331.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/9807331/pexels-photo-9807331.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/9807331/pexels-photo-9807331.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w, https://images.pexels.com/photos/9807331/pexels-photo-9807331.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/9807331/pexels-photo-9807331.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" width="1920" height="1280" alt="" loading="eager" decoding="async" style="object-position:50% 50%"></div>
-  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
-    <div class="sgp-phero__copy">
-      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="../">Pradžia</a></li><li aria-current="page">Pervežimų grafikas</li></ol></nav>
-      <p class="sgp-phero__eyebrow sgp-mono"><span class="sgp-ring"></span>LT ⇄ IE · LT ⇄ ES</p>
-      <h1 class="sgp-phero__h1" data-split>Pervežimų grafikas</h1>
-      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">Artimiausios išvykimo datos abiem kryptimis.</p>
-      <p class="sgp-stamp sgp-mono gr-hero__stamp" data-reveal style="--dl:.4s" data-salient="Text Block · [sgp_grafikas variant=&quot;updated&quot;] (ACF field „updated“, set on save)">Atnaujinta <time datetime="2026-09-23">rugsėjo 23 d.</time></p>
-      <a class="sgp-next" href="../pervezimu-grafikas/" data-sched="next" data-routes="lt-ie,lt-es,ie-lt,es-lt" data-salient="[sgp_grafikas variant=&quot;next&quot;] · visible &lt;1000px only"><span class="sgp-next__k sgp-mono"><span class="sgp-dot"></span>Artimiausias išvykimas</span><span class="sgp-next__v"><b>Ispanija → Lietuva</b> rugsėjo 27 d. <span class="sgp-next__rel">· po 4 d.</span></span></a>
-    </div>
-    <div class="sgp-phero__calls" data-reveal style="--dl:.35s" data-salient="Column (≥1000px): compact call ticket · 2 × Button Basic + .sgp-callbtn (small)">
-  <a class="sgp-callbtn sgp-callbtn--sm" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Airiją</span><span class="sgp-callbtn__n">+370 650 53161</span></span></a>
-  <a class="sgp-callbtn sgp-callbtn--sm" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Ispaniją</span><span class="sgp-callbtn__n">+370 638 28919</span></span></a>
-</div>
-
-  </div>
-</section>
-
-<!-- ============ 01 · LENTA — tabs + full schedule table ============ -->
-<section class="sgp-sec on-dark deep sgp-has-rail gr-board" id="lenta" data-theme="dark" data-salient="Row: bg #0B0E10 · Extra Class sgp-dark deep sgp-has-rail · Text Color Light · Tabs → Minimal (3 tabs · deep links #visi / #airija / #ispanija · content animation Fade) · each tab = [sgp_grafikas variant=&quot;table&quot; routes=&quot;…&quot;] · route codes = .sgp-flap (desktop, once)">
-  <div class="sgp-wrap sgp-wrap--zone" data-tabs>
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">01</span><span class="sgp-mono">Lenta</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">4 kryptys</span></div>
-    <div class="gr-board__head">
-      <h2 class="sgp-d2" data-split>Artimiausi pervežimai</h2>
-      <div class="gr-board__ctl" data-reveal>
-        <div class="sgp-tabs gr-tabs" role="tablist" aria-label="Kryptis" data-salient="Tabs → Minimal · tab labels „Visi · Airija · Ispanija“">
-          <button type="button" role="tab" id="gr-tab-all" aria-selected="true" aria-controls="gr-p-all" data-hash="visi">Visi</button>
-          <button type="button" role="tab" id="gr-tab-ie" aria-selected="false" aria-controls="gr-p-ie" data-hash="airija" tabindex="-1">Airija <span class="sgp-mono">IE</span></button>
-          <button type="button" role="tab" id="gr-tab-es" aria-selected="false" aria-controls="gr-p-es" data-hash="ispanija" tabindex="-1">Ispanija <span class="sgp-mono">ES</span></button>
-        </div>
-      </div>
-    </div>
-    <div class="gr-screen" data-reveal style="--dl:.1s" data-salient="Inner Row (Extra Class gr-screen) · Tab content = Text Block with the shortcode · every row = full-width tel: link (M45)">
-      <div class="gr-cols sgp-mono" aria-hidden="true"><span>Maršrutas</span><span>Išvykimo datos</span><span>Būsena</span><span>Skambinti</span></div>
-      <div class="gr-panel" id="gr-p-all" role="tabpanel" aria-labelledby="gr-tab-all" tabindex="0">
-        <div class="sgp-sched" data-sched="table" data-routes="lt-ie,lt-es,ie-lt,es-lt">
-  <div class="sgp-sched__grp"><p class="sgp-sched__h sgp-mono">Iš Lietuvos</p>
-    <a class="sgp-sched__row" href="tel:+37065053161" aria-label="Lietuva – Airija: spalio 9 ir 23 d. Skambinti +370 650 53161"><span class="sgp-sched__name" aria-hidden="true">Lietuva → Airija<span class="sgp-mono sgp-flap" data-flap>LT → IE</span></span><span class="sgp-sched__dates" aria-hidden="true"><time datetime="2026-10-09" class="is-next">Spalio 9 d.</time><time datetime="2026-10-23">Spalio 23 d.</time></span><span class="sgp-sched__st sgp-mono" aria-hidden="true">po 16 d.</span><span class="sgp-sched__tel" aria-hidden="true">+370 650 53161<svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a>
-    <a class="sgp-sched__row" href="tel:+37063828919" aria-label="Lietuva – Ispanija: spalio 9 ir 23 d. Skambinti +370 638 28919"><span class="sgp-sched__name" aria-hidden="true">Lietuva → Ispanija<span class="sgp-mono sgp-flap" data-flap>LT → ES</span></span><span class="sgp-sched__dates" aria-hidden="true"><time datetime="2026-10-09" class="is-next">Spalio 9 d.</time><time datetime="2026-10-23">Spalio 23 d.</time></span><span class="sgp-sched__st sgp-mono" aria-hidden="true">po 16 d.</span><span class="sgp-sched__tel" aria-hidden="true">+370 638 28919<svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a>
-  </div>
-  <div class="sgp-sched__grp"><p class="sgp-sched__h sgp-mono">Į Lietuvą</p>
-    <a class="sgp-sched__row" href="tel:+353864503104" aria-label="Airija – Lietuva: rugsėjo 28 d., spalio 15 ir 28 d. Skambinti +353 86 450 3104"><span class="sgp-sched__name" aria-hidden="true">Airija → Lietuva<span class="sgp-mono sgp-flap" data-flap>IE → LT</span></span><span class="sgp-sched__dates" aria-hidden="true"><time datetime="2026-09-28" class="is-next">Rugsėjo 28 d.</time><time datetime="2026-10-15">Spalio 15 d.</time><time datetime="2026-10-28">Spalio 28 d.</time></span><span class="sgp-sched__st sgp-mono" aria-hidden="true">po 5 d.</span><span class="sgp-sched__tel" aria-hidden="true">+353 86 450 3104<svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a>
-    <a class="sgp-sched__row is-soonest" href="tel:+34602547929" aria-label="Ispanija – Lietuva: rugsėjo 27 d., spalio 14 ir 28 d. Skambinti +34 602 547 929"><span class="sgp-sched__name" aria-hidden="true">Ispanija → Lietuva<span class="sgp-mono sgp-flap" data-flap>ES → LT</span></span><span class="sgp-sched__dates" aria-hidden="true"><time datetime="2026-09-27" class="is-next">Rugsėjo 27 d.</time><time datetime="2026-10-14">Spalio 14 d.</time><time datetime="2026-10-28">Spalio 28 d.</time></span><span class="sgp-sched__st sgp-mono" aria-hidden="true"><span class="sgp-dot"></span>Artimiausias · po 4 d.</span><span class="sgp-sched__tel" aria-hidden="true">+34 602 547 929<svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a>
-  </div>
-</div>
-      </div>
-      <div class="gr-panel" id="gr-p-ie" role="tabpanel" aria-labelledby="gr-tab-ie" tabindex="0" hidden>
-        <div class="sgp-sched" data-sched="table" data-routes="lt-ie,ie-lt">
-  <div class="sgp-sched__grp"><p class="sgp-sched__h sgp-mono">Iš Lietuvos</p>
-    <a class="sgp-sched__row" href="tel:+37065053161" aria-label="Lietuva – Airija: spalio 9 ir 23 d. Skambinti +370 650 53161"><span class="sgp-sched__name" aria-hidden="true">Lietuva → Airija<span class="sgp-mono sgp-flap" data-flap>LT → IE</span></span><span class="sgp-sched__dates" aria-hidden="true"><time datetime="2026-10-09" class="is-next">Spalio 9 d.</time><time datetime="2026-10-23">Spalio 23 d.</time></span><span class="sgp-sched__st sgp-mono" aria-hidden="true">po 16 d.</span><span class="sgp-sched__tel" aria-hidden="true">+370 650 53161<svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a>
-  </div>
-  <div class="sgp-sched__grp"><p class="sgp-sched__h sgp-mono">Į Lietuvą</p>
-    <a class="sgp-sched__row is-soonest" href="tel:+353864503104" aria-label="Airija – Lietuva: rugsėjo 28 d., spalio 15 ir 28 d. Skambinti +353 86 450 3104"><span class="sgp-sched__name" aria-hidden="true">Airija → Lietuva<span class="sgp-mono sgp-flap" data-flap>IE → LT</span></span><span class="sgp-sched__dates" aria-hidden="true"><time datetime="2026-09-28" class="is-next">Rugsėjo 28 d.</time><time datetime="2026-10-15">Spalio 15 d.</time><time datetime="2026-10-28">Spalio 28 d.</time></span><span class="sgp-sched__st sgp-mono" aria-hidden="true"><span class="sgp-dot"></span>Artimiausias · po 5 d.</span><span class="sgp-sched__tel" aria-hidden="true">+353 86 450 3104<svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a>
-  </div>
-</div>
-      </div>
-      <div class="gr-panel" id="gr-p-es" role="tabpanel" aria-labelledby="gr-tab-es" tabindex="0" hidden>
-        <div class="sgp-sched" data-sched="table" data-routes="lt-es,es-lt">
-  <div class="sgp-sched__grp"><p class="sgp-sched__h sgp-mono">Iš Lietuvos</p>
-    <a class="sgp-sched__row" href="tel:+37063828919" aria-label="Lietuva – Ispanija: spalio 9 ir 23 d. Skambinti +370 638 28919"><span class="sgp-sched__name" aria-hidden="true">Lietuva → Ispanija<span class="sgp-mono sgp-flap" data-flap>LT → ES</span></span><span class="sgp-sched__dates" aria-hidden="true"><time datetime="2026-10-09" class="is-next">Spalio 9 d.</time><time datetime="2026-10-23">Spalio 23 d.</time></span><span class="sgp-sched__st sgp-mono" aria-hidden="true">po 16 d.</span><span class="sgp-sched__tel" aria-hidden="true">+370 638 28919<svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a>
-  </div>
-  <div class="sgp-sched__grp"><p class="sgp-sched__h sgp-mono">Į Lietuvą</p>
-    <a class="sgp-sched__row is-soonest" href="tel:+34602547929" aria-label="Ispanija – Lietuva: rugsėjo 27 d., spalio 14 ir 28 d. Skambinti +34 602 547 929"><span class="sgp-sched__name" aria-hidden="true">Ispanija → Lietuva<span class="sgp-mono sgp-flap" data-flap>ES → LT</span></span><span class="sgp-sched__dates" aria-hidden="true"><time datetime="2026-09-27" class="is-next">Rugsėjo 27 d.</time><time datetime="2026-10-14">Spalio 14 d.</time><time datetime="2026-10-28">Spalio 28 d.</time></span><span class="sgp-sched__st sgp-mono" aria-hidden="true"><span class="sgp-dot"></span>Artimiausias · po 4 d.</span><span class="sgp-sched__tel" aria-hidden="true">+34 602 547 929<svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span></a>
-  </div>
-</div>
-      </div>
-    </div>
-    <div class="gr-board__foot" data-reveal style="--dl:.15s" data-salient="Inner Row: Text Block (stamp + board note) · Button (Regular, Line) href=#sgp-call">
-      <p class="sgp-stamp sgp-mono">Atnaujinta <time datetime="2026-09-23">rugsėjo 23 d.</time></p>
-      <p class="gr-board__note">Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.</p>
-      <button class="sgp-btn sgp-btn--line sgp-btn--sm gr-board__call" type="button" popovertarget="sgp-call"><span class="sgp-btn__l"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>Skambinti</span></button>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 02 · LAIKO JUOSTA — the same data on one time lane (client-rendered) ============ -->
-<section class="sgp-sec on-light paper sgp-has-rail gr-lane-sec" id="laiko-juosta" data-theme="light" data-salient="Row paper + graticule · Extra Class sgp-light sgp-graticule sgp-has-rail · Raw HTML lane chart = [sgp_grafikas variant=&quot;lane&quot;] (optional NEW variant, ≈40 lines PHP + CSS) · without it disable this row — the table above holds the same data">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">02</span><span class="sgp-mono">Laiko juosta</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Nuo šiandien</span></div>
-    <div class="sgp-head">
-      <h2 class="sgp-d2" data-split>Visi išvykimai vienoje juostoje</h2>
-      <p class="sgp-lead" data-reveal>Kiekviena stotelė – išvykimo diena. Juosta prasideda šiandien ir baigiasi paskutine grafike paskelbta data.</p>
-    </div>
-    <figure class="gr-lane" data-sched="lane" data-routes="lt-ie,lt-es,ie-lt,es-lt" aria-hidden="true" data-salient="[sgp_grafikas variant=&quot;lane&quot;] (optional) · .gr-lane: route lanes × day scale; rings = departures; red filled ring = soonest"><div class="gr-lane__axis sgp-mono"><span class="gr-lane__tick gr-lane__tick--0" style="--x:0">Šiandien</span><span class="gr-lane__tick" data-wk="7" style="--x:0.1667">po 7 d.</span><span class="gr-lane__tick" data-wk="14" style="--x:0.3333">po 14 d.</span><span class="gr-lane__tick" data-wk="21" style="--x:0.5000">po 21 d.</span><span class="gr-lane__tick" data-wk="28" style="--x:0.6667">po 28 d.</span><span class="gr-lane__tick" data-wk="35" style="--x:0.8333">po 35 d.</span></div><div class="gr-lane__rows"><div class="gr-lane__row" style="--r:0"><p class="gr-lane__name">Lietuva → Airija<span class="sgp-mono">LT → IE</span></p><div class="gr-lane__track"><i class="gr-lane__wk" style="--x:0.1667"></i><i class="gr-lane__wk" style="--x:0.3333"></i><i class="gr-lane__wk" style="--x:0.5000"></i><i class="gr-lane__wk" style="--x:0.6667"></i><i class="gr-lane__wk" style="--x:0.8333"></i><i class="gr-lane__base"></i><i class="gr-lane__line" style="--end:0.7143"></i><i class="gr-lane__origin"></i><span class="gr-lane__stop is-next" style="--x:0.3810;--dl:0.68s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Spalio 9 d.</span><span class="gr-lane__r sgp-mono">po 16 d.</span></span></span><span class="gr-lane__stop" style="--x:0.7143;--dl:1.09s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Spalio 23 d.</span><span class="gr-lane__r sgp-mono">po 30 d.</span></span></span></div></div><div class="gr-lane__row" style="--r:1"><p class="gr-lane__name">Lietuva → Ispanija<span class="sgp-mono">LT → ES</span></p><div class="gr-lane__track"><i class="gr-lane__wk" style="--x:0.1667"></i><i class="gr-lane__wk" style="--x:0.3333"></i><i class="gr-lane__wk" style="--x:0.5000"></i><i class="gr-lane__wk" style="--x:0.6667"></i><i class="gr-lane__wk" style="--x:0.8333"></i><i class="gr-lane__base"></i><i class="gr-lane__line" style="--end:0.7143"></i><i class="gr-lane__origin"></i><span class="gr-lane__stop is-next" style="--x:0.3810;--dl:0.80s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Spalio 9 d.</span><span class="gr-lane__r sgp-mono">po 16 d.</span></span></span><span class="gr-lane__stop" style="--x:0.7143;--dl:1.21s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Spalio 23 d.</span><span class="gr-lane__r sgp-mono">po 30 d.</span></span></span></div></div><div class="gr-lane__row" style="--r:2"><p class="gr-lane__name">Airija → Lietuva<span class="sgp-mono">IE → LT</span></p><div class="gr-lane__track"><i class="gr-lane__wk" style="--x:0.1667"></i><i class="gr-lane__wk" style="--x:0.3333"></i><i class="gr-lane__wk" style="--x:0.5000"></i><i class="gr-lane__wk" style="--x:0.6667"></i><i class="gr-lane__wk" style="--x:0.8333"></i><i class="gr-lane__base"></i><i class="gr-lane__line" style="--end:0.8333"></i><i class="gr-lane__origin"></i><span class="gr-lane__stop is-next" style="--x:0.1190;--dl:0.59s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Rugsėjo 28 d.</span><span class="gr-lane__r sgp-mono">po 5 d.</span></span></span><span class="gr-lane__stop" style="--x:0.5238;--dl:1.09s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Spalio 15 d.</span><span class="gr-lane__r sgp-mono">po 22 d.</span></span></span><span class="gr-lane__stop" style="--x:0.8333;--dl:1.48s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Spalio 28 d.</span><span class="gr-lane__r sgp-mono">po 35 d.</span></span></span></div></div><div class="gr-lane__row is-soonest" style="--r:3"><p class="gr-lane__name">Ispanija → Lietuva<span class="sgp-mono">ES → LT</span></p><div class="gr-lane__track"><i class="gr-lane__wk" style="--x:0.1667"></i><i class="gr-lane__wk" style="--x:0.3333"></i><i class="gr-lane__wk" style="--x:0.5000"></i><i class="gr-lane__wk" style="--x:0.6667"></i><i class="gr-lane__wk" style="--x:0.8333"></i><i class="gr-lane__base"></i><i class="gr-lane__line" style="--end:0.8333"></i><i class="gr-lane__origin"></i><span class="gr-lane__stop is-next is-soon" style="--x:0.0952;--dl:0.68s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Rugsėjo 27 d.</span><span class="gr-lane__r sgp-mono">po 4 d.</span></span></span><span class="gr-lane__stop" style="--x:0.5000;--dl:1.19s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Spalio 14 d.</span><span class="gr-lane__r sgp-mono">po 21 d.</span></span></span><span class="gr-lane__stop" style="--x:0.8333;--dl:1.60s"><i class="gr-ring"></i><span class="gr-lane__lbl"><span class="gr-lane__d">Spalio 28 d.</span><span class="gr-lane__r sgp-mono">po 35 d.</span></span></span></div></div></div></figure>
-    <p class="gr-lane__legend sgp-mono" aria-hidden="true"><span><i class="gr-lg gr-lg--soon"></i>Artimiausias</span><span><i class="gr-lg gr-lg--next"></i>Kitas išvykimas kryptimi</span><span><i class="gr-lg"></i>Vėliau</span><span><i class="gr-lg gr-lg--today"></i>Šiandien</span></p>
-  </div>
-</section>
-
-<!-- ============ 03 · KĄ VERTA ŽINOTI — facts + both routes ============ -->
-<section class="sgp-sec on-light alt sgp-has-rail gr-facts" id="ka-verta-zinoti" data-theme="light" data-salient="Row paper-100 · Extra Class sgp-light alt sgp-has-rail · Column 5/12 (Sticky Content, CSS, Top 120): H2 + Text Block .sgp-kv + 2 × Button Underline · Column 7/12: Raw HTML SVG map (both routes, static)">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">03</span><span class="sgp-mono">Ką verta žinoti</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Apie 3–4 paros</span></div>
-    <div class="gr-facts__grid">
-      <div class="gr-facts__copy">
-        <div class="sgp-sticky">
-          <h2 class="sgp-d2 gr-facts__h" data-split>Laiką ir vietą suderinsime telefonu</h2>
-          <dl class="sgp-kv gr-facts__kv" data-reveal data-salient="Text Block + Extra Class .sgp-kv · delivery facts pair (§4.12)">
-            <dt>Išvykimo laikas ir vieta</dt><dd>Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.</dd>
-            <dt>Principas</dt><dd>Nuo durų iki durų</dd>
-            <dt>Kelyje</dt><dd>apie 3–4 paros nuo paėmimo dienos</dd>
-            <dt>Įsipareigojimas siuntoms</dt><dd>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (<a class="sgp-a" href="../taisykles/#vezejo-atsakomybe">Taisyklių 3.4 p.</a>)</dd>
-          </dl>
-          <div class="gr-facts__links" data-reveal style="--dl:.1s">
-            <a class="sgp-lnk" href="../siuntos-sekimas/">Siuntos sekimas<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="sgp-lnk" href="../taisykles/">Siuntų siuntimo taisyklės<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="sgp-lnk" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/">Tarptautiniai pervežimai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="sgp-lnk" href="../pervezimo-paslaugos/">Pervežimo paslaugos<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-            <a class="sgp-lnk" href="../kontaktai/">Kontaktai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+<!-- ============ R3 + R4 · #lenta — Tabs Minimal (Visi · Airija · Ispanija) with the schedule Global Sections ============ -->
+<div class="wpb_row sgp-dark" id="lenta" data-type="full_width_background" data-text-color="light" data-padding="chapter" style="--bg:#0F1417" data-salient="Row → Chapter row A · Type: Full Width Background · BG #0F1417 · Text Color: Light · Padding 8 % / 8 % (phones 80px) · Row ID lenta · Extra Class sgp-dark (no Color Change Section: it follows the dark head)">
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-3" data-sticky="top" data-animation="slight-fade-in-from-bottom" data-salient="Column 3/12 → Sticky Content (CSS Powered, Top) · Animation: Slight Fade In From Bottom · Label + Animated Text (H2) + Road line + Image (desktop)">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #EF4539 (asphalt)">Lenta</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:4.4vw;--fs-min:40px;--fs-max:64px;--fs-m:40px;--lh:1;--max-w:8em" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓ · Font sizing 4.4vw (min 40px, max 64px; phone 40px) · Max Width 8em"><h2>Artimiausi pervežimai</h2></div>
+        <div class="divider-wrap" data-line-type="small" data-animate style="--line-w:96px;--thickness:2px;--h:14px" data-salient="Divider → Small Line · 96px · 2px · Accent · Animate Line ✓ (road line)"><span class="divider-border"></span></div>
+        <div class="vc_row inner_row" data-hide="tablet phone" style="--mt:36px;--max-w:340px" data-salient="Inner Row → Device Visibility: desktop only · Maximum Width 340px">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-salient="Inner Column 12/12 → Image">
+              <div class="vc_column-inner">
+                <div class="img-with-aniamtion-wrap" data-animation="ro-reveal-from-bottom" data-delay="200" data-hover-animation="zoom-in" data-aspect="4-5" data-salient="Image → Animation: Reveal Rotate From Bottom (2.3 s) · Delay 200 · Hover Animation: Zoom In · Border Radius 0 · 4:5"><div class="hover-wrap"><img src="https://images.pexels.com/photos/27383867/pexels-photo-27383867.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" srcset="https://images.pexels.com/photos/27383867/pexels-photo-27383867.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/27383867/pexels-photo-27383867.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700 700w, https://images.pexels.com/photos/27383867/pexels-photo-27383867.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/27383867/pexels-photo-27383867.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w" sizes="340px" width="700" height="467" alt="Baltas keleivinis mikroautobusas prie vaizdingo užmiesčio kelio" loading="lazy" decoding="async" style="object-position:40% 50%"></div></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="gr-facts__map" data-reveal style="--dl:.12s">
-        <figure class="sgp-map" data-salient="Raw HTML SVG map, both routes (static, no tabs; Ireland leg dashed „maršrutas tikslinamas“) · &lt;700px ordered list · alt: Image With Hotspots">
-  <figcaption class="sgp-map__cap sgp-mono">Maršrutų schema · ne mastelis</figcaption>
-  <div class="sgp-map__stage">
-    <svg class="sgp-mapsvg" viewBox="0 0 700 500" role="img" aria-labelledby="mboth-t mboth-d">
-      <title id="mboth-t">Maršrutai į Airiją ir Ispaniją</title>
-      <desc id="mboth-d">Iš Lietuvos per Lenkiją ir Vokietiją; toliau per Belgiją ir Prancūziją į Ispaniją. Maršruto dalis iki Airijos tikslinama.</desc>
-      <g class="grat" aria-hidden="true"><line x1="92" y1="0" x2="92" y2="480"/><line x1="184" y1="0" x2="184" y2="480"/><line x1="276" y1="0" x2="276" y2="480"/><line x1="368" y1="0" x2="368" y2="480"/><line x1="461" y1="0" x2="461" y2="480"/><line x1="553" y1="0" x2="553" y2="480"/><line x1="645" y1="0" x2="645" y2="480"/><line x1="0" y1="71" x2="700" y2="71"/><line x1="0" y1="189" x2="700" y2="189"/><line x1="0" y1="307" x2="700" y2="307"/><line x1="0" y1="426" x2="700" y2="426"/></g>
-      <g class="live trunk" aria-hidden="true"><path class="c1" pathLength="1" d="M624 64 L542 140 L376 161"/><path class="c2" pathLength="1" d="M624 64 L542 140 L376 161"/><path class="c3" pathLength="1" d="M624 64 L542 140 L376 161"/></g>
-      <g class="live branch" aria-hidden="true"><path class="c1" pathLength="1" d="M376 161 L267 175 L227 270 L116 416"/><path class="c2" pathLength="1" d="M376 161 L267 175 L227 270 L116 416"/><path class="c3" pathLength="1" d="M376 161 L267 175 L227 270 L116 416"/></g>
-      <path class="tbd" d="M376 161 L37 111" aria-hidden="true"/>
-      <g aria-hidden="true">
-        <text class="lbl-s" x="118" y="112" transform="rotate(8.4 118 112)">maršrutas tikslinamas</text>
-        <circle class="pulse" cx="624" cy="64" r="14"/><circle class="origin" cx="624" cy="64" r="9"/><text class="lbl" x="604" y="40" text-anchor="end">LIETUVA</text><text class="lbl-s" x="604" y="58" text-anchor="end">išvykimas</text><circle class="stop" cx="542" cy="140" r="5.5"/><text class="lbl" x="542" y="168" text-anchor="middle">LENKIJA</text><circle class="stop" cx="376" cy="161" r="5.5"/><text class="lbl" x="390" y="190">VOKIETIJA</text>
-        <circle class="stop" cx="267" cy="175" r="5.5"/><text class="lbl" x="280" y="204">BELGIJA</text>
-        <circle class="stop" cx="227" cy="270" r="5.5"/><text class="lbl" x="243" y="275">PRANCŪZIJA</text>
-        <circle class="term on" cx="116" cy="416" r="8.5"/><text class="lbl" x="134" y="421">ISPANIJA</text><text class="lbl-s" x="134" y="439">atvykimas</text>
-        <circle class="term on" cx="37" cy="111" r="8.5"/><text class="lbl" x="24" y="144">AIRIJA</text><text class="lbl-s" x="24" y="162">atvykimas</text>
-      </g>
-    </svg>
-  </div>
-  <div class="sgp-map__lists">
-    <ol class="sgp-map__list" aria-label="Maršrutas į Airiją">
-      <li class="o">Lietuva<small>išvykimas</small></li><li>Lenkija</li><li>Vokietija</li><li class="tbd">Maršrutas tikslinamas</li><li class="t">Airija<small>atvykimas</small></li>
-    </ol>
-    <ol class="sgp-map__list" aria-label="Maršrutas į Ispaniją">
-      <li class="o">Lietuva<small>išvykimas</small></li><li>Lenkija</li><li>Vokietija</li><li>Belgija</li><li>Prancūzija</li><li class="t">Ispanija<small>atvykimas</small></li>
-    </ol>
-  </div>
-  <div class="sgp-map__legend sgp-mono" aria-hidden="true"><span><i class="lg-line"></i>Maršrutas</span><span><i class="lg-tbd"></i>Tikslinama</span><span><i class="lg-stop"></i>Šalis pakeliui</span></div>
-</figure>
-
-      </div>
     </div>
-  </div>
-</section>
-
-<section class="sgp-sec sgp-arrive on-dark sgp-has-rail sgp-rail-end" id="uzklausa" data-theme="dark" data-salient="Global Section GS-Arrival „Atvykimas“ (Before Footer) · bg texture 7024783 at 12 % + Parallax Subtle · tickets = Inner Row, 2 Columns, Extra Class .sgp-ticket · Fluent Forms + .sgp-field">
-  <div class="sgp-bgmedia sgp-arrive__tex" data-parallax="0.12" aria-hidden="true"><img src="https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600" srcset="https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w, https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/7024783/pexels-photo-7024783.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" width="1600" height="1065" alt="" loading="lazy" decoding="async"></div>
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp sgp-wp--end" data-rail-end><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">Atvykimas</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">LT ⇄ IE · LT ⇄ ES</span></div>
-    <h2 class="sgp-d2 sgp-arrive__h" data-split>Susisiekite su mumis ir mes pasiūlysime Jums geriausią kainą!</h2>
-    <div class="sgp-arrive__grid">
-      <div class="sgp-arrive__tickets">
-        <article class="sgp-ticket" data-reveal>
-  <div class="sgp-ticket__main">
-    <p class="sgp-mono sgp-ticket__k"><span class="sgp-ticket__code">LT ⇄ IE</span>Pervežimai į Airiją</p>
-    <a class="sgp-ticket__big" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>+370 650 53161</a>
-    <div class="sgp-ticket__more"><a href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span>IE</span>+353 86 450 3104</a><a href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span>UK</span>+44 7566 878681</a></div>
-  </div>
-  <div class="sgp-ticket__stub" data-sched="stub" data-route="lt-ie"><p class="sgp-mono">Kitas išvykimas</p><p class="sgp-ticket__date"><time datetime="2026-10-09">Spalio 9 d.</time></p><p class="sgp-ticket__rel sgp-mono">iš LT · po 16 d.</p><a class="sgp-lnk" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161">Skambinti<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-</article>
-<article class="sgp-ticket" data-reveal style="--dl:.12s">
-  <div class="sgp-ticket__main">
-    <p class="sgp-mono sgp-ticket__k"><span class="sgp-ticket__code">LT ⇄ ES</span>Pervežimai į Ispaniją</p>
-    <a class="sgp-ticket__big" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg>+370 638 28919</a>
-    <div class="sgp-ticket__more"><a href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span>ES</span>+34 602 547 929</a></div>
-  </div>
-  <div class="sgp-ticket__stub" data-sched="stub" data-route="lt-es"><p class="sgp-mono">Kitas išvykimas</p><p class="sgp-ticket__date"><time datetime="2026-10-09">Spalio 9 d.</time></p><p class="sgp-ticket__rel sgp-mono">iš LT · po 16 d.</p><a class="sgp-lnk" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919">Skambinti<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a></div>
-</article>
-        <div class="sgp-mailrow" data-reveal style="--dl:.2s">
-          <span class="sgp-mono">El. paštas</span>
-          <a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a>
-          <button class="sgp-copy" type="button" data-copy="saugiai.greitai.patikimai@gmail.com"><svg class="sgp-i" aria-hidden="true"><use href="#i-copy"/></svg><span>Kopijuoti</span></button>
-          <span class="sgp-sr" role="status" data-copy-status></span>
+    <div class="wpb_column vc_col-sm-9" data-animation="slight-fade-in-from-bottom" data-delay="120" data-salient="Column 9/12 → Animation: Slight Fade In From Bottom · Delay 120 · Tabs + Inner Row (2 × Call)">
+      <div class="vc_column-inner">
+        <div class="tabbed" data-style="minimal_alt" data-animation="fade" data-salient="Tabs → Style: Minimal Alt (links in the Label typography, 4px Accent underline .3s) · Tab Change Animation: Fade · 3 tabs · deep links ?tab=visi / ?tab=airija / ?tab=ispanija">
+          <ul class="wpb_tabs_nav"><li><a href="#tab-visi">Visi</a></li><li><a href="#tab-airija">Airija</a></li><li><a href="#tab-ispanija">Ispanija</a></li></ul>
+          <div class="wpb_tab" id="tab-visi" data-salient="Tab „Visi“ → Global Section element „GS-Grafikas Airija“ + Divider + Global Section element „GS-Grafikas Ispanija“">
+<div class="nectar-global-section" data-gs="GS-Grafikas Airija" data-location="inline" data-salient="Global Section „GS-Grafikas Airija“ (Global Section element) · typed monthly">
+  <div class="wpb_row sgp-grafikas" data-type="full_width_content" data-salient="Row → Type: Full Width Content · Padding 0 · Extra Class sgp-grafikas (C-5)">
+    <div class="row_col_wrap_12">
+      <div class="wpb_column vc_col-sm-12" data-el-space="none" data-salient="Column → Column Element Spacing: None">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Iš Lietuvos</span>
+<div class="nectar-hor-list-item" data-columns="3" data-column-layout="25-50-25" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item → Columns: 3 · Column Layout: 25% | 50% | 25% (stacked below 1000 px) · Style: Bottom Border, Color Hover Effect · Hover Color: White · Full Item Link URL: tel:+37065053161 · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p>Lietuva → Airija</p></div><div class="nectar-list-item"><p class="sgp-num">spalio 9 ir 23 d.</p></div><div class="nectar-list-item" data-text-align="right"><p class="sgp-num">+370 650 53161</p></div><a class="full-link" href="tel:+37065053161" aria-label="Lietuva → Airija spalio 9 ir 23 d. +370 650 53161 – skambinti"></a></div>
+          <span class="nectar-badge" data-badge-style="line" style="--mt:34px" data-salient="Badge → Minimal Line · Label">Į Lietuvą</span>
+<div class="nectar-hor-list-item" data-columns="3" data-column-layout="25-50-25" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item → Columns: 3 · Column Layout: 25% | 50% | 25% (stacked below 1000 px) · Style: Bottom Border, Color Hover Effect · Hover Color: White · Full Item Link URL: tel:+353864503104 · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p>Airija → Lietuva</p></div><div class="nectar-list-item"><p class="sgp-num">rugsėjo 28 d., spalio 15 ir 28 d.</p></div><div class="nectar-list-item" data-text-align="right"><p class="sgp-num">+353 86 450 3104</p></div><a class="full-link" href="tel:+353864503104" aria-label="Airija → Lietuva rugsėjo 28 d., spalio 15 ir 28 d. +353 86 450 3104 – skambinti"></a></div>
+          <p class="nectar-responsive-text" data-inherit="small" style="--fg:var(--tone-muted);--mt:22px" data-salient="Responsive Text → small">Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.</p>
+          <span class="nectar-badge" data-badge-style="line" style="--fg:var(--tone-muted);--mt:12px" data-salient="Badge → Minimal Line · Label · typed date">Atnaujinta rugsėjo 23 d.</span>
         </div>
       </div>
-      <form class="sgp-form" action="#" method="post" novalidate data-demo-form data-reveal style="--dl:.15s" data-salient="Fluent Forms · „Kas Jus domina?“ default {get.domina} · Theme Options → Form Styling + .sgp-field · Turnstile (invisible)">
-        <p class="sgp-form__t">Gauti pasiūlymą</p>
-        <label class="sgp-field"><span class="sgp-field__l">Jūsų vardas</span><input name="vardas" required autocomplete="name" placeholder="Vardas"><em class="sgp-field__err">Įrašykite vardą</em></label>
-        <label class="sgp-field"><span class="sgp-field__l">Telefono numeris</span><input name="telefonas" type="tel" required autocomplete="tel" inputmode="tel" placeholder="+370 …"><em class="sgp-field__err">Įrašykite telefono numerį</em></label>
-        <label class="sgp-field"><span class="sgp-field__l">El. pašto adresas</span><input name="el_pastas" type="email" required autocomplete="email" placeholder="vardas@pastas.lt"><em class="sgp-field__err">Patikrinkite el. pašto adresą</em></label>
-        <label class="sgp-field"><span class="sgp-field__l">Kas Jus domina?</span>
-          <select name="domina" required data-domina><option value="">Pasirinkite paslaugą</option><option>Krovinių pervežimas</option><option>Negabaritinių krovinių pervežimas</option><option>Dalinių krovinių gabenimas</option><option>Daiktų pervežimas</option><option>Automobilių pervežimas</option><option>Motociklų pervežimas</option><option>Keleivių pervežimas</option><option>Gyvūnų pervežimas</option><option>Siuntų pervežimas</option><option>Siuntų pristatymas</option><option>Perkraustymo paslaugos</option><option>Kita</option></select><em class="sgp-field__err">Pasirinkite paslaugą</em></label>
-        <label class="sgp-field"><span class="sgp-field__l">Žinutė</span><textarea name="zinute" rows="3" required minlength="20" placeholder="Iš kur, į kur ir kada?"></textarea><em class="sgp-field__err">Žinutė – bent 20 simbolių</em></label>
-        <p class="sgp-form__note">Formoje pateikti duomenys naudojami susisiekimui su klientu.</p>
-        <button class="sgp-btn sgp-btn--signal" type="submit"><span class="sgp-btn__l">Gauti pasiūlymą</span><span class="sgp-btn__a"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
-        <p class="sgp-form__ok" role="status" aria-live="polite" tabindex="-1">Jūsų žinutė sėkmingai išsiųsta<small>Demonstracinė versija – duomenys niekur nesiunčiami.</small></p>
-      </form>
     </div>
   </div>
-</section>
+</div>
 
-</main>
-<footer class="sgp-ftr on-dark" data-theme="dark" data-salient="Global Section → Footer · 5 columns (1.3/1/1/1.2/1) · services = .sgp-line-list · no wordmark, no social links">
-  <div class="sgp-wrap">
-    <div class="sgp-ftr__grid">
-      <div class="sgp-ftr__brand">
-        <a class="sgp-ftr__logo" href="../" aria-label="SGP pervežimai – pradžia"><img src="../assets/img/logo_light.svg" alt="" width="128" height="52" loading="lazy"></a>
-        <p>Visos pervežimo paslaugos: Lietuva – Airija – Lietuva, Lietuva – Ispanija – Lietuva. Saugiai, greitai, patikimai.</p>
-        <div class="sgp-ftr__mail"><p class="sgp-ftr__h">El. paštas</p><a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a></div>
-      </div>
-      <div class="sgp-phl">
-        <p class="sgp-ftr__h">Pervežimai į Airiją</p>
-        <a href="tel:+37065053161" aria-label="Pervežimai į Airiją, Lietuvos numeris +370 650 53161"><span class="sgp-cc">LT</span>+370 650 53161</a><a href="tel:+353864503104" aria-label="Pervežimai į Airiją, Airijos numeris +353 86 450 3104"><span class="sgp-cc">IE</span>+353 86 450 3104</a><a href="tel:+447566878681" aria-label="Pervežimai į Airiją, JK numeris +44 7566 878681"><span class="sgp-cc">UK</span>+44 7566 878681</a>
-      </div>
-      <div class="sgp-phl">
-        <p class="sgp-ftr__h">Pervežimai į Ispaniją</p>
-        <a href="tel:+37063828919" aria-label="Pervežimai į Ispaniją, Lietuvos numeris +370 638 28919"><span class="sgp-cc">LT</span>+370 638 28919</a><a href="tel:+34602547929" aria-label="Pervežimai į Ispaniją, Ispanijos numeris +34 602 547 929"><span class="sgp-cc">ES</span>+34 602 547 929</a>
-      </div>
-      <div>
-        <p class="sgp-ftr__h"><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/">Tarptautiniai pervežimai</a></p>
-        <nav class="sgp-line-list" aria-label="Tarptautinės pervežimo paslaugos"><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/">Krovinių pervežimas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/negabaritiniu-kroviniu-pervezimas/">Negabaritinių krovinių pervežimas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/daliniu-kroviniu-gabenimas/">Dalinių krovinių gabenimas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/daiktu-pervezimas/">Daiktų pervežimas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/automobiliu-pervezimas/">Automobilių pervežimas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/motociklu-pervezimas/">Motociklų pervežimas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/">Keleivių pervežimas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/">Gyvūnų pervežimas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pervezimas/">Siuntų pervežimas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pristatymas/">Siuntų pristatymas</a><a href="../pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/">Perkraustymo paslaugos</a></nav>
-      </div>
-      <div>
-        <p class="sgp-ftr__h">Informacija</p>
-        <nav class="sgp-line-list" aria-label="Informacija">
-          <a href="../apie-imone/">Apie mus</a><a href="../pervezimo-paslaugos/">Pervežimo paslaugos</a><a href="../pervezimu-grafikas/" aria-current="page">Pervežimų grafikas</a><a href="../siuntos-sekimas/">Siuntos sekimas</a><a href="../taisykles/">Taisyklės</a><a href="../kontaktai/">Kontaktai</a><a href="../privatumo-politika/">Privatumo politika</a>
-        </nav>
+            <div class="divider-wrap" data-line-type="full-width" data-animate style="--h:88px;--line-color:rgba(242,244,243,.12)" data-salient="Divider → Line Type: Full Width · Height 88px · Line Thickness 1px · Animate Line ✓"><span class="divider-border"></span></div>
+<div class="nectar-global-section" data-gs="GS-Grafikas Ispanija" data-location="inline" data-salient="Global Section „GS-Grafikas Ispanija“ (Global Section element) · typed monthly">
+  <div class="wpb_row sgp-grafikas" data-type="full_width_content" data-salient="Row → Type: Full Width Content · Padding 0 · Extra Class sgp-grafikas (C-5)">
+    <div class="row_col_wrap_12">
+      <div class="wpb_column vc_col-sm-12" data-el-space="none" data-salient="Column → Column Element Spacing: None">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Iš Lietuvos</span>
+<div class="nectar-hor-list-item" data-columns="3" data-column-layout="25-50-25" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item → Columns: 3 · Column Layout: 25% | 50% | 25% (stacked below 1000 px) · Style: Bottom Border, Color Hover Effect · Hover Color: White · Full Item Link URL: tel:+37063828919 · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p>Lietuva → Ispanija</p></div><div class="nectar-list-item"><p class="sgp-num">spalio 9 ir 23 d.</p></div><div class="nectar-list-item" data-text-align="right"><p class="sgp-num">+370 638 28919</p></div><a class="full-link" href="tel:+37063828919" aria-label="Lietuva → Ispanija spalio 9 ir 23 d. +370 638 28919 – skambinti"></a></div>
+          <span class="nectar-badge" data-badge-style="line" style="--mt:34px" data-salient="Badge → Minimal Line · Label">Į Lietuvą</span>
+<div class="nectar-hor-list-item" data-columns="3" data-column-layout="25-50-25" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item → Columns: 3 · Column Layout: 25% | 50% | 25% (stacked below 1000 px) · Style: Bottom Border, Color Hover Effect · Hover Color: White · Full Item Link URL: tel:+34602547929 · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p>Ispanija → Lietuva</p></div><div class="nectar-list-item"><p class="sgp-num">rugsėjo 27 d., spalio 14 ir 28 d.</p></div><div class="nectar-list-item" data-text-align="right"><p class="sgp-num">+34 602 547 929</p></div><a class="full-link" href="tel:+34602547929" aria-label="Ispanija → Lietuva rugsėjo 27 d., spalio 14 ir 28 d. +34 602 547 929 – skambinti"></a></div>
+          <p class="nectar-responsive-text" data-inherit="small" style="--fg:var(--tone-muted);--mt:22px" data-salient="Responsive Text → small">Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.</p>
+          <span class="nectar-badge" data-badge-style="line" style="--fg:var(--tone-muted);--mt:12px" data-salient="Badge → Minimal Line · Label · typed date">Atnaujinta rugsėjo 23 d.</span>
+        </div>
       </div>
     </div>
-    <div class="sgp-ftr__bot">
-      <span>© 2026 SGP pervežimai. Visos teisės saugomos.</span>
-      <span class="sgp-ftr__demo"><a href="../v1/">Ankstesnė demo versija (v1)</a><span aria-hidden="true">·</span><span>Demo · nuotraukos ir video — <a href="https://www.pexels.com/" rel="noopener">Pexels</a></span></span>
-      <a class="sgp-ftr__top" href="#main">↑ Į pradžią</a>
+  </div>
+</div>
+
+          </div>
+          <div class="wpb_tab" id="tab-airija" data-salient="Tab „Airija“ → Global Section element „GS-Grafikas Airija“">
+<div class="nectar-global-section" data-gs="GS-Grafikas Airija" data-location="inline" data-salient="Global Section „GS-Grafikas Airija“ (Global Section element) · typed monthly">
+  <div class="wpb_row sgp-grafikas" data-type="full_width_content" data-salient="Row → Type: Full Width Content · Padding 0 · Extra Class sgp-grafikas (C-5)">
+    <div class="row_col_wrap_12">
+      <div class="wpb_column vc_col-sm-12" data-el-space="none" data-salient="Column → Column Element Spacing: None">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Iš Lietuvos</span>
+<div class="nectar-hor-list-item" data-columns="3" data-column-layout="25-50-25" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item → Columns: 3 · Column Layout: 25% | 50% | 25% (stacked below 1000 px) · Style: Bottom Border, Color Hover Effect · Hover Color: White · Full Item Link URL: tel:+37065053161 · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p>Lietuva → Airija</p></div><div class="nectar-list-item"><p class="sgp-num">spalio 9 ir 23 d.</p></div><div class="nectar-list-item" data-text-align="right"><p class="sgp-num">+370 650 53161</p></div><a class="full-link" href="tel:+37065053161" aria-label="Lietuva → Airija spalio 9 ir 23 d. +370 650 53161 – skambinti"></a></div>
+          <span class="nectar-badge" data-badge-style="line" style="--mt:34px" data-salient="Badge → Minimal Line · Label">Į Lietuvą</span>
+<div class="nectar-hor-list-item" data-columns="3" data-column-layout="25-50-25" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item → Columns: 3 · Column Layout: 25% | 50% | 25% (stacked below 1000 px) · Style: Bottom Border, Color Hover Effect · Hover Color: White · Full Item Link URL: tel:+353864503104 · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p>Airija → Lietuva</p></div><div class="nectar-list-item"><p class="sgp-num">rugsėjo 28 d., spalio 15 ir 28 d.</p></div><div class="nectar-list-item" data-text-align="right"><p class="sgp-num">+353 86 450 3104</p></div><a class="full-link" href="tel:+353864503104" aria-label="Airija → Lietuva rugsėjo 28 d., spalio 15 ir 28 d. +353 86 450 3104 – skambinti"></a></div>
+          <p class="nectar-responsive-text" data-inherit="small" style="--fg:var(--tone-muted);--mt:22px" data-salient="Responsive Text → small">Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.</p>
+          <span class="nectar-badge" data-badge-style="line" style="--fg:var(--tone-muted);--mt:12px" data-salient="Badge → Minimal Line · Label · typed date">Atnaujinta rugsėjo 23 d.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+          <div class="wpb_tab" id="tab-ispanija" data-salient="Tab „Ispanija“ → Global Section element „GS-Grafikas Ispanija“">
+<div class="nectar-global-section" data-gs="GS-Grafikas Ispanija" data-location="inline" data-salient="Global Section „GS-Grafikas Ispanija“ (Global Section element) · typed monthly">
+  <div class="wpb_row sgp-grafikas" data-type="full_width_content" data-salient="Row → Type: Full Width Content · Padding 0 · Extra Class sgp-grafikas (C-5)">
+    <div class="row_col_wrap_12">
+      <div class="wpb_column vc_col-sm-12" data-el-space="none" data-salient="Column → Column Element Spacing: None">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Iš Lietuvos</span>
+<div class="nectar-hor-list-item" data-columns="3" data-column-layout="25-50-25" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item → Columns: 3 · Column Layout: 25% | 50% | 25% (stacked below 1000 px) · Style: Bottom Border, Color Hover Effect · Hover Color: White · Full Item Link URL: tel:+37063828919 · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p>Lietuva → Ispanija</p></div><div class="nectar-list-item"><p class="sgp-num">spalio 9 ir 23 d.</p></div><div class="nectar-list-item" data-text-align="right"><p class="sgp-num">+370 638 28919</p></div><a class="full-link" href="tel:+37063828919" aria-label="Lietuva → Ispanija spalio 9 ir 23 d. +370 638 28919 – skambinti"></a></div>
+          <span class="nectar-badge" data-badge-style="line" style="--mt:34px" data-salient="Badge → Minimal Line · Label">Į Lietuvą</span>
+<div class="nectar-hor-list-item" data-columns="3" data-column-layout="25-50-25" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item → Columns: 3 · Column Layout: 25% | 50% | 25% (stacked below 1000 px) · Style: Bottom Border, Color Hover Effect · Hover Color: White · Full Item Link URL: tel:+34602547929 · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p>Ispanija → Lietuva</p></div><div class="nectar-list-item"><p class="sgp-num">rugsėjo 27 d., spalio 14 ir 28 d.</p></div><div class="nectar-list-item" data-text-align="right"><p class="sgp-num">+34 602 547 929</p></div><a class="full-link" href="tel:+34602547929" aria-label="Ispanija → Lietuva rugsėjo 27 d., spalio 14 ir 28 d. +34 602 547 929 – skambinti"></a></div>
+          <p class="nectar-responsive-text" data-inherit="small" style="--fg:var(--tone-muted);--mt:22px" data-salient="Responsive Text → small">Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.</p>
+          <span class="nectar-badge" data-badge-style="line" style="--fg:var(--tone-muted);--mt:12px" data-salient="Badge → Minimal Line · Label · typed date">Atnaujinta rugsėjo 23 d.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+          </div>
+        </div>
+        <div class="vc_row inner_row" style="--mt:44px" data-salient="Inner Row → Inner Column Layout: Flexbox (horizontal, wrap, gap 12px) → 2 × Call (red), both LT lines">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" style="--gap:12px" data-salient="Inner Column → Layout: Flexbox · Horizontal · Wrap · Gap 12px">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" href="tel:+37065053161" aria-label="Į Airiją · +370 650 53161 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Hover #F4604F · Text #0F1417 · Aria Label"><span class="link_text"><span class="text">Į Airiją · +370 650 53161</span></span></a>
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" href="tel:+37063828919" aria-label="Į Ispaniją · +370 638 28919 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Hover #F4604F · Text #0F1417 · Aria Label"><span class="link_text"><span class="text">Į Ispaniją · +370 638 28919</span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ Photo band · Clip Path Inset (Scroll Position) + Medium parallax + outline Scrolling Text (the four routes) ============ -->
+<div class="wpb_row sgp-dark" data-type="full_width_content" data-text-color="light" data-parallax-speed="medium" data-bg-animation="clip-path" data-clip-type="scroll" data-clip-applies="bg" data-clip-start="0 6% 0 6%" data-clip-end="0 0 0 0" data-clip-round="3,0" data-clip-offset="0,50" data-clip-addon="zoom-fade-in" style="--bg:#0F1417;--pt:9%;--pb:9%;--pt-m:88px;--pb-m:88px" data-salient="Row → Type: Full Width Content · Background Image 1696742 · Parallax Background Media On Scroll: Medium (0.40) · Background Layer Animation: Clip Path Inset → Animation Type: Scroll Position · Applies To: Background Layer · Inset Start 0 / 6 % / 0 / 6 % → End 0 · Roundness Start 3px → End 0 · Viewport Trigger Offset 0–50 · Addon: Zoom Fade In · Color Overlay #0B0E10 (0.72) · Text Color: Light">
+  <div class="row-bg-wrap" aria-hidden="true"><div class="inner-wrap"><div class="row-bg-layer"><img class="row-bg" src="https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" srcset="https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w, https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" width="1920" height="1440" alt="" loading="lazy" decoding="async" style="object-position:50% 60%"></div></div><div class="row-bg-overlay" style="--overlay:linear-gradient(180deg,rgba(11,14,16,.86) 0%,rgba(11,14,16,.55) 50%,rgba(11,14,16,.86) 100%)"></div></div>
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-12" data-salient="Column 12/12 → Scrolling Text">
+      <div class="vc_column-inner">
+        <div class="nectar-scrolling-text" data-s-speed="slower" data-repeat="3" data-divider="✦" data-divider-size="half" data-mask-edges data-move-on-scroll data-outline="thin" data-outline-divider data-spin-divider style="--fs:7.4vw;--fs-m:15vw;--space:.4em;--divider-color:#EF4539;--outline-color:#F2F4F3" data-salient="Scrolling Text → Scrolling Speed: Slowest (45 s) · Number of Text Repeats: 3 · Italic Style: Text Outline · Outline Thickness: Thin · Outline Applies To: Text Content and Custom Divider · Text Repeat Divider: Custom Symbol „✦“ (½, #EF4539, Spin on Scroll ✓) · Move on Scroll ✓ · Mask Edges ✓ · Custom Font Size 7.4vw (mobile 15vw) · Text Element: Paragraph (H2 font)">
+          <p class="nectar-responsive-text" data-inherit="h2" data-salient="Scrolling Text → Text Content (typed once, routes separated by „·“, no ✦ in the text; repeats + the red ✦ divider are added by the element)" aria-label="Lietuva – Airija, Lietuva – Ispanija, Airija – Lietuva, Ispanija – Lietuva">Lietuva → Airija · Lietuva → Ispanija · Airija → Lietuva · Ispanija → Lietuva</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ R6 · #ka-verta-zinoti — facts (KV rows, sticky) | Image With Hotspots on the route map + Link rows ============ -->
+<div class="wpb_row" id="ka-verta-zinoti" data-type="full_width_background" data-text-color="dark" data-padding="chapter" data-color-change style="--bg:#F5F7F6" data-salient="Row → Chapter row P · Type: Full Width Background · BG #F5F7F6 · Text Color: Dark · Padding 8 % / 8 % (phones 80px) · Color Change Section ✓ · Row ID ka-verta-zinoti">
+  <div class="row_col_wrap_12" style="--row-gap:48px">
+    <div class="wpb_column vc_col-sm-5" data-sticky="top" data-t-w="12" data-el-space="none" data-animation="slight-fade-in-from-bottom" data-salient="Column 5/12 → Sticky Content (CSS Powered, Top) · Column Element Spacing: None · Animation: Slight Fade In From Bottom · Label + Animated Text (H2) + Road line + KV rows">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E (paper)">Ką verta žinoti</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--mt:18px;--max-w:9em" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓ · Max Width 9em"><h2>Laiką ir vietą suderinsime telefonu</h2></div>
+        <div class="divider-wrap" data-line-type="small" data-animate style="--line-w:96px;--thickness:2px;--h:14px;--mt:18px" data-salient="Divider → Small Line · 96px · 2px · Accent · Animate Line ✓ (road line)"><span class="divider-border"></span></div>
+        <div class="nectar-hor-list-item" style="--mt:30px" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV rows) → Columns 2 · Column Layout 40% | 60% · Style: Bottom Border, No Hover Effect · Border Animation ✓ · Border Color #C3CBCB · column 1 = key"><div class="nectar-list-item"><p class="nectar-inherit-h6">Išvykimo laikas ir vieta</p></div><div class="nectar-list-item"><p>Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.</p></div></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row (40% | 60%, No Hover Effect, Border Animation) · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Principas</p></div><div class="nectar-list-item"><p>Nuo durų iki durų</p></div></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row (40% | 60%, No Hover Effect, Border Animation) · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Kelyje</p></div><div class="nectar-list-item"><p>apie 3–4 paros nuo paėmimo dienos</p></div></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row (40% | 60%, No Hover Effect, Border Animation) · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Įsipareigojimas siuntoms</p></div><div class="nectar-list-item"><p>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (<a href="../taisykles/#vezejo-atsakomybe">Taisyklių 3.4 p.</a>)</p></div></div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-7" data-t-w="12" data-salient="Column 7/12 → Inner Row (map surface, Scroll Position Advanced) + Inner Row (Label + 5 × Link rows)">
+      <div class="vc_column-inner">
+        <div class="vc_row inner_row" style="--bg:#EAEEED;--r:3px" data-salient="Inner Row → Design Options: BG #EAEEED · radius 3px — map surface">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-animation-type="scroll_pos_advanced" data-scroll-start="ty:60;s:.94;o:.4" data-scroll-end="ty:0;s:1;o:1" data-scroll-offset="0,70" style="--pt:36px;--pb:36px;--pl:36px;--pr:36px;--pt-m:16px;--pb-m:16px;--pl-m:10px;--pr-m:10px" data-salient="Inner Column (Device Visibility: hidden on phone) 12/12 → Column Animation Type: Scroll Position Advanced · Start: Translate Y 60, Scale .94, Opacity .4 → End: 0, 1, 1 · Viewport Trigger Offset 0–70 · Padding 36px (phone 16px 10px) · Image With Hotspots" data-hide="phone">
+              <div class="vc_column-inner">
+                <div class="nectar_image_with_hotspots" data-hotspot-icon="numerical" data-tooltip-func="hover" data-tooltip-shadow="medium_depth" data-color="accent-color" data-animation data-salient="Image With Hotspots → image assets/img/marsrutai.svg · Hotspot Icon: Numerical · Tooltip Functionality: Show On Hover · Tooltip Shadow: Medium Depth · Enable Animation ✓ · Color: Accent (C-7 restyles markers and tooltips)">
+                  <img src="../assets/img/marsrutai.svg" alt="SGP maršrutų schema: Lietuva – Lenkija – Vokietija; toliau per Belgiją ir Prancūziją į Ispaniją; atkarpa iki Airijos tikslinama." width="1100" height="720" loading="lazy">
+                  <div class="nectar_hotspot_wrap" style="left:84.5%;top:20.8%" data-tooltip-position="left"><button class="nectar_hotspot" type="button" aria-label="Lietuva"><span>1</span></button><div class="nttip" role="tooltip"><p><strong>Lietuva · išvykimas</strong></p><p>Į Airiją +370 650 53161 · į Ispaniją +370 638 28919</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:72.7%;top:34.7%"><button class="nectar_hotspot" type="button" aria-label="Lenkija"><span>2</span></button><div class="nttip" role="tooltip"><p><strong>Lenkija</strong></p><p>Pakeliui – galite perduoti siuntą čia gyvenantiems artimiesiems.</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:50.9%;top:40.3%" data-tooltip-position="bottom"><button class="nectar_hotspot" type="button" aria-label="Vokietija"><span>3</span></button><div class="nttip" role="tooltip"><p><strong>Vokietija</strong></p><p>Pakeliui – galite perduoti siuntą čia gyvenantiems artimiesiems.</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:37.3%;top:41.7%"><button class="nectar_hotspot" type="button" aria-label="Belgija"><span>4</span></button><div class="nttip" role="tooltip"><p><strong>Belgija</strong></p><p>Pakeliui – galite perduoti siuntą čia gyvenantiems artimiesiems.</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:31.8%;top:61.1%"><button class="nectar_hotspot" type="button" aria-label="Prancūzija"><span>5</span></button><div class="nttip" role="tooltip"><p><strong>Prancūzija</strong></p><p>Pakeliui – galite perduoti siuntą čia gyvenantiems artimiesiems.</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:17.3%;top:83.3%" data-tooltip-position="right"><button class="nectar_hotspot" type="button" aria-label="Ispanija"><span>6</span></button><div class="nttip" role="tooltip"><p><strong>Ispanija</strong></p><p>+34 602 547 929</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:8.2%;top:27.8%" data-tooltip-position="bottom"><button class="nectar_hotspot" type="button" aria-label="Airija"><span>7</span></button><div class="nttip" role="tooltip"><p><strong>Airija</strong></p><p>+353 86 450 3104 · maršrutas tikslinamas</p></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-12" data-scroll-start="ty:60;s:.94;o:.4" data-scroll-end="ty:0;s:1;o:1" data-scroll-offset="0,70" style="--pt:36px;--pb:36px;--pl:36px;--pr:36px;--pt-m:16px;--pb-m:16px;--pl-m:10px;--pr-m:10px" data-salient="Inner Column (Device Visibility: hidden on desktop and tablet · phone crop marsrutai-m.svg) 12/12 → Column Animation Type: Scroll Position Advanced · Start: Translate Y 60, Scale .94, Opacity .4 → End: 0, 1, 1 · Viewport Trigger Offset 0–70 · Padding 36px (phone 16px 10px) · Image With Hotspots" data-hide="desktop tablet">
+              <div class="vc_column-inner">
+                <div class="nectar_image_with_hotspots" data-hotspot-icon="numerical" data-tooltip-func="hover" data-tooltip-shadow="medium_depth" data-color="accent-color" data-animation data-salient="Image With Hotspots → image assets/img/marsrutai-m.svg · Hotspot Icon: Numerical · Tooltip Functionality: Show On Hover · Tooltip Shadow: Medium Depth · Enable Animation ✓ · Color: Accent (C-7 restyles markers and tooltips)">
+                  <img src="../assets/img/marsrutai-m.svg" alt="SGP maršrutų schema: Lietuva – Lenkija – Vokietija; toliau per Belgiją ir Prancūziją į Ispaniją; atkarpa iki Airijos tikslinama." width="600" height="640" loading="lazy">
+                  <div class="nectar_hotspot_wrap" style="left:93.6%;top:12.7%"><button class="nectar_hotspot" type="button" aria-label="Lietuva"><span>1</span></button><div class="nttip" role="tooltip"><p><strong>Lietuva · išvykimas</strong></p><p>Į Airiją +370 650 53161 · į Ispaniją +370 638 28919</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:81.8%;top:21.3%"><button class="nectar_hotspot" type="button" aria-label="Lenkija"><span>2</span></button><div class="nttip" role="tooltip"><p><strong>Lenkija</strong></p><p>Pakeliui – galite perduoti siuntą čia gyvenantiems artimiesiems.</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:51.5%;top:25.5%"><button class="nectar_hotspot" type="button" aria-label="Vokietija"><span>3</span></button><div class="nttip" role="tooltip"><p><strong>Vokietija</strong></p><p>Pakeliui – galite perduoti siuntą čia gyvenantiems artimiesiems.</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:36.4%;top:26.2%"><button class="nectar_hotspot" type="button" aria-label="Belgija"><span>4</span></button><div class="nttip" role="tooltip"><p><strong>Belgija</strong></p><p>Pakeliui – galite perduoti siuntą čia gyvenantiems artimiesiems.</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:30.3%;top:40.9%"><button class="nectar_hotspot" type="button" aria-label="Prancūzija"><span>5</span></button><div class="nttip" role="tooltip"><p><strong>Prancūzija</strong></p><p>Pakeliui – galite perduoti siuntą čia gyvenantiems artimiesiems.</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:13.8%;top:61.9%"><button class="nectar_hotspot" type="button" aria-label="Ispanija"><span>6</span></button><div class="nttip" role="tooltip"><p><strong>Ispanija</strong></p><p>+34 602 547 929</p></div></div>
+                  <div class="nectar_hotspot_wrap" style="left:6.7%;top:17.6%"><button class="nectar_hotspot" type="button" aria-label="Airija"><span>7</span></button><div class="nttip" role="tooltip"><p><strong>Airija</strong></p><p>+353 86 450 3104 · maršrutas tikslinamas</p></div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="vc_row inner_row" style="--mt:56px" data-salient="Inner Row → Label + 5 × Horizontal List Item (Link rows)">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-el-space="none" data-animation="slight-fade-in-from-bottom" data-salient="Inner Column 12/12 → Column Element Spacing: None · Animation: Slight Fade In From Bottom">
+              <div class="vc_column-inner">
+                <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E">Susiję puslapiai</span>
+                <div class="nectar-hor-list-item" style="--mt:14px" data-columns="1" data-hover-effect="default" data-color="extra-color-1" data-border-animation data-border-color="#C3CBCB" data-font-family="h4" data-salient="Horizontal List Item (Link rows) → Columns 1 · Style: Bottom Border, Color Hover Effect · Hover Color: Extra Color 1 · Border Animation ✓ · Border Color #C3CBCB · Inherit Font From: h4 · Full Item Link URL · last column ends with a typed arrow"><div class="nectar-list-item"><p>Siuntos sekimas <span aria-hidden="true">→</span></p></div><a class="full-link" href="../siuntos-sekimas/" aria-label="Siuntos sekimas"></a></div>
+                <div class="nectar-hor-list-item" data-columns="1" data-hover-effect="default" data-color="extra-color-1" data-border-animation data-border-color="#C3CBCB" data-font-family="h4" data-salient="Horizontal List Item → Link row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p>Siuntų siuntimo taisyklės <span aria-hidden="true">→</span></p></div><a class="full-link" href="../taisykles/" aria-label="Siuntų siuntimo taisyklės"></a></div>
+                <div class="nectar-hor-list-item" data-columns="1" data-hover-effect="default" data-color="extra-color-1" data-border-animation data-border-color="#C3CBCB" data-font-family="h4" data-salient="Horizontal List Item → Link row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p>Tarptautiniai pervežimai <span aria-hidden="true">→</span></p></div><a class="full-link" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/" aria-label="Tarptautiniai pervežimai"></a></div>
+                <div class="nectar-hor-list-item" data-columns="1" data-hover-effect="default" data-color="extra-color-1" data-border-animation data-border-color="#C3CBCB" data-font-family="h4" data-salient="Horizontal List Item → Link row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p>Pervežimo paslaugos <span aria-hidden="true">→</span></p></div><a class="full-link" href="../pervezimo-paslaugos/" aria-label="Pervežimo paslaugos"></a></div>
+                <div class="nectar-hor-list-item" data-columns="1" data-hover-effect="default" data-color="extra-color-1" data-border-animation data-border-color="#C3CBCB" data-font-family="h4" data-salient="Horizontal List Item → Link row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p>Kontaktai <span aria-hidden="true">→</span></p></div><a class="full-link" href="../kontaktai/" aria-label="Kontaktai"></a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ R7 · GS-Kvietimas (After Page/Post Content) ============ -->
+<div class="nectar-global-section" data-gs="GS-Kvietimas" data-location="after-content" data-salient="Global Section „GS-Kvietimas“ → Location: After Page/Post Content (display conditions: all pages except Kontaktai, Privatumo politika and the services — they end with GS-Užklausa)">
+  <div class="wpb_row sgp-dark" data-type="full_width_background" data-text-color="light" data-parallax-speed="medium" data-bg-animation="zoom-out-slow" style="--bg:#0B0E10" data-salient="Row → Full Width Background · Background Image 5919143 · Parallax Background Media On Scroll: Medium (0.40) · Background Layer Animation: Zoom Out Slowly (8 s) · Color Overlay #0B0E10 Heavy (0.8) · Text Color: Light · Padding 0 (the Column carries it)">
+    <div class="row-bg-wrap" aria-hidden="true"><div class="inner-wrap"><div class="row-bg-layer"><img class="row-bg" src="https://images.pexels.com/photos/5919143/pexels-photo-5919143.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" srcset="https://images.pexels.com/photos/5919143/pexels-photo-5919143.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=480 480w, https://images.pexels.com/photos/5919143/pexels-photo-5919143.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=760 760w, https://images.pexels.com/photos/5919143/pexels-photo-5919143.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100 1100w, https://images.pexels.com/photos/5919143/pexels-photo-5919143.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1600 1600w, https://images.pexels.com/photos/5919143/pexels-photo-5919143.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" width="1920" height="1280" alt="" loading="lazy" decoding="async" style="object-position:50% 50%"></div></div><div class="row-bg-overlay" style="--overlay:rgba(11,14,16,.8)"></div></div>
+    <div class="row_col_wrap_12">
+      <div class="wpb_column vc_col-sm-12" data-text-align="center" style="--pt:12%;--pb:12%;--pt-m:104px;--pb-m:104px" data-salient="Column 12/12 → Text Align: Center · Padding 12 % top/bottom (phones 104px) · holds the Content Trail, so the trail spans the whole call-to-action box · no Column Link (the column holds call buttons)">
+        <div class="vc_column-inner">
+          <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #EF4539">Atvykimas</span>
+          <div class="nectar-split-heading" data-text-effect="blur-bottom" data-stagger="true" data-align="center" style="--max-w:14em" data-salient="Animated Text → Text Element: H2 · Word Animations: Blur · Stagger ✓ · Max Width 14em"><h2>Norite užsakyti? Paskambinkite arba parašykite.</h2></div>
+          <div class="vc_row inner_row" style="--mt:28px" data-salient="Inner Row">
+            <div class="row_col_wrap_12_inner">
+              <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" data-justify="center" style="--gap:12px" data-salient="Inner Column → Layout: Flexbox · Horizontal · Justify Center · Gap 12px">
+                <div class="vc_column-inner">
+                  <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" href="tel:+37065053161" aria-label="Į Airiją · +370 650 53161 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Hover #F4604F · Text #0F1417"><span class="link_text"><span class="text">Į Airiją · +370 650 53161</span></span></a>
+                  <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" href="tel:+37063828919" aria-label="Į Ispaniją · +370 638 28919 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Hover #F4604F · Text #0F1417"><span class="link_text"><span class="text">Į Ispaniją · +370 638 28919</span></span></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="nectar-cta" data-style="underline" href="../kontaktai/#parasykite" data-salient="Button → Underline"><span class="link_text"><span class="text">Parašykite mums →</span></span></a>
+          <div class="nectar-content-trail" data-type="text" data-items="Airija|Ispanija|Siunta|Keleivis|Automobilis|Gyvūnas|Perkraustymas" data-colors="#EF4539/#0F1417,#F5F7F6/#0F1417,#161D21/#F2F4F3" data-frequency="85" data-duration="1.2" data-in="scale" data-out="scale" data-randomize aria-hidden="true" data-salient="Content Trail → Type: Text · Animation In: Scale · Out: Scale · Border Radius 3 · Frequency 85 · Duration 1.2 s · Random rotation ✓ · Positioning: Absolute (full size of its Column)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</main>
+<footer id="footer-outer" data-salient="Theme Options → Footer: Main Footer Area Off · Copyright Off · Footer Reveal Effect Off → Global Section at Location: Footer">
+  <div class="nectar-global-section" data-gs="GS-Poraštė" data-location="footer" data-salient="Global Section „GS-Poraštė“ → Location: Footer · no wordmark, no gradient">
+    <div class="wpb_row sgp-dark" data-type="full_width_background" data-text-color="light" style="--bg:#0B0E10;--pt:72px;--pb:28px;--pt-m:56px" data-salient="Row → BG #0B0E10 · Text Color: Light · Padding 72px / 28px · Extra Class sgp-dark">
+      <div class="row_col_wrap_12" style="--row-gap:40px">
+        <div class="wpb_column vc_col-sm-3" data-t-w="6" data-el-space="none" data-salient="Column ¼ → Image (logo) + Responsive Text">
+          <div class="vc_column-inner">
+            <a href="../" aria-label="SGP pervežimai – pradžia" style="display:inline-block;width:fit-content"><img src="../assets/img/logo_light.svg" alt="" width="128" height="52" loading="lazy" style="height:36px;width:auto"></a>
+            <p class="nectar-responsive-text" data-inherit="h4" style="--mt:18px" data-salient="Responsive Text → Font Style: H4">Saugiai, greitai, patikimai.</p>
+            <p class="nectar-responsive-text" data-inherit="small" style="--fg:#9AA6AB;--max-w:30ch;--mt:10px" data-salient="Responsive Text → small">Visos pervežimo paslaugos: Lietuva – Airija – Lietuva, Lietuva – Ispanija – Lietuva.</p>
+          </div>
+        </div>
+        <div class="wpb_column vc_col-sm-3" data-t-w="6" data-el-space="10px" data-salient="Column ¼ → Label + Link list (Text Reveal Wave)">
+          <nav class="vc_column-inner" aria-label="Puslapiai">
+            <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Puslapiai</span>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../apie-imone/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Apie mus</span></span></a>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Paslaugos</span></span></a>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimu-grafikas/" aria-current="page" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Grafikas</span></span></a>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../siuntos-sekimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Siuntos sekimas</span></span></a>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../taisykles/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Taisyklės</span></span></a>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../kontaktai/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Kontaktai</span></span></a>
+          </nav>
+        </div>
+        <div class="wpb_column vc_col-sm-3" data-t-w="6" data-el-space="10px" data-salient="Column ¼ → Label + Link list (6 services)">
+          <nav class="vc_column-inner" aria-label="Paslaugos">
+            <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Paslaugos</span>
+<a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Keleivių pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Siuntų pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/automobiliu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Automobilių pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Krovinių pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Gyvūnų pervežimas</span></span></a><a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/" data-salient="Button → Type: Text Reveal Wave · Display: Block"><span class="link_text"><span class="text">Perkraustymo paslaugos</span></span></a>
+            <a class="nectar-cta" data-style="underline" href="../pervezimo-paslaugos/tarptautiniai-pervezimai/" style="--mt:14px" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Visos paslaugos →</span></span></a>
+          </nav>
+        </div>
+        <div class="wpb_column vc_col-sm-3" data-t-w="6" data-el-space="10px" data-salient="Column ¼ → Label + phones (Link list) + e-mail Link">
+          <div class="vc_column-inner">
+            <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Į Airiją</span>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="tel:+37065053161" aria-label="+370 650 53161 – pervežimai į Airiją" data-salient="Button → Type: Text Reveal Wave · Display: Block · Link: tel:+37065053161"><span class="link_text"><span class="text">+370 650 53161</span></span></a>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="tel:+353864503104" aria-label="IE +353 86 450 3104 – pervežimai į Airiją" data-salient="Button → Type: Text Reveal Wave · Display: Block · Link: tel:+353864503104"><span class="link_text"><span class="text">IE +353 86 450 3104</span></span></a>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="tel:+447566878681" aria-label="JK +44 7566 878681 – pervežimai į Airiją" data-salient="Button → Type: Text Reveal Wave · Display: Block · Link: tel:+447566878681"><span class="link_text"><span class="text">JK +44 7566 878681</span></span></a>
+            <span class="nectar-badge" data-badge-style="line" style="--mt:22px" data-salient="Badge → Minimal Line · Label">Į Ispaniją</span>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="tel:+37063828919" aria-label="+370 638 28919 – pervežimai į Ispaniją" data-salient="Button → Type: Text Reveal Wave · Display: Block · Link: tel:+37063828919"><span class="link_text"><span class="text">+370 638 28919</span></span></a>
+            <a class="nectar-cta" data-style="text-reveal-wave" data-display="block" href="tel:+34602547929" aria-label="ES +34 602 547 929 – pervežimai į Ispaniją" data-salient="Button → Type: Text Reveal Wave · Display: Block · Link: tel:+34602547929"><span class="link_text"><span class="text">ES +34 602 547 929</span></span></a>
+            <a class="nectar-cta" data-style="underline" href="mailto:saugiai.greitai.patikimai@gmail.com" style="--mt:22px" data-salient="Button → Type: Underline · Link: mailto"><span class="link_text"><span class="text">saugiai.greitai.patikimai@gmail.com</span></span></a>
+          </div>
+        </div>
+        <div class="wpb_column vc_col-sm-12" data-salient="Column → Divider (Full Width, 1px, Animate Line)">
+          <div class="vc_column-inner">
+            <div class="divider-wrap" data-line-type="full-width" data-animate style="--h:1px;--line-color:rgba(242,244,243,.12)" data-salient="Divider → Line Type: Full Width · Thickness 1px · rgba(242,244,243,.12) · Animate Line ✓"><span class="divider-border"></span></div>
+          </div>
+        </div>
+        <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" data-justify="space-between" style="--gap:10px 28px;--mt:-16px;--pr:72px;--pr-m:0px" data-salient="Column → Layout: Flexbox · Horizontal · Space Between · Padding right 72px (desktop; clears the Back To Top button) / 0 on phones">
+          <div class="vc_column-inner">
+            <p class="nectar-responsive-text" data-inherit="small" style="--fg:#9AA6AB" data-salient="Responsive Text → Inherit Font From: Small Text">© 2026 SGP pervežimai. Visos teisės saugomos.</p>
+            <a class="nectar-cta" data-style="underline" href="../privatumo-politika/" style="--fs:15px" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Privatumo politika</span></span></a>
+            <div class="nectar-cta sgp-motion-toggle" data-style="basic" style="--btn-bg:rgba(242,244,243,.1);--btn-bg-h:rgba(242,244,243,.2);--btn-fg:#F2F4F3" data-salient="Button → Type: Basic · BG rgba(242,244,243,.1) → hover .2 · Extra Class sgp-motion-toggle (on the div.nectar-cta wrapper; J-2 sets role/aria-pressed on its a.link_text) — site-wide pause for the ticker, Scrolling Text, videos and Content Trail (WCAG 2.2.2)"><span class="link_wrap"><a class="link_text" href="#"><span class="text">Sustabdyti judesį</span></a></span></div>
+            <p class="demo-note">Demo · <a href="../v1/">ankstesnė versija (v1)</a> · nuotraukos ir video — <a href="https://www.pexels.com/" rel="noopener">Pexels</a></p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </footer>
 
-<nav class="sgp-callbar" aria-label="Greitas skambutis" data-salient="GS-CallBar · Row → Sticky Row: Bottom of Window · visible tablet + phone (&lt;1000px) · both directions equal weight">
-  <a href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg><span><small>Į Airiją</small>+370 650 53161</span></a>
-  <a href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg><span><small>Į Ispaniją</small>+370 638 28919</span></a>
-  <a href="../pervezimu-grafikas/" aria-label="Pervežimų grafikas"><svg class="sgp-i" aria-hidden="true"><use href="#i-cal"/></svg></a>
-</nav>
-
-<div class="sgp-cookie" id="sgp-cookie" role="region" aria-label="Slapukai" hidden data-salient="Consent plugin (Complianz / CookieYes) restyled · bottom-left card · demo: remembered in localStorage">
-  <p class="sgp-cookie__t">Informuojame, kad šioje svetainėje naudojami slapukai (angl. cookies)</p>
-  <p class="sgp-cookie__x">Būtini slapukai reikalingi svetainei veikti. Analitikos slapukus naudosime tik gavę Jūsų sutikimą.</p>
-  <div class="sgp-cookie__b">
-    <button class="sgp-btn sgp-btn--signal sgp-btn--sm" type="button" data-cookie="yes"><span class="sgp-btn__l">Sutinku</span></button>
-    <button class="sgp-btn sgp-btn--line sgp-btn--sm" type="button" data-cookie="no"><span class="sgp-btn__l">Atmesti</span></button>
-    <a class="sgp-lnk" href="../privatumo-politika/">Plačiau</a>
+</div>
+<div class="nectar-global-section" data-gs="GS-Skambučių juosta" data-location="after-content" data-salient="Global Section „GS-Skambučių juosta“ · last element of every page">
+  <div class="wpb_row sgp-callbar" data-type="full_width_content" data-hide="desktop" data-text-color="light" data-salient="Row → Sticky Row ✗ (a Sticky Row cannot pin inside a Global Section — its sticky box is only as tall as the bar) · Device Visibility: Desktop hidden · Extra Class sgp-callbar · pinned to the bottom of the window by sgp-custom.css C-4">
+    <div class="row_col_wrap_12">
+      <div class="wpb_column vc_col-sm-12">
+        <div class="vc_column-inner">
+          <div class="vc_row inner_row" data-backdrop-blur="16" style="--bg:rgba(11,14,16,.86);--pt:10px;--pb:10px;--pl:12px;--pr:12px" data-salient="Inner Row → Backdrop Filter: Blur 16 · BG rgba(11,14,16,.86) · 2 Columns">
+            <div class="row_col_wrap_12_inner" style="--col-gap:8px;--row-gap:8px">
+              <div class="wpb_column vc_col-sm-6" data-t-w="6" data-m-w="6"><div class="vc_column-inner">
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37065053161" aria-label="Į Airiją – skambinti +370 650 53161" data-salient="Button → Arrow Circle Animation · BG Accent · Hover #F4604F · Text #0F1417 · Alignment: Stretch"><span class="link_text"><span class="text">Į Airiją</span></span></a>
+              </div></div>
+              <div class="wpb_column vc_col-sm-6" data-t-w="6" data-m-w="6"><div class="vc_column-inner">
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37063828919" aria-label="Į Ispaniją – skambinti +370 638 28919" data-salient="Button → Arrow Circle Animation · BG Accent · Hover #F4604F · Text #0F1417 · Alignment: Stretch"><span class="link_text"><span class="text">Į Ispaniją</span></span></a>
+              </div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
-<button class="sgp-tagbtn" id="sgp-tagbtn" type="button" aria-pressed="false" title="Rodyti Salient elementų pavadinimus (kūrėjui)"><svg class="sgp-i" aria-hidden="true"><use href="#i-tag"/></svg><span class="sgp-tagbtn__l">Salient žymės</span></button>
+<a id="to-top" href="#main" aria-label="Į puslapio viršų" data-salient="Theme Options → General Settings → Functionality → Back To Top Button ✓ · Keep On Mobile ✗ (appears after 350 px)"><svg class="nectar-inline-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 20V4.5M6 10.5l6-6 6 6"/></svg></a>
+<div class="cmplz-cookiebanner" role="region" aria-label="Slapukai" hidden data-salient="Complianz → cookie banner (plugin) · restyled in sgp-custom.css C-9 · demo remembers the choice in localStorage">
+  <p class="cmplz-title">Slapukai</p>
+  <p class="cmplz-message">Informuojame, kad šioje svetainėje naudojami slapukai (angl. cookies). Būtini slapukai reikalingi svetainei veikti. Analitikos slapukus naudosime tik gavę Jūsų sutikimą.</p>
+  <div class="cmplz-buttons">
+    <button class="cmplz-btn cmplz-accept" type="button" data-cookie="yes">Sutinku</button>
+    <button class="cmplz-btn cmplz-deny" type="button" data-cookie="no">Atmesti</button>
+    <a class="cmplz-link" href="../privatumo-politika/">Plačiau</a>
+  </div>
+</div>
 
-<script>window.SGP_SCHEDULE={"render_today":"2026-09-23","updated":"2026-09-23","note":"Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu.","routes":[{"key":"lt-ie","from":"Lietuva","to":"Airija","from_gen":"Lietuvos","to_acc":"Airiją","code":"LT → IE","dir":"out","tel":"+37065053161","tel_label":"+370 650 53161","dates":["2026-10-09","2026-10-23"]},{"key":"lt-es","from":"Lietuva","to":"Ispanija","from_gen":"Lietuvos","to_acc":"Ispaniją","code":"LT → ES","dir":"out","tel":"+37063828919","tel_label":"+370 638 28919","dates":["2026-10-09","2026-10-23"]},{"key":"ie-lt","from":"Airija","to":"Lietuva","from_gen":"Airijos","to_acc":"Airiją","code":"IE → LT","dir":"in","tel":"+353864503104","tel_label":"+353 86 450 3104","dates":["2026-09-28","2026-10-15","2026-10-28"]},{"key":"es-lt","from":"Ispanija","to":"Lietuva","from_gen":"Ispanijos","to_acc":"Ispaniją","code":"ES → LT","dir":"in","tel":"+34602547929","tel_label":"+34 602 547 929","dates":["2026-09-27","2026-10-14","2026-10-28"]}]};</script>
+<button class="sgp-tagbtn" id="sgp-tagbtn" type="button" aria-pressed="false" title="Rodyti Salient elementų pavadinimus (kūrėjui)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 3.5h8l9 9-8 8-9-9zM8.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg><span class="sgp-tagbtn__l">Salient žymės</span></button>
+
+<script>/* demo stand-in for the values Salient localises from Theme Options (nectarOptions) */
+window.nectarOptions={smooth_scroll:'true',smooth_scroll_strength:'60',column_animation_easing:'easeOutExpo',column_animation_timing:'1300',column_animation_mobile:'enable',disable_parallax_mobile:'1',disable_video_mobile:'1',page_transition:'view-transitions',vt_effect:'vertical-reveal',mobile_breakpoint:'1000'};</script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
 
-<script src="../assets/js/sgp.js?v=702889e0" defer></script>
-<script src="../assets/js/pages/grafikas.js?v=a5eb4fb8" defer></script>
+<script src="../assets/js/emul.js?v=ae49aca3" defer></script>
+<script src="../assets/js/demo.js?v=e66e3543" defer></script>
 
 </body>
 </html>

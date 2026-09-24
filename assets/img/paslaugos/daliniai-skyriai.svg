@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" width="1200" height="520" role="img" aria-labelledby="t">
+  <title id="t">Dalinis krovinys: mikroautobuso krovinių skyrius padalintas į tris dalis, viduryje – Jūsų krovinys</title>
+  <!-- SGP v2 static illustration (service-template, plan §3.8 X4): ink lines, one red surface, no script -->
+  <defs>
+    <pattern id="h" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="14" stroke="#C4301E" stroke-width="3"/>
+    </pattern>
+  </defs>
+  <g fill="none" stroke="#1C1D1D" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M40 470H1160" stroke="rgba(28,29,29,.26)" stroke-width="2"/>
+    <path d="M40 470h120M420 470h160M760 470h120" stroke="#1C1D1D" stroke-width="2" stroke-dasharray="40 22"/>
+    <rect x="80" y="80" width="780" height="300" rx="4" stroke-width="4" fill="#FFFFFF"/>
+    <path d="M860 140H990L1080 258Q1100 272 1100 300V380H860Z" stroke-width="4" fill="#FFFFFF"/>
+    <path d="M884 164H976L1044 252H884Z" stroke-width="3" fill="#EAEEED"/>
+    <path d="M1100 340H1080" stroke-width="3"/>
+  </g>
+  <!-- bay 1: other clients' boxes -->
+  <g fill="#F5F7F6" stroke="#1C1D1D" stroke-width="3" stroke-linejoin="round">
+    <rect x="104" y="104" width="236" height="252" rx="2" fill="none" stroke="rgba(28,29,29,.4)" stroke-dasharray="10 8"/>
+    <rect x="124" y="252" width="104" height="96"/>
+    <rect x="236" y="276" width="88" height="72"/>
+    <rect x="140" y="170" width="76" height="76"/>
+  </g>
+  <!-- bay 2: YOUR cargo (the only red surface) -->
+  <rect x="352" y="104" width="236" height="252" rx="2" fill="#EF4539"/>
+  <rect x="352" y="104" width="236" height="252" rx="2" fill="url(#h)" opacity=".35"/>
+  <rect x="352" y="104" width="236" height="252" rx="2" fill="none" stroke="#1C1D1D" stroke-width="3"/>
+  <!-- bay 3: other clients' boxes -->
+  <g fill="#F5F7F6" stroke="#1C1D1D" stroke-width="3" stroke-linejoin="round">
+    <rect x="600" y="104" width="236" height="252" rx="2" fill="none" stroke="rgba(28,29,29,.4)" stroke-dasharray="10 8"/>
+    <rect x="616" y="228" width="124" height="120"/>
+    <rect x="748" y="288" width="76" height="60"/>
+    <rect x="760" y="196" width="60" height="84"/>
+  </g>
+  <!-- wheels -->
+  <g stroke="#1C1D1D" stroke-width="4">
+    <circle cx="250" cy="400" r="50" fill="#F5F7F6"/>
+    <circle cx="250" cy="400" r="16" fill="#FFFFFF"/>
+    <circle cx="960" cy="400" r="50" fill="#F5F7F6"/>
+    <circle cx="960" cy="400" r="16" fill="#FFFFFF"/>
+  </g>
+</svg>

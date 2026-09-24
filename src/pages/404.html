@@ -3,47 +3,44 @@ title: Maršrutas nerastas | sgp-pervezimai.lt
 description: Šio puslapio nėra – bet mūsų mikroautobusai kursuoja toliau.
 out: 404.html
 root: /sgp-pervezimai/
+kit: salient
 body_class: page-404
 nav: none
 og_image: 160483
 hero_media: 160483
-arrival: no
-css: pages/404.css
-js: pages/404.js
-salient: Salient 404 via Global Section (§6.11) · hero → GS-Board → GS-ServiceList · links are absolute (/sgp-pervezimai/) because GitHub Pages serves this file at any depth
+salient: Salient 404 (plan §3.12 E1–E4) · Global Section „404 Content“ → Location: 404 Content (Section 100svh · Parallax Fade · Animated Text Blur · Button paper + glass + 2 × tel: Link) → outline Scrolling Text (route countries) → GS-Paslaugos in an A row · links are absolute (/sgp-pervezimai/) because GitHub Pages serves this file at any depth
 ---
-<!-- ============ WRONG TURN — full-height hero ============ -->
-<section class="sgp-phero sgp-e404 e4-hero on-dark" data-hero data-theme="dark" data-salient="Row Full Height · BG image 160483 graded + Parallax BG: Subtle + Slight Zoom Out Reveal · overlay 80 % · the rail comes down, breaks into a dashed segment and ends in a neutral ring (custom CSS) · board tiles „4 0 4“ (.sgp-flap, desktop) · H1 Animated Text → Word Reveal">
-  <div class="sgp-bgmedia" data-parallax="0.12" aria-hidden="true">{{img:160483|w=1920|sizes=100vw|eager|decorative|pos=55% 55%}}</div>
-  <span class="e4-lane" aria-hidden="true"><i class="e4-lane__solid"></i><i class="e4-lane__dash"></i></span>
-  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
-    <div class="sgp-phero__copy">
-      <div class="e4-board" data-salient="Raw HTML · departure-board tiles „4 0 4“ (.sgp-flap: animates once on desktop, final text under reduced motion)">
-        <p class="e4-route" aria-hidden="true"><span class="sgp-ring sgp-ring--fill"></span><span class="e4-route__solid"></span><span class="e4-route__dash"></span><span class="sgp-ring e4-end"></span></p>
-        <p class="sgp-e404__code e4-code" aria-hidden="true"><span class="sgp-flap" data-flap>4 0 4</span></p>
-      </div>
-      <h1 class="sgp-phero__h1" data-split>Maršrutas nerastas</h1>
-      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">Šio puslapio nėra – bet mūsų mikroautobusai kursuoja toliau.</p>
-      <div class="sgp-btns e4-btns" data-reveal style="--dl:.4s" data-salient="Button (Signal, Arrow Animation) + Button (Line)">
-        <a class="sgp-btn sgp-btn--signal" href="{{url:pradzia}}"><span class="sgp-btn__l">Į pradžią</span><span class="sgp-btn__a"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-        <a class="sgp-btn sgp-btn--line" href="{{url:grafikas}}"><span class="sgp-btn__l"><svg class="sgp-i" aria-hidden="true"><use href="#i-cal"/></svg>Pervežimų grafikas</span></a>
+<!-- ================= E1–E3 · Global Section „404 Content“ (Location: 404 Content) ================= -->
+{{partial:gs-404}}
+
+<!-- ================= E4a · „…kursuoja toliau“: outline Scrolling Text of the route countries (A) ================= -->
+<div class="wpb_row sgp-dark" data-type="full_width_content" data-text-color="light" style="--bg:#0F1417;--pt:64px;--pb:8px;--pt-m:48px;--pb-m:0px" data-salient="Row → Type: Full Width Content · BG #0F1417 · Text Color: Light · Padding 64px / 8px (phone 48px / 0) · Extra Class sgp-dark · Scrolling Text">
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-12" data-salient="Column 12/12">
+      <div class="vc_column-inner">
+        <div class="nectar-scrolling-text" data-s-speed="slower" data-repeat="3" data-divider="✦" data-divider-size="half" data-mask-edges data-move-on-scroll data-outline="thin" data-outline-divider data-spin-divider style="--fs:8vw;--fs-m:17vw;--space:.35em;--divider-color:#EF4539;--outline-color:#F2F4F3" data-salient="Scrolling Text → Scrolling Speed: Slowest (45 s) · Number of Text Repeats 3 · Italic Style: Text Outline · Outline Thickness: Thin · Outline Applies To: Text Content and Custom Divider · Text Repeat Divider: Custom Symbol „✦“ · Divider Size ½ · Divider Color Accent · Spin Divider On Scroll ✓ · Move on Scroll ✓ · Mask Edges ✓ · Custom Font Size 8vw (mobile 17vw) · Text Color #F2F4F3 (aria-label = plain list)">
+          <p class="nectar-responsive-text" data-inherit="h2" aria-label="Lietuva, Lenkija, Vokietija, Belgija, Prancūzija, Ispanija, Airija" data-salient="Scrolling Text content">Lietuva ✦ Lenkija ✦ Vokietija ✦ Belgija ✦ Prancūzija ✦ Ispanija ✦ Airija</p>
+        </div>
       </div>
     </div>
-    {{partial:phero-calls}}
   </div>
-</section>
+</div>
 
-<!-- ============ GS-Board — the buses keep running ============ -->
-{{partial:board}}
-
-<!-- ============ GS-ServiceList (compact) ============ -->
-<section class="sgp-sec sgp-sec--tight on-dark e4-list" data-theme="dark" data-salient="GS-ServiceList (compact) · 11 services as a line list, 2 columns ≥691 px">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp sgp-e404__wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">11</span><span class="sgp-mono">Paslaugos</span><span class="sgp-wp__rule"></span></div>
-    <div class="e4-list__head">
-      <h2 class="sgp-h3" data-split>Visos pervežimo paslaugos</h2>
-      <a class="sgp-lnk" href="{{url:paslaugos}}">Visos paslaugos<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+<!-- ================= E4 · Visos paslaugos (A): heading + GS-Paslaugos (Link rows ×11) ================= -->
+<div class="wpb_row sgp-dark" id="paslaugos" data-type="full_width_background" data-text-color="light" data-padding="chapter" style="--bg:#0F1417;--pt:5%;--pt-m:56px" data-salient="Row → Chapter row A · BG #0F1417 · Text Color: Light · Padding 5 % / 8 % (phones 56px / 80px) · Row ID paslaugos · Extra Class sgp-dark">
+  <div class="row_col_wrap_12" style="--row-gap:40px">
+    <div class="wpb_column vc_col-sm-4" data-sticky="top" data-t-w="12" data-el-space="10px" data-salient="Column 4/12 → Sticky Content: CSS Powered · Top · Column Element Spacing 10px · Label + Animated Text H2 + Road line + Link">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #EF4539">Paslaugos · 11</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--max-w:9em;--mt:14px" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓ · Max Width 9em"><h2>Visos pervežimo paslaugos</h2></div>
+        <div class="divider-wrap" data-line-type="small" data-animate style="--line-w:96px;--thickness:2px;--h:22px" data-salient="Divider → Small Line · 96px · 2px · Accent · Animate Line ✓ (Road line)"><span class="divider-border"></span></div>
+        <a class="nectar-cta" data-style="underline" href="{{url:paslaugos}}" style="--mt:10px" data-salient="Button → Type: Underline (Link)"><span class="link_text"><span class="text">Visos paslaugos →</span></span></a>
+      </div>
     </div>
-    {{paslaugos:list}}
+    <div class="wpb_column vc_col-sm-8" data-t-w="12" data-animation="slight-fade-in-from-bottom" data-delay="120" data-salient="Column 8/12 → Animation: Slight Fade In From Bottom · Delay 120 · Global Section element „GS-Paslaugos“">
+      <div class="vc_column-inner">
+{{partial:gs-paslaugos|tone=A}}
+      </div>
+    </div>
   </div>
-</section>
+</div>

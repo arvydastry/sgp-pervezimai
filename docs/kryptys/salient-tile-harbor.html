@@ -1,0 +1,966 @@
+<!doctype html>
+<html lang="lt">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SGP · Salient stiliaus plytelė</title>
+<meta name="description" content="SGP pervežimai: nauja kryptis pagal Salient 18.2.1 Harbor demo (+ Architect vidiniams puslapiams). Stiliaus plytelė patvirtinimui.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="icon" href="../../assets/img/favicon.svg" type="image/svg+xml">
+<style>
+/* =====================================================================
+   SGP · Salient 18.2.1 style tile — „Harbor in SGP colours“ (+ Architect inner pages)
+   Our own CSS that reproduces Salient's element behaviour (values from the 18.2.1 theme,
+   see docs/salient-18-2-1-parinktys.md §3). No theme code is copied.
+   Classes nx-* = the "Salient emulation kit" the shared team ports to assets/css.
+   ===================================================================== */
+:root{
+  --nectar-accent-color:#1c1d1d; --nectar-extra-color-1:#ef4539; --nectar-extra-color-2:#c4301e; --nectar-extra-color-3:#f1efed;
+  --sgp-ink:#1c1d1d; --sgp-ink-2:#5b5e5f; --sgp-red:#ef4539; --sgp-red-ink:#c4301e; --sgp-warm:#f1efed;
+  --sgp-line:rgba(0,0,0,.12); --sgp-line-2:#00000033; --sgp-line-on-photo:#FFFFFF29; --sgp-glass:#0000006E; --sgp-glass-light:#FFFFFF1F;
+  --sgp-font:"Inter Tight",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --sgp-pad:40px; --sgp-container:1600px; --sgp-header-h:80px;
+  --r-img:10px; --r-card:15px; --r-badge:20px; --r-pill:100px;
+  --sh-large:0 40px 100px rgba(0,0,0,.15),0 25px 80px rgba(0,0,0,.1);
+  --nectar-cubic-bezier-out:cubic-bezier(.3,1,.3,1); --nectar-cubic-bezier-in-out:cubic-bezier(.76,0,.24,1);
+  --e-entrance:cubic-bezier(.215,.61,.355,1); --d-entrance:1300ms;
+  --e-mask:cubic-bezier(.33,1,.68,1); --e-text:cubic-bezier(.25,1,.5,1); --e-btn:cubic-bezier(.25,1,.33,1);
+  --e-arrow:cubic-bezier(.12,.75,.4,1); --e-underline:cubic-bezier(.23,.46,.4,1); --e-zoom:cubic-bezier(.05,.2,.1,1);
+  --e-card:cubic-bezier(.2,.75,.5,1); --e-hli:cubic-bezier(.2,0,.15,1); --e-highlight:cubic-bezier(.15,.75,.4,1);
+}
+@media (max-width:999px){:root{--sgp-pad:6vw;--sgp-header-h:72px}}
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:clamp(16px,calc(1vw + .1rem),20px);-webkit-text-size-adjust:100%;hyphens:manual;scroll-padding-top:90px}
+@media (max-width:999px){html{font-size:16px}}
+body{margin:0;background:#fff;color:var(--sgp-ink);font-family:var(--sgp-font);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:clip}
+@media (max-width:690px){body{font-size:1rem}}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+p,ul,ol,figure{margin:0}
+ul{padding:0;list-style:none}
+button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer}
+h1,h2,h3,h4,h5,h6{margin:0;font-weight:500;letter-spacing:-.02em;text-wrap:balance}
+h1,.h1{font-size:4rem;line-height:1.1}
+h2,.h2{font-size:2.7rem;line-height:1.2}
+h3,.h3{font-size:2rem;line-height:1.25}
+h4,.h4{font-size:1.4rem;line-height:1.3;letter-spacing:-.01em}
+h5,.h5{font-size:1.25rem;line-height:1.45;font-weight:400;letter-spacing:-.005em}
+h6,.h6{font-size:1rem;line-height:1.4;letter-spacing:0}
+/* Custom Responsive Headings: small desktop / tablet / phone */
+@media (max-width:1299px) and (min-width:1000px){h1,.h1{font-size:3rem}h2,.h2{font-size:2.43rem}h3,.h3{font-size:1.8rem}}
+@media (max-width:999px){h1,.h1{font-size:2.8rem}h2,.h2{font-size:2.16rem}h3,.h3{font-size:1.7rem}h4,.h4{font-size:1.26rem}}
+@media (max-width:690px){h1,.h1{font-size:2.4rem}h2,.h2{font-size:1.89rem}h3,.h3{font-size:1.6rem}h4,.h4{font-size:1.19rem}h5,.h5{font-size:1.15rem}}
+.nx-num{font-variant-numeric:tabular-nums}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.nx-skip{position:fixed;left:12px;top:-60px;z-index:200;background:#1c1d1d;color:#fff;padding:10px 16px;border-radius:100px;text-decoration:none}
+.nx-skip:focus{top:12px}
+:focus-visible{outline:2px solid #1c1d1d;outline-offset:3px}
+.nx-dark :focus-visible,.nx-hero :focus-visible,.nx-ocm :focus-visible{outline-color:#fff}
+
+/* ---------- Row / Section / grid (WPBakery rows; % padding = % of row width) ---------- */
+.nx-row{position:relative;padding:0 var(--sgp-pad)}
+.nx-row--pad{padding-top:10%;padding-bottom:5%}
+.nx-row--pad-sm{padding-top:5%;padding-bottom:5%}
+.nx-row--flush{padding-left:5px;padding-right:5px}
+@media (max-width:999px){.nx-row--pad{padding-top:15%;padding-bottom:10%}.nx-row--pad-sm{padding-top:10%;padding-bottom:10%}}
+.nx-wrap{max-width:var(--sgp-container);margin:0 auto}
+.nx-bg-warm{background:var(--sgp-warm)}
+.nx-bg-ink{background:#1c1d1d;color:#fff}
+.nx-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:30px;row-gap:30px}
+.c-2{grid-column:span 2}.c-3{grid-column:span 3}.c-4{grid-column:span 4}.c-5{grid-column:span 5}.c-6{grid-column:span 6}
+.c-7{grid-column:span 7}.c-8{grid-column:span 8}.c-12{grid-column:span 12}
+@media (max-width:999px){.t-6{grid-column:span 6}.t-12{grid-column:span 12}.t-hide{display:none}}
+@media (max-width:690px){.nx-grid>*{grid-column:span 12}.p-hide{display:none}}
+.nx-stack{display:flex;flex-direction:column;gap:var(--gap,20px);align-items:flex-start}
+.nx-sticky{position:sticky;top:calc(var(--sgp-header-h) + 30px);align-self:start}
+@media (max-width:999px){.nx-sticky{position:static}}
+
+/* ---------- Typography blocks ---------- */
+.nx-label{font-size:1rem;line-height:1.4;color:inherit}
+.nx-statement{font-size:2.7rem;line-height:1.2;font-weight:500;letter-spacing:-.02em;text-indent:25vw}
+@media (max-width:1299px){.nx-statement{font-size:2.3rem}}
+@media (max-width:999px){.nx-statement{font-size:2rem;text-indent:12vw}}
+@media (max-width:690px){.nx-statement{font-size:1.6rem;text-indent:0}}
+.nx-intro{font-size:1.25rem;line-height:1.45;max-width:38ch}
+.nx-muted{color:var(--sgp-ink-2)}
+.nx-dark .nx-muted,.nx-bg-ink .nx-muted{color:rgba(255,255,255,.72)}
+
+/* ---------- Scrolling Text (GS-Išvykimai ticker + outline marquees) ---------- */
+.nx-topbar{padding:5px;transition:max-height .45s var(--e-btn),opacity .3s,padding .45s var(--e-btn);max-height:70px;overflow:hidden}
+.nx-ticker{display:block;background:var(--sgp-red);color:#000;border-radius:100px;padding:15px 0;text-decoration:none}
+.nx-ticker:hover .nx-marquee__group span:not(.nx-div){text-decoration:underline;text-underline-offset:3px}
+.nx-marquee{overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%);mask-image:linear-gradient(to right,transparent 0,#000 10%,#000 90%,transparent 100%)}
+.nx-marquee__track{display:flex;width:max-content;animation:nx-marquee var(--loop,14s) linear infinite}
+.nx-marquee__group{display:flex;align-items:center;gap:2em;padding-right:2em;white-space:nowrap}
+.nx-ticker .nx-marquee__group{font-size:.9rem;line-height:1.1;font-weight:500}
+.nx-div{display:inline-block}
+@keyframes nx-marquee{to{transform:translateX(-50%)}}
+@media (max-width:690px){.nx-ticker{padding:10px 0}.nx-ticker .nx-marquee__group{font-size:15px}}
+.nx-outline{font-size:4vw;line-height:1.1;font-weight:500;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:1px #1c1d1d}
+.nx-outline .nx-div{color:#1c1d1d;-webkit-text-stroke:0;font-size:.6em}
+@media (max-width:690px){.nx-outline{font-size:11vw}}
+
+/* ---------- Header (Default Layout, full width, Text Reveal hover) ---------- */
+.nx-hdr{position:fixed;inset:0 0 auto;z-index:60;color:#fff;transition:background-color .35s ease,color .35s ease}
+.nx-hdr__bar{display:flex;align-items:center;justify-content:space-between;gap:24px;height:var(--sgp-header-h);padding:0 var(--sgp-pad)}
+.nx-logo{display:block;flex:none}
+.nx-logo img{height:36px;width:auto}
+.nx-logo .is-dark{display:none}
+.nx-hdr.is-solid{color:#1c1d1d;background:rgba(255,255,255,.92);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.nx-hdr.is-solid .nx-topbar{max-height:0;opacity:0;padding-top:0;padding-bottom:0}
+.nx-hdr.is-solid .nx-logo .is-light{display:none}
+.nx-hdr.is-solid .nx-logo .is-dark{display:block}
+.nx-nav{position:relative;display:flex;align-items:center;gap:30px}
+.nx-nav__item{position:static;display:flex;align-items:center;height:var(--sgp-header-h)}
+.nx-nav__link{font-size:.95rem;font-weight:500;text-decoration:none;display:flex;align-items:center;gap:6px}
+.nx-caret{width:9px;height:9px;opacity:.7}
+.nx-tr{display:inline-block;overflow:hidden;vertical-align:top;line-height:1.3}
+.nx-tr>span{display:block;position:relative;transition:transform .55s var(--e-btn)}
+.nx-tr>span::after{content:attr(data-text);position:absolute;left:0;top:100%;white-space:nowrap}
+a:hover>.nx-tr>span,a:focus-visible>.nx-tr>span,a:hover .nx-tr>span{transform:translateY(-100%)}
+.nx-callpill{display:inline-flex;align-items:center;gap:9px;background:var(--sgp-red);color:#000;border-radius:100px;padding:.62em 1.15em;font-size:.95rem;font-weight:500;text-decoration:none;transition:transform .45s var(--e-btn)}
+.nx-callpill svg{width:15px;height:15px}
+.nx-nav__item:hover .nx-callpill,.nx-callpill:focus-visible{transform:scale(1.05)}
+.nx-drop{position:absolute;top:calc(100% - 6px);right:0;min-width:540px;background:#fff;color:#1c1d1d;border-radius:15px;box-shadow:var(--sh-large);padding:32px;opacity:0;visibility:hidden;transform:translateY(14px);transition:opacity .3s ease,transform .45s var(--e-btn),visibility 0s .45s;z-index:5}
+.nx-drop--left{left:0;right:0;min-width:0}
+.nx-nav__item:hover .nx-drop,.nx-nav__item:focus-within .nx-drop{opacity:1;visibility:visible;transform:none;transition:opacity .3s ease,transform .45s var(--e-btn)}
+.nx-drop__grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.nx-drop__grid--3{grid-template-columns:repeat(3,1fr)}
+.nx-drop h6{margin-bottom:10px}
+.nx-drop .nx-linklist a{font-size:.95rem}
+.nx-menubtn{display:none;width:46px;height:46px;border-radius:50%;background:#000;color:#fff;align-items:center;justify-content:center;flex:none}
+.nx-menubtn i{display:block;width:20px;height:2px;background:currentColor;box-shadow:0 -6px 0 currentColor,0 6px 0 currentColor}
+@media (max-width:999px){.nx-nav{display:none}.nx-menubtn{display:inline-flex}.nx-logo img{height:30px}}
+
+/* ---------- Off-canvas: Slide Out From Side (black, circular button) ---------- */
+.nx-ocm{position:fixed;inset:0;z-index:80;pointer-events:none}
+.nx-ocm__scrim{position:absolute;inset:0;background:rgba(0,0,0,.5);opacity:0;transition:opacity .45s}
+.nx-ocm__panel{position:absolute;top:0;right:0;bottom:0;width:min(440px,100%);background:#000;color:#fff;padding:22px var(--sgp-pad) 40px;transform:translateX(100%);transition:transform .7s var(--nectar-cubic-bezier-out);overflow-y:auto;display:flex;flex-direction:column;gap:36px}
+.nx-ocm.is-open{pointer-events:auto}
+.nx-ocm.is-open .nx-ocm__scrim{opacity:1}
+.nx-ocm.is-open .nx-ocm__panel{transform:none}
+.nx-ocm__top{display:flex;justify-content:flex-end}
+.nx-ocm__close{width:46px;height:46px;border-radius:50%;background:#fff;color:#000;font-size:22px;line-height:1}
+.nx-ocm__menu a{display:block;font-size:1.6rem;line-height:1.45;font-weight:500;text-decoration:none;letter-spacing:-.02em}
+.nx-ocm__meta{display:flex;flex-direction:column;gap:22px;border-top:1px solid rgba(255,255,255,.18);padding-top:28px}
+</style>
+<style>
+/* ---------- Button (nectar_cta) ---------- */
+.nx-btn{display:inline-flex;align-items:center;font-size:1rem;font-weight:500;line-height:1;text-decoration:none;cursor:pointer}
+/* Arrow Circle Animation: .55s cubic-bezier(.12,.75,.4,1); circle clip 50% → 45%; arrow exits ↗, twin enters from bottom-left */
+.nx-pill{gap:30px;padding:4px 4px 4px 20px;min-height:44px;border-radius:100px;background:var(--btn-bg);color:var(--btn-fg);transition:background-color .55s var(--e-arrow),color .55s var(--e-arrow)}
+.nx-pill--dark{--btn-bg:#1c1d1d;--btn-fg:#fff;--c-bg:#fff;--c-fg:#1c1d1d}
+.nx-pill--glass{--btn-bg:#fff;--btn-fg:#000;--c-bg:#000;--c-fg:#fff;-webkit-backdrop-filter:blur(13px);backdrop-filter:blur(13px)}
+.nx-pill--red{--btn-bg:var(--sgp-red);--btn-fg:#000;--c-bg:#000;--c-fg:var(--sgp-red)}
+.nx-pill--stretch{display:flex;width:100%;justify-content:space-between}
+.nx-pill__c{position:relative;flex:none;width:max(1.4em,36px);aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--c-bg);color:var(--c-fg);clip-path:circle(50% at 50% 50%);transition:clip-path .55s var(--e-arrow),background-color .55s var(--e-arrow)}
+.nx-pill__c svg{position:absolute;top:50%;left:50%;width:50%;height:50%;transform:translate(-50%,-50%);transition:transform .55s var(--e-arrow)}
+.nx-pill__c svg+svg{top:100%;left:0}
+.nx-pill:hover .nx-pill__c,.nx-pill:focus-visible .nx-pill__c{clip-path:circle(45% at 50% 50%)}
+.nx-pill:hover .nx-pill__c svg,.nx-pill:focus-visible .nx-pill__c svg{transform:translate(50%,-150%)}
+.nx-pill small{font-weight:400;opacity:.72;margin-right:.35em}
+/* Underline (visible): 1px, .4s cubic-bezier(.23,.46,.4,1) out-right / in-left */
+.nx-ul{position:relative;padding-bottom:3px;line-height:1.3}
+.nx-ul::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:currentColor;transform-origin:left}
+.nx-ul:hover::after,.nx-ul:focus-visible::after{animation:nx-ul .8s var(--e-underline)}
+@keyframes nx-ul{0%{transform:scaleX(1);transform-origin:right}49%{transform:scaleX(0);transform-origin:right}50%{transform:scaleX(0);transform-origin:left}100%{transform:scaleX(1);transform-origin:left}}
+/* See Through (pill) */
+.nx-see{padding:.65em 1.5em;border:1px solid currentColor;border-radius:100px;transition:background-color .45s var(--e-btn),color .45s var(--e-btn),border-color .45s var(--e-btn)}
+.nx-see:hover,.nx-see:focus-visible{background:#1c1d1d;border-color:#1c1d1d;color:#fff}
+.nx-see--light:hover,.nx-see--light:focus-visible{background:#fff;border-color:#fff;color:#000}
+.nx-see--sm{padding:.4em 1em;font-size:.9rem}
+.nx-linklist{display:flex;flex-direction:column;gap:6px;align-items:flex-start}
+.nx-linklist a{text-decoration:none}
+.nx-next{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:#fff}
+.nx-next svg{width:22px;height:22px;transition:transform .55s var(--e-arrow)}
+.nx-next:hover svg{animation:nx-bounce 1s var(--e-arrow)}
+@keyframes nx-bounce{0%{transform:translateY(0)}40%{transform:translateY(8px)}100%{transform:translateY(0)}}
+
+/* ---------- Badge (nectar_badge) ---------- */
+.nx-badge{display:inline-block;padding:.5em .95em;border-radius:100px;font-size:.9rem;font-weight:500;line-height:1;background:var(--sgp-warm);color:#1c1d1d;white-space:nowrap}
+.nx-badge--glass{background:var(--sgp-glass-light);color:#fff;border-radius:20px;-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.nx-badge--red{background:var(--sgp-red);color:#000;border-radius:50px}
+
+/* ---------- Hero: Section, Parallax Fade, glass Inner Row ---------- */
+.nx-hero{position:relative;min-height:100vh;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;color:#fff;overflow:hidden;background:#0c0f14}
+.nx-hero__bg{position:absolute;inset:0;z-index:0;will-change:transform,opacity}
+.nx-hero__bg img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.nx-hero__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.18) 48%,rgba(0,0,0,0) 62%),linear-gradient(180deg,rgba(0,0,0,.38) 0%,rgba(0,0,0,0) 24%)}
+.nx-hero>*:not(.nx-hero__bg){position:relative;z-index:1}
+.nx-hero__title{padding:0 var(--sgp-pad) 10px;border-bottom:1px solid var(--sgp-line-on-photo)}
+.nx-hero__h1{font-size:9.5vw;line-height:1;font-weight:500;letter-spacing:-.035em;white-space:nowrap;margin-left:-.04em}
+.nx-hero__row{display:grid;grid-template-columns:1fr 1fr}
+.nx-hero__l{padding:40px;display:flex;justify-content:space-between;align-items:flex-start;gap:40px}
+.nx-hero__r{padding:40px;border-left:1px solid var(--sgp-line-on-photo);display:flex;justify-content:space-between;align-items:flex-start;gap:12%}
+.nx-glass{background:var(--sgp-glass);-webkit-backdrop-filter:blur(25px);backdrop-filter:blur(25px);border-radius:15px;padding:28px;display:flex;flex-direction:column;gap:22px;max-width:min(64%,470px)}
+.nx-glass .nx-stack{--gap:10px}
+.nx-pill>span:first-child{white-space:nowrap}
+@media (max-width:1299px) and (min-width:1000px){.nx-hero__l .nx-label{display:none}.nx-glass{max-width:none}}
+@media (max-width:999px){.nx-hero{min-height:calc(100vh - 64px);min-height:calc(100svh - 64px)}.nx-hero__h1{font-size:9vw}.nx-hero__row{grid-template-columns:1fr}.nx-hero__r{display:none}.nx-hero__l{padding:20px var(--sgp-pad) 28px}.nx-glass{max-width:70%}}
+@media (max-width:690px){.nx-hero__h1{font-size:12.5vw;white-space:normal;line-height:1.02}.nx-hero__l{flex-direction:column;gap:16px}.nx-glass{max-width:100%;width:100%;padding:20px}.nx-hero__l .nx-label{display:none}}
+
+/* ---------- Image (image_with_animation) ---------- */
+.nx-img{border-radius:var(--r-img);overflow:hidden}
+.nx-img img{width:100%;height:100%;object-fit:cover}
+.nx-img--15{border-radius:15px}
+.nx-zoomcrop{overflow:hidden}
+.nx-zoomcrop img{transition:transform .65s var(--e-zoom)}
+.nx-zoomcrop:hover img{transform:scale(1.13)}
+
+/* ---------- Sticky Content Sections → Horizontal Scrolling (colour cards) ---------- */
+.nx-hscroll{position:relative;padding:0 5px}
+.nx-hscroll__pin{position:sticky;top:var(--sgp-header-h);height:calc(100vh - var(--sgp-header-h));overflow:hidden}
+.nx-hscroll__track{display:flex;gap:5px;height:100%;will-change:transform}
+.nx-hcard{flex:0 0 60vw;height:100%;border-radius:15px;padding:56px;display:grid;grid-template-columns:1fr 1fr;column-gap:6vw}
+.nx-hcard--red{background:var(--sgp-red);color:#000}
+.nx-hcard--ink{background:#1c1d1d;color:#fff}
+.nx-hcard--warm{background:var(--sgp-warm);color:#1c1d1d}
+.nx-hcard__txt{display:flex;flex-direction:column;justify-content:space-between;gap:15px;min-height:0}
+.nx-hcard__no{font-size:clamp(96px,11vw,210px);line-height:.85;font-weight:500;letter-spacing:-.05em}
+.nx-hcard h3{max-width:75%}
+.nx-hcard__links{display:flex;flex-wrap:wrap;gap:6px 18px}
+.nx-hcard__links a{font-size:.95rem;text-decoration:none}
+.nx-hcard__img{border-radius:20px;background-size:cover;background-position:center;min-height:300px}
+@media (max-width:999px){.nx-hcard{flex-basis:78vw;padding:30px;column-gap:30px}}
+@media (prefers-reduced-motion:reduce) and (min-width:691px){
+  .nx-hscroll__pin{position:static;height:auto;overflow:visible}.nx-hscroll{height:auto!important}
+  .nx-hscroll__track{flex-direction:column;transform:none!important}.nx-hcard{flex:none;min-height:640px}}
+@media (max-width:690px){
+  .nx-hscroll__pin{position:static;height:auto;overflow:visible}.nx-hscroll{height:auto!important}
+  .nx-hscroll__track{flex-direction:column;transform:none!important}
+  .nx-hcard{flex:none;grid-template-columns:1fr;row-gap:24px;padding:20px 20px 24px}
+  .nx-hcard__img{order:-1;aspect-ratio:4/3;min-height:0}.nx-hcard__no{font-size:88px}.nx-hcard h3{max-width:none}}
+
+/* ---------- Stats band: Section Parallax (Subtle .20) + scroll-opacity H2 + glass badges ---------- */
+.nx-stats{position:relative;color:#fff;background:#000;overflow:hidden}
+.nx-stats__bg{position:absolute;left:0;right:0;top:-18%;bottom:-18%;will-change:transform}
+.nx-stats__bg img{width:100%;height:100%;object-fit:cover}
+.nx-stats__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.42),rgba(0,0,0,.28) 45%,rgba(0,0,0,.5))}
+.nx-stats>*:not(.nx-stats__bg){position:relative}
+.nx-stats__head{padding:5% var(--sgp-pad) 0}
+.nx-stats__head .nx-sticky-h{position:sticky;top:calc(var(--sgp-header-h) + 30px);border-bottom:1px solid #FFFFFF36;padding-bottom:30vh}
+.nx-stats__h2{font-size:max(32px,5vw);line-height:1.12;font-weight:500;letter-spacing:-.03em}
+.nx-stats__row{display:grid;grid-template-columns:repeat(4,1fr);gap:5%;padding:40px var(--sgp-pad) 56px}
+.nx-stat{display:flex;flex-direction:column;align-items:flex-start;gap:26px}
+.nx-stat__in{display:flex;gap:22px;align-items:flex-start}
+.nx-stat__n{font-size:max(40px,3vw);line-height:1;font-weight:500;letter-spacing:-.03em;white-space:nowrap}
+.nx-stat__t{font-size:clamp(16px,1.1vw,22px);line-height:1.4;max-width:280px;opacity:.9}
+@media (max-width:999px){.nx-stats__row{grid-template-columns:1fr 1fr;row-gap:40px}.nx-stats__head .nx-sticky-h{padding-bottom:20vh}.nx-stat__in{flex-direction:column;gap:10px}}
+@media (max-width:690px){.nx-stats__head .nx-sticky-h{padding-bottom:15vh}}
+</style>
+<style>
+/* ---------- GS-Maršrutai: Harbor Pricing columns ---------- */
+.nx-plans{display:grid;grid-template-columns:repeat(3,1fr)}
+.nx-plan{border:1px solid var(--sgp-line-2);border-right:0;padding:40px;display:flex;flex-direction:column;gap:20px;min-width:0}
+.nx-plan:last-child{border-right:1px solid var(--sgp-line-2)}
+.nx-plan__top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.nx-plan h3{font-size:clamp(28px,2vw,40px)}
+.nx-price{display:flex;align-items:baseline;gap:.25em;margin-top:auto;padding-top:20px}
+.nx-price b{font-size:2.7rem;font-weight:500;letter-spacing:-.03em;line-height:1}
+.nx-ful li{position:relative;padding-left:18px;margin:4px 0}
+.nx-ful li::before{content:"";position:absolute;left:2px;top:.72em;width:5px;height:5px;border-radius:50%;background:currentColor}
+.nx-ful--x li{padding-left:26px}
+.nx-cols2{columns:2;column-gap:30px}.nx-cols2 li{break-inside:avoid}
+@media (max-width:690px){.nx-cols2{columns:1}}
+.nx-ful--x li::before{content:"✕";width:auto;height:auto;background:none;top:0;left:0;font-size:.85em}
+.nx-plan hr{border:0;border-top:1px solid var(--sgp-line-2);margin:6px 0;width:100%}
+@media (max-width:999px){.nx-plans{grid-template-columns:1fr}.nx-plan{border-right:1px solid var(--sgp-line-2);border-bottom:0}.nx-plan:last-child{border-bottom:1px solid var(--sgp-line-2)}}
+@media (max-width:690px){.nx-plan{padding:24px 20px}}
+/* Image With Hotspots (exported schematic) */
+.nx-hotspots{position:relative;background:var(--sgp-warm);border-radius:15px;overflow:visible}
+.nx-hotspots svg{width:100%;height:auto}
+.nx-hs{position:absolute;transform:translate(-50%,-50%);z-index:2}
+.nx-hs__b{width:32px;height:32px;border-radius:50%;background:var(--sgp-red);color:#000;font-size:14px;font-weight:600;display:grid;place-items:center;position:relative}
+.nx-hs__b::before{content:"";position:absolute;inset:0;border-radius:50%;background:var(--sgp-red);animation:nx-pulse 2s ease-out 2;z-index:-1}
+@keyframes nx-pulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(2.2);opacity:0}}
+.nx-hs__tip{position:absolute;left:50%;bottom:calc(100% + 10px);transform:translate(-50%,6px);width:max-content;max-width:220px;background:#fff;color:#1c1d1d;border-radius:10px;padding:10px 12px;font-size:14px;line-height:1.35;box-shadow:0 12px 30px rgba(0,0,0,.14);opacity:0;visibility:hidden;transition:opacity .25s,transform .35s var(--e-btn),visibility 0s .35s;pointer-events:none}
+.nx-hs:hover .nx-hs__tip,.nx-hs:focus-within .nx-hs__tip{opacity:1;visibility:visible;transform:translate(-50%,0);transition:opacity .25s,transform .35s var(--e-btn)}
+
+/* ---------- Horizontal List Item ---------- */
+.nx-hli{position:relative;display:grid;gap:20px;padding:22px 0;text-decoration:none;color:inherit;isolation:isolate}
+.nx-hli::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--hli-line,var(--sgp-line))}
+.nx-hli--20-80{grid-template-columns:20% 1fr}.nx-hli--30-70{grid-template-columns:30% 1fr}.nx-hli--40-60{grid-template-columns:40% 1fr}
+.nx-hli--20-40-40{grid-template-columns:20% 1fr 1fr}.nx-hli--25-50-25{grid-template-columns:25% 1fr 25%}
+.nx-hli--draw::after{transform:scaleX(0);transform-origin:left;transition:transform 1.2s var(--nectar-cubic-bezier-in-out)}
+.nx-hli--draw.is-in::after{transform:scaleX(1)}
+a.nx-hli::before{content:"";position:absolute;inset:0 -12px;z-index:-1;background:var(--hli-fill,#000);transform:perspective(1000px) rotateX(90deg);transform-origin:bottom;transition:transform .4s var(--e-hli);border-radius:6px}
+a.nx-hli{transition:color .4s var(--e-hli)}
+a.nx-hli:hover,a.nx-hli:focus-visible{color:var(--hli-on,#fff)}
+a.nx-hli:hover::before,a.nx-hli:focus-visible::before{transform:perspective(1000px) rotateX(0)}
+.nx-hli--white{--hli-fill:#fff;--hli-on:#000;--hli-line:#FFFFFF29}
+.nx-hli__n{font-variant-numeric:tabular-nums}
+.nx-hli__go{justify-self:end;transition:transform .45s var(--e-btn)}
+a.nx-hli:hover .nx-hli__go{transform:translateX(4px)}
+.nx-hli p{margin:0}
+.nx-hli strong{font-weight:600}
+@media (max-width:690px){.nx-hli--20-40-40{grid-template-columns:3.2em 1fr}.nx-hli--20-40-40>:nth-child(3){grid-column:2}.nx-hli--25-50-25{grid-template-columns:1fr auto}.nx-hli--25-50-25>:nth-child(2){grid-column:1/-1;order:3}.nx-hli--30-70,.nx-hli--40-60{grid-template-columns:1fr;gap:4px}.nx-hli--20-80{grid-template-columns:3.2em 1fr}}
+
+/* ---------- Toggle Panels → Animated Circle (.85s cubic-bezier(.76,0,.24,1)) ---------- */
+.nx-toggle{border-bottom:1px solid var(--sgp-line)}
+.nx-toggle__btn{display:flex;align-items:center;justify-content:space-between;gap:25px;width:100%;padding:25px 0;text-align:left;font-size:1.4rem;line-height:1.3;font-weight:500;letter-spacing:-.01em}
+.nx-toggle__ic{flex:none;width:40px;height:40px}
+.nx-toggle__ic circle{fill:none;stroke:currentColor;stroke-width:1}
+.nx-toggle__ic .bg{opacity:.25}
+.nx-toggle__ic .fg{stroke-dasharray:115;stroke-dashoffset:115;transform:rotate(-90deg);transform-origin:50% 50%;transition:stroke-dashoffset .85s var(--nectar-cubic-bezier-in-out)}
+.nx-toggle__ic line{stroke:currentColor;stroke-width:1;stroke-linecap:round;transform-origin:50% 50%;transition:transform .85s var(--nectar-cubic-bezier-in-out)}
+.nx-toggle.is-open .fg{stroke-dashoffset:0}
+.nx-toggle.is-open line{transform:rotate(90deg)}
+.nx-toggle.is-open line.h{transform:rotate(90deg) scaleX(0)}
+.nx-toggle__p{display:grid;grid-template-rows:0fr;transition:grid-template-rows .85s var(--nectar-cubic-bezier-in-out)}
+.nx-toggle.is-open .nx-toggle__p{grid-template-rows:1fr}
+.nx-toggle__in{overflow:hidden}
+.nx-toggle__in>div{padding:0 65px 25px 0}
+@media (max-width:690px){.nx-toggle__btn{font-size:1.15rem;padding:20px 0}.nx-toggle__ic{width:30px;height:30px}.nx-toggle__in>div{padding-right:0}}
+
+/* ---------- Tabs → Minimal (4px line, .3s cubic-bezier(.12,.75,.4,1)) ---------- */
+.nx-tabs__nav{display:flex;gap:0;border-bottom:1px solid #e1e1e1;margin-bottom:40px;overflow-x:auto;scrollbar-width:none}
+.nx-tabs__tab{position:relative;padding:18px 17px;line-height:32px;font-size:1rem;font-weight:500;overflow-y:hidden;transition:opacity .3s var(--e-arrow)}
+.nx-tabs__tab:first-child{padding-left:0}
+.nx-tabs__tab::after{content:"";position:absolute;left:17px;right:17px;bottom:-4px;height:4px;background:#000;transition:transform .3s var(--e-arrow)}
+.nx-tabs__tab:first-child::after{left:0}
+.nx-tabs__tab[aria-selected=true]::after{transform:translateY(-3px)}
+.nx-tabs__tab:hover{opacity:.7}
+.nx-tabs__tab[aria-selected=true]{opacity:1}
+.nx-tabs__panel[hidden]{display:none}
+.nx-tabs__panel{animation:nx-fade .45s ease}
+@keyframes nx-fade{from{opacity:0}to{opacity:1}}
+
+/* ---------- Fancy Box → Image Above Text (4:5) ---------- */
+.nx-fbox{display:block;text-decoration:none;color:inherit}
+.nx-fbox__img{aspect-ratio:4/5;overflow:hidden;border-radius:10px}
+.nx-fbox__img img{width:100%;height:100%;object-fit:cover;transition:transform .75s var(--e-card)}
+.nx-fbox:hover .nx-fbox__img img{transform:scale(1.1)}
+.nx-fbox__txt{padding:24px 10% 0 0}
+.nx-fbox__txt h4{display:inline;background:linear-gradient(currentColor,currentColor) 0 100%/0 1px no-repeat;transition:background-size .55s var(--e-btn);padding-bottom:2px}
+.nx-fbox:hover h4{background-size:100% 1px}
+.nx-fbox__txt p{padding-top:10px}
+
+/* ---------- Colour card = Column (BG + BG Hover + radius 15 + Column Link) ---------- */
+.nx-card{display:flex;flex-direction:column;gap:14px;border-radius:15px;padding:40px;text-decoration:none;color:inherit;min-height:260px;transition:background-color .45s var(--e-btn)}
+.nx-card--red{background:var(--sgp-red);color:#000}.nx-card--red:hover{background:var(--sgp-red-ink)}
+.nx-card--ink{background:#1c1d1d;color:#fff}.nx-card--ink:hover{background:#000}
+.nx-card--warm{background:var(--sgp-warm)}.nx-card--warm:hover{background:#e6e3e0}
+.nx-card__go{margin-top:auto;font-size:2rem;line-height:1;transition:transform .45s var(--e-btn)}
+.nx-card:hover .nx-card__go{transform:translateX(8px)}
+
+/* ---------- Animated Text (split_line_heading) + column entrances (88 % trigger) ---------- */
+.nx-at .w{display:inline-block;white-space:nowrap;text-indent:0}
+.nx-at .wi,.nx-at .l{text-indent:0}
+.nx-at[data-fx="letter-blur-top"] .l{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(-.25em)}
+.nx-at[data-fx="letter-reveal-bottom"] .w{overflow:hidden;vertical-align:top;padding-bottom:.08em}
+.nx-at[data-fx="letter-reveal-bottom"] .l{display:inline-block;transform:translateY(1.3em)}
+.nx-at[data-fx="word-reveal"] .w{overflow:hidden;vertical-align:top;padding-bottom:.1em;margin-bottom:-.1em}
+.nx-at[data-fx="word-reveal"] .wi{display:inline-block;transform:translateY(1.3em)}
+.nx-at[data-fx="word-blur"] .wi{display:inline-block;opacity:0;filter:blur(10px);transform:translateY(.25em)}
+.nx-at[data-fx="word-fade"] .wi{display:inline-block;opacity:0;transform:translateY(.5em)}
+.nx-at .l,.nx-at .wi{transition:transform 1.2s var(--e-text),opacity 1.2s var(--e-text),filter 1.2s var(--e-text);transition-delay:calc(var(--i,0) * var(--st,30ms) + var(--d0,0ms))}
+.nx-at.is-in .l,.nx-at.is-in .wi{opacity:1;filter:none;transform:none}
+.nx-at[data-fx="scroll-opacity"] .wi{opacity:var(--o,.2);transition:opacity .25s linear}
+[data-nx-anim]{opacity:0;transition:transform var(--d-entrance) var(--e-entrance),opacity .5s linear;transition-delay:var(--dl,0ms)}
+[data-nx-anim="slight-fade-bottom"]{transform:translateY(50px)}
+[data-nx-anim="fade-bottom"]{transform:translateY(100px)}
+[data-nx-anim="grow-in"]{transform:scale(.75)}
+[data-nx-anim="mask-bottom"]{opacity:1;clip-path:inset(100% 0 0 0);transition:clip-path 1.3s var(--e-mask);transition-delay:var(--dl,0ms)}
+[data-nx-anim].is-in{opacity:1;transform:none;clip-path:inset(0)}
+@media (max-width:690px){.nx-hero [data-fx]{}}
+
+/* ---------- Final CTA with Content Trail ---------- */
+.nx-cta{position:relative;display:block;text-decoration:none;color:inherit;text-align:center;padding:15% var(--sgp-pad);overflow:hidden;cursor:pointer}
+.nx-cta h2{max-width:22ch;margin:0 auto}
+.nx-trail-tag{position:absolute;z-index:3;pointer-events:none;padding:.5em 1em;border-radius:23px;font-size:1rem;font-weight:500;white-space:nowrap;transform:translate(-50%,-50%) scale(0) rotate(var(--r,0deg));transition:transform .6s var(--e-arrow)}
+.nx-trail-tag.is-on{transform:translate(-50%,-50%) scale(1) rotate(var(--r,0deg))}
+.nx-trail-tag.is-off{transform:translate(-50%,-50%) scale(0) rotate(var(--r,0deg));transition-duration:.5s}
+@media (max-width:690px){.nx-cta{padding:30% var(--sgp-pad)}}
+
+/* ---------- Footer GS: info row + divider + Animated Gradient + fit-text wordmark ---------- */
+.nx-foot__row{display:grid;grid-template-columns:1fr 2fr 1fr;gap:30px;padding:40px var(--sgp-pad);align-items:end}
+.nx-foot__links{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center}
+.nx-foot__links a,.nx-foot__tel a{text-decoration:none}
+.nx-foot__tel{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.nx-foot__div{height:1px;background:var(--sgp-line-2)}
+.nx-grad{position:relative;overflow:hidden;background:#fff;padding:10px 40px 0 20px}
+.nx-grad::before,.nx-grad::after{content:"";position:absolute;width:70vw;height:70vw;max-width:1100px;max-height:1100px;border-radius:50%;background:radial-gradient(circle,rgba(239,69,57,.95) 0%,rgba(239,69,57,.55) 35%,rgba(239,69,57,0) 68%);filter:blur(30px);animation:nx-blob 16s ease-in-out infinite alternate}
+.nx-grad::before{left:-15vw;bottom:-45vw}
+.nx-grad::after{right:-20vw;bottom:-40vw;animation-duration:21s;animation-direction:alternate-reverse}
+@keyframes nx-blob{0%{transform:translate(0,0) scale(1)}50%{transform:translate(12vw,-6vw) scale(1.15)}100%{transform:translate(-6vw,4vw) scale(.95)}}
+.nx-wordmark{position:relative;z-index:1;display:inline-block;white-space:nowrap;font-weight:500;letter-spacing:-.045em;line-height:1;margin-bottom:-7%;font-size:17vw}
+@media (max-width:999px){.nx-foot__row{grid-template-columns:1fr;gap:18px;align-items:start}.nx-foot__links{justify-content:flex-start}.nx-foot__tel{align-items:flex-start}.nx-grad{padding:10px 20px 0 10px}}
+
+/* ---------- Sticky call bar (phones) ---------- */
+.nx-callbar{display:none}
+@media (max-width:999px){
+  .nx-callbar{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:55;padding:8px 8px calc(8px + env(safe-area-inset-bottom));background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--sgp-line)}
+  .nx-callbar .nx-pill{gap:10px;padding-left:16px;justify-content:space-between;font-size:.95rem}
+  body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}}
+
+/* ---------- Tile-only: specimens, swatches, „Salient žymės“ ---------- */
+.tl-swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.tl-sw{border-radius:15px;padding:18px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;font-size:.9rem;line-height:1.35}
+.tl-sw b{font-size:1.1rem;font-weight:500}
+.tl-type>*{padding:14px 0;border-bottom:1px solid var(--sgp-line);display:grid;grid-template-columns:140px 1fr;gap:20px;align-items:baseline}
+.tl-type small{font-size:.85rem;color:var(--sgp-ink-2)}
+.tl-row{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.tl-photo{position:relative;border-radius:15px;overflow:hidden;padding:30px;min-height:200px;display:flex;flex-wrap:wrap;gap:14px;align-items:flex-end}
+.tl-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tl-photo::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+.tl-photo>*:not(img){position:relative;z-index:1}
+.tl-cap{font-size:.85rem;color:var(--sgp-ink-2);margin-top:12px}
+@media (max-width:999px){.tl-swatches{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:690px){.tl-swatches{grid-template-columns:1fr 1fr}.tl-type>*{grid-template-columns:1fr;gap:4px}}
+.tl-tagbtn{position:fixed;right:14px;bottom:14px;opacity:.85;z-index:70;background:#1c1d1d;color:#fff;border-radius:100px;padding:10px 16px;font-size:.85rem;font-weight:500;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+@media (max-width:999px){.tl-tagbtn{bottom:calc(74px + env(safe-area-inset-bottom));padding:7px 11px;font-size:12px;opacity:.75}}
+body.show-tags [data-salient]{outline:1px dashed rgba(239,69,57,.9);outline-offset:-1px}
+.tl-tag{position:absolute;left:0;top:0;z-index:45;max-width:min(620px,92%);background:#1c1d1d;color:#fff;font:500 12px/1.4 var(--sgp-font);letter-spacing:0;text-indent:0;text-align:left;padding:5px 8px;border-radius:0 0 8px 0;pointer-events:none;white-space:normal}
+
+/* ---------- prefers-reduced-motion (Custom CSS G-2; Salient 18.2.1 has none) ---------- */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;transition-delay:0ms!important;scroll-behavior:auto!important}
+  [data-nx-anim],.nx-at .l,.nx-at .wi{opacity:1!important;filter:none!important;transform:none!important;clip-path:none!important}
+  .nx-at[data-fx="scroll-opacity"] .wi{opacity:1!important}
+  .nx-marquee__track{animation:none!important}
+  .nx-trail-tag{display:none}
+  .nx-hero__bg,.nx-stats__bg{transform:none!important;opacity:1!important}}
+</style>
+</head>
+<body>
+<a class="nx-skip" href="#turinys">Pereiti prie turinio</a>
+
+<header class="nx-hdr" id="hdr" data-salient="Theme Options → Header Navigation · Header Layout: Default Layout · Full Width Header Content (40px) · Header Padding 22 · Use Transparent Header When Applicable (Header Starting Text Color #fff) · after scroll: white, Header BG Opacity 92, Header Blur Background · Header Hide Until Needed OFF · Header Link Hover/Active Effect: Text Reveal">
+  <div class="nx-topbar" data-salient="Global Section „GS-Išvykimai“ → Location: In Navigation Top Before Scrolling · Row Full Width Content, padding 5px · Column BG Extra Color 1, Border Radius 100px, Column Link /pervezimu-grafikas/ · Scrolling Text → Speed Slower (30 s) · Divider Custom Symbol ✦ · Space 2em · Mask Edges ✓ · 0.9rem">
+    <a class="nx-ticker" href="../../pervezimu-grafikas/" aria-label="Artimiausi išvykimai. Atidaryti visą pervežimų grafiką">
+      <div class="nx-marquee"><div class="nx-marquee__track" style="--loop:30s">
+        <div class="nx-marquee__group"><span>Lietuva → Airija: spalio 9 d.</span><span class="nx-div">✦</span><span>Lietuva → Ispanija: spalio 9 d.</span><span class="nx-div">✦</span><span>Airija → Lietuva: rugsėjo 28 d.</span><span class="nx-div">✦</span><span>Ispanija → Lietuva: rugsėjo 27 d.</span><span class="nx-div">✦</span><span>Visas grafikas →</span><span class="nx-div">✦</span></div>
+        <div class="nx-marquee__group" aria-hidden="true"><span>Lietuva → Airija: spalio 9 d.</span><span class="nx-div">✦</span><span>Lietuva → Ispanija: spalio 9 d.</span><span class="nx-div">✦</span><span>Airija → Lietuva: rugsėjo 28 d.</span><span class="nx-div">✦</span><span>Ispanija → Lietuva: rugsėjo 27 d.</span><span class="nx-div">✦</span><span>Visas grafikas →</span><span class="nx-div">✦</span></div>
+      </div></div>
+    </a>
+  </div>
+  <div class="nx-hdr__bar">
+    <a class="nx-logo" href="../../" aria-label="SGP pervežimai – pradžia"><img class="is-light" src="../../assets/img/logo_light.svg" alt="" width="89" height="36"><img class="is-dark" src="../../assets/img/logo.svg" alt="" width="89" height="36"></a>
+    <nav class="nx-nav" aria-label="Pagrindinis meniu">
+      <div class="nx-nav__item"><a class="nx-nav__link nx-trl" href="#apie">Apie mus</a></div>
+      <div class="nx-nav__item">
+        <a class="nx-nav__link" href="#paslaugos" aria-haspopup="true"><span class="nx-trl">Paslaugos</span><svg class="nx-caret" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M1.5 3.5 5 7l3.5-3.5"/></svg></a>
+        <div class="nx-drop nx-drop--left" data-salient="Menu item → Enable Mega Menu · Mega Menu Width: 100% Header Width · Mega Menu Global Section „GS-Paslaugų meniu“ (3 Columns, H6 + Button → Text Reveal list) · Header Dropdown Animation: Fade In Up · Header Dropdown Roundness 15 · Box Shadow Large">
+          <div class="nx-drop__grid nx-drop__grid--3">
+            <div class="nx-stack" style="--gap:22px"><div><h6>Kroviniai</h6><div class="nx-linklist"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/">Krovinių pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/negabaritiniu-kroviniu-pervezimas/">Negabaritinių krovinių pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/daliniu-kroviniu-gabenimas/">Dalinių krovinių gabenimas</a></div></div>
+              <div><h6>Daiktai ir perkraustymas</h6><div class="nx-linklist"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/daiktu-pervezimas/">Daiktų pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/">Perkraustymo paslaugos</a></div></div></div>
+            <div class="nx-stack" style="--gap:22px"><div><h6>Automobiliai ir motociklai</h6><div class="nx-linklist"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/automobiliu-pervezimas/">Automobilių pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/motociklu-pervezimas/">Motociklų pervežimas</a></div></div>
+              <div><h6>Keleiviai</h6><div class="nx-linklist"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/">Keleivių pervežimas</a></div></div></div>
+            <div class="nx-stack" style="--gap:22px"><div><h6>Gyvūnai</h6><div class="nx-linklist"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/">Gyvūnų pervežimas</a></div></div>
+              <div><h6>Siuntos</h6><div class="nx-linklist"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pervezimas/">Siuntų pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pristatymas/">Siuntų pristatymas</a></div></div>
+              <a class="nx-btn nx-ul" href="../../pervezimo-paslaugos/">Visos paslaugos</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="nx-nav__item"><a class="nx-nav__link nx-trl" href="../../pervezimu-grafikas/">Grafikas</a></div>
+      <div class="nx-nav__item"><a class="nx-nav__link nx-trl" href="../../siuntos-sekimas/">Siuntos sekimas</a></div>
+      <div class="nx-nav__item"><a class="nx-nav__link nx-trl" href="../../taisykles/">Taisyklės</a></div>
+      <div class="nx-nav__item"><a class="nx-nav__link nx-trl" href="../../kontaktai/">Kontaktai</a></div>
+      <div class="nx-nav__item">
+        <a class="nx-callpill" href="../../kontaktai/#skambinkite" aria-haspopup="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Skambinti</a>
+        <div class="nx-drop" data-salient="Menu item „Skambinti“ → Menu Item Link Button Style: Button Extra Color #1 · Text Coloring custom #000 · Icon fa-phone · Enable Mega Menu · Mega Menu Width: x2 Regular Dropdown · Alignment: Right · Mega Menu Global Section „GS-Telefonai“">
+          <div class="nx-drop__grid">
+            <div class="nx-stack" style="--gap:14px"><p class="nx-label">(Pervežimai į Airiją)</p><a class="nx-btn nx-pill nx-pill--dark" href="tel:+37065053161"><span class="nx-num">+370 650 53161</span></a><a class="nx-btn nx-ul nx-num" href="tel:+353864503104">Airijoje: +353 86 450 3104</a><a class="nx-btn nx-ul nx-num" href="tel:+447566878681">JK: +44 7566 878681</a></div>
+            <div class="nx-stack" style="--gap:14px"><p class="nx-label">(Pervežimai į Ispaniją)</p><a class="nx-btn nx-pill nx-pill--dark" href="tel:+37063828919"><span class="nx-num">+370 638 28919</span></a><a class="nx-btn nx-ul nx-num" href="tel:+34602547929">Ispanijoje: +34 602 547 929</a></div>
+          </div>
+          <p class="nx-muted" style="margin-top:24px;font-size:.95rem">El. paštas: <a class="nx-ul" href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@gmail.com</a></p>
+        </div>
+      </div>
+    </nav>
+    <button class="nx-menubtn" type="button" aria-label="Atidaryti meniu" aria-expanded="false" aria-controls="ocm"><i></i></button>
+  </div>
+</header>
+
+<div class="nx-ocm" id="ocm" aria-hidden="true" data-salient="Off Canvas Menu Style: Slide Out From Side · Off Canvas Icon Button: Circular (#000 / #fff) · Off Canvas Navigation Background #000 · Overlay Strength: Solid · font 1.6rem · Off Canvas Menu Meta Area = GS-Telefonai">
+  <div class="nx-ocm__scrim" data-close></div>
+  <div class="nx-ocm__panel" role="dialog" aria-modal="true" aria-label="Meniu">
+    <div class="nx-ocm__top"><button class="nx-ocm__close" type="button" data-close aria-label="Uždaryti meniu">×</button></div>
+    <nav class="nx-ocm__menu" aria-label="Meniu telefone"><a class="nx-trl" href="#apie">Apie mus</a><a class="nx-trl" href="#paslaugos">Paslaugos</a><a class="nx-trl" href="../../pervezimu-grafikas/">Grafikas</a><a class="nx-trl" href="../../siuntos-sekimas/">Siuntos sekimas</a><a class="nx-trl" href="../../taisykles/">Taisyklės</a><a class="nx-trl" href="../../kontaktai/">Kontaktai</a></nav>
+    <div class="nx-ocm__meta">
+      <div class="nx-stack" style="--gap:12px"><p class="nx-label">(Pervežimai į Airiją)</p><a class="nx-btn nx-pill nx-pill--red" href="tel:+37065053161"><span class="nx-num">+370 650 53161</span></a><a class="nx-btn nx-ul nx-num" href="tel:+353864503104">Airijoje: +353 86 450 3104</a><a class="nx-btn nx-ul nx-num" href="tel:+447566878681">JK: +44 7566 878681</a></div>
+      <div class="nx-stack" style="--gap:12px"><p class="nx-label">(Pervežimai į Ispaniją)</p><a class="nx-btn nx-pill nx-pill--red" href="tel:+37063828919"><span class="nx-num">+370 638 28919</span></a><a class="nx-btn nx-ul nx-num" href="tel:+34602547929">Ispanijoje: +34 602 547 929</a></div>
+    </div>
+  </div>
+</div>
+
+<main id="turinys">
+<section class="nx-hero" data-salient="Section → Full Width Background · Min Height 100svh · Layout Flexbox (column, justify flex-end) · BG Image 29374299 still (+ Background Image Phone) · Parallax Background Media On Scroll ✓ → Scroll Effect: Parallax Fade · Speed: Medium · Advanced gradient overlay · Text Color Light">
+  <div class="nx-hero__bg" data-nx-parallax="fade" aria-hidden="true"><img src="https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" srcset="https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=960 960w, https://images.pexels.com/videos/29374299/pexels-photo-29374299.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920 1920w" sizes="100vw" alt="" fetchpriority="high" width="1920" height="1080"></div>
+  <div class="nx-hero__title" data-salient="Row 1 · Column (Border Advanced bottom 1px #FFFFFF29) · Animated Text → Text Element: H1 · Text Effect: Single Letter From Top: Blur · Stagger ✓ · custom font size 9.5vw / 9vw / 12.5vw · line height 1">
+    <h1 class="nx-hero__h1 nx-at" data-fx="letter-blur-top">Airija&nbsp;– Lietuva&nbsp;– Ispanija</h1>
+  </div>
+  <div class="nx-hero__row">
+    <div class="nx-hero__l">
+      <div class="nx-glass" data-salient="Inner Row → Backdrop Filter: Blur 25 · Design options bg #0000006E, radius 15px · Max Width 64% (tablet 50%, phone 100%) · Responsive Text (H5) + 2 × Button → Arrow Circle Animation (white, Backdrop Filter Blur 13, Border Radius 100, padding 4/4/4/20, Icon Gap 30)">
+        <p class="h5">Visos pervežimo paslaugos – saugiai, greitai, patikimai.</p>
+        <div class="nx-stack" style="--gap:10px">
+          <a class="nx-btn nx-pill nx-pill--glass" href="tel:+37065053161"><span><small>Į Airiją</small> <span class="nx-num">+370 650 53161</span></span></a>
+          <a class="nx-btn nx-pill nx-pill--glass" href="tel:+37063828919"><span><small>Į Ispaniją</small> <span class="nx-num">+370 638 28919</span></span></a>
+        </div>
+      </div>
+      <p class="nx-label">(Tarptautiniai pervežimai)</p>
+    </div>
+    <div class="nx-hero__r" data-salient="Column ½ (hidden on tablet/phone) · Border Advanced left 1px #FFFFFF29 · Responsive Text (H5) + Button → Next Section: Minimal Arrow Alt (animation on hover)">
+      <p class="h5" style="max-width:26ch">Keleiviai, siuntos, automobiliai, motociklai, gyvūnai ir perkraustymas – nuo durų iki durų.</p>
+      <a class="nx-next" href="#apie" aria-label="Slinkti toliau"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 4v16M6 14l6 6 6-6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="nx-row nx-row--pad" id="apie" data-salient="Row → Full Width Content · padding 10% / 5% · 40px sides · Column flex column, gap 60">
+  <div class="nx-wrap">
+    <h2 class="nx-statement nx-at" data-fx="word-reveal" data-salient="Animated Text → Text Element H2 · Word Animations: Reveal · Stagger ✓ · Text Indent 25vw (phone 0)">„SGP“ – esame įmonė įsikūrusi Lietuvoje, kuri užsiima keleivių, siuntų ir automobilių pervežimu Lietuva – Ispanija – Lietuva, Lietuva – Airija – Lietuva ir kitas Europos šalis (Vokietiją, Prancūziją).</h2>
+    <div class="nx-grid" style="margin-top:60px" data-salient="Inner Row (Equal Height, Column Margin 30px): ⅓ Label · ⅙ empty · ⅓ Responsive Text + Horizontal List Item ×3 (30% | 70%, Bottom Border No Hover, Border Animation) + Button → Underline · ⅙ Image r15 · Columns: Slight Fade In From Bottom">
+      <div class="c-4 t-12" data-nx-anim="slight-fade-bottom"><p class="nx-label">(Apie mus)</p></div>
+      <div class="c-2 t-hide"></div>
+      <div class="c-4 t-6" data-nx-anim="slight-fade-bottom" style="--dl:100ms">
+        <div class="nx-stack" style="--gap:26px">
+          <p>Nuo pirmos darbo dienos savo klientams užtikriname ne tik saugų, greitą bei patikimą pervežimą, bet ir malonų bendravimą su kvalifikuota bei patyrusia komanda.</p>
+          <div style="width:100%">
+            <div class="nx-hli nx-hli--30-70 nx-hli--draw"><strong>Kryptys</strong><p>Lietuva – Airija – Lietuva · Lietuva – Ispanija – Lietuva</p></div>
+            <div class="nx-hli nx-hli--30-70 nx-hli--draw"><strong>Principas</strong><p>Nuo durų iki durų</p></div>
+            <div class="nx-hli nx-hli--30-70 nx-hli--draw"><strong>Draudimas</strong><p>Kroviniai ir keleiviai kelionės metu apdrausti</p></div>
+          </div>
+          <a class="nx-btn nx-ul" href="../../apie-imone/">Skaityti daugiau</a>
+        </div>
+      </div>
+      <div class="c-2 t-6" data-nx-anim="slight-fade-bottom" style="--dl:200ms"><div class="nx-img nx-img--15" style="aspect-ratio:4/5;max-width:300px"><img src="https://images.pexels.com/photos/6720534/pexels-photo-6720534.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Vairuotojas sunkvežimio kabinoje peržiūri kontrolinį sąrašą" loading="lazy" width="600" height="750" style="object-position:62% 50%"></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="nx-row" style="padding-top:10%" id="paslaugos" data-salient="Row → Full Width Content · padding-top 10% · Inner Row: Label + H2 + Button → Underline">
+  <div class="nx-wrap nx-grid" style="align-items:end;padding-bottom:40px">
+    <div class="c-8 t-12 nx-stack" style="--gap:18px"><p class="nx-label nx-at" data-fx="word-fade">(Paslaugos)</p><h2 class="nx-at" data-fx="word-reveal">Kuo galime padėti</h2></div>
+    <div class="c-4 t-12" style="justify-self:end" data-nx-anim="slight-fade-bottom"><a class="nx-btn nx-ul" href="../../pervezimo-paslaugos/">Visos 11 paslaugų sąrašu →</a></div>
+  </div>
+</section>
+<div class="nx-hscroll" data-nx-hscroll data-salient="Sticky Content Sections → Type: Horizontal Scrolling · Effect None · Section Width 60 · Section Height 100vh · Subtract Navigation Height ✓ · Gap 5px · Content Alignment Stretch · Border Radius 15px · Effect Enabled: phone ✗ (cards stack) · 6 × Sticky Content Section → Section Type: Color">
+  <div class="nx-hscroll__pin"><div class="nx-hscroll__track">
+    <article class="nx-hcard nx-hcard--red" data-salient="Sticky Content Section → Color: Extra Color 1 · Inner Row padding 56px, margin 6vw · ½ Responsive Text (numeral 11vw) + H3 + text + Button → Text Reveal list · ½ Column BG image 38927007, Scale Background Image To Column, radius 20px">
+      <div class="nx-hcard__txt"><span class="nx-hcard__no" aria-hidden="true">01</span><div class="nx-stack" style="--gap:16px"><h3>Kroviniai</h3><p style="max-width:40ch">Į Airiją, Ispaniją, Vokietiją bei Prancūziją ir atgal – saugiai, greitai, patikimai.</p><div class="nx-hcard__links"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/">Krovinių pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/negabaritiniu-kroviniu-pervezimas/">Negabaritinių krovinių pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/daliniu-kroviniu-gabenimas/">Dalinių krovinių gabenimas</a></div></div></div>
+      <div class="nx-hcard__img" role="img" aria-label="Vilkikai greitkelyje tarp miško saulėlydžio metu" style="background-image:url('https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100');background-position:50% 60%"></div>
+    </article>
+    <article class="nx-hcard nx-hcard--ink" data-salient="Sticky Content Section → Color: Accent · Inner Row padding 56px, margin 6vw · ½ Responsive Text (numeral 11vw) + H3 + text + Button → Text Reveal list · ½ Column BG image 7464731, Scale Background Image To Column, radius 20px">
+      <div class="nx-hcard__txt"><span class="nx-hcard__no" aria-hidden="true">02</span><div class="nx-stack" style="--gap:16px"><h3>Daiktai ir perkraustymas</h3><p style="max-width:40ch">Jei į kitą šalį norite gabenti didesnį ar mažesnį daiktą, siūlome susisiekti su mumis – pasiūlysime optimaliausią variantą.</p><div class="nx-hcard__links"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/daiktu-pervezimas/">Daiktų pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/">Perkraustymo paslaugos</a></div></div></div>
+      <div class="nx-hcard__img" role="img" aria-label="Rankos laiko perkraustymo dėžę su įspėjamuoju lipduku" style="background-image:url('https://images.pexels.com/photos/7464731/pexels-photo-7464731.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100');background-position:50% 50%"></div>
+    </article>
+    <article class="nx-hcard nx-hcard--warm" data-salient="Sticky Content Section → Color: Extra Color 3 · Inner Row padding 56px, margin 6vw · ½ Responsive Text (numeral 11vw) + H3 + text + Button → Text Reveal list · ½ Column BG image 29566910, Scale Background Image To Column, radius 20px">
+      <div class="nx-hcard__txt"><span class="nx-hcard__no" aria-hidden="true">03</span><div class="nx-stack" style="--gap:16px"><h3>Automobiliai ir motociklai</h3><p style="max-width:40ch">Automobilius gabename traliuku – iš Airijos, Ispanijos, Vokietijos ir į jas.</p><div class="nx-hcard__links"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/automobiliu-pervezimas/">Automobilių pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/motociklu-pervezimas/">Motociklų pervežimas</a></div></div></div>
+      <div class="nx-hcard__img" role="img" aria-label="Darbuotojas krauna baltą automobilį ant autovežio" style="background-image:url('https://images.pexels.com/photos/29566910/pexels-photo-29566910.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100');background-position:55% 50%"></div>
+    </article>
+    <article class="nx-hcard nx-hcard--red" data-salient="Sticky Content Section → Color: Extra Color 1 · Inner Row padding 56px, margin 6vw · ½ Responsive Text (numeral 11vw) + H3 + text + Button → Text Reveal list · ½ Column BG image 36377055, Scale Background Image To Column, radius 20px">
+      <div class="nx-hcard__txt"><span class="nx-hcard__no" aria-hidden="true">04</span><div class="nx-stack" style="--gap:16px"><h3>Keleiviai</h3><p style="max-width:40ch">Atlenkiamos ir šildomos sėdynės, kondicionierius. Kelionės metu visi keleiviai apdrausti.</p><div class="nx-hcard__links"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/">Keleivių pervežimas</a></div></div></div>
+      <div class="nx-hcard__img" role="img" aria-label="Mikroautobuso salonas su juodomis odinėmis sėdynėmis" style="background-image:url('https://images.pexels.com/photos/36377055/pexels-photo-36377055.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100');background-position:50% 50%"></div>
+    </article>
+    <article class="nx-hcard nx-hcard--ink" data-salient="Sticky Content Section → Color: Accent · Inner Row padding 56px, margin 6vw · ½ Responsive Text (numeral 11vw) + H3 + text + Button → Text Reveal list · ½ Column BG image 3868901, Scale Background Image To Column, radius 20px">
+      <div class="nx-hcard__txt"><span class="nx-hcard__no" aria-hidden="true">05</span><div class="nx-stack" style="--gap:16px"><h3>Gyvūnai</h3><p style="max-width:40ch">Saugiai ir patogiai perkraustysime Jūsų augintinį į kitą šalį Europoje.</p><div class="nx-hcard__links"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/">Gyvūnų pervežimas</a></div></div></div>
+      <div class="nx-hcard__img" role="img" aria-label="Vyras su šunimi furgone" style="background-image:url('https://images.pexels.com/photos/3868901/pexels-photo-3868901.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100');background-position:40% 50%"></div>
+    </article>
+    <article class="nx-hcard nx-hcard--warm" data-salient="Sticky Content Section → Color: Extra Color 3 · Inner Row padding 56px, margin 6vw · ½ Responsive Text (numeral 11vw) + H3 + text + Button → Text Reveal list · ½ Column BG image 4487517, Scale Background Image To Column, radius 20px">
+      <div class="nx-hcard__txt"><span class="nx-hcard__no" aria-hidden="true">06</span><div class="nx-stack" style="--gap:16px"><h3>Siuntos</h3><p style="max-width:40ch">Skubus siuntų pristatymas į namus – paslauga, garantuojanti didžiausią patogumą ir siuntėjui, ir gavėjui.</p><div class="nx-hcard__links"><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pervezimas/">Siuntų pervežimas</a><a class="nx-trl" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/siuntu-pristatymas/">Siuntų pristatymas</a></div></div></div>
+      <div class="nx-hcard__img" role="img" aria-label="Kurjeris sėdi furgone tarp siuntinių dėžių" style="background-image:url('https://images.pexels.com/photos/4487517/pexels-photo-4487517.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1100');background-position:50% 45%"></div>
+    </article>
+  </div></div>
+</div>
+<section class="nx-stats" id="kelioneje" data-salient="Section → Full Width Background · Text Color Light · BG #000 + BG Image 1696742 · Advanced gradient overlay · Parallax Background Media On Scroll ✓ → Scroll Effect: Parallax · Speed: Subtle (0.20)">
+  <div class="nx-stats__bg" data-nx-parallax="0.2" aria-hidden="true"><img src="https://images.pexels.com/photos/1696742/pexels-photo-1696742.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1920" alt="" loading="lazy" width="1920" height="1280"></div>
+  <div class="nx-stats__head" data-salient="Column → Border Advanced bottom 1px #FFFFFF36 · Animated Text → H2 · Text Effect: Scroll Position: Opacity · font size 5vw, min 32px · Divider No Line 30vh (tablet 20vh, phone 15vh)">
+    <div class="nx-sticky-h"><h2 class="nx-stats__h2 nx-at" data-fx="scroll-opacity">Du namai, vienas kelias tarp jų. Kelionė trunka apie 3–4 paras – pasirūpinsime, kad laikas neprailgtų.</h2></div>
+  </div>
+  <div class="nx-stats__row" data-salient="Row → Column Margin 7% · padding 40px · 4 × Column: Badge (BG #FFFFFF1F, Backdrop Filter Blur 12, radius 20px) + Inner Column Flexbox row gap 25: Milestone (Count To Value, inherit H2, 3vw / min 40px) + Responsive Text (1.1vw, 16–22px)">
+    <div class="nx-stat"><span class="nx-badge nx-badge--glass">Kryptys</span><div class="nx-stat__in"><span class="nx-stat__n nx-num" data-nx-count="2">2</span><p class="nx-stat__t">Lietuva – Airija ir Lietuva – Ispanija, abiem kryptimis.</p></div></div>
+    <div class="nx-stat"><span class="nx-badge nx-badge--glass">Paslaugos</span><div class="nx-stat__in"><span class="nx-stat__n nx-num" data-nx-count="11">11</span><p class="nx-stat__t">Keleiviai, siuntos, kroviniai, automobiliai, gyvūnai ir perkraustymas.</p></div></div>
+    <div class="nx-stat"><span class="nx-badge nx-badge--glass">Kelyje</span><div class="nx-stat__in"><span class="nx-stat__n nx-num">3–4</span><p class="nx-stat__t">paros nuo paėmimo dienos – nuo durų iki durų.</p></div></div>
+    <div class="nx-stat"><span class="nx-badge nx-badge--glass">Pakeliui</span><div class="nx-stat__in"><span class="nx-stat__n nx-num" data-nx-count="4">4</span><p class="nx-stat__t">šalys: Lenkija, Vokietija, Belgija, Prancūzija.</p></div></div>
+  </div>
+</section>
+
+<section class="nx-row nx-row--pad-sm" id="marsrutai" data-salient="Row → padding 5% · Column centred, element spacing 30px · Label (Animated Text p, Fade) + Animated Text H2 (Word Reveal)">
+  <div class="nx-wrap nx-stack" style="--gap:26px;align-items:center;text-align:center;max-width:1000px">
+    <p class="nx-label nx-at" data-fx="word-fade">(Maršrutai)</p>
+    <h2 class="nx-at" data-fx="word-reveal">Dvi kryptys. Keturios šalys pakeliui.</h2>
+    <p class="nx-muted" style="max-width:62ch" data-nx-anim="slight-fade-bottom">Tarptautiniai pervežimai minėtais maršrutais apima ir tokias Europos šalis kaip Lenkija, Vokietija, Belgija, Prancūzija – nedvejokite, jei norite perduoti siuntą jose gyvenantiems artimiesiems.</p>
+  </div>
+</section>
+<div class="nx-marquee" style="padding:0 0 50px" data-salient="Scrolling Text → Speed Slower (30 s) · Italic Style: Text Outline (Thin) · Mask Edges ✓ · Divider Custom Symbol ✦ · font 4vw">
+  <div class="nx-marquee__track" style="--loop:40s"><div class="nx-marquee__group nx-outline"><span>Lietuva</span><span class="nx-div">✦</span><span>Lenkija</span><span class="nx-div">✦</span><span>Vokietija</span><span class="nx-div">✦</span><span>Belgija</span><span class="nx-div">✦</span><span>Prancūzija</span><span class="nx-div">✦</span><span>Ispanija</span><span class="nx-div">✦</span><span>Airija</span><span class="nx-div">✦</span></div><div class="nx-marquee__group nx-outline" aria-hidden="true"><span>Lietuva</span><span class="nx-div">✦</span><span>Lenkija</span><span class="nx-div">✦</span><span>Vokietija</span><span class="nx-div">✦</span><span>Belgija</span><span class="nx-div">✦</span><span>Prancūzija</span><span class="nx-div">✦</span><span>Ispanija</span><span class="nx-div">✦</span><span>Airija</span><span class="nx-div">✦</span></div></div>
+</div>
+<section class="nx-row" style="padding-bottom:5%" data-salient="Global Section „GS-Maršrutai“ (Harbor Pricing) · Row Full Width Content, Equal Height · 3 Columns: Border Type Advanced 1px #00000033, padding 40px, element spacing 20px">
+  <div class="nx-wrap nx-plans">
+    <div class="nx-plan" data-nx-anim="slight-fade-bottom">
+      <div class="nx-plan__top"><h3>Lietuva – Airija – Lietuva</h3></div>
+      <p class="nx-muted">Keleiviai, siuntos, kroviniai, automobiliai ir gyvūnai – į Airiją ir iš Airijos, nuo durų iki durų.</p>
+      <p class="nx-price"><b class="nx-num">3–4</b><span>paros kelyje</span></p>
+      <a class="nx-btn nx-pill nx-pill--dark nx-pill--stretch" href="tel:+37065053161"><span>Skambinti <span class="nx-num">+370 650 53161</span></span></a>
+      <div class="nx-stack" style="--gap:6px"><a class="nx-btn nx-ul nx-num" href="tel:+353864503104">Airijoje: +353 86 450 3104</a><a class="nx-btn nx-ul nx-num" href="tel:+447566878681">JK: +44 7566 878681</a></div>
+      <hr><p>Vežame:</p>
+      <ul class="nx-ful"><li>Keleivius – visi keleiviai apdrausti</li><li>Siuntas ir krovinius</li><li>Automobilius ir motociklus</li><li>Gyvūnus – narvus turime mes</li></ul>
+    </div>
+    <div class="nx-plan" data-nx-anim="slight-fade-bottom" style="--dl:100ms">
+      <div class="nx-plan__top"><h3>Lietuva – Ispanija – Lietuva</h3></div>
+      <p class="nx-muted">Keleiviai, siuntos, kroviniai, automobiliai ir gyvūnai – į Ispaniją ir iš Ispanijos, nuo durų iki durų.</p>
+      <p class="nx-price"><b class="nx-num">3–4</b><span>paros kelyje</span></p>
+      <a class="nx-btn nx-pill nx-pill--dark nx-pill--stretch" href="tel:+37063828919"><span>Skambinti <span class="nx-num">+370 638 28919</span></span></a>
+      <div class="nx-stack" style="--gap:6px"><a class="nx-btn nx-ul nx-num" href="tel:+34602547929">Ispanijoje: +34 602 547 929</a><a class="nx-btn nx-ul" href="../../pervezimu-grafikas/">Visas grafikas →</a></div>
+      <hr><p>Vežame:</p>
+      <ul class="nx-ful"><li>Keleivius – visi keleiviai apdrausti</li><li>Siuntas ir krovinius</li><li>Automobilius ir motociklus</li><li>Gyvūnus – narvus turime mes</li></ul>
+    </div>
+    <div class="nx-plan" data-nx-anim="slight-fade-bottom" style="--dl:200ms">
+      <div class="nx-plan__top"><h3>Pakeliui</h3><span class="nx-badge nx-badge--red">4 šalys</span></div>
+      <p class="nx-muted">Galite perduoti siuntą čia gyvenantiems artimiesiems, draugams ar verslo partneriams.</p>
+      <div class="nx-hotspots" data-salient="Image With Hotspots → exported route schematic (WebP) · Hotspot Icon: Numerical · Tooltip Functionality: Show On Hover · Enable Animation ✓ · Color: Extra Color 1 · on a Callout (#f1efed, r15)">
+        <svg viewBox="0 0 700 480" role="img" aria-label="Maršrutų schema: iš Lietuvos per Lenkiją ir Vokietiją; toliau per Belgiją ir Prancūziją į Ispaniją. Maršruto dalis iki Airijos tikslinama.">
+          <g fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M624 64 L542 140 L376 161 L267 175 L227 270 L116 416" stroke="#1c1d1d" stroke-width="3"/><path d="M376 161 L37 111" stroke="#8b8e8f" stroke-width="2.5" stroke-dasharray="3 9"/></g>
+          <circle cx="624" cy="64" r="11" fill="#1c1d1d"/>
+          <g font-family="Inter Tight, sans-serif" font-size="24" font-weight="500" fill="#1c1d1d"><text x="598" y="40" text-anchor="end">Lietuva</text><text x="542" y="190" text-anchor="middle">Lenkija</text><text x="398" y="134">Vokietija</text><text x="298" y="214">Belgija</text><text x="262" y="316">Prancūzija</text><text x="146" y="462">Ispanija</text><text x="20" y="168">Airija</text></g>
+          <text x="120" y="96" font-family="Inter Tight, sans-serif" font-size="18" fill="#5b5e5f" transform="rotate(8.4 120 96)">maršrutas tikslinamas</text>
+        </svg>
+        <span class="nx-hs" style="left:77.4%;top:29.2%"><button class="nx-hs__b" type="button" aria-describedby="hs1">1</button><span class="nx-hs__tip" id="hs1" role="tooltip">Lenkija – pakeliui galite perduoti siuntą čia gyvenantiems artimiesiems.</span></span>
+        <span class="nx-hs" style="left:53.7%;top:33.5%"><button class="nx-hs__b" type="button" aria-describedby="hs2">2</button><span class="nx-hs__tip" id="hs2" role="tooltip">Vokietija – vežame į Vokietiją ir iš Vokietijos.</span></span>
+        <span class="nx-hs" style="left:38.1%;top:36.5%"><button class="nx-hs__b" type="button" aria-describedby="hs3">3</button><span class="nx-hs__tip" id="hs3" role="tooltip">Belgija – pakeliui į Ispaniją.</span></span>
+        <span class="nx-hs" style="left:32.4%;top:56.3%"><button class="nx-hs__b" type="button" aria-describedby="hs4">4</button><span class="nx-hs__tip" id="hs4" role="tooltip">Prancūzija – vežame į Prancūziją ir iš Prancūzijos.</span></span>
+        <span class="nx-hs" style="left:16.6%;top:86.7%"><button class="nx-hs__b" type="button" aria-describedby="hs5">5</button><span class="nx-hs__tip" id="hs5" role="tooltip">Ispanija · +34 602 547 929</span></span>
+        <span class="nx-hs" style="left:5.3%;top:23.1%"><button class="nx-hs__b" type="button" aria-describedby="hs6">6</button><span class="nx-hs__tip" id="hs6" role="tooltip" style="left:0;transform:none">Airija · +353 86 450 3104</span></span>
+      </div>
+      <p class="nx-muted" style="font-size:.9rem">Schema, ne mastelis. Užveskite pelę ant skaičiaus.</p>
+    </div>
+  </div>
+</section>
+
+<section class="nx-row nx-row--pad-sm" id="eiga" data-salient="Row → padding 5% · ⅓ Label + H2 · ⅔ Horizontal List Item ×3 (Columns 3, Column Layout 20% | 40% | 40%, Style: Bottom Border, No Hover Effect, Border Animation ✓) + Horizontal List Item ×2 (30% | 70%) + Button → Underline">
+  <div class="nx-wrap nx-grid">
+    <div class="c-4 t-12 nx-stack" style="--gap:18px"><p class="nx-label nx-at" data-fx="word-fade">(Kelionės eiga)</p><h2 class="nx-at" data-fx="word-reveal">Nuo durų iki durų</h2></div>
+    <div class="c-8 t-12">
+      <div class="nx-hli nx-hli--20-40-40 nx-hli--draw"><span class="nx-hli__n h4">01</span><h3 class="h4">Paėmimas</h3><p>Krovinys paimamas iš siuntėjo nurodytos, jam patogiausios, vietos.</p></div>
+      <div class="nx-hli nx-hli--20-40-40 nx-hli--draw"><span class="nx-hli__n h4">02</span><h3 class="h4">Kelyje apie 3–4 paras</h3><p>Siuntos vietą galite pasitikrinti pagal siuntos kodą.</p></div>
+      <div class="nx-hli nx-hli--20-40-40 nx-hli--draw"><span class="nx-hli__n h4">03</span><h3 class="h4">Pristatymas</h3><p>Pristatome gavėjui tiesiai į rankas. Jei sutartu laiku gavėjas negali paimti siuntos, pakartotinis mūsų atvykimas apmokestinamas.</p></div>
+      <div style="margin-top:40px">
+        <div class="nx-hli nx-hli--30-70 nx-hli--draw"><strong>Kelyje</strong><p>apie 3–4 paros nuo paėmimo dienos</p></div>
+        <div class="nx-hli nx-hli--30-70 nx-hli--draw"><strong>Įsipareigojimas siuntoms</strong><p>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)</p></div>
+      </div>
+      <p style="margin-top:26px"><a class="nx-btn nx-ul" href="../../siuntos-sekimas/">Siuntos sekimas →</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="nx-row nx-row--pad nx-bg-warm" id="pries-siunciant" data-salient="Row → BG Extra Color 3 #f1efed · padding 10% / 5% · Column 5/12 Sticky Content (CSS, Top) · Column 7/12 Toggle Panels → Style: Animated Circle (Position Right, Size 40, Divider ✓, Accordion ✓, First Open)">
+  <div class="nx-wrap nx-grid">
+    <div class="c-5 t-12 nx-sticky">
+      <div class="nx-stack" style="--gap:22px">
+        <p class="nx-label nx-at" data-fx="word-fade">(Prieš siunčiant)</p>
+        <h2 class="h3 nx-at" data-fx="word-reveal">Krovinių pervežimas tarptautiniais maršrutais: ko negalima siųsti?</h2>
+        <div style="background:#fff;border-radius:15px;padding:24px 26px" data-salient="Callout = Inner Column → BG #fff (on warm rows) · Border Radius 15px · Padding 24px">Už siuntinio turinį atsakingas siuntėjas.</div>
+        <a class="nx-btn nx-pill nx-pill--dark" href="../../taisykles/"><span>Visos taisyklės</span></a>
+        <a class="nx-btn nx-ul" href="#pries-siunciant">Atsisiųsti sutartį su siuntėju (PDF, 72 KB)</a>
+      </div>
+    </div>
+    <div class="c-7 t-12" data-nx-toggles>
+      <div class="nx-toggle is-open">
+        <h3><button class="nx-toggle__btn" type="button" aria-expanded="true" aria-controls="tg1" id="tg1b"><span>Draudžiama siųsti (12)</span><svg class="nx-toggle__ic" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18.3"/><circle class="fg" cx="20" cy="20" r="18.3"/><line class="h" x1="14" y1="20" x2="26" y2="20"/><line x1="20" y1="14" x2="20" y2="26"/></svg></button></h3>
+        <div class="nx-toggle__p" id="tg1" role="region" aria-labelledby="tg1b"><div class="nx-toggle__in"><div>
+          <ul class="nx-ful nx-ful--x nx-cols2"><li>bet kokie tabako gaminiai</li><li>bet kokie alkoholiniai gėrimai</li><li>pinigai ir vertybiniai popieriai</li><li>taurieji metalai</li><li>juvelyriniai gaminiai</li><li>vaistai ir maisto papildai</li><li>šaunamieji ir kiti ginklai</li><li>meno kūriniai ir antikvariniai daiktai</li><li>cheminiai kroviniai ir degios prekės</li><li>greitai gendantys maisto produktai</li><li>daiktai, kurių pervežimui reikalingos specialios temperatūros, oro, drėgmės ir kitos papildomos sąlygos</li><li>visos kitos prekės, kurias vežti draudžiama įstatymais</li></ul>
+        </div></div></div>
+      </div>
+      <div class="nx-toggle">
+        <h3><button class="nx-toggle__btn" type="button" aria-expanded="false" aria-controls="tg2" id="tg2b"><span>Pakavimas (4)</span><svg class="nx-toggle__ic" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18.3"/><circle class="fg" cx="20" cy="20" r="18.3"/><line class="h" x1="14" y1="20" x2="26" y2="20"/><line x1="20" y1="14" x2="20" y2="26"/></svg></button></h3>
+        <div class="nx-toggle__p" id="tg2" role="region" aria-labelledby="tg2b"><div class="nx-toggle__in"><div>
+          <ul class="nx-ful"><li>pakuotei naudokite tik naujas, standžias, nepažeistas dėžes ar kitas pakuotes;</li><li>rekomenduojamas tarpas yra 5 centimetrai;</li><li>pasirūpinkite, kad adresas būtų užrašytas matomoje vietoje, ten, kur nekyla rizika nusitrinti, nuplyšti.</li></ul>
+        </div></div></div>
+      </div>
+      <div class="nx-toggle">
+        <h3><button class="nx-toggle__btn" type="button" aria-expanded="false" aria-controls="tg3" id="tg3b"><span>Gavėjas ir pristatymas</span><svg class="nx-toggle__ic" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18.3"/><circle class="fg" cx="20" cy="20" r="18.3"/><line class="h" x1="14" y1="20" x2="26" y2="20"/><line x1="20" y1="14" x2="20" y2="26"/></svg></button></h3>
+        <div class="nx-toggle__p" id="tg3" role="region" aria-labelledby="tg3b"><div class="nx-toggle__in"><div>
+          <p>Labai svarbu nurodyti tikslius siuntinio paėmimo ir pristatymo adresus Europoje. Jei sutartu laiku gavėjas arba siuntos adresatas negali atiduoti / paimti siuntos, pakartotinis mūsų atvykimas apmokestinamas.</p>
+        </div></div></div>
+      </div>
+      <div class="nx-toggle">
+        <h3><button class="nx-toggle__btn" type="button" aria-expanded="false" aria-controls="tg4" id="tg4b"><span>Baudos</span><svg class="nx-toggle__ic" viewBox="0 0 40 40" aria-hidden="true"><circle class="bg" cx="20" cy="20" r="18.3"/><circle class="fg" cx="20" cy="20" r="18.3"/><line class="h" x1="14" y1="20" x2="26" y2="20"/><line x1="20" y1="14" x2="20" y2="26"/></svg></button></h3>
+        <div class="nx-toggle__p" id="tg4" role="region" aria-labelledby="tg4b"><div class="nx-toggle__in"><div>
+          <div class="nx-hli nx-hli--40-60"><strong>Alkoholinių gėrimų</strong><p>1200 EUR už kiekvieną alkoholinio gėrimo vienetą</p></div>
+          <div class="nx-hli nx-hli--40-60"><strong>Kitų 4.2 punkte nurodytų draudžiamų daiktų</strong><p>1200 EUR</p></div>
+          <p style="margin-top:16px"><a class="nx-btn nx-ul" href="../../taisykles/">Plačiau taisyklėse →</a></p>
+        </div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="nx-row nx-row--pad" id="plytele" style="border-top:1px solid var(--sgp-line)" data-salient="Tile only · specimens of Theme Options values and element states (not a site section)">
+  <div class="nx-wrap nx-stack" style="--gap:70px;align-items:stretch">
+    <div class="nx-stack" style="--gap:18px"><p class="nx-label">(Stiliaus plytelė)</p><h2>Spalvos, šriftas ir elementai</h2><p class="nx-intro nx-muted" style="max-width:60ch">Viskas žemiau – Salient 18.2.1 elementai su SGP spalvomis. Užveskite pelę: būsenos tokios pat, kaip temoje.</p></div>
+
+    <div class="nx-grid" data-salient="Theme Options → Accent Colors: Accent #1c1d1d · Extra Color 1 #ef4539 · Extra Color 2 #c4301e · Extra Color 3 #f1efed · Overall BG #ffffff">
+      <div class="c-4 t-12"><h3 class="h4">Spalvos</h3><p class="nx-muted" style="margin-top:10px">Raudona – tik didelės plokštumos. Ant raudonos rašome juodai (5,58:1).</p></div>
+      <div class="c-8 t-12 tl-swatches">
+        <div class="tl-sw" style="background:#1c1d1d;color:#fff"><b>Accent</b><span>#1c1d1d<br>tekstas, mygtukai, tamsūs blokai</span></div>
+        <div class="tl-sw" style="background:#ef4539;color:#000"><b>Extra 1</b><span>#ef4539<br>juosta, kortelės, ženkliukas</span></div>
+        <div class="tl-sw" style="background:#c4301e;color:#fff"><b>Extra 2</b><span>#c4301e<br>smulkus raudonas tekstas</span></div>
+        <div class="tl-sw" style="background:#f1efed"><b>Extra 3</b><span>#f1efed<br>skydeliai, formos</span></div>
+        <div class="tl-sw" style="background:#fff;border:1px solid var(--sgp-line-2)"><b>Fonas</b><span>#ffffff<br>visas puslapis</span></div>
+      </div>
+    </div>
+
+    <div class="nx-grid" data-salient="Theme Options → Typography: Inter Tight (latin + latin-ext) · H1 4rem/1.1 · H2 2.7rem/1.2 · H3 2rem/1.25 · H4 1.4rem/1.3 (500, −0.02em) · H5 1.25rem/1.45 (400) · Body 1.0625rem/1.6 · Label 0.9rem 500 · Fluid Typography + Custom Responsive Headings">
+      <div class="c-4 t-12"><h3 class="h4">Šriftas: Inter Tight</h3><p class="nx-muted" style="margin-top:10px">Vienas šriftas, sakinio rašyba, lietuviškos raidės ąčęėįšųūž iš latin-ext.</p></div>
+      <div class="c-8 t-12 tl-type">
+        <div><small>H1 · 4rem · 500</small><span class="h1">Pervežimų grafikas</span></div>
+        <div><small>H2 · 2,7rem · 500</small><span class="h2">Dvi kryptys. Keturios šalys pakeliui.</span></div>
+        <div><small>H3 · 2rem · 500</small><span class="h3">Gyvūnų pervežimas</span></div>
+        <div><small>H4 · 1,4rem · 500</small><span class="h4">Įsipareigojimas siuntoms</span></div>
+        <div><small>H5 · 1,25rem · 400</small><span class="h5">Keleiviai, siuntos, automobiliai ir gyvūnai – nuo durų iki durų.</span></div>
+        <div><small>Tekstas · 17 px</small><span>Už valstybinių institucijų konfiskuotas siuntas mes atsakomybės neprisiimame.</span></div>
+        <div><small>Etiketė</small><span class="nx-label">(Apie paslaugą)</span></div>
+      </div>
+    </div>
+
+    <div class="nx-grid" data-salient="Button (nectar_cta) → Arrow Circle Animation (dark / white glass / red, Border Radius 100) · Underline · See Through (Pill) · Text Reveal · Badge (Default / Backdrop Filter Blur 12 / Extra Color 1)">
+      <div class="c-4 t-12"><h3 class="h4">Mygtukai ir ženkliukai</h3><p class="nx-muted" style="margin-top:10px">Pagrindinis veiksmas – „pill“ su rodykle apskritime. Nuorodos – 1 px pabraukimas.</p></div>
+      <div class="c-8 t-12 nx-stack" style="--gap:22px;align-items:stretch">
+        <div class="tl-row"><a class="nx-btn nx-pill nx-pill--dark" href="#plytele"><span>Gauti pasiūlymą</span></a><a class="nx-btn nx-pill nx-pill--red" href="tel:+37065053161"><span><small>Į Airiją</small> <span class="nx-num">+370 650 53161</span></span></a><a class="nx-btn nx-see" href="#plytele">Visos taisyklės</a><a class="nx-btn nx-ul" href="#plytele">Skaityti daugiau</a><a class="nx-btn nx-trl" href="#plytele">Text Reveal nuoroda</a></div>
+        <div class="tl-photo"><img src="https://images.pexels.com/photos/36383706/pexels-photo-36383706.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1400" alt="" loading="lazy"><a class="nx-btn nx-pill nx-pill--glass" href="tel:+37063828919"><span><small>Į Ispaniją</small> <span class="nx-num">+370 638 28919</span></span></a><a class="nx-btn nx-see nx-see--light" href="#plytele" style="color:#fff">Pervežimų grafikas</a><span class="nx-badge nx-badge--glass">Keleiviai apdrausti</span><span class="nx-badge nx-badge--glass">3–4 paros</span></div>
+        <div class="tl-row"><span class="nx-badge">Nuo durų iki durų</span><span class="nx-badge">Narvus turime mes</span><span class="nx-badge nx-badge--red">4 šalys</span><a class="nx-btn nx-see nx-see--sm" href="#plytele">Krovinių pervežimas į Airiją</a><a class="nx-btn nx-see nx-see--sm" href="#plytele">iš Ispanijos</a></div>
+      </div>
+    </div>
+
+    <div class="nx-grid" data-salient="3 × Column → Background Color (Extra 1 / Accent / Extra 3) + Background Color Hover + Border Radius 15px + Column Link · Slight Fade In From Bottom 0/100/200">
+      <div class="c-4 t-12"><h3 class="h4">Spalvinės kortelės</h3><p class="nx-muted" style="margin-top:10px">Salient stulpelis su fonu, hover spalva ir nuoroda – be jokio kodo.</p></div>
+      <div class="c-8 t-12 nx-grid" style="column-gap:10px">
+        <a class="nx-card nx-card--red c-4" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/" data-nx-anim="slight-fade-bottom"><h3 class="h4">Tarptautiniai pervežimai</h3><p>11 paslaugų · 2 kryptys</p><span class="nx-card__go" aria-hidden="true">→</span></a>
+        <a class="nx-card nx-card--ink c-4" href="../../pervezimu-grafikas/" data-nx-anim="slight-fade-bottom" style="--dl:100ms"><h3 class="h4">Pervežimų grafikas</h3><p>Artimiausios išvykimo datos abiem kryptimis.</p><span class="nx-card__go" aria-hidden="true">→</span></a>
+        <a class="nx-card nx-card--warm c-4" href="../../siuntos-sekimas/" data-nx-anim="slight-fade-bottom" style="--dl:200ms"><h3 class="h4">Siuntos sekimas</h3><p>Pagal siuntos kodą</p><span class="nx-card__go" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="nx-grid" data-salient="3 × Fancy Box → Style: Image Above Text (image_above_text_underline) · Image Aspect Ratio 4:5 · Link URL">
+      <div class="c-4 t-12"><h3 class="h4">Susijusios paslaugos</h3><p class="nx-muted" style="margin-top:10px">Fancy Box „Image Above Text“ 4:5, kaip Architect demo.</p></div>
+      <div class="c-8 t-12 nx-grid" style="column-gap:20px">
+        <a class="nx-fbox c-4" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/"><div class="nx-fbox__img"><img src="https://images.pexels.com/photos/38927007/pexels-photo-38927007.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="" loading="lazy" style="object-position:50% 60%"></div><div class="nx-fbox__txt"><h4>Krovinių pervežimas</h4><p class="nx-muted">Į Airiją, Ispaniją, Vokietiją bei Prancūziją ir atgal.</p></div></a>
+        <a class="nx-fbox c-4" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/"><div class="nx-fbox__img"><img src="https://images.pexels.com/photos/27383867/pexels-photo-27383867.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="" loading="lazy" style="object-position:50% 65%"></div><div class="nx-fbox__txt"><h4>Keleivių pervežimas</h4><p class="nx-muted">Kelionės metu visi keleiviai apdrausti.</p></div></a>
+        <a class="nx-fbox c-4" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/gyvunu-pervezimas/"><div class="nx-fbox__img"><img src="https://images.pexels.com/photos/32872983/pexels-photo-32872983.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700" alt="" loading="lazy" style="object-position:50% 45%"></div><div class="nx-fbox__txt"><h4>Gyvūnų pervežimas</h4><p class="nx-muted">Saugiai ir patogiai – narvus turime mes.</p></div></a>
+      </div>
+    </div>
+
+    <div class="nx-grid" data-salient="Tabs → Style: Minimal · Tab Change Animation: Fade · deep link ?tab=airija · each tab = Global Section „GS-Grafikas Airija / Ispanija“: Horizontal List Item (Columns 3, 25% | 50% | 25%, Style: Bottom Border, Color Hover Effect, Hover Color Black, Full Item Link tel:)">
+      <div class="c-4 t-12"><h3 class="h4">Grafikas: skirtukai ir eilutės</h3><p class="nx-muted" style="margin-top:10px">Datos įrašomos ranka dviejuose Global Sections kartą per mėnesį. Kiekviena eilutė – skambutis.</p></div>
+      <div class="c-8 t-12" data-nx-tabs>
+        <div class="nx-tabs__nav" role="tablist" aria-label="Kryptis">
+          <button class="nx-tabs__tab" role="tab" type="button" id="tab-visi" aria-controls="tp-visi" aria-selected="true">Visi</button>
+          <button class="nx-tabs__tab" role="tab" type="button" id="tab-airija" aria-controls="tp-airija" aria-selected="false" tabindex="-1">Airija</button>
+          <button class="nx-tabs__tab" role="tab" type="button" id="tab-ispanija" aria-controls="tp-ispanija" aria-selected="false" tabindex="-1">Ispanija</button>
+        </div>
+        <div class="nx-tabs__panel" role="tabpanel" id="tp-visi" aria-labelledby="tab-visi" data-rows="ie es"></div>
+        <div class="nx-tabs__panel" role="tabpanel" id="tp-airija" aria-labelledby="tab-airija" data-rows="ie" hidden></div>
+        <div class="nx-tabs__panel" role="tabpanel" id="tp-ispanija" aria-labelledby="tab-ispanija" data-rows="es" hidden></div>
+        <template id="rows-ie">
+          <h6 class="nx-muted" style="margin:6px 0 2px">Iš Lietuvos</h6>
+          <a class="nx-hli nx-hli--25-50-25" href="tel:+37065053161" aria-label="Lietuva – Airija: spalio 9 d., spalio 23 d. Skambinti +370 650 53161"><strong>Lietuva → Airija</strong><span class="nx-num">spalio 9 d., spalio 23 d.</span><span class="nx-hli__go nx-num">+370 650 53161</span></a>
+          <h6 class="nx-muted" style="margin:22px 0 2px">Į Lietuvą</h6>
+          <a class="nx-hli nx-hli--25-50-25" href="tel:+353864503104" aria-label="Airija – Lietuva: rugsėjo 28 d., spalio 15 ir 28 d. Skambinti +353 86 450 3104"><strong>Airija → Lietuva</strong><span class="nx-num">rugsėjo 28 d., spalio 15 ir 28 d.</span><span class="nx-hli__go nx-num">+353 86 450 3104</span></a>
+        </template>
+        <template id="rows-es">
+          <h6 class="nx-muted" style="margin:6px 0 2px">Iš Lietuvos</h6>
+          <a class="nx-hli nx-hli--25-50-25" href="tel:+37063828919" aria-label="Lietuva – Ispanija: spalio 9 d., spalio 23 d. Skambinti +370 638 28919"><strong>Lietuva → Ispanija</strong><span class="nx-num">spalio 9 d., spalio 23 d.</span><span class="nx-hli__go nx-num">+370 638 28919</span></a>
+          <h6 class="nx-muted" style="margin:22px 0 2px">Į Lietuvą</h6>
+          <a class="nx-hli nx-hli--25-50-25" href="tel:+34602547929" aria-label="Ispanija – Lietuva: rugsėjo 27 d., spalio 14 ir 28 d. Skambinti +34 602 547 929"><strong>Ispanija → Lietuva</strong><span class="nx-num">rugsėjo 27 d., spalio 14 ir 28 d.</span><span class="nx-hli__go nx-num">+34 602 547 929</span></a>
+        </template>
+        <p class="nx-muted" style="margin-top:18px;font-size:.95rem">Tikslų išvykimo laiką ir paėmimo vietą suderinsime telefonu. (Atnaujinta rugsėjo 23 d.)</p>
+      </div>
+    </div>
+
+    <div class="nx-grid" data-salient="Global Section „GS-Paslaugos“ → Horizontal List Item ×11 (Columns 2, 20% | 80%, Style: Bottom Border, Color Hover Effect, Hover Color Black, Border Animation ✓, Full Item Link URL)">
+      <div class="c-4 t-12"><h3 class="h4">Paslaugų sąrašas</h3><p class="nx-muted" style="margin-top:10px">Horizontal List Item: užvedus juoda spalva „apsiverčia“ iš apačios.</p></div>
+      <div class="c-8 t-12">
+        <a class="nx-hli nx-hli--20-80 nx-hli--draw" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/kroviniu-pervezimas/"><span class="nx-hli__n">01</span><span style="display:flex;justify-content:space-between;gap:20px"><span>Krovinių pervežimas</span><span class="nx-hli__go" aria-hidden="true">→</span></span></a>
+        <a class="nx-hli nx-hli--20-80 nx-hli--draw" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/negabaritiniu-kroviniu-pervezimas/"><span class="nx-hli__n">02</span><span style="display:flex;justify-content:space-between;gap:20px"><span>Negabaritinių krovinių pervežimas</span><span class="nx-hli__go" aria-hidden="true">→</span></span></a>
+        <a class="nx-hli nx-hli--20-80 nx-hli--draw" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/keleiviu-pervezimas/"><span class="nx-hli__n">07</span><span style="display:flex;justify-content:space-between;gap:20px"><span>Keleivių pervežimas</span><span class="nx-hli__go" aria-hidden="true">→</span></span></a>
+        <a class="nx-hli nx-hli--20-80 nx-hli--draw" href="../../pervezimo-paslaugos/tarptautiniai-pervezimai/perkraustymo-paslaugos/"><span class="nx-hli__n">11</span><span style="display:flex;justify-content:space-between;gap:20px"><span>Perkraustymo paslaugos</span><span class="nx-hli__go" aria-hidden="true">→</span></span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kvietimas" data-salient="Global Section „GS-Kvietimas“ → Location: After Page/Post Content · Inner Column padding 15% (phone 30%), centred, Column Link /kontaktai/ · Animated Text H2 → Word Animations: Blur · Content Trail → Type Text · In/Out Scale · radius 23 · Frequency 85 · Duration 1.2 s · Randomize + rotation">
+  <a class="nx-cta" href="../../kontaktai/" data-nx-trail="Airija|Ispanija|Siunta|Keleivis|Automobilis|Gyvūnas|Perkraustymas"><h2 class="nx-at" data-fx="word-blur">Norite užsakyti? Paskambinkite arba parašykite.</h2></a>
+</section>
+</main>
+
+<footer data-salient="Global Section „GS-Poraštė“ → Location: Footer (Theme Options: Main Footer Area OFF, Copyright OFF)">
+  <div class="nx-foot__row" data-salient="Row padding 40px · ¼ name + © [nectar_current_year] · ½ Button → Text Reveal links · ¼ Button → Underline phone links">
+    <div class="nx-stack" style="--gap:2px"><strong style="font-weight:500">SGP pervežimai</strong><span class="nx-muted">© 2026. Lietuva – Airija – Ispanija.</span></div>
+    <nav class="nx-foot__links" aria-label="Poraštės nuorodos"><a class="nx-trl" href="../../apie-imone/">Apie mus</a><a class="nx-trl" href="../../pervezimo-paslaugos/">Paslaugos</a><a class="nx-trl" href="../../pervezimu-grafikas/">Grafikas</a><a class="nx-trl" href="../../taisykles/">Taisyklės</a><a class="nx-trl" href="../../kontaktai/">Kontaktai</a><a class="nx-trl" href="../../privatumo-politika/">Privatumo politika</a></nav>
+    <div class="nx-foot__tel"><a class="nx-btn nx-ul nx-num" href="tel:+37065053161">(Airija) +370 650 53161</a><a class="nx-btn nx-ul nx-num" href="tel:+37063828919">(Ispanija) +370 638 28919</a></div>
+  </div>
+  <div class="nx-foot__div" data-salient="Divider → Line Type: Full Width Line"></div>
+  <div class="nx-grad" data-salient="Row → Animated Gradient (Color 1 #ef4539, Color 2 #ffffff, Speed Medium 850, Color Mix Linear) · overflow hidden · Column bottom margin −7% · Animated Text H1 → Fit Text to Container „SGP pervežimai“"><span class="nx-wordmark" data-nx-fit aria-hidden="true">SGP pervežimai</span></div>
+</footer>
+
+<div class="nx-callbar" data-salient="Global Section „GS-Skambučių juosta“ (last element of every page) → Row: Sticky Row ✓ · Sticky Alignment: Bottom of Window · Sticky Row on Mobile ✓ · Device Visibility: desktop hidden · 2 × Button → Arrow Circle Animation (Extra Color 1, text #000, Alignment Stretch)">
+  <a class="nx-btn nx-pill nx-pill--red" href="tel:+37065053161"><span>Į Airiją</span></a>
+  <a class="nx-btn nx-pill nx-pill--red" href="tel:+37063828919"><span>Į Ispaniją</span></a>
+</div>
+<button class="tl-tagbtn" type="button" aria-pressed="false">Salient žymės</button>
+
+<script>
+/* SGP · Salient emulation kit (tile). Reproduces Salient 18.2.1 behaviour with our own code:
+   Animated Text, column entrances (88 % trigger), Section Parallax Fade / Parallax, Sticky Content Sections →
+   Horizontal Scrolling, Milestone Count To Value, Toggle Panels Animated Circle, Tabs Minimal, Content Trail,
+   Fit Text, header states, Slide Out From Side off-canvas. Honours prefers-reduced-motion (Salient does not). */
+(function(){
+  'use strict';
+  var RM = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $$ = function(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+  var clamp = function(v, a, b){ return Math.max(a, Math.min(b, v)); };
+  var esc = function(t){ return t.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;'); };
+  var vh = window.innerHeight, vw = window.innerWidth;
+  var hdr = document.getElementById('hdr');
+  var headerH = function(){ return parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--sgp-header-h')) || 80; };
+
+  /* Button → Arrow Circle Animation: circle with two arrows (second enters from bottom-left) */
+  var ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8.5 7H17v8.5"/></svg>';
+  $$('.nx-pill').forEach(function(a){ if (!a.querySelector('.nx-pill__c')) a.insertAdjacentHTML('beforeend', '<span class="nx-pill__c" aria-hidden="true">' + ARROW + ARROW + '</span>'); });
+
+  /* Text Reveal (header links, Button → Text Reveal) */
+  $$('.nx-trl').forEach(function(el){ var t = el.textContent.trim(); el.innerHTML = '<span class="nx-tr"><span data-text="' + esc(t) + '">' + esc(t) + '</span></span>'; });
+
+  /* Animated Text: split into words / letters, stagger clamped like Salient (words 15–50 ms, letters 20–35 ms) */
+  $$('.nx-at').forEach(function(el){
+    var fx = el.getAttribute('data-fx') || 'word-reveal', text = el.textContent.replace(/[ \t\r\n]+/g, ' ').trim();
+    var letters = fx.indexOf('letter') === 0, i = 0;
+    var html = text.split(' ').map(function(w){
+      if (letters) return '<span class="w">' + Array.from(w).map(function(ch){ return '<span class="l" style="--i:' + (i++) + '">' + esc(ch) + '</span>'; }).join('') + '</span>';
+      return '<span class="w"><span class="wi" style="--i:' + (i++) + '">' + esc(w) + '</span></span>';
+    }).join(' ');
+    el.innerHTML = '<span class="sr">' + esc(text) + '</span><span aria-hidden="true">' + html + '</span>';
+    el.style.setProperty('--st', (letters ? clamp(400 / i, 20, 35) : clamp(500 / i, 15, 50)) + 'ms');
+    el._n = i;
+  });
+
+  /* Entrances: Waypoint at 88 % of the viewport (Milestone 98 %) */
+  var reveal = function(el){ el.classList.add('is-in'); };
+  var targets = $$('[data-nx-anim], .nx-at:not([data-fx="scroll-opacity"]), .nx-hli--draw');
+  var hero = document.querySelector('.nx-hero .nx-at');
+  if (RM || !('IntersectionObserver' in window)) { targets.forEach(reveal); }
+  else {
+    var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { reveal(e.target); io.unobserve(e.target); } }); }, { rootMargin: '0px 0px -12% 0px' });
+    targets.forEach(function(el){ if (el !== hero) io.observe(el); });
+    if (hero) { hero.style.setProperty('--d0', '250ms'); (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(function(){ requestAnimationFrame(function(){ reveal(hero); }); }); }
+  }
+  if (RM && hero) reveal(hero);
+
+  /* Milestone → Count To Value (2.2 s easeOutCubic) */
+  var count = function(el){
+    var to = +el.getAttribute('data-nx-count'), t0 = null;
+    if (RM) { el.textContent = to; return; }
+    var step = function(t){ if (!t0) t0 = t; var p = clamp((t - t0) / 2200, 0, 1), e = 1 - Math.pow(1 - p, 3); el.textContent = Math.round(to * e); if (p < 1) requestAnimationFrame(step); };
+    el.textContent = '0'; requestAnimationFrame(step);
+  };
+  if ('IntersectionObserver' in window) {
+    var io2 = new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting) { count(e.target); io2.unobserve(e.target); } }); }, { rootMargin: '0px 0px -2% 0px' });
+    $$('[data-nx-count]').forEach(function(el){ io2.observe(el); });
+  }
+
+  /* Sticky Content Sections → Horizontal Scrolling */
+  var hs = document.querySelector('[data-nx-hscroll]'), hsPin, hsTrack, hsDist = 0, hsOn = false;
+  var layoutHS = function(){
+    if (!hs) return;
+    hsPin = hs.querySelector('.nx-hscroll__pin'); hsTrack = hs.querySelector('.nx-hscroll__track');
+    hsOn = !RM && vw > 690;
+    if (!hsOn) { hs.style.height = ''; hsTrack.style.transform = ''; return; }
+    hsDist = Math.max(0, hsTrack.scrollWidth - hsPin.clientWidth);
+    hs.style.height = (hsPin.clientHeight + hsDist) + 'px';
+  };
+
+  /* Fit Text to Container (footer wordmark) */
+  var fit = function(){ $$('[data-nx-fit]').forEach(function(el){ el.style.fontSize = '100px'; var cs = getComputedStyle(el.parentNode), w = el.scrollWidth, avail = el.parentNode.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight) - 2; if (w) el.style.fontSize = (100 * avail / w) + 'px'; }); };
+
+  /* Scroll-driven: header state, Parallax Fade, Parallax (Subtle .20), scroll-opacity text, horizontal track */
+  var heroBg = document.querySelector('[data-nx-parallax="fade"]');
+  var pBgs = $$('[data-nx-parallax]').filter(function(el){ return el !== heroBg; });
+  var soText = $$('.nx-at[data-fx="scroll-opacity"]');
+  var ticking = false;
+  var onScroll = function(){
+    ticking = false;
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    if (hdr) hdr.classList.toggle('is-solid', y > 10);
+    if (!RM && heroBg) { var hh = heroBg.parentNode.offsetHeight; if (y < hh) { heroBg.style.transform = 'translate3d(0,' + (y * 0.4).toFixed(1) + 'px,0)'; heroBg.style.opacity = (1 - clamp(y / hh, 0, 1) * 0.85).toFixed(3); } }
+    if (!RM) pBgs.forEach(function(bg){ var r = bg.parentNode.getBoundingClientRect(); if (r.bottom < 0 || r.top > vh) return; var f = parseFloat(bg.getAttribute('data-nx-parallax')) || 0.2; bg.style.transform = 'translate3d(0,' + ((vh / 2 - (r.top + r.height / 2)) * f).toFixed(1) + 'px,0)'; });
+    soText.forEach(function(el){ var r = el.getBoundingClientRect(), n = el._n || 1, p = RM ? 1 : clamp((vh * 0.85 - r.top) / (vh * 0.6), 0, 1); $$('.wi', el).forEach(function(w, i){ w.style.setProperty('--o', (0.2 + 0.8 * clamp(p * n - i, 0, 1)).toFixed(3)); }); });
+    if (hsOn) { var r2 = hs.getBoundingClientRect(), span = hs.offsetHeight - hsPin.clientHeight, pr = span > 0 ? clamp((headerH() - r2.top) / span, 0, 1) : 0; hsTrack.style.transform = 'translate3d(' + (-pr * hsDist).toFixed(1) + 'px,0,0)'; }
+  };
+  var req = function(){ if (!ticking) { ticking = true; requestAnimationFrame(onScroll); } };
+  window.addEventListener('scroll', req, { passive: true });
+  var onResize = function(){ vh = window.innerHeight; vw = window.innerWidth; layoutHS(); fit(); onScroll(); };
+  window.addEventListener('resize', onResize);
+  window.addEventListener('load', onResize);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(onResize);
+  onResize();
+
+  /* Off Canvas → Slide Out From Side */
+  var ocm = document.getElementById('ocm'), mbtn = document.querySelector('.nx-menubtn');
+  var setOcm = function(open){ ocm.classList.toggle('is-open', open); ocm.setAttribute('aria-hidden', open ? 'false' : 'true'); mbtn.setAttribute('aria-expanded', open ? 'true' : 'false'); document.documentElement.style.overflow = open ? 'hidden' : ''; if (open) ocm.querySelector('.nx-ocm__close').focus(); else mbtn.focus(); };
+  if (ocm && mbtn) {
+    mbtn.addEventListener('click', function(){ setOcm(true); });
+    $$('[data-close]', ocm).forEach(function(b){ b.addEventListener('click', function(){ setOcm(false); }); });
+    $$('.nx-ocm__menu a', ocm).forEach(function(a){ a.addEventListener('click', function(){ if (a.getAttribute('href').charAt(0) === '#') setOcm(false); }); });
+    document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && ocm.classList.contains('is-open')) setOcm(false); });
+  }
+
+  /* Toggle Panels → Animated Circle (accordion) */
+  $$('[data-nx-toggles]').forEach(function(group){
+    $$('.nx-toggle__btn', group).forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var item = btn.closest('.nx-toggle'), open = !item.classList.contains('is-open');
+        $$('.nx-toggle', group).forEach(function(o){ o.classList.remove('is-open'); o.querySelector('.nx-toggle__btn').setAttribute('aria-expanded', 'false'); });
+        item.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    });
+  });
+
+  /* Tabs → Minimal (deep link ?tab=<title-slug>, like Salient) */
+  $$('[data-nx-tabs]').forEach(function(box){
+    $$('.nx-tabs__panel', box).forEach(function(p){ (p.getAttribute('data-rows') || '').split(' ').forEach(function(k){ var t = document.getElementById('rows-' + k); if (t) p.appendChild(t.content.cloneNode(true)); }); });
+    var tabs = $$('[role=tab]', box);
+    var select = function(tab, focus){ tabs.forEach(function(t){ var on = t === tab; t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; document.getElementById(t.getAttribute('aria-controls')).hidden = !on; }); if (focus) tab.focus(); };
+    tabs.forEach(function(t, i){
+      t.addEventListener('click', function(){ select(t); });
+      t.addEventListener('keydown', function(e){ var d = e.key === 'ArrowRight' ? 1 : e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); } });
+    });
+    var q = new URLSearchParams(location.search).get('tab');
+    if (q) tabs.forEach(function(t){ if (t.textContent.trim().toLowerCase() === q.toLowerCase()) select(t); });
+  });
+
+  /* Content Trail → Type Text · Scale in/out · Frequency 85 px · Duration 1.2 s · random rotation */
+  $$('[data-nx-trail]').forEach(function(area){
+    if (RM || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+    var words = area.getAttribute('data-nx-trail').split('|'), cols = [['#ef4539', '#000'], ['#1c1d1d', '#fff'], ['#f1efed', '#1c1d1d']];
+    var last = null, k = 0;
+    area.addEventListener('pointermove', function(e){
+      var r = area.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+      if (last && Math.hypot(x - last[0], y - last[1]) < 85) return;
+      last = [x, y];
+      var tag = document.createElement('span'), c = cols[k % cols.length];
+      tag.className = 'nx-trail-tag'; tag.textContent = words[Math.floor(Math.random() * words.length)];
+      tag.style.cssText = 'left:' + x + 'px;top:' + y + 'px;background:' + c[0] + ';color:' + c[1] + ';--r:' + (Math.random() * 24 - 12).toFixed(1) + 'deg';
+      tag.setAttribute('aria-hidden', 'true'); area.appendChild(tag); k++;
+      requestAnimationFrame(function(){ requestAnimationFrame(function(){ tag.classList.add('is-on'); }); });
+      setTimeout(function(){ tag.classList.add('is-off'); setTimeout(function(){ tag.remove(); }, 520); }, 1200);
+    });
+  });
+
+  /* Tile only: „Salient žymės“ — show each block's Salient element + options */
+  var tb = document.querySelector('.tl-tagbtn');
+  if (tb) tb.addEventListener('click', function(){
+    var on = !document.body.classList.contains('show-tags');
+    document.body.classList.toggle('show-tags', on); tb.setAttribute('aria-pressed', on ? 'true' : 'false');
+    $$('.tl-tag').forEach(function(t){ t.remove(); });
+    if (on) $$('[data-salient]').forEach(function(el){ if (el.closest('[aria-hidden="true"]')) return; if (getComputedStyle(el).position === 'static') el.style.position = 'relative'; var s = document.createElement('span'); s.className = 'tl-tag'; s.textContent = el.getAttribute('data-salient'); el.insertBefore(s, el.firstChild); });
+  });
+})();
+</script>
+</body>
+</html>

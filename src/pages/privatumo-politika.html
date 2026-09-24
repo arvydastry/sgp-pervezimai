@@ -2,123 +2,127 @@
 title: Privatumo politika | sgp-pervezimai.lt
 description: SGP pervežimai privatumo politika ir slapukų naudojimas.
 out: privatumo-politika/index.html
+kit: salient
 body_class: page-privatumas
 nav: privatumas
-arrival: no
-css: pages/privatumo-politika.css
-js: pages/privatumo-politika.js
-salient: Page „Privatumo politika“ (§6.10) · Header (plain) → Document (sticky mini-TOC + text + cookie table) · GS-Arrival hidden · 301 /privatumo-politika/policies → /privatumo-politika/ · production: real GDPR text from the client + the consent plugin's auto-generated cookie list
+salient: Page „Privatumo politika“ (plan §3.12 V1–V3) · V1 Inner head without photo → V2 Document: Tabs → Vertical Sticky Scrolling (Informacija · Slapukai (Cookies)) with Callouts → V3 cookie list as Toggle Panels → Minimal Shadow (production: Complianz [cmplz-cookies]) + Manage consent · no GS-Kvietimas · 301 /privatumo-politika/policies → /privatumo-politika/
 ---
-<!-- ============ HEADER (plain) ============ -->
-<section class="sgp-phero sgp-phero--plain paper on-dark pp-hero" data-hero data-theme="dark" data-salient="Row · Header (plain) · bg asphalt-900 + graticule 4 % · min-height 40svh · content bottom · Text Color Light · H1 Animated Text → Word Reveal">
-  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
-    <div class="sgp-phero__copy">
-      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="{{url:pradzia}}">Pradžia</a></li><li aria-current="page">Privatumo politika</li></ol></nav>
-      <p class="sgp-phero__eyebrow sgp-mono"><span class="sgp-ring"></span>Informacija · Slapukai (Cookies)</p>
-      <h1 class="sgp-phero__h1" data-split>Privatumo politika</h1>
-      {{grafikas:next}}
-    </div>
-  </div>
-</section>
-
-<!-- ============ DOCUMENT — sticky mini-TOC + text + cookie table ============ -->
-<section class="sgp-sec pp-doc on-light sgp-has-rail" id="dokumentas" data-theme="light" data-salient="Row · bg #F5F7F6 (no graticule: document + dense table) + Extra Class sgp-light sgp-has-rail · Column 3/12 Sticky Content (CSS Top 120): mini-TOC (2 stops, scroll spy, progress lane) · Column 8/12 offset 1: Text Blocks + notice (.sgp-callout) + Raw HTML cookie table (.pp-table)">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">01</span><span class="sgp-mono">Dokumentas</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">2 skyriai</span></div>
-    <div class="pp-doc__grid">
-      <div class="pp-doc__side">
-        <nav class="pp-toc sgp-sticky" aria-label="Dokumento skyriai" data-spy data-salient="Page Submenu → vertical sticky index (2 stops) · rings fill for the active part · lane = reading progress (custom JS)">
-          <p class="sgp-mono pp-toc__k">Turinys</p>
-          <ol class="pp-toc__list">
-            <li class="pp-toc__lane" aria-hidden="true"></li>
-            <li><span class="sgp-ring"></span><a href="#informacija"><span class="sgp-mono">01</span>Informacija</a></li>
-            <li><span class="sgp-ring"></span><a href="#slapukai"><span class="sgp-mono">02</span>Slapukai (Cookies)</a></li>
-          </ol>
-          <div class="pp-toc__mail">
-            <p class="sgp-mono">El. paštas</p>
-            <a href="mailto:saugiai.greitai.patikimai@gmail.com">saugiai.greitai.patikimai@<wbr>gmail.com</a>
-          </div>
-        </nav>
-      </div>
-      <div class="pp-doc__main">
-
-        <article class="pp-part" id="informacija" aria-labelledby="pp-info-h">
-          <p class="sgp-mono pp-part__no">01</p>
-          <h2 class="sgp-d2 pp-part__h" id="pp-info-h" data-split>Informacija</h2>
-          <p class="pp-lead" data-reveal>Informacija ruošiama...</p>
-          <div class="sgp-callout pp-notice" role="note" data-reveal style="--dl:.1s" data-salient="Text Block + Extra Class .sgp-callout (3 px red left bar) — demo notice, remove when the real policy text is in">
-            <span class="sgp-callout__k sgp-mono">Demonstracinė versija</span>
-            <p>Privatumo politikos tekstas bus pateiktas prieš paleidžiant svetainę.</p>
-          </div>
-          <div class="pp-slots" data-reveal style="--dl:.15s" data-salient="PLACEHOLDER (demo only) — the client supplies the GDPR text for these parts; not published as content">
-            <p class="sgp-mono pp-slots__k"><span class="pp-slots__dot" aria-hidden="true"></span>Laukiama kliento teksto</p>
-            <ol class="pp-slots__list">
-              <li><span class="sgp-mono">01</span>Duomenų valdytojas ir kontaktai</li>
-              <li><span class="sgp-mono">02</span>Kokius duomenis tvarkome ir kokiais tikslais</li>
-              <li><span class="sgp-mono">03</span>Kiek laiko saugome duomenis</li>
-              <li><span class="sgp-mono">04</span>Jūsų teisės</li>
-              <li><span class="sgp-mono">05</span>Slapukai ir sutikimas</li>
-            </ol>
-          </div>
-        </article>
-
-        <article class="pp-part" id="slapukai" aria-labelledby="pp-cookie-h">
-          <p class="sgp-mono pp-part__no">02</p>
-          <h2 class="sgp-d2 pp-part__h" id="pp-cookie-h" data-split>Slapukai (Cookies)</h2>
-          <h3 class="sgp-h4 pp-table__t" data-reveal>Techniniai svetainės slapukai – reikalingi normaliam svetainės veikimui</h3>
-          <div class="pp-table__wrap" data-reveal style="--dl:.1s" data-salient="Raw HTML table .pp-table (styled as timetable rows, mono keys; stacks into cards &lt;1000px) · production: replace with the consent plugin's auto-generated cookie list (Complianz / CookieYes shortcode)">
-            <table class="pp-table">
-              <caption class="sgp-sr">Techniniai svetainės slapukai – reikalingi normaliam svetainės veikimui</caption>
-              <thead>
-                <tr><th scope="col">Slapuko pavadinimas</th><th scope="col">Šaltinis</th><th scope="col">Aprašymas</th><th scope="col">Sukūrimo momentas</th><th scope="col">Galiojimo laikas</th></tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row"><code>cookie_agree</code></th>
-                  <td data-th="Šaltinis">sgp-pervezimai.lt</td>
-                  <td data-th="Aprašymas">Slapukas skirtas privatumo (slapukų) politikos pranešimui / sutikimui realizuoti.</td>
-                  <td data-th="Sukūrimo momentas">Sutinkant su nuostatomis</td>
-                  <td data-th="Galiojimo laikas"><span class="pp-exp">5 dienos</span></td>
-                </tr>
-                <tr>
-                  <th scope="row"><span class="pp-name-txt">Atsitiktinių skaičių ir raidžių seka sugeneruotas unikalus raktas</span></th>
-                  <td data-th="Šaltinis">sgp-pervezimai.lt</td>
-                  <td data-th="Aprašymas">Naudojamas saugoti naršymo sesijos raktą.</td>
-                  <td data-th="Sukūrimo momentas">Įėjimo į puslapį metu</td>
-                  <td data-th="Galiojimo laikas"><span class="pp-exp">Iki interneto svetainės lango uždarymo</span></td>
-                </tr>
-                <tr>
-                  <th scope="row"><span class="pp-codes"><code>APISID</code>, <code>CONSENT</code>, <code>HSID</code>, <code>NID</code>, <code>S</code>, <code>SAPISID</code>, <code>SID</code>, <code>SIDCC</code>, <code>SSID</code></span></th>
-                  <td data-th="Šaltinis">google.com</td>
-                  <td data-th="Aprašymas">Slapukai naudojami Google reCAPTCHA testui</td>
-                  <td data-th="Sukūrimo momentas">Įėjimo į puslapį metu</td>
-                  <td data-th="Galiojimo laikas"><span class="pp-exp">Iki interneto svetainės lango uždarymo</span></td>
-                </tr>
-                <tr>
-                  <th scope="row"><code>jpanesliders_sef-info-pane</code></th>
-                  <td data-th="Šaltinis">sgp-pervezimai.lt</td>
-                  <td data-th="Aprašymas">Slapukai naudojami prisiminti naršyklės nustatymus</td>
-                  <td data-th="Sukūrimo momentas">Įėjimo į puslapį metu</td>
-                  <td data-th="Galiojimo laikas"><span class="pp-exp">Iki interneto svetainės lango uždarymo</span></td>
-                </tr>
-                <tr>
-                  <th scope="row"><code>joomsef_lang</code></th>
-                  <td data-th="Šaltinis">sgp-pervezimai.lt</td>
-                  <td data-th="Aprašymas">Slapukai naudojami prisiminti svetainės kalbą</td>
-                  <td data-th="Sukūrimo momentas">Įėjimo į puslapį metu</td>
-                  <td data-th="Galiojimo laikas"><span class="pp-exp">Iki interneto svetainės lango uždarymo</span></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="sgp-callout pp-note" role="note" data-reveal data-salient="Text Block + Extra Class .sgp-callout (3 px red left bar, same as the demo notice above) — demo note, remove at launch"><span class="sgp-callout__k sgp-mono">Pastaba</span><p>Lentelė perkelta iš dabartinės svetainės. Paleidus naują svetainę ją pakeis sutikimo valdymo įskiepio sugeneruotas slapukų sąrašas.</p></div>
-          <div class="sgp-btns pp-actions" data-reveal style="--dl:.1s">
-            <button class="sgp-btn sgp-btn--line" type="button" data-pp-cookie aria-controls="sgp-cookie" data-salient="Consent plugin „Manage consent“ link (Complianz: [cmplz-manage-consent]) — demo re-opens the cookie bar"><span class="sgp-btn__l">Keisti slapukų nustatymus</span><span class="sgp-btn__a"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></button>
-            <a class="sgp-lnk" href="{{url:kontaktai}}">Kontaktai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
-        </article>
-
+<!-- ================= V1 · Inner head without photo (plan §3.3) ================= -->
+<div class="wpb_row sgp-dark" data-type="full_width_background" data-text-color="light" data-column-align="bottom" style="--bg:#0F1417;--pt:184px;--pb:72px;--pt-t:168px;--pt-m:128px;--pb-m:48px;--border-bottom:1px solid rgba(242,244,243,.12)" data-salient="Row → Inner head · Type: Full Width Background · BG #0F1417 (no photo) · Text Color: Light · Vertically Align Columns: Bottom · Border Advanced bottom 1px rgba(242,244,243,.12) · Padding 184px / 72px (tablet 168px, phone 128px / 48px) · Extra Class sgp-dark">
+  <div class="row_col_wrap_12" style="--row-gap:36px">
+    <div class="wpb_column vc_col-sm-8" data-t-w="12" data-el-space="10px" data-salient="Column 8/12 → Column Element Spacing: 10px · breadcrumbs, Label, Animated Text H1, Road line, Link (e-mail)">
+      <div class="vc_column-inner">
+        <p class="nectar-inherit-label yoast-breadcrumbs" data-salient="Text Block [wpseo_breadcrumb] · Extra Class nectar-inherit-label (Label typography)"><a href="{{url:pradzia}}">Pradžia</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Privatumo politika</span></p>
+        <span class="nectar-badge" data-badge-style="line" style="--mt:34px" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label · Text #EF4539 (asphalt)">Informacija · Slapukai (Cookies)</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:6.4vw;--fs-min:44px;--fs-max:104px;--lh:.92;--mt:14px" data-salient="Animated Text → Text Element: H1 · Text Effect: Word Animations: Reveal · Stagger Animation ✓ · Font sizing: 6.4vw, min 44px, max 104px, line height .92"><h1>Privatumo politika</h1></div>
+        <div class="divider-wrap" data-line-type="small" data-animate data-delay="400" style="--line-w:96px;--thickness:2px;--h:22px" data-salient="Divider → Line Type: Small Line · Custom Line Width 96px · Line Thickness 2px · Color: Accent · Animate Line ✓ (Road line)"><span class="divider-border"></span></div>
+        <a class="nectar-cta" data-style="underline" href="mailto:saugiai.greitai.patikimai@gmail.com" style="--mt:14px" data-salient="Button → Type: Underline · Icon: mail · Link mailto: (plan V1: no link column)"><span class="link_text">{{icon:mail|class=nectar-cta__icon}}<span class="text">saugiai.greitai.patikimai@gmail.com</span></span></a>
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- ================= V2 · Document (P): Tabs → Vertical Sticky Scrolling (replaces the custom mini-TOC + reading-progress lane) ================= -->
+<div class="wpb_row" id="dokumentas" data-type="full_width_background" data-text-color="dark" data-padding="chapter" style="--bg:#F5F7F6;--pb:5%" data-salient="Row → Chapter row P · BG #F5F7F6 · Text Color: Dark · Padding 8 % / 5 % (phones 80px) · Row ID dokumentas">
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-12" data-salient="Column 12/12 → Tabs">
+      <div class="vc_column-inner">
+        <div class="tabbed" data-style="vertical_scrolling" data-sticky-aspect="default" data-nav-width="regular" data-nav-spacing="25px" data-m-display="hidden" data-tab-spacing="10%" data-salient="Tabs → Style: Vertical Sticky Scrolling · Sticky Aspect: Tab Links · Navigation Functionality: All Links Visible · Navigation Width: Regular · Navigation Item Spacing: 25px · Navigation Item Mobile Display: Hidden (each tab starts with its own Label + H2) · Tab Spacing: 10% · Tab Link Element: H4 · panel ids are generated from the tab titles (tab.php: tab-&lt;sanitize_title&gt;) → tab-01-informacija / tab-02-slapukai-cookies; the anchors #informacija / #slapukai live on each tab's first Inner Row (Row ID)">
+          <ul class="wpb_tabs_nav"><li><a href="#tab-01-informacija">01 · Informacija</a></li><li><a href="#tab-02-slapukai-cookies">02 · Slapukai (Cookies)</a></li></ul>
+
+          <div class="wpb_tab" id="tab-01-informacija" data-salient="Tab „01 · Informacija“ (generated id tab-01-informacija)">
+            <div class="vc_row inner_row" id="informacija" data-salient="Inner Row → Row ID informacija · 3 × Inner Column 12/12 (heading · demo notice · placeholder)">
+              <div class="row_col_wrap_12_inner" style="--row-gap:32px">
+                <div class="wpb_column vc_col-sm-12" data-el-space="10px" data-salient="Inner Column → Label + Animated Text H2 + Responsive Text">
+                  <div class="vc_column-inner">
+                    <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E">01</span>
+                    <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--mt:10px" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓"><h2>Informacija</h2></div>
+                    <p class="nectar-responsive-text" data-inherit="h5" style="--fg:var(--tone-muted);--mt:14px" data-salient="Responsive Text → Font Style: H5 · Color ink-2 #4A5358 (verbatim)">Informacija ruošiama...</p>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-12" role="note" style="--bg:#EAEEED;--r:3px;--border-left:2px solid #EF4539;--pt:28px;--pb:28px;--pl:32px;--pr:32px;--pl-m:22px;--pr-m:22px" data-el-space="10px" data-animation="slight-fade-in-from-bottom" data-salient="Inner Column → Callout: Background Color #EAEEED · Border Radius 3px · Border Type: Advanced (left 2px Accent) · Padding 28px 32px · Animation: Slight Fade In From Bottom · [demo] remove when the real policy text is in">
+                  <div class="vc_column-inner">
+                    <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E">Demonstracinė versija</span>
+                    <div class="wpb_text_column" data-salient="Text Block"><p>Privatumo politikos tekstas bus pateiktas prieš paleidžiant svetainę.</p></div>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-12" style="--bg:#FFFFFF;--bg-hover:#FFFFFF;--r:3px;--border:1px dashed rgba(28,29,29,.26);--pt:28px;--pb:20px;--pl:32px;--pr:32px;--pl-m:22px;--pr-m:22px" data-el-space="none" data-animation="slight-fade-in-from-bottom" data-delay="120" data-salient="Inner Column → [demo] placeholder: Background Color #FFFFFF · Border Simple 1px dashed rgba(28,29,29,.26) · Border Radius 3px · Padding 28px 32px · Animation: Slight Fade In From Bottom · Delay 120 · the client supplies the GDPR text for these parts (not published as content)">
+                  <div class="vc_column-inner">
+                    <span class="nectar-badge" data-badge-style="line" style="--fg:#4A5358" data-salient="Badge → Minimal Line · Label · #4A5358">Laukiama kliento teksto</span>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="20-80" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" style="--mt:10px" data-salient="Horizontal List Item ×5 → Columns 2 · 20% | 80% · Style: Bottom Border, No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-label">01</p></div><div class="nectar-list-item"><p>Duomenų valdytojas ir kontaktai</p></div></div>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="20-80" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-label">02</p></div><div class="nectar-list-item"><p>Kokius duomenis tvarkome ir kokiais tikslais</p></div></div>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="20-80" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-label">03</p></div><div class="nectar-list-item"><p>Kiek laiko saugome duomenis</p></div></div>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="20-80" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-label">04</p></div><div class="nectar-list-item"><p>Jūsų teisės</p></div></div>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="20-80" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-label">05</p></div><div class="nectar-list-item"><p>Slapukai ir sutikimas</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wpb_tab" id="tab-02-slapukai-cookies" data-salient="Tab „02 · Slapukai (Cookies)“ (generated id tab-02-slapukai-cookies)">
+            <div class="vc_row inner_row" id="slapukai" data-salient="Inner Row → Row ID slapukai · heading · cookie list · note · actions">
+              <div class="row_col_wrap_12_inner" style="--row-gap:32px">
+                <div class="wpb_column vc_col-sm-12" data-el-space="10px" data-salient="Inner Column → Label + Animated Text H2 + Responsive Text H4">
+                  <div class="vc_column-inner">
+                    <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E">02</span>
+                    <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--mt:10px" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓"><h2>Slapukai (Cookies)</h2></div>
+                    <h3 class="nectar-responsive-text" data-inherit="h4" style="--mt:14px;--max-w:30em" data-salient="Responsive Text → Font Style: H4 · Text Element H3 (verbatim)">Techniniai svetainės slapukai – reikalingi normaliam svetainės veikimui</h3>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-12" data-animation="slight-fade-in-from-bottom" data-salient="Inner Column → Animation: Slight Fade In From Bottom · Toggle Panels (cookie list)">
+                  <div class="vc_column-inner">
+                    <div class="toggles" data-style="minimal_shadow" data-first-open style="--r:3px" data-salient="Toggle Panels → Style: Minimal Shadow · Accordion ✗ (multi-open) · First Toggle Open · Border Radius 3 · 5 × Toggle (cookie name) with KV rows (Horizontal List Item 30 % | 70 %, No Hover Effect) · production: Complianz [cmplz-cookies] in a Text Block (C-9)">
+                      <div class="toggle"><h3 class="toggle-title">cookie_agree</h3><div class="inner-toggle-wrap"><div class="toggle-content">
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Šaltinis</p></div><div class="nectar-list-item"><p>sgp-pervezimai.lt</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Aprašymas</p></div><div class="nectar-list-item"><p>Slapukas skirtas privatumo (slapukų) politikos pranešimui / sutikimui realizuoti.</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Sukūrimo momentas</p></div><div class="nectar-list-item"><p>Sutinkant su nuostatomis</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Galiojimo laikas</p></div><div class="nectar-list-item"><p>5 dienos</p></div></div>
+                      </div></div></div>
+                      <div class="toggle"><h3 class="toggle-title">Atsitiktinių skaičių ir raidžių seka sugeneruotas unikalus raktas</h3><div class="inner-toggle-wrap"><div class="toggle-content">
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Šaltinis</p></div><div class="nectar-list-item"><p>sgp-pervezimai.lt</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Aprašymas</p></div><div class="nectar-list-item"><p>Naudojamas saugoti naršymo sesijos raktą.</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Sukūrimo momentas</p></div><div class="nectar-list-item"><p>Įėjimo į puslapį metu</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Galiojimo laikas</p></div><div class="nectar-list-item"><p>Iki interneto svetainės lango uždarymo</p></div></div>
+                      </div></div></div>
+                      <div class="toggle"><h3 class="toggle-title">APISID, CONSENT, HSID, NID, S, SAPISID, SID, SIDCC, SSID</h3><div class="inner-toggle-wrap"><div class="toggle-content">
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Šaltinis</p></div><div class="nectar-list-item"><p>google.com</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Aprašymas</p></div><div class="nectar-list-item"><p>Slapukai naudojami Google reCAPTCHA testui</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Sukūrimo momentas</p></div><div class="nectar-list-item"><p>Įėjimo į puslapį metu</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Galiojimo laikas</p></div><div class="nectar-list-item"><p>Iki interneto svetainės lango uždarymo</p></div></div>
+                      </div></div></div>
+                      <div class="toggle"><h3 class="toggle-title">jpanesliders_sef-info-pane</h3><div class="inner-toggle-wrap"><div class="toggle-content">
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Šaltinis</p></div><div class="nectar-list-item"><p>sgp-pervezimai.lt</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Aprašymas</p></div><div class="nectar-list-item"><p>Slapukai naudojami prisiminti naršyklės nustatymus</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Sukūrimo momentas</p></div><div class="nectar-list-item"><p>Įėjimo į puslapį metu</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Galiojimo laikas</p></div><div class="nectar-list-item"><p>Iki interneto svetainės lango uždarymo</p></div></div>
+                      </div></div></div>
+                      <div class="toggle"><h3 class="toggle-title">joomsef_lang</h3><div class="inner-toggle-wrap"><div class="toggle-content">
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Šaltinis</p></div><div class="nectar-list-item"><p>sgp-pervezimai.lt</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Aprašymas</p></div><div class="nectar-list-item"><p>Slapukai naudojami prisiminti svetainės kalbą</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Sukūrimo momentas</p></div><div class="nectar-list-item"><p>Įėjimo į puslapį metu</p></div></div>
+                        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) → 30% | 70% · No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Galiojimo laikas</p></div><div class="nectar-list-item"><p>Iki interneto svetainės lango uždarymo</p></div></div>
+                      </div></div></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-12" role="note" style="--bg:#EAEEED;--r:3px;--border-left:2px solid #EF4539;--pt:28px;--pb:28px;--pl:32px;--pr:32px;--pl-m:22px;--pr-m:22px" data-el-space="10px" data-animation="slight-fade-in-from-bottom" data-salient="Inner Column → Callout: Background Color #EAEEED · Border Radius 3px · Border Type: Advanced (left 2px Accent) · Padding 28px 32px · [demo] note, remove at launch">
+                  <div class="vc_column-inner">
+                    <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E">Pastaba</span>
+                    <div class="wpb_text_column" data-salient="Text Block"><p>Lentelė perkelta iš dabartinės svetainės. Paleidus naują svetainę ją pakeis sutikimo valdymo įskiepio sugeneruotas slapukų sąrašas.</p></div>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" data-align="center" style="--gap:16px 30px" data-salient="Inner Column → Layout: Flexbox · Direction: Row · Wrap · Align Center · Gap 16px 30px">
+                  <div class="vc_column-inner">
+                    <a class="nectar-button regular large cmplz-manage-consent" data-color="extra-color-1" href="#slapukai" data-salient="Legacy Button (Lift button) → Style: Regular · Size: Large · Color: Extra Color 1 · Icon: Default Arrow · production: Complianz [cmplz-manage-consent] (re-opens the consent banner; demo hook requested from shared)"><span>Keisti slapukų nustatymus</span><i class="icon-default-style"></i></a>
+                    <a class="nectar-cta" data-style="underline" href="{{url:kontaktai}}" data-salient="Button → Type: Underline (Link)"><span class="link_text"><span class="text">Kontaktai →</span></span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

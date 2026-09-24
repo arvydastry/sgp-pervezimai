@@ -1,0 +1,225 @@
+/* =====================================================================================
+   emul/interactive.css — EMULATION of Toggle Panels, Tabs, Page Submenu, Sticky Content
+   Sections (4 types) and Theme Options → Form Styling: Minimal. Not shipped.
+   ===================================================================================== */
+
+/* ---------------- Toggle Panels (toggles) ---------------- */
+.toggles{--tg-size:40px;--tg-gap:15px;border-radius:var(--r,var(--r-toggle))}
+.toggles .toggle{position:relative;border-radius:inherit}
+.toggles .toggle-title{margin:0;font:var(--h4-w) var(--h4-size)/var(--h4-lh) var(--f-display)}
+.toggles .toggle-title button{display:flex;align-items:center;gap:var(--tg-gap);width:100%;min-height:56px;padding:22px 0;border:0;background:none;color:inherit;
+  font:inherit;letter-spacing:inherit;text-align:left}
+.toggles .toggle-heading{flex:1}
+.toggles .inner-toggle-wrap{display:grid;grid-template-rows:0fr;transition:grid-template-rows var(--d-toggle) var(--e-toggle)}
+.toggles .inner-toggle-wrap > .toggle-inner{overflow:hidden;min-height:0}
+.toggles .toggle-content{padding:0 calc(var(--tg-size) + var(--tg-gap)) 28px 0;opacity:0;transition:opacity .5s ease}
+.toggles .toggle.open .inner-toggle-wrap{grid-template-rows:1fr}
+.toggles .toggle.open .toggle-content{opacity:1;transition-delay:.15s}
+.toggles .toggle-content > * + *{margin-top:14px}
+html:not(.js) .toggles .inner-toggle-wrap{grid-template-rows:1fr}html:not(.js) .toggles .toggle-content{opacity:1}
+/* Style: Animated Circle — stroke draws + panel opens .85s (.76,0,.24,1), circle 40px */
+.toggles[data-style="animated_circle"] .toggle{border-bottom:1px solid var(--tone-hair)}
+.toggles[data-style="animated_circle"]:not([data-divider]) .toggle{border-bottom:0}
+.toggles .nectar-toggle-icon{position:relative;flex:0 0 auto;width:var(--tg-size);height:var(--tg-size);overflow:visible;transform:rotate(-90deg);
+  transition:transform var(--d-toggle) var(--e-toggle)}
+.toggles[data-circle-position="left"] .nectar-toggle-icon{order:-1}
+.toggles .nectar-toggle-icon-circle{fill:none;stroke:var(--tone-hair-2);stroke-width:1;transition:stroke .3s ease}
+.toggles .nectar-toggle-icon-circle-hover{fill:none;stroke:var(--nectar-accent-color);stroke-width:1.5;stroke-dasharray:115;stroke-dashoffset:115;transition:stroke-dashoffset var(--d-toggle) var(--e-toggle)}
+.toggles .plus-line{stroke:currentColor;stroke-width:1.5;transform-origin:20px 20px;transition:transform var(--d-toggle) var(--e-toggle)}
+.toggles .toggle.open .nectar-toggle-icon-circle-hover{stroke-dashoffset:0}
+.toggles .toggle.open .nectar-toggle-icon{transform:rotate(90deg)}
+.toggles .toggle.open .plus-line-horizontal{transform:scaleX(0)}
+.toggles .toggle-title button:hover .nectar-toggle-icon-circle{stroke:var(--tone-fg)}
+/* Style: Minimal Shadow — the open panel gets the 5-layer soft shadow */
+.toggles[data-style="minimal_shadow"] .toggle{padding:0 26px;margin-bottom:12px;border:1px solid var(--tone-hair);background:transparent;
+  transition:background-color .5s ease,box-shadow .5s ease,border-color .5s ease}
+.toggles[data-style="minimal_shadow"] .toggle-title{font:var(--h5-w) var(--h5-size)/var(--h5-lh) var(--f-text)}
+.toggles[data-style="minimal_shadow"] .toggle-title button{padding:20px 0}
+.toggles[data-style="minimal_shadow"] .toggle.open{background:var(--tone-surface);border-color:transparent;
+  box-shadow:0 1px 1px rgba(0,0,0,.03),0 2px 4px rgba(0,0,0,.03),0 6px 10px rgba(0,0,0,.04),0 14px 24px rgba(0,0,0,.05),0 30px 60px rgba(0,0,0,.06)}
+.toggles[data-style="minimal_shadow"],.toggles[data-style="default"]{--tg-size:24px}
+.toggles[data-style="minimal_shadow"] .nectar-toggle-icon circle,.toggles[data-style="default"] .nectar-toggle-icon circle{display:none}
+.toggles[data-style="default"] .toggle{border-bottom:1px solid var(--tone-hair)}
+
+
+/* ---------------- Tabs (tabbed_section) ---------------- */
+.tabbed{position:relative}
+.tabbed .wpb_tabs_nav{display:flex;flex-wrap:wrap;gap:4px 32px;margin:0 0 36px;padding:0;list-style:none;position:relative}
+.tabbed .wpb_tabs_nav a{display:inline-flex;align-items:center;min-height:44px;padding:8px 0;color:var(--tone-muted);
+  font:500 var(--body-size)/1.3 var(--f-text);transition:color .3s ease}
+/* Minimal Alt: the only tab style that uses the Form and Category Labels slot (fonts.php) */
+.tabbed[data-style="minimal_alt"] .wpb_tabs_nav a{font:500 var(--label-size)/var(--label-lh) var(--f-label);letter-spacing:var(--label-ls);text-transform:uppercase}
+.tabbed .wpb_tabs_nav a:hover,.tabbed .wpb_tabs_nav a[aria-selected="true"]{color:var(--tone-fg)}
+.tabbed .wpb_tab[hidden]{display:none}
+.tabbed[data-animation="fade"] .wpb_tab{animation:tab-fade .45s ease both}
+@keyframes tab-fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* Style: Minimal / Minimal Alt ([data-style*=minimal]) — 4px underline .3s (.12,.75,.4,1); Minimal adds the nav hairline */
+.tabbed[data-style="minimal"] .wpb_tabs_nav{border-bottom:1px solid var(--tone-hair)}
+.tabbed[data-style^="minimal"] .wpb_tabs_nav .magic-line{position:absolute;left:0;bottom:-1px;height:4px;width:var(--ml-w,0px);background:var(--nectar-accent-color);
+  transform:translateX(var(--ml-x,0px));transition:transform var(--d-tab) var(--e-tab),width var(--d-tab) var(--e-tab)}
+/* Style: Toggle Button — 2 tabs, 70 × 28 switch, knob .45s (.23,.46,.4,1) */
+.tabbed[data-style="toggle_button"] .wpb_tabs_nav{align-items:center;gap:16px}
+.tabbed[data-style="toggle_button"] .wpb_tabs_nav li:first-child{order:1}.tabbed[data-style="toggle_button"] .wpb_tabs_nav .toggle-switch{order:2}
+.tabbed[data-style="toggle_button"] .wpb_tabs_nav li:nth-child(2){order:3}
+.tabbed[data-style="toggle_button"] .wpb_tabs_nav a{font:var(--h4-w) var(--h4-size)/1 var(--f-display);letter-spacing:0;text-transform:none}
+.tabbed .toggle-switch{position:relative;width:70px;height:28px;border:0;padding:0;border-radius:14px;/* radius-ok: native Tabs Toggle Button switch track */
+  background:var(--tone-inv-bg)}
+.tabbed .toggle-switch::after{content:"";position:absolute;top:4px;left:4px;width:20px;height:20px;border-radius:50%;background:var(--nectar-accent-color);
+  transition:transform var(--d-switch) var(--e-switch)}
+.tabbed .toggle-switch[data-on="1"]::after{transform:translateX(42px)}
+/* Style: Vertical Sticky Scrolling (18.2.1 dynamic CSS). Sticky Aspect „Tab Links“ (data-sticky-aspect="default"): nav 25 % (min 225 px;
+   Navigation Width Wide 33 % / Narrow 20 %), content padding-left 7 %, links .45 → 1 (.25s), 1 px track + 3 px active indicator
+   (.5s (0,0,.34,.96)), Navigation Item Spacing 15–45 px (default 35), Tab Spacing, CTA under the nav; below 1000 px the nav is hidden
+   (Navigation Item Mobile Display: Hidden) or each tab gets its title (Visible Above Each Section).
+   Sticky Aspect „Tab Content“ (data-sticky-aspect="content"): Tab Link Animation (Opacity / Text Outline Fill) + Tab Content Animation Fade. */
+.tabbed[data-style="vertical_scrolling"]{display:grid;grid-template-columns:var(--nav-w,30%) 1fr;column-gap:var(--column-spacing);align-items:start}
+.tabbed[data-style="vertical_scrolling"][data-nav-width="25"]{--nav-w:25%}.tabbed[data-style="vertical_scrolling"][data-nav-width="40"]{--nav-w:40%}
+.tabbed[data-style="vertical_scrolling"] .wpb_tabs_nav{position:sticky;top:calc(var(--header-h-small) + var(--submenu-h,0px) + 36px);flex-direction:column;flex-wrap:nowrap;gap:6px;margin:0}
+.tabbed[data-style="vertical_scrolling"] .wpb_tabs_nav a{font:var(--h4-w) var(--h4-size)/var(--h4-lh) var(--f-display);letter-spacing:0;text-transform:none;color:var(--tone-fg);opacity:.45;transition:opacity .25s ease,color .3s ease}
+.tabbed[data-style="vertical_scrolling"] .wpb_tabs_nav a.active-tab,.tabbed[data-style="vertical_scrolling"] .wpb_tabs_nav a:hover{opacity:1}
+.tabbed[data-style="vertical_scrolling"] .wpb_tabs_nav{grid-column:1;grid-row:1 / span 30}
+.tabbed[data-style="vertical_scrolling"] .wpb_tab{grid-column:2;padding-bottom:12vh;animation:none}
+.tabbed[data-style="vertical_scrolling"] .wpb_tab[hidden]{display:block}
+.tabbed[data-style="vertical_scrolling"] .vs-mobile-title{display:none}
+/* Tab Links */
+.tabbed[data-sticky-aspect="default"]{--nav-w:minmax(225px,25%);--vs-sp:35px;column-gap:7%}
+.tabbed[data-sticky-aspect="default"][data-nav-width="wide"]{--nav-w:minmax(275px,33%)}.tabbed[data-sticky-aspect="default"][data-nav-width="narrow"]{--nav-w:minmax(175px,20%)}
+.tabbed[data-nav-spacing="15px"]{--vs-sp:15px}.tabbed[data-nav-spacing="20px"]{--vs-sp:20px}.tabbed[data-nav-spacing="25px"]{--vs-sp:25px}
+.tabbed[data-nav-spacing="30px"]{--vs-sp:30px}.tabbed[data-nav-spacing="40px"]{--vs-sp:40px}.tabbed[data-nav-spacing="45px"]{--vs-sp:45px}
+.tabbed[data-sticky-aspect="default"] .wpb_tabs_nav{gap:0;padding:0}
+.tabbed[data-sticky-aspect="default"] .wpb_tabs_nav::before{content:"";position:absolute;left:3px;top:0;width:1px;height:100%;background:var(--tone-hair)}
+.tabbed[data-sticky-aspect="default"] .wpb_tabs_nav li{position:relative;padding:0 0 var(--vs-sp) 50px}
+.tabbed[data-sticky-aspect="default"] .wpb_tabs_nav li:last-child{padding-bottom:0}
+.tabbed[data-sticky-aspect="default"] .wpb_tabs_nav .vs-line{position:absolute;left:2px;top:0;width:3px;height:var(--vs-h,0px);padding:0;background:var(--tone-fg);
+  transform:translateY(var(--vs-y,0px));transition:transform .5s cubic-bezier(0,0,.34,.96),height .5s cubic-bezier(0,0,.34,.96)}
+.tabbed[data-sticky-aspect="default"] .wpb_tabs_nav .vs-cta{padding:35px 0 0 50px}
+.tabbed[data-style="vertical_scrolling"] .wpb_tabs_nav .vs-cta a{opacity:1;font:var(--btn-w) var(--btn-size)/1.15 var(--f-text);letter-spacing:var(--btn-ls)}
+.tabbed[data-sticky-aspect="default"] .wpb_tab{padding:var(--vs-tsp,0px) 0}
+.tabbed[data-sticky-aspect="default"] .wpb_tab:first-of-type{padding-top:0}.tabbed[data-sticky-aspect="default"] .wpb_tab:last-of-type{padding-bottom:0}
+.tabbed[data-tab-spacing="5%"]{--vs-tsp:2.5%}.tabbed[data-tab-spacing="10%"]{--vs-tsp:5%}.tabbed[data-tab-spacing="15%"]{--vs-tsp:7.5%}
+.tabbed[data-tab-spacing="20%"]{--vs-tsp:10%}.tabbed[data-tab-spacing="10px"]{--vs-tsp:10px}.tabbed[data-tab-spacing="20px"]{--vs-tsp:20px}
+/* Tab Content */
+.tabbed[data-sticky-aspect="content"][data-link-animation="outline_fill"] .wpb_tabs_nav a{opacity:1;color:transparent;-webkit-text-stroke:1px var(--tone-fg);
+  background:linear-gradient(var(--tone-fg),var(--tone-fg)) left/0% 100% no-repeat;-webkit-background-clip:text;background-clip:text;transition:background-size .6s var(--e-arrow)}
+.tabbed[data-sticky-aspect="content"][data-link-animation="outline_fill"] .wpb_tabs_nav a.active-tab{background-size:100% 100%}
+.tabbed[data-sticky-aspect="content"][data-content-animation="fade"] .wpb_tab{transition:opacity .6s ease}
+.tabbed[data-sticky-aspect="content"][data-content-animation="fade"] .wpb_tab:not(.active-tab){opacity:.28}
+@media (max-width:999px){
+  .tabbed[data-style="vertical_scrolling"]{grid-template-columns:1fr}
+  .tabbed[data-style="vertical_scrolling"] .wpb_tabs_nav,.tabbed[data-style="vertical_scrolling"] .wpb_tab{grid-column:1;grid-row:auto}
+  .tabbed[data-style="vertical_scrolling"] .wpb_tabs_nav{position:relative;top:auto;flex-direction:row;flex-wrap:wrap;gap:4px 18px;margin-bottom:32px}
+  .tabbed[data-style="vertical_scrolling"] .wpb_tabs_nav a{font-size:18px;line-height:24px}
+  .tabbed[data-sticky-aspect="content"] .wpb_tabs_nav a{opacity:.6;color:var(--tone-fg);-webkit-text-stroke:0;background:none}
+  .tabbed[data-sticky-aspect="content"] .wpb_tabs_nav a.active-tab{opacity:1}
+  .tabbed[data-sticky-aspect="content"][data-content-animation="fade"] .wpb_tab:not(.active-tab){opacity:1}
+  .tabbed[data-sticky-aspect="default"] .wpb_tabs_nav{display:none}
+  .tabbed[data-sticky-aspect="default"] .wpb_tab,.tabbed[data-sticky-aspect="default"] .wpb_tab:first-of-type{padding:0 0 40px}
+  .tabbed[data-sticky-aspect="default"][data-m-display="visible"] .vs-mobile-title{display:block;margin-bottom:25px;font:var(--h4-w) var(--h4-size)/var(--h4-lh) var(--f-display)}
+}
+
+/* ---------------- Page Submenu (page_submenu) — sticky .3s, link opacity .7 → 1 ---------------- */
+.wpb_row:has(.page-submenu[data-sticky]){z-index:60}
+.page-submenu{position:relative;z-index:50;background:var(--bg,#f7f7f7);color:var(--link,var(--tone-fg))}
+.page-submenu.is-fixed{position:fixed;left:0;right:0;top:var(--header-h-small);z-index:9000;box-shadow:0 12px 30px rgba(0,0,0,.18);animation:psm-in .3s ease}
+@keyframes psm-in{from{transform:translateY(-8px);opacity:.6}to{transform:none;opacity:1}}
+/* page_submenu.php: the links are a plain <ul> of Menu Link items */
+.page-submenu ul{display:flex;gap:6px 30px;margin:0;padding:0;list-style:none;overflow-x:auto;scrollbar-width:none;white-space:nowrap}
+.page-submenu ul::-webkit-scrollbar{display:none}
+.page-submenu[data-alignment="center"] ul{justify-content:center}
+.page-submenu ul a{display:inline-flex;align-items:center;min-height:56px;opacity:.7;font:500 15px/1 var(--f-text);transition:opacity .1s linear}
+.page-submenu ul a:hover,.page-submenu .current-menu-item a{opacity:1}
+/* phones: the strip scrolls sideways — the right edge fades out as a cue, the active link is scrolled into view (emul.js) */
+@media (max-width:690px){.page-submenu ul{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);padding-right:72px}}   /* the last link clears the fade when scrolled to the end */
+
+/* ---------------- Form Styling → Overall Form Style: Minimal (Fancy Select / Checkbox) ---------------- */
+body[data-form-style="minimal"] input[type="text"],body[data-form-style="minimal"] input[type="email"],body[data-form-style="minimal"] input[type="tel"],
+body[data-form-style="minimal"] input[type="search"],body[data-form-style="minimal"] textarea,body[data-form-style="minimal"] select{
+  width:100%;min-height:48px;padding:12px 0;border:0;border-bottom:1px solid var(--sgp-paper-300);border-radius:0;background:transparent;color:inherit;
+  font:400 17px/1.4 var(--f-text);transition:border-color .3s ease;-webkit-appearance:none;appearance:none}
+body[data-form-style="minimal"] textarea{min-height:110px;resize:vertical}
+body[data-form-style="minimal"] input:hover,body[data-form-style="minimal"] textarea:hover,body[data-form-style="minimal"] select:hover,
+body[data-form-style="minimal"] input:focus,body[data-form-style="minimal"] textarea:focus,body[data-form-style="minimal"] select:focus{border-color:var(--nectar-accent-color);outline:none}
+body[data-form-style="minimal"] select{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23888' stroke-width='1.5'/%3E%3C/svg%3E") right 2px center/12px no-repeat;padding-right:24px}
+body[data-form-style="minimal"] input::placeholder,body[data-form-style="minimal"] textarea::placeholder{color:var(--tone-muted);opacity:.8}
+body[data-form-style="minimal"] input[type="checkbox"]{width:20px;height:20px;margin:0;flex:0 0 auto;border:1px solid var(--sgp-paper-300);border-radius:var(--nectar-border-radius);
+  -webkit-appearance:none;appearance:none;display:inline-grid;place-items:center;background:transparent}
+body[data-form-style="minimal"] input[type="checkbox"]:checked{background:var(--nectar-accent-color);border-color:var(--nectar-accent-color)}
+body[data-form-style="minimal"] input[type="checkbox"]:checked::after{content:"";width:10px;height:6px;border:solid var(--sgp-asphalt-900);border-width:0 0 2px 2px;transform:translateY(-1px) rotate(-45deg)}
+
+/* ---------------- Sticky Content Sections (nectar_sticky_media_sections) ---------------- */
+.nectar-sticky-media-sections{--nsms-top:0px;--nsms-h:var(--section-h,100vh);position:relative;--r:var(--r-sticky)}
+.nectar-sticky-media-sections[data-subtract-nav]{--nsms-top:calc(var(--header-h-small) + var(--submenu-h,0px));--nsms-h:calc(var(--section-h,100vh) - var(--header-h-small) - var(--submenu-h,0px))}
+.nectar-sticky-media-sections[data-section-height="80vh"]{--section-h:80vh}.nectar-sticky-media-sections[data-section-height="85vh"]{--section-h:85vh}
+.nectar-sticky-media-sections[data-section-height="90vh"]{--section-h:90vh}.nectar-sticky-media-sections[data-section-height="70vh"]{--section-h:70vh}
+.nectar-sticky-media-section{position:relative;background:var(--bg,transparent);border-radius:var(--r);color:var(--tone-fg)}
+.nectar-sticky-media-section__inner{position:relative;z-index:2;height:100%}
+.nectar-sticky-media-section > .nsms-bg{position:absolute;inset:0;z-index:0;overflow:hidden;border-radius:inherit}
+.nectar-sticky-media-section > .nsms-bg img,.nectar-sticky-media-section > .nsms-bg video{width:100%;height:100%;object-fit:cover}
+.nectar-sticky-media-section > .nsms-link{position:absolute;inset:0;z-index:4;border-radius:inherit}
+/* Type: Sticky Media, Scrolling Content (default) */
+.nectar-sticky-media-sections[data-type="default"]{display:grid;grid-template-columns:var(--media-w,45%) 1fr;column-gap:var(--column-spacing);align-items:start}
+.nectar-sticky-media-sections[data-type="default"][data-content-position="left"]{grid-template-columns:1fr var(--media-w,45%)}
+.nectar-sticky-media-sections[data-type="default"][data-content-position="left"] .nectar-sticky-media-section__featured-media{order:2}
+.nectar-sticky-media-sections[data-media-width="40"]{--media-w:40%}.nectar-sticky-media-sections[data-media-width="50"]{--media-w:50%}
+.nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section__featured-media{position:sticky;top:calc(50vh - var(--media-h,80vh) / 2 + var(--nsms-top) / 2);height:var(--media-h,80vh);
+  border-radius:var(--r);overflow:hidden}
+.nectar-sticky-media-sections[data-media-height="70vh"]{--media-h:70vh}.nectar-sticky-media-sections[data-media-height="60vh"]{--media-h:60vh}
+.nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section__media-wrap{position:absolute;inset:0;opacity:0;clip-path:inset(100% 0 0 0);
+  transition:opacity .01s linear .9s,clip-path .9s var(--e-arrow)}
+.nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section__media-wrap.active{opacity:1;clip-path:inset(0);transition:opacity 0s,clip-path .9s var(--e-arrow);z-index:2}
+.nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section__media{position:absolute;inset:0}
+.nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section__media img,.nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section__media video{width:100%;height:100%;object-fit:cover}
+.nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section__content{display:flex;flex-direction:column;gap:var(--content-spacing,30vh);padding-block:calc(var(--media-h,80vh) / 2 - 80px)}
+.nectar-sticky-media-sections[data-content-spacing="20vh"]{--content-spacing:20vh}.nectar-sticky-media-sections[data-content-spacing="40vh"]{--content-spacing:40vh}
+.nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section{background:none;transition:opacity .5s ease}
+.nectar-sticky-media-sections[data-type="default"].js-ready .nectar-sticky-media-section:not(.active){opacity:.35}
+.nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section > .nsms-bg{position:relative;display:none;aspect-ratio:var(--m-aspect,4/5);margin-bottom:24px}
+@media (max-width:999px){
+  .nectar-sticky-media-sections[data-type="default"]{grid-template-columns:1fr}
+  .nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section__featured-media{display:none}
+  .nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section__content{gap:64px;padding:0}
+  .nectar-sticky-media-sections[data-type="default"] .nectar-sticky-media-section > .nsms-bg{display:block}
+  .nectar-sticky-media-sections[data-type="default"].js-ready .nectar-sticky-media-section:not(.active){opacity:1}
+}
+/* Type: Sticky Scroll Pinned Sections — Effect None / Overlapping / Scale / Blurred Scale / Fade Scale (+ Stacked, Section Navigation) */
+.nectar-sticky-media-sections[data-type="scroll-pinned-sections"] > .nectar-sticky-media-section__content__wrap{display:flex;flex-direction:column;gap:0}
+.nectar-sticky-media-sections[data-type="scroll-pinned-sections"] .nectar-sticky-media-section{position:sticky;top:calc(var(--nsms-top) + var(--stack-off,0px));
+  min-height:var(--nsms-h);overflow:hidden;transform-origin:center top;will-change:transform;
+  transform:translate3d(0,var(--ty,0px),0) scale(var(--sc,1));filter:blur(var(--bl,0px))}
+.nectar-sticky-media-sections[data-type="scroll-pinned-sections"][data-stacked]{--stack-off:40px}
+/* Content Alignment (Pinned Sections): Middle / Stretch / Top / Bottom — the section is a flex column, its content fills it */
+.nectar-sticky-media-sections[data-content-alignment] .nectar-sticky-media-section{display:flex;flex-direction:column}
+.nectar-sticky-media-sections[data-content-alignment] .nectar-sticky-media-section__inner{flex:1 1 auto;height:auto;display:flex;flex-direction:column}
+.nectar-sticky-media-sections[data-content-alignment="middle"] .nectar-sticky-media-section__inner{justify-content:center}
+.nectar-sticky-media-sections[data-content-alignment="bottom"] .nectar-sticky-media-section__inner{justify-content:flex-end}
+.nectar-sticky-media-sections[data-content-alignment="stretch"] .nectar-sticky-media-section__inner > .inner_row{flex:1 1 auto;display:flex;flex-direction:column}
+.nectar-sticky-media-sections[data-content-alignment="stretch"] .nectar-sticky-media-section__inner > .inner_row > .row_col_wrap_12_inner{flex:1 1 auto}
+.nectar-sticky-media-sections[data-type="scroll-pinned-sections"] .nectar-sticky-media-section + .nectar-sticky-media-section{margin-top:var(--pin-gap,0px)}
+.nectar-sticky-media-sections[data-type="scroll-pinned-sections"] .nectar-sticky-media-section::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:var(--fade-color,#0B0E10);opacity:var(--fo,0)}
+.nsms-nav{position:absolute;right:14px;top:0;bottom:0;z-index:20;pointer-events:none}
+.nsms-nav ul{position:sticky;top:50vh;display:flex;flex-direction:column;gap:10px;margin:0;padding:10px 6px;list-style:none;pointer-events:auto;transform:translateY(-50%)}
+.nsms-nav button{display:block;width:10px;height:10px;padding:0;border:1px solid var(--sgp-fog);border-radius:50%;background:transparent;transition:background-color .3s ease,border-color .3s ease,transform .3s ease}
+.nsms-nav button::before{content:"";display:block;margin:-17px;width:44px;height:44px}
+.nsms-nav button.active{background:var(--nav-color,var(--nectar-accent-color));border-color:var(--nav-color,var(--nectar-accent-color));transform:scale(1.25)}
+/* Type: Horizontal Scrolling — the track follows vertical scroll while pinned */
+.nectar-sticky-media-sections[data-type="horizontal-scrolling"]{overflow-x:clip}
+.nectar-sticky-media-sections[data-type="horizontal-scrolling"] .nectar-sticky-media-section__content__wrap{position:sticky;top:var(--nsms-top);height:var(--nsms-h);
+  display:flex;align-items:stretch;gap:var(--gap-h,8px);width:max-content;padding:24px var(--container-pad);will-change:transform}
+.nectar-sticky-media-sections[data-type="horizontal-scrolling"] .nectar-sticky-media-section{flex:0 0 var(--sec-w,45vw);height:100%;overflow:hidden}
+.nectar-sticky-media-sections[data-section-width="35"]{--sec-w:35vw}.nectar-sticky-media-sections[data-section-width="45"]{--sec-w:45vw}
+.nectar-sticky-media-sections[data-section-width="60"]{--sec-w:60vw}.nectar-sticky-media-sections[data-section-width="75"]{--sec-w:75vw}
+.nectar-sticky-media-sections[data-gap="8"]{--gap-h:8px}.nectar-sticky-media-sections[data-gap="16"]{--gap-h:16px}.nectar-sticky-media-sections[data-gap="24"]{--gap-h:24px}
+.nsms-indicator{position:fixed;left:0;top:0;z-index:9500;display:grid;place-items:center;width:86px;height:86px;margin:-43px 0 0 -43px;border-radius:50%;
+  background:var(--ind-bg,var(--nectar-accent-color));color:var(--ind-fg,var(--sgp-asphalt-900));font:600 14px/1 var(--f-text);pointer-events:none;
+  transform:translate3d(var(--mx,0),var(--my,0),0) scale(0);transition:transform .35s var(--e-btn)}
+.nsms-indicator.visible{transform:translate3d(var(--mx,0),var(--my,0),0) scale(1)}
+/* Type: Layered Card Reveal (basic emulation — cards pinned and revealed one over the other) */
+.nectar-sticky-media-sections[data-type="layered-card-reveal"] .nectar-sticky-media-section{position:sticky;top:calc(var(--nsms-top) + 40px);width:min(100%,var(--card-w,560px));
+  margin-inline:auto;aspect-ratio:4/5;overflow:hidden;margin-bottom:24vh;transform:scale(var(--sc,1));transform-origin:center top}
+/* Effect Enabled per device: where the device is excluded, sections stack (Salient's mobile behaviour) */
+.nectar-sticky-media-sections.nsms-off .nectar-sticky-media-section{position:relative;top:auto;transform:none;filter:none;min-height:0;margin-bottom:12px}
+.nectar-sticky-media-sections.nsms-off .nectar-sticky-media-section::after{display:none}
+.nectar-sticky-media-sections.nsms-off[data-type="horizontal-scrolling"] .nectar-sticky-media-section__content__wrap{position:relative;top:auto;height:auto;width:auto;
+  flex-direction:column;transform:none;padding:0 var(--container-pad)}
+.nectar-sticky-media-sections.nsms-off[data-type="horizontal-scrolling"] .nectar-sticky-media-section{flex:0 0 auto;height:auto;min-height:0}
+.nectar-sticky-media-sections.nsms-off .nsms-nav{display:none}

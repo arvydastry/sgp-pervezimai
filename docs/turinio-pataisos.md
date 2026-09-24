@@ -145,7 +145,7 @@ Pagrindinis sąrašas (pradžios puslapio antraštės, paslaugų santraukos, žy
 
 - Skyrių etiketės (maršruto „stotelės“) ir jų trumpi faktai: „Atvykimas“ su „LT ⇄ IE · LT ⇄ ES“; „Taisyklių 4.2 · 4.5 p.“ ir „Taisyklių 4.2 p.“ (pradžios puslapio „Prieš siunčiant“ skydelis).
 - Grafiko eilutėse, kai rodomos abi išvykimo kryptys: „Į Airiją“ / „Į Ispaniją“ (kaip skambučių juostoje).
-- Bilietų kortelės (blokas „Atvykimas“, visi puslapiai): etiketė „Kitas išvykimas“ (anksčiau „Kitas išvykimas iš Lietuvos“ — netilpo į vieną eilutę), kryptis perkelta į eilutę po data: „iš LT · po 16 d.“ (§8.1 p. 15).
+- ~~Bilietų kortelės (blokas „Atvykimas“): etiketė „Kitas išvykimas“, „iš LT · po 16 d.“~~ — **pašalinta**: kortelių nebeliko; artimiausios datos rašomos pilnai („spalio 9 d.“) bloke „Artimiausi išvykimai“ ir grafike.
 - Poraštė: **[demo]** „Ankstesnė demo versija (v1)“, „Demo · nuotraukos ir video — Pexels“.
 - Pagalbiniai tekstai ekrano skaitytuvams ir mygtukams: „Uždaryti“, „Uždaryti meniu“, „Meniu“, „Skambinti – telefono numeriai“, „Telefonai“, „Kelias“ (naršymo kelias), „Greitas skambutis“, „Kryptis“, „Tarptautinės pervežimo paslaugos“, „Puslapio skyriai“, „Paslaugų grupės“, tuščio grafiko pranešimas „… grafikas atnaujinamas.“ **[demo]** mygtukas „Salient žymės“ (skirtas WordPress kūrėjui).
 - Nuorodos tarp puslapių naudoja esamus meniu pavadinimus („Pervežimų grafikas“, „Kontaktai“, „Pervežimo paslaugos“, „Tarptautiniai pervežimai“, „Visos paslaugos“) — naujo teksto nėra.
@@ -198,13 +198,13 @@ Pagrindinis sąrašas (pradžios puslapio antraštės, paslaugų santraukos, žy
   - 11 Paėmimas — „Daiktus į mikroautobusą pakrauna klientas.“ · Kelyje apie 3–4 paras — „Nuo krovinio paėmimo iki pristatymo gavėjui.“ · Pristatymas — „Pavyzdžiui, į namus. Iškrovimu pasirūpina klientas.“
 - Specialūs blokai: 01 „Pakavimas“ + „Nauja, standi pakuotė · Užpildas ertmėms · Lipni juosta per perimetrą · Adresas matomoje vietoje“; 02 „Apibrėžimas“; 03 „Kaip veikia dalinis krovinys“, „Jūsų krovinys / Kitų klientų kroviniai“; 04 „Pavyzdžiui“ + „Langai · Žoliapjovės · Buitinė įranga · Smulkios siuntos“; 05 „Traliuku“; 06 „Vežame iš“ + „Ispanija · Prancūzija · Vokietija · Lenkija · Airija“; 07 „Principai“, „Patogumai“, „Atlenkiamos sėdynės · Šildomos sėdynės · Kondicionierius · Keleiviai apdrausti“, „Iliustracinė nuotrauka“, raktai „Kaina · Pažintys · Draudimas · Poilsio režimas“; 08 „Prieš kelionę“, dokumentų sąrašas (§8.1 p. 18), „Pasiruošta 0 / 5“, „Kaina“ + „Narvo dydis · Priežiūros sudėtingumas · Atstumas“; 09 „Pakavimo gidas“, „Pakuotė · Turinys · Užpildas“, „5 cm“; 11 „Augintiniai“ + nuoroda „Gyvūnų pervežimas“.
 - Kliento atsakomybių pavadinimai (tekstai — pažodžiui): 01 „Atsakomybė už pakuotę · Iškrovimas · Tranzito šalių teisės aktai“; 02 „Gavėjas sutartu laiku · Iškrovimas“; 03 „Pakavimas ir adresai · Gavėjas sutartu laiku“; 04 „Pakavimas“; 05 „Pristatymas sutartu laiku“; 06 „Adresai ir gavėjas“; 08 „Gavėjas sutartu laiku“; 09 „Turinys · Pakuotė“; 10 „Turinys ir pakuotė“; 11 „Pakavimas · Gavėjas sutartu laiku“.
-- Pagalbiniai tekstai: žymekliai „1 – Atlenkiamos sėdynės“ ir pan., „Pažymėti kaip paruoštą: <punktas>“, „Pasiruošta N iš 5“.
+- Pagalbiniai tekstai: žymekliai „1 – Atlenkiamos sėdynės“ ir pan. (~~„Pažymėti kaip paruoštą: <punktas>“, „Pasiruošta N iš 5“~~ — **pašalinta** kartu su pasiruošimo sąrašo žymėjimu).
 
 ### 2.6 Pervežimų grafikas
 
-- Viršutinė etiketė „LT ⇄ IE · LT ⇄ ES“; skyrių etiketės „Lenta“ (faktas „4 kryptys“), „Laiko juosta“ („Nuo šiandien“), „Ką verta žinoti“ („Apie 3–4 paros“).
+- Viršutinė etiketė „LT ⇄ IE · LT ⇄ ES“; skyrių etiketės „Lenta“ (faktas „4 kryptys“), „Ką verta žinoti“ („Apie 3–4 paros“). ~~„Laiko juosta“ („Nuo šiandien“)~~ — **pašalinta**.
 - Lentelės stulpeliai „Maršrutas · Išvykimo datos · Būsena · Skambinti“; skirtukai „Visi · Airija · Ispanija“ (§8.1 p. 15).
-- Laiko juosta (neprivaloma eilutė): H2 „Visi išvykimai vienoje juostoje“; įžanga „Kiekviena stotelė – išvykimo diena. Juosta prasideda šiandien ir baigiasi paskutine grafike paskelbta data.“; ašis „Šiandien“, „po 7 d.“, „po 14 d.“ …; legenda „Artimiausias · Kitas išvykimas kryptimi · Vėliau · Šiandien“.
+- ~~Laiko juosta (neprivaloma eilutė): H2 „Visi išvykimai vienoje juostoje“, ašis „Šiandien“, „po 7 d.“ …, legenda~~ — **pašalinta**: grafikas rodomas tik lentele su pilnomis datomis.
 - H2 „Laiką ir vietą suderinsime telefonu“; raktai „Išvykimo laikas ir vieta“, „Principas“, „Kelyje“, „Įsipareigojimas siuntoms“ (§8.1 p. 12, 14); nuorodos „Siuntos sekimas“, „Siuntų siuntimo taisyklės“.
 
 ### 2.7 Siuntos sekimas
@@ -247,14 +247,14 @@ Bendras sąrašas, ką verta sutvarkyti prieš paleidžiant (pristatymo trukmės
 1. **„Nauji“ mikroautobusai (§8.2 p. 1, §8.3 p. 7–8).** Išbraukti tik metai („2017–2018“) ir DVD; žodis „naujais / nauju“ palikti pažodžiui — patvirtinkite, ar tai vis dar tiesa, kitaip keisime į „techniškai tvarkingais“. Kur jis yra: Komfortas „Keleivius vežame tik naujais, komfortiškais mikroautobusais…“ (Apie įmonę, Keleivių pervežimas); „Siuntos taip pat gabenamos naujais, patikimais mikroautobusais.“ („Kodėl verta pasitikėti mumis?“ — Apie įmonę, Tarptautiniai pervežimai); Pervežimo paslaugos „…vykdomos naujais, techniškai tvarkingais, patogiais mikroautobusais“; paslaugų puslapių „Privalumai“ ir baigiamieji sakiniai — Krovinių („Gabenimas nauju mikroautobusu…“), Negabaritinių („…vykdomas tik naujais mikroautobusais.“ — ypač abejotina, §8.3 p. 8), Dalinių, Daiktų, Keleivių, Gyvūnų („tik tvarkingu, nauju mikroautobusu“), Siuntų pervežimo, Siuntų pristatymo, Perkraustymo („tik naujais mikroautobusais“).
 2. **„Kodėl verta pasitikėti mumis?“ 7 p.**: „…vairuotojai, kad kelionė **bus** saugi ir sklandi“ — siūlome „**būtų**“ (nepakeista, laukiame pritarimo).
 3. **Kontaktų formos nauji laukai** „Kryptis“ ir „Ką vežame?“ (neprivalomi) — dabartinėje formoje yra tik vardas, el. paštas, tema ir žinutė. Jei tinka, juos įdiegsime „Fluent Forms“ formoje.
-4. **Laiko juosta pervežimų grafike** — nauja, neprivaloma eilutė (tie patys duomenys kaip lentelėje). Jei nereikia — tiesiog išjungsime.
+4. ~~**Laiko juosta pervežimų grafike**~~ — **pašalinta** (sprendimo nebereikia): grafikas rodomas lentele su pilnomis datomis.
 5. **Pavyzdinis sekimo rezultatas.** Tikrojo siuntų sekimo įrankio (UAB „GP Soft“ sistema) sėkmingo rezultato vaizdo nematėme; demonstracinis „rastos siuntos“ vaizdas — mūsų pasiūlymas, kaip tikrasis įrankis galėtų atrodyti svetainės rėmuose. Tikroje svetainėje bus įterptas tikrasis įrankis.
 6. **Pervežimų grafiko metai.** Datoms priskirti 2026 m. (pagal 2026-09-23 svetainės kopiją) — patvirtinkite (§8.3 p. 2).
 
 ### 3.2 Pašalinta arba pakeista
 
 7. **Privatumo politikos tekstas neegzistuoja** — rodomas esamas „Informacija ruošiama...“, demonstracinė pastaba ir aiškiai pažymėta vieta Jūsų tekstui. Joomla slapukų lentelė (jpanesliders_…, joomsef_lang) WordPress svetainėje nebegalios — ją pakeis sutikimo įskiepio sąrašas. Esama nuoroda „Norėdami pasitikrinti … spauskite čia.“ **pašalinta** (veda į Joomla adresą, kurio nebeliks).
-8. **„Tarptautiniai pervežimai“** puslapyje nėra bendro „Artimiausi pervežimai“ bloko — abu grafikai jau rodomi skyriuose „Airija“ ir „Ispanija“ (jei norite — pridėsime vienu veiksmu).
+8. **„Tarptautiniai pervežimai“** puslapyje dabar yra ir bendras „Artimiausi pervežimai“ blokas (skirtukai „Airija“ / „Ispanija“ su abiem grafikais), o viršuje — „Artimiausi išvykimai“ su artimiausia data kiekviena kryptimi.
 9. **Kelto nuotraukų nenaudojame**, kol nepatvirtintas maršrutas į Airiją (§8.3 p. 3); Airijos atkarpa schemoje pažymėta „maršrutas tikslinamas“.
 10. **Taisyklių PDF** („Sutartis su siuntėju“, 72 KB) — nuoroda veda į dabartinės svetainės failą; jo turinio neperžiūrėjome.
 

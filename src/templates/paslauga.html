@@ -2,44 +2,77 @@
 title: {{svc:title}}
 description: {{svc:meta}}
 out: pervezimo-paslaugos/tarptautiniai-pervezimai/{{svc:slug}}/index.html
+kit: salient
 body_class: page-paslauga page-paslauga--{{svc:slug}}
 nav: paslauga
 og_image: {{svc:hero_id}}
 hero_media: {{svc:hero_id}}
-css: pages/paslauga.css
-js: pages/paslauga.js
-salient: WPBakery template „SGP – paslauga“ (Salient Templates, §6.5) · T1 Route header · T1b Page Submenu · T2 Faktai · T3 Apie paslaugą · T4 Privalumai · T5 special · T6 Kliento atsakomybės · T7 Draudžiami daiktai · T8 GS-Board · T9 Uždarymas · T10 Kita stotelė · T11 GS-Arrival · content = src/data/paslaugos.json ({{svc:slug}})
+salient: WPBakery template „SGP – paslauga“ (Salient → Templates, plan §3.7) · S1 hero Row (Full Height, parallax photo, Slight Zoom Out Reveal, glass band) · S2 Page Submenu · S3 Faktai · S4 Apie paslaugą + Stations · S5 Privalumai (Sticky Media) · S6 specials (§3.8) · S7 Kliento atsakomybės (Toggle Panels) · S8 Draudžiami daiktai (Fancy UL + Milestone) · S9 Maršrutai (Tabs + Scrolling Text + GS-Maršrutai) · S10 Uždarymas (Highlighted Text, High parallax) · S11 Susijusios paslaugos (Fancy Box) · S12 Kita paslauga (Photo card) · S13 GS-Užklausa · content = src/data/paslaugos.json ({{svc:slug}})
 ---
-<section class="sgp-phero on-dark sv-hero" data-hero data-theme="dark" data-svc="{{svc:name}}" data-salient="T1 Route header (§4.17) · Row Full Width · BG photo {{svc:hero_id}} + Parallax Subtle + Slight Zoom Out Reveal (M80) · overlay · Text Color Light · H1 Animated Text Word Reveal · breadcrumb 4 levels (M81)">
-  <div class="sgp-bgmedia" data-parallax="0.12" aria-hidden="true">{{img:{{svc:hero_id}}|w=1920|sizes=100vw|eager|decorative|pos={{svc:hero_crop}}}}</div>
-  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
-    <div class="sgp-phero__copy">
-      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="{{url:pradzia}}">Pradžia</a></li><li><a href="{{url:paslaugos}}">Pervežimo paslaugos</a></li><li><a href="{{url:tarptautiniai}}">Tarptautiniai pervežimai</a></li><li aria-current="page">{{svc:name}}</li></ol></nav>
-      <p class="sgp-phero__eyebrow sgp-mono"><span class="sgp-ring"></span>{{svc:no}} / {{svc:total}} · Tarptautiniai pervežimai</p>
-      <h1 class="sgp-phero__h1" data-split>{{svc:h1}}</h1>
-      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">{{svc:lead}}</p>
-      <ul class="sgp-chips" data-reveal style="--dl:.4s">{{svc:chips_html}}</ul>
-      {{grafikas:next}}
+<!-- ================= S1 · Hero: Full Height Row + parallax photo + Slight Zoom Out Reveal + glass band ================= -->
+<div class="wpb_row sgp-dark" data-type="full_width_background" data-text-color="light" data-full-height data-column-position="bottom" data-parallax-speed="medium" data-bg-animation="slight-zoom-out-reveal" style="--bg:#0B0E10;--pt:168px;--pb:36px;--pt-m:116px;--pb-m:20px" data-salient="Row → Type: Full Width Background · Full Height Row ✓ · Fullscreen Row Position: Bottom · Background Image {{svc:hero_id}} (Image Tag, Preload, position {{svc:hero_crop}}) · Parallax Background Media On Scroll: Medium (0.40) · Background Layer Animation: Slight Zoom Out Reveal (.92 / 1.15 → 1, 1.3 s) · Color Overlay: Advanced — 3 linear gradients #0F1417: 180° .72 → 0 at 30 % (header + breadcrumbs) · 0° .92 → 0 at 50 % (glass band) · 90° .9 / .66 at 44 % / .4 at 82 % (H1, intro, chips) · Text Color: Light · Extra Class sgp-dark">
+  {{bgimg:{{svc:hero_id}}|w=1920|eager|pos={{svc:hero_crop}}|overlay={{svc:hero_grade}}}}
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-9" data-t-w="12" data-salient="Column 9/12 → Breadcrumbs + Chip + Animated Text H1 + Road line + Intro + Chips">
+      <div class="vc_column-inner">
+        <p class="nectar-inherit-label yoast-breadcrumbs" data-salient="Text Block [wpseo_breadcrumb] · Extra Class nectar-inherit-label (Label typography)"><a href="{{url:pradzia}}">Pradžia</a><span class="sep" aria-hidden="true">/</span><a href="{{url:paslaugos}}">Pervežimo paslaugos</a><span class="sep" aria-hidden="true">/</span><a href="{{url:tarptautiniai}}">Tarptautiniai pervežimai</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">{{svc:name}}</span></p>
+        <span class="nectar-badge" data-badge-style="default" data-display="inline" data-padding="small" data-backdrop-blur="12" style="--bg:rgba(11,14,16,.4);--border:1px solid rgba(242,244,243,.26);--fg:#F2F4F3;--r:3px;--mt:28px" data-salient="Badge → Default (Chip, glass) · Label typography · BG rgba(11,14,16,.4) · Border 1px rgba(242,244,243,.26) · Radius 3px · Backdrop Filter: Blur 12">{{svc:no}} / {{svc:total}} · Tarptautiniai pervežimai</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" data-delay="150" style="--fs:6.4vw;--fs-min:44px;--fs-max:104px;--lh:.92;--max-w:11em;--mt:18px" data-salient="Animated Text → Text Element: H1 · Text Effect: Word Animations: Reveal · Stagger Animation ✓ · Animation Delay 150 · Font sizing: 6.4vw, min 44px, max 104px, line height .92 · Max Width 11em"><h1>{{svc:h1}}</h1></div>
+        <div class="divider-wrap" data-line-type="small" data-animate data-delay="500" style="--line-w:96px;--thickness:2px;--h:18px" data-salient="Divider → Line Type: Small Line · Custom Line Width 96px · Line Thickness 2px · Accent Color · Animate Line ✓ · Delay 500 (road line)"><span class="divider-border"></span></div>
+        <p class="nectar-responsive-text" data-inherit="h5" style="--fg:#F2F4F3;--max-w:54ch" data-salient="Responsive Text → Font Style: H5 · Max Width 54ch (Intro, snow on photo)">{{svc:lead}}</p>
+        {{svc:hero_chips_html}}
+      </div>
     </div>
-    {{partial:phero-calls}}
+    <div class="wpb_column vc_col-sm-12" data-animation="slight-fade-in-from-bottom" data-delay="650" data-salient="Column 12/12 → Animation: Slight Fade In From Bottom · Delay 650 · glass band">
+      <div class="vc_column-inner">
+        <div class="vc_row inner_row" data-backdrop-blur="16" data-column-align="bottom" style="--bg:rgba(11,14,16,.55);--border:1px solid rgba(242,244,243,.12);--r:3px;--mt:20px;--pt:24px;--pb:24px;--pl:32px;--pr:32px;--pl-m:18px;--pr-m:18px;--pt-m:20px;--pb-m:18px" data-salient="Inner Row → Backdrop Filter: Blur 16 · Design Options: BG rgba(11,14,16,.55), border 1px rgba(242,244,243,.12), radius 3, padding 24px 32px · Column Alignment: Bottom">
+          <div class="row_col_wrap_12_inner" style="--row-gap:18px">
+            <div class="wpb_column vc_col-sm-4" data-el-space="10px" data-salient="Inner Column 4/12 → Label + Global Section element GS-Artimiausi">
+              <div class="vc_column-inner">
+                <span class="nectar-badge" data-badge-style="line" style="--fg:#EF4539" data-salient="Badge → Minimal Line · Label · #EF4539 (on asphalt glass)">Artimiausi išvykimai</span>
+{{partial:gs-artimiausi}}
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-5" data-t-w="6" data-el-space="10px" data-salient="Inner Column 5/12 → 2 × Call (red, Stretch)">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37065053161" aria-label="Į Airiją · +370 650 53161 – skambinti" data-salient="Button → Type: Arrow Circle Animation · Button Roundness 3 · BG Accent · BG Hover #F4604F · Text #0F1417 · Min Icon Size 36 · Icon Gap 20 · Alignment: Stretch"><span class="link_text"><span class="text">Į Airiją · +370 650 53161</span></span></a>
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37063828919" aria-label="Į Ispaniją · +370 638 28919 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Stretch"><span class="link_text"><span class="text">Į Ispaniją · +370 638 28919</span></span></a>
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-3" data-t-w="6" data-layout="flex" data-justify="space-between" data-align="flex-start" style="--gap:12px" data-salient="Inner Column 3/12 → Layout: Flexbox (column, space-between) · 2 × Link + Next Section Button">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="underline" href="#uzklausa" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Gauti pasiūlymą →</span></span></a>
+                <a class="nectar-cta" data-style="underline" href="{{url:grafikas}}" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Visas grafikas →</span></span></a>
+                <a class="nectar-cta" data-style="next-section" href="#faktai" aria-label="Į kitą skyrių" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Next Section · Minimal Arrow Alt · Arrow Animation: On Hover Only"><span class="link_text"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
+</div>
 
+<!-- ================= S2 · Page Submenu (Sticky) ================= -->
 {{svc:submenu_html}}
 
+<!-- ================= S3 · Faktai (P) ================= -->
 {{svc:facts_html}}
 
+<!-- ================= S4 Apie paslaugą (P-alt) · specials · S5 Privalumai (A) · S7 Kliento atsakomybės (P) · S8 Draudžiami daiktai (A) ================= -->
 {{svc:body_html}}
 
-{{partial:board}}
+<!-- ================= S9 · Maršrutai: Tabs (GS-Grafikas) + Scrolling Text + GS-Maršrutai (P) ================= -->
+{{svc:routes_html}}
 
+<!-- ================= S10 · Uždarymas: Highlighted Text on a High-parallax photo band ================= -->
 {{svc:closing_html}}
 
-<a class="sgp-nextstop" href="{{svc:next_url}}" data-salient="T10 „Kita stotelė“ (§4.19) · Column Link · Column BG image hover opacity 0 → .35 · lane draws on hover (M82)">
-  <span class="sgp-nextstop__bg" aria-hidden="true">{{img:{{svc:next_media}}|w=1600|sizes=100vw|decorative}}</span>
-  <span class="sgp-wrap sgp-wrap--zone sgp-nextstop__in">
-    <span><span class="sgp-nextstop__k sgp-mono">Kita stotelė · {{svc:next_no}}</span><span class="sgp-nextstop__t">{{svc:next_name}}</span></span>
-    <span class="sgp-nextstop__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span>
-  </span>
-  <span class="sgp-nextstop__lane" aria-hidden="true"></span>
-</a>
+<!-- ================= S11 · Susijusios paslaugos (P) ================= -->
+{{svc:related_html}}
+
+<!-- ================= S12 · Kita paslauga (Photo card, Column Link) ================= -->
+{{svc:next_html}}
+
+<!-- ================= S13 · GS-Užklausa (Row ID uzklausa) ================= -->
+{{partial:gs-uzklausa|id=uzklausa|media={{svc:form_media}}}}

@@ -1,0 +1,19 @@
+/* =====================================================================================
+   demo.css — DEMO-ONLY (never shipped): „Salient žymės“ overlay button + labels, demo notes.
+   ===================================================================================== */
+.sgp-tagbtn{position:fixed;left:max(12px,env(safe-area-inset-left));bottom:12px;z-index:9700;display:flex;align-items:center;gap:0;height:34px;min-width:34px;padding:0 8px;
+  border:1px solid rgba(242,244,243,.26);border-radius:3px;background:rgba(11,14,16,.86);color:#9AA6AB;opacity:.72;
+  font:500 12px/1 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.06em;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);transition:opacity .2s,border-color .2s,color .2s}
+.sgp-tagbtn svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6}
+.sgp-tagbtn__l{max-width:0;overflow:hidden;white-space:nowrap;opacity:0;transition:max-width .35s cubic-bezier(.19,1,.22,1),margin .35s cubic-bezier(.19,1,.22,1),opacity .2s}
+.sgp-tagbtn:hover,.sgp-tagbtn:focus-visible,.sgp-tagbtn[aria-pressed="true"]{opacity:1}
+.sgp-tagbtn:hover .sgp-tagbtn__l,.sgp-tagbtn:focus-visible .sgp-tagbtn__l,.sgp-tagbtn[aria-pressed="true"] .sgp-tagbtn__l{max-width:14em;margin-left:8px;opacity:1}
+.sgp-tagbtn[aria-pressed="true"]{border-color:#EF4539;color:#F2F4F3}
+.sgp-stags{position:fixed;inset:0;z-index:9690;pointer-events:none;overflow:hidden}
+.sgp-stag{position:absolute;left:0;top:0;min-width:min(240px,80vw);max-width:min(560px,calc(100vw - 16px));padding:5px 7px;border-radius:2px;background:#07090C;color:#F2F4F3;
+  border:1px solid #EF4539;font:500 12px/1.4 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:0;text-transform:none;box-shadow:0 6px 20px rgba(0,0,0,.4);overflow-wrap:anywhere}
+body.off-canvas-open .sgp-tagbtn,body.off-canvas-open .cmplz-cookiebanner{visibility:hidden}
+@media (max-width:999px){.sgp-tagbtn{bottom:calc(88px + env(safe-area-inset-bottom))}}
+@media (max-width:690px){.sgp-tagbtn{display:none}}
+.demo-note{font:500 12px/16px "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.04em;opacity:.7}
+.demo-note a{text-decoration:underline;text-underline-offset:.2em}

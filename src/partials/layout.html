@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="lt" data-today="{{page:today}}">
+<html lang="lt">
 <head>
 {{partial:head}}
 </head>
-<body class="{{page:body_class}}">
-{{partial:sprite}}
+<body class="{{page:body_class}}" data-kit="salient" data-button-style="slightly_rounded_shadow" data-form-style="minimal" data-header-format="default">
 {{partial:header}}
-<main id="main" tabindex="-1">
+<div id="ajax-content-wrap">
+<main id="main" class="container-wrap" tabindex="-1">
 {{page:salient}}
 {{page:content}}
-{{page:arrival}}
 </main>
-{{partial:footer}}
-{{partial:callbar}}
+{{partial:gs-poraste}}
+</div>
+{{partial:gs-skambuciu-juosta}}
+<a id="to-top" href="#main" aria-label="Į puslapio viršų" data-salient="Theme Options → General Settings → Functionality → Back To Top Button ✓ · Keep On Mobile ✗ (appears after 350 px)">{{icon:arrow-up}}</a>
+{{partial:cookie}}
+{{partial:demo}}
 {{partial:scripts}}
 </body>
 </html>

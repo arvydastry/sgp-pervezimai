@@ -2,206 +2,337 @@
 title: Taisyklės | sgp-pervezimai.lt
 description: Siuntų siuntimo taisyklės: tikrinimas, siuntėjo garantija, vežėjo atsakomybė, draudžiami daiktai, baudos ir pretenzijos.
 out: taisykles/index.html
+kit: salient
 body_class: page-taisykles
+css: pages/taisykles.css
 nav: taisykles
 og_image: 6169133
 hero_media: 6169133
-css: pages/taisykles.css
-js: pages/taisykles.js
-salient: Page „Taisyklės“ (§6.8) · route header · 01–06 = Tabs → Vertical Sticky Scrolling (6 tabs = the six numbered sections, verbatim) · 4.2 numbered ✕ list · 4.5 fines table + Toggle „Visas 4.5 punkto tekstas“ · PDF (Button Underline) · GS-Board · GS-Arrival
+salient: Page „Taisyklės“ (plan §3.11) · L1 inner head (photo 6169133, Parallax Subtle, Slight Zoom Out Reveal) + link column (PDF + anchors) + glass band (GS-Artimiausi + 2 × Call) → L2 #taisykliu-tekstas Chapter P: Tabs → Vertical Sticky Scrolling (Sticky Aspect: Tab Links, All Links Visible; 6 tabs = sections 1–6 verbatim) with 3.4 Highlighted Text + KV rows, 4.2 dark Inner Row (Callout A) + 2 × Fancy UL ✕, 4.5 Milestone (Count To Value) + KV rows + Toggle Panels (Animated Circle), 5.1 Highlighted Text + 3 × Milestone (Motion Blur) with Border Animation, 6.1 Icon List (Number 1–8) → L6 #sutartis PDF Callout (Icon + Lift button) | Image (Reveal Rotate, Scroll Position Advanced) → L7 GS-Kvietimas (GS-Board dropped)
 ---
-<!-- ============ HEADER · route header ============ -->
-<section class="sgp-phero on-dark tr-hero" data-hero data-theme="dark" data-salient="Row Full Width · Route header · BG image 6169133 + Parallax BG: Subtle + BG Layer Animation: Slight Zoom Out Reveal · Color Overlay Advanced (§2.8) · Text Color Light · Button (Line, download icon) → PDF on the live site · link chips = Button (Regular) to #anchors">
-  <div class="sgp-bgmedia" data-parallax="0.12" aria-hidden="true">{{img:6169133|w=1920|sizes=100vw|eager|decorative|pos=50% 45%}}</div>
-  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
-    <div class="sgp-phero__copy">
-      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="{{url:pradzia}}">Pradžia</a></li><li aria-current="page">Siuntų siuntimo taisyklės</li></ol></nav>
-      <p class="sgp-phero__eyebrow sgp-mono"><span class="sgp-ring"></span>Taisyklės · 1–6 skyriai</p>
-      <h1 class="sgp-phero__h1" data-split>Siuntų siuntimo taisyklės</h1>
-      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">Paslaugos Mokėtojai (užsakovai) privalo susipažinti su šiomis taisyklėmis ir vadovautis jomis ruošiant siuntas ir užsakant paslaugas.</p>
-      {{grafikas:next}}
-      <div class="tr-hero__acts" data-reveal style="--dl:.4s">
-        <a class="sgp-btn sgp-btn--line tr-hero__pdf" href="{{url:pdf}}" rel="noopener"><span class="sgp-btn__l">Atsisiųsti sutartį su siuntėju (PDF, 72 KB)</span><span class="sgp-btn__a"><svg class="sgp-i" aria-hidden="true"><use href="#i-dl"/></svg></span></a>
-        <ul class="sgp-chips tr-hero__chips" aria-label="Greitos nuorodos">
-          <li><a class="sgp-chip" href="#draudziama-siusti">Draudžiama siųsti (12)</a></li>
-          <li><a class="sgp-chip" href="#baudos">Baudos</a></li>
-          <li><a class="sgp-chip" href="#pretenzijos">Pretenzijos</a></li>
-        </ul>
+<!-- ============ L1 · Inner head (plan §3.3) + PDF/anchor links + glass band ============ -->
+<div class="wpb_row sgp-dark" data-type="full_width_background" data-text-color="light" data-parallax-speed="fast" data-bg-animation="slight-zoom-out-reveal" data-column-align="bottom" style="--bg:#0F1417;--pt:184px;--pb:48px;--pt-t:168px;--pt-m:128px;--pb-m:32px" data-salient="Row → Inner head (plan §3.3) · Type: Full Width Background · BG #0F1417 · Background Image 6169133 · Parallax Background Media On Scroll → Speed: Subtle (0.20) · Background Layer Animation: Slight Zoom Out Reveal · Color Overlay: Advanced (v2 hero grade, heavier) · Text Color: Light · Column Alignment: Bottom · Padding 184px / 48px (tablet 168px, phone 128px / 32px)">
+  {{bgimg:6169133|w=1920|eager|pos=50% 45%|overlay=linear-gradient(0deg,rgba(15,20,23,.95) 0%,rgba(15,20,23,.35) 60%),linear-gradient(90deg,rgba(15,20,23,.92) 0%,rgba(15,20,23,.7) 48%,rgba(15,20,23,.35) 90%)}}
+  <div class="row_col_wrap_12" style="--row-gap:40px">
+    <div class="wpb_column vc_col-sm-8" data-salient="Column 8/12 → Breadcrumbs + Label + Animated Text (H1) + Road line + Intro">
+      <div class="vc_column-inner">
+        <p class="nectar-inherit-label yoast-breadcrumbs" data-salient="Text Block [wpseo_breadcrumb] · Extra Class nectar-inherit-label (Label typography)"><a href="{{url:pradzia}}">Pradžia</a><span class="sep" aria-hidden="true">/</span><span>Siuntų siuntimo taisyklės</span></p>
+        <span class="nectar-badge" data-badge-style="line" style="--fg:#F2F4F3;--mt:28px" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label · Text #F2F4F3 (on photo)">Taisyklės · 1–6 skyriai</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:6.4vw;--fs-min:44px;--fs-max:104px;--lh:.92;--max-w:9em" data-salient="Animated Text → Text Element: H1 · Text Effect: Word Animations: Reveal · Stagger Animation ✓ · Font sizing 6.4vw (min 44px, max 104px), line height .92 · Max Width 9em"><h1>Siuntų siuntimo taisyklės</h1></div>
+        <div class="divider-wrap" data-line-type="small" data-animate data-delay="450" style="--line-w:96px;--thickness:2px;--h:18px" data-salient="Divider → Line Type: Small Line · Custom Line Width 96px · Line Thickness 2px · Accent Color · Animate Line ✓ · Delay 450 (road line)"><span class="divider-border"></span></div>
+        <p class="nectar-responsive-text" data-inherit="h5" style="--fg:#F2F4F3;--max-w:52ch" data-salient="Responsive Text → Font Style: H5 · Max Width 52ch (Intro, snow on photo)">Paslaugos Mokėtojai (užsakovai) privalo susipažinti su šiomis taisyklėmis ir vadovautis jomis ruošiant siuntas ir užsakant paslaugas.</p>
       </div>
     </div>
-    {{partial:phero-calls}}
-  </div>
-</section>
-
-<!-- ============ 01–06 · TAISYKLĖS — sticky lane index + the six sections (verbatim) ============ -->
-<section class="sgp-sec on-light paper sgp-has-rail tr-doc" id="taisykliu-tekstas" data-theme="light" data-salient="Row paper + graticule · Extra Class sgp-light sgp-graticule sgp-has-rail · Tabs → Vertical Sticky Scrolling: tab list = vertical lane with six stops (custom CSS .tr-index, active stop filled), tab content = Text Blocks with .sgp-clause rows">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">01–06</span><span class="sgp-mono">Taisyklės</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Taisyklių tekstas</span></div>
-    <div class="tr-doc__grid">
-      <nav class="tr-index" aria-label="Taisyklių skyriai" data-salient="Vertical Sticky Scrolling tab list → custom CSS lane (rings fill as the section is reached)">
-        <div class="tr-index__in">
-          <p class="sgp-mono tr-index__k">Turinys</p>
-          <div class="tr-index__box" data-spy>
-            <span class="tr-index__lane" aria-hidden="true"><i></i></span>
-            <ol class="tr-index__list">
-              <li><a href="#tikrinimas"><span class="sgp-ring"></span><span class="tr-index__no sgp-mono">1</span><span class="tr-index__t">Siuntų tikrinimas</span></a></li>
-              <li><a href="#siuntejo-garantija"><span class="sgp-ring"></span><span class="tr-index__no sgp-mono">2</span><span class="tr-index__t">Siuntėjo garantija</span></a></li>
-              <li><a href="#vezejo-atsakomybe"><span class="sgp-ring"></span><span class="tr-index__no sgp-mono">3</span><span class="tr-index__t">Vežėjo atsakomybė</span></a></li>
-              <li><a href="#draudziami-daiktai"><span class="sgp-ring"></span><span class="tr-index__no sgp-mono">4</span><span class="tr-index__t">Daiktai, kuriuos įmonė vežti atsisako</span></a></li>
-              <li><a href="#pretenzijos"><span class="sgp-ring"></span><span class="tr-index__no sgp-mono">5</span><span class="tr-index__t">Pretenzijų reiškimas</span></a></li>
-              <li><a href="#atsakomybes-ribos"><span class="sgp-ring"></span><span class="tr-index__no sgp-mono">6</span><span class="tr-index__t">Atvejai, kuriais įmonė neprisiima atsakomybės</span></a></li>
-            </ol>
-          </div>
-          <a class="sgp-lnk sgp-lnk--plain tr-index__pdf" href="{{url:pdf}}" rel="noopener">Atsisiųsti sutartį su siuntėju (PDF, 72 KB)<svg class="sgp-i" aria-hidden="true"><use href="#i-dl"/></svg></a>
-        </div>
-      </nav>
-
-      <div class="tr-doc__body">
-        <!-- 1 -->
-        <article class="tr-sec" id="tikrinimas" data-spy-for="tikrinimas" aria-labelledby="tr-h1" data-salient="Tab 1 content · Text Block">
-          <header class="tr-sec__h"><span class="tr-sec__no" aria-hidden="true">1</span><h2 class="tr-sec__t" id="tr-h1"><span class="sgp-sr">1. </span>Siuntų tikrinimas</h2></header>
-          <p class="tr-p tr-p--lead" data-reveal>Vežėjas pasilieka teisę patikrinti perduodamą siuntą, kad galėtų įsitikinti, jog siuntoje nėra draudžiamų vežti daiktų. Siuntėjui pageidaujant, patikrinimas atliekamas perdavimo metu, kitu atveju vežėjas įgyja teisę siuntą patikrinti bet kuriuo metu vėliau. Siuntėjas, pasirašydamas šią sutartį, patvirtina, kad sutinka, jog perduota siunta gali būti patikrinta perdavimo metu arba bet kada vėliau, pačiam Siuntėjui nedalyvaujant. Siuntos tikrinamos nepažeidžiant LR įstatymų.</p>
-        </article>
-
-        <!-- 2 -->
-        <article class="tr-sec" id="siuntejo-garantija" data-spy-for="siuntejo-garantija" aria-labelledby="tr-h2" data-salient="Tab 2 content · Text Block .sgp-clause ×3">
-          <header class="tr-sec__h"><span class="tr-sec__no" aria-hidden="true">2</span><h2 class="tr-sec__t" id="tr-h2"><span class="sgp-sr">2. </span>Siuntėjo garantija</h2></header>
-          <div class="tr-clauses" data-stagger="70">
-            <div class="sgp-clause" id="p2-1" data-reveal><span class="sgp-clause__no">2.1.</span><p class="sgp-clause__t">Siuntėjas garantuoja, kad perduodama siunta yra tinkamai supakuota ir paženklinta. Ant siuntos yra nurodyti tikslūs siuntėjo ir gavėjo adresai, telefono numeriai. Esant netiksliam adresui ar telefono numeriui, siunta gali būti nepristatyta gavėjui ir grąžinama į įmonės būstinę.</p></div>
-            <div class="sgp-clause" id="p2-2" data-reveal><span class="sgp-clause__no">2.2.</span><p class="sgp-clause__t">Siuntėjas garantuoja, kad siuntoje nėra draudžiamų siųsti daiktų, kurie yra išvardinti <a class="sgp-a" href="#draudziami-daiktai">4 punkte</a>. Jeigu Siuntėjas pažeis 4 punkte numatytą draudimą, pasirašydamas šią sutartį, patvirtina, jog sutinka atlyginti visus dėl to Vežėjo ir trečiųjų asmenų patirtus nuostolius, įskaitant ir negautas pajamas.</p></div>
-            <div class="sgp-clause" id="p2-3" data-reveal><span class="sgp-clause__no">2.3.</span><p class="sgp-clause__t">Jeigu už siuntinį priskaičiuojami muito ar kiti mokesčiai, juos papildomai apmoka Siuntėjas.</p></div>
-          </div>
-        </article>
-
-        <!-- 3 -->
-        <article class="tr-sec" id="vezejo-atsakomybe" data-spy-for="vezejo-atsakomybe" aria-labelledby="tr-h3" data-salient="Tab 3 content · Text Block .sgp-clause ×3 · 3.4 = Inner Row: clause + Text Block .sgp-kv (delivery facts pair)">
-          <header class="tr-sec__h"><span class="tr-sec__no" aria-hidden="true">3</span><h2 class="tr-sec__t" id="tr-h3"><span class="sgp-sr">3. </span>Vežėjo atsakomybė</h2></header>
-          <div class="tr-clauses" data-stagger="70">
-            <div class="sgp-clause" id="p3-1" data-reveal><span class="sgp-clause__no">3.1.</span><p class="sgp-clause__t">Vežėjas atsako už siuntų neišsaugojimą (sugadinimą, trūkumą, praradimą), atsiradusį dėl Vežėjo kaltės. Tokiu atveju Vežėjas sutinka atlyginti Siuntėjui patirtą žalą vadovaudamasis Lietuvos Respublikos įstatymais ir kitais teisės aktais nustatytais pagrindais ir tvarka.</p></div>
-            <div class="sgp-clause" id="p3-2" data-reveal><span class="sgp-clause__no">3.2.</span><p class="sgp-clause__t">Vežėjas neatsako už perduoto siuntinio sugadinimą ar trūkumą, jeigu jis nebuvo supakuotas ir paženklintas nesilaikant taisyklių.</p></div>
-            <div class="sgp-clause" id="p3-3" data-reveal><span class="sgp-clause__no">3.3.</span><p class="sgp-clause__t">Vežėjas neatsako už valstybės institucijų sulaikytą ar konfiskuotą siuntą.</p></div>
-          </div>
-          <div class="tr-key" id="p3-4" data-reveal>
-            <div class="tr-key__clause">
-              <span class="sgp-clause__no">3.4.</span>
-              <p class="tr-key__t">Vežėjas įsipareigoja pristatyti perduotą siuntą per <mark class="sgp-mark">5 darbo dienas</mark> nuo pirmos išvykimo iš Lietuvos dienos.</p>
+    <div class="wpb_column vc_col-sm-3 vc_col-sm-offset-1" data-t-w="12" data-layout="flex" data-justify="flex-end" data-align="flex-start" style="--gap:4px" data-animation="fade-in" data-delay="300" data-salient="Column 3/12 (offset 1) → Layout: Flexbox (column, justify end, gap 4px) · Animation: Fade In · Delay 300 · Link (PDF, Icon: download) + 3 × Link to Inner Row IDs">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" style="--fg:#9AA6AB" data-salient="Badge → Minimal Line · Label · #9AA6AB">Greitos nuorodos</span>
+        <a class="nectar-cta" data-style="underline" href="{{url:pdf}}" rel="noopener" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Underline · Icon: download (Left) · Link: the PDF (Media Library, 72 KB)"><span class="link_text">{{icon:download|class=nectar-cta__icon}}<span class="text">Atsisiųsti sutartį su siuntėju (PDF, 72 KB)</span></span></a>
+        <a class="nectar-cta" data-style="underline" href="#draudziama-siusti" style="--btn-fg:#F2F4F3;--mt:8px" data-salient="Button → Type: Underline · Link #draudziama-siusti"><span class="link_text"><span class="text">Draudžiama siųsti (12)</span></span></a>
+        <a class="nectar-cta" data-style="underline" href="#baudos" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Underline · Link #baudos"><span class="link_text"><span class="text">Baudos</span></span></a>
+        <a class="nectar-cta" data-style="underline" href="#pretenzijos" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Underline · Link #pretenzijos"><span class="link_text"><span class="text">Pretenzijos</span></span></a>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-12" data-animation="slight-fade-in-from-bottom" data-delay="600" data-salient="Column 12/12 → Animation: Slight Fade In From Bottom · Delay 600 · Inner Row = glass band">
+      <div class="vc_column-inner">
+        <div class="vc_row inner_row" data-backdrop-blur="16" style="--bg:rgba(11,14,16,.55);--border:1px solid rgba(242,244,243,.12);--r:3px;--pt:24px;--pb:24px;--pl:32px;--pr:32px;--pl-m:18px;--pr-m:18px;--pt-m:20px;--pb-m:18px" data-salient="Inner Row → Backdrop Filter: Blur 16 · Design Options: BG rgba(11,14,16,.55), border 1px rgba(242,244,243,.12), radius 3px, padding 24px 32px (phone 20px 18px) — the glass band">
+          <div class="row_col_wrap_12_inner" style="--row-gap:18px">
+            <div class="wpb_column vc_col-sm-5" data-el-space="10px" data-salient="Inner Column 5/12 → Label + Global Section element „GS-Artimiausi“">
+              <div class="vc_column-inner">
+                <span class="nectar-badge" data-badge-style="line" style="--fg:#EF4539" data-salient="Badge → Minimal Line · Label · #EF4539 (on asphalt glass)">Artimiausi išvykimai</span>
+{{partial:gs-artimiausi}}
+              </div>
             </div>
-            <dl class="sgp-kv tr-key__kv">
-              <dt>Kelyje</dt><dd>apie 3–4 paros nuo paėmimo dienos</dd>
-              <dt>Įsipareigojimas siuntoms</dt><dd>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)</dd>
-            </dl>
-          </div>
-        </article>
-        <!-- 4 -->
-        <article class="tr-sec" id="draudziami-daiktai" data-spy-for="draudziami-daiktai" aria-labelledby="tr-h4" data-salient="Tab 4 content · .sgp-clause rows · 4.2 = dark Inner Row (Extra Class tr-ban) + numbered ✕ list · 4.5 = Milestone „1200“ + Text Block .sgp-kv--fines + Toggle Panels (Minimal Shadow) „Visas 4.5 punkto tekstas“">
-          <header class="tr-sec__h"><span class="tr-sec__no" aria-hidden="true">4</span><h2 class="tr-sec__t" id="tr-h4"><span class="sgp-sr">4. </span>Daiktai, kuriuos įmonė vežti atsisako</h2></header>
-          <div class="tr-clauses">
-            <div class="sgp-clause" id="p4-1" data-reveal><span class="sgp-clause__no">4.1.</span><p class="sgp-clause__t">Daiktai ar medžiagos, kurių gabenimas yra uždraustas pagal valstybės įstatymus, kurios teritorijoje vykdomas pervežimas.</p></div>
-          </div>
-          <div class="tr-ban on-dark" id="draudziama-siusti" data-reveal data-salient="Inner Row bg #0F1417 (Extra Class sgp-dark tr-ban) · Fancy/Icon List → numbered ✕ list .sgp-xlist--num (12)">
-            <div class="tr-ban__head">
-              <span class="sgp-clause__no">4.2.</span>
-              <h3 class="tr-ban__t">Nepriimami ir draudžiami vežti daiktai:</h3>
-              <p class="tr-ban__k sgp-mono"><span class="tr-ban__x" aria-hidden="true"></span>Draudžiama siųsti (12)</p>
+            <div class="wpb_column vc_col-sm-4" data-t-w="6" data-el-space="10px" data-salient="Inner Column 4/12 → 2 × Call (red), Alignment: Stretch">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37065053161" aria-label="Į Airiją · +370 650 53161 – skambinti" data-salient="Button → Type: Arrow Circle Animation · Button Roundness 3 · BG Accent · BG Hover #F4604F · Text #0F1417 · Min Icon Size 36 · Icon Gap 20 · Alignment: Stretch · Aria Label"><span class="link_text"><span class="text">Į Airiją · +370 650 53161</span></span></a>
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37063828919" aria-label="Į Ispaniją · +370 638 28919 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Stretch · Aria Label"><span class="link_text"><span class="text">Į Ispaniją · +370 638 28919</span></span></a>
+              </div>
             </div>
-            <ol class="sgp-xlist sgp-xlist--num tr-ban__list">
-              <li>bet kokie tabako gaminiai;</li>
-              <li>bet kokie alkoholiniai gėrimai;</li>
-              <li>pinigai ir vertybiniai popieriai;</li>
-              <li>taurieji metalai;</li>
-              <li>juvelyriniai gaminiai;</li>
-              <li>vaistai ir maisto papildai;</li>
-              <li>šaunamieji ir kiti ginklai;</li>
-              <li>meno kūriniai ir antikvariniai daiktai;</li>
-              <li>cheminiai kroviniai ir degios prekės;</li>
-              <li>greitai gendantys maisto produktai;</li>
-              <li>daiktai, kurių pervežimui reikalingos specialios temperatūros, oro, drėgmės ir kitos papildomos sąlygos;</li>
-              <li>visos kitos prekės, kurias vežti draudžiama įstatymais, bet kurios Vyriausybės ar valstybės bet kurioje šalyje kur prekės yra gabenamos.</li>
-            </ol>
-          </div>
-          <div class="tr-clauses" data-stagger="70">
-            <div class="sgp-clause" id="p4-3" data-reveal><span class="sgp-clause__no">4.3.</span><p class="sgp-clause__t">Vežėjas neprisiima jokios atsakomybės už per klaidą priimtus vežti Sutarties 4.2. punkte numatytus daiktus.</p></div>
-            <div class="sgp-clause" id="p4-4" data-reveal><span class="sgp-clause__no">4.4.</span><p class="sgp-clause__t">Siuntėjas įteikdamas arba bet kokiu kitu būdu sąlygodamas perdavimą Vežėjui, daiktų, kurie yra numatyti Sutarties 4.2. punkte, prisiima visišką atsakomybę už tokių veiksmų sukeliamus teisinius padarinius ir įsipareigoja apmokėti visus Vežėjo dėl to patirtus nuostolius (gautas baudas, kitas patirtas išlaidas, negautas pajamas).</p></div>
-          </div>
-          <div class="tr-fines" id="baudos" data-salient="Inner Row · Milestone (Count To Value 1200, symbol „EUR“ after) + Text Block .sgp-kv--fines (4.5 as a table — text unchanged) + Toggle Panels → Minimal Shadow">
-            <div class="tr-fines__head" data-reveal>
-              <span class="sgp-clause__no">4.5.</span>
-              <p class="tr-fines__big"><span data-reel="1200">1200</span> <span class="tr-fines__cur">EUR</span></p>
-              <p class="tr-fines__cap">Radus draudžiamų daiktų – 1200 EUR bauda (Taisyklių 4.5 p.)</p>
-            </div>
-            <dl class="sgp-kv sgp-kv--fines tr-fines__kv" data-reveal style="--dl:.1s">
-              <dt class="sgp-kv__hd">Radus siuntoje ar krovinyje</dt><dd class="sgp-kv__hd sgp-mono">Bauda</dd>
-              <dt>Alkoholinių gėrimų</dt><dd><strong>1200 EUR</strong>už kiekvieną alkoholinio gėrimo vienetą</dd>
-              <dt>Vaistų</dt><dd><strong>po 1200 EUR</strong>už kiekvieną siuntoje rastą vienetą (ampulę, tabletę)</dd>
-              <dt>Cigarečių</dt><dd><strong>po 1200 EUR</strong>už kiekvieną rastą bloką (200 vnt.); ta pati bauda taikoma ir už mažesnį kiekį</dd>
-              <dt>Tabako ar jo gaminių</dt><dd><strong>po 1200 EUR</strong>už kiekvienus rastus 200 g; ta pati bauda taikoma ir už mažesnį kiekį</dd>
-              <dt>Kitų 4.2 punkte nurodytų draudžiamų daiktų</dt><dd><strong>1200 EUR</strong></dd>
-            </dl>
-            <div class="sgp-acc tr-fines__acc" data-acc="multi" data-reveal style="--dl:.15s">
-              <div class="sgp-acc__item" id="visas-4-5">
-                <h3><button class="sgp-acc__btn" type="button" aria-expanded="false" aria-controls="acc-4-5"><span class="sgp-acc__no sgp-mono">4.5</span><span class="sgp-acc__t">Visas 4.5 punkto tekstas</span><span class="sgp-ring"></span></button></h3>
-                <div class="sgp-acc__panel" id="acc-4-5"><div><div class="sgp-acc__body tr-full">
-                  <p>Siunta ar krovinys, kuriame buvo rasta draudžiamų vežti daiktų, grąžinama į Vežėjo būstinę iš kur, Siuntėjas privalės atsiimti savo sąskaita, nes siunta nebus transportuojama. Prieš atsiimant minėto pobūdžio siuntą ar krovinį Siuntėjas įsipareigoja: 1) sumokėti siuntos transportavimo mokestį pagal nustatytus Vežėjo įkainius; 2) jam skirtą baudą už jo siuntoje rastus draudžiamus vežti daiktus; 3) atlyginti visus kitus Vežėjo patirtus nuostolius dėl tokio pažeidimo.</p>
-                  <p>Siuntėjas, pasirašydamas šią sutartį, patvirtina, jog jam yra žinoma, kad dėl draudžiamų vežti daiktų transportavimo Vežėjui gali būti skirtos baudos, todėl sutinka, kad už jo siuntoje rastus draudžiamus transportuoti daiktus įvardintus 4.2. punkte, Siuntėjui būtų pritaikytos toliau nurodytos baudos, kurių dydis yra pagrįstas, atsižvelgus į atitinkamų valstybės institucijų (kur yra gabenamas krovinys) galimų paskirti baudų dydžius.</p>
-                  <ul class="sgp-list tr-full__list">
-                    <li>Radus siuntoje ar krovinyje alkoholinių gėrimų, taikoma 1200 EUR bauda už kiekvieną alkoholinio gėrimo vienetą;</li>
-                    <li>Radus siuntoje ar krovinyje vaistų, taikoma po 1200 EUR bauda už kiekvieną siuntoje rastą vienetą (ampulę, tabletę) ir kita...</li>
-                    <li>Siuntoje radus cigarečių, taikoma po 1200 EUR bauda už kiekvieną siuntoje rastą bloką cigarečių (200 vnt.), ta pati bauda taikoma ir už mažesnį kiekį;</li>
-                    <li>Radus tabako ar jo gaminių, taikoma po 1200 EUR bauda už kiekvienus rastus 200 g, ta pati bauda taikoma ir už mažesnį kiekį;</li>
-                    <li>Radus kitų, dar nepaminėtų draudžiamų daiktų iš 4.2. punkto taikoma 1200 EUR bauda.</li>
-                  </ul>
-                </div></div></div>
+            <div class="wpb_column vc_col-sm-3" data-t-w="6" data-layout="flex" data-justify="space-between" data-align="flex-start" style="--gap:14px" data-salient="Inner Column 3/12 → Layout: Flexbox (column, space-between) · Link + Next Section Button">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="underline" href="{{url:grafikas}}" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Underline · Link: /pervezimu-grafikas/"><span class="link_text"><span class="text">Visas grafikas →</span></span></a>
+                <a class="nectar-cta" data-style="next-section" href="#taisykliu-tekstas" aria-label="Į kitą skyrių – taisyklių tekstas" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Next Section Button · Minimal Arrow Alt · Arrow Animation: On Hover Only · Link #taisykliu-tekstas"><span class="link_text"></span></a>
               </div>
             </div>
           </div>
-        </article>
-
-        <!-- 5 -->
-        <article class="tr-sec" id="pretenzijos" data-spy-for="pretenzijos" aria-labelledby="tr-h5" data-salient="Tab 5 content · .sgp-clause (deadlines = Highlighted Text → Regular Underline) + custom CSS deadline lane (0 → 5 → 14 d.)">
-          <header class="tr-sec__h"><span class="tr-sec__no" aria-hidden="true">5</span><h2 class="tr-sec__t" id="tr-h5"><span class="sgp-sr">5. </span>Pretenzijų reiškimas</h2></header>
-          <div class="sgp-clause" id="p5-1" data-reveal><span class="sgp-clause__no">5.1.</span><p class="sgp-clause__t">Klientai privalo pranešti Vežėjui apie patirtus nuostolius ar žalą <mark class="sgp-mark">per 5 dienas</mark>, nuo siuntos gavimo dienos ir patvirtinti tai raštu <mark class="sgp-mark">per 14 dienų</mark> nuo siuntos gavimo dienos. Jeigu klientas neįvykdo pretenzijos pareiškimo pagal numatytą tvarką, Vežėjas neatsako už jokius nuostolius ar žalą išskyrus tuos atvejus, kai klientas patvirtina, kad pagrįstai nebuvo įmanoma perspėti Vežėjo arba pateikti pretenziją raštu per numatytą laikotarpį.</p></div>
-          <div class="tr-dead" data-draw aria-hidden="true" data-salient="Raw HTML · deadline lane (custom CSS, draws on enter)">
-            <span class="tr-dead__base"></span><span class="tr-dead__lane"><i></i></span>
-            <div class="tr-dead__stop" style="--x:0"><span class="tr-dead__ring"></span><span class="tr-dead__d sgp-mono">0 d.</span><span class="tr-dead__t">Siuntos gavimo diena</span></div>
-            <div class="tr-dead__stop is-key" style="--x:.3571"><span class="tr-dead__ring"></span><span class="tr-dead__d sgp-mono">5 d.</span><span class="tr-dead__t">Pranešti Vežėjui apie nuostolius ar žalą</span></div>
-            <div class="tr-dead__stop is-key is-end" style="--x:1"><span class="tr-dead__ring"></span><span class="tr-dead__d sgp-mono">14 d.</span><span class="tr-dead__t">Patvirtinti tai raštu</span></div>
-          </div>
-        </article>
-
-        <!-- 6 -->
-        <article class="tr-sec" id="atsakomybes-ribos" data-spy-for="atsakomybes-ribos" aria-labelledby="tr-h6" data-salient="Tab 6 content · .sgp-clause rows · 6.1 enumerations = numbered list">
-          <header class="tr-sec__h"><span class="tr-sec__no" aria-hidden="true">6</span><h2 class="tr-sec__t" id="tr-h6"><span class="sgp-sr">6. </span>Atvejai, kuriais įmonė neprisiima atsakomybės</h2></header>
-          <div class="tr-clauses">
-            <div class="sgp-clause" id="p6-1" data-reveal><span class="sgp-clause__no">6.1.</span>
-              <div class="sgp-clause__t">
-                <p>Vežėjas neatsako už netiesioginius nuostolius, tokius kaip: pelno praradimas, neturtinės žalos padarymas, reputacijos pažeidimas, tiek kiek tai apibrėžia taikytini teisės aktai. Vežėjas neatsako ir neišmoka jokios kompensacijos, jeigu yra patiriami nuostoliai dėl to, kad siunta ar krovinys prarandami ar pristatomi pavėluotai, dėl nuo Vežėjo nepriklausančių aplinkybių, tokių kaip:</p>
-                <ol class="tr-ol">
-                  <li>teisėti ar neteisėti valstybės įstaigų ar institucijų veiksmai arba neveikimas, dėl jų susidariusios transporto spūstys, ar bet kokios kitokios kliūtys siuntų ar krovinių pervežimui;</li>
-                  <li>boikotai, streikai, lokautai, nespartus darbas kaip streiko forma, gamybinių ar administracinių pastatų užėmimas bei darbo sustabdymas;</li>
-                  <li>stichinės nelaimės, tokios kaip: smarkios audros, pūgos, ciklonai, gausiai iškritęs sniegas, žemės drebėjimai, potvyniai;</li>
-                  <li>sprogimai, gaisrai, gamybinių pastatų ar vidaus komunikacijų sunaikinimas;</li>
-                  <li>karas, pilietinis karas, maištai, revoliucijos, piratavimas, sabotažas;</li>
-                  <li>muitinės ar kitų valstybės institucijų procedūros;</li>
-                  <li>Siuntėjo ar gavėjo veiksmai (neveikimas);</li>
-                  <li>kitos Lietuvos Respublikos teisės aktuose ir tarptautinėse sutartyse numatytos aplinkybės, Vežėją atleidžia nuo bet kokios atsakomybės.</li>
-                </ol>
-              </div>
-            </div>
-            <div class="sgp-clause" id="p6-2" data-reveal><span class="sgp-clause__no">6.2.</span><p class="sgp-clause__t">Pasirašydami šią sutartį Siuntėjas ir Vežėjas sutaria, kad Vežėjo patvirtintos siuntų pervežimo taisyklės ir kainos, kurios yra viešai skelbiamos Vežėjo internetinėje svetainėje https://www.sgp-pervezimai.lt, yra sudėtinė ir neatskiriama šios sutarties dalis, tiek kiek jos neprieštarauja šios sutarties nuostatoms.</p></div>
-          </div>
-        </article>
-
-        <!-- PDF (repeated at the end) -->
-        <div class="tr-end" data-reveal data-salient="Inner Row: Text Block + Button Underline (download icon) → PDF on the live site">
-          <span class="tr-end__i" aria-hidden="true"><svg class="sgp-i"><use href="#i-dl"/></svg></span>
-          <div>
-            <p class="tr-end__k sgp-mono">Sutartis su siuntėju · PDF · 72 KB</p>
-            <a class="sgp-lnk sgp-lnk--plain" href="{{url:pdf}}" rel="noopener">Atsisiųsti sutartį su siuntėju (PDF, 72 KB)<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-          </div>
-          <a class="sgp-lnk tr-end__top" href="#taisykliu-tekstas">Į turinį<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
         </div>
       </div>
     </div>
   </div>
-</section>
-{{partial:board}}
+</div>
+
+<!-- ============ L2 · #taisykliu-tekstas — Tabs → Vertical Sticky Scrolling (the six sections, verbatim + approved fixes) ============ -->
+<div class="wpb_row" id="taisykliu-tekstas" data-type="full_width_background" data-text-color="dark" data-padding="chapter" style="--bg:#F5F7F6" data-salient="Row → Chapter row P · Type: Full Width Background · BG #F5F7F6 · Text Color: Dark · Padding 8 % / 8 % (phones 80px) · Row ID taisykliu-tekstas">
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-12" data-salient="Column 12/12 → Tabs">
+      <div class="vc_column-inner">
+        <div class="tabbed" data-style="vertical_scrolling" data-sticky-aspect="default" data-nav-width="regular" data-nav-spacing="15px" data-m-display="hidden" data-tab-spacing="10%" data-salient="Tabs → Style: Vertical Sticky Scrolling · Sticky Aspect: Tab Links · Navigation Functionality: All Links Visible · Navigation Width: Regular · Navigation Item Spacing: 15px · Navigation Item Mobile Display: Hidden (each tab starts with its own H2) · Tab Spacing: 10% · Tab Link Element: H4 · Call to action: Enable CTA Button ✓ (the PDF) · panel ids = „tab-“ + sanitize_title(Tab Title) (tab.php; e.g. tab-5-pretenziju-reiskimas) — the v2 anchors live on each tab’s first Inner Row (Row ID) (Tab Content Animation / Tab Link Animation exist only for Sticky Aspect: Tab Content — not used: long legal sections must scroll, not stick)">
+          <ul class="wpb_tabs_nav" aria-label="Taisyklių skyriai">
+            <li><a href="#tab-1-siuntu-tikrinimas">1. Siuntų tikrinimas</a></li>
+            <li><a href="#tab-2-siuntejo-garantija">2. Siuntėjo garantija</a></li>
+            <li><a href="#tab-3-vezejo-atsakomybe">3. Vežėjo atsakomybė</a></li>
+            <li><a href="#tab-4-daiktai-kuriuos-imone-vezti-atsisako">4. Daiktai, kuriuos įmonė vežti atsisako</a></li>
+            <li><a href="#tab-5-pretenziju-reiskimas">5. Pretenzijų reiškimas</a></li>
+            <li><a href="#tab-6-atvejai-kuriais-imone-neprisiima-atsakomybes">6. Atvejai, kuriais įmonė neprisiima atsakomybės</a></li>
+            <li class="vs-cta"><a class="nectar-cta" data-style="underline" href="{{url:pdf}}" rel="noopener" aria-label="Atsisiųsti sutartį su siuntėju (PDF, 72 KB)" data-salient="Tabs → Call to action → CTA Text „Sutartis su siuntėju (PDF)“ · CTA Link: the PDF · CTA Style: Underline"><span class="link_text">{{icon:download|class=nectar-cta__icon}}<span class="text">Sutartis su siuntėju (PDF)</span></span></a></li>
+          </ul>
+
+          <!-- Tab 1 -->
+          <div class="wpb_tab" id="tab-1-siuntu-tikrinimas" data-salient="Tab „1. Siuntų tikrinimas“ (panel id tab-1-siuntu-tikrinimas = „tab-“ + sanitize_title(Title), 18.2.1 tab.php) → Inner Row → Inner Column">
+            <div class="vc_row inner_row" id="tikrinimas" data-salient="Inner Row → Row ID tikrinimas (the v2 anchor; links from the hero, 2.2 and other pages land here)">
+              <div class="row_col_wrap_12_inner">
+                <div class="wpb_column vc_col-sm-12" data-el-space="30px" data-salient="Inner Column 12/12 → Column Element Spacing 30px · Animated Text (H2) + Divider + Text Block">
+                  <div class="vc_column-inner">
+                    <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:44px;--fs-t:40px;--fs-m:30px;--lh:1.02" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓ · Font sizing 44px (tablet 40, phone 30)"><h2>1. Siuntų tikrinimas</h2></div>
+                    <div class="divider-wrap" data-line-type="full-width" data-animate style="--h:1px;--line-color:rgba(28,29,29,.26)" data-salient="Divider → Line Type: Full Width · 1px · Animate Line ✓"><span class="divider-border"></span></div>
+                    <div class="wpb_text_column" style="--max-w:68ch" data-salient="Text Block (verbatim; fix „Siuntėjui“ approved §8.2)">
+                      <p>Vežėjas pasilieka teisę patikrinti perduodamą siuntą, kad galėtų įsitikinti, jog siuntoje nėra draudžiamų vežti daiktų. Siuntėjui pageidaujant, patikrinimas atliekamas perdavimo metu, kitu atveju vežėjas įgyja teisę siuntą patikrinti bet kuriuo metu vėliau. Siuntėjas, pasirašydamas šią sutartį, patvirtina, kad sutinka, jog perduota siunta gali būti patikrinta perdavimo metu arba bet kada vėliau, pačiam Siuntėjui nedalyvaujant. Siuntos tikrinamos nepažeidžiant LR įstatymų.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 2 -->
+          <div class="wpb_tab" id="tab-2-siuntejo-garantija" data-salient="Tab „2. Siuntėjo garantija“ (panel id tab-2-siuntejo-garantija = „tab-“ + sanitize_title(Title), 18.2.1 tab.php) → Inner Row → Inner Column">
+            <div class="vc_row inner_row" id="siuntejo-garantija" data-salient="Inner Row → Row ID siuntejo-garantija (the v2 anchor; links from the hero, 2.2 and other pages land here)">
+              <div class="row_col_wrap_12_inner">
+                <div class="wpb_column vc_col-sm-12" data-el-space="30px" data-salient="Inner Column 12/12 → Animated Text (H2) + Divider + Text Block">
+                  <div class="vc_column-inner">
+                    <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:44px;--fs-t:40px;--fs-m:30px;--lh:1.02" data-salient="Animated Text → H2 · Word Reveal · 44px"><h2>2. Siuntėjo garantija</h2></div>
+                    <div class="divider-wrap" data-line-type="full-width" data-animate style="--h:1px;--line-color:rgba(28,29,29,.26)" data-salient="Divider → Full Width · 1px · Animate Line ✓"><span class="divider-border"></span></div>
+                    <div class="wpb_text_column" style="--max-w:68ch" data-salient="Text Block (verbatim; fix „dėl to“ approved §8.2)">
+                      <p id="p2-1"><strong>2.1.</strong> Siuntėjas garantuoja, kad perduodama siunta yra tinkamai supakuota ir paženklinta. Ant siuntos yra nurodyti tikslūs siuntėjo ir gavėjo adresai, telefono numeriai. Esant netiksliam adresui ar telefono numeriui, siunta gali būti nepristatyta gavėjui ir grąžinama į įmonės būstinę.</p>
+                      <p id="p2-2"><strong>2.2.</strong> Siuntėjas garantuoja, kad siuntoje nėra draudžiamų siųsti daiktų, kurie yra išvardinti <a href="#draudziami-daiktai">4 punkte</a>. Jeigu Siuntėjas pažeis 4 punkte numatytą draudimą, pasirašydamas šią sutartį, patvirtina, jog sutinka atlyginti visus dėl to Vežėjo ir trečiųjų asmenų patirtus nuostolius, įskaitant ir negautas pajamas.</p>
+                      <p id="p2-3"><strong>2.3.</strong> Jeigu už siuntinį priskaičiuojami muito ar kiti mokesčiai, juos papildomai apmoka Siuntėjas.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3 -->
+          <div class="wpb_tab" id="tab-3-vezejo-atsakomybe" data-salient="Tab „3. Vežėjo atsakomybė“ (panel id tab-3-vezejo-atsakomybe = „tab-“ + sanitize_title(Title), 18.2.1 tab.php) → Inner Row → Inner Column">
+            <div class="vc_row inner_row" id="vezejo-atsakomybe" data-salient="Inner Row → Row ID vezejo-atsakomybe (the v2 anchor; links from the hero, 2.2 and other pages land here)">
+              <div class="row_col_wrap_12_inner">
+                <div class="wpb_column vc_col-sm-12" data-el-space="30px" data-salient="Inner Column 12/12 → Animated Text (H2) + Divider + Text Block + Highlighted Text (3.4) + KV rows">
+                  <div class="vc_column-inner">
+                    <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:44px;--fs-t:40px;--fs-m:30px;--lh:1.02" data-salient="Animated Text → H2 · Word Reveal · 44px"><h2>3. Vežėjo atsakomybė</h2></div>
+                    <div class="divider-wrap" data-line-type="full-width" data-animate style="--h:1px;--line-color:rgba(28,29,29,.26)" data-salient="Divider → Full Width · 1px · Animate Line ✓"><span class="divider-border"></span></div>
+                    <div class="wpb_text_column" style="--max-w:68ch" data-salient="Text Block (verbatim)">
+                      <p id="p3-1"><strong>3.1.</strong> Vežėjas atsako už siuntų neišsaugojimą (sugadinimą, trūkumą, praradimą), atsiradusį dėl Vežėjo kaltės. Tokiu atveju Vežėjas sutinka atlyginti Siuntėjui patirtą žalą vadovaudamasis Lietuvos Respublikos įstatymais ir kitais teisės aktais nustatytais pagrindais ir tvarka.</p>
+                      <p id="p3-2"><strong>3.2.</strong> Vežėjas neatsako už perduoto siuntinio sugadinimą ar trūkumą, jeigu jis nebuvo supakuotas ir paženklintas nesilaikant taisyklių.</p>
+                      <p id="p3-3"><strong>3.3.</strong> Vežėjas neatsako už valstybės institucijų sulaikytą ar konfiskuotą siuntą.</p>
+                    </div>
+                    <div class="nectar-highlighted-text" id="p3-4" data-style="regular_underline" data-underline-thickness="3px" style="--hl:#EF4539;--fs:30px;--fs-m:23px;--lh:1.3;--max-w:30em;--mt:40px" data-salient="Highlighted Text → Style: Regular Underline · Color: Accent · Underline Thickness 3px · Custom Font Size 30px (phone 23px) / 1.3 · Text Element: Paragraph · the italic phrase gets the line (3.4 verbatim)"><p><strong>3.4.</strong> Vežėjas įsipareigoja pristatyti perduotą siuntą per <em>5 darbo dienas</em> nuo pirmos išvykimo iš Lietuvos dienos.</p></div>
+                    <div class="nectar-hor-list-item" style="--mt:14px" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV rows) → Columns 2 · 30% | 70% · Style: Bottom Border, No Hover Effect · Border Animation ✓ · Border Color #C3CBCB · delivery facts pair"><div class="nectar-list-item"><p class="nectar-inherit-h6">Kelyje</p></div><div class="nectar-list-item"><p>apie 3–4 paros nuo paėmimo dienos</p></div></div>
+                    <div class="nectar-hor-list-item" style="--mt:0px" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Įsipareigojimas siuntoms</p></div><div class="nectar-list-item"><p>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (Taisyklių 3.4 p.)</p></div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 4 -->
+          <div class="wpb_tab" id="tab-4-daiktai-kuriuos-imone-vezti-atsisako" data-salient="Tab „4. Daiktai, kuriuos įmonė vežti atsisako“ (panel id tab-4-daiktai-kuriuos-imone-vezti-atsisako = „tab-“ + sanitize_title(Title), 18.2.1 tab.php) → 4 × Inner Row (4.1 · 4.2 dark Callout · 4.3–4.4 · 4.5 fines)">
+            <div class="vc_row inner_row" id="draudziami-daiktai" data-salient="Inner Row → Row ID draudziami-daiktai (the v2 anchor; links from the hero, 2.2 and other pages land here)">
+              <div class="row_col_wrap_12_inner">
+                <div class="wpb_column vc_col-sm-12" data-el-space="30px" data-salient="Inner Column 12/12 → Animated Text (H2) + Divider + Text Block (4.1)">
+                  <div class="vc_column-inner">
+                    <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:44px;--fs-t:40px;--fs-m:30px;--lh:1.02" data-salient="Animated Text → H2 · Word Reveal · 44px"><h2>4. Daiktai, kuriuos įmonė vežti atsisako</h2></div>
+                    <div class="divider-wrap" data-line-type="full-width" data-animate style="--h:1px;--line-color:rgba(28,29,29,.26)" data-salient="Divider → Full Width · 1px · Animate Line ✓"><span class="divider-border"></span></div>
+                    <div class="wpb_text_column" style="--max-w:68ch" data-salient="Text Block (verbatim)">
+                      <p id="p4-1"><strong>4.1.</strong> Daiktai ar medžiagos, kurių gabenimas yra uždraustas pagal valstybės įstatymus, kurios teritorijoje vykdomas pervežimas.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="vc_row inner_row sgp-dark" id="draudziama-siusti" style="--mt:44px;--bg:#0F1417;--r:3px;--pt:44px;--pb:40px;--pl:44px;--pr:44px;--pt-m:30px;--pb-m:26px;--pl-m:22px;--pr-m:22px" data-salient="Inner Row → dark inset (4.2): Design Options → Background Color #0F1417 · Border Radius 3px · Padding 44px (phone 30px 22px) · Row ID draudziama-siusti · Extra Class sgp-dark (Inner Row has no Text Color option — the light text is each Inner Column’s Font Color)">
+              <div class="row_col_wrap_12_inner" style="--row-gap:22px">
+                <div class="wpb_column vc_col-sm-12" data-text-color="light" data-animation="slight-fade-in-from-bottom" data-salient="Inner Column 12/12 → Font Color #F2F4F3 · Badge + Text Block (4.2 heading) · Animation: Slight Fade In From Bottom">
+                  <div class="vc_column-inner">
+                    <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #EF4539 (asphalt)">Draudžiama siųsti (12)</span>
+                    <div class="wpb_text_column" style="--mt:14px" data-salient="Text Block → H3 (verbatim)"><h3><span class="sgp-num">4.2.</span> Nepriimami ir draudžiami vežti daiktai:</h3></div>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-6" data-t-w="6" data-text-color="light" data-salient="Inner Column 6/12 → Font Color #F2F4F3 · Fancy Unordered List (items 1–6)">
+                  <div class="vc_column-inner">
+                    <ul class="nectar-fancy-ul" data-list-icon="fa-times" data-animation data-spacing="15px" data-salient="Fancy Unordered List → Icon: Font Icon fa-times · Color: Accent · Spacing 15px · Enable Animation ✓ (items 1–6, verbatim)">
+                      <li>bet kokie tabako gaminiai;</li>
+                      <li>bet kokie alkoholiniai gėrimai;</li>
+                      <li>pinigai ir vertybiniai popieriai;</li>
+                      <li>taurieji metalai;</li>
+                      <li>juvelyriniai gaminiai;</li>
+                      <li>vaistai ir maisto papildai;</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-6" data-t-w="6" data-text-color="light" data-salient="Inner Column 6/12 → Font Color #F2F4F3 · Fancy Unordered List (items 7–12)">
+                  <div class="vc_column-inner">
+                    <ul class="nectar-fancy-ul" data-list-icon="fa-times" data-animation data-spacing="15px" data-salient="Fancy Unordered List → Icon: fa-times · Accent · Spacing 15px · Enable Animation ✓ (items 7–12, verbatim)">
+                      <li>šaunamieji ir kiti ginklai;</li>
+                      <li>meno kūriniai ir antikvariniai daiktai;</li>
+                      <li>cheminiai kroviniai ir degios prekės;</li>
+                      <li>greitai gendantys maisto produktai;</li>
+                      <li>daiktai, kurių pervežimui reikalingos specialios temperatūros, oro, drėgmės ir kitos papildomos sąlygos;</li>
+                      <li>visos kitos prekės, kurias vežti draudžiama įstatymais, bet kurios Vyriausybės ar valstybės bet kurioje šalyje kur prekės yra gabenamos.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="vc_row inner_row" style="--mt:44px" data-salient="Inner Row">
+              <div class="row_col_wrap_12_inner">
+                <div class="wpb_column vc_col-sm-12" data-salient="Inner Column 12/12 → Text Block (4.3–4.4)">
+                  <div class="vc_column-inner">
+                    <div class="wpb_text_column" style="--max-w:68ch" data-salient="Text Block (verbatim)">
+                      <p id="p4-3"><strong>4.3.</strong> Vežėjas neprisiima jokios atsakomybės už per klaidą priimtus vežti Sutarties 4.2. punkte numatytus daiktus.</p>
+                      <p id="p4-4"><strong>4.4.</strong> Siuntėjas įteikdamas arba bet kokiu kitu būdu sąlygodamas perdavimą Vežėjui, daiktų, kurie yra numatyti Sutarties 4.2. punkte, prisiima visišką atsakomybę už tokių veiksmų sukeliamus teisinius padarinius ir įsipareigoja apmokėti visus Vežėjo dėl to patirtus nuostolius (gautas baudas, kitas patirtas išlaidas, negautas pajamas).</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="vc_row inner_row" id="baudos" style="--mt:64px" data-salient="Inner Row → Row ID baudos · 4.5: Milestone | KV rows (fines) + Toggle Panels (full 4.5 text)">
+              <div class="row_col_wrap_12_inner" style="--row-gap:36px">
+                <div class="wpb_column vc_col-sm-5" data-t-w="12" data-border-animation style="--border-top:2px solid #EF4539;--pt:26px" data-animation="slight-fade-in-from-bottom" data-salient="Inner Column 5/12 → Border Type: Advanced (top 2px Accent) · Enable Border Animation ✓ · Padding-top 26px · Animation: Slight Fade In From Bottom · Badge + Milestone">
+                  <div class="vc_column-inner">
+                    <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E">4.5. Baudos</span>
+                    <div class="nectar-milestone" data-effect="count" data-delay="150" data-inherit="h2" data-symbol-pos="after" data-symbol-alignment="superscript" style="--fs:80px;--fs-m:72px;--mt:14px" data-salient="Milestone → Milestone Number 1200 · Milestone Number Inherit Font: H2 · Milestone Number Font Size 80px (phone 72px) · Animation Effect: Count To Value · Delay 150 · Symbol „EUR“ · Symbol Position: After · Symbol Alignment: Superscript · Subject (verbatim label, Taisyklių 4.5 p.)"><div class="number"><span class="num">1200</span><span class="symbol">EUR</span></div><div class="subject">Radus draudžiamų daiktų – 1200 EUR bauda (Taisyklių 4.5 p.)</div></div>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-7" data-t-w="12" data-el-space="none" data-animation="slight-fade-in-from-bottom" data-delay="120" data-salient="Inner Column 7/12 → Column Element Spacing: None · Animation: Slight Fade In From Bottom · Delay 120 · 6 × Horizontal List Item (fines table)">
+                  <div class="vc_column-inner">
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV rows, header) → Columns 2 · Column Layout 40% | 60% · Responsive Display: Stacked (2 columns keep their ratio) · Style: Bottom Border, No Hover Effect · Border Animation ✓ · Border Color #C3CBCB · text with Extra Class nectar-inherit-label (Label typography)"><div class="nectar-list-item"><p class="nectar-inherit-label">Radus siuntoje ar krovinyje</p></div><div class="nectar-list-item"><p class="nectar-inherit-label">Bauda</p></div></div>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row (40% | 60%, Responsive Display: Stacked (2 columns keep their ratio), Bottom Border, No Hover Effect, Border Animation, Text Element Type: Paragraph with Column One Content &lt;p class=„nectar-inherit-h6“&gt; — H6 typography without a heading level) · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Alkoholinių gėrimų</p></div><div class="nectar-list-item"><p><strong>1200 EUR</strong> už kiekvieną alkoholinio gėrimo vienetą</p></div></div>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Vaistų</p></div><div class="nectar-list-item"><p><strong>po 1200 EUR</strong> už kiekvieną siuntoje rastą vienetą (ampulę, tabletę)</p></div></div>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Cigarečių</p></div><div class="nectar-list-item"><p><strong>po 1200 EUR</strong> už kiekvieną rastą bloką (200 vnt.); ta pati bauda taikoma ir už mažesnį kiekį</p></div></div>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Tabako ar jo gaminių</p></div><div class="nectar-list-item"><p><strong>po 1200 EUR</strong> už kiekvienus rastus 200 g; ta pati bauda taikoma ir už mažesnį kiekį</p></div></div>
+                    <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Kitų 4.2 punkte nurodytų draudžiamų daiktų</p></div><div class="nectar-list-item"><p><strong>1200 EUR</strong></p></div></div>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-12" data-animation="slight-fade-in-from-bottom" data-salient="Inner Column 12/12 → Toggle Panels · Animation: Slight Fade In From Bottom">
+                  <div class="vc_column-inner">
+                    <div class="toggles" data-style="animated_circle" data-circle-position="right" data-circle-size="40" data-divider style="--r:3px" data-salient="Toggle Panels → Style: Animated Circle · Animated Circle Position: Right · Animated Circle Size 40 · Enable Divider ✓ · Accordion Toggles ✗ · Starting Functionality: First Toggle Closed · Border Radius: 3px · deep link ?toggle=1 · Toggle ID visas-4-5">
+                      <div class="toggle" id="visas-4-5"><h3 class="toggle-title">Visas 4.5 punkto tekstas</h3><div class="inner-toggle-wrap"><div class="toggle-content">
+                        <div class="wpb_text_column" style="--max-w:68ch" data-salient="Text Block (4.5 verbatim + approved fixes §1.7 #56–58) + Fancy Unordered List (Standard Dash, the five fines)">
+                          <p>Siunta ar krovinys, kuriame buvo rasta draudžiamų vežti daiktų, grąžinama į Vežėjo būstinę iš kur, Siuntėjas privalės atsiimti savo sąskaita, nes siunta nebus transportuojama. Prieš atsiimant minėto pobūdžio siuntą ar krovinį Siuntėjas įsipareigoja: 1) sumokėti siuntos transportavimo mokestį pagal nustatytus Vežėjo įkainius; 2) jam skirtą baudą už jo siuntoje rastus draudžiamus vežti daiktus; 3) atlyginti visus kitus Vežėjo patirtus nuostolius dėl tokio pažeidimo.</p>
+                          <p>Siuntėjas, pasirašydamas šią sutartį, patvirtina, jog jam yra žinoma, kad dėl draudžiamų vežti daiktų transportavimo Vežėjui gali būti skirtos baudos, todėl sutinka, kad už jo siuntoje rastus draudžiamus transportuoti daiktus įvardintus 4.2. punkte, Siuntėjui būtų pritaikytos toliau nurodytos baudos, kurių dydis yra pagrįstas, atsižvelgus į atitinkamų valstybės institucijų (kur yra gabenamas krovinys) galimų paskirti baudų dydžius.</p>
+                          <ul class="nectar-fancy-ul" data-list-icon="dash" data-spacing="10px" data-salient="Fancy Unordered List → Icon: Standard Dash · Color: Accent · Spacing 10px (the five fine sentences, words verbatim)">
+                            <li>Radus siuntoje ar krovinyje alkoholinių gėrimų, taikoma 1200 EUR bauda už kiekvieną alkoholinio gėrimo vienetą;</li>
+                            <li>Radus siuntoje ar krovinyje vaistų, taikoma po 1200 EUR bauda už kiekvieną siuntoje rastą vienetą (ampulę, tabletę) ir kita...</li>
+                            <li>Siuntoje radus cigarečių, taikoma po 1200 EUR bauda už kiekvieną siuntoje rastą bloką cigarečių (200 vnt.), ta pati bauda taikoma ir už mažesnį kiekį;</li>
+                            <li>Radus tabako ar jo gaminių, taikoma po 1200 EUR bauda už kiekvienus rastus 200 g, ta pati bauda taikoma ir už mažesnį kiekį;</li>
+                            <li>Radus kitų, dar nepaminėtų draudžiamų daiktų iš 4.2. punkto taikoma 1200 EUR bauda.</li>
+                          </ul>
+                        </div>
+                      </div></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 5 -->
+          <div class="wpb_tab" id="tab-5-pretenziju-reiskimas" data-salient="Tab „5. Pretenzijų reiškimas“ (panel id tab-5-pretenziju-reiskimas = „tab-“ + sanitize_title(Title), 18.2.1 tab.php) → 2 × Inner Row (5.1 Highlighted Text · 3 × Milestone deadlines)">
+            <div class="vc_row inner_row" id="pretenzijos" data-salient="Inner Row → Row ID pretenzijos (the v2 anchor; links from the hero, 2.2 and other pages land here)">
+              <div class="row_col_wrap_12_inner">
+                <div class="wpb_column vc_col-sm-12" data-el-space="30px" data-salient="Inner Column 12/12 → Animated Text (H2) + Divider + Highlighted Text (5.1)">
+                  <div class="vc_column-inner">
+                    <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:44px;--fs-t:40px;--fs-m:30px;--lh:1.02" data-salient="Animated Text → H2 · Word Reveal · 44px"><h2>5. Pretenzijų reiškimas</h2></div>
+                    <div class="divider-wrap" data-line-type="full-width" data-animate style="--h:1px;--line-color:rgba(28,29,29,.26)" data-salient="Divider → Full Width · 1px · Animate Line ✓"><span class="divider-border"></span></div>
+                    <div class="nectar-highlighted-text" id="p5-1" data-style="regular_underline" data-underline-thickness="3px" style="--hl:#EF4539;--fs:23px;--fs-m:19px;--lh:1.5;--max-w:36em" data-salient="Highlighted Text → Style: Regular Underline · Color: Accent · Underline Thickness 3px · Custom Font Size 23px (phone 19px) / 1.5 · Text Element: Paragraph · the two deadlines get the line (5.1 verbatim)"><p><strong>5.1.</strong> Klientai privalo pranešti Vežėjui apie patirtus nuostolius ar žalą <em>per 5 dienas</em>, nuo siuntos gavimo dienos ir patvirtinti tai raštu <em>per 14 dienų</em> nuo siuntos gavimo dienos. Jeigu klientas neįvykdo pretenzijos pareiškimo pagal numatytą tvarką, Vežėjas neatsako už jokius nuostolius ar žalą išskyrus tuos atvejus, kai klientas patvirtina, kad pagrįstai nebuvo įmanoma perspėti Vežėjo arba pateikti pretenziją raštu per numatytą laikotarpį.</p></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="vc_row inner_row" style="--mt:48px" data-salient="Inner Row → 3 × Inner Column (Border Animation) with Milestone — the deadline road 0 → 5 → 14 d.">
+              <div class="row_col_wrap_12_inner" style="--row-gap:28px">
+                <div class="wpb_column vc_col-sm-4" data-t-w="4" data-border-animation style="--border-top:1px solid rgba(28,29,29,.26);--pt:24px" data-salient="Inner Column 4/12 → Border Type: Advanced (top 1px hairline) · Enable Border Animation ✓ · Padding-top 24px · Milestone">
+                  <div class="vc_column-inner">
+                    <div class="nectar-milestone" data-effect="motion_blur" data-inherit="h2" data-symbol-pos="after" style="--fs:72px;--fs-m:56px" data-salient="Milestone → Number 0 · Symbol „d.“ (After) · Animation Effect: Motion Blur Slide In · Delay 0 · Number Font Size 72px (phone 56px)"><div class="number"><span class="num">0</span><span class="symbol">&nbsp;d.</span></div><div class="subject">Siuntos gavimo diena</div></div>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-4" data-t-w="4" data-border-animation data-border-delay="200" style="--border-top:2px solid #EF4539;--pt:24px" data-salient="Inner Column 4/12 → Border Type: Advanced (top 2px Accent) · Enable Border Animation ✓ · Border Animation Delay 200 · Milestone">
+                  <div class="vc_column-inner">
+                    <div class="nectar-milestone" data-effect="motion_blur" data-delay="200" data-inherit="h2" data-symbol-pos="after" style="--fs:72px;--fs-m:56px" data-salient="Milestone → Number 5 · Symbol „d.“ (After) · Motion Blur Slide In · Delay 200"><div class="number"><span class="num">5</span><span class="symbol">&nbsp;d.</span></div><div class="subject">Pranešti Vežėjui apie nuostolius ar žalą</div></div>
+                  </div>
+                </div>
+                <div class="wpb_column vc_col-sm-4" data-t-w="4" data-border-animation data-border-delay="400" style="--border-top:2px solid #EF4539;--pt:24px" data-salient="Inner Column 4/12 → Border Type: Advanced (top 2px Accent) · Enable Border Animation ✓ · Border Animation Delay 400 · Milestone">
+                  <div class="vc_column-inner">
+                    <div class="nectar-milestone" data-effect="motion_blur" data-delay="400" data-inherit="h2" data-symbol-pos="after" style="--fs:72px;--fs-m:56px" data-salient="Milestone → Number 14 · Symbol „d.“ (After) · Motion Blur Slide In · Delay 400"><div class="number"><span class="num">14</span><span class="symbol">&nbsp;d.</span></div><div class="subject">Patvirtinti tai raštu</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 6 -->
+          <div class="wpb_tab" id="tab-6-atvejai-kuriais-imone-neprisiima-atsakomybes" data-salient="Tab „6. Atvejai, kuriais įmonė neprisiima atsakomybės“ (panel id tab-6-atvejai-kuriais-imone-neprisiima-atsakomybes = „tab-“ + sanitize_title(Title), 18.2.1 tab.php) → Inner Row → Inner Column">
+            <div class="vc_row inner_row" id="atsakomybes-ribos" data-salient="Inner Row → Row ID atsakomybes-ribos (the v2 anchor; links from the hero, 2.2 and other pages land here)">
+              <div class="row_col_wrap_12_inner">
+                <div class="wpb_column vc_col-sm-12" data-el-space="30px" data-salient="Inner Column 12/12 → Animated Text (H2) + Divider + Text Block (6.1) + Icon List (1)–8)) + Text Block (6.2)">
+                  <div class="vc_column-inner">
+                    <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:44px;--fs-t:40px;--fs-m:30px;--lh:1.02" data-salient="Animated Text → H2 · Word Reveal · 44px"><h2>6. Atvejai, kuriais įmonė neprisiima atsakomybės</h2></div>
+                    <div class="divider-wrap" data-line-type="full-width" data-animate style="--h:1px;--line-color:rgba(28,29,29,.26)" data-salient="Divider → Full Width · 1px · Animate Line ✓"><span class="divider-border"></span></div>
+                    <div class="wpb_text_column" style="--max-w:68ch" data-salient="Text Block (verbatim + approved fixes §1.7 #59)">
+                      <p id="p6-1"><strong>6.1.</strong> Vežėjas neatsako už netiesioginius nuostolius, tokius kaip: pelno praradimas, neturtinės žalos padarymas, reputacijos pažeidimas, tiek kiek tai apibrėžia taikytini teisės aktai. Vežėjas neatsako ir neišmoka jokios kompensacijos, jeigu yra patiriami nuostoliai dėl to, kad siunta ar krovinys prarandami ar pristatomi pavėluotai, dėl nuo Vežėjo nepriklausančių aplinkybių, tokių kaip:</p>
+                    </div>
+                    <div class="nectar-icon-list" data-direction="vertical" data-icon-size="small" data-icon-style="border" data-animate style="--max-w:68ch" data-salient="Icon List → Direction: Vertical · Icon Size: Small · Icon Style: Icon Colored W/ BG · Icon Color: Accent · Animate Element ✓ · 8 items (Icon Type: Number 1–8 = the clause's „1)“ numbering; text verbatim, §1.7 #60)">
+                      <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>1</span></div><div class="content"><p><span class="screen-reader-text">1) </span>teisėti ar neteisėti valstybės įstaigų ar institucijų veiksmai arba neveikimas, dėl jų susidariusios transporto spūstys, ar bet kokios kitokios kliūtys siuntų ar krovinių pervežimui;</p></div></div>
+                      <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>2</span></div><div class="content"><p><span class="screen-reader-text">2) </span>boikotai, streikai, lokautai, nespartus darbas kaip streiko forma, gamybinių ar administracinių pastatų užėmimas bei darbo sustabdymas;</p></div></div>
+                      <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>3</span></div><div class="content"><p><span class="screen-reader-text">3) </span>stichinės nelaimės, tokios kaip: smarkios audros, pūgos, ciklonai, gausiai iškritęs sniegas, žemės drebėjimai, potvyniai;</p></div></div>
+                      <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>4</span></div><div class="content"><p><span class="screen-reader-text">4) </span>sprogimai, gaisrai, gamybinių pastatų ar vidaus komunikacijų sunaikinimas;</p></div></div>
+                      <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>5</span></div><div class="content"><p><span class="screen-reader-text">5) </span>karas, pilietinis karas, maištai, revoliucijos, piratavimas, sabotažas;</p></div></div>
+                      <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>6</span></div><div class="content"><p><span class="screen-reader-text">6) </span>muitinės ar kitų valstybės institucijų procedūros;</p></div></div>
+                      <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>7</span></div><div class="content"><p><span class="screen-reader-text">7) </span>Siuntėjo ar gavėjo veiksmai (neveikimas);</p></div></div>
+                      <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>8</span></div><div class="content"><p><span class="screen-reader-text">8) </span>kitos Lietuvos Respublikos teisės aktuose ir tarptautinėse sutartyse numatytos aplinkybės, Vežėją atleidžia nuo bet kokios atsakomybės.</p></div></div>
+                    </div>
+                    <div class="wpb_text_column" style="--max-w:68ch" data-salient="Text Block (verbatim; URL fix approved §8.2 #6)">
+                      <p id="p6-2"><strong>6.2.</strong> Pasirašydami šią sutartį Siuntėjas ir Vežėjas sutaria, kad Vežėjo patvirtintos siuntų pervežimo taisyklės ir kainos, kurios yra viešai skelbiamos Vežėjo internetinėje svetainėje https://www.sgp-pervezimai.lt, yra sudėtinė ir neatskiriama šios sutarties dalis, tiek kiek jos neprieštarauja šios sutarties nuostatoms.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ L6 · PDF — Callout card with Icon + Lift button | Image (Reveal Rotate, Scroll Position Advanced) ============ -->
+<div class="wpb_row" id="sutartis" data-type="full_width_background" data-text-color="dark" data-column-align="middle" style="--bg:#EAEEED;--pt:7%;--pb:7%;--pt-m:72px;--pb-m:72px" data-salient="Row → Chapter row P-alt · Type: Full Width Background · BG #EAEEED · Text Color: Dark · Vertically Center Columns · Padding 7 % / 7 % (phones 72px) · Row ID sutartis">
+  <div class="row_col_wrap_12" style="--row-gap:36px">
+    <div class="wpb_column vc_col-sm-6" data-t-w="12" style="--bg:#FFFFFF;--r:3px;--border-left:2px solid #EF4539;--pt:48px;--pb:44px;--pl:48px;--pr:48px;--pt-m:32px;--pb-m:30px;--pl-m:22px;--pr-m:22px" data-animation="fade-in-from-left" data-salient="Column 6/12 → Callout: Background #FFFFFF · Border Radius 3px · Border Type: Advanced (left 2px Accent) · Padding 48px (phone 32px 22px) · Animation: Fade In From Left · Icon + Badge + H3 + Inner Row (Lift button + Link)">
+      <div class="vc_column-inner">
+        <div class="nectar_icon_wrap" data-style="border-animation" data-draw style="--ic-size:40px" data-salient="Icon → Icon Library: Linea-style line icon „download“ · Icon Style: Border W/ Hover Animation · Draw SVG ✓ · Color: Accent · Size 40">{{icon:download}}</div>
+        <span class="nectar-badge" data-badge-style="line" style="--mt:26px" data-salient="Badge → Minimal Line · Label · #C4301E">PDF · 72 KB</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:40px;--fs-m:30px;--lh:1.05;--mt:12px" data-salient="Animated Text → Text Element: H3 · Word Animations: Reveal · Stagger ✓ · Font sizing 40px (phone 30px)"><h3>Sutartis su siuntėju</h3></div>
+        <div class="vc_row inner_row" style="--mt:28px" data-salient="Inner Row → Inner Column Flexbox (row, wrap, gap 12px 28px, align center) → Lift button + Link">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" data-align="center" style="--gap:14px 28px" data-salient="Inner Column → Layout: Flexbox · Horizontal · Wrap · Align Center · Gap 14px 28px">
+              <div class="vc_column-inner">
+                <a class="nectar-button regular large" data-color="extra-color-1" href="{{url:pdf}}" rel="noopener" aria-label="Atsisiųsti sutartį su siuntėju (PDF, 72 KB)" data-salient="Legacy Button → Style: Regular · Size: Large · Color: Extra Color 1 · Icon: Default Arrow (Button Styling: Slightly Rounded W/ Shadow → −3px lift) · Link: the PDF (Media Library, 72 KB)"><span>Atsisiųsti (PDF, 72 KB)</span><i class="icon-default-style"></i></a>
+                <a class="nectar-cta" data-style="underline" href="#taisykliu-tekstas" data-salient="Button → Type: Underline · Link #taisykliu-tekstas"><span class="link_text"><span class="text">Į turinį ↑</span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-5 vc_col-sm-offset-1" data-t-w="12" data-animation-type="scroll_pos_advanced" data-scroll-start="ty:90;s:.94;o:.5" data-scroll-end="ty:-20;s:1;o:1" data-scroll-offset="0,100" data-salient="Column 5/12 (offset 1) → Column Animation Type: Scroll Position Advanced · Start: Translate Y 90, Scale .94, Opacity .5 → End: Translate Y −20, Scale 1, Opacity 1 · Viewport Trigger Offset 0–100 · Image">
+      <div class="vc_column-inner">
+        <div class="img-with-aniamtion-wrap" data-animation="ro-reveal-from-right" data-hover-animation="zoom-in" data-aspect="4-3" data-salient="Image → Animation: Reveal Rotate From Right (2.3 s) · Hover Animation: Zoom In · Border Radius 0 · 4:3"><div class="hover-wrap">{{img:7464731|w=900|sizes=(min-width:1000px) 36vw, 92vw|pos=50% 50%}}</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ L7 · GS-Kvietimas (After Page/Post Content; GS-Board dropped) ============ -->
+{{partial:gs-kvietimas}}

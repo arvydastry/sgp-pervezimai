@@ -1,0 +1,113 @@
+/* =====================================================================================
+   emul/buttons.css — EMULATION of Button (nectar_cta), Legacy Button (nectar_btn),
+   Next Section Button, Video Lightbox trigger. Not shipped.
+   Colouring options = vars on the button: --btn-bg --btn-bg-h --btn-fg --btn-fg-h
+   --btn-border --btn-border-h ; palette shortcuts data-color="accent-color|extra-color-1|
+   extra-color-2". Roundness = Button Roundness 3 (--nectar-border-radius).
+   ===================================================================================== */
+.nectar-cta{--btn-bg:var(--tone-inv-bg);--btn-fg:var(--tone-inv-fg);--btn-bg-h:var(--tone-inv-bg-h);--btn-fg-h:var(--btn-fg);
+  --btn-border:var(--tone-hair-2);--btn-border-h:var(--tone-fg);--r:var(--nectar-border-radius);
+  position:relative;display:inline-flex;align-items:center;width:fit-content;max-width:100%;vertical-align:middle;
+  font:var(--btn-w) var(--btn-size)/1.15 var(--f-text);letter-spacing:var(--btn-ls);color:var(--btn-fg);text-decoration:none;
+  transition:color var(--d-btn) var(--e-btn),background-color var(--d-btn) var(--e-btn),border-color var(--d-btn) var(--e-btn),box-shadow var(--d-btn) var(--e-btn),transform var(--d-btn) var(--e-btn)}
+.nectar-cta[style*="--fs:"]{font-size:var(--fs)}
+.nectar-cta[data-color="accent-color"]{--btn-bg:var(--nectar-accent-color);--btn-bg-h:var(--sgp-red-lit);--btn-fg:var(--sgp-asphalt-900)}
+.nectar-cta[data-color="extra-color-1"]{--btn-bg:var(--nectar-extra-color-1);--btn-bg-h:var(--sgp-asphalt-700);--btn-fg:var(--sgp-snow)}
+.nectar-cta[data-color="extra-color-2"]{--btn-bg:var(--nectar-extra-color-2);--btn-bg-h:var(--sgp-white);--btn-fg:var(--sgp-asphalt-900)}
+.nectar-cta .link_text{display:inline-flex;align-items:center;gap:var(--icon-gap,20px);position:relative}
+.nectar-cta .text{position:relative;display:inline-block}
+.nectar-cta[data-display="block"]{display:flex}
+.nectar-cta[data-alignment="stretch"]{display:flex;width:100%}
+.nectar-cta[data-alignment="stretch"] .link_text{width:100%;justify-content:space-between}
+.nectar-cta svg{flex:0 0 auto}
+.nectar-cta .nectar-cta__icon{width:1.1em;height:1.1em;fill:none;stroke:currentColor;stroke-width:1.8}
+
+/* ---- Type: Basic (+ Preset size sm / md / lg) ---- */
+.nectar-cta[data-style="basic"]{background:var(--btn-bg);border-radius:var(--r);padding:.65em 1.5em;min-height:44px}
+.nectar-cta[data-style="basic"]:hover,.nectar-cta[data-style="basic"]:focus-visible{background:var(--btn-bg-h);color:var(--btn-fg-h)}
+.nectar-cta[data-preset="sm"]{padding:.4em 1em;font-size:14px;min-height:36px}
+.nectar-cta[data-preset="lg"]{padding:.85em 2em;font-size:18px}
+/* ---- Type: See Through ---- */
+.nectar-cta[data-style="see-through"]{--btn-fg:var(--tone-fg);--btn-fg-h:var(--tone-inv-fg);--btn-bg-h:var(--tone-inv-bg);
+  background:transparent;border:1px solid var(--btn-border);border-radius:var(--r);padding:.65em 1.5em;min-height:44px}
+.nectar-cta[data-style="see-through"][data-preset="sm"]{padding:.4em 1em;min-height:36px}
+.nectar-cta[data-style="see-through"]:hover,.nectar-cta[data-style="see-through"]:focus-visible{background:var(--btn-bg-h);border-color:var(--btn-bg-h);color:var(--btn-fg-h)}
+.nectar-cta[data-style="see-through"][data-backdrop-blur]{background:rgba(11,14,16,.28)}
+/* ---- Type: Arrow Circle Animation (circle max(1.4em, Min Icon Size 36px) · .55s (.12,.75,.4,1)) ---- */
+.nectar-cta[data-style="arrow-circle-animation"]{--nectar-button-duration:var(--d-arrow);--nectar-button-easing:var(--e-arrow);
+  background:var(--btn-bg);border-radius:var(--r);padding:8px 8px 8px 22px;min-height:52px;
+  transition:color var(--d-arrow) var(--e-arrow),background-color var(--d-arrow) var(--e-arrow)}
+.nectar-cta[data-style="arrow-circle-animation"][data-using-bg="false"]{background:transparent;padding:0;min-height:44px;--btn-fg:var(--tone-fg)}
+.nectar-cta[data-style="arrow-circle-animation"]:hover,.nectar-cta[data-style="arrow-circle-animation"]:focus-visible{background:var(--btn-bg-h);color:var(--btn-fg-h)}
+.arrow-circle-animation-arrow-wrap{position:relative;flex:0 0 auto;width:max(1.4em,var(--min-icon,36px));aspect-ratio:1;border-radius:50%;overflow:hidden;
+  background:var(--btn-fg);clip-path:circle(50% at 50% 50%);
+  transition:background-color var(--d-arrow) var(--e-arrow),clip-path var(--d-arrow) var(--e-arrow)}
+.nectar-cta[data-using-bg="false"] .arrow-circle-animation-arrow-wrap{background:var(--nectar-accent-color)}
+.arrow-circle-animation-arrow{position:absolute;top:50%;left:50%;width:50%;height:50%;fill:var(--btn-bg);transform:translate(-50%,-50%);
+  transition:transform var(--d-arrow) var(--e-arrow),fill var(--d-arrow) var(--e-arrow)}
+.nectar-cta[data-using-bg="false"] .arrow-circle-animation-arrow{fill:var(--sgp-asphalt-900)}
+.arrow-circle-animation-arrow.hover{top:100%;left:0}
+.nectar-cta:hover .arrow-circle-animation-arrow,.nectar-cta:focus-visible .arrow-circle-animation-arrow{transform:translate(50%,-150%);fill:var(--btn-bg-h)}
+.nectar-cta:hover .arrow-circle-animation-arrow-wrap,.nectar-cta:focus-visible .arrow-circle-animation-arrow-wrap{clip-path:circle(45% at 50% 50%)}
+.nectar-cta[data-using-bg="false"]:hover .arrow-circle-animation-arrow{fill:var(--sgp-asphalt-900)}
+/* ---- Type: Underline (visible; Left to Right Fancy on hover) ---- */
+.nectar-cta[data-style="underline"]{--btn-fg:var(--tone-fg);padding:.3em 0;min-height:32px}
+.nectar-cta[data-style="underline"] .link_text{gap:8px}
+.nectar-cta[data-style="underline"] .text::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:var(--underline-thickness);background:currentColor;transform-origin:left}
+.nectar-cta[data-style="underline"]:hover .text::after,.nectar-cta[data-style="underline"]:focus-visible .text::after{animation:cta-ul calc(var(--d-underline) * 2) var(--e-underline)}
+.nectar-cta[data-style="underline"][data-underline="hover"] .text::after{transform:scaleX(0);transition:transform var(--d-underline) var(--e-underline)}
+.nectar-cta[data-style="underline"][data-underline="hover"]:hover .text::after{animation:none;transform:scaleX(1)}
+@keyframes cta-ul{0%{transform:scaleX(1);transform-origin:right}49%{transform:scaleX(0);transform-origin:right}51%{transform:scaleX(0);transform-origin:left}100%{transform:scaleX(1);transform-origin:left}}
+/* ---- Type: Text Reveal Wave (letters .5s (.46,.4,.56,.87), 15 ms apart) · Text Reveal ---- */
+.nectar-cta[data-style="text-reveal-wave"],.nectar-cta[data-style="text-reveal"]{--btn-fg:var(--tone-fg);padding:.25em 0;min-height:32px}
+.nectar-cta[data-style="text-reveal-wave"][data-using-bg="true"],.nectar-cta[data-style="text-reveal"][data-using-bg="true"]{--btn-fg:var(--tone-inv-fg);background:var(--btn-bg);border-radius:var(--r);padding:.65em 1.5em;min-height:44px}
+.nectar-cta .char{position:relative;display:inline-block;overflow:hidden;vertical-align:top;white-space:pre;padding-block:.12em;margin-block:-.12em}
+.nectar-cta .char > span{display:inline-block;transition:transform var(--d-wave) var(--e-wave);transition-delay:calc(var(--i,0) * var(--st-wave))}
+.nectar-cta .char::after{content:attr(data-c);position:absolute;left:0;top:.12em;transform:translateY(115%);transition:transform var(--d-wave) var(--e-wave);transition-delay:calc(var(--i,0) * var(--st-wave))}
+.nectar-cta:hover .char > span,.nectar-cta:focus-visible .char > span{transform:translateY(-115%)}
+.nectar-cta:hover .char::after,.nectar-cta:focus-visible .char::after{transform:none}
+.nectar-cta[data-style="text-reveal"] .char > span,.nectar-cta[data-style="text-reveal"] .char::after{transition-duration:var(--d-arrow);transition-timing-function:var(--e-btn);transition-delay:0ms}
+/* ---- Next Section Button → Minimal Arrow Alt · Arrow Animation: On Hover Only — a bare 30 × 30 link (overflow hidden) holding
+   two stacked arrows at translateY(−100 %); on hover they slide to 0 (.55s (.25,1,.33,1)), so a new arrow drops in ---- */
+.nectar-cta[data-style="next-section"]{--btn-fg:var(--tone-fg);display:block;width:30px;height:30px;overflow:hidden;line-height:0}
+.nectar-cta[data-style="next-section"] .link_text{display:block;gap:0}
+.nectar-cta[data-style="next-section"] svg{display:block;width:30px;height:30px;fill:none;stroke:currentColor;stroke-width:1.6;
+  transform:translateY(-100%);transition:transform .55s cubic-bezier(.25,1,.33,1)}
+.nectar-cta[data-style="next-section"]:hover svg,.nectar-cta[data-style="next-section"]:focus-visible svg{transform:translateY(0)}
+
+/* ---------------- Legacy Button (nectar_btn) → Style: Regular ---------------- */
+.nectar-button{--lb-bg:var(--nectar-extra-color-1);--lb-fg:var(--sgp-white);display:inline-flex;align-items:center;gap:0;position:relative;overflow:hidden;
+  background:var(--lb-bg);color:var(--lb-fg);border-radius:var(--nectar-border-radius);padding:13px 24px;min-height:48px;
+  font:var(--btn-w) var(--btn-size)/1.2 var(--f-text);letter-spacing:var(--btn-ls);
+  transition:transform var(--d-btn) var(--e-btn),box-shadow var(--d-btn) var(--e-btn),background-color var(--d-btn) var(--e-btn)}
+.nectar-button.large{padding:15px 28px;font-size:17px;min-height:52px}
+.nectar-button.small{padding:9px 16px;font-size:14px;min-height:40px}
+.nectar-button[data-color="extra-color-2"]{--lb-bg:var(--nectar-extra-color-2);--lb-fg:var(--sgp-asphalt-900)}
+.nectar-button[data-color="accent-color"]{--lb-bg:var(--nectar-accent-color);--lb-fg:var(--sgp-asphalt-900)}
+.nectar-button > span{transition:transform var(--d-btn) var(--e-btn)}
+.nectar-button .icon-default-style{display:inline-block;width:18px;height:18px;margin-left:10px;transition:transform var(--d-btn) var(--e-btn)}
+.nectar-button .icon-default-style svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8}
+.nectar-button:hover .icon-default-style{transform:translateX(4px)}
+body[data-button-style="slightly_rounded_shadow"] .nectar-button:hover,body[data-button-style="slightly_rounded_shadow"] .nectar-button:focus-visible,
+body[data-button-style="slightly_rounded_shadow"] .ff-btn-submit:hover{transform:var(--btn-lift);box-shadow:var(--btn-lift-shadow)}
+
+/* ---------------- Video Lightbox → Play Button With Image – Mouse Follow ---------------- */
+.nectar-video-box{position:relative;display:block;overflow:hidden;border-radius:var(--r,0);color:var(--sgp-snow);isolation:isolate;cursor:none}
+.nectar-video-box .nectar-video-box__media{position:relative;aspect-ratio:var(--aspect,16/9);overflow:hidden}
+.nectar-video-box .nectar-video-box__media img{width:100%;height:100%;object-fit:cover;transition:transform var(--d-hover) var(--e-hover)}
+.nectar-video-box::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,14,16,0) 45%,rgba(11,14,16,.6));pointer-events:none}
+.nectar-video-box[data-hover="zoom_bg_image"]:hover .nectar-video-box__media img{transform:scale(1.08)}
+.nectar-video-box .play_button_mouse_follow{position:absolute;left:0;top:0;z-index:3;width:96px;height:96px;margin:-48px 0 0 -48px;border-radius:50%;
+  display:grid;place-items:center;pointer-events:none;transform:translate3d(var(--mx,50%),var(--my,50%),0);
+  transition:width .45s var(--e-btn),height .45s var(--e-btn),margin .45s var(--e-btn)}
+.nectar-video-box[data-mouse-style="see-through-contrast"] .play_button_mouse_follow{background:rgba(242,244,243,.14);border:1px solid rgba(242,244,243,.6);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.nectar-video-box[data-mouse-style="solid"] .play_button_mouse_follow{background:var(--nectar-accent-color);color:var(--sgp-asphalt-900)}
+.nectar-video-box .play_button_mouse_follow svg{width:22px;height:22px;fill:currentColor;margin-left:3px}
+.nectar-video-box:not(.is-following) .play_button_mouse_follow{left:50%;top:50%}
+.nectar-video-box .nectar-video-box__label{position:absolute;left:20px;bottom:18px;z-index:2;font:500 var(--label-size)/var(--label-lh) var(--f-label);letter-spacing:var(--label-ls);text-transform:uppercase}
+@media (hover:none){.nectar-video-box{cursor:pointer}}
+.nectar-lightbox{border:0;padding:0;width:min(1200px,92vw);background:#000;color:var(--sgp-snow);border-radius:var(--nectar-border-radius);overflow:visible}
+.nectar-lightbox::backdrop{background:rgba(11,14,16,.9);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
+.nectar-lightbox video{width:100%;aspect-ratio:16/9;background:#000;border-radius:inherit}
+.nectar-lightbox__close{position:absolute;right:0;top:-52px;width:44px;height:44px;border:1px solid var(--sgp-hair-d-2);border-radius:50%;background:transparent;color:var(--sgp-snow);display:grid;place-items:center}
+.nectar-lightbox__close svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.6}

@@ -1,0 +1,90 @@
+/* =====================================================================================
+   emul/base.css — EMULATION of Salient 18.2.1 base styles (not shipped; Salient provides it)
+   reset · body + H1–H6 from the Typography slots · text colour Light/Dark · links
+   (General Link Style: Basic Underline, Animated Underline: Left to Right Fancy) ·
+   Text Block · screen-reader-text · skip link · container.
+   ===================================================================================== */
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;font-size:16px;scroll-padding-top:calc(var(--header-h-small) + 16px)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+.lenis.lenis-stopped{overflow:hidden}
+body{margin:0;min-width:320px;overflow-x:clip;background:var(--nectar-page-background-color);color:var(--nectar-page-text-color);
+  font:400 var(--body-size)/var(--body-lh) var(--f-text);-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  transition:background-color var(--page-color-change-section-transition-time) ease,color var(--page-color-change-section-transition-time) ease;
+  font-kerning:normal;font-feature-settings:"kern" 1}
+img,svg,video,canvas{display:block;max-width:100%}
+img{height:auto}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+p,ul,ol,dl,dd,figure,blockquote{margin:0}
+ul[class],ol[class]{padding:0;list-style:none}
+::selection{background:var(--nectar-accent-color);color:var(--sgp-asphalt-900)}
+
+/* ---- H1–H6 (Theme Options → Typography) ---- */
+h1,h2,h3,h4,h5,h6{margin:0 0 var(--heading-mb);color:inherit;font-feature-settings:"kern" 1}
+h1,.h1{font:var(--h1-w) var(--h1-size)/var(--h1-lh) var(--f-display);letter-spacing:var(--h1-ls)}
+h2,.h2{font:var(--h2-w) var(--h2-size)/var(--h2-lh) var(--f-display);letter-spacing:var(--h2-ls)}
+h3,.h3{font:var(--h3-w) var(--h3-size)/var(--h3-lh) var(--f-display);letter-spacing:var(--h3-ls)}
+h4,.h4{font:var(--h4-w) var(--h4-size)/var(--h4-lh) var(--f-display);letter-spacing:var(--h4-ls)}
+h5,.h5{font:var(--h5-w) var(--h5-size)/var(--h5-lh) var(--f-text)}
+h6,.h6,.nectar-inherit-h6{font:var(--h6-w) var(--h6-size)/var(--h6-lh) var(--f-text);letter-spacing:var(--h6-ls)}   /* + Salient utility class (fonts.php) */
+b,strong{font-weight:600}
+small{font-size:max(12px,.8em)}
+/* Form and Category Labels slot — Badge, form labels, Material tab links, Extra Class nectar-inherit-label */
+.nectar-inherit-label,label{font:500 var(--label-size)/var(--label-lh) var(--f-label);letter-spacing:var(--label-ls);text-transform:uppercase}
+
+/* ---- Row / Column "Text Color: Light / Dark" (Salient .span_12.light / .dark) ----
+   Tone variables let every element follow the row's text colour like Salient's .light scope. */
+:root,[data-text-color="dark"]{
+  --tone-fg:var(--sgp-ink);--tone-muted:var(--sgp-ink-2);--tone-hair:var(--sgp-hair-l);--tone-hair-2:var(--sgp-hair-l-2);
+  --tone-label:var(--sgp-red-ink);--tone-surface:var(--sgp-white);--tone-surface-2:var(--sgp-paper-100);
+  --tone-inv-bg:var(--nectar-extra-color-1);--tone-inv-fg:var(--sgp-snow);--tone-inv-bg-h:var(--sgp-asphalt-700)}
+[data-text-color="light"]{
+  --tone-fg:var(--sgp-snow);--tone-muted:var(--sgp-fog);--tone-hair:var(--sgp-hair-d);--tone-hair-2:var(--sgp-hair-d-2);
+  --tone-label:var(--sgp-red);--tone-surface:var(--sgp-asphalt-800);--tone-surface-2:var(--sgp-asphalt-750);
+  --tone-inv-bg:var(--nectar-extra-color-2);--tone-inv-fg:var(--sgp-asphalt-900);--tone-inv-bg-h:var(--sgp-white)}
+[data-text-color]{color:var(--tone-fg)}
+/* Color Change Section: Salient writes the active section's colours to :root (--nectar-page-background-color /
+   --nectar-page-text-color) and every color-change row follows them, so the leaving chapter flips with the background.
+   emul.js mirrors the active tone to html[data-cc-tone]; rows with their own background media keep their tone. */
+[data-color-change]{transition:color var(--page-color-change-section-transition-time,.8s) ease}
+html[data-cc-tone="dark"] [data-color-change]:not([data-cc-own]){
+  --tone-fg:var(--sgp-ink);--tone-muted:var(--sgp-ink-2);--tone-hair:var(--sgp-hair-l);--tone-hair-2:var(--sgp-hair-l-2);
+  --tone-label:var(--sgp-red-ink);--tone-surface:var(--sgp-white);--tone-surface-2:var(--sgp-paper-100);
+  --tone-inv-bg:var(--nectar-extra-color-1);--tone-inv-fg:var(--sgp-snow);--tone-inv-bg-h:var(--sgp-asphalt-700)}
+html[data-cc-tone="light"] [data-color-change]:not([data-cc-own]){
+  --tone-fg:var(--sgp-snow);--tone-muted:var(--sgp-fog);--tone-hair:var(--sgp-hair-d);--tone-hair-2:var(--sgp-hair-d-2);
+  --tone-label:var(--sgp-red);--tone-surface:var(--sgp-asphalt-800);--tone-surface-2:var(--sgp-asphalt-750);
+  --tone-inv-bg:var(--nectar-extra-color-2);--tone-inv-fg:var(--sgp-asphalt-900);--tone-inv-bg-h:var(--sgp-white)}
+
+/* ---- links: General Link Style → Basic Underline · Animated Underline Type → Left to Right Fancy ---- */
+a{color:inherit;text-decoration:none}
+.wpb_text_column a:not([class]),.nectar-responsive-text a:not([class]),.nectar-fancy-ul a:not([class]){
+  text-decoration:underline;text-decoration-thickness:var(--underline-thickness);text-underline-offset:.22em;
+  text-decoration-color:var(--tone-hair-2);transition:text-decoration-color .3s ease,color .3s ease}
+.wpb_text_column a:not([class]):hover,.nectar-responsive-text a:not([class]):hover{text-decoration-color:currentColor}
+
+/* ---- Text Block (vc_column_text) ---- */
+.wpb_text_column{max-width:var(--max-w,none)}
+.wpb_text_column > * + *{margin-top:1em}
+.wpb_text_column ul:not([class]),.wpb_text_column ol:not([class]){padding-left:1.2em}
+.wpb_text_column li + li{margin-top:.35em}
+.wpb_text_column h2,.wpb_text_column h3,.wpb_text_column h4{margin-top:1.4em}
+.wpb_text_column > :first-child{margin-top:0}
+/* zero specificity, so an element's own Text Color option ([style*="--fg:"], typography.css) always wins */
+:where([data-text-color]) :where(.wpb_text_column p,.nectar-responsive-text){color:inherit}
+
+/* ---- accessibility helpers (theme classes) ---- */
+.screen-reader-text{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.nectar-skip-to-content{position:fixed!important;left:12px;top:12px;z-index:10050}
+.nectar-skip-to-content:focus{width:auto;height:auto;clip:auto;margin:0;padding:12px 18px;background:var(--sgp-snow);color:var(--sgp-asphalt-900);
+  font:600 15px/1 var(--f-text);border-radius:var(--nectar-border-radius);outline:2px solid var(--nectar-accent-color)}
+:focus-visible{outline:2px solid currentColor;outline-offset:3px}
+main:focus{outline:none}
+
+/* ---- container (Max Website Container Width + Container Left/Right Padding) ---- */
+.container{width:100%;max-width:calc(var(--container) + 2 * var(--container-pad));margin-inline:auto;padding-inline:var(--container-pad)}
+#ajax-content-wrap{position:relative;overflow-x:clip}
+/* inline line icons ({{icon:name}}) — stand-in for Salient's icon fonts (Font Awesome / Linea) */
+.nectar-inline-icon{display:inline-block;width:1.1em;height:1.1em;flex:0 0 auto;vertical-align:-.15em;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}

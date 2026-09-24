@@ -1,0 +1,101 @@
+/* =====================================================================================
+   emul/motion.css — EMULATION of Salient entrance / background-layer motion. Not shipped.
+   Start states apply only with JS (html.js); emul.js adds .animated-in when the element
+   top crosses the Salient trigger line (88 %; Reveal From X 70 %; Milestone 98 %).
+   Column/Image Animation Easing easeOutExpo + Timing 1300 (Theme Options) → --e/--d-entrance.
+   ===================================================================================== */
+
+/* ---------------- Column / Inner Column → Animation (Triggered Once When Visible) ---------------- */
+html.js .wpb_column[data-animation]{transition:transform var(--d-entrance) var(--e-entrance),opacity var(--d-entrance-opacity) ease,
+  background-color var(--d-btn) var(--e-btn),clip-path var(--d-mask) var(--e-mask);transition-delay:var(--delay,0ms),var(--delay,0ms),0ms,var(--delay,0ms)}
+html.js .wpb_column[data-animation="fade-in"]{opacity:0}
+html.js .wpb_column[data-animation="fade-in-from-bottom"]{opacity:0;transform:translate3d(0,100px,0)}
+html.js .wpb_column[data-animation="slight-fade-in-from-bottom"]{opacity:0;transform:translate3d(0,50px,0)}
+html.js .wpb_column[data-animation="fade-in-from-left"]{opacity:0;transform:translate3d(-45px,0,0)}
+html.js .wpb_column[data-animation="fade-in-from-right"]{opacity:0;transform:translate3d(45px,0,0)}
+html.js .wpb_column[data-animation="grow-in"]{opacity:0;transform:scale(.75)}
+html.js .wpb_column[data-animation="zoom-out"]{opacity:0;transform:scale(1.2)}
+html.js .wpb_column[data-animation="slight-twist"]{opacity:0;transform:perspective(1200px) rotateY(20deg) rotateZ(-4deg)}
+html.js .wpb_column[data-animation="flip-in"]{opacity:0;transform:perspective(1200px) rotateY(25deg)}
+html.js .wpb_column[data-animation="flip-in-vertical"]{opacity:0;transform:perspective(1200px) rotateX(-45deg) translateY(120px)}
+/* Reveal From Bottom / Top / Left / Right — the inner slides in behind the column's own mask */
+html.js .wpb_column[data-animation^="reveal-from"]{overflow:hidden}
+html.js .wpb_column[data-animation^="reveal-from"] > .vc_column-inner{transition:transform var(--d-entrance) var(--e-entrance) var(--delay,0ms)}
+html.js .wpb_column[data-animation="reveal-from-bottom"] > .vc_column-inner{transform:translate3d(0,101%,0)}
+html.js .wpb_column[data-animation="reveal-from-top"] > .vc_column-inner{transform:translate3d(0,-101%,0)}
+html.js .wpb_column[data-animation="reveal-from-left"] > .vc_column-inner{transform:translate3d(-120%,0,0)}
+html.js .wpb_column[data-animation="reveal-from-right"] > .vc_column-inner{transform:translate3d(120%,0,0)}
+/* Inner Column → Mask Reveal (clip-path 1.3s easings.net easeOutExpo) — Direction × Shape */
+html.js .wpb_column[data-animation="mask-reveal"]{--mask-from:inset(100% 0 0 0);clip-path:var(--mask-from)}
+html.js .wpb_column[data-animation="mask-reveal"][data-mask-direction="top"]{--mask-from:inset(0 0 100% 0)}
+html.js .wpb_column[data-animation="mask-reveal"][data-mask-direction="right"]{--mask-from:inset(0 0 0 100%)}
+html.js .wpb_column[data-animation="mask-reveal"][data-mask-direction="left"]{--mask-from:inset(0 100% 0 0)}
+html.js .wpb_column[data-animation="mask-reveal"][data-mask-direction="middle"]{--mask-from:inset(50% 0 50% 0)}
+html.js .wpb_column[data-animation="mask-reveal"][data-mask-shape="circle"]{--mask-from:circle(0% at 50% 100%)}
+html.js .wpb_column[data-animation="mask-reveal"][data-mask-shape="circle"][data-mask-direction="middle"]{--mask-from:circle(0% at 50% 50%)}
+html.js .wpb_column[data-animation].animated-in{opacity:1;transform:none;clip-path:inset(0 0 0 0)}
+html.js .wpb_column[data-animation="mask-reveal"][data-mask-shape="circle"].animated-in{clip-path:circle(150% at 50% 100%)}
+html.js .wpb_column[data-animation^="reveal-from"].animated-in > .vc_column-inner{transform:none}
+html.js .wpb_column[data-animation].animation-done{transform:none;clip-path:none}
+
+/* ---------------- Image → Animation (Triggered on Entrance) ---------------- */
+html.js .img-with-aniamtion-wrap[data-animation] .hover-wrap{transition:transform var(--d-entrance) var(--e-entrance) var(--delay,0ms),opacity var(--d-entrance-opacity) ease var(--delay,0ms),clip-path var(--d-mask) var(--e-mask) var(--delay,0ms)}
+html.js .img-with-aniamtion-wrap[data-animation="fade-in"] .hover-wrap{opacity:0}
+html.js .img-with-aniamtion-wrap[data-animation="fade-in-from-bottom"] .hover-wrap{opacity:0;transform:translate3d(0,100px,0)}
+html.js .img-with-aniamtion-wrap[data-animation="fade-in-from-left"] .hover-wrap{opacity:0;transform:translate3d(-20%,0,0)}
+html.js .img-with-aniamtion-wrap[data-animation="fade-in-from-right"] .hover-wrap{opacity:0;transform:translate3d(20%,0,0)}
+html.js .img-with-aniamtion-wrap[data-animation="grow-in"] .hover-wrap{opacity:0;transform:scale(.75);transition-property:transform,opacity;transition-timing-function:var(--e-entrance),cubic-bezier(.15,.84,.35,1.25);transition-duration:var(--d-entrance),.6s}
+html.js .img-with-aniamtion-wrap[data-animation="slide-up"] .hover-wrap{clip-path:inset(100% 0 0 0);transform:translate3d(0,60px,0)}
+/* Reveal Rotate From X — wrapper ±250px + inner ±25° counter-rotated → 0, 2.3s (.2,.65,.3,1) */
+html.js .img-with-aniamtion-wrap[data-animation^="ro-reveal"]{overflow:hidden}
+html.js .img-with-aniamtion-wrap[data-animation^="ro-reveal"] .hover-wrap,html.js .img-with-aniamtion-wrap[data-animation^="ro-reveal"] img{transition:transform var(--d-rotate) var(--e-rotate) var(--delay,0ms)}
+html.js .img-with-aniamtion-wrap[data-animation="ro-reveal-from-bottom"] .hover-wrap{transform:translate3d(0,250px,0) rotate(25deg)}
+html.js .img-with-aniamtion-wrap[data-animation="ro-reveal-from-bottom"] img{transform:rotate(-25deg) scale(1.3)}
+html.js .img-with-aniamtion-wrap[data-animation="ro-reveal-from-left"] .hover-wrap{transform:translate3d(-250px,0,0) rotate(-25deg)}
+html.js .img-with-aniamtion-wrap[data-animation="ro-reveal-from-left"] img{transform:rotate(25deg) scale(1.3)}
+html.js .img-with-aniamtion-wrap[data-animation="ro-reveal-from-right"] .hover-wrap{transform:translate3d(250px,0,0) rotate(25deg)}
+html.js .img-with-aniamtion-wrap[data-animation="ro-reveal-from-right"] img{transform:rotate(-25deg) scale(1.3)}
+html.js .img-with-aniamtion-wrap[data-animation].animated-in .hover-wrap{opacity:1;transform:none;clip-path:inset(0)}
+html.js .img-with-aniamtion-wrap[data-animation^="ro-reveal"].animated-in img{transform:none}
+
+/* ---------------- Row → Background Layer Animation ---------------- */
+.row-bg-layer{position:absolute;inset:0;transform-origin:center}
+html.js [data-bg-animation="fade-in"] > .row-bg-wrap .row-bg-layer{opacity:0;transition:opacity .85s ease-out}
+html.js [data-bg-animation="zoom-out"] > .row-bg-wrap .row-bg-layer{transform:scale(1.25);transition:transform var(--d-zoom) var(--e-zoom)}
+html.js [data-bg-animation="zoom-out-slow"] > .row-bg-wrap .row-bg-layer{transform:scale(1.35);transition:transform var(--d-zoom-slow) var(--e-zoom-slow)}
+html.js [data-bg-animation="zoom-out-reveal"] > .row-bg-wrap{transform:scale(.7);transition:transform var(--d-zoom-reveal) var(--e-zoom-reveal)}
+html.js [data-bg-animation="zoom-out-reveal"] > .row-bg-wrap .row-bg-layer{transform:scale(1.75);transition:transform var(--d-zoom-reveal) var(--e-zoom-reveal)}
+html.js [data-bg-animation="slight-zoom-out-reveal"] > .row-bg-wrap{transform:scale(.92);transition:transform var(--d-zoom-reveal) var(--e-zoom-reveal)}
+html.js [data-bg-animation="slight-zoom-out-reveal"] > .row-bg-wrap .row-bg-layer{transform:scale(1.15);transition:transform var(--d-zoom-reveal) var(--e-zoom-reveal)}
+html.js [data-bg-animation].bg-animated-in > .row-bg-wrap,html.js [data-bg-animation].bg-animated-in > .row-bg-wrap .row-bg-layer{transform:none;opacity:1}
+/* Clip Path Inset: emul.js writes clip-path (Scroll Position) or plays it once (1.3s first row / 2s others) */
+[data-bg-animation="clip-path"] > .row-bg-wrap,[data-bg-animation="clip-path"][data-clip-applies="row"]{will-change:clip-path}
+[data-clip-addon="zoom-fade-in"] > .row-bg-wrap .row-bg-layer{transform:scale(var(--clip-zoom,1));opacity:var(--clip-fade,1)}
+
+/* ---------------- Column → Background Layer Animation ---------------- */
+html.js .wpb_column[data-bg-animation="mask-reveal"] > .column-image-bg-wrap{clip-path:inset(100% 0 0 0);transition:clip-path var(--d-mask) var(--e-mask) var(--delay,0ms)}
+html.js .wpb_column[data-bg-animation="mask-reveal"][data-mask-direction="top"] > .column-image-bg-wrap{clip-path:inset(0 0 100% 0)}
+html.js .wpb_column[data-bg-animation="mask-reveal"][data-mask-direction="right"] > .column-image-bg-wrap{clip-path:inset(0 0 0 100%)}
+html.js .wpb_column[data-bg-animation="mask-reveal"][data-mask-direction="left"] > .column-image-bg-wrap{clip-path:inset(0 100% 0 0)}
+html.js .wpb_column[data-bg-animation^="ro-reveal"] > .column-image-bg-wrap .inner-wrap{transform:translate3d(0,250px,0) rotate(25deg);transition:transform var(--d-rotate) var(--e-rotate)}
+html.js .wpb_column[data-bg-animation="zoom-out-slow"] > .column-image-bg-wrap img{transform:scale(1.35);transition:transform var(--d-zoom-slow) var(--e-zoom-slow)}
+html.js .wpb_column[data-bg-animation].bg-animated-in > .column-image-bg-wrap{clip-path:inset(0)}
+html.js .wpb_column[data-bg-animation].bg-animated-in > .column-image-bg-wrap .inner-wrap,html.js .wpb_column[data-bg-animation].bg-animated-in > .column-image-bg-wrap img{transform:none}
+
+/* ---------------- Column → Border (Enable Border Animation: lines draw in) ---------------- */
+.wpb_column[data-border-animation]{border-color:transparent!important}
+.wpb_column[data-border-animation]::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;border:var(--border,0);
+  border-top:var(--border-top,var(--border,0));border-left:var(--border-left,var(--border,0));border-right:var(--border-right,var(--border,0));border-bottom:var(--border-bottom,var(--border,0))}
+html.js .wpb_column[data-border-animation]::after{clip-path:inset(0 100% 100% 0);transition:clip-path var(--d-entrance) var(--e-entrance) var(--border-delay,var(--delay,0ms))}
+html.js .wpb_column[data-border-animation].border-animated-in::after{clip-path:inset(0)}
+
+/* ---------------- Color Change Section (page colours switch at 40 % visibility, 0.8s) ---------------- */
+body.has-color-change-section-bg-color{background-color:var(--nectar-page-background-color)}
+
+/* ---------------- Page Transitions → View Transitions API (Modern) · Vertical Reveal (1.3s (.55,0,.1,1)) ---------------- */
+@view-transition{navigation:auto}
+::view-transition-group(root){animation-duration:1.3s}
+::view-transition-old(root){animation:vt-vr-old 1.3s cubic-bezier(.55,0,.1,1) both}
+::view-transition-new(root){animation:vt-vr-new 1.3s cubic-bezier(.55,0,.1,1) both;z-index:2}
+@keyframes vt-vr-new{from{clip-path:inset(90% 0 0 0);transform:translateY(10%)}to{clip-path:inset(0);transform:none}}
+@keyframes vt-vr-old{to{transform:translateY(-10%);opacity:.3}}

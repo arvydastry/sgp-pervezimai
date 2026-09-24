@@ -1,0 +1,210 @@
+/* =====================================================================================
+   sgp-custom.css — THE ONLY CUSTOM CSS (production: Theme Options → General Settings →
+   CSS/Script Related → Custom CSS Code, pasted verbatim). Budget ≤ 250 lines.
+   Live line count (non-blank, comments included) is reported by tools/check.py.
+   Groups C-1 … C-16 = docs/salient-atitikimo-planas.md §4.2. Nothing here changes an
+   element's structure; every selector is the REAL Salient 18.2.1 / plugin markup
+   (vc_row.php, nectar_cta.php, nectar_scrolling_text.php, page_submenu.php, toggle.php,
+   nectar_hotspot.php, nectar_sticky_media_sections.php, nav-menus.php).
+   ===================================================================================== */
+
+/* C-1 Tokens — only the values the rules below need (the rest is Theme Options) */
+:root {
+  --sgp-red: #EF4539; --sgp-red-lit: #F4604F; --sgp-red-ink: #C4301E;
+  --sgp-asphalt-900: #0F1417; --sgp-asphalt-800: #161D21; --sgp-snow: #F2F4F3;
+  --sgp-hair-l-2: rgba(28,29,29,.26); --sgp-hair-d-2: rgba(242,244,243,.26);
+  --sgp-e-out: cubic-bezier(.19,1,.22,1);
+  --sgp-callbar-h: 76px;
+}
+
+/* C-2 Reduced motion — Salient 18.2.1 never reads prefers-reduced-motion.
+   Every entrance shows its end state, scroll-linked layers stop, loops stop, stacks flatten. */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .wpb_column[data-animation], .wpb_column[data-animation] > .vc_column-inner,
+  .img-with-aniamtion-wrap .hover-wrap, .img-with-aniamtion-wrap img,
+  .nectar-split-heading .inner, .nectar-split-heading .char,
+  .nectar-icon-list-item, .nectar-icon-list .list-icon-holder, .nectar-icon-list .content,
+  .nectar-fancy-ul > li, .cascading-image .bg-layer, .cascading-image img, .nectar_hotspot_wrap {
+    opacity: 1 !important; transform: none !important; filter: none !important;
+    clip-path: none !important; transition: none !important; animation: none !important;
+  }
+  .nectar-split-heading[data-text-effect="scroll-opacity-reveal"] .inner { opacity: 1 !important; }
+  .nectar-highlighted-text em { transition: none !important; background-size: 100% var(--ul, 3px) !important; }
+  .divider-wrap .divider-border, .nectar-hor-list-item::after, .nectar-icon-list::after,
+  .wpb_column[data-border-animation]::after { transform: none !important; clip-path: none !important; transition: none !important; }
+  .row-bg-wrap, .row-bg-wrap .inner-wrap, .row-bg-layer, .column-image-bg-wrap,
+  .column-image-bg-wrap .inner-wrap, .column-image-bg-wrap img, .cascading-image .parallax-layer {
+    transform: none !important; clip-path: none !important; opacity: 1 !important; transition: none !important;
+  }
+  .nectar-video-wrap video, video.nectar-video-bg { display: none !important; }
+  .nectar-scrolling-text-inner > * { animation: none !important; }
+  .nectar-scrolling-text .custom.spin > span { transform: none !important; }
+  .nectar-content-trail { display: none !important; }
+  .nectar_image_with_hotspots .nectar_hotspot::before { animation: none !important; }
+  .nectar-sticky-media-section { transform: none !important; filter: none !important; }
+  .nectar-sticky-media-section__featured-media .nectar-sticky-media-section__media-wrap { transition: none !important; clip-path: none !important; }
+  .nectar-sticky-media-sections.type--horizontal-scrolling { height: auto !important; }
+  .nectar-sticky-media-sections.type--horizontal-scrolling .nectar-sticky-media-section__content__wrap {
+    position: relative !important; transform: none !important; overflow-x: auto;
+  }
+  .tabbed .wpb_tab { opacity: 1 !important; }
+  .toggles .inner-toggle-wrap, .toggles .nectar-toggle-icon *, .toggles .plus-line,
+  .tabbed *, .nectar-hor-list-item::before, .nectar-fancy-box, .nectar-fancy-box * {
+    transition-duration: .01s !important; animation-duration: .01s !important;
+  }
+  ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; }
+}
+
+/* C-3 Lithuanian typography — no auto hyphens, balanced headings, diacritics never clipped */
+html { hyphens: manual; -webkit-hyphens: manual; }
+h1, h2, h3, h4, .nectar-split-heading > * { text-wrap: balance; }
+.nectar-split-heading .word { padding: .12em 0 .06em; margin: -.12em 0 -.06em; }
+.sgp-num { font-variant-numeric: tabular-nums; }
+
+/* C-4 Mobile call bar (GS-Skambučių juosta, Row Extra Class sgp-callbar). Sticky Row cannot pin
+   inside a Global Section (its sticky box is only as tall as the bar), so the Row is pinned here.
+   Safe area, never hides the © line, sits under the cookie card. */
+@media (max-width: 999px) {
+  .sgp-callbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 9000; }
+  .sgp-callbar > .row_col_wrap_12 { padding-bottom: env(safe-area-inset-bottom); }
+  .sgp-callbar .nectar-cta { min-height: 52px; }
+  body:has(.sgp-callbar) #footer-outer { padding-bottom: calc(var(--sgp-callbar-h) + env(safe-area-inset-bottom)); }
+  body:has(.sgp-callbar) .cmplz-cookiebanner { bottom: calc(var(--sgp-callbar-h) + 12px + env(safe-area-inset-bottom)); }
+}
+
+/* C-5 Schedule rows (GS-Grafikas → Row Extra Class sgp-grafikas) — tabular dates, phone column right */
+.sgp-grafikas .nectar-hor-list-item { font-variant-numeric: tabular-nums; }
+.sgp-grafikas .nectar-hor-list-item .nectar-list-item[data-text-align="right"] { text-align: right; white-space: nowrap; }
+.sgp-grafikas .nectar-badge + .nectar-hor-list-item { margin-top: 6px; }
+.sgp-grafikas .nectar-hor-list-item + .nectar-badge { margin-top: 30px; }
+@media (max-width: 690px) {
+  .sgp-grafikas .nectar-hor-list-item .nectar-list-item[data-text-align="right"] { text-align: left; }
+}
+
+/* C-6 Fluent Forms → Salient „Minimal“ form look (bottom lines, 17 px, red focus line) */
+.fluentform .ff-el-form-control {
+  width: 100%; min-height: 48px; padding: 12px 0; border: 0; border-bottom: 1px solid #C3CBCB;
+  border-radius: 0; background: transparent; color: inherit; font-size: 17px; box-shadow: none;
+}
+.fluentform textarea.ff-el-form-control { min-height: 110px; }
+.fluentform .ff-el-form-control:focus {
+  outline: none; border-bottom-color: var(--sgp-red); box-shadow: 0 1px 0 0 var(--sgp-red);
+}
+.fluentform .ff-el-input--label label { color: inherit; opacity: .8; }
+.fluentform .ff-el-is-error .ff-el-form-control { border-bottom-color: var(--sgp-red-ink); }
+.fluentform .error.text-danger { color: var(--sgp-red-ink); }
+.fluentform .ff-el-form-check { color: inherit; opacity: .86; }
+.fluentform .ff-btn-submit { box-shadow: none; }
+.fluentform .ff-btn-submit:hover { transform: translateY(-3px); box-shadow: 0 20px 38px rgba(0,0,0,.16); }
+.sgp-dark .fluentform .ff-el-form-control { border-bottom-color: var(--sgp-hair-d-2); }
+.sgp-dark .fluentform .ff-el-form-control:focus { border-bottom-color: var(--sgp-red); }
+.sgp-dark .fluentform .ff-el-is-error .ff-el-form-control { border-bottom-color: var(--sgp-red-lit); }
+.sgp-dark .fluentform .error.text-danger { color: var(--sgp-red-lit); }
+.sgp-dark .fluentform select.ff-el-form-control option { background: var(--sgp-asphalt-900); }
+.sgp-dark .ff-message-success { background: var(--sgp-asphalt-800); }
+@media (max-width: 690px) {
+  .fluentform .ff-btn-submit { width: 100%; justify-content: center; }
+}
+
+/* C-7 Image With Hotspots — crisp 3 px markers, Label-font numbers, pulse (:before) 2 cycles,
+   dark tooltip (desktop bubble and the native full-screen phone sheet) */
+.nectar_image_with_hotspots .nectar_hotspot {
+  border-radius: 3px; color: var(--sgp-asphalt-900);
+  font: 500 12px/1 "IBM Plex Mono", ui-monospace, monospace;
+}
+.nectar_image_with_hotspots .nectar_hotspot::before { border-radius: 3px; animation-iteration-count: 2; }
+.nectar_image_with_hotspots .nectar_hotspot_wrap .nttip {
+  background: var(--sgp-asphalt-900); color: var(--sgp-snow); border-radius: 3px;
+  box-shadow: 0 20px 40px rgba(0,0,0,.28);
+}
+.nectar_image_with_hotspots .nttip strong { color: var(--sgp-snow); }
+.nectar_image_with_hotspots .nttip p { color: #9AA6AB; }
+.nectar_image_with_hotspots .nttip .tipclose { border-color: var(--sgp-snow); }
+.nectar_image_with_hotspots .nectar_hotspot:focus-visible { outline: 2px solid var(--sgp-asphalt-900); outline-offset: 3px; }
+@media (max-width: 690px) {   /* phones: 24 px markers keep the map labels readable (WCAG 2.5.8 minimum) */
+  .nectar_image_with_hotspots .nectar_hotspot_wrap { width: 24px; height: 24px; margin: -12px 0 0 -12px; }
+  .nectar_image_with_hotspots .nectar_hotspot { width: 24px; height: 24px; line-height: 24px; }
+  .nectar_image_with_hotspots .nectar_hotspot_wrap .nttip { border-radius: 0; }
+}
+
+/* C-8 Page Submenu (plain <ul> of Menu Links) — Salient's scrollspy sets .current-menu-item but draws nothing */
+.page-submenu { border-bottom: 1px solid rgba(242,244,243,.12); }
+.page-submenu li a { position: relative; }
+.page-submenu li a::after {
+  content: ""; position: absolute; left: 0; right: 0; bottom: 12px; height: 2px;
+  background: var(--sgp-red); transform: scaleX(0); transform-origin: left;
+  transition: transform .45s var(--sgp-e-out);
+}
+.page-submenu li.current-menu-item a::after { transform: scaleX(1); }
+
+/* C-9 Complianz cookie banner in SGP tokens */
+.cmplz-cookiebanner {
+  background: var(--sgp-asphalt-800); color: var(--sgp-snow); border-radius: 3px;
+  border: 1px solid rgba(242,244,243,.12); box-shadow: 0 30px 70px rgba(0,0,0,.4);
+}
+.cmplz-cookiebanner .cmplz-title {
+  font: 500 12px/16px "IBM Plex Mono", ui-monospace, monospace; letter-spacing: 1px;
+  text-transform: uppercase; color: var(--sgp-red);
+}
+.cmplz-cookiebanner .cmplz-message { color: #C9D1D3; }
+.cmplz-cookiebanner .cmplz-btn { border-radius: 3px; transition: background-color .45s var(--sgp-e-out), color .45s var(--sgp-e-out); }
+.cmplz-cookiebanner .cmplz-accept { background: var(--sgp-red); color: var(--sgp-asphalt-900); }
+.cmplz-cookiebanner .cmplz-accept:hover { background: var(--sgp-red-lit); }
+.cmplz-cookiebanner .cmplz-deny { background: transparent; color: var(--sgp-snow); border-color: var(--sgp-hair-d-2); }
+.cmplz-cookiebanner .cmplz-deny:hover { background: var(--sgp-snow); color: var(--sgp-asphalt-900); }
+.cmplz-cookiebanner .cmplz-link { color: var(--sgp-snow); }
+#cmplz-cookies-overview .cmplz-service-header, #cmplz-cookies-overview details {
+  border-bottom: 1px solid var(--sgp-hair-l-2); padding: 14px 0;
+}
+
+/* C-10 Header call button „Skambinti“ — dark text in every header state, 44 px on phones,
+   mega-menu Global Section padding (li > .nectar-global-section-megamenu) */
+#header-outer li[class*="menu-item-btn-style-button_accent"] > a,
+#header-outer.transparent li[class*="menu-item-btn-style-button_accent"] > a { color: var(--sgp-asphalt-900); }
+#header-outer li[class*="menu-item-btn-style-button_accent"] > a:hover { color: var(--sgp-asphalt-900); }
+#header-outer .nectar-global-section-megamenu { padding: 30px 32px; }
+@media (max-width: 999px) {
+  #header-outer li[class*="menu-item-btn-style-button_accent"] > a { min-height: 44px; }
+}
+
+/* C-11 Focus visible — 2 px ring, red on asphalt, ink on paper */
+:focus-visible { outline: 2px solid var(--sgp-asphalt-900); outline-offset: 3px; }
+.sgp-dark :focus-visible, #header-outer :focus-visible, #slide-out-widget-area :focus-visible,
+[data-text-color="light"] :focus-visible { outline-color: var(--sgp-red); }
+.nectar-hor-list-item > a:focus-visible, .column-link:focus-visible { outline-offset: -3px; }
+
+/* C-12 Ticker (GS-Išvykimai → Row Extra Class sgp-ticker) — link affordance, the text chunks pause on hover/focus */
+.sgp-ticker .column-link:focus-visible { outline: 2px solid var(--sgp-red); outline-offset: -4px; }
+.sgp-ticker:hover .nectar-scrolling-text-inner > *,
+.sgp-ticker:focus-within .nectar-scrolling-text-inner > * { animation-play-state: paused; }
+.sgp-ticker:hover strong { text-decoration: underline; text-underline-offset: .25em; text-decoration-thickness: 1px; }
+
+/* C-13 Motion pause state (html.sgp-paused, set by the pause button — WCAG 2.2.2) */
+html.sgp-paused .nectar-scrolling-text-inner > * { animation-play-state: paused; }
+html.sgp-paused .nectar-content-trail { display: none; }
+html.sgp-paused .nectar_image_with_hotspots .nectar_hotspot::before { animation: none; }
+html.sgp-paused [data-bg-animation="zoom-out-slow"] .row-bg-layer { transition: none; }
+
+/* C-14 Pause button (Button → Basic, Extra Class sgp-motion-toggle on the wrapper; the focusable
+   element is its a.link_text) — 44 px target, icon by aria-pressed, label stays „Sustabdyti judesį“ */
+.nectar-cta.sgp-motion-toggle { padding: 0; min-height: 0; }
+.sgp-motion-toggle .link_text { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; gap: 10px; font-size: 14px; }
+.sgp-motion-toggle .link_text::before {
+  content: ""; width: 10px; height: 12px; flex: 0 0 auto;
+  border-left: 3px solid currentColor; border-right: 3px solid currentColor;
+}
+.sgp-motion-toggle .link_text[aria-pressed="true"]::before {
+  width: 0; height: 0; border-width: 6px 0 6px 10px; border-color: transparent currentColor;
+  border-style: solid;
+}
+
+/* C-15 Hero labels on phones — the hero overlays are left→right grades built for desktop; on phones
+   the labels run across the light side, so the first row's overlay gets a flat scrim (≥ 4.5:1 for 12 px) */
+@media (max-width: 690px) {
+  main > :first-child > .row-bg-wrap .row-bg-overlay::after,
+  main > :first-child > .video-color-overlay::after { content: ""; position: absolute; inset: 0; background: rgba(11,14,16,.38); }
+}
+
+/* C-16 Horizontal List Item helper — secondary text typed as <p class="muted"> in a column */
+.nectar-hor-list-item .muted { opacity: .7; }

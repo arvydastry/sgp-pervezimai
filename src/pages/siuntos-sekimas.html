@@ -2,153 +2,248 @@
 title: Siuntos sekimas | sgp-pervezimai.lt
 description: Įveskite siuntos kodą ir sužinokite, kur yra Jūsų siunta. Neradote kodo? Paskambinkite – pasakysime.
 out: siuntos-sekimas/index.html
+kit: salient
 body_class: page-sekimas
 nav: sekimas
 og_image: 35497082
 hero_media: 35497082
-css: pages/sekimas.css
-js: pages/sekimas.js
-salient: Page „Siuntos sekimas“ (§6.7) · compact header · 01 Paieška (tracking field) · 02 Rezultatas (production = iframe siuntos.sgp-pervezimai.lt/sekimas.php?embed=1&kodas=…; demo = static states, no network) · 03 Pagalba · GS-Arrival · 301 /pervezimo-paslaugos/siuntos-sekimas → /siuntos-sekimas/
+salient: Page „Siuntos sekimas“ (plan §3.10) · K1 inner head (photo 35497082, Parallax Subtle, Slight Zoom Out Reveal) + glass band (GS-Artimiausi + 2 × Call) → K2 #paieska Chapter P: Callout with Fluent Forms „Siuntos sekimas“ | Inner Column Mask Reveal image 6407553 + Stations (Icon List) → K3 #rezultatas DEMO ONLY (?kodas=…; production: Fluent Forms Confirmation → Redirect to the live tool) → K4 #pagalba Chapter A: 2 × Call + 3 × Fancy Box (Description on Hover, Scroll Position Advanced cascade) → K5 GS-Kvietimas · 301 /pervezimo-paslaugos/siuntos-sekimas → /siuntos-sekimas/
 ---
-<!-- ============ HEADER · compact route header ============ -->
-<section class="sgp-phero sgp-phero--compact on-dark sk-hero" data-hero data-theme="dark" data-salient="Row Full Width · Compact route header (44svh) · BG image 35497082 + Parallax BG: Subtle + BG Layer Animation: Slight Zoom Out Reveal · Color Overlay Advanced (§2.8) · Text Color Light">
-  <div class="sgp-bgmedia" data-parallax="0.12" aria-hidden="true">{{img:35497082|w=1920|sizes=100vw|eager|decorative|pos=50% 60%}}</div>
-  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
-    <div class="sgp-phero__copy">
-      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="{{url:pradzia}}">Pradžia</a></li><li aria-current="page">Siuntos sekimas</li></ol></nav>
-      <p class="sgp-phero__eyebrow sgp-mono"><span class="sgp-ring"></span>Pagal siuntos kodą</p>
-      <h1 class="sgp-phero__h1" data-split>Siuntos sekimas</h1>
-      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">Įveskite siuntos kodą ir sužinokite, kur yra Jūsų siunta.</p>
-      {{grafikas:next}}
-    </div>
-    {{partial:phero-calls}}
-  </div>
-</section>
-
-<!-- ============ 01 · PAIEŠKA — large tracking field ============ -->
-<section class="sgp-sec on-light paper sgp-has-rail sk-search" id="paieska" data-theme="light" data-salient="Row paper + graticule · Extra Class sgp-light sgp-graticule sgp-has-rail · Column 5/12: H2 + Text Block · Column 7/12: Raw HTML form .sgp-track (GET ?kodas=) — production JS (≈0.3 KB) sets the result iframe src; empty submit → „Neįvestas siuntos kodas!“">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">01</span><span class="sgp-mono">Paieška</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Pagal siuntos kodą</span></div>
-    <div class="sk-search__grid">
-      <div class="sk-search__copy">
-        <h2 class="sgp-d2" data-split>Kur keliauja Jūsų siunta?</h2>
-        <p class="sgp-lead sgp-fg2" data-reveal>Siuntos vietą galite pasitikrinti pagal siuntos kodą.</p>
+<!-- ============ K1 · Inner head (plan §3.3) + glass band with the next departures ============ -->
+<div class="wpb_row sgp-dark" data-type="full_width_background" data-text-color="light" data-parallax-speed="fast" data-bg-animation="slight-zoom-out-reveal" data-column-align="bottom" style="--bg:#0F1417;--pt:184px;--pb:48px;--pt-t:168px;--pt-m:128px;--pb-m:32px" data-salient="Row → Inner head (plan §3.3) · Type: Full Width Background · BG #0F1417 · Background Image 35497082 · Parallax Background Media On Scroll → Speed: Subtle (0.20) · Background Layer Animation: Slight Zoom Out Reveal · Color Overlay: Advanced (v2 hero grade) · Text Color: Light · Column Alignment: Bottom · Padding 184px / 48px (tablet 168px, phone 128px / 32px)">
+  {{bgimg:35497082|w=1920|eager|pos=50% 60%|overlay=linear-gradient(0deg,rgba(15,20,23,.94) 0%,rgba(15,20,23,.2) 55%),linear-gradient(90deg,rgba(15,20,23,.9) 0%,rgba(15,20,23,.6) 45%,rgba(15,20,23,.18) 85%)}}
+  <div class="row_col_wrap_12" style="--row-gap:40px">
+    <div class="wpb_column vc_col-sm-8" data-salient="Column 8/12 → Breadcrumbs + Label + Animated Text (H1) + Road line + Intro">
+      <div class="vc_column-inner">
+        <p class="nectar-inherit-label yoast-breadcrumbs" data-salient="Text Block [wpseo_breadcrumb] · Extra Class nectar-inherit-label (Label typography)"><a href="{{url:pradzia}}">Pradžia</a><span class="sep" aria-hidden="true">/</span><span>Siuntos sekimas</span></p>
+        <span class="nectar-badge" data-badge-style="line" style="--fg:#F2F4F3;--mt:28px" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label · Text #F2F4F3 (on photo)">Pagal siuntos kodą</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:6.4vw;--fs-min:44px;--fs-max:104px;--lh:.92" data-salient="Animated Text → Text Element: H1 · Text Effect: Word Animations: Reveal · Stagger Animation ✓ · Font sizing 6.4vw (min 44px, max 104px), line height .92"><h1>Siuntos sekimas</h1></div>
+        <div class="divider-wrap" data-line-type="small" data-animate data-delay="450" style="--line-w:96px;--thickness:2px;--h:18px" data-salient="Divider → Line Type: Small Line · Custom Line Width 96px · Line Thickness 2px · Accent Color · Animate Line ✓ · Delay 450 (road line)"><span class="divider-border"></span></div>
+        <p class="nectar-responsive-text" data-inherit="h5" style="--fg:#F2F4F3;--max-w:40ch" data-salient="Responsive Text → Font Style: H5 · Max Width 40ch (Intro, snow on photo)">Įveskite siuntos kodą ir sužinokite, kur yra Jūsų siunta.</p>
       </div>
-      <div class="sk-search__form">
-        <form class="sgp-track sk-track" action="{{url:sekimas}}" method="get" novalidate data-track data-reveal data-salient="Raw HTML form · .sgp-track + .sgp-field (label inside) + Button (Signal) „Siuntos lokacija“">
-          <label class="sgp-field"><span class="sgp-field__l">Siuntos kodas</span><input id="sk-kodas" name="kodas" required autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search" placeholder="Siuntos kodas..."><em class="sgp-field__err">Neįvestas siuntos kodas!</em></label>
-          <button class="sgp-btn sgp-btn--signal" type="submit"><span class="sgp-btn__l"><svg class="sgp-i" aria-hidden="true"><use href="#i-search"/></svg>Siuntos lokacija</span></button>
+    </div>
+    <div class="wpb_column vc_col-sm-3 vc_col-sm-offset-1" data-t-w="12" data-layout="flex" data-justify="flex-end" data-align="flex-start" style="--gap:4px" data-animation="fade-in" data-delay="300" data-salient="Column 3/12 (offset 1) → Layout: Flexbox (column, justify end, gap 4px) · Animation: Fade In · Delay 300 · Badge + 2 × Link to the page's Row IDs">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" style="--fg:#9AA6AB" data-salient="Badge → Minimal Line · Label · #9AA6AB">Turinys</span>
+        <a class="nectar-cta" data-style="underline" href="#paieska" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Underline · Underline Visibility: Default (Visible) · Link: #paieska"><span class="link_text"><span class="text">Siuntos paieška</span></span></a>
+        <a class="nectar-cta" data-style="underline" href="#pagalba" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Underline · Link: #pagalba"><span class="link_text"><span class="text">Neradote siuntos kodo?</span></span></a>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-12" data-animation="slight-fade-in-from-bottom" data-delay="600" data-salient="Column 12/12 → Animation: Slight Fade In From Bottom · Delay 600 · Inner Row = glass band">
+      <div class="vc_column-inner">
+        <div class="vc_row inner_row" data-backdrop-blur="16" style="--bg:rgba(11,14,16,.55);--border:1px solid rgba(242,244,243,.12);--r:3px;--pt:24px;--pb:24px;--pl:32px;--pr:32px;--pl-m:18px;--pr-m:18px;--pt-m:20px;--pb-m:18px" data-salient="Inner Row → Backdrop Filter: Blur 16 · Design Options: BG rgba(11,14,16,.55), border 1px rgba(242,244,243,.12), radius 3px, padding 24px 32px (phone 20px 18px) — the glass band">
+          <div class="row_col_wrap_12_inner" style="--row-gap:18px">
+            <div class="wpb_column vc_col-sm-5" data-el-space="10px" data-salient="Inner Column 5/12 → Label + Global Section element „GS-Artimiausi“">
+              <div class="vc_column-inner">
+                <span class="nectar-badge" data-badge-style="line" style="--fg:#EF4539" data-salient="Badge → Minimal Line · Label · #EF4539 (on asphalt glass)">Artimiausi išvykimai</span>
+{{partial:gs-artimiausi}}
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-4" data-t-w="6" data-el-space="10px" data-salient="Inner Column 4/12 → 2 × Call (red), Alignment: Stretch">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37065053161" aria-label="Į Airiją · +370 650 53161 – skambinti" data-salient="Button → Type: Arrow Circle Animation · Button Roundness 3 · BG Accent · BG Hover #F4604F · Text #0F1417 · Min Icon Size 36 · Icon Gap 20 · Alignment: Stretch · Aria Label"><span class="link_text"><span class="text">Į Airiją · +370 650 53161</span></span></a>
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37063828919" aria-label="Į Ispaniją · +370 638 28919 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Stretch · Aria Label"><span class="link_text"><span class="text">Į Ispaniją · +370 638 28919</span></span></a>
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-3" data-t-w="6" data-layout="flex" data-justify="space-between" data-align="flex-start" style="--gap:14px" data-salient="Inner Column 3/12 → Layout: Flexbox (column, space-between) · Link + Next Section Button">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="underline" href="{{url:grafikas}}" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Underline · Link: /pervezimu-grafikas/"><span class="link_text"><span class="text">Visas grafikas →</span></span></a>
+                <a class="nectar-cta" data-style="next-section" href="#paieska" aria-label="Į kitą skyrių – siuntos paieška" style="--btn-fg:#F2F4F3" data-salient="Button → Type: Next Section Button · Minimal Arrow Alt · Arrow Animation: On Hover Only · Link #paieska"><span class="link_text"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ K2 · #paieska — Callout with the tracking form | Mask Reveal photo · Stations ============ -->
+<div class="wpb_row" id="paieska" data-type="full_width_background" data-text-color="dark" data-padding="chapter" data-column-align="middle" style="--bg:#F5F7F6" data-salient="Row → Chapter row P · Type: Full Width Background · BG #F5F7F6 · Text Color: Dark · Padding 8 % / 8 % (phones 80px) · Vertically Center Columns · Row ID paieska">
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-5" data-t-w="12" style="--bg:#EAEEED;--r:3px;--border-left:2px solid #EF4539;--pt:44px;--pb:40px;--pl:44px;--pr:44px;--pt-m:32px;--pb-m:30px;--pl-m:22px;--pr-m:22px" data-animation="slight-fade-in-from-bottom" data-salient="Column 5/12 → Callout: Background #EAEEED · Border Radius 3px · Border Type: Advanced (left 2px Accent) · Padding 44px (phone 32px 22px) · Animation: Slight Fade In From Bottom">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E (paper)">Siuntos paieška</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:48px;--fs-t:44px;--fs-m:32px;--lh:1.02;--max-w:10em" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓ · Font sizing 48px (tablet 44, phone 32) · Max Width 10em"><h2>Kur keliauja Jūsų siunta?</h2></div>
+        <p class="nectar-responsive-text" style="--fg:var(--tone-muted)" data-salient="Responsive Text → Font Style: p · colour ink-2 #4A5358">Siuntos vietą galite pasitikrinti pagal siuntos kodą.</p>
+        <form class="fluentform ff-form" action="{{url:sekimas}}" method="get" data-demo-form="tracking" data-target="rezultatas" style="--mt:12px" data-salient="Fluent Forms „Siuntos sekimas“ · field „Siuntos kodas“ (name kodas, required message „Neįvestas siuntos kodas!“) · Submit „Siuntos lokacija“ · Confirmation: Redirect to URL https://siuntos.sgp-pervezimai.lt/sekimas.php?kodas={inputs.kodas} · Theme Options → Form Styling: Minimal · sgp-custom.css C-6 · DEMO: redirects to ?kodas=… and shows #rezultatas">
+          <div class="ff-el-group"><div class="ff-el-input--label ff-el-is-required"><label for="sk-kodas">Siuntos kodas</label></div><input class="ff-el-form-control" id="sk-kodas" name="kodas" type="text" required autocomplete="off" autocapitalize="characters" spellcheck="false" enterkeyhint="search" placeholder="Siuntos kodas..."><div class="error text-danger" id="sk-kodas-e">Neįvestas siuntos kodas!</div></div>
+          <div class="ff_submit_btn_wrapper"><button class="ff-btn ff-btn-submit" type="submit">Siuntos lokacija</button></div>
         </form>
-        <p class="sk-demo" data-reveal style="--dl:.1s" data-salient="Demo only (remove in production)"><span class="sk-badge sgp-mono">Demo</span><span class="sk-demo__txt">Demonstracinė versija – paieška veikia tik tikroje svetainėje.<button class="sk-demo__try" type="button" data-sk-try="SGP-DEMO"><span>Išbandykite:</span> <b>SGP-DEMO</b> <svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></button></span></p>
-        <p class="sk-help" data-reveal style="--dl:.15s">Neradote siuntos kodo? Paskambinkite – pasakysime, kur Jūsų siunta. <button class="sgp-a" type="button" popovertarget="sgp-call">Skambinti</button></p>
+        <div class="vc_row inner_row" style="--mt:30px" data-salient="Inner Row → DEMO ONLY (remove in production)">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" style="--gap:8px 12px;--pt:18px;--border-top:1px solid rgba(28,29,29,.12)" data-salient="Inner Column → Layout: Flexbox · Horizontal · Wrap · Gap 8px 12px · Border Type: Advanced (top 1px hairline) · Padding-top 18px">
+              <div class="vc_column-inner">
+                <span class="nectar-badge" data-badge-style="default" data-display="inline" data-padding="small" style="--border:1px solid rgba(28,29,29,.26);--fg:#1C1D1D;--r:3px" data-salient="Badge → Default · BG transparent · Border 1px rgba(28,29,29,.26) · Padding Small · Radius 3px (Chip) · demo only">Demo</span>
+                <p class="nectar-responsive-text" data-inherit="small" style="--fg:var(--tone-muted);--max-w:34ch" data-salient="Responsive Text → small · demo only">Demonstracinė versija – paieška veikia tik tikroje svetainėje.</p>
+                <a class="nectar-cta" data-style="underline" href="?kodas=SGP-DEMO#rezultatas" data-salient="Button → Type: Underline · demo only · Link ?kodas=SGP-DEMO#rezultatas"><span class="link_text"><span class="text">Išbandykite: SGP-DEMO →</span></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="nectar-responsive-text" data-inherit="small" style="--fg:var(--tone-muted);--mt:18px" data-salient="Responsive Text → small · inline link #pagalba (General Link Style)">Neradote siuntos kodo? Paskambinkite – pasakysime, kur Jūsų siunta. <a href="#pagalba">Skambinti</a></p>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-7" data-t-w="12" data-salient="Column 7/12 → Inner Row → Inner Column (Mask Reveal) → Image">
+      <div class="vc_column-inner">
+        <div class="vc_row inner_row" data-salient="Inner Row">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-animation="mask-reveal" data-mask-direction="right" data-mask-shape="straight" data-delay="150" data-salient="Inner Column → Animation: Mask Reveal · Direction: Right · Shape: Straight (1.3 s) · Delay 150">
+              <div class="vc_column-inner">
+                <div class="img-with-aniamtion-wrap" data-hover-animation="zoom-in" data-aspect="4-3" data-salient="Image → Hover Animation: Zoom In · Border Radius 0 · 4:3"><div class="hover-wrap">{{img:6407553|w=1100|sizes=(min-width:1000px) 52vw, 92vw}}</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-12" style="--mt:24px" data-salient="Column 12/12 → Divider (road) + Icon List (Stations)">
+      <div class="vc_column-inner">
+        <div class="divider-wrap" data-line-type="full-width" data-animate style="--h:1px;--line-color:rgba(28,29,29,.26);--h-m:64px" data-salient="Divider → Line Type: Full Width · 1px · Animate Line ✓ (the road above the Stations) · Custom Height (phone) 64px"><span class="divider-border"></span></div>
+        <div class="nectar-icon-list" data-direction="horizontal" data-columns="3" data-icon-size="medium" data-icon-style="border" data-animate style="--mt:-24px" data-salient="Icon List → Direction: Horizontal · 3 columns · Icon Size: Medium · Icon Style: Icon Colored W/ BG · Icon Color: Accent · Animate Element ✓ („Stations“)">
+          <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>1</span></div><div class="content"><h4>Įveskite siuntos kodą</h4></div></div>
+          <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>2</span></div><div class="content"><h4>Spauskite „Siuntos lokacija“</h4></div></div>
+          <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>3</span></div><div class="content"><h4>Matysite, kur yra Jūsų siunta</h4></div></div>
+        </div>
       </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ============ 02 · REZULTATAS — framed map-paper screen (demo states) ============ -->
-<section class="sgp-sec on-dark sgp-has-rail sk-result" id="rezultatas" data-theme="dark" data-salient="Row dark · Extra Class sgp-dark sgp-has-rail · Raw HTML: iframe src=&quot;https://siuntos.sgp-pervezimai.lt/sekimas.php?embed=1&amp;kodas=…&quot; title=&quot;Siuntos sekimo rezultatas&quot; min-height 520 px inside the .sk-screen map-paper frame · tool messages verbatim · DEMO: static states below, nothing is requested">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">02</span><span class="sgp-mono">Rezultatas</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Demonstracinė versija</span></div>
-    <div class="sk-screen on-light paper" data-sk-screen data-state="idle" data-reveal data-salient="Raw HTML frame .sk-screen (map paper, 1 px hairline, crop marks) → production: &lt;iframe&gt;">
-      <div class="sk-screen__bar sgp-mono">
-        <span class="sk-screen__t"><span class="sgp-ring sgp-ring--sm"></span>Siuntos lokacija</span>
-        <span class="sk-screen__code">Siuntos kodas: <b data-sk-code>—</b></span>
-      </div>
-      <p class="sgp-sr" role="status" aria-live="polite" data-sk-live></p>
-
-      <!-- idle: how it works -->
-      <div class="sk-state sk-state--idle" data-sk-state="idle">
-        <ol class="sk-steps">
-          <li class="sk-steps__lane" aria-hidden="true"></li>
-          <li class="sk-step" style="--i:0"><span class="sgp-ring"></span><p class="sgp-mono sk-step__no">01</p><p class="sk-step__t">Įveskite siuntos kodą</p></li>
-          <li class="sk-step" style="--i:1"><span class="sgp-ring"></span><p class="sgp-mono sk-step__no">02</p><p class="sk-step__t">Spauskite „Siuntos lokacija“</p></li>
-          <li class="sk-step" style="--i:2"><span class="sgp-ring"></span><p class="sgp-mono sk-step__no">03</p><p class="sk-step__t">Matysite, kur yra Jūsų siunta</p></li>
-        </ol>
-      </div>
-
-      <!-- loading -->
-      <div class="sk-state sk-state--load" data-sk-state="load" hidden>
-        <div class="sk-scan" aria-hidden="true"><span class="sk-scan__lane"></span><span class="sk-scan__dot"></span></div>
-        <p class="sk-state__k sgp-mono">Ieškoma…</p>
-      </div>
-
-      <!-- not found (verbatim tool message, shown as a demo example + the approved demo note, §6.7 / §8.1 p. 25) -->
-      <div class="sk-state sk-state--none" data-sk-state="none" hidden>
-        <div class="sk-lost" aria-hidden="true"><i class="sk-lost__lane"></i><i class="sk-lost__dash"></i><i class="sk-lost__ring"></i></div>
-        <p class="sk-msg">Toks siuntos kodas neegzistuoja!</p>
-        <p class="sk-none__demo"><span class="sk-badge sk-badge--red sgp-mono">Demo</span><span>Demonstracinė versija – paieška veikia tik tikroje svetainėje.</span></p>
-        <p class="sk-state__p">Neradote siuntos kodo? Paskambinkite – pasakysime, kur Jūsų siunta.</p>
-        <div class="sk-calls">
-          <a class="sgp-callbtn sgp-callbtn--sm" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Airiją</span><span class="sgp-callbtn__n">+370 650 53161</span></span></a>
-          <a class="sgp-callbtn sgp-callbtn--sm" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Ispaniją</span><span class="sgp-callbtn__n">+370 638 28919</span></span></a>
+<!-- ============ K3 · #rezultatas — DEMO ONLY: shown when the page is opened with ?kodas=… (demo.js). Production: the Fluent Forms
+     confirmation redirects to the live tool, so this row does not exist on the live page. ============ -->
+<div data-demo-result hidden>
+<div class="wpb_row" id="rezultatas" data-type="full_width_background" data-text-color="dark" style="--bg:#EAEEED;--pt:6%;--pb:7%;--pt-m:64px;--pb-m:72px" data-salient="Row → DEMO ONLY · Chapter row P-alt · BG #EAEEED · Text Color: Dark · Padding 6 % / 7 % (phones 64 / 72px) · Row ID rezultatas — production: none (Fluent Forms Confirmation → Redirect to URL, the live tool shows the result)">
+  <div class="row_col_wrap_12">
+    <!-- the live tool's „not found“ message (verbatim) -->
+    <div class="wpb_column vc_col-sm-8" data-demo-result-none hidden style="--bg:#FFFFFF;--r:3px;--border-left:2px solid #EF4539;--pt:40px;--pb:40px;--pl:44px;--pr:44px;--pt-m:28px;--pb-m:28px;--pl-m:22px;--pr-m:22px" data-animation="slight-fade-in-from-bottom" data-salient="Column 8/12 → Callout: BG #FFFFFF · Border Radius 3px · Border Type: Advanced (left 2px Accent) · Padding 40px 44px · Animation: Slight Fade In From Bottom">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E">Siuntos kodas: <span data-demo-code>—</span></span>
+        <p class="nectar-responsive-text" data-inherit="h3" style="--fg:#C4301E" role="status" data-salient="Responsive Text → Font Style: H3 · colour #C4301E (small red on paper) · the live tool's message, verbatim">Toks siuntos kodas neegzistuoja!</p>
+        <div class="vc_row inner_row" style="--mt:16px" data-salient="Inner Row → Inner Column Flexbox (row, wrap, gap 8px 12px) · Chip + small text (demo note)">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" style="--gap:8px 12px" data-salient="Inner Column → Layout: Flexbox · Horizontal · Wrap">
+              <div class="vc_column-inner">
+                <span class="nectar-badge" data-badge-style="default" data-display="inline" data-padding="small" style="--bg:#EF4539;--fg:#0F1417;--r:3px" data-salient="Badge → Default · BG Accent · Text #0F1417 · Padding Small · Radius 3px">Demo</span>
+                <p class="nectar-responsive-text" data-inherit="small" style="--fg:var(--tone-muted)" data-salient="Responsive Text → small">Demonstracinė versija – paieška veikia tik tikroje svetainėje.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="nectar-responsive-text" style="--mt:28px" data-salient="Responsive Text → p">Neradote siuntos kodo? Paskambinkite – pasakysime, kur Jūsų siunta.</p>
+        <div class="vc_row inner_row" style="--mt:20px" data-salient="Inner Row → Inner Column Flexbox (row, wrap, gap 12px) → 2 × Call (red)">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" style="--gap:12px" data-salient="Inner Column → Layout: Flexbox · Horizontal · Wrap · Gap 12px">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" href="tel:+37065053161" aria-label="Į Airiją · +370 650 53161 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Aria Label"><span class="link_text"><span class="text">Į Airiją · +370 650 53161</span></span></a>
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" href="tel:+37063828919" aria-label="Į Ispaniją · +370 638 28919 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Aria Label"><span class="link_text"><span class="text">Į Ispaniją · +370 638 28919</span></span></a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- found: demo sample SGP-DEMO -->
-      <div class="sk-state sk-state--found" data-sk-state="found" hidden>
-        <div class="sk-found__head">
-          <p class="sk-badge sk-badge--red sgp-mono">Demonstracinis pavyzdys · ne tikra siunta</p>
-          <p class="sk-found__route">Lietuva → Ispanija</p>
-          <p class="sk-found__st sgp-mono"><span class="sgp-dot"></span>Kelyje</p>
+    </div>
+    <!-- demo sample SGP-DEMO: our proposal for the page around the live tool, clearly labelled -->
+    <div class="wpb_column vc_col-sm-12" data-demo-result-ok hidden data-salient="Column 12/12 → Inner Row (Card) · demo sample SGP-DEMO">
+      <div class="vc_column-inner">
+        <div class="vc_row inner_row" data-equal-height data-content-align="middle" data-column-margin="none" style="--bg:#FFFFFF;--r:3px;--border:1px solid rgba(28,29,29,.12)" data-salient="Inner Row → Card: BG #FFFFFF · radius 3px · Border 1px hairline · Equal Height ✓ · Column Content Alignment: Middle · Column Margin: None">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-5" style="--pt:44px;--pb:44px;--pl:44px;--pr:40px;--pt-m:28px;--pb-m:8px;--pl-m:22px;--pr-m:22px" data-animation="slight-fade-in-from-bottom" data-salient="Inner Column 5/12 → Padding 44px · Animation: Slight Fade In From Bottom · Chips + H3 + KV rows + Icon List (log)">
+              <div class="vc_column-inner">
+                <div class="vc_row inner_row" data-salient="Inner Row → Inner Column Flexbox (row, wrap, gap 8px) → 2 × Badge">
+                  <div class="row_col_wrap_12_inner">
+                    <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" style="--gap:8px" data-salient="Inner Column → Layout: Flexbox · Horizontal · Wrap · Gap 8px">
+                      <div class="vc_column-inner">
+                        <span class="nectar-badge" data-badge-style="default" data-display="inline" data-padding="small" style="--bg:#EF4539;--fg:#0F1417;--r:3px" data-salient="Badge → Default · BG Accent · Text #0F1417 · Radius 3px">Demonstracinis pavyzdys · ne tikra siunta</span>
+                        <span class="nectar-badge" data-badge-style="default" data-display="inline" data-padding="small" style="--border:1px solid rgba(28,29,29,.26);--fg:#1C1D1D;--r:3px" data-salient="Badge → Default · Border 1px · Radius 3px (Chip)">Kelyje</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h3 style="--mt:22px" data-salient="Text Block → H3">Lietuva → Ispanija</h3>
+                <div class="nectar-hor-list-item" style="--mt:14px" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV rows) → 40% | 60% · Bottom Border, No Hover Effect · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Siuntos kodas</p></div><div class="nectar-list-item"><p class="sgp-num" data-demo-code>SGP-DEMO</p></div></div>
+                <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Kryptis</p></div><div class="nectar-list-item"><p>Lietuva → Ispanija</p></div></div>
+                <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Kelyje</p></div><div class="nectar-list-item"><p>apie 3–4 paros nuo paėmimo dienos</p></div></div>
+                <div class="nectar-hor-list-item" data-columns="2" data-column-layout="40-60" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item → KV row · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Įsipareigojimas siuntoms</p></div><div class="nectar-list-item"><p>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (<a href="{{url:taisykles}}#vezejo-atsakomybe">Taisyklių 3.4 p.</a>)</p></div></div>
+                <div class="nectar-icon-list" data-direction="vertical" data-icon-size="small" data-icon-style="border" data-animate style="--mt:30px" data-salient="Icon List → Direction: Vertical · Icon Size: Small · Icon Style: Icon Colored W/ BG · Icon Color: Accent · Animate Element ✓ · 3 items (Number + header + text)">
+                  <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>1</span></div><div class="content"><h4>Paimta iš siuntėjo</h4><p>Siunta paimta iš siuntėjo nurodytos vietos.</p></div></div>
+                  <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>2</span></div><div class="content"><h4>Kelyje</h4><p>Siunta keliauja Ispanijos link.</p></div></div>
+                  <div class="nectar-icon-list-item" data-icon-type="numerical"><div class="list-icon-holder" aria-hidden="true"><span>3</span></div><div class="content"><h4>Pristatymas</h4><p>Pristatome gavėjui tiesiai į rankas.</p></div></div>
+                </div>
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-7" style="--bg:#F5F7F6;--pt:40px;--pb:36px;--pl:36px;--pr:36px;--pt-m:20px;--pb-m:24px;--pl-m:10px;--pr-m:10px" data-animation="fade-in" data-delay="200" data-salient="Inner Column (Device Visibility: hidden on phone) 7/12 → BG #F5F7F6 · Padding 40px 36px · Animation: Fade In · Delay 200 · Image With Hotspots + note" data-hide="phone">
+              <div class="vc_column-inner">
+                <div class="nectar_image_with_hotspots" data-hotspot-icon="numerical" data-tooltip-func="always" data-tooltip-shadow="medium_depth" data-color="accent-color" data-animation data-salient="Image With Hotspots → image assets/img/marsrutai.svg · Hotspot Icon: Numerical · Tooltip Functionality: Always Show · Tooltip Shadow: Medium Depth · Enable Animation ✓ · 1 hotspot (demo parcel)">
+                  <img src="{{root}}assets/img/marsrutai.svg" alt="SGP maršrutų schema: Lietuva – Lenkija – Vokietija – Belgija – Prancūzija – Ispanija. Demonstracinė siunta – Prancūzijoje." width="1100" height="720" loading="lazy">
+                  <div class="nectar_hotspot_wrap" style="left:31.8%;top:61.1%"><button class="nectar_hotspot" type="button" aria-label="Prancūzija – siunta čia"><span>5</span></button><div class="nttip" role="tooltip"><p><strong>Prancūzija · siunta čia</strong></p><p>Siunta keliauja Ispanijos link.</p></div></div>
+                </div>
+                <p class="nectar-responsive-text" data-inherit="small" style="--fg:var(--tone-muted);--mt:18px" data-salient="Responsive Text → small">Tikroje svetainėje čia bus rodoma siuntos vieta žemėlapyje iš siuntų sistemos.</p>
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-7" style="--bg:#F5F7F6;--pt:40px;--pb:36px;--pl:36px;--pr:36px;--pt-m:20px;--pb-m:24px;--pl-m:10px;--pr-m:10px" data-animation="fade-in" data-delay="200" data-salient="Inner Column (Device Visibility: hidden on desktop and tablet · phone crop marsrutai-m.svg) 7/12 → BG #F5F7F6 · Padding 40px 36px · Animation: Fade In · Delay 200 · Image With Hotspots + note" data-hide="desktop tablet">
+              <div class="vc_column-inner">
+                <div class="nectar_image_with_hotspots" data-hotspot-icon="numerical" data-tooltip-func="always" data-tooltip-shadow="medium_depth" data-color="accent-color" data-animation data-salient="Image With Hotspots → image assets/img/marsrutai-m.svg · Hotspot Icon: Numerical · Tooltip Functionality: Always Show · Tooltip Shadow: Medium Depth · Enable Animation ✓ · 1 hotspot (demo parcel)">
+                  <img src="{{root}}assets/img/marsrutai-m.svg" alt="SGP maršrutų schema: Lietuva – Lenkija – Vokietija – Belgija – Prancūzija – Ispanija. Demonstracinė siunta – Prancūzijoje." width="600" height="640" loading="lazy">
+                  <div class="nectar_hotspot_wrap" style="left:30.3%;top:40.9%"><button class="nectar_hotspot" type="button" aria-label="Prancūzija – siunta čia"><span>5</span></button><div class="nttip" role="tooltip"><p><strong>Prancūzija · siunta čia</strong></p><p>Siunta keliauja Ispanijos link.</p></div></div>
+                </div>
+                <p class="nectar-responsive-text" data-inherit="small" style="--fg:var(--tone-muted);--mt:18px" data-salient="Responsive Text → small">Tikroje svetainėje čia bus rodoma siuntos vieta žemėlapyje iš siuntų sistemos.</p>
+              </div>
+            </div>
+          </div>
         </div>
-        <ol class="sk-trip" style="--n:6;--at:4" aria-label="Maršrutas: Lietuva, Lenkija, Vokietija, Belgija, Prancūzija, Ispanija. Demonstracinė siunta – Prancūzijoje.">
-          <li class="sk-trip__lane" aria-hidden="true"><i></i></li>
-          <li class="sk-trip__stop is-done"><span class="sk-trip__ring"></span><span class="sk-trip__n">Lietuva</span><span class="sk-trip__s">išvykimas</span></li>
-          <li class="sk-trip__stop is-done"><span class="sk-trip__ring"></span><span class="sk-trip__n">Lenkija</span></li>
-          <li class="sk-trip__stop is-done"><span class="sk-trip__ring"></span><span class="sk-trip__n">Vokietija</span></li>
-          <li class="sk-trip__stop is-done"><span class="sk-trip__ring"></span><span class="sk-trip__n">Belgija</span></li>
-          <li class="sk-trip__stop is-here" aria-current="step"><span class="sk-trip__ring"></span><span class="sk-trip__n">Prancūzija</span><span class="sk-trip__s">siunta čia</span></li>
-          <li class="sk-trip__stop is-term"><span class="sk-trip__ring"></span><span class="sk-trip__n">Ispanija</span><span class="sk-trip__s">atvykimas</span></li>
-        </ol>
-        <div class="sk-found__grid">
-          <ol class="sk-log">
-            <li class="is-done"><span class="sgp-mono">01</span><p><b>Paimta iš siuntėjo</b>Siunta paimta iš siuntėjo nurodytos vietos.</p></li>
-            <li class="is-here"><span class="sgp-mono">02</span><p><b>Kelyje</b>Siunta keliauja Ispanijos link.</p></li>
-            <li><span class="sgp-mono">03</span><p><b>Pristatymas</b>Pristatome gavėjui tiesiai į rankas.</p></li>
-          </ol>
-          <dl class="sgp-kv sk-found__kv">
-            <dt>Siuntos kodas</dt><dd>SGP-DEMO</dd>
-            <dt>Kryptis</dt><dd>Lietuva → Ispanija</dd>
-            <dt>Kelyje</dt><dd>apie 3–4 paros nuo paėmimo dienos</dd>
-            <dt>Įsipareigojimas siuntoms</dt><dd>per 5 darbo dienas nuo pirmos išvykimo iš Lietuvos dienos (<a class="sgp-a" href="{{url:taisykles}}#vezejo-atsakomybe">Taisyklių 3.4 p.</a>)</dd>
-          </dl>
-        </div>
-        <p class="sk-found__note">Tikroje svetainėje čia bus rodoma siuntos vieta žemėlapyje iš siuntų sistemos.</p>
       </div>
-
-      <p class="sk-screen__foot sgp-mono">Demonstracinė versija – paieška veikia tik tikroje svetainėje.</p>
     </div>
   </div>
-</section>
+</div>
+</div>
 
-<!-- ============ 03 · PAGALBA — call first, then three link cards ============ -->
-<section class="sgp-sec on-light alt sgp-has-rail sk-helpsec" id="pagalba" data-theme="light" data-salient="Row paper-100 · Extra Class sgp-light alt sgp-has-rail · Inner Row: H2 + Text Block | 2 × Button .sgp-callbtn · Inner Row: 3 × Column Link cards (image 16:11 Zoom In Crop, Fade In From Bottom 0/120/240)">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">03</span><span class="sgp-mono">Pagalba</span><span class="sgp-wp__rule"></span></div>
-    <div class="sk-help__head">
-      <div>
-        <h2 class="sgp-d2" data-split>Neradote siuntos kodo?</h2>
-        <p class="sgp-lead sgp-fg2" data-reveal>Paskambinkite – pasakysime, kur Jūsų siunta.</p>
-      </div>
-      <div class="sk-help__calls" data-reveal style="--dl:.1s">
-        <a class="sgp-callbtn" href="tel:+37065053161" aria-label="Pervežimai į Airiją – skambinti +370 650 53161"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Airiją</span><span class="sgp-callbtn__n">+370 650 53161</span></span></a>
-        <a class="sgp-callbtn" href="tel:+37063828919" aria-label="Pervežimai į Ispaniją – skambinti +370 638 28919"><span class="sgp-callbtn__i"><svg class="sgp-i" aria-hidden="true"><use href="#i-phone"/></svg></span><span class="sgp-callbtn__t"><span class="sgp-mono">Pervežimai į Ispaniją</span><span class="sgp-callbtn__n">+370 638 28919</span></span></a>
+<!-- ============ K4 · #pagalba — calls first, then three Fancy Boxes ============ -->
+<div class="wpb_row sgp-dark" id="pagalba" data-type="full_width_background" data-text-color="light" data-padding="chapter" data-column-align="bottom" style="--bg:#0F1417" data-salient="Row → Chapter row A · BG #0F1417 · Text Color: Light · Padding 8 % / 8 % (phones 80px) · Column Alignment: Bottom · Row ID pagalba · Extra Class sgp-dark">
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-6" data-animation="slight-fade-in-from-bottom" data-salient="Column 6/12 → Label + Animated Text (H2) + Road line + Intro · Animation: Slight Fade In From Bottom">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #EF4539">Pagalba</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--max-w:9em" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓ · Max Width 9em"><h2>Neradote siuntos kodo?</h2></div>
+        <div class="divider-wrap" data-line-type="small" data-animate style="--line-w:96px;--thickness:2px;--h:14px" data-salient="Divider → Small Line · 96px · 2px · Accent · Animate Line ✓ (road line)"><span class="divider-border"></span></div>
+        <p class="nectar-responsive-text" data-inherit="h5" style="--fg:var(--tone-muted)" data-salient="Responsive Text → Font Style: H5 · fog #9AA6AB (Intro on asphalt)">Paskambinkite – pasakysime, kur Jūsų siunta.</p>
       </div>
     </div>
-    <div class="sgp-cols sk-cards" style="--cols:3" data-stagger="120">
-      <a class="sgp-card" href="{{url:siuntu-pristatymas}}" data-reveal>
-        <figure class="sgp-card__img sgp-grade" data-mask>{{img:13456097|w=760|sizes=(min-width:1000px) 30vw, (min-width:691px) 46vw, 100vw}}<i class="sgp-ov"></i></figure>
-        <div class="sgp-card__body"><p class="sgp-card__no sgp-mono">Paslauga</p><h3 class="sgp-card__t">Siuntų pristatymas</h3><p class="sgp-card__s">Siuntiniai paimami iš siuntėjų ir atiduodami gavėjams į rankas.</p><span class="sgp-card__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
-      </a>
-      <a class="sgp-card" href="{{url:grafikas}}" data-reveal>
-        <figure class="sgp-card__img sgp-grade" data-mask>{{img:36383706|w=760|sizes=(min-width:1000px) 30vw, (min-width:691px) 46vw, 100vw}}<i class="sgp-ov"></i></figure>
-        <div class="sgp-card__body"><p class="sgp-card__no sgp-mono">Grafikas</p><h3 class="sgp-card__t">Pervežimų grafikas</h3><p class="sgp-card__s">Artimiausios išvykimo datos abiem kryptimis.</p><span class="sgp-card__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
-      </a>
-      <a class="sgp-card" href="{{url:taisykles}}" data-reveal>
-        <figure class="sgp-card__img sgp-grade" data-mask>{{img:6169133|w=760|sizes=(min-width:1000px) 30vw, (min-width:691px) 46vw, 100vw}}<i class="sgp-ov"></i></figure>
-        <div class="sgp-card__body"><p class="sgp-card__no sgp-mono">Taisyklės</p><h3 class="sgp-card__t">Siuntų siuntimo taisyklės</h3><p class="sgp-card__s">Tikrinimas, siuntėjo garantija, vežėjo atsakomybė, draudžiami daiktai, baudos ir pretenzijos.</p><span class="sgp-card__go"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></div>
-      </a>
+    <div class="wpb_column vc_col-sm-5 vc_col-sm-offset-1" data-t-w="12" data-el-space="10px" data-layout="flex" data-justify="flex-end" style="--gap:12px;--min-h:100%" data-animation="slight-fade-in-from-bottom" data-delay="120" data-salient="Column 5/12 (offset 1) → Layout: Flexbox (column, justify end, gap 12px) · Animation: Slight Fade In From Bottom · Delay 120 · 2 × Call (red), Alignment: Stretch">
+      <div class="vc_column-inner">
+        <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37065053161" aria-label="Į Airiją · +370 650 53161 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Stretch · Aria Label"><span class="link_text"><span class="text">Į Airiją · +370 650 53161</span></span></a>
+        <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37063828919" aria-label="Į Ispaniją · +370 638 28919 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Stretch · Aria Label"><span class="link_text"><span class="text">Į Ispaniją · +370 638 28919</span></span></a>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-4" data-t-w="4" style="--mt:24px" data-animation-type="scroll_pos_advanced" data-scroll-start="ty:40;s:1;o:.6" data-scroll-end="ty:0;s:1;o:1" data-scroll-offset="0,80" data-salient="Column 4/12 → Column Animation Type: Scroll Position Advanced · Start: Translate Y 40, Opacity .6 → End: 0, 1 · Viewport Trigger Offset 0–80 · Fancy Box">
+      <div class="vc_column-inner">
+        <div class="nectar-fancy-box" data-style="hover_desc" data-hover-color="extra-color-1" data-bg-animation="short_zoom" style="--o:.5;--o-h:.82;--min-h:440px" data-salient="Fancy Box → Style: Description on Hover · Hover Color: Extra Color 1 · Overlay Opacity .5 → Hover Overlay Opacity .82 · Background Hover Animation: Short Zoom · Border Radius: None · Min Height 440">
+          <div class="box-bg">{{img:13456097|w=760|sizes=(min-width:1000px) 30vw, 92vw|decorative}}</div><div class="box-overlay"></div>
+          <div class="inner"><h3>Siuntų pristatymas</h3><div class="hover-content"><div><p>Siuntiniai paimami iš siuntėjų ir atiduodami gavėjams į rankas.</p></div></div></div>
+          <a class="box-link" href="{{url:siuntu-pristatymas}}" aria-label="Siuntų pristatymas"></a>
+        </div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-4" data-t-w="4" style="--mt:24px" data-animation-type="scroll_pos_advanced" data-scroll-start="ty:110;s:1;o:.6" data-scroll-end="ty:0;s:1;o:1" data-scroll-offset="0,80" data-salient="Column 4/12 → Column Animation Type: Scroll Position Advanced · Start: Translate Y 110, Opacity .6 → End: 0, 1 · Viewport Trigger Offset 0–80 (staggered cascade) · Fancy Box">
+      <div class="vc_column-inner">
+        <div class="nectar-fancy-box" data-style="hover_desc" data-hover-color="extra-color-1" data-bg-animation="short_zoom" style="--o:.5;--o-h:.82;--min-h:440px" data-salient="Fancy Box → Description on Hover · Extra Color 1 · .5 → .82 · Short Zoom">
+          <div class="box-bg">{{img:36383706|w=760|sizes=(min-width:1000px) 30vw, 92vw|decorative}}</div><div class="box-overlay"></div>
+          <div class="inner"><h3>Pervežimų grafikas</h3><div class="hover-content"><div><p>Artimiausios išvykimo datos abiem kryptimis.</p></div></div></div>
+          <a class="box-link" href="{{url:grafikas}}" aria-label="Pervežimų grafikas"></a>
+        </div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-4" data-t-w="4" style="--mt:24px" data-animation-type="scroll_pos_advanced" data-scroll-start="ty:180;s:1;o:.6" data-scroll-end="ty:0;s:1;o:1" data-scroll-offset="0,80" data-salient="Column 4/12 → Column Animation Type: Scroll Position Advanced · Start: Translate Y 180, Opacity .6 → End: 0, 1 · Viewport Trigger Offset 0–80 (staggered cascade) · Fancy Box">
+      <div class="vc_column-inner">
+        <div class="nectar-fancy-box" data-style="hover_desc" data-hover-color="extra-color-1" data-bg-animation="short_zoom" style="--o:.5;--o-h:.82;--min-h:440px" data-salient="Fancy Box → Description on Hover · Extra Color 1 · .5 → .82 · Short Zoom">
+          <div class="box-bg">{{img:6169133|w=760|sizes=(min-width:1000px) 30vw, 92vw|decorative}}</div><div class="box-overlay"></div>
+          <div class="inner"><h3>Siuntų siuntimo taisyklės</h3><div class="hover-content"><div><p>Tikrinimas, siuntėjo garantija, vežėjo atsakomybė, draudžiami daiktai, baudos ir pretenzijos.</p></div></div></div>
+          <a class="box-link" href="{{url:taisykles}}" aria-label="Siuntų siuntimo taisyklės"></a>
+        </div>
+      </div>
     </div>
   </div>
-</section>
+</div>
+
+<!-- ============ K5 · GS-Kvietimas (After Page/Post Content) ============ -->
+{{partial:gs-kvietimas}}

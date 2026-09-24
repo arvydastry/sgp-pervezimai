@@ -1,0 +1,131 @@
+/* =====================================================================================
+   emul/typography.css — EMULATION of Salient typography elements. Not shipped.
+   Animated Text (split_line_heading) · Highlighted Text · Scrolling Text · Badge ·
+   Responsive Text · Price Typography · Divider · generic Design-Options colour/width.
+   ===================================================================================== */
+[style*="--fg:"]{color:var(--fg)}
+[style*="--max-w:"]{max-width:var(--max-w)}
+
+/* ---- Font sizing group (Animated Text, Responsive Text, Badge, Button, Scrolling Text) ---- */
+.nectar-split-heading[style*="--fs:"] > *,.nectar-responsive-text[style*="--fs:"],.nectar-price-typography[style*="--fs:"]{
+  font-size:clamp(var(--fs-min,1px),var(--fs),var(--fs-max,999px));line-height:var(--lh,1.05)}
+@media (max-width:999px){.nectar-split-heading[style*="--fs-t:"] > *,.nectar-responsive-text[style*="--fs-t:"]{font-size:var(--fs-t)}}
+@media (max-width:690px){.nectar-split-heading[style*="--fs-m:"] > *,.nectar-responsive-text[style*="--fs-m:"]{font-size:var(--fs-m)}}
+
+/* ---------------- Animated Text (split_line_heading) ---------------- */
+.nectar-split-heading{position:relative}
+.nectar-split-heading[style*="--max-w"]{max-width:none}
+.nectar-split-heading > *{margin:0;max-width:var(--max-w,none)}             /* Max Width is measured in the heading's own font size */
+.nectar-split-heading[data-align="center"]{text-align:center}
+.nectar-split-heading[data-align="center"] > *{margin-inline:auto}
+.nectar-split-heading .word{display:inline-block;vertical-align:top;white-space:nowrap}
+.nectar-split-heading .inner{display:inline-block;will-change:transform}
+.nectar-split-heading .char{display:inline-block}
+/* Word Animations: Reveal (default) — words rise from 1.3em inside their own mask */
+html.js .nectar-split-heading[data-text-effect="default"] .word{overflow:hidden}
+html.js .nectar-split-heading[data-text-effect="default"] .inner{transform:translateY(1.3em)}
+html.js .nectar-split-heading[data-text-effect="blur-bottom"] .inner{opacity:0;filter:blur(10px);transform:translateY(.25em)}
+html.js .nectar-split-heading[data-text-effect="fade-bottom"] .inner{opacity:0;transform:translateY(.5em)}
+html.js .nectar-split-heading[data-text-effect="twist-bottom"] .word{perspective:1000px}
+html.js .nectar-split-heading[data-text-effect="twist-bottom"] .inner{opacity:0;transform:rotateX(-70deg);transform-origin:50% -2em}
+html.js .nectar-split-heading[data-text-effect^="letter"] .word{overflow:hidden}
+html.js .nectar-split-heading[data-text-effect="letter-reveal-bottom"] .char{transform:translateY(1.3em)}
+html.js .nectar-split-heading[data-text-effect="letter-blur-bottom"] .char{opacity:0;filter:blur(10px);transform:translateY(.25em)}
+html.js .nectar-split-heading[data-text-effect="letter-fade-bottom"] .char{opacity:0;transform:translateY(.5em)}
+.nectar-split-heading .inner,.nectar-split-heading .char{transition:transform var(--d-text) var(--e-text),opacity var(--d-text) var(--e-text),filter var(--d-text) var(--e-text);transition-delay:var(--wd,0ms)}
+html.js .nectar-split-heading.animated-in .inner,html.js .nectar-split-heading.animated-in .char{transform:none;opacity:1;filter:none}
+/* Scroll Position: Opacity — words start at .2 and light up with scroll (JS sets --o per word) */
+.nectar-split-heading[data-text-effect="scroll-opacity-reveal"] .inner{opacity:var(--o,.2);transition:opacity .15s linear}
+html:not(.js) .nectar-split-heading[data-text-effect="scroll-opacity-reveal"] .inner{opacity:1}
+
+/* ---------------- Highlighted Text (nectar_highlighted_text) ---------------- */
+.nectar-highlighted-text{--hl:var(--nectar-accent-color);max-width:var(--max-w,none)}
+.nectar-highlighted-text > *{margin:0}
+.nectar-highlighted-text em{font-style:inherit;background-image:linear-gradient(var(--hl),var(--hl));background-repeat:no-repeat;
+  transition:background-size var(--d-highlight) var(--e-highlight);transition-delay:var(--hd,0ms)}
+.nectar-highlighted-text[data-style="regular_underline"] em{background-size:0% var(--ul,3px);background-position:left 92%;padding-bottom:.04em}
+.nectar-highlighted-text[data-underline-thickness="1px"]{--ul:1px}.nectar-highlighted-text[data-underline-thickness="2px"]{--ul:2px}
+.nectar-highlighted-text[data-underline-thickness="4px"]{--ul:4px}
+.nectar-highlighted-text[data-style="half_text"] em{background-size:0% 28%;background-position:left 82%}
+.nectar-highlighted-text[data-style="full_text"] em{background-size:0% 80%;background-position:left 60%;padding-inline:.06em}
+.nectar-highlighted-text.animated em,html:not(.js) .nectar-highlighted-text em{background-size:100% var(--ul,3px)}
+.nectar-highlighted-text[data-style="half_text"].animated em{background-size:100% 28%}
+.nectar-highlighted-text[data-style="full_text"].animated em{background-size:100% 80%}
+.nectar-highlighted-text[data-style="text_outline"] em{background:none;color:transparent;-webkit-text-stroke:1px var(--hl)}
+
+/* ---------------- Scrolling Text (nectar_scrolling_text) ---------------- */
+.nectar-scrolling-text{position:relative;overflow:hidden;width:100%;--nst-dur:var(--loop-slow);--space:1em;--divider-color:currentColor}
+.nectar-scrolling-text[data-s-speed="slower"]{--nst-dur:var(--loop-slowest)}      /* admin „Slowest“ = 45 s */
+.nectar-scrolling-text[data-s-speed="slowest"]{--nst-dur:var(--loop-slower)}      /* admin „Slower“ = 30 s */
+.nectar-scrolling-text[data-s-speed="slow"]{--nst-dur:var(--loop-slow)}
+.nectar-scrolling-text[data-s-speed="medium"]{--nst-dur:var(--loop-medium)}
+.nectar-scrolling-text[data-s-speed="fast"]{--nst-dur:var(--loop-fast)}
+.nectar-scrolling-text[data-mask-edges]{-webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+/* structure = nectar_scrolling_text.php: the strip (.nectar-scrolling-text-inner) holds identical chunks; each CHUNK runs the loop */
+.nectar-scrolling-text-inner{display:flex;width:max-content;translate:var(--nst-x,0px) 0}             /* Move on Scroll */
+.nectar-scrolling-text-inner > *{animation:nectar-scrolling-text-animation var(--nst-dur) linear infinite;will-change:transform}
+.nectar-scrolling-text[data-s-dir="rtl"] .nectar-scrolling-text-inner > *{animation-direction:reverse}
+.nectar-scrolling-text[data-s-speed="static"] .nectar-scrolling-text-inner > *{animation:none}
+@keyframes nectar-scrolling-text-animation{from{transform:translate3d(-20%,0,0)}to{transform:translate3d(-120%,0,0)}}
+.nectar-scrolling-text-inner__text-chunk{display:flex;align-items:center;flex:0 0 auto;white-space:nowrap}
+.nectar-scrolling-text-inner__text-chunk > *{margin:0;white-space:nowrap}
+.nectar-scrolling-text[style*="--fs:"] .nectar-scrolling-text-inner__text-chunk > *{font-size:var(--fs);line-height:1.08}
+@media (max-width:690px){.nectar-scrolling-text[style*="--fs-m:"] .nectar-scrolling-text-inner__text-chunk > *{font-size:var(--fs-m)}}
+/* Text Repeat Divider → Custom: span.custom[data-scale] > span inside the text element (Divider Size ½ / ¾ of the text) */
+.nectar-scrolling-text .custom{display:inline-block;vertical-align:middle;padding:0 var(--space);color:var(--divider-color);font-weight:400;line-height:1}
+.nectar-scrolling-text .custom[data-scale="half"]{font-size:.5em}
+.nectar-scrolling-text .custom[data-scale="three-fourths"]{font-size:.75em}
+.nectar-scrolling-text .custom > span{display:inline-block}
+.nectar-scrolling-text .custom.spin > span{transform:rotate(var(--spin,0deg))}
+.nectar-scrolling-text[data-outline] .nectar-scrolling-text-inner__text-chunk > *{color:transparent;-webkit-text-stroke:var(--stroke,1.5px) var(--outline-color,currentColor)}
+.nectar-scrolling-text[data-outline="ultra-thin"]{--stroke:.5px}.nectar-scrolling-text[data-outline="thin"]{--stroke:1px}
+.nectar-scrolling-text[data-outline="regular"]{--stroke:2px}.nectar-scrolling-text[data-outline="thick"]{--stroke:3px}
+.nectar-scrolling-text[data-outline] .custom{-webkit-text-stroke:0}
+.nectar-scrolling-text[data-outline-divider] .custom{color:transparent;-webkit-text-stroke:var(--stroke,1px) var(--divider-color)}
+
+/* ---------------- Badge (nectar_badge) ---------------- */
+.nectar-badge{display:flex;width:fit-content;align-items:center;gap:10px;color:var(--fg,var(--tone-label));
+  font:500 var(--label-size)/var(--label-lh) var(--f-label);letter-spacing:var(--label-ls);text-transform:uppercase}
+.nectar-badge[data-display="inline"]{display:inline-flex;vertical-align:middle}
+.nectar-badge[data-typography="body"]{font:500 15px/1.3 var(--f-text);letter-spacing:0;text-transform:none}
+.nectar-badge[data-typography="h6"]{font:var(--h6-w) var(--h6-size)/var(--h6-lh) var(--f-text);letter-spacing:var(--h6-ls);text-transform:none}
+.nectar-badge[style*="--fs:"]{font-size:var(--fs)}
+.nectar-badge[data-badge-style="line"]::before{content:"";flex:0 0 var(--line-w,28px);height:1px;background:currentColor}
+.nectar-badge[data-badge-style="default"]{background:var(--bg,transparent);border:var(--border,0);border-radius:var(--r,var(--r-badge));padding:.62em .95em}
+.nectar-badge[data-padding="small"]{padding:.5em .75em}.nectar-badge[data-padding="large"]{padding:.9em 1.4em}
+.nectar-badge[data-padding="none"]{padding:0}
+
+/* ---------------- Responsive Text · Price Typography ---------------- */
+.nectar-responsive-text{max-width:var(--max-w,none)}
+.nectar-responsive-text > *{margin:0}
+.nectar-responsive-text[data-inherit="h1"]{font:var(--h1-w) var(--h1-size)/var(--h1-lh) var(--f-display);letter-spacing:var(--h1-ls)}
+.nectar-responsive-text[data-inherit="h2"]{font:var(--h2-w) var(--h2-size)/var(--h2-lh) var(--f-display);letter-spacing:var(--h2-ls)}
+.nectar-responsive-text[data-inherit="h3"]{font:var(--h3-w) var(--h3-size)/var(--h3-lh) var(--f-display)}
+.nectar-responsive-text[data-inherit="h4"]{font:var(--h4-w) var(--h4-size)/var(--h4-lh) var(--f-display)}
+.nectar-responsive-text[data-inherit="h5"]{font:var(--h5-w) var(--h5-size)/var(--h5-lh) var(--f-text)}
+.nectar-responsive-text[data-inherit="h6"]{font:var(--h6-w) var(--h6-size)/var(--h6-lh) var(--f-text);letter-spacing:var(--h6-ls)}
+.nectar-responsive-text[data-inherit="small"]{font:400 15px/22px var(--f-text)}
+.nectar-responsive-text > p + p{margin-top:1em}
+.nectar-price-typography{display:flex;align-items:baseline;gap:.18em;font:var(--h2-w) var(--h2-size)/1 var(--f-display);letter-spacing:var(--h2-ls)}
+.nectar-price-typography[data-inherit="h1"]{font:var(--h1-w) var(--h1-size)/1 var(--f-display)}
+.nectar-price-typography .before-text,.nectar-price-typography .after-text{font-size:calc(1em * var(--scale,.36));font-family:var(--f-text);font-weight:500;letter-spacing:0;line-height:1.2}
+.nectar-price-typography .after-text{color:var(--tone-muted)}
+
+/* ---------------- Divider (divider) ---------------- */
+.divider-wrap{position:relative;display:flex;align-items:center;height:var(--h,28px);width:100%}
+@media (max-width:999px){.divider-wrap{height:var(--h-t,var(--h,28px))}}   /* Custom Height · tablet */
+@media (max-width:690px){.divider-wrap{height:var(--h-m,var(--h-t,var(--h,28px)))}}   /* Custom Height · phone */
+.divider-wrap[data-alignment="center"]{justify-content:center}
+.divider-wrap[data-alignment="right"]{justify-content:flex-end}
+.divider-wrap .divider-border{display:block;height:var(--thickness,1px);background:var(--line-color,var(--tone-hair));transform-origin:left center}
+.divider-wrap[data-line-type="full-width"] .divider-border{width:100%}
+.divider-wrap[data-line-type="small"] .divider-border{width:var(--line-w,50px);background:var(--line-color,var(--nectar-accent-color))}
+.divider-wrap[data-line-type="vertical"]{width:auto}
+.divider-wrap[data-line-type="vertical"] .divider-border{width:var(--thickness,1px);height:100%;transform-origin:center top}
+.divider-wrap[data-line-type="no-line"] .divider-border{display:none}
+.divider-wrap[data-alignment="center"] .divider-border{transform-origin:center}
+html.js .divider-wrap[data-animate] .divider-border{transform:scaleX(0);transition:transform var(--d-entrance) var(--e-entrance) var(--dd,0ms)}
+html.js .divider-wrap[data-animate][data-line-type="vertical"] .divider-border{transform:scaleY(0)}
+html.js .divider-wrap[data-animate].animated-in .divider-border{transform:none}
+.nectar-highlighted-text[style*="--fs:"] > *{font-size:var(--fs);line-height:var(--lh,1.15)}
+@media (max-width:690px){.nectar-highlighted-text[style*="--fs-m:"] > *{font-size:var(--fs-m)}}

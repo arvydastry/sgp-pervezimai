@@ -1,0 +1,122 @@
+/* =====================================================================================
+   emul/header.css — EMULATION of Theme Options → Header Navigation (Default Layout, Full
+   Width, Transparent → solid 90 % + blur, Resize On Scroll, Animated Underline, Header
+   Button „Button Shadow and Scale on Hover“, Dropdown/Mega Menu Fade In Up), the Global
+   Section location „In Navigation Top Before Scrolling“, the mobile header and the Off
+   Canvas Menu „Fullscreen Cover Split“. Not shipped.
+   ===================================================================================== */
+#header-outer{position:fixed;top:0;left:0;right:0;z-index:9998;color:var(--header-font);
+  transition:background-color .3s ease,box-shadow .3s ease,transform .3s ease}
+#header-outer::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--header-bg);opacity:1;
+  -webkit-backdrop-filter:blur(14px) saturate(1.1);backdrop-filter:blur(14px) saturate(1.1);transition:opacity .3s ease}
+#header-outer.transparent::before{opacity:0;-webkit-backdrop-filter:none;backdrop-filter:none}
+#header-outer.transparent{color:var(--header-start)}
+/* Global Section → Location: In Navigation Top Before Scrolling (hidden once the page scrolls) */
+#header-outer .nectar-global-section[data-location="nav-top-before-scroll"]{display:grid;grid-template-rows:1fr;overflow:hidden;transition:grid-template-rows .3s ease,opacity .3s ease}
+#header-outer .nectar-global-section[data-location="nav-top-before-scroll"] > *{min-height:0}
+#header-outer.scrolled-down .nectar-global-section[data-location="nav-top-before-scroll"]{grid-template-rows:0fr;opacity:0}
+#top{position:relative}
+#top > .container{max-width:none;padding-inline:var(--container-pad)}
+#header-outer[data-full-width="true"] #top > .container{padding-inline:clamp(20px,3.5vw,56px)}
+#top .row{display:flex;align-items:center;justify-content:space-between;gap:24px;height:var(--header-h);transition:height .3s ease}
+#header-outer.small-nav #top .row{height:var(--header-h-small)}
+#logo{display:inline-flex;align-items:center;flex:0 0 auto}
+#logo img{height:var(--logo-h);width:auto;transition:height .3s ease}
+#header-outer.small-nav #logo img{height:var(--logo-h-small)}
+#top .col.span_9{display:flex;align-items:center;justify-content:flex-end;gap:14px;flex:1}
+#top nav{display:flex;align-items:center}
+/* menu items */
+.sf-menu{display:flex;align-items:center;gap:0;margin:0;padding:0;list-style:none}
+.sf-menu > li{position:relative;display:flex;align-items:center;height:var(--header-h);transition:height .3s ease}
+#header-outer.small-nav .sf-menu > li{height:var(--header-h-small)}
+.sf-menu > li > a{position:relative;display:inline-flex;align-items:center;gap:8px;padding:10px 13px;color:inherit;font:var(--nav-w) var(--nav-size)/1 var(--f-text);letter-spacing:var(--nav-ls);transition:color .2s ease}
+.sf-menu > li > a:hover,.sf-menu > li > a:focus-visible{color:var(--header-font-hover)}
+/* Header Link Hover/Active Effect → Animated Underline (.35s cubic-bezier(.52,.01,.16,1)) */
+#header-outer[data-lhe="animated_underline"] .sf-menu > li:not([class*="menu-item-btn-style"]) > a .menu-title-text{position:relative}
+#header-outer[data-lhe="animated_underline"] .sf-menu > li:not([class*="menu-item-btn-style"]) > a .menu-title-text::after{content:"";position:absolute;left:0;right:0;bottom:-6px;height:2px;
+  background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform var(--d-nav) var(--e-nav)}
+#header-outer[data-lhe="animated_underline"] .sf-menu > li > a:hover .menu-title-text::after,
+#header-outer[data-lhe="animated_underline"] .sf-menu > li > a:focus-visible .menu-title-text::after,
+#header-outer[data-lhe="animated_underline"] .sf-menu > li.sfHover > a .menu-title-text::after,
+#header-outer[data-lhe="animated_underline"] .sf-menu > li > a[aria-current] .menu-title-text::after{transform:scaleX(1);transform-origin:left}
+.sf-menu .sf-arrow{width:9px;height:9px;fill:none;stroke:currentColor;stroke-width:1.6;opacity:.7;transition:transform .3s ease}
+.sf-menu > li.sfHover .sf-arrow{transform:rotate(180deg)}
+/* Menu Item Link Button Style → Button Accent Color · Header Button Link Style → Button Shadow and Scale on Hover */
+.sf-menu > li[class*="menu-item-btn-style-button"]{margin-left:10px}
+.sf-menu > li.menu-item-btn-style-button_accent-color > a{padding:0 18px;min-height:40px;border-radius:var(--nectar-border-radius);background:var(--nectar-accent-color);
+  color:var(--sgp-asphalt-900);font-weight:600;transition:transform .3s cubic-bezier(.25,1,.33,1),box-shadow .3s cubic-bezier(.25,1,.33,1),background-color .3s ease}
+.sf-menu > li.menu-item-btn-style-button_accent-color > a:hover,.sf-menu > li.menu-item-btn-style-button_accent-color > a:focus-visible,
+.sf-menu > li.menu-item-btn-style-button_accent-color.sfHover > a{color:var(--sgp-asphalt-900);transform:scale(1.05);box-shadow:0 12px 28px rgba(0,0,0,.28)}
+.nectar-menu-icon{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
+/* Dropdown / Mega Menu → Fade In Up · Roundness 3 · Shadow Large · Megamenu Removes Transparent Header */
+.sf-menu .sub-menu{position:absolute;top:100%;z-index:10;background:var(--dropdown-bg);color:var(--dropdown-font);border-radius:var(--r-dropdown);
+  box-shadow:0 30px 70px rgba(0,0,0,.35),0 10px 25px rgba(0,0,0,.2);opacity:0;visibility:hidden;transform:translateY(12px);
+  transition:opacity .3s ease,transform .45s var(--e-btn),visibility 0s .45s}
+.sf-menu > li.sfHover > .sub-menu{opacity:1;visibility:visible;transform:none;transition-delay:0s}
+.sf-menu > li.megamenu[data-mega-width="100%"]{position:static}
+.sf-menu > li.megamenu[data-mega-width="100%"] > .sub-menu{left:clamp(20px,3.5vw,56px);right:clamp(20px,3.5vw,56px);top:calc(100% - 6px)}
+.sf-menu > li.megamenu[data-mega-width="x2"] > .sub-menu{width:min(520px,90vw);right:0}
+#header-outer.transparent.megamenu-open::before{opacity:1}
+.sf-menu .sub-menu .nectar-global-section{padding:0}
+
+/* ---- mobile header (Mobile breakpoint 1000) ---- */
+.slide-out-widget-area-toggle{display:none}
+.slide-out-widget-area-toggle button{position:relative;display:grid;place-items:center;width:44px;height:44px;padding:0;border:0;border-radius:50%;
+  background:var(--sgp-asphalt-800);color:var(--sgp-snow)}
+.lines-button{position:relative;display:block;width:20px;height:12px}
+.lines-button::before,.lines-button::after{content:"";position:absolute;left:0;width:100%;height:1.5px;background:currentColor;transition:transform .45s var(--e-btn),top .45s var(--e-btn)}
+.lines-button::before{top:2px}.lines-button::after{top:9px}
+body.off-canvas-open .lines-button::before{top:5.5px;transform:rotate(45deg)}
+body.off-canvas-open .lines-button::after{top:5.5px;transform:rotate(-45deg)}
+@media (max-width:999px){
+  :root{--header-h:64px;--header-h-small:60px;--logo-h-small:24px}
+  #logo img{height:var(--logo-h-m)}
+  .sf-menu > li:not([data-persist-mobile]){display:none}
+  .sf-menu > li[class*="menu-item-btn-style-button"]{margin-left:0}
+  .sf-menu > li > .sub-menu{display:none}
+  .sf-menu > li.menu-item-btn-style-button_accent-color > a{min-height:44px;padding:0 14px}
+  .slide-out-widget-area-toggle{display:block}
+  #top .col.span_9{gap:10px}
+}
+@media (max-width:380px){.sf-menu > li.menu-item-btn-style-button_accent-color .menu-title-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+  .sf-menu > li.menu-item-btn-style-button_accent-color > a{width:44px;padding:0;justify-content:center}}
+
+/* ---------------- Off Canvas Menu Style → Fullscreen Cover Split ---------------- */
+#slide-out-widget-area.fullscreen-split{position:fixed;inset:0;z-index:9997;background:var(--offcanvas-bg);color:var(--offcanvas-font);
+  visibility:hidden;opacity:0;transition:opacity .5s var(--e-card),visibility 0s .5s;overflow-y:auto;overscroll-behavior:contain}
+body.off-canvas-open #slide-out-widget-area.fullscreen-split{visibility:visible;opacity:1;transition-delay:0s}
+#slide-out-widget-area .inner-wrap{display:grid;grid-template-columns:1.1fr 1fr;min-height:100%;padding:calc(var(--header-h) + var(--ticker-h) + 24px) var(--container-pad) 48px}
+#slide-out-widget-area .left-side{padding-right:4vw}
+#slide-out-widget-area .right-side{padding-left:4vw;border-left:1px solid var(--sgp-hair-d);opacity:0;transform:translateY(35px);
+  transition:opacity var(--d-offcanvas) var(--e-card),transform var(--d-offcanvas) var(--e-card)}
+body.off-canvas-open #slide-out-widget-area .right-side{opacity:1;transform:none;transition-delay:.3s}
+.off-canvas-menu-container{margin:0;padding:0;list-style:none}
+.off-canvas-menu-container li{overflow:hidden}
+.off-canvas-menu-container a{display:inline-block;padding:4px 0;font:600 var(--oc-nav-size)/var(--oc-nav-lh) var(--f-display);color:inherit;transform:translateY(105%);
+  transition:transform var(--d-offcanvas) var(--e-card),color .37s var(--e-nav),opacity .37s var(--e-nav);transition-delay:calc(var(--i,0) * 20ms)}
+body.off-canvas-open .off-canvas-menu-container a{transform:none;transition-delay:calc(.12s + var(--i,0) * 20ms)}
+.off-canvas-menu-container:hover a{opacity:.5}
+.off-canvas-menu-container a:hover,.off-canvas-menu-container a:focus-visible{opacity:1}
+.off-canvas-menu-container a[aria-current]{color:var(--nectar-accent-color)}
+.off-canvas-menu-container .sub{padding:0 0 10px 2px}
+.off-canvas-menu-container .sub a{font:500 18px/1.35 var(--f-text)}
+body.off-canvas-open #header-outer::before{opacity:0}
+body.off-canvas-open #header-outer .nectar-global-section[data-location="nav-top-before-scroll"]{grid-template-rows:0fr;opacity:0}
+@media (max-width:690px){
+  #slide-out-widget-area .inner-wrap{grid-template-columns:1fr;row-gap:36px;padding-top:calc(var(--header-h) + 24px)}
+  #slide-out-widget-area .left-side{padding-right:0}
+  #slide-out-widget-area .right-side{padding-left:0;padding-top:28px;border-left:0;border-top:1px solid var(--sgp-hair-d)}
+}
+@media (min-width:1000px){#slide-out-widget-area{display:none}}
+
+/* ---- Back To Top Button (Theme Options → Functionality; Keep On Mobile off → hidden ≤ 1020 px) — in after 350 px scroll,
+   .35s easeInOutCubic in / easeInOutQuint out (18.2.1 init.js) ---- */
+#to-top{position:fixed;right:24px;bottom:24px;z-index:9400;display:grid;place-items:center;width:44px;height:44px;border-radius:var(--nectar-border-radius,3px);
+  background:rgba(15,20,23,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--sgp-snow);box-shadow:0 10px 30px rgba(0,0,0,.25);
+  transform:translateY(calc(100% + 34px));transition:transform .35s cubic-bezier(.86,0,.07,1),background-color .3s ease,color .3s ease}
+#to-top.visible{transform:none;transition-timing-function:cubic-bezier(.645,.045,.355,1),ease,ease}
+#to-top:hover,#to-top:focus-visible{background:var(--nectar-accent-color);color:var(--sgp-asphalt-900)}
+#to-top svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8}
+body.off-canvas-open #to-top{visibility:hidden}
+@media (max-width:1020px){#to-top{display:none}}
+

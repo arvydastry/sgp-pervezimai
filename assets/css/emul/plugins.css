@@ -1,0 +1,40 @@
+/* =====================================================================================
+   emul/plugins.css — EMULATION of the plugins' own base CSS (Fluent Forms, Complianz,
+   Yoast breadcrumbs). Not shipped — the plugins load it. Layout only; the SGP look comes
+   from Salient Form Styling (interactive.css) + sgp-custom.css C-6 / C-9.
+   ===================================================================================== */
+/* ---- Fluent Forms ---- */
+.fluentform{position:relative}
+.fluentform .ff-el-group{margin-bottom:22px}
+.fluentform .ff-el-input--label{margin-bottom:6px}
+.fluentform .ff-el-input--label label{display:inline-block}
+.fluentform .ff-el-input--label.ff-el-is-required label::after{content:" *";color:var(--nectar-accent-color)}
+.fluentform .ff-t-container{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.fluentform .ff-el-form-check{display:flex;gap:12px;align-items:flex-start;font-size:15px;line-height:22px}
+.fluentform .error.text-danger{display:none;margin-top:6px;font-size:14px;line-height:20px}
+.fluentform .ff-el-is-error .error.text-danger{display:block}
+.fluentform .ff_submit_btn_wrapper{margin-top:30px}
+.fluentform .ff-btn-submit{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:14px 28px;border:0;border-radius:var(--nectar-border-radius);
+  background:var(--nectar-accent-color);color:var(--sgp-asphalt-900);font:var(--btn-w) var(--btn-size)/1 var(--f-text);letter-spacing:var(--btn-ls);
+  transition:transform var(--d-btn) var(--e-btn),box-shadow var(--d-btn) var(--e-btn),background-color var(--d-btn) var(--e-btn)}
+.fluentform .ff-btn-submit:hover{background:var(--sgp-red-lit)}
+.ff-message-success{padding:22px 24px;border-left:2px solid var(--nectar-accent-color);background:var(--tone-surface-2);font-weight:500}
+.ff-message-success small{display:block;margin-top:6px;font-weight:400;color:var(--tone-muted)}
+@media (max-width:690px){.fluentform .ff-t-container{grid-template-columns:1fr}}
+
+/* ---- Complianz cookie banner (plugin layout) ---- */
+.cmplz-cookiebanner{position:fixed;left:16px;bottom:16px;z-index:9600;width:min(420px,calc(100vw - 32px));padding:22px 22px 20px;
+  background:#fff;color:#222;box-shadow:0 20px 50px rgba(0,0,0,.25);display:grid;gap:12px}
+.cmplz-cookiebanner[hidden]{display:none}
+.cmplz-cookiebanner .cmplz-title{font-weight:600}
+.cmplz-cookiebanner .cmplz-message{font-size:15px;line-height:22px}
+.cmplz-cookiebanner .cmplz-buttons{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:4px}
+.cmplz-cookiebanner .cmplz-btn{min-height:44px;padding:0 18px;border:1px solid transparent;font:600 15px/1 var(--f-text)}
+.cmplz-cookiebanner .cmplz-link{font-size:15px;text-decoration:underline;text-underline-offset:.2em}
+@media (max-width:999px){.cmplz-cookiebanner{bottom:calc(16px + var(--callbar-h,0px))}}
+
+/* ---- Yoast SEO breadcrumbs ([wpseo_breadcrumb]) ---- */
+.yoast-breadcrumbs{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center}
+.yoast-breadcrumbs a{opacity:.72;transition:opacity .2s ease}
+.yoast-breadcrumbs a:hover{opacity:1}
+.yoast-breadcrumbs .sep{opacity:.5}

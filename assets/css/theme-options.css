@@ -1,0 +1,107 @@
+/* =====================================================================================
+   theme-options.css — DEMO STAND-IN for Salient 18.2.1 → Theme Options (not custom code)
+   Every value below is typed into a Theme Options field in production (plan §2.1–2.7).
+   Names prefixed --nectar-* are the ones Salient itself exposes; --sgp-* is the extended
+   v2 palette used as custom colours inside element options. Every emul/*.css file, the
+   custom layer and every page read ONLY these variables.
+   ===================================================================================== */
+:root{
+  /* General Settings → Accent Colors */
+  --nectar-accent-color:#EF4539;  --nectar-extra-color-1:#0F1417;
+  --nectar-extra-color-2:#F5F7F6; --nectar-extra-color-3:#C4301E;
+  --nectar-gradient-1:linear-gradient(90deg,#EF4539,#C4301E);         /* Theme Color Gradient (reserved) */
+  --nectar-gradient-2:linear-gradient(90deg,#0B0E10,#161D21);         /* Theme Color Gradient #2 (reserved) */
+  /* Styling → Primary Background / Text (Color Change Section rewrites the --nectar-page-* pair) */
+  --nectar-bg-color:#F5F7F6; --nectar-font-color:#1C1D1D; --nectar-font-color-light:#F2F4F3;
+  --nectar-page-background-color:var(--nectar-bg-color); --nectar-page-text-color:var(--nectar-font-color);
+
+  /* extended v2 palette (custom colours inside element options) */
+  --sgp-asphalt-950:#0B0E10; --sgp-asphalt-900:#0F1417; --sgp-asphalt-800:#161D21; --sgp-asphalt-750:#1A2227; --sgp-asphalt-700:#222B30;
+  --sgp-paper-50:#F5F7F6; --sgp-paper-100:#EAEEED; --sgp-paper-200:#D9DFDE; --sgp-paper-300:#C3CBCB; --sgp-white:#FFFFFF;
+  --sgp-ink:#1C1D1D; --sgp-ink-2:#4A5358; --sgp-snow:#F2F4F3; --sgp-fog:#9AA6AB;
+  --sgp-red:#EF4539; --sgp-red-ink:#C4301E; --sgp-red-lit:#F4604F;
+  --sgp-hair-l:rgba(28,29,29,.12); --sgp-hair-l-2:rgba(28,29,29,.26);
+  --sgp-hair-d:rgba(242,244,243,.12); --sgp-hair-d-2:rgba(242,244,243,.26);
+  --sgp-glass:rgba(11,14,16,.55); --sgp-scrim:rgba(11,14,16,.72);
+
+  /* Typography (Theme Options → Typography; Fluid Typography OFF, root 16px) */
+  --f-display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --f-text:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-label:"IBM Plex Mono",ui-monospace,Menlo,Consolas,monospace;   /* Form and Category Labels */
+  --h1-size:80px; --h1-lh:76px; --h1-w:600; --h1-ls:-1px;
+  --h2-size:64px; --h2-lh:64px; --h2-w:500; --h2-ls:-.5px;
+  --h3-size:36px; --h3-lh:38px; --h3-w:600; --h3-ls:0px;
+  --h4-size:24px; --h4-lh:26px; --h4-w:600; --h4-ls:0px;
+  --h5-size:20px; --h5-lh:30px; --h5-w:500;
+  --h6-size:15px; --h6-lh:20px; --h6-w:600; --h6-ls:.2px;
+  --body-size:17px; --body-lh:27.5px;
+  --label-size:12px; --label-lh:16px; --label-ls:1px;                /* uppercase, Plex Mono 500 */
+  --nav-size:15px; --nav-w:500; --nav-ls:.2px;
+  --btn-size:16px; --btn-w:600; --btn-ls:.2px;                       /* Nectar Button slot */
+  --oc-nav-size:40px; --oc-nav-lh:42px;                               /* Off Canvas Navigation (phones 34px) */
+  --heading-mb:0px; --p-pb:0px;                                       /* Typography → Spacing (column element spacing handles rhythm) */
+
+  /* General Settings → Functionality / Styling */
+  --container:1320px; --container-pad:55px;   /* Max Website Container Width 1430 (min 1425) · Container Left/Right Padding 55 (step 5) → 1430 − 2 × 55 = 1320 content · mobile 20px */
+  --column-spacing:30px;
+  --nectar-border-radius:3px;                                         /* Button Styling: Slightly Rounded W/ Shadow · Button Roundness 3 */
+  --r-col:3px; --r-img:0px; --r-badge:3px; --r-toggle:3px; --r-dropdown:3px; --r-sticky:3px;
+  --btn-lift:translateY(-3px); --btn-lift-shadow:0 20px 38px rgba(0,0,0,.16);
+  --underline-thickness:1px;                                          /* Animated Underline Type: Left to Right Fancy · 1 */
+
+  /* Header Navigation */
+  --header-h:84px; --header-h-small:70px; --header-pad:27px; --logo-h:30px; --logo-h-small:24px; --logo-h-m:26px;
+  --header-bg:rgba(15,20,23,.9); --header-font:#F2F4F3; --header-font-hover:#FFFFFF; --header-start:#FFFFFF;
+  --dropdown-bg:#0F1417; --dropdown-font:#F2F4F3; --dropdown-hover:#FFFFFF; --offcanvas-bg:#0B0E10; --offcanvas-font:#F2F4F3;
+  --ticker-h:40px;                                                    /* GS-Išvykimai (In Navigation Top Before Scrolling) */
+
+  /* Motion — Salient 18.2.1 real values (plan §2.6, P§3) */
+  --nectar-cubic-bezier-out:cubic-bezier(.3,1,.3,1); --nectar-cubic-bezier-in-out:cubic-bezier(.76,0,.24,1);
+  --nectar-header-hover-timing:.65s; --page-color-change-section-transition-time:.8s;
+  --e-entrance:cubic-bezier(.19,1,.22,1);  --d-entrance:1300ms; --d-entrance-opacity:500ms;   /* easeOutExpo · 1300 */
+  --e-mask:cubic-bezier(.19,1,.22,1);      --d-mask:1.3s;
+  --e-rotate:cubic-bezier(.2,.65,.3,1);    --d-rotate:2.3s;
+  --e-text:cubic-bezier(.25,1,.5,1);       --d-text:1.2s;
+  --e-btn:cubic-bezier(.25,1,.33,1);       --d-btn:.45s;
+  --e-arrow:cubic-bezier(.12,.75,.4,1);    --d-arrow:.55s;
+  --e-wave:cubic-bezier(.46,.4,.56,.87);   --d-wave:.5s; --st-wave:15ms;
+  --e-underline:cubic-bezier(.23,.46,.4,1); --d-underline:.4s;
+  --e-nav:cubic-bezier(.52,.01,.16,1);     --d-nav:.35s;
+  --e-hover:cubic-bezier(.05,.2,.1,1);     --d-hover:.65s;
+  --e-card:cubic-bezier(.2,.75,.5,1);      --d-card:.75s;  --d-offcanvas:.85s;
+  --e-hli:cubic-bezier(.2,0,.15,1);        --d-hli:.4s;
+  --e-highlight:cubic-bezier(.15,.75,.4,1); --d-highlight:.9s;
+  --e-toggle:var(--nectar-cubic-bezier-in-out); --d-toggle:.85s;
+  --e-tab:cubic-bezier(.12,.75,.4,1);      --d-tab:.3s;
+  --e-switch:cubic-bezier(.23,.46,.4,1);   --d-switch:.45s;
+  --e-zoom:cubic-bezier(.1,.55,.4,1);      --d-zoom:2.5s;
+  --e-zoom-slow:cubic-bezier(.1,.2,.7,1);  --d-zoom-slow:8s;
+  --e-zoom-reveal:cubic-bezier(.12,.75,.4,1); --d-zoom-reveal:1.3s;
+  --e-clip-first:cubic-bezier(.25,.1,.18,1); --e-clip:cubic-bezier(.6,.06,.18,1);
+  --e-blur-digit:cubic-bezier(0,0,.17,1);  --d-blur-digit:.65s;
+  --e-vt:cubic-bezier(.55,0,.1,1);         --d-vt:1.3s;
+  --parallax-subtle:.2; --parallax-regular:.28; --parallax-medium:.4; --parallax-high:.6;
+  --parallax-very-subtle:.12; --parallax-minimum:.09;
+  --d-milestone:2.2s; --lenis-lerp:.153;                              /* Smooth Scrolling strength 60 */
+  --loop-slowest:45s; --loop-slower:30s; --loop-slow:14s; --loop-medium:7s; --loop-fast:4s;
+
+  /* Shadow presets (Column / Image "Box Shadow") */
+  --shadow-small:0 1px 0 rgba(0,0,0,.04),0 2px 7px rgba(0,0,0,.05),0 12px 22px rgba(0,0,0,.06);
+  --shadow-medium:0 30px 80px rgba(0,0,0,.14),0 20px 70px rgba(0,0,0,.12);
+  --shadow-large:0 40px 100px rgba(0,0,0,.15),0 25px 80px rgba(0,0,0,.1);
+  --shadow-x-large:0 60px 135px rgba(0,0,0,.14),0 15px 65px rgba(0,0,0,.14);
+}
+/* Custom Responsive Headings: small desktop 1000–1299 (90 / 90 / 92 %) */
+@media (min-width:1000px) and (max-width:1299px){
+  :root{--h1-size:72px;--h1-lh:68px;--h2-size:57.6px;--h2-lh:58px;--h3-size:33px;--h3-lh:35px}
+}
+/* tablet 691–999 (72 / 78 / 86 %) · container padding Mobile: Pixels 20 */
+@media (max-width:999px){
+  :root{--container-pad:20px;--h1-size:57.6px;--h1-lh:55px;--h2-size:49.9px;--h2-lh:50px;--h3-size:31px;--h3-lh:33px}
+}
+/* phone ≤ 690 (52 / 56 / 74 / 92 / 90 / 94 %) */
+@media (max-width:690px){
+  :root{--h1-size:41.6px;--h1-lh:40px;--h2-size:35.8px;--h2-lh:36px;--h3-size:26.6px;--h3-lh:29px;
+    --h4-size:22px;--h4-lh:25px;--h5-size:18px;--h5-lh:27px;--body-size:16px;--body-lh:26px;
+    --oc-nav-size:34px;--oc-nav-lh:37px;--logo-h:26px}
+}

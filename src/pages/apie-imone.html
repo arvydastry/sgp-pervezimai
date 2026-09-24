@@ -2,191 +2,277 @@
 title: Apie įmonę | sgp-pervezimai.lt
 description: „SGP“ – esame įmonė įsikūrusi Lietuvoje, kuri užsiima keleivių, siuntų ir automobilių pervežimu Lietuva – Ispanija – Lietuva, Lietuva – Airija – Lietuva ir kitas Europos šalis (Vokietiją, Prancūziją).
 out: apie-imone/index.html
+kit: salient
 body_class: page-apie
 nav: apie
 og_image: 9989463
 hero_media: 9989463
-css: pages/apie.css
-js: pages/apie.js
 vendor: flickity
-salient: Page „Apie įmonę“ (§6.2) · Route header → 01 Įmonė → 02 Principai (Sticky Scroll Pinned Sections: Stacking) → 03 Kelyje (Image Gallery: Flickity) → 04 GS-Trust → GS-Board → GS-Arrival (Before Footer)
+salient: Page „Apie įmonę“ (plan §3.4) · A1 Inner head + glass band (GS-Artimiausi) → A2 Clip Path Inset photo band → A3 Įmonė (P · Highlighted Text · Cascading Images · KV rows) → A6 Milestones (photo band) → A7 Principai (Sticky Scroll Pinned Sections · Scale · Stacked) → A8 Kelyje (Scrolling Text + Image Gallery Flickity) → A9 GS-Pasitikėjimas → GS-Kvietimas
 ---
-<!-- ============ ROUTE HEADER (§4.17) ============ -->
-<section class="sgp-phero ab-hero on-dark" data-hero data-theme="dark" data-salient="Row Full Width · Route header (§4.17) · BG image 9989463 (crop 50% 60%) + Parallax BG: Subtle + BG Layer Animation: Slight Zoom Out Reveal · Color Overlay (§2.8) · Text Color Light · H1 Animated Text → Word Reveal">
-  <div class="sgp-bgmedia" data-parallax="0.12" aria-hidden="true">{{img:9989463|w=1920|sizes=100vw|eager|decorative|pos=50% 60%}}</div>
-  <div class="sgp-wrap sgp-wrap--zone sgp-phero__in">
-    <div class="sgp-phero__copy">
-      <nav class="sgp-crumbs" aria-label="Kelias"><ol><li><a href="{{url:pradzia}}">Pradžia</a></li><li aria-current="page">Apie įmonę</li></ol></nav>
-      <p class="sgp-phero__eyebrow sgp-mono"><span class="sgp-ring"></span>Saugiai greitai patikimai</p>
-      <h1 class="sgp-phero__h1" data-split>Apie įmonę</h1>
-      <p class="sgp-phero__lead sgp-lead" data-reveal style="--dl:.3s">SGP – visos pervežimo paslaugos</p>
-      <ul class="sgp-chips" data-reveal style="--dl:.4s" data-salient="Text Block · chips (.sgp-chips)"><li>Nuo durų iki durų</li><li>Lietuva – Airija – Lietuva</li><li>Lietuva – Ispanija – Lietuva</li></ul>
-      {{grafikas:next}}
-    </div>
-    {{partial:phero-calls}}
-  </div>
-</section>
-
-<!-- ============ 01 · ĮMONĖ ============ -->
-<section class="sgp-sec ab-co on-light paper sgp-has-rail" id="imone" data-theme="light" data-salient="Row: Full Width Background · bg #F5F7F6 · Extra Class sgp-light sgp-graticule sgp-has-rail · Text Color Dark · Column 7/12 (copy) + Column 4/12 offset 1 (Sticky Content, CSS Top 120)">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">01</span><span class="sgp-mono">Įmonė</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">LT ⇄ IE · LT ⇄ ES</span></div>
-    <div class="ab-co__grid">
-      <div class="ab-co__copy">
-        <h2 class="sgp-sr">Apie mus</h2>
-        <p class="sgp-statement ab-co__st" data-reveal data-salient="Text Block (statement) + Highlighted Text: Regular Underline · #EF4539 · 3 px (draws on enter)"><b>„SGP“</b> – esame įmonė įsikūrusi Lietuvoje, kuri užsiima keleivių, siuntų ir automobilių pervežimu <mark class="sgp-mark">Lietuva – Ispanija – Lietuva</mark>, <mark class="sgp-mark">Lietuva – Airija – Lietuva</mark> ir kitas Europos šalis (<b>Vokietiją, Prancūziją</b>).</p>
-        <p class="sgp-lead ab-co__body" data-reveal style="--dl:.1s">Nuo pirmos darbo dienos savo klientams užtikriname ne tik saugų, greitą bei patikimą pervežimą, bet ir malonų bendravimą su kvalifikuota bei patyrusia komanda.</p>
-        <div class="ab-promise" data-reveal style="--dl:.15s" data-salient="Text Block (display) + Divider (line animation) as a mini route: origin ring → lane → destination ring">
-          <p class="ab-promise__route" aria-hidden="true"><span class="sgp-ring"></span><span class="sgp-lane"><i></i></span><span class="sgp-ring sgp-ring--fill ab-promise__end"></span></p>
-          <p class="ab-promise__t">Mes visada pasiruošę teikti kokybiškas transporto paslaugas už Jums prieinamą kainą!</p>
-        </div>
-        <div class="sgp-btns ab-co__btns" data-reveal style="--dl:.2s" data-salient="Button (Signal, Arrow Animation) + Button Underline — live „Pervežimo paslaugos“ block under the text">
-          <a class="sgp-btn sgp-btn--signal" href="{{url:paslaugos}}"><span class="sgp-btn__l">Pervežimo paslaugos</span><span class="sgp-btn__a"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></span></a>
-          <a class="sgp-lnk" href="{{url:tarptautiniai}}">Tarptautiniai pervežimai<svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></a>
-        </div>
-      </div>
-      <div class="ab-co__side">
-        <div class="sgp-sticky ab-co__sticky">
-          <dl class="sgp-kv ab-co__kv" data-reveal style="--dl:.15s" data-salient="Text Block + Extra Class .sgp-kv (dl / dt / dd) · rows fade up 60 ms">
-            <dt>Veikla</dt><dd>Keleivių, siuntų ir automobilių pervežimas</dd>
-            <dt>Kryptys</dt><dd>Lietuva – Airija – Lietuva<br>Lietuva – Ispanija – Lietuva</dd>
-            <dt>Taip pat</dt><dd>Vokietija, Prancūzija</dd>
-            <dt>Principas</dt><dd>Nuo durų iki durų</dd>
-            <dt>Draudimas</dt><dd>Kroviniai ir keleiviai kelionės metu apdrausti</dd>
-            <dt>Vairuotojai</dt><dd>Laikosi privalomo darbo ir poilsio režimo</dd>
-          </dl>
+<!-- ================= A1 · Inner head (plan §3.3, Architect „About“ structure) + glass band ================= -->
+<div class="wpb_row sgp-dark" data-type="full_width_background" data-text-color="light" data-column-align="bottom" data-parallax-speed="fast" data-bg-animation="slight-zoom-out-reveal" style="--bg:#0F1417;--pt:184px;--pb:48px;--pt-t:168px;--pt-m:128px;--pb-m:32px" data-salient="Row → Inner head · Type: Full Width Background · BG #0F1417 + Background Image 9989463 (position 50 % 60 %) · Parallax Background Media On Scroll ✓ → Speed: Subtle (0.20) · Background Layer Animation: Slight Zoom Out Reveal (1.3 s) · Color Overlay: Advanced (v2 hero grade) · Text Color: Light · Vertically Align Columns: Bottom · Padding 184px / 48px (tablet 168px, phone 128px / 32px) · Extra Class sgp-dark">
+  {{bgimg:9989463|w=1920|eager|pos=50% 60%|overlay=linear-gradient(0deg,rgba(15,20,23,.94) 0%,rgba(15,20,23,.2) 52%),linear-gradient(90deg,rgba(15,20,23,.9) 0%,rgba(15,20,23,.62) 44%,rgba(15,20,23,.18) 82%)}}
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-8" data-t-w="12" data-el-space="10px" data-salient="Column 8/12 → Column Element Spacing: 10px · breadcrumbs, Label, Animated Text H1, Road line, Intro, Chips">
+      <div class="vc_column-inner">
+        <p class="nectar-inherit-label yoast-breadcrumbs" data-salient="Text Block [wpseo_breadcrumb] · Extra Class nectar-inherit-label (Label typography)"><a href="{{url:pradzia}}">Pradžia</a><span class="sep" aria-hidden="true">/</span><span aria-current="page">Apie įmonę</span></p>
+        <span class="nectar-badge" data-badge-style="line" style="--mt:34px;--fg:#F2F4F3" data-salient="Badge → Badge Style: Minimal Line · Line Width 28px · Inherit Typography From: Label · Badge Text Color #F2F4F3 (on the hero photo)">Saugiai greitai patikimai</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--fs:6.4vw;--fs-min:44px;--fs-max:104px;--lh:.92;--mt:14px" data-salient="Animated Text → Text Element: H1 · Text Effect: Word Animations: Reveal · Stagger Animation ✓ · Font sizing: 6.4vw, min 44px, max 104px, line height .92"><h1>Apie įmonę</h1></div>
+        <div class="divider-wrap" data-line-type="small" data-animate data-delay="400" style="--line-w:96px;--thickness:2px;--h:22px" data-salient="Divider → Line Type: Small Line · Custom Line Width 96px · Line Thickness 2px · Color: Accent · Animate Line ✓ (Road line)"><span class="divider-border"></span></div>
+        <p class="nectar-responsive-text" data-inherit="h5" style="--fg:#F2F4F3;--max-w:40ch" data-salient="Responsive Text → Font Style: H5 · Color #F2F4F3 (Intro on photo)">SGP – visos pervežimo paslaugos</p>
+        <div class="vc_row inner_row" style="--mt:18px" data-salient="Inner Row → 1 × Inner Column (chips)">
+          <div class="row_col_wrap_12_inner">
+            <div class="wpb_column vc_col-sm-12" data-layout="flex" data-flex-dir="row" style="--gap:8px" data-salient="Inner Column → Layout: Flexbox · Direction: Row · Wrap · Gap 8px">
+              <div class="vc_column-inner">
+                <span class="nectar-badge" data-badge-style="default" data-display="inline" data-padding="small" data-backdrop-blur="12" style="--bg:rgba(11,14,16,.4);--border:1px solid rgba(242,244,243,.26);--fg:#F2F4F3;--r:3px" data-salient="Badge → Chip: Badge Style Default · BG rgba(11,14,16,.4) · Border 1px rgba(242,244,243,.26) · Padding Small · Border Radius 3px · Backdrop Filter: Blur 12">Nuo durų iki durų</span>
+                <span class="nectar-badge" data-badge-style="default" data-display="inline" data-padding="small" data-backdrop-blur="12" style="--bg:rgba(11,14,16,.4);--border:1px solid rgba(242,244,243,.26);--fg:#F2F4F3;--r:3px" data-salient="Badge → Chip (on photo)">Lietuva – Airija – Lietuva</span>
+                <span class="nectar-badge" data-badge-style="default" data-display="inline" data-padding="small" data-backdrop-blur="12" style="--bg:rgba(11,14,16,.4);--border:1px solid rgba(242,244,243,.26);--fg:#F2F4F3;--r:3px" data-salient="Badge → Chip (on photo)">Lietuva – Ispanija – Lietuva</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="ab-stats" data-stagger="150" data-salient="Milestone ×4 · Animation Effect: Motion Blur Slide In · delays 0/150/300/450 ms · „3–4“ = Milestone None + Animated Text · 1 px top rule + 28×3 px red marker">
-      <div class="ab-stat" data-reveal><p class="ab-stat__lbl sgp-mono">Kryptys</p><p class="ab-stat__num"><span data-reel="2">2</span></p><p class="ab-stat__cap">Airija ir Ispanija – iš Lietuvos ir atgal</p></div>
-      <div class="ab-stat" data-reveal><p class="ab-stat__lbl sgp-mono">Paslaugos</p><p class="ab-stat__num"><span data-reel="11">11</span></p><p class="ab-stat__cap">tarptautinių pervežimo paslaugų</p></div>
-      <div class="ab-stat" data-reveal><p class="ab-stat__lbl sgp-mono">Kelyje</p><p class="ab-stat__num"><span data-reel="3–4">3–4</span></p><p class="ab-stat__cap">paros nuo paėmimo dienos</p></div>
-      <div class="ab-stat" data-reveal><p class="ab-stat__lbl sgp-mono">Pakeliui</p><p class="ab-stat__num"><span data-reel="4">4</span></p><p class="ab-stat__cap">šalys: Lenkija, Vokietija, Belgija, Prancūzija</p></div>
+    <div class="wpb_column vc_col-sm-3 vc_col-sm-offset-1" data-t-w="12" data-el-space="none" data-animation="slight-fade-in-from-bottom" data-delay="360" data-hide="phone" data-salient="Column 3/12 (offset 1) → section links (Architect inner head) · Column Element Spacing: None · Animation: Slight Fade In From Bottom · Delay 360 · Device Visibility: hidden on phones">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" style="--fg:#F2F4F3" data-salient="Badge → Minimal Line · Label · #F2F4F3">Turinys</span>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="20-80" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" style="--mt:8px" data-salient="Horizontal List Item (Link rows) → Columns 2 · 20% | 80% · Style: Bottom Border, Color Hover Effect · Hover Color: White · Full Item Link URL #imone · last column ends with a typed arrow · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p class="muted sgp-num">01</p></div><div class="nectar-list-item"><p>Įmonė <span aria-hidden="true">↓</span></p></div><a class="full-link" href="#imone" aria-label="Įmonė"></a></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="20-80" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item (Link rows) → Full Item Link URL #principai · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p class="muted sgp-num">02</p></div><div class="nectar-list-item"><p>Principai <span aria-hidden="true">↓</span></p></div><a class="full-link" href="#principai" aria-label="Principai"></a></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="20-80" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item (Link rows) → Full Item Link URL #kelyje · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p class="muted sgp-num">03</p></div><div class="nectar-list-item"><p>Kelyje <span aria-hidden="true">↓</span></p></div><a class="full-link" href="#kelyje" aria-label="Kelyje"></a></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="20-80" data-hover-effect="default" data-color="white" data-border-animation data-border-color="#3E464A" data-font-family="h4" data-salient="Horizontal List Item (Link rows) → Full Item Link URL #kodel-mes · Border Animation ✓ · Border Color #3E464A"><div class="nectar-list-item"><p class="muted sgp-num">04</p></div><div class="nectar-list-item"><p>Kodėl mes <span aria-hidden="true">↓</span></p></div><a class="full-link" href="#kodel-mes" aria-label="Kodėl mes"></a></div>
+      </div>
     </div>
-  </div>
-</section>
-
-<!-- ============ 02 · PRINCIPAI — stacking cards (M63) ============ -->
-<section class="sgp-sec ab-pr on-dark sgp-has-rail" id="principai" data-theme="dark" data-salient="Row · bg #0F1417 · Extra Class sgp-dark sgp-has-rail · Text Color Light · Sticky Content Sections → Sticky Scroll Pinned Sections · Effect: Stacking · Section Navigation OFF · effect OFF on tablet/phone (plain stack) · each section = Inner Row: Text 7/12 + Image 5/12 (4:5, 45 %)">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">02</span><span class="sgp-mono">Principai</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">5 principai</span></div>
-    <div class="sgp-head ab-pr__head">
-      <h2 class="sgp-d2" data-split>Kodėl mūsų pervežimo paslaugos – geriausias sprendimas Jums?</h2>
-      <p class="sgp-lead" data-reveal>Saugumas, operatyvumas, profesionalumas, komfortas ir patogumas – tai esminiai kriterijai, kuriais grindžiama mūsų įmonės veikla ir profesionalios keleivių vežimo paslaugos.</p>
-    </div>
-    <div class="sgp-stack ab-stack" data-stack data-salient="Sticky Scroll Pinned Sections (5 sections) · Stacking · each: Inner Row bg #161D21, Column 7/12 (mono index, H3, Text Block, progress rings) + Column 5/12 Image (cover)">
-      <article class="sgp-stack__item" id="saugumas">
-        <div class="ab-card">
-          <div class="ab-card__txt">
-            <p class="ab-card__top" data-draw aria-hidden="true"><span class="sgp-ring"></span><span class="sgp-mono ab-card__no">01</span><span class="ab-card__rule"></span><span class="sgp-mono ab-card__of">01 / 05</span></p>
-            <h3 class="ab-card__t">Saugumas</h3>
-            <p class="ab-card__p">Keleivių pervežimas bus saugus, kadangi itin preciziškai rūpinamės savo mikroautobusais. Jų techninė būklė visuomet yra ideali ir į kelią leidžiasi tik nepriekaištingai tvarkingi automobiliai.</p>
-            <p class="ab-card__prog" aria-hidden="true"><span class="sgp-ring is-on"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span></p>
+    <div class="wpb_column vc_col-sm-12" data-animation="slight-fade-in-from-bottom" data-delay="600" data-salient="Column 12/12 → Animation: Slight Fade In From Bottom · Delay 600 · glass band">
+      <div class="vc_column-inner">
+        <div class="vc_row inner_row" data-backdrop-blur="16" data-column-align="bottom" style="--bg:rgba(11,14,16,.55);--border:1px solid rgba(242,244,243,.12);--r:3px;--pt:24px;--pb:24px;--pl:32px;--pr:32px;--pt-m:20px;--pb-m:20px;--pl-m:18px;--pr-m:18px" data-salient="Inner Row → Backdrop Filter: Blur 16 · Vertically Align Columns: Bottom · Design Options: BG rgba(11,14,16,.55), Border 1px rgba(242,244,243,.12), Border Radius 3px, Padding 24px 32px (glass band)">
+          <div class="row_col_wrap_12_inner" style="--row-gap:18px">
+            <div class="wpb_column vc_col-sm-4" data-el-space="10px" data-salient="Inner Column 4/12 → Label + Global Section element „GS-Artimiausi“">
+              <div class="vc_column-inner">
+                <span class="nectar-badge" data-badge-style="line" style="--fg:#EF4539" data-salient="Badge → Minimal Line · Label · #EF4539 (glass)">Artimiausi išvykimai</span>
+{{partial:gs-artimiausi}}
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-5" data-t-w="6" data-el-space="10px" data-salient="Inner Column 5/12 → 2 × Call (red)">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37065053161" aria-label="Į Airiją · +370 650 53161 – skambinti" data-salient="Button → Type: Arrow Circle Animation · Button Roundness 3 · BG Accent · BG Hover #F4604F · Text #0F1417 · Min Icon Size 36 · Icon Gap 20 · Alignment: Stretch · Link tel:"><span class="link_text"><span class="text">Į Airiją · +370 650 53161</span></span></a>
+                <a class="nectar-cta" data-style="arrow-circle-animation" data-color="accent-color" data-alignment="stretch" href="tel:+37063828919" aria-label="Į Ispaniją · +370 638 28919 – skambinti" data-salient="Button → Arrow Circle Animation · Accent · Stretch · Link tel:"><span class="link_text"><span class="text">Į Ispaniją · +370 638 28919</span></span></a>
+              </div>
+            </div>
+            <div class="wpb_column vc_col-sm-3" data-t-w="6" data-layout="flex" data-justify="flex-end" data-align="flex-start" style="--gap:14px" data-salient="Inner Column 3/12 → Layout: Flexbox (column, flex-end)">
+              <div class="vc_column-inner">
+                <a class="nectar-cta" data-style="underline" href="{{url:grafikas}}" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Visas grafikas →</span></span></a>
+                <a class="nectar-cta" data-style="underline" href="{{url:kontaktai}}" data-salient="Button → Type: Underline"><span class="link_text"><span class="text">Kontaktai →</span></span></a>
+              </div>
+            </div>
           </div>
-          <figure class="ab-card__img sgp-grade">{{img:31570314|w=900|sizes=(min-width:1000px) 38vw, 92vw|pos=60% 50%}}<i class="sgp-ov"></i></figure>
         </div>
-      </article>
-      <article class="sgp-stack__item" id="operatyvumas">
-        <div class="ab-card">
-          <div class="ab-card__txt">
-            <p class="ab-card__top" data-draw aria-hidden="true"><span class="sgp-ring"></span><span class="sgp-mono ab-card__no">02</span><span class="ab-card__rule"></span><span class="sgp-mono ab-card__of">02 / 05</span></p>
-            <h3 class="ab-card__t">Operatyvumas</h3>
-            <p class="ab-card__p">Keleivių pervežimas Europoje trunka 3–4 paras. Garantuojame, nė nepajusite, kaip greitai prabėgs kelionės laikas. Maršrutui renkamės tik geriausius kelius – tai ne tik komfortiškas važiavimas, bet ir galimybė išvengti prastuose keliuose tykančių pavojų, kliūčių, galinčių pakenkti transporto priemonei.</p>
-            <p class="ab-card__prog" aria-hidden="true"><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span></p>
-          </div>
-          <figure class="ab-card__img ab-card__img--zoom sgp-grade" style="--zo:38% 54%">{{img:17720190|w=900|sizes=(min-width:1000px) 38vw, 92vw|pos=38% 50%}}<i class="sgp-ov"></i></figure>
-        </div>
-      </article>
-      <article class="sgp-stack__item" id="profesionalumas">
-        <div class="ab-card">
-          <div class="ab-card__txt">
-            <p class="ab-card__top" data-draw aria-hidden="true"><span class="sgp-ring"></span><span class="sgp-mono ab-card__no">03</span><span class="ab-card__rule"></span><span class="sgp-mono ab-card__of">03 / 05</span></p>
-            <h3 class="ab-card__t">Profesionalumas</h3>
-            <p class="ab-card__p">Mūsų komandoje – tik patyrę ir atsakingi vairuotojai, galintys pasigirti solidžia patirtimi keliaujant tarptautiniais maršrutais. Keleivių pervežimas patikimas vairuotojams, kurie puikiai žino keleivių vežimo taisykles, kelių eismo taisykles ir visus aktualius teisės aktus atitinkamose šalyse, per kurias važiuojama.</p>
-            <p class="ab-card__prog" aria-hidden="true"><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span></p>
-          </div>
-          <figure class="ab-card__img sgp-grade">{{img:6720534|w=900|sizes=(min-width:1000px) 38vw, 92vw|pos=72% 50%}}<i class="sgp-ov"></i></figure>
-        </div>
-      </article>
-      <article class="sgp-stack__item" id="komfortas">
-        <div class="ab-card">
-          <div class="ab-card__txt">
-            <p class="ab-card__top" data-draw aria-hidden="true"><span class="sgp-ring"></span><span class="sgp-mono ab-card__no">04</span><span class="ab-card__rule"></span><span class="sgp-mono ab-card__of">04 / 05</span></p>
-            <h3 class="ab-card__t">Komfortas</h3>
-            <p class="ab-card__p ab-card__p--long">Keleivius vežame tik naujais, komfortiškais mikroautobusais, kuriais važiuojant kelionė tikrai neprailgs. Patogiai jausitės keliaudami bet kuriuo metų laiku. Visi keleiviams vežti skirti mikroautobusai turi atlenkiamas sėdynes, todėl komfortiškai keliausite ir dieną, ir naktį. Galimybė reguliuoti sėdynės atlenkimo kampą bus naudinga ne tik tada, kai norėsite patogiai pamiegoti, bet ir padės išvengti nugaros skausmų, nes nesunkiai rasite Jums tinkamiausią poziciją. Šildomos sėdynės garantuos aukščiausio lygio komfortą šaltuoju metų laiku, todėl net ir esant itin šaltam orui lauke Jūs važiuosite šiltai ir jaukiai. Oro kondicionierius yra nepamainomas kelionėms vasarą, kuomet už lango lepina saulė, o termometro stulpeliai nesikuklina pakilti net labai aukštai. Mikroautobuse bus maloniai vėsu.</p>
-            <p class="ab-card__prog" aria-hidden="true"><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span><span class="ab-card__seg"></span><span class="sgp-ring"></span></p>
-          </div>
-          <figure class="ab-card__img sgp-grade">{{img:17455631|w=900|sizes=(min-width:1000px) 38vw, 92vw|pos=55% 50%}}<i class="sgp-ov"></i></figure>
-        </div>
-      </article>
-      <article class="sgp-stack__item" id="patogumas">
-        <div class="ab-card">
-          <div class="ab-card__txt">
-            <p class="ab-card__top" data-draw aria-hidden="true"><span class="sgp-ring"></span><span class="sgp-mono ab-card__no">05</span><span class="ab-card__rule"></span><span class="sgp-mono ab-card__of">05 / 05</span></p>
-            <h3 class="ab-card__t">Patogumas</h3>
-            <p class="ab-card__p">Keleivių pervežimas vykdomas nuo durų iki durų, o tai reiškia, kad keleiviai paimami iš jiems patogios vietos ir pristatomi į jų kelionės tikslą. Toks pervežimas leidžia efektyviai taupyti klientų laiką ir suteikti jiems daug patogumo, kadangi nereikia patiems planuotis, kaip atvykti iki išvykimo vietos, o nuvykus – kaip pasiekti savo galutinį tikslą.</p>
-            <p class="ab-card__prog" aria-hidden="true"><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span><span class="ab-card__seg is-on"></span><span class="sgp-ring is-on"></span></p>
-          </div>
-          <figure class="ab-card__img ab-card__img--zoom sgp-grade" style="--zo:66% 58%">{{img:27383867|w=900|sizes=(min-width:1000px) 38vw, 92vw|pos=66% 58%}}<i class="sgp-ov"></i></figure>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 03 · KELYJE — gallery (Flickity, M68) ============ -->
-<section class="sgp-sec ab-gal on-light paper sgp-has-rail" id="kelyje" data-theme="light" data-salient="Row paper + Extra Class sgp-light sgp-graticule sgp-has-rail · Image Gallery → Flickity · Touch &amp; Total indicator („01 / 05“, mono) · Image Parallax ON · Mask Edges ON · drag indicator · no captions · replace with the client's own 5 photos">
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">03</span><span class="sgp-mono">Kelyje</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">Apie 3–4 paros</span></div>
-    <div class="ab-gal__head">
-      <h2 class="sgp-d2" data-split>Kelyje apie 3–4 paras</h2>
-      <div class="ab-gal__ctl" data-reveal>
-        <p class="ab-gal__count sgp-mono"><span class="sgp-sr">Nuotrauka </span><b data-gal-now>01</b><span aria-hidden="true"> / </span><span class="sgp-sr"> iš </span>05</p>
-        <button class="sgp-ico ab-gal__btn" type="button" data-gal-prev aria-label="Ankstesnė nuotrauka" aria-controls="abGallery"><svg class="sgp-i ab-flip" aria-hidden="true"><use href="#i-arrow"/></svg></button>
-        <button class="sgp-ico ab-gal__btn" type="button" data-gal-next aria-label="Kita nuotrauka" aria-controls="abGallery"><svg class="sgp-i" aria-hidden="true"><use href="#i-arrow"/></svg></button>
       </div>
     </div>
   </div>
-  <div class="ab-gal__wrap" role="region" aria-roledescription="karuselė" aria-label="Nuotraukų galerija">
-    <div class="ab-gal__track" id="abGallery" tabindex="0">
-      <figure class="ab-gal__cell"><div class="ab-gal__frame sgp-grade">{{img:11053641|w=1100|sizes=(min-width:1000px) 58vw, 86vw|pos=50% 55%}}<i class="sgp-ov"></i></div></figure>
-      <figure class="ab-gal__cell"><div class="ab-gal__frame sgp-grade">{{img:2449454|w=1100|sizes=(min-width:1000px) 58vw, 86vw}}<i class="sgp-ov"></i></div></figure>
-      <figure class="ab-gal__cell"><div class="ab-gal__frame sgp-grade">{{img:8858566|w=1100|sizes=(min-width:1000px) 58vw, 86vw}}<i class="sgp-ov"></i></div></figure>
-      <figure class="ab-gal__cell"><div class="ab-gal__frame sgp-grade">{{img:21041157|w=1100|sizes=(min-width:1000px) 58vw, 86vw}}<i class="sgp-ov"></i></div></figure>
-      <figure class="ab-gal__cell"><div class="ab-gal__frame sgp-grade">{{img:1606957|w=1100|sizes=(min-width:1000px) 58vw, 86vw}}<i class="sgp-ov"></i></div></figure>
-    </div>
-    <span class="ab-gal__drag sgp-mono" aria-hidden="true"><svg class="sgp-i ab-flip"><use href="#i-arrow"/></svg>Tempkite<svg class="sgp-i"><use href="#i-arrow"/></svg></span>
-  </div>
-</section>
+</div>
 
-<!-- ============ 04 · KODĖL VERTA PASITIKĖTI MUMIS? — GS-Trust ============ -->
-<section class="sgp-sec ab-trust on-dark sgp-has-rail sgp-has-media" id="pasitikejimas" data-theme="dark" data-salient="Global Section GS-Trust „Kodėl verta pasitikėti mumis?“ (also used on /tarptautiniai-pervezimai/) · Row dark + BG texture 9807331 at 8 % + Parallax BG: Subtle · Column 5/12 Sticky Content (CSS Top 120) · Column 7/12: 9 × Horizontal List Item (Border Animation; mono index; first clause bold) + custom stops lane (IO)">
-  <div class="sgp-bgmedia ab-trust__tex" data-parallax="0.14" aria-hidden="true">{{img:9807331|w=1600|sizes=100vw|decorative}}</div>
-  <div class="sgp-wrap sgp-wrap--zone">
-    <div class="sgp-wp"><span class="sgp-ring"></span><span class="sgp-mono sgp-wp__no">04</span><span class="sgp-mono">Pasitikėjimas</span><span class="sgp-wp__rule"></span><span class="sgp-mono sgp-wp__meta">9 priežastys</span></div>
-    <div class="ab-trust__grid">
-      <div class="ab-trust__side">
-        <div class="sgp-sticky">
-          <h2 class="sgp-d2 ab-trust__h" data-split>Kodėl verta pasitikėti mumis?</h2>
-          <p class="sgp-lead ab-trust__lead" data-reveal>SGP pervežimai – komanda savo srities profesionalų, turinčių vieningą tikslą – užtikrinti, kad siuntiniai ir keleiviai į Ispaniją ir Airiją keliautų saugiai, greitai, patikimai ir komfortiškai.</p>
-          <div class="ab-trust__img" data-salient="Single Image · Mask Reveal (straight, bottom) · Parallax (image scaled 1.16)"><figure class="sgp-grade" data-mask>{{img:7541981|w=900|sizes=(min-width:1000px) 30vw, 92vw|pos=66% 40%|data-parallax=-0.06}}<i class="sgp-ov"></i></figure></div>
+<!-- ================= A2 · Photo band: Clip Path Inset on scroll + Regular parallax ================= -->
+<div class="wpb_row" data-type="full_width_content" data-text-color="light" data-parallax-speed="medium_fast" data-bg-animation="clip-path" data-clip-type="scroll" data-clip-applies="bg" data-clip-start="0 8% 0 8%" data-clip-end="0 0 0 0" data-clip-round="3,0" data-clip-offset="0,60" style="--bg:#F5F7F6;--pt:36vh;--pb:36vh;--pt-m:24vh;--pb-m:24vh" data-salient="Row → Type: Full Width Content · BG #F5F7F6 + Background Image 1696742 · Parallax Background Media On Scroll ✓ → Speed: Regular (0.28) · Background Layer Animation: Clip Path Inset → Animation Type: Scroll Position · Applies To: Background Layer · Inset Start 0 / 8 % / 0 / 8 % → End 0 · Roundness Start 3px → End 0 · Viewport Trigger Offset 0–60 · Padding 36vh / 36vh (phone 24vh) as the band height">
+  {{bgimg:1696742|w=1920|pos=50% 60%|overlay=rgba(11,14,16,.12)}}
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-12" data-salient="Column 12/12 (empty — the photo is the content)"><div class="vc_column-inner"></div></div>
+  </div>
+</div>
+
+<!-- ================= A3 · Įmonė (P): Highlighted Text statement + Cascading Images + text + KV rows ================= -->
+<div class="wpb_row" id="imone" data-type="full_width_background" data-text-color="dark" data-padding="chapter" style="--bg:#F5F7F6" data-salient="Row → Chapter row P · Type: Full Width Background · BG #F5F7F6 · Text Color: Dark · Padding 8 % / 8 % (phones 80px) · Row ID imone">
+  <div class="row_col_wrap_12" style="--row-gap:64px">
+    <div class="wpb_column vc_col-sm-11" data-animation="slight-fade-in-from-bottom" data-el-space="10px" data-salient="Column 11/12 → Animation: Slight Fade In From Bottom · Column Element Spacing: 10px">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Badge Style: Minimal Line · Inherit Typography From: Label · Text #C4301E (paper)">Įmonė</span>
+        <h2 class="screen-reader-text">Apie mus</h2>
+        <div class="nectar-highlighted-text" data-style="regular_underline" data-underline-thickness="3px" style="--hl:#EF4539;--fs:46px;--fs-m:28px;--lh:1.14;--mt:18px" data-salient="Highlighted Text → Style: Regular Underline · Highlight Color: Accent · Underline Thickness 3px · Text Element H3 · Custom Font Size 46px (phone 28px) · Line Height 1.14 · both routes are the highlighted (em) phrases"><h3><b>„SGP“</b> – esame įmonė įsikūrusi Lietuvoje, kuri užsiima keleivių, siuntų ir automobilių pervežimu <em>Lietuva&nbsp;–&nbsp;Ispanija&nbsp;–&nbsp;Lietuva</em>, <em>Lietuva&nbsp;–&nbsp;Airija&nbsp;–&nbsp;Lietuva</em> ir kitas Europos šalis (<b>Vokietiją, Prancūziją</b>).</h3></div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-5" data-sticky="top" data-salient="Column 5/12 → Sticky Content: CSS Powered · Top · Cascading Images">
+      <div class="vc_column-inner">
+        <div class="nectar_cascading_images" data-aspect="4-5" data-salient="Cascading Images → Element Sizing: Forced Aspect 4:5 · Time Between Animations 200 ms · Enable Parallax Scrolling ✓ · Layer Border Radius 0 · layer 1: 29566910 (automobiliai), CSS Animation Grow In Reveal, Parallax Subtle · layer 2: 36377055 (keleiviai), Offset X 40 % / Y 36 %, Fade In From Bottom, Box Shadow Large, Parallax Medium · layer 3: 4440774 (siuntos), Offset X 6 % / Y 66 %, Fade In From Bottom, Box Shadow Large, Parallax High">
+          <div class="cascading-image" data-animation="grow-in-reveal" data-parallax="subtle" style="--w:76%;--h:62%"><div class="bg-layer">{{img:29566910|w=900|sizes=(min-width:1000px) 32vw, 80vw|decorative|pos=50% 50%}}</div></div>
+          <div class="cascading-image" data-animation="fade-in-from-bottom" data-parallax="medium" data-shadow="large_depth" style="--x:40%;--y:36%;--w:60%;--h:40%;--z:2"><div class="bg-layer">{{img:36377055|w=760|sizes=(min-width:1000px) 26vw, 62vw|decorative}}</div></div>
+          <div class="cascading-image" data-animation="fade-in-from-bottom" data-parallax="high" data-shadow="large_depth" style="--x:6%;--y:66%;--w:48%;--h:34%;--z:3"><div class="bg-layer">{{img:4440774|w=640|sizes=(min-width:1000px) 20vw, 48vw|decorative}}</div></div>
         </div>
       </div>
-      <ol class="ab-trust__list" data-stops data-salient="Horizontal List Item ×9 · Style: Border Animation · columns: index (mono) + text · rings fill when the row passes 70 % of the viewport">
-        <li class="ab-tr" data-stop data-reveal><span class="sgp-ring"></span><span class="sgp-mono ab-tr__no">01</span><p class="ab-tr__t"><b>Mūsų tarptautinių pervežimų paslauga</b> apima keleivių, siuntinių, gyvūnų, negabaritinių krovinių gabenimą.</p></li>
-        <li class="ab-tr" data-stop data-reveal><span class="sgp-ring"></span><span class="sgp-mono ab-tr__no">02</span><p class="ab-tr__t"><b>Solidus patirties ir žinių bagažas</b> suponuoja, kad išmanome keleivių ir siuntų transportavimui aktualius teisės aktus, žinome visus kelionėje galinčius kilti niuansus, taip pat kitus su transportavimu Europoje susijusius ypatumus.</p></li>
-        <li class="ab-tr" data-stop data-reveal><span class="sgp-ring"></span><span class="sgp-mono ab-tr__no">03</span><p class="ab-tr__t"><b>Tarptautinis krovinių gabenimas vyksta konkurencingoje aplinkoje,</b> kurioje gebame puikiai laviruoti, nes didžiausiu konkurenciniu pranašumu laikome savo žmogiškųjų išteklių profesionalumą ir vieningumą.</p></li>
-        <li class="ab-tr" data-stop data-reveal><span class="sgp-ring"></span><span class="sgp-mono ab-tr__no">04</span><p class="ab-tr__t"><b>Tarptautiniai pervežimai vykdomi tik techniškai tvarkingais mikroautobusais,</b> siekiant užtikrinti siuntinių saugumą ir keleivių komfortą. Visi mikroautobusai, kuriais vežame keleivius, turi tokius ypatumus: atlenkiamas sėdynes – patogiai Jūsų kelionei tiek dieną, tiek naktį; šildomas sėdynes – komfortui net žvarbiausiomis žiemos dienomis; kondicionierius – kad oras autobuse visada būtų šviežias, o karštą vasaros dieną jaustumėtės patogiai. Tai nebaigtinis patogumų sąrašas. Siuntos taip pat gabenamos naujais, patikimais mikroautobusais.</p></li>
-        <li class="ab-tr" data-stop data-reveal><span class="sgp-ring"></span><span class="sgp-mono ab-tr__no">05</span><p class="ab-tr__t"><b>Tarptautiniai pervežimai nuo durų iki durų</b> – patogumas ir efektyvus laiko taupymas.</p></li>
-        <li class="ab-tr" data-stop data-reveal><span class="sgp-ring"></span><span class="sgp-mono ab-tr__no">06</span><p class="ab-tr__t"><b>Patrauklios kainos</b> – daugeliui svarbus aspektas, tad užtikriname labai gerą kainos ir kokybės santykį.</p></li>
-        <li class="ab-tr" data-stop data-reveal><span class="sgp-ring"></span><span class="sgp-mono ab-tr__no">07</span><p class="ab-tr__t"><b>Mūsų komandoje – tik atsakingi ir patikimi vairuotojai,</b> kad kelionė bus saugi ir sklandi.</p></li>
-        <li class="ab-tr" data-stop data-reveal><span class="sgp-ring"></span><span class="sgp-mono ab-tr__no">08</span><p class="ab-tr__t"><b>Tarptautiniai pervežimai apima</b> ir gyvūnų transportavimą.</p></li>
-        <li class="ab-tr" data-stop data-reveal><span class="sgp-ring"></span><span class="sgp-mono ab-tr__no">09</span><p class="ab-tr__t"><b>Automobilių tarptautiniai pervežimai Europoje</b> – pasiūlysime geriausias sąlygas.</p></li>
-      </ol>
+    </div>
+    <div class="wpb_column vc_col-sm-6 vc_col-sm-offset-1" data-animation="slight-fade-in-from-bottom" data-delay="120" data-salient="Column 6/12 (offset 1) → Animation: Slight Fade In From Bottom · Delay 120">
+      <div class="vc_column-inner">
+        <p class="nectar-responsive-text" data-inherit="h5" style="--fg:var(--tone-muted);--max-w:48ch" data-salient="Responsive Text → Font Style: H5 · Color ink-2 #4A5358 (Intro)">Nuo pirmos darbo dienos savo klientams užtikriname ne tik saugų, greitą bei patikimą pervežimą, bet ir malonų bendravimą su kvalifikuota bei patyrusia komanda.</p>
+        <div class="divider-wrap" data-line-type="small" data-animate style="--line-w:96px;--thickness:2px;--h:14px;--mt:30px" data-salient="Divider → Small Line · 96px · 2px · Accent · Animate Line ✓ (Road line)"><span class="divider-border"></span></div>
+        <p class="nectar-responsive-text" data-inherit="h3" style="--mt:14px;--max-w:20em" data-salient="Responsive Text → Font Style: H3 (promise)">Mes visada pasiruošę teikti kokybiškas transporto paslaugas už Jums prieinamą kainą!</p>
+        <a class="nectar-cta" data-style="arrow-circle-animation" data-color="extra-color-1" href="{{url:paslaugos}}" style="--mt:30px" data-salient="Button (ink) → Type: Arrow Circle Animation · Button Roundness 3 · BG Extra Color 1 · BG Hover #222B30 · Text #F2F4F3"><span class="link_text"><span class="text">Pervežimo paslaugos</span></span></a>
+        <a class="nectar-cta" data-style="underline" href="{{url:tarptautiniai}}" style="--mt:16px" data-salient="Button → Type: Underline (Link)"><span class="link_text"><span class="text">Tarptautiniai pervežimai →</span></span></a>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" style="--mt:48px" data-salient="Horizontal List Item (KV rows) ×6 → Columns 2 · 30% | 70% · Style: Bottom Border, No Hover Effect · Border Animation ✓ · Border Color #C3CBCB · Column 1 Text Element: Paragraph · content <p class=&quot;nectar-inherit-h6&quot;>"><div class="nectar-list-item"><p class="nectar-inherit-h6">Veikla</p></div><div class="nectar-list-item"><p>Keleivių, siuntų ir automobilių pervežimas</p></div></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Kryptys</p></div><div class="nectar-list-item"><p>Lietuva – Airija – Lietuva<br>Lietuva – Ispanija – Lietuva</p></div></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Taip pat</p></div><div class="nectar-list-item"><p>Vokietija, Prancūzija</p></div></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Principas</p></div><div class="nectar-list-item"><p>Nuo durų iki durų</p></div></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Draudimas</p></div><div class="nectar-list-item"><p>Kroviniai ir keleiviai kelionės metu apdrausti</p></div></div>
+        <div class="nectar-hor-list-item" data-columns="2" data-column-layout="30-70" data-hover-effect="none" data-border-animation data-border-color="#C3CBCB" data-salient="Horizontal List Item (KV row) · Border Animation ✓ · Border Color #C3CBCB"><div class="nectar-list-item"><p class="nectar-inherit-h6">Vairuotojai</p></div><div class="nectar-list-item"><p>Laikosi privalomo darbo ir poilsio režimo</p></div></div>
+      </div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- ============ GS-Board „Artimiausi pervežimai“ ============ -->
-{{partial:board}}
+<!-- ================= A6 · Milestones on a photo band (Zoom Out Slowly + Medium parallax) ================= -->
+<div class="wpb_row sgp-dark" id="skaiciai" data-type="full_width_background" data-text-color="light" data-parallax-speed="medium" data-bg-animation="zoom-out-slow" style="--bg:#0B0E10;--pt:7%;--pb:7%;--pt-m:72px;--pb-m:72px" data-salient="Row → Type: Full Width Background · Background Image 1225126 · Parallax Background Media On Scroll ✓ → Speed: Medium (0.40) · Background Layer Animation: Zoom Out Slowly (8 s) · Color Overlay #0B0E10 · Opacity .82 · Text Color: Light · Padding 7 % (phone 72px) · Extra Class sgp-dark">
+  {{bgimg:1225126|w=1920|overlay=rgba(11,14,16,.82)}}
+  <div class="row_col_wrap_12" style="--row-gap:48px">
+    <div class="wpb_column vc_col-sm-3" data-t-w="6" data-m-w="6" data-border-animation style="--border-top:1px solid rgba(242,244,243,.26);--pt:28px" data-salient="Column 3/12 (tablet 6, phone 6) → Border Type: Advanced (top 1px rgba(242,244,243,.26)) · Enable Border Animation ✓ · Padding Top 28px">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #EF4539">Kryptys</span>
+        <div class="nectar-milestone" data-effect="motion_blur" data-inherit="h2" style="--fs:104px;--fs-m:72px" data-salient="Milestone → Milestone Number 2 · Inherit Font: H2 · Number Font Size 104px (phone 72px) · Animation Effect: Motion Blur Slide In · Delay 0"><div class="number"><span class="num">2</span></div><div class="subject">Airija ir Ispanija – iš Lietuvos ir atgal</div></div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-3" data-t-w="6" data-m-w="6" data-border-animation data-delay="150" style="--border-top:1px solid rgba(242,244,243,.26);--pt:28px" data-salient="Column 3/12 → Border Animation · Delay 150">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Paslaugos</span>
+        <div class="nectar-milestone" data-effect="motion_blur" data-delay="150" data-inherit="h2" style="--fs:104px;--fs-m:72px" data-salient="Milestone → 11 · Motion Blur Slide In · Delay 150"><div class="number"><span class="num">11</span></div><div class="subject">tarptautinių pervežimo paslaugų</div></div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-3" data-t-w="6" data-m-w="6" data-border-animation data-delay="300" style="--border-top:1px solid rgba(242,244,243,.26);--pt:28px" data-salient="Column 3/12 → Border Animation · Delay 300">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Kelyje</span>
+        <div class="nectar-milestone" data-effect="motion_blur" data-delay="300" data-inherit="h2" data-symbol-pos="after" style="--fs:104px;--fs-m:72px" data-salient="Milestone → 3 · Symbol „–4“ · Symbol Position: After Number · Motion Blur Slide In · Delay 300"><div class="number"><span class="num">3</span><span class="symbol">–4</span></div><div class="subject">paros nuo paėmimo dienos</div></div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-3" data-t-w="6" data-m-w="6" data-border-animation data-delay="450" style="--border-top:1px solid rgba(242,244,243,.26);--pt:28px" data-salient="Column 3/12 → Border Animation · Delay 450">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label">Pakeliui</span>
+        <div class="nectar-milestone" data-effect="motion_blur" data-delay="450" data-inherit="h2" style="--fs:104px;--fs-m:72px" data-salient="Milestone → 4 · Motion Blur Slide In · Delay 450"><div class="number"><span class="num">4</span></div><div class="subject">šalys: Lenkija, Vokietija, Belgija, Prancūzija</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= A7 · Principai (A): Sticky Scroll Pinned Sections → Scale + Stacked Appearance ================= -->
+<div class="wpb_row sgp-dark" id="principai" data-type="full_width_background" data-text-color="light" style="--bg:#0F1417;--pt:8%;--pb:8%;--pt-m:80px;--pb-m:80px" data-salient="Row → Chapter row A · BG #0F1417 · Text Color: Light · Padding 8 % / 8 % (phones 80px) · Row ID principai · Extra Class sgp-dark">
+  <div class="row_col_wrap_12" style="--row-gap:40px">
+    <div class="wpb_column vc_col-sm-7" data-t-w="12" data-el-space="10px" data-salient="Column 7/12 → Label + Animated Text H2 + Road line">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #EF4539">Principai</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--max-w:13em;--mt:14px" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓ · Max Width 13em"><h2>Kodėl mūsų pervežimo paslaugos – geriausias sprendimas Jums?</h2></div>
+        <div class="divider-wrap" data-line-type="small" data-animate style="--line-w:96px;--thickness:2px;--h:22px" data-salient="Divider → Small Line · 96px · 2px · Accent · Animate Line ✓"><span class="divider-border"></span></div>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-4 vc_col-sm-offset-1" data-t-w="12" data-layout="flex" data-justify="flex-end" data-animation="slight-fade-in-from-bottom" data-delay="120" data-salient="Column 4/12 (offset 1) → Layout: Flexbox (column, flex-end) · Animation: Slight Fade In From Bottom · Delay 120">
+      <div class="vc_column-inner">
+        <p class="nectar-responsive-text" data-inherit="h5" style="--fg:var(--tone-muted)" data-salient="Responsive Text → Font Style: H5 · Color fog #9AA6AB (Intro)">Saugumas, operatyvumas, profesionalumas, komfortas ir patogumas – tai esminiai kriterijai, kuriais grindžiama mūsų įmonės veikla ir profesionalios keleivių vežimo paslaugos.</p>
+      </div>
+    </div>
+    <div class="wpb_column vc_col-sm-12" data-salient="Column 12/12 → Sticky Content Sections">
+      <div class="vc_column-inner">
+        <div class="nectar-sticky-media-sections" data-type="scroll-pinned-sections" data-effect="scale" data-stacked data-section-height="80vh" data-subtract-nav data-enabled="desktop" data-radius="3" data-salient="Sticky Content Sections → Type: Sticky Scroll Pinned Sections · Effect: Scale (1 → .92) · Stacked Appearance ✓ (−54px) · Section Navigation ✗ · Section Height 80vh · Subtract Navigation Height ✓ · Border Radius 3 · Effect Enabled: desktop ✓ tablet ✗ phone ✗ (stacks)">
+          <div class="nectar-sticky-media-section" id="saugumas" data-title="Saugumas" data-section-type="color" style="--bg:#161D21" data-text-color="light" data-salient="Sticky Content Section → Section Type: Color #161D21 · Text Color: Light · Section ID saugumas">
+            <div class="nectar-sticky-media-section__inner"><div class="vc_row inner_row" data-equal-height data-content-align="middle" style="--pt:40px;--pb:40px;--pl:48px;--pr:40px;--pt-m:26px;--pb-m:26px;--pl-m:22px;--pr-m:22px" data-salient="Inner Row → Equal Height · Column Content Alignment: Middle · Padding 40px 40px 40px 48px"><div class="row_col_wrap_12_inner" style="--col-gap:56px">
+              <div class="wpb_column vc_col-sm-6" data-layout="flex" style="--gap:22px" data-salient="Inner Column 6/12 → Layout: Flexbox (column) · Gap 22px · numeral + Text Block grouped (Row: Column Content Alignment Middle)"><div class="vc_column-inner">
+                <p class="nectar-responsive-text" data-inherit="h1" style="--fs:104px;--fs-m:64px;--fg:#EF4539;--lh:.86" aria-hidden="true" data-salient="Responsive Text → Font Style: H1 · Custom Font Size 104px (phone 64px) · Color Accent">01</p>
+                <div class="wpb_text_column" style="--max-w:34em" data-salient="Text Block → H3 + paragraph (verbatim)"><h3>Saugumas</h3><p>Keleivių pervežimas bus saugus, kadangi itin preciziškai rūpinamės savo mikroautobusais. Jų techninė būklė visuomet yra ideali ir į kelią leidžiasi tik nepriekaištingai tvarkingi automobiliai.</p></div>
+              </div></div>
+              <div class="wpb_column vc_col-sm-6" data-animation="fade-in" style="--min-h:56vh;--min-h-t:340px;--min-h-m:260px;--r:3px" data-salient="Inner Column 6/12 → Background Image 31570314 · Scale To Column ✓ · Animation: Fade In (no Reveal Rotate inside the pinned stack — the next card would cover a tilted image) · Color Overlay #0B0E10 .16 → Opacity Hover 0 · Border Radius 3px · Min Height 56vh">
+                {{colbg:31570314|w=1100|sizes=(min-width:1000px) 42vw, 92vw|pos=60% 50%|o=.16|oh=0}}
+                <div class="vc_column-inner"></div>
+              </div>
+            </div></div></div>
+          </div>
+          <div class="nectar-sticky-media-section" id="operatyvumas" data-title="Operatyvumas" data-section-type="color" style="--bg:#EAEEED" data-text-color="dark" data-salient="Sticky Content Section → Section Type: Color #EAEEED · Text Color: Dark · Section ID operatyvumas">
+            <div class="nectar-sticky-media-section__inner"><div class="vc_row inner_row" data-equal-height data-content-align="middle" style="--pt:40px;--pb:40px;--pl:48px;--pr:40px;--pt-m:26px;--pb-m:26px;--pl-m:22px;--pr-m:22px" data-salient="Inner Row → Equal Height · Column Content Alignment: Middle · Padding 40px 40px 40px 48px"><div class="row_col_wrap_12_inner" style="--col-gap:56px">
+              <div class="wpb_column vc_col-sm-6" data-layout="flex" style="--gap:22px" data-salient="Inner Column 6/12 → Layout: Flexbox (column) · Gap 22px"><div class="vc_column-inner">
+                <p class="nectar-responsive-text" data-inherit="h1" style="--fs:104px;--fs-m:64px;--fg:#C4301E;--lh:.86" aria-hidden="true" data-salient="Responsive Text → Font Style: H1 · 104px · Color #C4301E (paper)">02</p>
+                <div class="wpb_text_column" style="--max-w:34em" data-salient="Text Block → H3 + paragraph (verbatim)"><h3>Operatyvumas</h3><p>Keleivių pervežimas Europoje trunka 3–4 paras. Garantuojame, nė nepajusite, kaip greitai prabėgs kelionės laikas. Maršrutui renkamės tik geriausius kelius – tai ne tik komfortiškas važiavimas, bet ir galimybė išvengti prastuose keliuose tykančių pavojų, kliūčių, galinčių pakenkti transporto priemonei.</p></div>
+              </div></div>
+              <div class="wpb_column vc_col-sm-6" data-animation="fade-in" style="--min-h:56vh;--min-h-t:340px;--min-h-m:260px;--r:3px" data-salient="Inner Column 6/12 → Background Image 17720190 · Animation: Fade In · Overlay .16 → 0 on hover · Radius 3px">
+                {{colbg:17720190|w=1100|sizes=(min-width:1000px) 42vw, 92vw|pos=38% 50%|o=.16|oh=0}}
+                <div class="vc_column-inner"></div>
+              </div>
+            </div></div></div>
+          </div>
+          <div class="nectar-sticky-media-section" id="profesionalumas" data-title="Profesionalumas" data-section-type="color" style="--bg:#161D21" data-text-color="light" data-salient="Sticky Content Section → Section Type: Color #161D21 · Text Color: Light · Section ID profesionalumas">
+            <div class="nectar-sticky-media-section__inner"><div class="vc_row inner_row" data-equal-height data-content-align="middle" style="--pt:40px;--pb:40px;--pl:48px;--pr:40px;--pt-m:26px;--pb-m:26px;--pl-m:22px;--pr-m:22px" data-salient="Inner Row → Equal Height · Column Content Alignment: Middle · Padding 40px 40px 40px 48px"><div class="row_col_wrap_12_inner" style="--col-gap:56px">
+              <div class="wpb_column vc_col-sm-6" data-layout="flex" style="--gap:22px" data-salient="Inner Column 6/12 → Layout: Flexbox (column) · Gap 22px"><div class="vc_column-inner">
+                <p class="nectar-responsive-text" data-inherit="h1" style="--fs:104px;--fs-m:64px;--fg:#EF4539;--lh:.86" aria-hidden="true" data-salient="Responsive Text → Font Style: H1 · 104px · Color Accent">03</p>
+                <div class="wpb_text_column" style="--max-w:34em" data-salient="Text Block → H3 + paragraph (verbatim, approved fix „puikiai žino“)"><h3>Profesionalumas</h3><p>Mūsų komandoje – tik patyrę ir atsakingi vairuotojai, galintys pasigirti solidžia patirtimi keliaujant tarptautiniais maršrutais. Keleivių pervežimas patikimas vairuotojams, kurie puikiai žino keleivių vežimo taisykles, kelių eismo taisykles ir visus aktualius teisės aktus atitinkamose šalyse, per kurias važiuojama.</p></div>
+              </div></div>
+              <div class="wpb_column vc_col-sm-6" data-animation="fade-in" style="--min-h:56vh;--min-h-t:340px;--min-h-m:260px;--r:3px" data-salient="Inner Column 6/12 → Background Image 6720534 · Animation: Fade In · Overlay .16 → 0 on hover · Radius 3px">
+                {{colbg:6720534|w=1100|sizes=(min-width:1000px) 42vw, 92vw|pos=72% 50%|o=.16|oh=0}}
+                <div class="vc_column-inner"></div>
+              </div>
+            </div></div></div>
+          </div>
+          <div class="nectar-sticky-media-section" id="komfortas" data-title="Komfortas" data-section-type="color" style="--bg:#EAEEED" data-text-color="dark" data-salient="Sticky Content Section → Section Type: Color #EAEEED · Text Color: Dark · Section ID komfortas">
+            <div class="nectar-sticky-media-section__inner"><div class="vc_row inner_row" data-equal-height data-content-align="middle" style="--pt:40px;--pb:40px;--pl:48px;--pr:40px;--pt-m:26px;--pb-m:26px;--pl-m:22px;--pr-m:22px" data-salient="Inner Row → Equal Height · Column Content Alignment: Middle · Padding 40px 40px 40px 48px"><div class="row_col_wrap_12_inner" style="--col-gap:56px">
+              <div class="wpb_column vc_col-sm-6" data-layout="flex" style="--gap:22px" data-salient="Inner Column 6/12 → Layout: Flexbox (column) · Gap 22px"><div class="vc_column-inner">
+                <p class="nectar-responsive-text" data-inherit="h1" style="--fs:104px;--fs-m:64px;--fg:#C4301E;--lh:.86" aria-hidden="true" data-salient="Responsive Text → Font Style: H1 · 104px · Color #C4301E (paper)">04</p>
+                <div class="wpb_text_column" style="--max-w:40em" data-salient="Text Block → H3 + paragraph (verbatim; DVD sentence and „Klejonė…“ removed, „už lango“ fix)"><h3>Komfortas</h3><p>Keleivius vežame tik naujais, komfortiškais mikroautobusais, kuriais važiuojant kelionė tikrai neprailgs. Patogiai jausitės keliaudami bet kuriuo metų laiku. Visi keleiviams vežti skirti mikroautobusai turi atlenkiamas sėdynes, todėl komfortiškai keliausite ir dieną, ir naktį. Galimybė reguliuoti sėdynės atlenkimo kampą bus naudinga ne tik tada, kai norėsite patogiai pamiegoti, bet ir padės išvengti nugaros skausmų, nes nesunkiai rasite Jums tinkamiausią poziciją. Šildomos sėdynės garantuos aukščiausio lygio komfortą šaltuoju metų laiku, todėl net ir esant itin šaltam orui lauke Jūs važiuosite šiltai ir jaukiai. Oro kondicionierius yra nepamainomas kelionėms vasarą, kuomet už lango lepina saulė, o termometro stulpeliai nesikuklina pakilti net labai aukštai. Mikroautobuse bus maloniai vėsu.</p></div>
+              </div></div>
+              <div class="wpb_column vc_col-sm-6" data-animation="fade-in" style="--min-h:56vh;--min-h-t:340px;--min-h-m:260px;--r:3px" data-salient="Inner Column 6/12 → Background Image 17455631 · Animation: Fade In · Overlay .16 → 0 on hover · Radius 3px">
+                {{colbg:17455631|w=1100|sizes=(min-width:1000px) 42vw, 92vw|pos=55% 50%|o=.16|oh=0}}
+                <div class="vc_column-inner"></div>
+              </div>
+            </div></div></div>
+          </div>
+          <div class="nectar-sticky-media-section" id="patogumas" data-title="Patogumas" data-section-type="color" style="--bg:#161D21" data-text-color="light" data-salient="Sticky Content Section → Section Type: Color #161D21 · Text Color: Light · Section ID patogumas">
+            <div class="nectar-sticky-media-section__inner"><div class="vc_row inner_row" data-equal-height data-content-align="middle" style="--pt:40px;--pb:40px;--pl:48px;--pr:40px;--pt-m:26px;--pb-m:26px;--pl-m:22px;--pr-m:22px" data-salient="Inner Row → Equal Height · Column Content Alignment: Middle · Padding 40px 40px 40px 48px"><div class="row_col_wrap_12_inner" style="--col-gap:56px">
+              <div class="wpb_column vc_col-sm-6" data-layout="flex" style="--gap:22px" data-salient="Inner Column 6/12 → Layout: Flexbox (column) · Gap 22px"><div class="vc_column-inner">
+                <p class="nectar-responsive-text" data-inherit="h1" style="--fs:104px;--fs-m:64px;--fg:#EF4539;--lh:.86" aria-hidden="true" data-salient="Responsive Text → Font Style: H1 · 104px · Color Accent">05</p>
+                <div class="wpb_text_column" style="--max-w:34em" data-salient="Text Block → H3 + paragraph (verbatim)"><h3>Patogumas</h3><p>Keleivių pervežimas vykdomas nuo durų iki durų, o tai reiškia, kad keleiviai paimami iš jiems patogios vietos ir pristatomi į jų kelionės tikslą. Toks pervežimas leidžia efektyviai taupyti klientų laiką ir suteikti jiems daug patogumo, kadangi nereikia patiems planuotis, kaip atvykti iki išvykimo vietos, o nuvykus – kaip pasiekti savo galutinį tikslą.</p></div>
+              </div></div>
+              <div class="wpb_column vc_col-sm-6" data-animation="fade-in" style="--min-h:56vh;--min-h-t:340px;--min-h-m:260px;--r:3px" data-salient="Inner Column 6/12 → Background Image 27383867 · Animation: Fade In · Overlay .16 → 0 on hover · Radius 3px">
+                {{colbg:27383867|w=1100|sizes=(min-width:1000px) 42vw, 92vw|pos=66% 58%|o=.16|oh=0}}
+                <div class="vc_column-inner"></div>
+              </div>
+            </div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= A8 · Kelyje (P): heading + outline Scrolling Text (route countries) + Image Gallery → Flickity ================= -->
+<div class="wpb_row" id="kelyje" data-type="full_width_background" data-text-color="dark" style="--bg:#F5F7F6;--pt:8%;--pb:40px;--pt-m:80px;--pb-m:24px" data-salient="Row → Chapter row P · BG #F5F7F6 · Text Color: Dark · Padding 8 % / 40px · Row ID kelyje">
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-8" data-el-space="10px" data-salient="Column 8/12 → Label + Animated Text H2 + Road line">
+      <div class="vc_column-inner">
+        <span class="nectar-badge" data-badge-style="line" data-salient="Badge → Minimal Line · Label · #C4301E">Kelyje</span>
+        <div class="nectar-split-heading" data-text-effect="default" data-stagger="true" style="--mt:14px" data-salient="Animated Text → Text Element: H2 · Word Animations: Reveal · Stagger ✓"><h2>Kelyje apie 3–4 paras</h2></div>
+        <div class="divider-wrap" data-line-type="small" data-animate style="--line-w:96px;--thickness:2px;--h:22px" data-salient="Divider → Small Line · 96px · 2px · Accent · Animate Line ✓"><span class="divider-border"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wpb_row" data-type="full_width_content" data-text-color="dark" style="--bg:#F5F7F6;--pb:36px;--pb-m:20px" data-salient="Row → Type: Full Width Content · Scrolling Text">
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-12" data-salient="Column 12/12">
+      <div class="vc_column-inner">
+        <div class="nectar-scrolling-text" data-s-speed="slower" data-repeat="3" data-divider="✦" data-divider-size="half" data-mask-edges data-move-on-scroll data-outline="thin" data-outline-divider data-spin-divider style="--fs:8vw;--fs-m:17vw;--space:.35em;--divider-color:#EF4539;--outline-color:#1C1D1D" data-salient="Scrolling Text → Scrolling Speed: Slowest (45 s) · Number of Text Repeats 3 · Italic Style: Text Outline · Outline Thickness: Thin · Outline Applies To: Text Content and Custom Divider · Text Repeat Divider: Custom Symbol „✦“ · Divider Size ½ · Divider Color Accent · Spin Divider On Scroll ✓ · Move on Scroll ✓ · Mask Edges ✓ · Custom Font Size 8vw (mobile 17vw) · Text Element H2 (aria-label = plain list)">
+          <p class="nectar-responsive-text" data-inherit="h2" aria-label="Lietuva, Lenkija, Vokietija, Belgija, Prancūzija, Ispanija, Airija" data-salient="Scrolling Text content">Lietuva ✦ Lenkija ✦ Vokietija ✦ Belgija ✦ Prancūzija ✦ Ispanija ✦ Airija</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="wpb_row" data-type="full_width_background" data-text-color="dark" style="--bg:#F5F7F6;--pb:8%;--pb-m:80px" data-salient="Row → Chapter row P (gallery) · Padding bottom 8 %">
+  <div class="row_col_wrap_12">
+    <div class="wpb_column vc_col-sm-12" data-animation="fade-in-from-bottom" data-salient="Column 12/12 → Animation: Fade In From Bottom">
+      <div class="vc_column-inner">
+        <div class="nectar-flickity" data-controls="touch_total" data-image-parallax data-mask-edges data-drag-scale style="--fl-cols:2" data-salient="Image Gallery → Type: Flickity Style · Flickity Controls: Touch Indicator and Total Visualized · Image Spacing 10px · Columns 2 (tablet 1, phone 1) · Image Parallax ✓ · Mask Edges ✓ · Subtle Image Scale When Dragging ✓ · Border Radius 0 · replace with the client's own photos">
+          <div class="cell">{{img:11053641|w=1100|sizes=(min-width:1000px) 48vw, 88vw|pos=50% 55%}}</div>
+          <div class="cell">{{img:2449454|w=1100|sizes=(min-width:1000px) 48vw, 88vw}}</div>
+          <div class="cell">{{img:8858566|w=1100|sizes=(min-width:1000px) 48vw, 88vw}}</div>
+          <div class="cell">{{img:21041157|w=1100|sizes=(min-width:1000px) 48vw, 88vw}}</div>
+          <div class="cell">{{img:1606957|w=1100|sizes=(min-width:1000px) 48vw, 88vw}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= A9 · GS-Pasitikėjimas (Row ID kodel-mes) ================= -->
+{{partial:gs-pasitikejimas|id=kodel-mes}}
+
+<!-- ================= A11 · GS-Kvietimas (Location: After Page/Post Content) ================= -->
+{{partial:gs-kvietimas}}
